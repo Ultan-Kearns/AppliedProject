@@ -9,7 +9,7 @@ function Nav(){
   return(
     <Router>
     <nav>
-    <h3>Navigation</h3>
+    <h1 id = "header">Independent Banking - We work for you</h1>
     <ul  class = "nav-links">
     <Link to="/">
     <Button variant="contained" color="primary">

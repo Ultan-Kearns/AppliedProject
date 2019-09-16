@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Gayathri&display=swap');
+
 .App {
   text-align: center;
 }
@@ -38,6 +40,13 @@ nav{
   align-items: center;
   display: grid;
 }
+#header{
+  font-weight: bold;
+  font-style: italic;
+  color: white;
+  font-family: 'Gayathri', sans-serif;
+  text-decoration: underline;
+}
 .nav-links
 {
   color:white;
@@ -46,4 +55,16 @@ nav{
   width: 60%;
   display: flex;
   justify-content: space-around;
+}
+body{
+  font-family: 'Gayathri';
+}
+::-moz-selection { /* Code for Firefox */
+  color: white;
+  background: green;
+}
+
+::selection {
+  color: white;
+  background: green;
 }
