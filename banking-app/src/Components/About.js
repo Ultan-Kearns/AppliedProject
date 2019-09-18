@@ -1,13 +1,10 @@
-import React from 'react';
+import React from "react";
 function About() {
   return (
-
     <div className="About">
-    <title>About</title>
-    <h1>Welcome to the About!</h1>
-    <p>
-    We are an independent bank that caters to all of our customers!
-    </p>
+      <title>About</title>
+      <h1>Welcome to the About!</h1>
+      <p>We are an independent bank that caters to all of our customers!</p>
     </div>
   );
 }
