@@ -1,12 +1,12 @@
 import React from "react";
-import "./App.css";
 import Nav from "./Components/Nav";
+import "./Components/nav.css";
 
 function App() {
   return (
-    <div className="App">
+    <div className="root">
       {/*Show the navigation component on homepage*/}
-      <Nav />
+        <Nav />
     </div>
   );
 }

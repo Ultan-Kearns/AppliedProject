@@ -3,30 +3,8 @@
 .App {
   text-align: center;
   font-size: calc(4px + 2vmin);
-
-}
-nav{
-  background-color: black;
-  color:white;
-  position: relative;
-  align-items: center;
-  display: flex;
-  width:100vw !important;
-}
-#header{
-  font-weight: bold;
-  font-style: italic;
-  color: white;
-  font-family: 'Gayathri', sans-serif;
-  text-decoration: underline;
-  margin-right: 1%;
-}
-.nav-links
-{
-  color:white;
-  align-items: center;
-  list-style: none;
-  display: flex;
+  width: 100%;
+  min-height: 100%;
 }
 body{
   font-family: 'Gayathri';
@@ -39,10 +17,4 @@ body{
 ::selection {
   color: white;
   background: green;
-}
-a{
-  margin-left: 2%;
-}
-button:hover{
-  background-color: red;
 }
