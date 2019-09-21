@@ -18,3 +18,25 @@ body{
   color: white;
   background: green;
 }
+nav {
+  background-color: black;
+  color: white;
+  display: flex;
+  min-width: 100vw;
+  margin-bottom: 10%;
+  overflow-x: hidden;
+  justify-content: space-around;
+}
+a{
+      margin-left: 5vw;
+}
+.nav-links {
+  color: white;
+  list-style: none;
+  margin-top: 25vh;
+}
+.header {
+  color: white;
+  text-decoration: underline;
+  position: absolute;
+}
