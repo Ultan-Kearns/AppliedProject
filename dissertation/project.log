@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.9.13)  21 SEP 2019 22:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.9.13)  21 SEP 2019 22:25
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1289,7 +1289,7 @@ File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ]
 Chapter 1.
 
-LaTeX Warning: Citation `einstein' on page 4 undefined on input line 31.
+LaTeX Warning: Citation `einstein' on page 4 undefined on input line 35.
 
 [4
 
@@ -1300,7 +1300,7 @@ Chapter 2.
 ] [6] [7]
 Chapter 3.
 
-LaTeX Warning: Reference `tikz:mydiagram' on page 8 undefined on input line 74.
+LaTeX Warning: Reference `tikz:mydiagram' on page 8 undefined on input line 78.
 
 
 [8
@@ -1363,8 +1363,8 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  55i,10n,79p,849b,828s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/lm/lm-rmtt.enc}{/usr/loca
-l/texlive/2019/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2019
-/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2019/texmf-dis
+l/texlive/2019/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/
+2019/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2019/texmf-dis
 t/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/local/texlive/2019/texmf-dist/fonts/enc/d
 vips/lm/lm-rmsc.enc}</usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/l
 mbx12.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb
@@ -1374,7 +1374,7 @@ al/texlive/2019/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/
 ist/fonts/type1/public/lm/lmro12.pfb></usr/local/texlive/2019/texmf-dist/fonts/
 type1/public/lm/lmtk10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/publ
 ic/lm/lmtt12.pfb>
-Output written on project.pdf (13 pages, 393324 bytes).
+Output written on project.pdf (13 pages, 394265 bytes).
 PDF statistics:
  202 PDF objects out of 1000 (max. 8388607)
  160 compressed objects within 2 object streams
