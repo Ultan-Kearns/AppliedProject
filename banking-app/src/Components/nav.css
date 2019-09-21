@@ -1,20 +1,17 @@
-button:hover{
-  background-color: red !important;
-  color: white;
-}
 button{
-  margin-left: 5vw !important;
-  position: flex;
-  align-content: center;
+  float: inherit;
+    margin-left: 2vw;
+    position: relative;
+    margin-top: 20vh;
 }
 nav{
   background-color: black;
   color:white;
   display: flex;
   min-width: 100vw;
-  min-height: 10vh;
   margin-bottom: 10%;
   overflow-x: hidden;
+  justify-content: space-around;
 }
 .navigation{
   float: right;
@@ -23,13 +20,14 @@ nav{
 {
   color:white;
   list-style: none;
-  display: flex;
   margin-top:10%;
   float: left;
+
 }
 .header{
-  color:red;
+  color:white;
+  text-decoration: underline;
   position: absolute;
-text-align: right;
-text-decoration: underline;
+  justify-content: space-around;
+  margin-bottom: 10vh;
 }

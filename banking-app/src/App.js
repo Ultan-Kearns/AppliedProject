@@ -1,12 +1,12 @@
 import React from "react";
 import Nav from "./Components/Nav";
 import "./Components/nav.css";
-
+import "./App.css";
 function App() {
   return (
-    <div className="root">
+    <div className="App">
       {/*Show the navigation component on homepage*/}
-        <Nav />
+        <Nav className="nav"/>
     </div>
   );
 }

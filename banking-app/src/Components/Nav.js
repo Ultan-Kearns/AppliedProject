@@ -17,7 +17,7 @@ function Nav() {
     <div className="navigation">
       <Router>
         <nav>
-          <h1 classNames = "header"> Test</h1>
+        <h1 className="header">independent Banking:<i> We Work For You!</i></h1>
           <ul className="nav-links">
             {/* Buttons that link to various Components */}
             <ButtonToolbar>
