@@ -28,7 +28,7 @@ function Login() {
           <InputGroup.Prepend>
             <InputGroup.Text id="basic-addon1">Password:</InputGroup.Text>
           </InputGroup.Prepend>
-          <FormControl placeholder="Password" aria-label="Password" />
+          <FormControl placeholder="Password" aria-label="Password" type = "password"/>
         </InputGroup>
       </form>
       <Button variant="primary" id="login">
