@@ -2,14 +2,12 @@
 
 .App {
   text-align: center;
-  font-size: calc(10px + 2vmin);
   width: 100%;
   min-height: 100%;
 }
 body{
   font-family: 'Gayathri';
-  font-size: 100px;
-
+  font-size: calc(10px + 2vmin);
 }
 ::-moz-selection { /* Code for Firefox */
   color: white;

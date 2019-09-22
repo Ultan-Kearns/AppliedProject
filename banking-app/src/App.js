@@ -11,7 +11,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Button from "react-bootstrap/Button";
 import ButtonToolbar from "react-bootstrap/ButtonToolbar";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import "./App.css"
+import "./Styles/App.css"
 function App() {
   return (
     <div className="App">

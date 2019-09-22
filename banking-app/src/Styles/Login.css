@@ -1,0 +1,19 @@
+#login{
+  width:100vw;
+  margin-top:35vh;
+}
+#loginForm{
+  justify-content: space-between;
+}
+#username{
+  margin-top: 20vh;
+}
+#password{
+  margin-top:10vh;
+}
+h1{
+  background-color: black;
+  width: 100vw;
+  text-align: center;
+  color:white;
+}
