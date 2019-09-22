@@ -2,12 +2,14 @@
 
 .App {
   text-align: center;
-  font-size: calc(4px + 2vmin);
+  font-size: calc(10px + 2vmin);
   width: 100%;
   min-height: 100%;
 }
 body{
   font-family: 'Gayathri';
+  font-size: 100px;
+
 }
 ::-moz-selection { /* Code for Firefox */
   color: white;
@@ -23,20 +25,22 @@ nav {
   color: white;
   display: flex;
   min-width: 100vw;
+  min-height: 30vh;
   margin-bottom: 10%;
   overflow-x: hidden;
   justify-content: space-around;
 }
 a{
-      margin-left: 5vw;
+  margin-left: 5vw;
+  position: relative;
+  margin-top: 20vh;
 }
 .nav-links {
   color: white;
   list-style: none;
-  margin-top: 25vh;
 }
-.header {
-  color: white;
-  text-decoration: underline;
-  position: absolute;
+#header{
+  text-align: center;
+  background-color: black;
+  color:red;
 }

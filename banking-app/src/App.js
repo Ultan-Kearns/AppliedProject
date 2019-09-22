@@ -15,10 +15,9 @@ import "./App.css"
 function App() {
   return (
     <div className="App">
-      {/*Show the navigation component on homepage*/}
+      {/*Show the navigation throughout app*/}
         <Router>
           <nav>
-          <h1 className="header">independent Banking:<i> We Work For You!</i></h1>
             <ul className="nav-links">
               {/* Buttons that link to various Components */}
               <ButtonToolbar>
