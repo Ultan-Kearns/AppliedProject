@@ -24,7 +24,6 @@ nav {
   display: flex;
   min-width: 100vw;
   min-height: 30vh;
-  margin-bottom: 10%;
   overflow-x: hidden;
   justify-content: space-around;
 }

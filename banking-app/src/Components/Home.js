@@ -4,9 +4,8 @@ function Home() {
     <div className="Home">
       <h1>Welcome to the Independent Banking!</h1>
       <p>
-        Here the user can view bank balance, take out loans, view statements and
-        more! Also include info about bank welcome user show monthly
-        expenditures, withdrawls and also active loans
+      Here the user can view graphs of monthly expenditure, view how much over your current budget you are,
+      view this months transfers
       </p>
     </div>
   );
