@@ -17,3 +17,11 @@ h1{
   text-align: center;
   color:white;
 }
+#buttonReg{
+  margin-left: 30vw;
+  position: relative;
+}
+#buttonPass{
+  margin-left: 20vw;
+  position: relative;
+}
