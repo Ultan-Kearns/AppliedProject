@@ -6,6 +6,7 @@ import "../Styles/Login.css";
 import { Helmet } from "react-helmet";
 import ReactDOM from "react-dom";
 import App from "../App";
+import Register from "./Register";
 class Login extends React.Component {
   constructor(props) {
     super(props);
@@ -20,6 +21,10 @@ class Login extends React.Component {
       username: event.target.value
     });
   };
+  RegisterForm = event =>{
+    ReactDOM.render(<Register />, document.getElementById("root"));
+
+  }
   handlePasswordChange = event => {
     this.setState({
       password: event.target.value
@@ -35,7 +40,7 @@ class Login extends React.Component {
   };
   render() {
     return (
-      <div className="login">
+      <div id="login">
         <Helmet>
           <title>Login</title>
         </Helmet>
@@ -68,8 +73,7 @@ class Login extends React.Component {
               onChange={this.handlePasswordChange}
             />
           </InputGroup>
-
-            <Button size="sm" id ="buttonReg">Register</Button>
+            <Button size="sm" id ="buttonReg" onClick={this.RegisterForm}>Register</Button>
             <Button size="sm" id ="buttonPass">Forgot Password</Button>
           <Button variant="primary" id="login" type="submit">
             Login
