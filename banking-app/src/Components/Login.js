@@ -40,7 +40,7 @@ class Login extends React.Component {
   };
   render() {
     return (
-      <div id="login">
+      <div>
         <Helmet>
           <title>Login</title>
         </Helmet>
@@ -75,7 +75,7 @@ class Login extends React.Component {
           </InputGroup>
             <Button size="sm" id ="buttonReg" onClick={this.RegisterForm}>Register</Button>
             <Button size="sm" id ="buttonPass">Forgot Password</Button>
-          <Button variant="primary" id="login" type="submit">
+          <Button variant="primary" id="loginButton" type="submit">
             Login
           </Button>
         </form>
