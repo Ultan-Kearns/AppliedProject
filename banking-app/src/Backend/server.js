@@ -7,6 +7,17 @@ var mongoDB =
   "mongodb://ultan:ultanultan1@ds135107.mlab.com:35107/appliedproject";
 var Schema = mongoose.Schema;
 var router = express.Router();
+const fs = require("fs");
+const https = require("https");
+const keysDir = "./";
+const keyCert = {
+  //read files
+  key  : fs.readFileSync(keysDir + "localhost.key"),
+  cert  : fs.readFileSync(keysDir + "localhost.cert"),
+ 
+};
+
+
 mongoose.connect(mongoDB, { useUnifiedTopology: true, useNewUrlParser: true });
 //Here we are configuring express to use body-parser as middle-ware.
 app.use(
@@ -16,19 +27,16 @@ app.use(
 );
 app.use(bodyParser.json());
 //left in cross origin for firefox
-app.use(function(req, res, next) {
-  //to allow cross origin requests
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept"
-  );
-  next();
-});
+
+
 var userSchema = new Schema({
   username: { type: String, default: "guest" },
   password: { type: String }
+});
+//change this later
+var statementSchema = new Schema({
+  location: { type: String, default: "Unknown" },
+  cost: { type: String, default: 0 }
 });
 app.get("/", function(req, res) {
   res.status(200).send("Server works");
@@ -40,6 +48,8 @@ app.get("/api/users", function(req, res) {
 });
 //models for mongoose
 var bankUserModel = mongoose.model("users", userSchema);
+var statementModel = mongoose.model("statements", statementSchema);
+
 app.get("/api/users/:id/:password", function(req, res) {
   bankUserModel.findById({username:req.params.username}, function(err, data) {
     console.log("inside" + req.params.username);
@@ -58,9 +68,10 @@ app.get("/api/users/:id/:password", function(req, res) {
     }
   });
 });
-//have server listening at port  8081
-var server = app.listen(8080, function() {
-  var host = server.address().address;
-  var port = server.address().port;
-  console.log("Independent banking server listening: http://%s:%s", host, port);
+app.get("/api/statements", function(req, res) {
+  statementModel.find(function(err, data) {
+    res.json(data);
+  });
 });
+//have server listening at port  8080
+https.createServer(keyCert, app).listen(8080);
