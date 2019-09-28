@@ -8,15 +8,24 @@ var mongoDB =
 var Schema = mongoose.Schema;
 var router = express.Router();
 const fs = require("fs");
+//add https support
 const https = require("https");
 const keysDir = "./";
+//issue with key certs
 const keyCert = {
-  //read files
+  //read files for ssl connection
   key  : fs.readFileSync(keysDir + "localhost.key"),
   cert  : fs.readFileSync(keysDir + "localhost.cert"),
- 
-};
 
+};
+app.use(function(req, res, next) {
+  //to allow cross origin requests
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+  res.header("Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
 
 mongoose.connect(mongoDB, { useUnifiedTopology: true, useNewUrlParser: true });
 //Here we are configuring express to use body-parser as middle-ware.
@@ -74,4 +83,4 @@ app.get("/api/statements", function(req, res) {
   });
 });
 //have server listening at port  8080
-https.createServer(keyCert, app).listen(8080);
+https.createServer(keyCert,app).listen(8080);
