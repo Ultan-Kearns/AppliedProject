@@ -7,6 +7,7 @@ class Statements extends React.Component{
     super(props)
     this.state ={
       statments: "",
+      statementObj:""
     }
   }
   componentDidMount(){

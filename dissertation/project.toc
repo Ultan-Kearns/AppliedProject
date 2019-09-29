@@ -11,3 +11,5 @@
 \contentsline {chapter}{\numberline {5}System Design}{11}{chapter.5}% 
 \contentsline {chapter}{\numberline {6}System Evaluation}{12}{chapter.6}% 
 \contentsline {chapter}{\numberline {7}Conclusion}{13}{chapter.7}% 
+\contentsline {chapter}{Appendices}{14}{section*.8}% 
+\contentsline {chapter}{\numberline {A}Preamble \& Intro}{15}{Appendix.1.A}% 

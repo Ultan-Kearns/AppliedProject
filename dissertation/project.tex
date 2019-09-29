@@ -14,20 +14,20 @@
 \usepackage{upquote}
 \usepackage{amsmath}
 \usepackage{titlesec}
-\usepackage[hidelinks]{hyperref}
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!50!red,
+  urlcolor=green!70!black
+}
 \usepackage{fancyhdr}
 \usetikzlibrary{mindmap,shadows, shapes, arrows, positioning}
-
-%% Change these:
+\usepackage[toc,page]{appendix}
 \newcommand{\projecttitle}{Online Banking Application Using A MERN Stack}
 \newcommand{\projectauthor}{Ultan Kearns}
 \newcommand{\projectadvisor}{Dominic Carr}
 \newcommand{\projectprogramme}{B.Sc.(Hons) in Software Development}
 \newcommand{\projectdate}{\today}
-%% End of things to change.
-
-
-
 \tikzstyle{rect} = [rectangle, fill=blue!50, text width=4.5em, text centered, minimum height=4em, rounded corners]
 \tikzstyle{line} = [draw, ->, very thick]
 \tikzstyle{oval} = [ellipse, fill=green!50, text width=5em, text centered]
@@ -57,7 +57,7 @@
 
     \begin{minipage}[t][3cm]{\textwidth}
       \centering
-      \textbf{Final Year Project}\\[0.3cm]
+      \textbf{Final Year Project - Banking Application using MERN stack}\\[0.3cm]
       Advised by: \projectadvisor \\[0.1cm]
       Department of Computer Science and Applied Physics\\
       Galway-Mayo Institute of Technology (GMIT)
