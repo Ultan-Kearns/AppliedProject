@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Arch Linux) (preloaded format=pdflatex 2019.9.12)  29 SEP 2019 18:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Arch Linux) (preloaded format=pdflatex 2019.9.12)  30 SEP 2019 21:26
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1255,7 +1255,7 @@ Chapter 2.
 ] [6] [7]
 Chapter 3.
 
-LaTeX Warning: Reference `tikz:mydiagram' on page 8 undefined on input line 80.
+LaTeX Warning: Reference `tikz:mydiagram' on page 8 undefined on input line 82.
 
 
 [8
@@ -1296,14 +1296,20 @@ Appendix A.
 [15
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 189.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 189.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 191.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 191.
  (./project.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 189.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 189.
-Package rerunfilecheck Info: File `project.out' has not changed.
-(rerunfilecheck)             Checksum: 1EF3A792151B2435BCDA6463A6EBB98E;656.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 191.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 191.
 
+
+Package rerunfilecheck Warning: File `project.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `project.out':
+(rerunfilecheck)             Before: 1EF3A792151B2435BCDA6463A6EBB98E;656
+(rerunfilecheck)             After:  276047F3C0925290686D46F83A811F27;721.
 
 LaTeX Warning: There were undefined references.
 
@@ -1314,8 +1320,8 @@ runsystem(rm project.pyg)...executed.
 
  ) ) 
 Here is how much of TeX's memory you used:
- 25356 strings out of 492623
- 504908 string characters out of 6135669
+ 25357 strings out of 492623
+ 504919 string characters out of 6135669
  641577 words of memory out of 5000000
  28710 multiletter control sequences out of 15000+600000
  48995 words of font info for 41 fonts, out of 8000000 for 9000
@@ -1331,10 +1337,10 @@ e1/public/lm/lmr12.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr8.pfb></
 usr/share/texmf-dist/fonts/type1/public/lm/lmro12.pfb></usr/share/texmf-dist/fo
 nts/type1/public/lm/lmtk10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmt
 t12.pfb>
-Output written on project.pdf (15 pages, 395880 bytes).
+Output written on project.pdf (15 pages, 396332 bytes).
 PDF statistics:
- 223 PDF objects out of 1000 (max. 8388607)
- 179 compressed objects within 2 object streams
- 36 named destinations out of 1000 (max. 500000)
+ 227 PDF objects out of 1000 (max. 8388607)
+ 183 compressed objects within 2 object streams
+ 37 named destinations out of 1000 (max. 500000)
  218 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -6,12 +6,11 @@ import "../Styles/Login.css";
 import { Helmet } from "react-helmet";
 
 
-class Register extends React.Component {
+class Forgot extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       username: "",
-      password: ""
     };
   }
 
@@ -20,13 +19,8 @@ class Register extends React.Component {
       username: event.target.value
     });
   };
-  handlePasswordChange = event => {
-    this.setState({
-      password: event.target.value
-    });
-  };
   handleSubmitForm = event => {
-    if (this.state.username === "test" && this.state.password.length > 6) {
+    if (this.state.username === "test") {
     } else {
       alert("sorry either user account doesn't exist or the password is wrong");
       return null;
@@ -35,11 +29,12 @@ class Register extends React.Component {
   render() {
     return (
       <div id="root">
-        <form id="registerForm" onSubmit={this.handleSubmitForm}>
-        <Helmet>
-          <title>Register</title>
-        </Helmet>
-          <h1>Register here by entering below</h1>
+      <Helmet>
+        <title>Forgot Password</title>
+      </Helmet>
+      <h1>Forgot your password?</h1>
+      <p>Enter your username here and hit the submit button and we'll send you an email with your password</p>
+        <form id="passwordForm" onSubmit={this.handleSubmitForm}>
           <InputGroup className="mb-3" id="username">
             <InputGroup.Prepend>
               <InputGroup.Text id="basic-addon1">Username:</InputGroup.Text>
@@ -51,20 +46,8 @@ class Register extends React.Component {
               onChange={this.handleUsernameChange}
             />
           </InputGroup>
-          <InputGroup className="mb-3" id="password">
-            <InputGroup.Prepend>
-              <InputGroup.Text id="basic-addon1">Password:</InputGroup.Text>
-            </InputGroup.Prepend>
-            <FormControl
-              placeholder="Password"
-              aria-label="Password"
-              type="password"
-              value={this.state.password}
-              onChange={this.handlePasswordChange}
-            />
-          </InputGroup>
           <Button variant="primary" id="login" type="submit">
-            Register
+            Send E-mail
           </Button>
         </form>
       </div>
@@ -72,4 +55,4 @@ class Register extends React.Component {
   }
 }
 
-export default Register;
+export default Forgot;

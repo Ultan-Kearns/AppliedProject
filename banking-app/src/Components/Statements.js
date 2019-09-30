@@ -1,4 +1,3 @@
-
 import React from "react";
 import axios from "axios";
 
@@ -6,20 +5,19 @@ class Statements extends React.Component{
   constructor(props){
     super(props)
     this.state ={
-      statments: "",
+      statments: [{}],
       statementObj:""
     }
   }
   componentDidMount(){
     const axios = require('axios').default;
-
     axios.get("https://localhost:8080/api/statements").then(res=>{
-      console.log(res.data)
+      console.log(res.data[0].location)
       this.setState({
-        statements:res.data,
+        statements:res.data
       });
     })
-  }
+   }
   render() {
     return (
       <div className="statements">

@@ -7,6 +7,8 @@ import { Helmet } from "react-helmet";
 import ReactDOM from "react-dom";
 import App from "../App";
 import Register from "./Register";
+import Forgot from "./Forgot";
+
 class Login extends React.Component {
   constructor(props) {
     super(props);
@@ -23,6 +25,10 @@ class Login extends React.Component {
   };
   RegisterForm = event =>{
     ReactDOM.render(<Register />, document.getElementById("root"));
+
+  }
+  PassForm = event =>{
+    ReactDOM.render(<Forgot />, document.getElementById("root"));
 
   }
   handlePasswordChange = event => {
@@ -74,7 +80,7 @@ class Login extends React.Component {
             />
           </InputGroup>
             <Button size="sm" id ="buttonReg" onClick={this.RegisterForm}>Register</Button>
-            <Button size="sm" id ="buttonPass">Forgot Password</Button>
+            <Button size="sm" id ="buttonPass" onClick={this.PassForm}>Forgot Password</Button>
           <Button variant="primary" id="loginButton" type="submit">
             Login
           </Button>
