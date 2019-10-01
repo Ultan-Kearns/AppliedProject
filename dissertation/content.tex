@@ -33,8 +33,51 @@ React or \LaTeX\  before but I plan to learn a lot about these technologies duri
 
 
 \chapter{Introduction}
-The introduction should be about three to five pages long.
-Make sure you use references~\cite{einstein}
+%Make sure you use references
+\section {Why A MERN stack?}
+\begin{center}
+\includegraphics[width=\textwidth]{img/mern.jpeg}
+\end{center}
+There are many reasons why I have chosen to use a MERN stack for this
+application the main one is because it provides a framework for a full stack
+application.
+MERN stands for \textbf{Mongo - For the database backend(Hosted on Mlab, all user info is stored here),
+Express - A web application framework
+host a server in a relatively short time compared to other methods
+, ReactJS for asynchronous JS \& Node - for package management.}
+\cite{https://www.mongodb.com/blog/post/the-modern-application-stack-part-1-introducing-the-mean-stack}
+I also chose this project because I have zero experience in ReactJS and since
+it's such an up and coming framework I decided on it for this project. It also
+offers many features and libraries which are desirable when programming a user
+interface to ensure the user finds the application intuitive and easy to use.
+ReactJS also utilizes modular programming for components which makes designing
+web applications far easier than just using HTML, CSS \& Javascript. React is
+also very fast at rendering pages so that the user will not experience a major
+delay in accessing information.
+\\
+As you have read above the MERN stack is very powerful in creating a full-stack
+application when used correctly.  The reason I chose the database Mongo is because
+it offers an open source alternative to MySQL and other proprietary databases
+\cite{https://www.educba.com/mongodb-open-source/}
+and many companies seem to be migrating to it because it is open source and in
+some cases may offer better performance than other databases.
+\begin{center}
+\includegraphics[width=\textwidth]{img/mongostat.png}
+\end{center}
+\cite{https://blog.risingstack.com/node-js-developer-survey-results-2016/}
+Mongo is easy to learn as it stores it's data in JSON format and is schemaless, that is the user
+defines their own schemas. I have also used it for 2 other projects in Angular and find it an
+easy database to use in relation to projects.
+
+I chose to use Express because it is a very useful API when creating a server.
+It is very helpful when pulling data from the server and displaying it to the client
+it is also very scalable and offers good security when used properly.  It is also very
+easy to setup and can be connected to the MLab database in minutes upon starting the
+project.  I have also used this server before and have a bit of experience with it and
+found it very helpful in the projects I used it for which were a messaging forum and an
+E-commerce application both using MEAN(Mongo,Express,Angular \& Node) stacks.
+
+
 \section{Project Objectives}
 The objective of this project is to provide safe \& secure online banking as well
 as an intuitive and professional user interface to ensure the user's satisfaction.
@@ -79,7 +122,7 @@ Describe the way you went about your project:
 \item If team based, did you use GitHub during the development process.
 \item Selection criteria for algorithms, languages, platforms and technolo-gies.
 \end{itemize}
-Check out the nice graphs in Figure \ref{tikz:graphs}, and the nice diagram in Figure \ref{tikz:mydiagram}.
+Check out the nice graphs in Figure %\ref{tikz:graphs}, and the nice diagram in Figure %\ref{tikz:mydiagram}.
 
 \begin{figure}
   \centering
@@ -127,7 +170,7 @@ Check out the nice graphs in Figure \ref{tikz:graphs}, and the nice diagram in F
   \draw [line] (a) -- (b);
   \end{tikzpicture}
   \caption{Nice pictures}
-  \label{tikz:graphs}
+
 \end{figure}
 
 
@@ -187,5 +230,4 @@ About three pages.
 \hyperlink{page.3}{Go to page 3}
 \end{itemize}
 \end{appendices}
-
 \end{document}
