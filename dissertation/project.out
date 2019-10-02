@@ -1,15 +1,23 @@
 \BOOKMARK [0][-]{chapter.1}{Introduction}{}% 1
 \BOOKMARK [1][-]{section.1.1}{Why A MERN stack?}{chapter.1}% 2
-\BOOKMARK [1][-]{section.1.2}{Project Objectives}{chapter.1}% 3
-\BOOKMARK [0][-]{chapter.2}{Context}{}% 4
-\BOOKMARK [1][-]{section.2.1}{Filler}{chapter.2}% 5
-\BOOKMARK [2][-]{subsection.2.1.1}{More filler}{section.2.1}% 6
-\BOOKMARK [1][-]{section.2.2}{Filler}{chapter.2}% 7
-\BOOKMARK [0][-]{chapter.3}{Methodology}{}% 8
-\BOOKMARK [0][-]{chapter.4}{Technology Review}{}% 9
-\BOOKMARK [1][-]{section.4.1}{XML}{chapter.4}% 10
-\BOOKMARK [0][-]{chapter.5}{System Design}{}% 11
-\BOOKMARK [0][-]{chapter.6}{System Evaluation}{}% 12
-\BOOKMARK [0][-]{chapter.7}{Conclusion}{}% 13
-\BOOKMARK [0][-]{section*.8}{Appendices}{}% 14
-\BOOKMARK [0][-]{Appendix.1.A}{Preamble \046 Intro}{}% 15
+\BOOKMARK [2][-]{subsection.1.1.1}{Mongo}{section.1.1}% 3
+\BOOKMARK [2][-]{subsection.1.1.2}{Express}{section.1.1}% 4
+\BOOKMARK [2][-]{subsection.1.1.3}{React}{section.1.1}% 5
+\BOOKMARK [2][-]{subsection.1.1.4}{Node}{section.1.1}% 6
+\BOOKMARK [1][-]{section.1.2}{Why a banking application?}{chapter.1}% 7
+\BOOKMARK [2][-]{subsection.1.2.1}{Explanation of why I chose this project}{section.1.2}% 8
+\BOOKMARK [2][-]{subsection.1.2.2}{My Contention with existing online banking systems \046 how I plan to improve upon them}{section.1.2}% 9
+\BOOKMARK [1][-]{section.1.3}{Requirements}{chapter.1}% 10
+\BOOKMARK [0][-]{chapter.2}{Context}{}% 11
+\BOOKMARK [1][-]{section.2.1}{Project Objectives}{chapter.2}% 12
+\BOOKMARK [1][-]{section.2.2}{Filler}{chapter.2}% 13
+\BOOKMARK [2][-]{subsection.2.2.1}{More filler}{section.2.2}% 14
+\BOOKMARK [1][-]{section.2.3}{Filler}{chapter.2}% 15
+\BOOKMARK [0][-]{chapter.3}{Methodology}{}% 16
+\BOOKMARK [0][-]{chapter.4}{Technology Review}{}% 17
+\BOOKMARK [1][-]{section.4.1}{XML}{chapter.4}% 18
+\BOOKMARK [0][-]{chapter.5}{System Design}{}% 19
+\BOOKMARK [0][-]{chapter.6}{System Evaluation}{}% 20
+\BOOKMARK [0][-]{chapter.7}{Conclusion}{}% 21
+\BOOKMARK [0][-]{section*.8}{Appendices}{}% 22
+\BOOKMARK [0][-]{Appendix.1.A}{Preamble \046 Intro}{}% 23

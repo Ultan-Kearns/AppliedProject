@@ -46,15 +46,8 @@ Express - A web application framework
 host a server in a relatively short time compared to other methods
 , ReactJS for asynchronous JS \& Node - for package management.}
 \cite{https://www.mongodb.com/blog/post/the-modern-application-stack-part-1-introducing-the-mean-stack}
-I also chose this project because I have zero experience in ReactJS and since
-it's such an up and coming framework I decided on it for this project. It also
-offers many features and libraries which are desirable when programming a user
-interface to ensure the user finds the application intuitive and easy to use.
-ReactJS also utilizes modular programming for components which makes designing
-web applications far easier than just using HTML, CSS \& Javascript. React is
-also very fast at rendering pages so that the user will not experience a major
-delay in accessing information.
 \\
+\subsection{Mongo}
 As you have read above the MERN stack is very powerful in creating a full-stack
 application when used correctly.  The reason I chose the database Mongo is because
 it offers an open source alternative to MySQL and other proprietary databases
@@ -68,7 +61,8 @@ some cases may offer better performance than other databases.
 Mongo is easy to learn as it stores it's data in JSON format and is schemaless, that is the user
 defines their own schemas. I have also used it for 2 other projects in Angular and find it an
 easy database to use in relation to projects.
-
+\\
+\subsection{Express}
 I chose to use Express because it is a very useful API when creating a server.
 It is very helpful when pulling data from the server and displaying it to the client
 it is also very scalable and offers good security when used properly.  It is also very
@@ -76,20 +70,102 @@ easy to setup and can be connected to the MLab database in minutes upon starting
 project.  I have also used this server before and have a bit of experience with it and
 found it very helpful in the projects I used it for which were a messaging forum and an
 E-commerce application both using MEAN(Mongo,Express,Angular \& Node) stacks.
-
+\\
+\subsection{React}
+I also chose this project because I have zero experience in ReactJS and since
+it's such an up and coming framework I decided on it for this project. It also
+offers many features and libraries which are desirable when programming a user
+interface to ensure the user finds the application intuitive and easy to use.
+ReactJS also utilizes modular programming for components which makes designing
+web applications far easier than just using HTML, CSS \& Javascript. React is
+also very fast at rendering pages so that the user will not experience a major
+delay in accessing information.
+\\
+\subsection{Node}
 The reason I chose Node Package Manager was because it offers many great packages which can be
 used to improve productivity on my part and also the applications security, UI,
 UX and various other aspects of the application.  I debated using Yarn for this
 project but settled on Node because it was already installed on my laptop.  Node
 is a very useful tool when developing full-stack applications and was very helpful
 in installing tools and libraries for react.
-\section{Project Objectives}
-The objective of this project is to provide safe \& secure online banking as well
-as an intuitive and professional user interface to ensure the user's satisfaction.
+\section{Why a banking application?}
+\subsection{Explanation of why I chose this project}
+A banking application is broad in scope and offers many questions to the developer
+such as how can I optimize load times and how can I ensure user data is secure.
+I think questions such as these offer the potential for growth in the areas of
+design and problem solving - which are two of the most major skills a software
+developer can possess. I feel that an application such as a multi-user banking
+system can be beneficial to my career and help to improve my skills as a developer.
+Banking applications also have the potential to offer a wide array of features and
+are ubiquitous in the real world, think major banks such as AIB \& Bank of Ireland.
+Banking systems also offer a broad range of problems such as security, design
+and usability.
+\\
+\subsection{My Contention with existing online banking systems \& how I plan to improve upon them}
+The current generation of online banking systems or at least the ones I have used
+tend to have a variety of problems.  These problems are glaringly obvious to most
+people and the main problems include but are not limited to: usability, appearance, lack of
+personalization \& lack of information given to user.  I will how I plan to solve each of
+these problems below:
+\begin{itemize}
+\item \textbf{Usability:} I aim to provide an intuitive and cutting-edge user
+interface using the latest react libraries to provide the user with an easy to
+understand banking application.  All features will be easily navigated to using
+a navigation bar and I will aim to make features as obvious as possible to the user.
+\item \textbf{Appearance:} The UI of the modern day online banking system tends
+to be absolutely depressing.  I aim to reduce this by adding in a responsive UI
+and to offer the user a vibrant online banking experience.
+\item \textbf{Lack of personalization:} I aim to make this application very personal
+to the user by adding in personalized expenditure charts and giving the user a
+unique and inimitable banking experience.
+\item \textbf{Lack of information:} Modern banking applications sometimes display
+a lack of information given to the user.  I plan to solve this by offering the user
+expenditure charts, reports and also by sending automated emails to them when
+their account balance falls below a user specified number.
+\end{itemize}
+\section{Requirements}
+Below I will include the requirements for this application and expand upon them.
+\begin{itemize}
+\item \textbf{Multiple Users:} This application must allow multiple users to
+execute simultaneous banking and user sessions must be independent of each
+other.
+\item \textbf{Secure:} Database information must be encrypted
+\item \textbf{Accurate:} All statments and user information must be accurate.
+\item \textbf{Login/Logout} The user must be able to login and logout
+\item \textbf{information}: The user must be able to view all information related
+to them (eg: statments, withdrawl dates etc.)
+\item \textbf{Graphs/Charts}: The banking app must display expenditures and
+credit in graphs and charts generated from python scriptss
+\item \textbf{Emails} The application must be able to email the user a forgot
+password if they forgot their password and alos be able to email the user if
+budget controls are turned on.
+\item \textbf{Register} The user must be able to register new accounts using
+an email and password also ensure that it cannot be an email that already exists.
+\item \textbf{Delete account} The user must be able to terminate their account
+and all information that exists about the user must be purged from the server.
+\item \textbf{Change information} The user must be able to update all their personal
+information in relation to their account except obviously banking statments and
+balances.
+\item \textbf{User sessions} The application must use cookies to maintain a
+user session and ensure that the cookies do not last more than a specified timeframe
+max of a day.
+\end{itemize}
+
 \chapter{Context}
 \begin{itemize}
 \item Provide a context for your project.
-\item Set out the objectives of the project
+\section{Project Objectives}
+\begin{itemize}
+  \item To provide safe \& secure online banking
+  \item To provide an intuitive UI that can be easily navigated by the user
+  \item To provide user generated statistical analysis of expenditure
+  \item To provide a multi-user server and banking service
+  \item To provide a RESTful API to the banking service(client/server totally independent
+  ,stateless environment, caching)
+  \item To provide a scalable application
+  \item To provide user with security using encryption for the mongo database
+  \item To limit loadtimes of traditional online banking eg. 365 Online Banking and others
+\end{itemize}
 \item Briefly list each chapter / section and provide a 1-2 line description of what each section contains.
 \item List the resource URL (GitHub address) for the project and provide a brief list of the main elements at the URL.
 \end{itemize}
