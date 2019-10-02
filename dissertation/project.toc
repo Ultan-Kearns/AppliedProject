@@ -1,25 +1,32 @@
-\contentsline {paragraph}{Analysis of this project: }{3}{paragraph*.3}% 
-\contentsline {paragraph}{Authors: }{3}{paragraph*.4}% 
-\contentsline {chapter}{\numberline {1}Introduction}{4}{chapter.1}% 
-\contentsline {section}{\numberline {1.1}Why A MERN stack?}{4}{section.1.1}% 
-\contentsline {subsection}{\numberline {1.1.1}Mongo}{4}{subsection.1.1.1}% 
-\contentsline {subsection}{\numberline {1.1.2}Express}{5}{subsection.1.1.2}% 
-\contentsline {subsection}{\numberline {1.1.3}React}{5}{subsection.1.1.3}% 
-\contentsline {subsection}{\numberline {1.1.4}Node}{6}{subsection.1.1.4}% 
-\contentsline {section}{\numberline {1.2}Why a banking application?}{6}{section.1.2}% 
-\contentsline {subsection}{\numberline {1.2.1}Explanation of why I chose this project}{6}{subsection.1.2.1}% 
-\contentsline {subsection}{\numberline {1.2.2}My Contention with existing online banking systems \& how I plan to improve upon them}{6}{subsection.1.2.2}% 
-\contentsline {section}{\numberline {1.3}Requirements}{7}{section.1.3}% 
-\contentsline {chapter}{\numberline {2}Context}{8}{chapter.2}% 
-\contentsline {section}{\numberline {2.1}Project Objectives}{8}{section.2.1}% 
-\contentsline {section}{\numberline {2.2}Filler}{8}{section.2.2}% 
-\contentsline {subsection}{\numberline {2.2.1}More filler}{9}{subsection.2.2.1}% 
-\contentsline {section}{\numberline {2.3}Filler}{9}{section.2.3}% 
-\contentsline {chapter}{\numberline {3}Methodology}{11}{chapter.3}% 
-\contentsline {chapter}{\numberline {4}Technology Review}{13}{chapter.4}% 
-\contentsline {section}{\numberline {4.1}XML}{13}{section.4.1}% 
-\contentsline {chapter}{\numberline {5}System Design}{14}{chapter.5}% 
-\contentsline {chapter}{\numberline {6}System Evaluation}{15}{chapter.6}% 
-\contentsline {chapter}{\numberline {7}Conclusion}{16}{chapter.7}% 
-\contentsline {chapter}{Appendices}{17}{section*.8}% 
-\contentsline {chapter}{\numberline {A}Preamble \& Intro}{18}{Appendix.1.A}% 
+\contentsline {paragraph}{Analysis of this project: }{4}{paragraph*.3}% 
+\contentsline {paragraph}{Authors: }{4}{paragraph*.4}% 
+\contentsline {chapter}{\numberline {1}Introduction}{5}{chapter.1}% 
+\contentsline {section}{\numberline {1.1}Why A MERN stack?}{5}{section.1.1}% 
+\contentsline {subsection}{\numberline {1.1.1}Mongo}{6}{subsection.1.1.1}% 
+\contentsline {subsection}{\numberline {1.1.2}Express}{6}{subsection.1.1.2}% 
+\contentsline {subsection}{\numberline {1.1.3}React}{7}{subsection.1.1.3}% 
+\contentsline {subsection}{\numberline {1.1.4}Node}{7}{subsection.1.1.4}% 
+\contentsline {section}{\numberline {1.2}Why a banking application?}{7}{section.1.2}% 
+\contentsline {subsection}{\numberline {1.2.1}Explanation of why I chose this project}{7}{subsection.1.2.1}% 
+\contentsline {subsection}{\numberline {1.2.2}My Contention with existing online banking systems \& how I plan to improve upon them}{8}{subsection.1.2.2}% 
+\contentsline {section}{\numberline {1.3}Requirements}{8}{section.1.3}% 
+\contentsline {section}{\numberline {1.4}Outline of chapters}{9}{section.1.4}% 
+\contentsline {subsection}{\numberline {1.4.1}Context}{9}{subsection.1.4.1}% 
+\contentsline {subsection}{\numberline {1.4.2}Methodology}{10}{subsection.1.4.2}% 
+\contentsline {subsection}{\numberline {1.4.3}Technical Review}{10}{subsection.1.4.3}% 
+\contentsline {subsection}{\numberline {1.4.4}System Design}{10}{subsection.1.4.4}% 
+\contentsline {subsection}{\numberline {1.4.5}System Evaluation}{10}{subsection.1.4.5}% 
+\contentsline {subsection}{\numberline {1.4.6}Conclusion}{10}{subsection.1.4.6}% 
+\contentsline {chapter}{\numberline {2}Context}{11}{chapter.2}% 
+\contentsline {section}{\numberline {2.1}Project Objectives}{11}{section.2.1}% 
+\contentsline {section}{\numberline {2.2}Filler}{12}{section.2.2}% 
+\contentsline {subsection}{\numberline {2.2.1}More filler}{12}{subsection.2.2.1}% 
+\contentsline {section}{\numberline {2.3}Filler}{13}{section.2.3}% 
+\contentsline {chapter}{\numberline {3}Methodology}{15}{chapter.3}% 
+\contentsline {chapter}{\numberline {4}Technology Review}{17}{chapter.4}% 
+\contentsline {section}{\numberline {4.1}XML}{17}{section.4.1}% 
+\contentsline {chapter}{\numberline {5}System Design}{18}{chapter.5}% 
+\contentsline {chapter}{\numberline {6}System Evaluation}{19}{chapter.6}% 
+\contentsline {chapter}{\numberline {7}Conclusion}{20}{chapter.7}% 
+\contentsline {chapter}{Appendices}{21}{section*.8}% 
+\contentsline {chapter}{\numberline {A}Preamble \& Intro}{22}{Appendix.1.A}% 
