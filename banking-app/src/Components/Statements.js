@@ -1,12 +1,12 @@
 import React from "react";
-import axios from "axios";
+import Axios from "axios";
 
 class Statements extends React.Component{
   constructor(props){
     super(props)
     this.state ={
       statments: [{}],
-      statementObj:""
+      users:"",
     }
   }
   componentDidMount(){
@@ -14,8 +14,14 @@ class Statements extends React.Component{
     axios.get("https://localhost:8080/api/statements").then(res=>{
       console.log(res.data[0].location)
       this.setState({
-        statements:res.data
+        statements:res.data,
       });
+      /*
+       axios.get("https://localhost:8080/api/users").then(userRes=>{
+         this.setState({
+          users:userRes.data,
+        });
+        */
     })
    }
   render() {

@@ -8,13 +8,18 @@ import ReactDOM from "react-dom";
 import App from "../App";
 import Register from "./Register";
 import Forgot from "./Forgot";
+import Axios from "axios";
 
 class Login extends React.Component {
+  //username test
+  //password test
   constructor(props) {
     super(props);
     this.state = {
       username: "",
-      password: ""
+      password: "",
+      checkUsername:"",
+      checkPassword:""
     };
   }
 
@@ -36,8 +41,28 @@ class Login extends React.Component {
       password: event.target.value
     });
   };
+  componentDidMount(){
+    const axios = require('axios').default;
+    axios.get("https://localhost:8080/api/users").then(res=>{
+      console.log(res.data[0].username)
+      console.log(res.data[0].password)
+      this.setState({
+        checkUsername:res.data[0].username,
+        checkPassword: res.data[0].password
+      });
+      console.log("CHECK USER" + this.state.checkUsername)
+      console.log("CHECK PASS " + this.state.checkPassword)
+      /*
+       axios.get("https://localhost:8080/api/users").then(userRes=>{
+         this.setState({
+          users:userRes.data,
+        });
+        */
+    })
+   }
   handleSubmitForm = event => {
-    if (this.state.username === "test" && this.state.password === "test") {
+    console.log(this.state.username + " " + this.state.checkUsername)
+    if (this.state.username === this.state.checkUsername && this.state.password === this.state.checkPassword) {
       ReactDOM.render(<App />, document.getElementById("root"));
     } else {
       alert("sorry either user account doesn't exist or the password is wrong");
