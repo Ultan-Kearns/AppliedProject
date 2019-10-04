@@ -42,26 +42,24 @@ class Login extends React.Component {
     });
   };
   componentDidMount(){
+    //connect to server upon component load
     const axios = require('axios').default;
     axios.get("https://localhost:8080/api/users").then(res=>{
+      //log for testing
       console.log(res.data[0].username)
       console.log(res.data[0].password)
       this.setState({
         checkUsername:res.data[0].username,
         checkPassword: res.data[0].password
       });
+      //Testing log
       console.log("CHECK USER" + this.state.checkUsername)
       console.log("CHECK PASS " + this.state.checkPassword)
-      /*
-       axios.get("https://localhost:8080/api/users").then(userRes=>{
-         this.setState({
-          users:userRes.data,
-        });
-        */
     })
    }
   handleSubmitForm = event => {
     console.log(this.state.username + " " + this.state.checkUsername)
+    //check to see if the entered data matches need to find way to make multi user friendly
     if (this.state.username === this.state.checkUsername && this.state.password === this.state.checkPassword) {
       ReactDOM.render(<App />, document.getElementById("root"));
     } else {

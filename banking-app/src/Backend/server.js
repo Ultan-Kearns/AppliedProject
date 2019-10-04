@@ -11,7 +11,8 @@ const fs = require("fs");
 //add https support
 const https = require("https");
 const keysDir = "./";
-//issue with key certs
+//issue with key certs this adds security to backend to ensure user cannot Access
+//unless given key and proper CERTIFICATE
 const keyCert = {
   //read files for ssl connection
   key  : fs.readFileSync(keysDir + "localhost.key"),
@@ -27,17 +28,16 @@ app.use(function(req, res, next) {
   next();
 });
 
+//use mongoose API to connect to backend
 mongoose.connect(mongoDB, { useUnifiedTopology: true, useNewUrlParser: true });
-//Here we are configuring express to use body-parser as middle-ware.
+//body parser for middleware
 app.use(
   bodyParser.urlencoded({
     extended: false
   })
 );
 app.use(bodyParser.json());
-//left in cross origin for firefox
-
-
+//change later
 var userSchema = new Schema({
   username: { type: String, default: "guest" },
   password: { type: String }
@@ -82,5 +82,5 @@ app.get("/api/statements", function(req, res) {
     res.json(data);
   });
 });
-//have server listening at port  8080
+//have server listening at port  8080 and have it take keycert to secure server
 https.createServer(keyCert,app).listen(8080);

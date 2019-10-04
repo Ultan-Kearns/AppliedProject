@@ -5,23 +5,22 @@ class Statements extends React.Component{
   constructor(props){
     super(props)
     this.state ={
-      statments: [{}],
+      cost:"",
+      location:"",
       users:"",
     }
   }
   componentDidMount(){
+    //connect to server and get statements upon component load
+    //use loop and check user ID to print out right statements for user
     const axios = require('axios').default;
     axios.get("https://localhost:8080/api/statements").then(res=>{
+      //log res for testing
       console.log(res.data[0].location)
       this.setState({
-        statements:res.data,
+        location:res.data[0].location,
+        cost: res.data[0].cost
       });
-      /*
-       axios.get("https://localhost:8080/api/users").then(userRes=>{
-         this.setState({
-          users:userRes.data,
-        });
-        */
     })
    }
   render() {
@@ -32,7 +31,7 @@ class Statements extends React.Component{
         <p>
           You can view statements here : D- maybe have a dropdown to select year
           or month of statement
-          {JSON.stringify(this.state.statements)}
+          { " Payment Amount: " + this.state.cost + " Location where spent: " + this.state.location}
         </p>
       </div>
     );
