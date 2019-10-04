@@ -17,7 +17,7 @@ const keyCert = {
   //read files for ssl connection
   key  : fs.readFileSync(keysDir + "localhost.key"),
   cert  : fs.readFileSync(keysDir + "localhost.cert"),
-
+  clientCert: fs.readFileSync(keysDir + "client.csr"),
 };
 app.use(function(req, res, next) {
   //to allow cross origin requests

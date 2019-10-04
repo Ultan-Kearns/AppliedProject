@@ -35,10 +35,10 @@ class Register extends React.Component {
   render() {
     return (
       <div id="root">
+      <Helmet>
+        <title>Register</title>
+      </Helmet>
         <form id="registerForm" onSubmit={this.handleSubmitForm}>
-        <Helmet>
-          <title>Register</title>
-        </Helmet>
           <h1>Register here by entering below</h1>
           <InputGroup className="mb-3" id="username">
             <InputGroup.Prepend>

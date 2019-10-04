@@ -28,6 +28,7 @@ class Forgot extends React.Component {
   };
   render() {
     return (
+
       <div id="root">
       <Helmet>
         <title>Forgot Password</title>

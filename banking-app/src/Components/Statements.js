@@ -1,5 +1,6 @@
 import React from "react";
 import Axios from "axios";
+import { Helmet } from "react-helmet";
 
 class Statements extends React.Component{
   constructor(props){
@@ -26,7 +27,9 @@ class Statements extends React.Component{
   render() {
     return (
       <div className="statements">
-        <title>statements</title>
+      <Helmet>
+        <title>Statements</title>
+      </Helmet>
         <h1>Welcome to the Statements!</h1>
         <p>
           You can view statements here : D- maybe have a dropdown to select year
