@@ -1,7 +1,9 @@
 var express = require("express");
 var app = express();
 var path = require("path");
+//parses response
 var bodyParser = require("body-parser");
+//api to communicate with DB
 var mongoose = require("mongoose");
 var mongoDB =
   "mongodb://ultan:ultanultan1@ds135107.mlab.com:35107/appliedproject";
@@ -15,19 +17,10 @@ const keysDir = "./";
 //unless given key and proper CERTIFICATE
 const keyCert = {
   //read files for ssl connection
-  key  : fs.readFileSync(keysDir + "localhost.key"),
-  cert  : fs.readFileSync(keysDir + "localhost.cert"),
-  clientCert: fs.readFileSync(keysDir + "client.csr"),
+  key: fs.readFileSync(keysDir + "localhost.key"),
+  cert: fs.readFileSync(keysDir + "localhost.cert"),
+  clientCert: fs.readFileSync(keysDir + "client.csr")
 };
-app.use(function(req, res, next) {
-  //to allow cross origin requests
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
-  res.header("Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept");
-  next();
-});
-
 //use mongoose API to connect to backend
 mongoose.connect(mongoDB, { useUnifiedTopology: true, useNewUrlParser: true });
 //body parser for middleware
@@ -60,13 +53,19 @@ var bankUserModel = mongoose.model("users", userSchema);
 var statementModel = mongoose.model("statements", statementSchema);
 
 app.get("/api/users/:id/:password", function(req, res) {
-  bankUserModel.findById({username:req.params.username}, function(err, data) {
+  bankUserModel.findById({ username: req.params.username }, function(
+    err,
+    data
+  ) {
     console.log("inside" + req.params.username);
     if (err) {
       res.status(500, "Error " + err);
     } else if (data != null) {
       //compare user params to params in DB
-      if (this.username == data.username && data.password == req.params.password) {
+      if (
+        this.username == data.username &&
+        data.password == req.params.password
+      ) {
         console.log("equals");
         res.json(data);
       } else {
@@ -82,48 +81,53 @@ app.get("/api/statements", function(req, res) {
     res.json(data);
   });
 });
-app.get('/api/users/:id', function(req, res,next) {
-  console.log("Retrieving user ID")
-  userModel.findById(req.params.id,
-    function(err, data) {
-      if(data == null)
-        res.status(404,"User does not exist on this server",err);
-else if(data.email == req.params.id){
-var nodemailer = require('nodemailer');
-var mail = data.email;
-console.log(mail);
-var transporter = nodemailer.createTransport({
-  service: 'protonmail',
-  auth: {
-    //login
-    user: 'reactproject19@protonmail.com',
-    pass: 'GMITreact19'
-  }
-});
-var mailOptions = {
-  //this sets up mail options
-  from: 'reactproject19@protonmail',
-  to: mail,
-  subject: 'Forgot Independent Banking password',
-  text: 'Here is your password for Independent Banking: ' + data.password
-};
-//Send email or log error if user doesn't exist
-transporter.sendMail(mailOptions, function(error, info){
-  if (error) {
-    console.log(error);
-  } else {
-    console.log('Sent Email: ' + data.email);
-  }
-});
-res.status(200).send("Sent Email" +  data.email);
-}
-else {
-              console.log("error email not sent")
-            res.json("error email not sent")
-            res.status(404,"User does not exist on our server")
-          }
-  })
+app.get("/api/users/:id", function(req, res, next) {
+  console.log("Retrieving user ID");
+  bankUserModel.findById(req.params.id, function(err, data) {
+    if (data == null)
+      res.status(404, "User does not exist on this server", err);
+    else if (data.email == req.params.id) {
+      var nodemailer = require("nodemailer");
+      var mail = data.email;
+      console.log(mail);
+      var transporter = nodemailer.createTransport({
+        service: "protonmail",
+        auth: {
+          //login
+          user: "reactproject19@protonmail.com",
+          pass: "GMITreact19"
+        }
+      });
+      var mailOptions = {
+        //this sets up mail options
+        from: "reactproject19@protonmail",
+        to: mail,
+        subject: "Forgot Independent Banking password",
+        text: "Here is your password for Independent Banking: " + data.password
+      };
+      //Send email or log error if user doesn't exist
+      transporter.sendMail(mailOptions, function(error, info) {
+        if (error) {
+          console.log(error);
+        } else {
+          console.log("Sent Email: " + data.email);
+        }
+      });
+      res.status(200).send("Sent Email" + data.email);
+    } else {
+      console.log("error email not sent");
+      res.json("error email not sent");
+      res.status(404, "User does not exist on our server");
+    }
+  });
 });
 
 //have server listening at port  8080 and have it take keycert to secure server
-https.createServer(keyCert,app).listen(8080);
+https.createServer(keyCert, app).listen(8080);
+//have server listening at port  8080 unsecure
+/*
+var server = app.listen(8080, function() {
+var host = server.address().address
+  var port = server.address().port
+  console.log("Example app listening at http://%s:%s", host, port)
+})*/

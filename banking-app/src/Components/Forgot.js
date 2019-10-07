@@ -5,12 +5,11 @@ import React from "react";
 import "../Styles/Login.css";
 import { Helmet } from "react-helmet";
 
-
 class Forgot extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: "",
+      username: ""
     };
   }
 
@@ -19,22 +18,33 @@ class Forgot extends React.Component {
       username: event.target.value
     });
   };
-  handleSubmitForm = event => {
-    if (this.state.username === "test") {
-    } else {
-      alert("sorry either user account doesn't exist or the password is wrong");
-      return null;
-    }
-  };
+  componentDidMount() {
+    //connect to server and get statements upon component load
+    //use loop and check user ID to print out right statements for user
+    const axios = require("axios").default;
+    axios
+      .get(
+        "https://localhost:8080/api/users/" +
+          this.state.username +
+          "/" +
+          this.state.password
+      )
+      .then(res => {
+        //log res for testing
+        console.log(res.data);
+      });
+  }
   render() {
     return (
-
       <div id="root">
-      <Helmet>
-        <title>Forgot Password</title>
-      </Helmet>
-      <h1>Forgot your password?</h1>
-      <p>Enter your username here and hit the submit button and we'll send you an email with your password</p>
+        <Helmet>
+          <title>Forgot Password</title>
+        </Helmet>
+        <h1>Forgot your password?</h1>
+        <p>
+          Enter your username here and hit the submit button and we'll send you
+          an email with your password
+        </p>
         <form id="passwordForm" onSubmit={this.handleSubmitForm}>
           <InputGroup className="mb-3" id="username">
             <InputGroup.Prepend>
