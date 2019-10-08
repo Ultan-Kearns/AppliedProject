@@ -5,10 +5,15 @@ var path = require("path");
 var bodyParser = require("body-parser");
 //api to communicate with DB
 var mongoose = require("mongoose");
-var mongoDB =
-  "mongodb://ultan:ultanultan1@ds135107.mlab.com:35107/appliedproject";
+//mongoDB link
+var mongoDB =  "mongodb://ultan:ultanultan1@ds135107.mlab.com:35107/appliedproject";
 var Schema = mongoose.Schema;
 var router = express.Router();
+app.all('/*', function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "X-Requested-With");
+  next();
+});
 const fs = require("fs");
 //add https support
 const https = require("https");
@@ -32,7 +37,7 @@ app.use(
 app.use(bodyParser.json());
 //change later
 var userSchema = new Schema({
-  username: { type: String, default: "guest" },
+  username: { type: String },
   password: { type: String }
 });
 //change this later
@@ -41,8 +46,9 @@ var statementSchema = new Schema({
   cost: { type: String, default: 0 }
 });
 app.get("/", function(req, res) {
-  res.status(200).send("Server works");
+  res.status(200).send("Server is up");
 });
+//get app users then send response
 app.get("/api/users", function(req, res) {
   bankUserModel.find(function(err, data) {
     res.json(data);
@@ -52,24 +58,20 @@ app.get("/api/users", function(req, res) {
 var bankUserModel = mongoose.model("users", userSchema);
 var statementModel = mongoose.model("statements", statementSchema);
 
-app.get("/api/users/:id/:password", function(req, res) {
-  bankUserModel.findById({ username: req.params.username }, function(
-    err,
-    data
-  ) {
-    console.log("inside" + req.params.username);
+//for login
+app.get("/api/users/:uID/:userPass", function(req, res) {
+  bankUserModel.findById({ user: req.params.user }, function(err,  data) {
     if (err) {
-      res.status(500, "Error " + err);
+      //send back generic server fail code
+      res.status(500, "INTERNAL SERVER ERROR " + err);
     } else if (data != null) {
       //compare user params to params in DB
       if (
-        this.username == data.username &&
+        this.user == req.params.username &&
         data.password == req.params.password
       ) {
-        console.log("equals");
         res.json(data);
       } else {
-        console.log("error" + req.params.username);
         res.json("error");
         res.status(404, "User not found");
       }
@@ -81,15 +83,12 @@ app.get("/api/statements", function(req, res) {
     res.json(data);
   });
 });
-app.get("/api/users/:id", function(req, res, next) {
-  console.log("Retrieving user ID");
-  bankUserModel.findById(req.params.id, function(err, data) {
+app.get("/api/users/:uId", function(req, res, next) {
+    bankUserModel.findById(req.params.email, function(err, data) {
     if (data == null)
       res.status(404, "User does not exist on this server", err);
-    else if (data.email == req.params.id) {
+    else if (data.email == req.params.email) {
       var nodemailer = require("nodemailer");
-      var mail = data.email;
-      console.log(mail);
       var transporter = nodemailer.createTransport({
         service: "protonmail",
         auth: {
@@ -110,14 +109,14 @@ app.get("/api/users/:id", function(req, res, next) {
         if (error) {
           console.log(error);
         } else {
-          console.log("Sent Email: " + data.email);
+          console.log("Sent Email to address: " + data.email);
         }
       });
-      res.status(200).send("Sent Email" + data.email);
+      res.status(200).send("Sent Email to address:" + data.email);
     } else {
-      console.log("error email not sent");
+      console.log("EMAIL COULD NOT BE SENT");
       res.json("error email not sent");
-      res.status(404, "User does not exist on our server");
+      res.status(404, "User does not exist on our server, sorry for inconveniencce");
     }
   });
 });
@@ -130,4 +129,5 @@ var server = app.listen(8080, function() {
 var host = server.address().address
   var port = server.address().port
   console.log("Example app listening at http://%s:%s", host, port)
-})*/
+})
+*/

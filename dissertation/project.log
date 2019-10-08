@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Arch Linux) (preloaded format=pdflatex 2019.9.12)  2 OCT 2019 20:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Arch Linux) (preloaded format=pdflatex 2019.9.12)  8 OCT 2019 23:27
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1240,7 +1240,7 @@ File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 
 ]
 Chapter 1.
-<img/mern.jpeg, id=211, 1304.875pt x 746.79pt>
+<img/mern.jpeg, id=213, 1304.875pt x 746.79pt>
 File: img/mern.jpeg Graphic file (type jpg)
 <use img/mern.jpeg>
 Package pdftex.def Info: img/mern.jpeg  used on input line 39.
@@ -1262,7 +1262,7 @@ LaTeX Warning: Citation `https://www.educba.com/mongodb-open-source/' on page 5
 [5
 
  <./img/mern.jpeg>]
-<img/mongostat.png, id=216, 1346.02875pt x 1084.05pt>
+<img/mongostat.png, id=218, 1346.02875pt x 1084.05pt>
 File: img/mongostat.png Graphic file (type png)
 <use img/mongostat.png>
 Package pdftex.def Info: img/mongostat.png  used on input line 58.
@@ -1333,7 +1333,9 @@ Chapter 7.
 
 ]
 Appendix A.
-[22
+(./project.bbl [22
+
+]) [23
 
 ]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 349.
@@ -1351,27 +1353,27 @@ runsystem(rm project.pyg)...executed.
 
  ) ) 
 Here is how much of TeX's memory you used:
- 25408 strings out of 492623
- 505657 string characters out of 6135669
- 641539 words of memory out of 5000000
- 28734 multiletter control sequences out of 15000+600000
- 48995 words of font info for 41 fonts, out of 8000000 for 9000
+ 25418 strings out of 492623
+ 505757 string characters out of 6135669
+ 641569 words of memory out of 5000000
+ 28737 multiletter control sequences out of 15000+600000
+ 53213 words of font info for 42 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,10n,79p,849b,804s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-rmtt.enc}{/usr/share/texmf-dis
-t/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm
--ts1.enc}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf-
+{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf-dist/
+fonts/enc/dvips/lm/lm-rmtt.enc}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mat
+hit.enc}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/share/texmf-
 dist/fonts/enc/dvips/lm/lm-rmsc.enc}</usr/share/texmf-dist/fonts/type1/public/l
 m/lmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/sha
 re/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/share/texmf-dist/fonts/typ
 e1/public/lm/lmr12.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr8.pfb></
-usr/share/texmf-dist/fonts/type1/public/lm/lmro12.pfb></usr/share/texmf-dist/fo
-nts/type1/public/lm/lmtk10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmt
-t12.pfb>
-Output written on project.pdf (22 pages, 510856 bytes).
+usr/share/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf-dist/fo
+nts/type1/public/lm/lmro12.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmt
+k10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmtt12.pfb>
+Output written on project.pdf (23 pages, 526783 bytes).
 PDF statistics:
- 347 PDF objects out of 1000 (max. 8388607)
- 292 compressed objects within 3 object streams
- 60 named destinations out of 1000 (max. 500000)
+ 360 PDF objects out of 1000 (max. 8388607)
+ 302 compressed objects within 4 object streams
+ 63 named destinations out of 1000 (max. 500000)
  364 words of extra memory for PDF output out of 10000 (max. 10000000)
 

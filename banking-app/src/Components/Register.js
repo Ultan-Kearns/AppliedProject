@@ -4,6 +4,7 @@ import Button from "react-bootstrap/Button";
 import React from "react";
 import "../Styles/Login.css";
 import { Helmet } from "react-helmet";
+const axios = require("axios").default;
 
 class Register extends React.Component {
   constructor(props) {
@@ -27,22 +28,29 @@ class Register extends React.Component {
   handleSubmitForm = event => {
     if (this.state.password.length >= 6) {
       this.register();
+      event.preventDefault();
     } else {
       console.log(this.state.password.length);
       alert("Password must be 6 characters or greater");
-      return null;
+      event.preventDefault();
     }
   };
   register() {
-    const axios = require("axios").default;
-    axios
-      .post("localhost:8080/api/users", {
+    axios.post("https://localhost:8080/api/users", {
         username: this.state.username,
         password: this.state.password
       })
       .then(function(res) {
         console.log("User registered" + res);
+        res.send("USER CREATED");
       });
+
+  }
+  componentDidMount(){
+    axios.get("https://localhost:8080/api/users").then(res=>{
+      //log res for testing
+      console.log(res.data)
+     })
   }
   render() {
     return (
