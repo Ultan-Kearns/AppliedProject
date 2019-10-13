@@ -17,15 +17,12 @@ app.all('/*', function(req, res, next) {
 const fs = require("fs");
 //add https support
 const https = require("https");
-const keysDir = "./";
-//issue with key certs this adds security to backend to ensure user cannot Access
-//unless given key and proper CERTIFICATE
-const keyCert = {
-  //read files for ssl connection
-  key: fs.readFileSync(keysDir + "localhost.key"),
-  cert: fs.readFileSync(keysDir + "localhost.cert"),
-  clientCert: fs.readFileSync(keysDir + "client.csr")
-};
+const keysDirectory = "./";
+const security = {
+  //read files for ssl connection - keys are generated with openssl
+  key: fs.readFileSync(keysDirectory + "decryptedkey.pem"),
+  cert: fs.readFileSync(keysDirectory + "cert.pem"),
+ };
 //use mongoose API to connect to backend
 mongoose.connect(mongoDB, { useUnifiedTopology: true, useNewUrlParser: true });
 //body parser for middleware
@@ -58,7 +55,7 @@ app.get("/api/users", function(req, res) {
 var bankUserModel = mongoose.model("users", userSchema);
 var statementModel = mongoose.model("statements", statementSchema);
 
-//for login
+//user login function
 app.get("/api/users/:uID/:userPass", function(req, res) {
   bankUserModel.findById({ user: req.params.user }, function(err,  data) {
     if (err) {
@@ -122,7 +119,7 @@ app.get("/api/users/:uId", function(req, res, next) {
 });
 
 //have server listening at port  8080 and have it take keycert to secure server
-https.createServer(keyCert, app).listen(8080);
+https.createServer(security, app).listen(8080);
 //have server listening at port  8080 unsecure
 /*
 var server = app.listen(8080, function() {

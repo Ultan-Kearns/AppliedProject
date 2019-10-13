@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Arch Linux) (preloaded format=pdflatex 2019.9.12)  8 OCT 2019 23:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Arch Linux) (preloaded format=pdflatex 2019.9.12)  8 OCT 2019 23:36
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1243,21 +1243,21 @@ Chapter 1.
 <img/mern.jpeg, id=213, 1304.875pt x 746.79pt>
 File: img/mern.jpeg Graphic file (type jpg)
 <use img/mern.jpeg>
-Package pdftex.def Info: img/mern.jpeg  used on input line 39.
+Package pdftex.def Info: img/mern.jpeg  used on input line 40.
 (pdftex.def)             Requested size: 390.0pt x 223.19548pt.
 
 LaTeX Warning: Citation `https://www.mongodb.com/blog/post/the-modern-applicati
 on-stack-part-1-introducing-the-mean-stack' on page 5 undefined on input line 4
-8.
+9.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 41--50
+Underfull \hbox (badness 10000) in paragraph at lines 42--51
 
  []
 
 
 LaTeX Warning: Citation `https://www.educba.com/mongodb-open-source/' on page 5
- undefined on input line 54.
+ undefined on input line 55.
 
 [5
 
@@ -1265,30 +1265,30 @@ LaTeX Warning: Citation `https://www.educba.com/mongodb-open-source/' on page 5
 <img/mongostat.png, id=218, 1346.02875pt x 1084.05pt>
 File: img/mongostat.png Graphic file (type png)
 <use img/mongostat.png>
-Package pdftex.def Info: img/mongostat.png  used on input line 58.
+Package pdftex.def Info: img/mongostat.png  used on input line 59.
 (pdftex.def)             Requested size: 390.0pt x 314.08525pt.
 
 
 LaTeX Warning: Citation `https://blog.risingstack.com/node-js-developer-survey-
-results-2016/' on page 6 undefined on input line 60.
+results-2016/' on page 6 undefined on input line 61.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 60--65
+Underfull \hbox (badness 10000) in paragraph at lines 61--66
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 66--74
+Underfull \hbox (badness 10000) in paragraph at lines 67--75
 
  []
 
 [6 <./img/mongostat.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 75--84
+Underfull \hbox (badness 10000) in paragraph at lines 76--85
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 93--104
+Underfull \hbox (badness 10000) in paragraph at lines 94--105
 
  []
 
@@ -1338,16 +1338,19 @@ Appendix A.
 ]) [23
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 349.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 349.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 350.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 350.
  (./project.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 349.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 349.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 350.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 350.
 Package rerunfilecheck Info: File `project.out' has not changed.
 (rerunfilecheck)             Checksum: 6219704F9FFD1592B8FC5C9536118F5F;1852.
 
 
 LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
 runsystem(rm project.pyg)...executed.
 
@@ -1370,7 +1373,7 @@ e1/public/lm/lmr12.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr8.pfb></
 usr/share/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf-dist/fo
 nts/type1/public/lm/lmro12.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmt
 k10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmtt12.pfb>
-Output written on project.pdf (23 pages, 526783 bytes).
+Output written on project.pdf (23 pages, 526792 bytes).
 PDF statistics:
  360 PDF objects out of 1000 (max. 8388607)
  302 compressed objects within 4 object streams
