@@ -1,8 +1,18 @@
 \begin{thebibliography}{1}
 
-\bibitem{einstein}
-A.~Einstein, ``{Zur Elektrodynamik bewegter K{\"o}rper}. ({German}) [{On} the
-  electrodynamics of moving bodies],'' {\em Annalen der Physik}, vol.~322,
-  no.~10, pp.~891--921, 1905.
+\bibitem{MERN}
+A.~Morgan, ``The modern application stack – part 1: Introducing the mean
+  stack.''
+\newblock
+  \url{https://www.mongodb.com/blog/post/the-modern-application-stack-part-1-introducing-the-mean-stack}.
+
+\bibitem{Mongo}
+Educba, ``Is mongodb open source?.''
+\newblock \url{https://www.educba.com/mongodb-open-source/}.
+
+\bibitem{Survey}
+F.~Hámori, ``How developers use node.js - survey results.''
+\newblock
+  \url{https://blog.risingstack.com/node-js-developer-survey-results-2016/}.
 
 \end{thebibliography}
