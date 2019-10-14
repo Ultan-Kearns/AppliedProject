@@ -1,6 +1,6 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Arch Linux) (preloaded format=pdflatex 2019.9.12)  14 OCT 2019 16:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Arch Linux) (preloaded format=pdflatex 2019.9.12)  14 OCT 2019 17:14
 entering extended mode
- \write18 enabled.
+ restricted \write18 enabled.
  %&-line parsing enabled.
 **project.tex
 (./project.tex
@@ -151,7 +151,7 @@ LaTeX Info: Redefining \addtolength on input line 81.
 )
 (/usr/share/texmf-dist/tex/latex/tools/shellesc.sty
 Package: shellesc 2016/06/07 v0.02a unified shell escape interface for LaTeX
-Package shellesc Info: Unrestricted shell escape enabled on input line 67.
+Package shellesc Info: Restricted shell escape enabled on input line 69.
 )
 (/usr/share/texmf-dist/tex/latex/ifplatform/ifplatform.sty
 Package: ifplatform 2017/10/13 v0.4a Testing for the operating system
@@ -171,13 +171,11 @@ Package pdftexcmds Info: \pdfdraftmode found.
 (/usr/share/texmf-dist/tex/generic/oberdiek/catchfile.sty
 Package: catchfile 2016/05/16 v1.7 Catch the contents of a file (HO)
 )
-runsystem(uname -s > "project.w18")...executed.
 
- (./project.w18)
-runsystem(rm -- "project.w18")...executed.
+Package ifplatform Warning: 
+    shell escape is disabled, so I can only detect \ifwindows.
 
-)
-(/usr/share/texmf-dist/tex/generic/xstring/xstring.sty
+) (/usr/share/texmf-dist/tex/generic/xstring/xstring.sty
 (/usr/share/texmf-dist/tex/generic/xstring/xstring.tex
 \integerpart=\count114
 \decimalpart=\count115
@@ -208,9 +206,19 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@float@every@listing=\toks18
 \c@listing=\count119
 )
-runsystem(mkdir -p _minted-project)...executed.
+runsystem(mkdir -p _minted-project)...disabled (restricted).
 
 
+
+! Package minted Error: You must invoke LaTeX with the -shell-escape flag.
+
+See the minted package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.4 \usepackage
+               [utf8]{inputenc}
+? 
 (/usr/share/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2018/08/11 v1.3c Input encoding file
 \inpenc@prehook=\toks19
@@ -1079,11 +1087,21 @@ Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 407.
 Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 408.
 Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 409.
 )
-runsystem(which pygmentize && touch project.aex)...executed.
+runsystem(which pygmentize && touch project.aex)...disabled (restricted).
 
-runsystem(rm project.aex)...executed.
 
- (./project.aux)
+
+! Package minted Error: You must have `pygmentize' installed to use this packag
+e.
+
+See the minted package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.38 \begin{document}
+                     
+? 
+(./project.aux)
 \openout1 = `project.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 38.
@@ -1102,8 +1120,7 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 38.
 LaTeX Font Info:    ... okay on input line 38.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 38.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 38.
-
-(/usr/share/texmf-dist/tex/latex/base/ts1cmr.fd
+ (/usr/share/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 38.
@@ -1195,7 +1212,7 @@ Overfull \hbox (17.62482pt too wide) in paragraph at lines 58--65
 [][] 
  []
 
-<img/gmit-logo.jpg, id=151, 281.853pt x 88.4103pt>
+<img/gmit-logo.jpg, id=155, 281.853pt x 88.4103pt>
 File: img/gmit-logo.jpg Graphic file (type jpg)
 <use img/gmit-logo.jpg>
 Package pdftex.def Info: img/gmit-logo.jpg  used on input line 66.
@@ -1211,174 +1228,4 @@ File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 4.
 
-(/usr/share/texmf-dist/tex/latex/lm/omslmsy.fd
-File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 4.
-
-(/usr/share/texmf-dist/tex/latex/lm/omxlmex.fd
-File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 4.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 4.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 4.
-LaTeX Font Info:    Try loading font information for TS1+lmr on input line 4.
-
-(/usr/share/texmf-dist/tex/latex/lm/ts1lmr.fd
-File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) [2
-
-])
-\tf@toc=\write7
-\openout7 = `project.toc'.
-
- (./content.tex [3] [4
-
-]
-Chapter 1.
-<img/mern.jpeg, id=211, 1304.875pt x 746.79pt>
-File: img/mern.jpeg Graphic file (type jpg)
-<use img/mern.jpeg>
-Package pdftex.def Info: img/mern.jpeg  used on input line 39.
-(pdftex.def)             Requested size: 390.0pt x 223.19548pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 41--50
-
- []
-
-[5
-
- <./img/mern.jpeg>]
-<img/mongostat.png, id=219, 1346.02875pt x 1084.05pt>
-File: img/mongostat.png Graphic file (type png)
-<use img/mongostat.png>
-Package pdftex.def Info: img/mongostat.png  used on input line 58.
-(pdftex.def)             Requested size: 390.0pt x 314.08525pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 60--65
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 66--74
-
- []
-
-[6 <./img/mongostat.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 75--84
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 93--104
-
- []
-
-[7] [8] [9] [10]
-Chapter 2.
-[11
-
-] [12] [13] [14]
-Chapter 3.
-[15
-
-] [16]
-Chapter 4.
-\openout3 = `project.pyg'.
-
-(./_minted-project/default-pyg-prefix.pygstyle)
-(./_minted-project/default.pygstyle)
-(./_minted-project/8D08549ADFE5202857EFB73D9AED6C41E0E265AF7DC3CB82A7987B1EFC1B
-0991.pygtex
-LaTeX Font Info:    Try loading font information for OT1+lmtt on input line 1.
- (/usr/share/texmf-dist/tex/latex/lm/ot1lmtt.fd
-File: ot1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    Font shape `OT1/lmtt/bx/n' in size <12> not available
-(Font)              Font shape `OT1/lmtt/b/n' tried instead on input line 2.
-) [17
-
-]
-Chapter 5.
-[18
-
-]
-Chapter 6.
-[19
-
-]
-Chapter 7.
-[20
-
-] [21
-
-
-]
-Appendix A.
-(./project.bbl [22
-
-]
-Underfull \hbox (badness 1383) in paragraph at lines 4--8
-[]\OT1/lmr/m/n/12 A. Mor-gan, ``The mod-ern ap-pli-ca-tion stack { part 1: In-t
-ro-duc-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 4--8
-\OT1/lmr/m/n/12 ing the mean stack.''  [][]$\OT1/lmtt/m/n/12 https : / / www . 
-mongodb . com / blog / post /
- []
-
-
-Overfull \hbox (18.89209pt too wide) in paragraph at lines 4--8
-\OT1/lmtt/m/n/12 the-[]modern-[]application-[]stack-[]part-[]1-[]introducing-[]
-the-[]mean-[]stack$[][]\OT1/lmr/m/n/12 . 
- []
-
-
-Underfull \hbox (badness 1622) in paragraph at lines 10--12
-[]\OT1/lmr/m/n/12 Educba, ``Is mon-godb open source?.''  [][]$\OT1/lmtt/m/n/12 
-https : / / www . educba . com /
- []
-
-) [23
-
-]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 349.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 349.
- (./project.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 349.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 349.
-Package rerunfilecheck Info: File `project.out' has not changed.
-(rerunfilecheck)             Checksum: 6219704F9FFD1592B8FC5C9536118F5F;1852.
-runsystem(rm project.pyg)...executed.
-
- ) ) 
-Here is how much of TeX's memory you used:
- 25420 strings out of 492623
- 505761 string characters out of 6135669
- 641620 words of memory out of 5000000
- 28738 multiletter control sequences out of 15000+600000
- 48995 words of font info for 41 fonts, out of 8000000 for 9000
- 1141 hyphenation exceptions out of 8191
- 55i,10n,79p,849b,804s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-rmtt.enc}{/usr/share/texmf-dis
-t/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm
--ts1.enc}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf-
-dist/fonts/enc/dvips/lm/lm-rmsc.enc}</usr/share/texmf-dist/fonts/type1/public/l
-m/lmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/sha
-re/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/share/texmf-dist/fonts/typ
-e1/public/lm/lmr12.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr8.pfb></
-usr/share/texmf-dist/fonts/type1/public/lm/lmro12.pfb></usr/share/texmf-dist/fo
-nts/type1/public/lm/lmtk10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmt
-t12.pfb>
-Output written on project.pdf (23 pages, 516281 bytes).
-PDF statistics:
- 366 PDF objects out of 1000 (max. 8388607)
- 309 compressed objects within 4 object streams
- 65 named destinations out of 1000 (max. 500000)
- 364 words of extra memory for PDF output out of 10000 (max. 10000000)
-
+(/usr/share/texmf-dist/tex/latex/l
