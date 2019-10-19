@@ -1,3 +1,5 @@
+import Login from "./Login";
+import ReactDOM from "react-dom";
 import InputGroup from "react-bootstrap/InputGroup";
 import FormControl from "react-bootstrap/FormControl";
 import Button from "react-bootstrap/Button";
@@ -5,7 +7,6 @@ import React from "react";
 import "../Styles/Login.css";
 import { Helmet } from "react-helmet";
 const axios = require("axios").default;
-
 class Register extends React.Component {
   constructor(props) {
     super(props);
@@ -35,14 +36,15 @@ class Register extends React.Component {
       event.preventDefault();
     }
   };
-  register() {
-    axios.post("https://localhost:8080/api/users", {
-        username: this.state.username,
-        password: this.state.password
-      })
-      .then(function(res) {
+  register = event => {
+    let username = this.state.username;
+    let password = this.state.password;
+    const user = {username: username ,password: password};
+    axios.post("https://localhost:8080/api/users",user).then(function(res) {
         console.log("User registered" + res);
         res.send("USER CREATED");
+        ReactDOM.render(<Login />, document.getElementById("root"));
+
       });
 
   }
@@ -58,7 +60,7 @@ class Register extends React.Component {
         <Helmet>
           <title>Register</title>
         </Helmet>
-        <form id="registerForm" onSubmit={this.handleSubmitForm}>
+        <form id="registerForm" onSubmit={this.register}>
           <h1>Register here by entering below</h1>
           <InputGroup className="mb-3" id="username">
             <InputGroup.Prepend>

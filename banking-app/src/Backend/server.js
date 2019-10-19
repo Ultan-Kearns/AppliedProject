@@ -9,6 +9,7 @@ var mongoose = require("mongoose");
 var mongoDB =  "mongodb://ultan:ultanultan1@ds135107.mlab.com:35107/appliedproject";
 var Schema = mongoose.Schema;
 var router = express.Router();
+//need this for some browsers
 app.all('/*', function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "X-Requested-With");
@@ -59,10 +60,10 @@ var statementModel = mongoose.model("statements", statementSchema);
 app.get("/api/users/:uID/:userPass", function(req, res) {
   bankUserModel.findById({ user: req.params.user }, function(err,  data) {
     if (err) {
-      //send back generic server fail code
+      //send back error 500 to show the server had internel error
       res.status(500, "INTERNAL SERVER ERROR " + err);
     } else if (data != null) {
-      //compare user params to params in DB
+      //compare user username and password to the username and password in DB
       if (
         this.user == req.params.username &&
         data.password == req.params.password
@@ -81,10 +82,10 @@ app.get("/api/statements", function(req, res) {
   });
 });
 app.get("/api/users/:uId", function(req, res, next) {
-    bankUserModel.findById(req.params.email, function(err, data) {
+    bankUserModel.findById(req.params.username, function(err, data) {
     if (data == null)
       res.status(404, "User does not exist on this server", err);
-    else if (data.email == req.params.email) {
+    else if (data.username == req.params.username) {
       var nodemailer = require("nodemailer");
       var transporter = nodemailer.createTransport({
         service: "protonmail",
@@ -95,13 +96,13 @@ app.get("/api/users/:uId", function(req, res, next) {
         }
       });
       var mailOptions = {
-        //this sets up mail options
+        //Setting up which account to use for seending emails
         from: "reactproject19@protonmail",
         to: mail,
         subject: "Forgot Independent Banking password",
         text: "Here is your password for Independent Banking: " + data.password
       };
-      //Send email or log error if user doesn't exist
+      //Send email or log errors if user doesn't exist
       transporter.sendMail(mailOptions, function(error, info) {
         if (error) {
           console.log(error);
@@ -119,12 +120,5 @@ app.get("/api/users/:uId", function(req, res, next) {
 });
 
 //have server listening at port  8080 and have it take keycert to secure server
+//uses Secure Socket Layer
 https.createServer(security, app).listen(8080);
-//have server listening at port  8080 unsecure
-/*
-var server = app.listen(8080, function() {
-var host = server.address().address
-  var port = server.address().port
-  console.log("Example app listening at http://%s:%s", host, port)
-})
-*/

@@ -30,11 +30,13 @@ class Login extends React.Component {
   };
   RegisterForm = event =>{
     ReactDOM.render(<Register />, document.getElementById("root"));
+    event.preventDefault();
 
   }
   PassForm = event =>{
     ReactDOM.render(<Forgot />, document.getElementById("root"));
-
+    //stops refresh of page
+    event.preventDefault();
   }
   handlePasswordChange = event => {
     this.setState({
@@ -62,6 +64,7 @@ class Login extends React.Component {
     //check to see if the entered data matches need to find way to make multi user friendly
     if (this.state.username === this.state.checkUsername && this.state.password === this.state.checkPassword) {
       ReactDOM.render(<App />, document.getElementById("root"));
+          event.preventDefault();
     } else {
       alert("sorry either user account doesn't exist or the password is wrong");
       return null;
