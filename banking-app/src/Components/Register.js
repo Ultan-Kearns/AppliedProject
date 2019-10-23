@@ -1,4 +1,3 @@
-import Login from "./Login";
 import ReactDOM from "react-dom";
 import InputGroup from "react-bootstrap/InputGroup";
 import FormControl from "react-bootstrap/FormControl";
@@ -7,7 +6,7 @@ import React from "react";
 import "../Styles/Login.css";
 import { Helmet } from "react-helmet";
 const axios = require("axios").default;
-class Register extends React.Component {
+ class Register extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -35,16 +34,16 @@ class Register extends React.Component {
       event.preventDefault();
     }
   };
-  //probably can't post due to SSL 
-  register = event => {
+  //probably can't post due to SSL
+  register = event =>{
     let username = this.state.username;
     let password = this.state.password;
     const user = {username: username ,password: password};
     const params = new URLSearchParams();
-    axios.post('https://localhost:8080/api/users', {user}).then(res=>{
+    axios.post('https://localhost:8080/api/users',user).then(res=>{
       console.log(res.data);
-    });
-
+     });
+     event.preventDefault();
 
   }
   componentDidMount(){
