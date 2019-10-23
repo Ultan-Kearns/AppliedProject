@@ -28,24 +28,23 @@ class Register extends React.Component {
   };
   handleSubmitForm = event => {
     if (this.state.password.length >= 6) {
-      this.register();
-      event.preventDefault();
+       event.preventDefault();
     } else {
       console.log(this.state.password.length);
       alert("Password must be 6 characters or greater");
       event.preventDefault();
     }
   };
+  //probably can't post due to SSL 
   register = event => {
     let username = this.state.username;
     let password = this.state.password;
     const user = {username: username ,password: password};
-    axios.post("https://localhost:8080/api/users",user).then(function(res) {
-        console.log("User registered" + res);
-        res.send("USER CREATED");
-        ReactDOM.render(<Login />, document.getElementById("root"));
+    const params = new URLSearchParams();
+    axios.post('https://localhost:8080/api/users', {user}).then(res=>{
+      console.log(res.data);
+    });
 
-      });
 
   }
   componentDidMount(){
