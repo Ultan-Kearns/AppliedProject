@@ -9,6 +9,8 @@ var mongoose = require("mongoose");
 var mongoDB =  "mongodb://ultan:ultanultan1@ds135107.mlab.com:35107/appliedproject";
 var Schema = mongoose.Schema;
 var router = express.Router();
+var cors = require('cors')
+app.use(cors()) // Use this after the variable declaration
 //need this for some browsers
 app.all('/*', function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
