@@ -14,7 +14,7 @@ app.use(cors()) // Use this after the variable declaration
 //need this for some browsers
 app.all('/*', function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "X-Requested-With");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   next();
 });
 const fs = require("fs");
@@ -45,13 +45,19 @@ var statementSchema = new Schema({
   location: { type: String, default: "Unknown" },
   cost: { type: String, default: 0 }
 });
+//Here I will use get requests to retrieve resources
 app.get("/", function(req, res) {
-  res.status(200).send("Server is up");
+  res.status(200).send("Server is up and running!");
 });
-//get app users then send response
 app.get("/api/users", function(req, res) {
   bankUserModel.find(function(err, data) {
     res.json(data);
+  });
+});
+app.get("/api/statements", function(req, res) {
+  statementModel.find(function(err, data) {
+    res.json(data);
+
   });
 });
 //models for mongoose
@@ -78,11 +84,7 @@ app.get("/api/users/:uID/:userPass", function(req, res) {
     }
   });
 });
-app.get("/api/statements", function(req, res) {
-  statementModel.find(function(err, data) {
-    res.json(data);
-  });
-});
+
 app.get("/api/users/:uId", function(req, res, next) {
     bankUserModel.findById(req.params.username, function(err, data) {
     if (data == null)
@@ -120,7 +122,11 @@ app.get("/api/users/:uId", function(req, res, next) {
     }
   });
 });
-
+//post requests
+app.post('/api/users',function(req,res,next){
+  username: req.body.username;
+  password: req.body.password;
+});
 //have server listening at port  8080 and have it take keycert to secure server
 //uses Secure Socket Layer
 https.createServer(security, app).listen(8080);

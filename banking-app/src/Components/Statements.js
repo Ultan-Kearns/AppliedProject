@@ -11,7 +11,7 @@ class Statements extends React.Component{
       users:"",
     }
   }
-  componentDidMount(){
+  componentWillMount(){
     //connect to server and get statements upon component load
     //use loop and check user ID to print out right statements for user
     const axios = require('axios').default;

@@ -6,6 +6,14 @@ import React from "react";
 import "../Styles/Login.css";
 import { Helmet } from "react-helmet";
 const axios = require("axios").default;
+let axiosConfig = {
+  headers: {
+      'Content-Type' : 'application/json; charset=UTF-8',
+      'Accept': 'Token',
+      "Access-Control-Allow-Origin": "*",
+
+  }
+};
  class Register extends React.Component {
   constructor(props) {
     super(props);
@@ -34,15 +42,15 @@ const axios = require("axios").default;
       event.preventDefault();
     }
   };
-  //probably can't post due to SSL
+//need to define models + routes
   register = event =>{
     let username = this.state.username;
     let password = this.state.password;
-    const user = {username: username ,password: password};
-    const params = new URLSearchParams();
-    axios.post('https://localhost:8080/api/users',user).then(res=>{
-      console.log(res.data);
-     });
+    const newUser = {username: username ,password: password};
+    //this is not getting called
+    axios.post('https://localhost:8080/api/users',newUser);
+      //for testing delete after
+      alert("username " + newUser.username + " Password " + newUser.password);
      event.preventDefault();
 
   }
