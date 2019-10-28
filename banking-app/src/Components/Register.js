@@ -6,14 +6,6 @@ import React from "react";
 import "../Styles/Login.css";
 import { Helmet } from "react-helmet";
 const axios = require("axios").default;
-let axiosConfig = {
-  headers: {
-      'Content-Type' : 'application/json; charset=UTF-8',
-      'Accept': 'Token',
-      "Access-Control-Allow-Origin": "*",
-
-  }
-};
  class Register extends React.Component {
   constructor(props) {
     super(props);
@@ -42,18 +34,18 @@ let axiosConfig = {
       event.preventDefault();
     }
   };
-//need to define models + routes
-  register = event =>{
-    let username = this.state.username;
-    let password = this.state.password;
-    const newUser = {username: username ,password: password};
-    //this is not getting called
-    axios.post('https://localhost:8080/api/users',newUser);
-      //for testing delete after
-      alert("username " + newUser.username + " Password " + newUser.password);
-     event.preventDefault();
+   register = event =>{
+    let user = this.state.username;
+    let pass = this.state.password;
+    const newUser = {username: user ,password: pass};
+    //this is issue with server https://jsonplaceholder.typicode.com/posts CORS ISSUE
+    axios.post("https://localhost:8080/api/users",newUser).then(res=>{
+      //log res for testing
+      console.log(res.data)
+    })
+   event.preventDefault();
 
-  }
+}
   componentDidMount(){
     axios.get("https://localhost:8080/api/users").then(res=>{
       //log res for testing
