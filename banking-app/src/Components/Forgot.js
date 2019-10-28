@@ -4,8 +4,9 @@ import Button from "react-bootstrap/Button";
 import React from "react";
 import "../Styles/Login.css";
 import { Helmet } from "react-helmet";
-
-class Forgot extends React.Component {
+const axios = require("axios").default;
+class Forgot extends React.Component
+{
   constructor(props) {
     super(props);
     this.state = {
@@ -18,21 +19,15 @@ class Forgot extends React.Component {
       username: event.target.value
     });
   };
+  handleSubmitForm = event =>{
+    console.log(this.state.username)
+    axios.get("https://localhost:8080/api/users/" + this.state.username).then(res=>{
+      console.log(res.data)
+    });
+    event.preventDefault();
+  }
   componentDidMount() {
     //connect to server and get statements upon component load
-    //use loop and check user ID to print out right statements for user
-    const axios = require("axios").default;
-    axios
-      .get(
-        "https://localhost:8080/api/users/" +
-          this.state.username +
-          "/" +
-          this.state.password
-      )
-      .then(res => {
-        //log res for testing
-        console.log(res.data);
-      });
   }
   render() {
     return (
@@ -46,16 +41,16 @@ class Forgot extends React.Component {
           an email with your password
         </p>
         <form id="passwordForm" onSubmit={this.handleSubmitForm}>
-          <InputGroup className="mb-3" id="username">
-            <InputGroup.Prepend>
-              <InputGroup.Text id="basic-addon1">Username:</InputGroup.Text>
-            </InputGroup.Prepend>
-            <FormControl
-              placeholder="Username"
-              aria-label="Username"
-              value={this.state.username}
-              onChange={this.handleUsernameChange}
-            />
+        <InputGroup className="mb-3" id="username">
+          <InputGroup.Prepend>
+            <InputGroup.Text id="basic-addon1">Username:</InputGroup.Text>
+          </InputGroup.Prepend>
+          <FormControl
+            placeholder="Username"
+            aria-label="Username"
+            value={this.state.username}
+            onChange={this.handleUsernameChange}
+          />
           </InputGroup>
           <Button variant="primary" id="login" type="submit">
             Send E-mail

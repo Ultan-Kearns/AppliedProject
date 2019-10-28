@@ -72,7 +72,7 @@ app.get("/api/statements", function(req, res) {
 var bankUserModel = mongoose.model("users", userSchema);
 var statementModel = mongoose.model("statements", statementSchema);
 
-//user login function
+//user login function - modified from previous project
 app.get("/api/users/:uID/:userPass", function(req, res) {
   bankUserModel.findById({ user: req.params.user }, function(err, data) {
     if (err) {
@@ -93,25 +93,31 @@ app.get("/api/users/:uID/:userPass", function(req, res) {
     }
   });
 });
-//template taken from nodemailer site
+//template taken from earlier project
 app.get("/api/users/:uId", function(req, res, next) {
-  bankUserModel.findById(req.params.username, function(err, data) {
+  bankUserModel.find({username:req.params.username}, function(err, data) {
     if (data == null)
       res.status(404, "User does not exist on this server", err);
     else if (data.username == req.params.username) {
       var nodemailer = require("nodemailer");
       var transporter = nodemailer.createTransport({
-        service: "protonmail",
+    host: "smtp.gmail.com", // hostname
+    service: "gmail",
         auth: {
           //login to email set up for this project
-          user: "reactproject19@protonmail.com",
+          user: "reactproject19@gmail.com",
           pass: "GMITreact19"
-        }
+        },
+
+            tls: {
+                ciphers:'SSLv3'
+            }
+
       });
       var mailOptions = {
         //Setting up which account to use for seending emails
         from: "reactproject19@protonmail",
-        to: mail,
+        to: "ultankearns@gmail.com",
         subject: "Forgot Independent Banking password",
         text: "Here is your password for Independent Banking: " + data.password
       };
@@ -120,7 +126,8 @@ app.get("/api/users/:uId", function(req, res, next) {
         if (error) {
           console.log(error);
         } else {
-          console.log("Sent Email to address: " + data.email);
+
+          console.log("Sent Email to address: " + data.username);
         }
       });
       res.status(200).send("Sent Email to address:" + data.email);
@@ -134,7 +141,7 @@ app.get("/api/users/:uId", function(req, res, next) {
     }
   });
 });
-
+//create users and others here
 app.post('/api/users', function(req, res) {
   //check if user with same username exists use findById and change id to username
   bankUserModel.create({
@@ -143,6 +150,8 @@ app.post('/api/users', function(req, res) {
 })
 res.status(201,"Resource created")
 });
+
+
 //have server listening at port  8080 and have it take keycert to secure server
 //uses Secure Socket Layer
 https.createServer(security,app).listen(8080);
