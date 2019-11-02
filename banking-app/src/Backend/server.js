@@ -72,16 +72,16 @@ app.get("/api/statements", function(req, res) {
 var bankUserModel = mongoose.model("users", userSchema);
 var statementModel = mongoose.model("statements", statementSchema);
 
-//user login function - modified from previous project
-app.get("/api/users/:uID/password", function(req, res) {
-  bankUserModel.findById(req.params._id , function(err, data) {
+//user login function - modified from previous project https://github.com/Ultan-Kearns/eCommerceApp/blob/master/BackEnd/Server.js
+app.get("/api/users/:id/:password", function(req, res) {
+  bankUserModel.findById(req.params.id , function(err, data) {
     if (err) {
       //send back error 500 to show the server had internel error
       res.status(500, "INTERNAL SERVER ERROR " + err);
     } else if (data != null) {
       //compare user username and password to the username and password in DB
       if (
-        req.params._id == data._id &&
+        req.params.id == data._id &&
         data.password == req.params.password
       ) {
         res.json(data);
@@ -93,7 +93,7 @@ app.get("/api/users/:uID/password", function(req, res) {
     }
   });
 });
-//template taken from earlier project
+//template taken from earlier project - https://github.com/Ultan-Kearns/eCommerceApp/blob/master/BackEnd/Server.js
 app.get("/api/users/:id", function(req, res, next) {
   bankUserModel.findById(req.params.id, function(err, data) {
     if (data == null)

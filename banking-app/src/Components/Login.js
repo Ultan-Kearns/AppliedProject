@@ -18,49 +18,47 @@ class Login extends React.Component {
     this.state = {
       username: "",
       password: "",
-      checkUsername:"",
-      checkPassword:""
+      checkUsername: "",
+      checkPassword: ""
     };
   }
-
   handleUsernameChange = event => {
     this.setState({
       username: event.target.value
     });
   };
-  RegisterForm = event =>{
+  RegisterForm = event => {
     ReactDOM.render(<Register />, document.getElementById("root"));
     event.preventDefault();
-
-  }
-  PassForm = event =>{
+  };
+  PassForm = event => {
     ReactDOM.render(<Forgot />, document.getElementById("root"));
     //stops refresh of page
     event.preventDefault();
-  }
+  };
   handlePasswordChange = event => {
     this.setState({
       password: event.target.value
     });
   };
-  componentDidMount(){
-    //connect to server upon component load
-    const axios = require('axios').default;
-      //Testing log
-      console.log("CHECK USER" + this.state.checkUsername)
-      console.log("CHECK PASS " + this.state.checkPassword)
-    })
-   }
+  componentDidMount() {}
   handleSubmitForm = event => {
-    console.log(this.state.username + " " + this.state.checkUsername)
-    //check to see if the entered data matches need to find way to make multi user friendly
-    if (this.state.username === this.state.checkUsername && this.state.password === this.state.checkPassword) {
-      ReactDOM.render(<App />, document.getElementById("root"));
-          event.preventDefault();
-    } else {
-      alert("sorry either user account doesn't exist or the password is wrong");
-      return null;
-    }
+
+    const axios = require("axios").default;
+      axios
+        .get("https://localhost:8080/api/users/" + this.state.username + "/" + this.state.password)
+        .then(function(res) {
+          console.log(res.data)
+          if(res.data != "error"){
+          ReactDOM.render(<App />, document.getElementById("root"));
+        }
+        else{
+          alert("username or password is wrong");
+
+        }
+        });
+
+    event.preventDefault();
   };
   render() {
     return (
@@ -97,8 +95,12 @@ class Login extends React.Component {
               onChange={this.handlePasswordChange}
             />
           </InputGroup>
-            <Button size="sm" id ="buttonReg" onClick={this.RegisterForm}>Register</Button>
-            <Button size="sm" id ="buttonPass" onClick={this.PassForm}>Forgot Password</Button>
+          <Button size="sm" id="buttonReg" onClick={this.RegisterForm}>
+            Register
+          </Button>
+          <Button size="sm" id="buttonPass" onClick={this.PassForm}>
+            Forgot Password
+          </Button>
           <Button variant="primary" id="loginButton" type="submit">
             Login
           </Button>
