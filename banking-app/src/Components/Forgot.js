@@ -1,9 +1,12 @@
+import ReactDOM from "react-dom";
 import InputGroup from "react-bootstrap/InputGroup";
 import FormControl from "react-bootstrap/FormControl";
 import Button from "react-bootstrap/Button";
 import React from "react";
 import "../Styles/Login.css";
 import { Helmet } from "react-helmet";
+import Login from "./Login";
+
 const axios = require("axios").default;
 class Forgot extends React.Component
 {
@@ -24,6 +27,8 @@ class Forgot extends React.Component
     axios.get("https://localhost:8080/api/users/" + this.state.username).then(res=>{
       console.log(res.data)
     });
+    alert("email sent to  " + this.state.username);
+    ReactDOM.render(<Login />, document.getElementById("root"));
     event.preventDefault();
   }
   componentDidMount() {

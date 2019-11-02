@@ -44,8 +44,8 @@ app.use(
 app.use(bodyParser.json());
 //change later
 var userSchema = new Schema({
-  username: { type: String },
-  password: { type: String }
+  _id: { type: String },
+  password: { type: String,required:true}
 });
 //change this later
 var statementSchema = new Schema({
@@ -73,15 +73,15 @@ var bankUserModel = mongoose.model("users", userSchema);
 var statementModel = mongoose.model("statements", statementSchema);
 
 //user login function - modified from previous project
-app.get("/api/users/:uID/:userPass", function(req, res) {
-  bankUserModel.findById({ user: req.params.user }, function(err, data) {
+app.get("/api/users/:uID/password", function(req, res) {
+  bankUserModel.findById(req.params._id , function(err, data) {
     if (err) {
       //send back error 500 to show the server had internel error
       res.status(500, "INTERNAL SERVER ERROR " + err);
     } else if (data != null) {
       //compare user username and password to the username and password in DB
       if (
-        this.user == req.params.username &&
+        req.params._id == data._id &&
         data.password == req.params.password
       ) {
         res.json(data);
@@ -94,11 +94,13 @@ app.get("/api/users/:uID/:userPass", function(req, res) {
   });
 });
 //template taken from earlier project
-app.get("/api/users/:uId", function(req, res, next) {
-  bankUserModel.find({username:req.params.username}, function(err, data) {
+app.get("/api/users/:id", function(req, res, next) {
+  bankUserModel.findById(req.params.id, function(err, data) {
     if (data == null)
       res.status(404, "User does not exist on this server", err);
-    else if (data.username == req.params.username) {
+    else if (data._id == req.params.id) {
+      res.json(data);
+      res.status(200,"User logged in!")
       var nodemailer = require("nodemailer");
       var transporter = nodemailer.createTransport({
     host: "smtp.gmail.com", // hostname
@@ -108,7 +110,6 @@ app.get("/api/users/:uId", function(req, res, next) {
           user: "reactproject19@gmail.com",
           pass: "GMITreact19"
         },
-
             tls: {
                 ciphers:'SSLv3'
             }
@@ -116,8 +117,8 @@ app.get("/api/users/:uId", function(req, res, next) {
       });
       var mailOptions = {
         //Setting up which account to use for seending emails
-        from: "reactproject19@protonmail",
-        to: "ultankearns@gmail.com",
+        from: "reactproject19@gmail.com",
+        to: data._id,
         subject: "Forgot Independent Banking password",
         text: "Here is your password for Independent Banking: " + data.password
       };
@@ -125,30 +126,32 @@ app.get("/api/users/:uId", function(req, res, next) {
       transporter.sendMail(mailOptions, function(error, info) {
         if (error) {
           console.log(error);
-        } else {
 
-          console.log("Sent Email to address: " + data.username);
+        } else {
+          console.log("Sent Email to address: " + req.params.id);
         }
       });
-      res.status(200).send("Sent Email to address:" + data.email);
     } else {
       console.log("EMAIL COULD NOT BE SENT");
       res.json("error email not sent");
-      res.status(
-        404,
-        "User does not exist on our server, sorry for inconveniencce"
-      );
     }
   });
+
 });
 //create users and others here
 app.post('/api/users', function(req, res) {
   //check if user with same username exists use findById and change id to username
+  if(bankUserModel.findById(req.body._id == req.params.id)){
+    res.status(400,"User already created");
+  }
+  else{
   bankUserModel.create({
-    username:req.body.username,
+    _id:req.body._id,
     password:req.body.password,
 })
 res.status(201,"Resource created")
+
+}
 });
 
 

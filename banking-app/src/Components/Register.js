@@ -4,6 +4,7 @@ import FormControl from "react-bootstrap/FormControl";
 import Button from "react-bootstrap/Button";
 import React from "react";
 import "../Styles/Login.css";
+import Login from "./Login";
 import { Helmet } from "react-helmet";
 const axios = require("axios").default;
  class Register extends React.Component {
@@ -37,12 +38,15 @@ const axios = require("axios").default;
    register = event =>{
     let user = this.state.username;
     let pass = this.state.password;
-    const newUser = {username: user ,password: pass};
-    //this is issue with server https://jsonplaceholder.typicode.com/posts CORS ISSUE
+    const newUser = {_id: user ,password: pass};
     axios.post("https://localhost:8080/api/users",newUser).then(res=>{
       //log res for testing
       console.log(res.data)
     })
+    //need to add error messages
+    alert("User added")
+
+    ReactDOM.render(<Login />, document.getElementById("root"));
    event.preventDefault();
 
 }
