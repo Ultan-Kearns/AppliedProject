@@ -43,11 +43,9 @@ class Login extends React.Component {
   };
   componentDidMount() {}
   handleSubmitForm = event => {
-
+    console.log("axios issue I think")
     const axios = require("axios").default;
-      axios
-        .get("https://localhost:8080/api/users/" + this.state.username + "/" + this.state.password)
-        .then(function(res) {
+      axios.get("https://localhost:8080/api/users/" + this.state.username + "/" + this.state.password).then(function(res) {
           console.log(res.data)
           if(res.data != "error"){
           ReactDOM.render(<App />, document.getElementById("root"));
@@ -56,7 +54,6 @@ class Login extends React.Component {
           alert("username or password is wrong");
         }
         });
-
     event.preventDefault();
   };
   render() {

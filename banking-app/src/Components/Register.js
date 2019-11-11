@@ -76,6 +76,11 @@ class Register extends React.Component {
       //log res for testing
       console.log(res.data);
     });
+    console.log("CHECK")
+    axios.get("https://localhost:8080/api/users/test/test").then(res => {
+      //log res for testing
+      console.log(res.data);
+    });
   }
   render() {
     return (

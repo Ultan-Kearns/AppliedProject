@@ -140,9 +140,7 @@ app.get("/api/users/:id", function(req, res, next) {
 //create users and others here
 app.post("/api/users", function(req, res) {
   //check if user with same username exists use findById and change id to username
-  if (bankUserModel.findById(req.body._id == req.params.id)) {
-    res.status(400, "User already created");
-  } else {
+
     bankUserModel.create({
       _id: req.body._id,
       password: req.body.password,
@@ -151,7 +149,6 @@ app.post("/api/users", function(req, res) {
       dob:req.body.dob
     });
     res.status(201, "Resource created");
-  }
 });
 
 //have server listening at port  8080 and have it take keycert to secure server
