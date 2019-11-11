@@ -54,7 +54,6 @@ class Login extends React.Component {
         }
         else{
           alert("username or password is wrong");
-
         }
         });
 

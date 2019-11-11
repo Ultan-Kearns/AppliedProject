@@ -17,8 +17,10 @@ app.use(function(req, res, next) {
   //to allow cross origin requests
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
-  res.header("Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
   next();
 });
 const fs = require("fs");
@@ -26,14 +28,14 @@ const fs = require("fs");
 const https = require("https");
 const keysDirectory = "./";
 const cors = require("cors");
-app.use(cors(({credentials: true, origin: true})))
+app.use(cors({ credentials: true, origin: true }));
 const security = {
   //read files for ssl connection - keys are generated with openssl
   //password for decryption - 123456789 Not very secure I know but can't remember harder passwords
   key: fs.readFileSync(keysDirectory + "ca.key"),
   cert: fs.readFileSync(keysDirectory + "cert.crt")
 };
- //use mongoose API to connect to backend
+//use mongoose API to connect to backend
 mongoose.connect(mongoDB, { useUnifiedTopology: true, useNewUrlParser: true });
 //body parser for middleware
 app.use(
@@ -45,7 +47,10 @@ app.use(bodyParser.json());
 //change later
 var userSchema = new Schema({
   _id: { type: String },
-  password: { type: String,required:true}
+  password: { type: String, required: true },
+  name: { type: String, required: true },
+  number: { type: String, required: true },
+  dob: { type: Date, required: true }
 });
 //change this later
 var statementSchema = new Schema({
@@ -59,13 +64,13 @@ app.get("/", function(req, res) {
 app.get("/api/users", function(req, res) {
   bankUserModel.find(function(err, data) {
     res.json(data);
-    res.status(200,"request completed");
+    res.status(200, "request completed");
   });
 });
 app.get("/api/statements", function(req, res) {
   statementModel.find(function(err, data) {
     res.json(data);
-    res.status(200,"request completed");
+    res.status(200, "request completed");
   });
 });
 //models for mongoose
@@ -74,18 +79,15 @@ var statementModel = mongoose.model("statements", statementSchema);
 
 //user login function - modified from previous project https://github.com/Ultan-Kearns/eCommerceApp/blob/master/BackEnd/Server.js
 app.get("/api/users/:id/:password", function(req, res) {
-  bankUserModel.findById(req.params.id , function(err, data) {
+  bankUserModel.findById(req.params.id, function(err, data) {
     if (err) {
       //send back error 500 to show the server had internel error
       res.status(500, "INTERNAL SERVER ERROR " + err);
     } else if (data != null) {
       //compare user username and password to the username and password in DB
-      if (
-        req.params.id == data._id &&
-        data.password == req.params.password
-      ) {
+      if (req.params.id == data._id && data.password == req.params.password) {
         res.json(data);
-        res.status(200,"User logged in!")
+        res.status(200, "User logged in!");
       } else {
         res.json("error");
         res.status(404, "User not found!");
@@ -100,20 +102,19 @@ app.get("/api/users/:id", function(req, res, next) {
       res.status(404, "User does not exist on this server", err);
     else if (data._id == req.params.id) {
       res.json(data);
-      res.status(200,"User logged in!")
+      res.status(200, "User logged in!");
       var nodemailer = require("nodemailer");
       var transporter = nodemailer.createTransport({
-    host: "smtp.gmail.com", // hostname
-    service: "gmail",
+        host: "smtp.gmail.com", // hostname
+        service: "gmail",
         auth: {
           //login to email set up for this project
           user: "reactproject19@gmail.com",
           pass: "GMITreact19"
         },
-            tls: {
-                ciphers:'SSLv3'
-            }
-
+        tls: {
+          ciphers: "SSLv3"
+        }
       });
       var mailOptions = {
         //Setting up which account to use for seending emails
@@ -126,7 +127,6 @@ app.get("/api/users/:id", function(req, res, next) {
       transporter.sendMail(mailOptions, function(error, info) {
         if (error) {
           console.log(error);
-
         } else {
           console.log("Sent Email to address: " + req.params.id);
         }
@@ -136,25 +136,24 @@ app.get("/api/users/:id", function(req, res, next) {
       res.json("error email not sent");
     }
   });
-
 });
 //create users and others here
-app.post('/api/users', function(req, res) {
+app.post("/api/users", function(req, res) {
   //check if user with same username exists use findById and change id to username
-  if(bankUserModel.findById(req.body._id == req.params.id)){
-    res.status(400,"User already created");
+  if (bankUserModel.findById(req.body._id == req.params.id)) {
+    res.status(400, "User already created");
+  } else {
+    bankUserModel.create({
+      _id: req.body._id,
+      password: req.body.password,
+      name:req.body.name,
+      number:req.body.number,
+      dob:req.body.dob
+    });
+    res.status(201, "Resource created");
   }
-  else{
-  bankUserModel.create({
-    _id:req.body._id,
-    password:req.body.password,
-})
-res.status(201,"Resource created")
-
-}
 });
-
 
 //have server listening at port  8080 and have it take keycert to secure server
 //uses Secure Socket Layer
-https.createServer(security,app).listen(8080);
+https.createServer(security, app).listen(8080);
