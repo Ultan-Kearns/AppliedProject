@@ -1,4 +1,4 @@
-  import ReactDOM from "react-dom";
+import ReactDOM from "react-dom";
 import InputGroup from "react-bootstrap/InputGroup";
 import FormControl from "react-bootstrap/FormControl";
 import Button from "react-bootstrap/Button";
@@ -18,7 +18,9 @@ class Register extends React.Component {
       dob: ""
     };
   }
-
+  redirect(){
+    ReactDOM.render(<Login />, document.getElementById("root"));
+  }
   handleUsernameChange = event => {
     this.setState({
       username: event.target.value
@@ -44,31 +46,21 @@ class Register extends React.Component {
       dob: event.target.value
     });
   };
-  handleSubmitForm = event => {
-    if (this.state.password.length >= 6) {
-      event.preventDefault();
-    } else {
-      console.log(this.state.password.length);
-      alert("Password must be 6 characters or greater");
-      event.preventDefault();
-    }
-  };
   register = event => {
-    let user = this.state.username;
-    let pass = this.state.password;
     console.log(this.state.name, this.state.number, this.state.dob);
-    const newUser = { _id: user, password: pass,name:this.state.name, number:this.state.number, dob:this.state.dob };
-    axios.post("https://localhost:8080/api/users", newUser).then(res => {
+    const newUser = { _id: this.state.username, password: this.state.password,name:this.state.name, number:this.state.number, dob:this.state.dob };
+     if (this.state.password.length >= 6 && this.state.username !== "" && this.state.name !== "" && this.state.number !== "" && this.state.dob !== "") {
+      axios.post("https://localhost:8080/api/users", newUser).then(res => {
       //log res for testing
       console.log(res.data);
-      if (res.data == 400) {
-        alert("User already exists");
-      } else {
-        alert("User added");
-      }
-    });
+     })
+  }
+  else {
+    console.log(this.state.password.length);
+    alert("Password must be 6 characters or greater and no fields can be left blank");
+    event.preventDefault();
+  }
     //need to add error messages
-    ReactDOM.render(<Login />, document.getElementById("root"));
     event.preventDefault();
   };
   componentDidMount() {
@@ -116,11 +108,11 @@ class Register extends React.Component {
           </InputGroup>
           <InputGroup className="mb-3" id="name">
             <InputGroup.Prepend>
-              <InputGroup.Text id="basic-addon1">Full name:</InputGroup.Text>
+              <InputGroup.Text id="basic-addon1">Full Name:</InputGroup.Text>
             </InputGroup.Prepend>
             <FormControl
-              placeholder="name"
-              aria-label="name"
+              placeholder="Name"
+              aria-label="Name"
               type="text"
               value={this.state.name}
               onChange={this.handleNameChange}
@@ -152,7 +144,10 @@ class Register extends React.Component {
               onChange={this.handleDobChange}
             />
           </InputGroup>
-          <Button variant="primary" id="login" type="submit">
+          <Button variant="primary" id="buttonLeft" onClick={this.redirect}>
+            Back
+          </Button>
+          <Button variant="primary" id="buttonRight" type="submit">
             Register
           </Button>
         </form>

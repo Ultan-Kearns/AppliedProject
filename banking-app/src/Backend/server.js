@@ -96,7 +96,7 @@ app.get("/api/users/:id/:password", function(req, res) {
   });
 });
 //template taken from earlier project - https://github.com/Ultan-Kearns/eCommerceApp/blob/master/BackEnd/Server.js
-app.get("/api/users/:id", function(req, res, next) {
+app.get("/api/emailuser/:id/", function(req, res, next) {
   bankUserModel.findById(req.params.id, function(err, data) {
     if (data == null)
       res.status(404, "User does not exist on this server", err);
@@ -136,6 +136,16 @@ app.get("/api/users/:id", function(req, res, next) {
       res.json("error email not sent");
     }
   });
+});
+app.get("/api/getuser/:id/", function(req, res){
+  bankUserModel.findById(req.params.id, function(err, data) {
+    if (err) {
+      //send back error 500 to show the server had internel error
+      res.status(500, "INTERNAL SERVER ERROR " + err);
+    } else if (data != null) {
+      res.json(data)
+    }
+})
 });
 //create users and others here
 app.post("/api/users", function(req, res) {

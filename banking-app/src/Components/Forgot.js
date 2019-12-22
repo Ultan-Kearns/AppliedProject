@@ -24,7 +24,7 @@ class Forgot extends React.Component
   };
   handleSubmitForm = event =>{
     console.log(this.state.username)
-    axios.get("https://localhost:8080/api/users/" + this.state.username).then(res=>{
+    axios.get("https://localhost:8080/api/emailuser" + this.state.username).then(res=>{
       console.log(res.data)
     });
     alert("email sent to  " + this.state.username);
@@ -33,6 +33,9 @@ class Forgot extends React.Component
   }
   componentDidMount() {
     //connect to server and get statements upon component load
+  }
+  redirect(){
+    ReactDOM.render(<Login />, document.getElementById("root"));
   }
   render() {
     return (
@@ -57,7 +60,10 @@ class Forgot extends React.Component
             onChange={this.handleUsernameChange}
           />
           </InputGroup>
-          <Button variant="primary" id="login" type="submit">
+          <Button variant="primary" id="buttonLeft" onClick={this.redirect}>
+              Back
+          </Button>
+          <Button variant="primary" id="buttonRight" type="submit">
             Send E-mail
           </Button>
         </form>

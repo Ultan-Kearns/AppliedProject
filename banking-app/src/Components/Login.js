@@ -47,7 +47,7 @@ class Login extends React.Component {
     const axios = require("axios").default;
       axios.get("https://localhost:8080/api/users/" + this.state.username + "/" + this.state.password).then(function(res) {
           console.log(res.data)
-          if(res.data != "error"){
+          if(res.data !== "error"){
           ReactDOM.render(<App />, document.getElementById("root"));
         }
         else{
@@ -91,10 +91,10 @@ class Login extends React.Component {
               onChange={this.handlePasswordChange}
             />
           </InputGroup>
-          <Button size="sm" id="buttonReg" onClick={this.RegisterForm}>
+          <Button size="sm" id="buttonLeft" onClick={this.RegisterForm}>
             Register
           </Button>
-          <Button size="sm" id="buttonPass" onClick={this.PassForm}>
+          <Button size="sm" id="buttonRight" onClick={this.PassForm}>
             Forgot Password
           </Button>
           <Button variant="primary" id="loginButton" type="submit">

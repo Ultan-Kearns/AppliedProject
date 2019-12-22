@@ -17,11 +17,11 @@ h1{
   text-align: center;
   color:white;
 }
-#buttonReg{
+#buttonLeft{
   margin-left: 30vw;
   position: relative;
 }
-#buttonPass{
+#buttonRight{
   margin-left: 20vw;
   position: relative;
 }
