@@ -15,7 +15,7 @@ function About() {
         independent banking to have you here with us let us explain how we
         differ from other banks.
       </p>
-      <div class="liesWeTellCustomers" id="left">
+      <div className="liesWeTellCustomers" id="left">
         <h2>We Care About You!</h2>
         <p>
           Yes we know you have heard this blaise comment before but we really
@@ -29,7 +29,7 @@ function About() {
           alt="Pictures of happy sheep...... I mean customers!"
         />
       </div>
-      <div class="liesWeTellCustomers" id="right">
+      <div className="liesWeTellCustomers" id="right">
         <h2>We Don't Just Care About Money!</h2>
         <p>
           Yes we know what we said before makes us seem callous! but we care
@@ -41,7 +41,7 @@ function About() {
           alt="Pictures of happy sheep...... I mean customers!"
         />
       </div>
-      <div class="liesWeTellCustomers" id="theBigOne">
+      <div className="liesWeTellCustomers" id="theBigOne">
         <h2>Wanna hear a secret?!</h2>
         <p>Pssssst............. You're getting an amazing deal!</p>
       </div>

@@ -18,11 +18,12 @@ class Statements extends React.Component{
     axios.get("https://localhost:8080/api/statements").then(res=>{
       //log res for testing
       console.log(res.data[0].location)
-      this.setState({
-        location:res.data[0].location,
-        cost: res.data[0].cost
-      });
-    })
+         this.setState({
+          location:res.data[0].location,
+          cost: res.data[0].cost,
+        });
+      }
+    )
    }
   render() {
     return (
