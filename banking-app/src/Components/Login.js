@@ -41,16 +41,24 @@ class Login extends React.Component {
       password: event.target.value
     });
   };
-  componentDidMount() {}
+  componentDidMount() {
+    if(sessionStorage.getItem("username") !="null" && sessionStorage.getItem("username") != null){
+      ReactDOM.render(<App />, document.getElementById("root"));
+    }
+  }
   handleSubmitForm = event => {
-    console.log("axios issue I think")
     const axios = require("axios").default;
+
       axios.get("https://localhost:8080/api/users/" + this.state.username + "/" + this.state.password).then(function(res) {
-          console.log(res.data)
-          if(res.data !== "error"){
-          ReactDOM.render(<App />, document.getElementById("root"));
+
+           console.log(res.data.name)
+          //need to fix this
+           try{
+            //store the username this will help the bank feel more personal
+            sessionStorage.setItem("username",res.data.name);
+            ReactDOM.render(<App />, document.getElementById("root"));
         }
-        else{
+        catch{
           alert("username or password is wrong");
         }
         });

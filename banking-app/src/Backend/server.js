@@ -89,7 +89,7 @@ app.get("/api/users/:id/:password", function(req, res) {
         res.json(data);
         res.status(200, "User logged in!");
       } else {
-        res.json("error");
+        res.json("404");
         res.status(404, "User not found!");
       }
     }

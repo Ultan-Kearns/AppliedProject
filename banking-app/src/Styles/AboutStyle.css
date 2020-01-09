@@ -1,0 +1,24 @@
+#right {
+  float: right;
+}
+#left {
+  float: left;
+  margin-left: 10%;
+}
+.liesWeTellCustomers {
+  border: 5px solid black;
+  padding: 2%;
+  width: calc(30% + 50px);
+  border-radius: 2px;
+  height: 200%;
+}
+img {
+  margin: 10%;
+  width: calc(100% - 50px) !important;
+  height: calc(100% - 50px) !important;
+}
+#theBigOne{
+  color:red;
+  float: right;
+  margin-top:3%;
+}
