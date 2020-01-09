@@ -47,6 +47,7 @@ class Register extends React.Component {
     });
   };
   register = event => {
+    //check if user exists
     axios.get("https://localhost:8080/api/getuser/"+this.state.username).then(res => {
       //log res for testing
       console.log(res.data);

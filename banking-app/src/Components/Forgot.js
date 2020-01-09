@@ -24,7 +24,12 @@ class Forgot extends React.Component
   };
   handleSubmitForm = event =>{
     console.log(this.state.username)
-    axios.get("https://localhost:8080/api/emailuser" + this.state.username).then(res=>{
+    if(this.state.username == ""){
+      alert("Email cannot be blank");
+      event.preventDefault();
+      return
+    }
+    axios.get("https://localhost:8080/api/emailuser/" + this.state.username).then(res=>{
       console.log(res.data)
     });
     alert("email sent to  " + this.state.username);
