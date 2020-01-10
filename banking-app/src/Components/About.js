@@ -45,7 +45,19 @@ function About() {
         <h2>Wanna hear a secret?!</h2>
         <p>Pssssst............. You're getting an amazing deal!</p>
       </div>
+      <div className="liesWeTellCustomersBottom" id="left">
+        <h2>Our Aims</h2>
+        <p>
+          We aim to provide you, {sessionStorage.getItem("username")}, YES YOU! with a site that is:
+          <ul>
+            <li>Responsive - A site that is accessible from any device and still looks good!</li>
+            <li>Secure - A site that won't leave your data compromised</li>
+            <li>Robust - A site that won't let you down</li>
+          </ul>
+        </p>
+        </div>
     </div>
+
   );
 }
 

@@ -3,7 +3,7 @@
 }
 #left {
   float: left;
-  margin-left: 10%;
+  margin-left: 2%;
 }
 .liesWeTellCustomers {
   border: 5px solid black;
@@ -18,7 +18,18 @@ img {
   height: calc(100% - 50px) !important;
 }
 #theBigOne{
-  color:red;
   float: right;
   margin-top:3%;
+}
+.liesWeTellCustomersBottom {
+  border: 5px solid black;
+  padding: 2%;
+  margin-left: 10% !important;
+  margin-top: 15%;
+  width: 90%;
+  border-radius: 2px;
+  height: 200%;
+  font-style: italic;
+  font-weight: bolder;
+  color:red;
 }
