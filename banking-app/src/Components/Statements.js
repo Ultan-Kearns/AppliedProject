@@ -31,7 +31,7 @@ class Statements extends React.Component{
       <Helmet>
         <title>Statements</title>
       </Helmet>
-        <h1>Welcome to the Statements!</h1>
+        <h1>Your Statements</h1>
         <p>
           You can view statements here : D- maybe have a dropdown to select year
           or month of statement

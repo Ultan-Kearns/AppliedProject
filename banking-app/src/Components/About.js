@@ -8,7 +8,7 @@ function About() {
       <Helmet>
         <title>About</title>
       </Helmet>
-      <h1>Welcome to the About!</h1>
+      <h1>About Us</h1>
       <p>We are an independent bank that caters to all of our customers!</p>
       <p>
         Hello {sessionStorage.getItem("username")}, we're so excited here at

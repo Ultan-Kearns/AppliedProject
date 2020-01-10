@@ -73,6 +73,12 @@ app.get("/api/statements", function(req, res) {
     res.status(200, "request completed");
   });
 });
+app.get("/api/statements/:id", function(req, res) {
+  statementModel.findById(req.params.id,function(err, data) {
+    res.json(data);
+    res.status(200, "request completed");
+  });
+});
 //models for mongoose
 var bankUserModel = mongoose.model("users", userSchema);
 var statementModel = mongoose.model("statements", statementSchema);
