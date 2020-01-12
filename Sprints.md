@@ -12,6 +12,7 @@ READJUST TIMES
 # SPRINT 5(14th January - 31st January)
 + Add more to homepage
 + Get statements fully working and only show users
++ Get Methodology section of Dissertation finished
 # Sprint 6 (31st January - 10th February)
 + Need to get more security and research methods to secure application
 + Finish homepage

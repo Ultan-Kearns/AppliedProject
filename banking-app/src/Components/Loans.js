@@ -11,13 +11,13 @@ function Loans() {
       </Helmet>
       <h1>Apply & View Loans</h1>
       <h2>Apply for loans here:</h2>
-      <div class="loanApply">
+      <div className="loanApply">
         <input type="number" placeholder="Amount" />
         <br/>
         <Button size="sm" id="loanButton">Apply for Loan</Button>
       </div>
       <h2>List of loans</h2>
-      <div class = "loanList">
+      <div className = "loanList">
 
       </div>
     </div>

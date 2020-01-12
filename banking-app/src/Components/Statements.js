@@ -17,10 +17,10 @@ class Statements extends React.Component{
     const axios = require('axios').default;
     axios.get("https://localhost:8080/api/statements").then(res=>{
       //log res for testing
-      console.log(res.data[0].location)
+      console.log(res.data[1].location)
          this.setState({
-          location:res.data[0].location,
-          cost: res.data[0].cost,
+          location:res.data[1].location,
+          cost: res.data[1].cost,
         });
       }
     )
