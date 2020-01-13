@@ -1,4 +1,4 @@
-\contentsline {paragraph}{Analysis of this project: }{4}{paragraph*.3}% 
+\contentsline {paragraph}{Analysis of This Project: }{4}{paragraph*.3}% 
 \contentsline {paragraph}{Authors: }{4}{paragraph*.4}% 
 \contentsline {chapter}{\numberline {1}Introduction}{5}{chapter.1}% 
 \contentsline {section}{\numberline {1.1}Why A MERN stack?}{5}{section.1.1}% 
@@ -7,8 +7,8 @@
 \contentsline {subsection}{\numberline {1.1.3}React}{7}{subsection.1.1.3}% 
 \contentsline {subsection}{\numberline {1.1.4}Node JS}{7}{subsection.1.1.4}% 
 \contentsline {section}{\numberline {1.2}Why a banking application?}{7}{section.1.2}% 
-\contentsline {subsection}{\numberline {1.2.1}Explanation of why I chose this project}{7}{subsection.1.2.1}% 
-\contentsline {subsection}{\numberline {1.2.2}My Contention with existing online banking systems \& how I plan to improve upon them}{8}{subsection.1.2.2}% 
+\contentsline {subsection}{\numberline {1.2.1}Explanation of Why I Chose This Project}{7}{subsection.1.2.1}% 
+\contentsline {subsection}{\numberline {1.2.2}My Contention With Existing Online Banking Systems \& How I Plan To Improve Upon Them}{8}{subsection.1.2.2}% 
 \contentsline {section}{\numberline {1.3}Requirements}{8}{section.1.3}% 
 \contentsline {section}{\numberline {1.4}Outline of chapters}{9}{section.1.4}% 
 \contentsline {subsection}{\numberline {1.4.1}Context}{10}{subsection.1.4.1}% 
@@ -17,7 +17,7 @@
 \contentsline {subsection}{\numberline {1.4.4}System Design}{10}{subsection.1.4.4}% 
 \contentsline {subsection}{\numberline {1.4.5}System Evaluation}{10}{subsection.1.4.5}% 
 \contentsline {subsection}{\numberline {1.4.6}Conclusion}{10}{subsection.1.4.6}% 
-\contentsline {section}{\numberline {1.5}Structure of project}{11}{section.1.5}% 
+\contentsline {section}{\numberline {1.5}Structure of Project}{11}{section.1.5}% 
 \contentsline {chapter}{\numberline {2}Context}{12}{chapter.2}% 
 \contentsline {section}{\numberline {2.1}Project Objectives}{12}{section.2.1}% 
 \contentsline {section}{\numberline {2.2}Online Banking}{12}{section.2.2}% 
@@ -35,10 +35,20 @@
 \contentsline {subsection}{\numberline {2.5.3}Increased Crime}{15}{subsection.2.5.3}% 
 \contentsline {section}{\numberline {2.6}The Overall Effect of Online Banking}{15}{section.2.6}% 
 \contentsline {chapter}{\numberline {3}Methodology}{16}{chapter.3}% 
-\contentsline {chapter}{\numberline {4}Technology Review}{18}{chapter.4}% 
-\contentsline {section}{\numberline {4.1}XML}{18}{section.4.1}% 
-\contentsline {chapter}{\numberline {5}System Design}{19}{chapter.5}% 
-\contentsline {chapter}{\numberline {6}System Evaluation}{20}{chapter.6}% 
-\contentsline {chapter}{\numberline {7}Conclusion}{21}{chapter.7}% 
-\contentsline {chapter}{Appendices}{22}{section*.8}% 
-\contentsline {chapter}{\numberline {A}Preamble \& Intro}{23}{Appendix.1.A}% 
+\contentsline {section}{\numberline {3.1}Overview of Methodology}{16}{section.3.1}% 
+\contentsline {section}{\numberline {3.2}Agile}{16}{section.3.2}% 
+\contentsline {subsection}{\numberline {3.2.1}What is Agile?}{16}{subsection.3.2.1}% 
+\contentsline {subsection}{\numberline {3.2.2}How I Applied Agile To This Project}{16}{subsection.3.2.2}% 
+\contentsline {section}{\numberline {3.3}Test Driven Development (TDD)}{16}{section.3.3}% 
+\contentsline {subsection}{\numberline {3.3.1}What Is Test Driven Development?}{16}{subsection.3.3.1}% 
+\contentsline {subsection}{\numberline {3.3.2}How I Applied Test Driven Development To This Project}{16}{subsection.3.3.2}% 
+\contentsline {section}{\numberline {3.4}Time Management}{16}{section.3.4}% 
+\contentsline {subsection}{\numberline {3.4.1}How I Handled Multiple Projects}{16}{subsection.3.4.1}% 
+\contentsline {subsection}{\numberline {3.4.2}Issues I Faced With Time Management}{16}{subsection.3.4.2}% 
+\contentsline {chapter}{\numberline {4}Technology Review}{17}{chapter.4}% 
+\contentsline {section}{\numberline {4.1}XML}{17}{section.4.1}% 
+\contentsline {chapter}{\numberline {5}System Design}{18}{chapter.5}% 
+\contentsline {chapter}{\numberline {6}System Evaluation}{19}{chapter.6}% 
+\contentsline {chapter}{\numberline {7}Conclusion}{20}{chapter.7}% 
+\contentsline {chapter}{Appendices}{21}{section*.6}% 
+\contentsline {chapter}{\numberline {A}Preamble \& Intro}{22}{Appendix.1.A}% 

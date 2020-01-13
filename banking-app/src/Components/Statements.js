@@ -2,6 +2,8 @@ import React from "react";
 import Axios from "axios";
 import { Helmet } from "react-helmet";
 
+var statements = []
+
 class Statements extends React.Component{
   constructor(props){
     super(props)
@@ -17,11 +19,16 @@ class Statements extends React.Component{
     const axios = require('axios').default;
     axios.get("https://localhost:8080/api/statements").then(res=>{
       //log res for testing
-      console.log(res.data[1].location)
-         this.setState({
-          location:res.data[1].location,
-          cost: res.data[1].cost,
-        });
+      console.log("LOCATION " + res.data[1].location)
+      console.log(res)
+        for(var i = 0; i < res.data.length; i++){
+          this.setState({
+           location:res.data[i].location,
+           cost: res.data[i].cost,
+         });
+         statements[i] =  {location:res.data[i].location,cost:res.data[i].cost}
+         console.log("I " + i + " RES " + res.data[i].cost)
+        }
       }
     )
    }
@@ -35,7 +42,8 @@ class Statements extends React.Component{
         <p>
           You can view statements here : D- maybe have a dropdown to select year
           or month of statement
-          { " Payment Amount: " + this.state.cost + " Location where spent: " + this.state.location}
+          {console.log("TEST " + statements.length + " st " + statements.cost)}
+          { " Payment Amount: " + statements.cost + " Location where spent: " + this.state.location}
         </p>
       </div>
     );
