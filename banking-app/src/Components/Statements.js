@@ -22,13 +22,18 @@ class Statements extends React.Component {
           cost: res.data[i].cost,
           name: res.data.name,
         });
+        //statements redundant just use state
         statements[i] = {
           location: res.data[i].location,
           cost: res.data[i].cost,
           name: res.data[i].name
         };
         console.log(statements[i].location);
-        document.getElementById("statements").textContent += "Location " + statements[i].location +  " " + statements[i].cost + " Name: " + statements[i].name + ""
+        //create LI element then form statment then append to LI then add to list
+        var node = document.createElement("LI")
+        var text = document.createTextNode("Location " + statements[i].location +  " " + statements[i].cost + " Name: " + statements[i].name)
+        node.append(text)
+        document.getElementById("statements").appendChild(node)
       }
     });
   }
@@ -45,8 +50,8 @@ class Statements extends React.Component {
           You can view statements here : D- maybe have a dropdown to select year
           or month of statement
         </p>
-        <div id="statements">
-        </div>
+        <ul id="statements">
+        </ul>
       </div>
     );
   }

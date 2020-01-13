@@ -6,7 +6,7 @@ READJUST TIMES
 # SPRINT 3(16TH NOV - 31st Nov):(Completed)
 + Add more to statement schema
 + Test app
-# SPRINT 4(9th January - 13th January):
+# SPRINT 4(9th January - 13th January)(Completed):
 + Work on about page
 + work on statments page
 # SPRINT 5(14th January - 31st January)
@@ -24,6 +24,7 @@ READJUST TIMES
 + Get logout function working (Should be easy)
 # Sprint 9 (1st February - 3rd February)
 + Brainstorm ideas
++ research Docker
 ## Notes
 ### I will make periodic changes due to changes in workload, personal issues,etc
 ### I run regression tests as well as module tests after each sprint
