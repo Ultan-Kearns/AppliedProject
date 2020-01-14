@@ -11,8 +11,11 @@ READJUST TIMES
 + work on statments page
 # SPRINT 5(14th January - 31st January)
 + Add more to homepage
-+ Get statements fully working and only show users
++ Get statements fully working and only show users(done)
 + Get Methodology section of Dissertation finished
++ Get logout function(Done)
++ Fix issue with login, it goes to last page instead of homes
++ Form validation
 # Sprint 6 (31st January - 10th February)
 + Need to get more security and research methods to secure application
 + Finish homepage

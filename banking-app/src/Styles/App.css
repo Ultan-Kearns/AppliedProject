@@ -41,3 +41,9 @@ a{
   background-color: black;
   color:red;
 }
+#logout{
+  margin-left: 5vw;
+  position: relative;
+  margin-top: 20vh;
+
+}

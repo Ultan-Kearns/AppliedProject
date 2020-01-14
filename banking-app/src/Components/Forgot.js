@@ -8,8 +8,7 @@ import { Helmet } from "react-helmet";
 import Login from "./Login";
 
 const axios = require("axios").default;
-class Forgot extends React.Component
-{
+class Forgot extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -22,24 +21,26 @@ class Forgot extends React.Component
       username: event.target.value
     });
   };
-  handleSubmitForm = event =>{
-    console.log(this.state.username)
-    if(this.state.username == ""){
+  handleSubmitForm = event => {
+    console.log(this.state.username);
+    if (this.state.username == "") {
       alert("Email cannot be blank");
       event.preventDefault();
-      return
+      return;
     }
-    axios.get("https://localhost:8080/api/emailuser/" + this.state.username).then(res=>{
-      console.log(res.data)
-    });
+    axios
+      .get("https://localhost:8080/api/emailuser/" + this.state.username)
+      .then(res => {
+        console.log(res.data);
+      });
     alert("email sent to  " + this.state.username);
     ReactDOM.render(<Login />, document.getElementById("root"));
     event.preventDefault();
-  }
+  };
   componentDidMount() {
     //connect to server and get statements upon component load
   }
-  redirect(){
+  redirect() {
     ReactDOM.render(<Login />, document.getElementById("root"));
   }
   render() {
@@ -54,19 +55,19 @@ class Forgot extends React.Component
           an email with your password
         </p>
         <form id="passwordForm" onSubmit={this.handleSubmitForm}>
-        <InputGroup className="mb-3" id="username">
-          <InputGroup.Prepend>
-            <InputGroup.Text id="basic-addon1">Username:</InputGroup.Text>
-          </InputGroup.Prepend>
-          <FormControl
-            placeholder="Username"
-            aria-label="Username"
-            value={this.state.username}
-            onChange={this.handleUsernameChange}
-          />
+          <InputGroup className="mb-3" id="username">
+            <InputGroup.Prepend>
+              <InputGroup.Text id="basic-addon1">Username:</InputGroup.Text>
+            </InputGroup.Prepend>
+            <FormControl
+              placeholder="Username"
+              aria-label="Username"
+              value={this.state.username}
+              onChange={this.handleUsernameChange}
+            />
           </InputGroup>
           <Button variant="primary" id="buttonLeft" onClick={this.redirect}>
-              Back
+            Back
           </Button>
           <Button variant="primary" id="buttonRight" type="submit">
             Send E-mail

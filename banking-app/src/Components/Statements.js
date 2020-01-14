@@ -2,7 +2,6 @@ import React from "react";
 import Axios from "axios";
 import { Helmet } from "react-helmet";
 
-var statements = [];
 var test = "";
 class Statements extends React.Component {
   constructor(props) {
@@ -10,7 +9,8 @@ class Statements extends React.Component {
     this.state = {
       cost: "",
       location: "",
-      name: ""
+      name: "",
+      date: ""
     };
   }
   componentDidMount() {
@@ -20,20 +20,23 @@ class Statements extends React.Component {
         this.setState({
           location: res.data[i].location,
           cost: res.data[i].cost,
-          name: res.data.name,
+          name: res.data[i].name,
+          date: res.data[i].date
         });
-        //statements redundant just use state
-        statements[i] = {
-          location: res.data[i].location,
-          cost: res.data[i].cost,
-          name: res.data[i].name
-        };
-        console.log(statements[i].location);
         //create LI element then form statment then append to LI then add to list
-        var node = document.createElement("LI")
-        var text = document.createTextNode("Location " + statements[i].location +  " " + statements[i].cost + " Name: " + statements[i].name)
-        node.append(text)
-        document.getElementById("statements").appendChild(node)
+        var node = document.createElement("LI");
+        var text = document.createTextNode(
+          "Location " +
+            this.state.location +
+            " " +
+            this.state.cost +
+            " Name: " +
+            this.state.name +
+            " Date: " +
+            this.state.date
+        );
+        node.append(text);
+        document.getElementById("statements").appendChild(node);
       }
     });
   }
@@ -50,8 +53,7 @@ class Statements extends React.Component {
           You can view statements here : D- maybe have a dropdown to select year
           or month of statement
         </p>
-        <ul id="statements">
-        </ul>
+        <ul id="statements" />
       </div>
     );
   }

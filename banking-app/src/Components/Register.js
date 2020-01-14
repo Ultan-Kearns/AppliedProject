@@ -18,7 +18,7 @@ class Register extends React.Component {
       dob: ""
     };
   }
-  redirect(){
+  redirect() {
     ReactDOM.render(<Login />, document.getElementById("root"));
   }
   handleUsernameChange = event => {
@@ -48,26 +48,41 @@ class Register extends React.Component {
   };
   register = event => {
     //check if user exists
-    axios.get("https://localhost:8080/api/getuser/"+this.state.username).then(res => {
-      //log res for testing
-      console.log(res.data);
-      if(res.data != null){
-        alert("User already exists")
-      }
-    });
+    axios
+      .get("https://localhost:8080/api/getuser/" + this.state.username)
+      .then(res => {
+        //log res for testing
+        console.log(res.data);
+        if (res.data != null) {
+          alert("User already exists");
+        }
+      });
 
     console.log(this.state.name, this.state.number, this.state.dob);
-    const newUser = { _id: this.state.username, password: this.state.password,name:this.state.name, number:this.state.number, dob:this.state.dob };
-     if (this.state.password.length >= 6 && this.state.username !== "" && this.state.name !== "" && this.state.number !== "" && this.state.dob !== "") {
+    const newUser = {
+      _id: this.state.username,
+      password: this.state.password,
+      name: this.state.name,
+      number: this.state.number,
+      dob: this.state.dob
+    };
+    if (
+      this.state.password.length >= 6 &&
+      this.state.username !== "" &&
+      this.state.name !== "" &&
+      this.state.number !== "" &&
+      this.state.dob !== ""
+    ) {
       axios.post("https://localhost:8080/api/users", newUser).then(res => {
-      //log res for testing
-      console.log(res.data);
-     })
-  }
-  else {
-    console.log(this.state.password.length);
-    alert("Password must be 6 characters or greater and no fields can be left blank");
-  }
+        //log res for testing
+        console.log(res.data);
+      });
+    } else {
+      console.log(this.state.password.length);
+      alert(
+        "Password must be 6 characters or greater and no fields can be left blank"
+      );
+    }
     //need to add error messages
     event.preventDefault();
   };
@@ -76,7 +91,7 @@ class Register extends React.Component {
       //log res for testing
       console.log(res.data);
     });
-    console.log("CHECK")
+    console.log("CHECK");
     axios.get("https://localhost:8080/api/users/test/test").then(res => {
       //log res for testing
       console.log(res.data);

@@ -48,16 +48,19 @@ function About() {
       <div className="liesWeTellCustomersBottom" id="left">
         <h2>Our Aims</h2>
         <p>
-          We aim to provide you, {sessionStorage.getItem("username")}, YES YOU! with a site that is:
+          We aim to provide you, {sessionStorage.getItem("username")}, YES YOU!
+          with a site that is:
         </p>
         <ul>
-          <li>Responsive - A site that is accessible from any device and still looks good!</li>
+          <li>
+            Responsive - A site that is accessible from any device and still
+            looks good!
+          </li>
           <li>Secure - A site that won't leave your data compromised</li>
           <li>Robust - A site that won't let you down</li>
         </ul>
-        </div>
+      </div>
     </div>
-
   );
 }
 

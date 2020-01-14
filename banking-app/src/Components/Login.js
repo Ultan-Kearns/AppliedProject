@@ -5,7 +5,8 @@ import Button from "react-bootstrap/Button";
 import "../Styles/Login.css";
 import { Helmet } from "react-helmet";
 import ReactDOM from "react-dom";
-import App from "../App";
+import Home from "./Home";
+
 import Register from "./Register";
 import Forgot from "./Forgot";
 import Axios from "axios";
@@ -42,26 +43,30 @@ class Login extends React.Component {
     });
   };
   componentDidMount() {
-    if(sessionStorage.getItem("username") !="null" && sessionStorage.getItem("username") != null){
-      ReactDOM.render(<App />, document.getElementById("root"));
-    }
+    //if(sessionStorage.getItem("username") !="null" && sessionStorage.getItem("username") != null){
+    //ReactDOM.render(<App />, document.getElementById("root"));
   }
   handleSubmitForm = event => {
     const axios = require("axios").default;
 
-      axios.get("https://localhost:8080/api/users/" + this.state.username + "/" + this.state.password).then(function(res) {
-
-           console.log(res.data.name)
-          //need to fix this
-           try{
-            //store the username this will help the bank feel more personal
-            sessionStorage.setItem("username",res.data.name);
-            ReactDOM.render(<App />, document.getElementById("root"));
-        }
-        catch{
+    axios
+      .get(
+        "https://localhost:8080/api/users/" +
+          this.state.username +
+          "/" +
+          this.state.password
+      )
+      .then(function(res) {
+        console.log(res.data.name);
+        //need to fix this so it shows error message
+        try {
+          //store the username this will help the bank feel more personal
+          sessionStorage.setItem("username", res.data.name);
+          ReactDOM.render(<Home />, document.getElementById("root"));
+        } catch {
           alert("username or password is wrong");
         }
-        });
+      });
     event.preventDefault();
   };
   render() {

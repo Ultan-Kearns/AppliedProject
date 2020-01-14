@@ -13,13 +13,13 @@ function Loans() {
       <h2>Apply for loans here:</h2>
       <div className="loanApply">
         <input type="number" placeholder="Amount" />
-        <br/>
-        <Button size="sm" id="loanButton">Apply for Loan</Button>
+        <br />
+        <Button size="sm" id="loanButton">
+          Apply for Loan
+        </Button>
       </div>
       <h2>List of loans</h2>
-      <div className = "loanList">
-
-      </div>
+      <div className="loanList" />
     </div>
   );
 }
