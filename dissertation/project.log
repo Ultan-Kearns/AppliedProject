@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Arch Linux) (preloaded format=pdflatex 2019.12.13)  14 JAN 2020 19:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Arch Linux) (preloaded format=pdflatex 2019.12.13)  14 JAN 2020 19:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1222,7 +1222,7 @@ Overfull \hbox (17.62482pt too wide) in paragraph at lines 58--65
 [][] 
  []
 
-<img/gmit-logo.jpg, id=240, 281.853pt x 88.4103pt>
+<img/gmit-logo.jpg, id=244, 281.853pt x 88.4103pt>
 File: img/gmit-logo.jpg Graphic file (type jpg)
 <use img/gmit-logo.jpg>
 Package pdftex.def Info: img/gmit-logo.jpg  used on input line 66.
@@ -1270,7 +1270,7 @@ File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 
 ]
 Chapter 1.
-<img/mern.jpeg, id=320, 1304.875pt x 746.79pt>
+<img/mern.jpeg, id=325, 1304.875pt x 746.79pt>
 File: img/mern.jpeg Graphic file (type jpg)
 <use img/mern.jpeg>
 Package pdftex.def Info: img/mern.jpeg  used on input line 39.
@@ -1283,7 +1283,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 41--50
 [5
 
  <./img/mern.jpeg>]
-<img/mongostat.png, id=328, 1346.02875pt x 1084.05pt>
+<img/mongostat.png, id=333, 1346.02875pt x 1084.05pt>
 File: img/mongostat.png Graphic file (type png)
 <use img/mongostat.png>
 Package pdftex.def Info: img/mongostat.png  used on input line 58.
@@ -1316,7 +1316,7 @@ Chapter 2.
 Chapter 3.
 [16
 
-] [17]
+] [17] [18]
 Chapter 4.
 \openout3 = `project.pyg'.
 
@@ -1331,26 +1331,26 @@ File: ot1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OT1/lmtt/bx/n' in size <12> not available
 (Font)              Font shape `OT1/lmtt/b/n' tried instead on input line 2.
-) [18
+) [19
 
 ]
 Chapter 5.
-[19
-
-]
-Chapter 6.
 [20
 
 ]
-Chapter 7.
+Chapter 6.
 [21
 
-] [22
+]
+Chapter 7.
+[22
+
+] [23
 
 
 ]
 Appendix A.
-(./project.bbl [23
+(./project.bbl [24
 
 ]
 Underfull \hbox (badness 6125) in paragraph at lines 4--8
@@ -1438,7 +1438,7 @@ Underfull \hbox (badness 2181) in paragraph at lines 47--49
   [][]$\OT1/lmtt/m/n/12 https : / /
  []
 
-[24
+[25
 
 ]
 Underfull \hbox (badness 2103) in paragraph at lines 56--58
@@ -1446,22 +1446,22 @@ Underfull \hbox (badness 2103) in paragraph at lines 56--58
 2 https : / / github . com /
  []
 
-) [25]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 376.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 376.
+) [26]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 383.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 383.
  (./project.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 376.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 376.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 383.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 383.
 Package rerunfilecheck Info: File `project.out' has not changed.
-(rerunfilecheck)             Checksum: 7E02545B82BFA4CDADFEB28ED69D7A8D;3523.
+(rerunfilecheck)             Checksum: 4D32815C4ACAAAD332DE536ABB4CC35F;3588.
 runsystem(rm project.pyg)...disabled (restricted).
 
  ) ) 
 Here is how much of TeX's memory you used:
- 25682 strings out of 492167
- 509347 string characters out of 6131557
- 652313 words of memory out of 5000000
- 29421 multiletter control sequences out of 15000+600000
+ 25687 strings out of 492167
+ 509401 string characters out of 6131557
+ 652339 words of memory out of 5000000
+ 29423 multiletter control sequences out of 15000+600000
  48995 words of font info for 41 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  60i,10n,79p,845b,472s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1473,10 +1473,10 @@ m/lmcsc10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/shar
 e/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf-dist/fonts/type1/
 public/lm/lmro12.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></
 usr/share/texmf-dist/fonts/type1/public/lm/lmtt12.pfb>
-Output written on project.pdf (25 pages, 517129 bytes).
+Output written on project.pdf (26 pages, 519096 bytes).
 PDF statistics:
- 521 PDF objects out of 1000 (max. 8388607)
- 462 compressed objects within 5 object streams
- 95 named destinations out of 1000 (max. 500000)
- 540 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 535 PDF objects out of 1000 (max. 8388607)
+ 475 compressed objects within 5 object streams
+ 98 named destinations out of 1000 (max. 500000)
+ 548 words of extra memory for PDF output out of 10000 (max. 10000000)
 
