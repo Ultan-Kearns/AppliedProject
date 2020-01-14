@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{MERN}
 A.~Morgan, ``The modern application stack – part 1: Introducing the mean
@@ -42,5 +42,18 @@ Z.~Doffman, ``Cybercrime: 25\% of all malware targets financial services,
   credit card fraud up 200\%.''
 \newblock
   \url{https://www.forbes.com/sites/zakdoffman/2019/04/29/new-cyber-report-25-of-all-malware-hits-financial-services-card-fraud-up-200/#44d8cd4b7a47s}.
+
+\bibitem{Agile}
+various, ``Manifesto for agile software development.''
+\newblock \url{https://agilemanifesto.org/}.
+
+\bibitem{VariationsofAgile}
+S.~K. Magdalena~Maneva, Natasa~Koceska, ``Measuring agility in agile
+  methodologies.''
+\newblock \url{https://core.ac.uk/reader/149219742}.
+
+\bibitem{KanbanBoard}
+U.~Kearns, ``Kanban board on github.''
+\newblock \url{https://github.com/Ultan-Kearns/AppliedProject/projects/3}.
 
 \end{thebibliography}
