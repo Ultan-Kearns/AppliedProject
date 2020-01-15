@@ -1,6 +1,6 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Arch Linux) (preloaded format=pdflatex 2019.12.13)  14 JAN 2020 19:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Arch Linux) (preloaded format=pdflatex 2019.12.13)  15 JAN 2020 20:14
 entering extended mode
- restricted \write18 enabled.
+ \write18 enabled.
  %&-line parsing enabled.
 **project
 (./project.tex
@@ -151,7 +151,7 @@ LaTeX Info: Redefining \addtolength on input line 81.
 )
 (/usr/share/texmf-dist/tex/latex/tools/shellesc.sty
 Package: shellesc 2016/06/07 v0.02b unified shell escape interface for LaTeX
-Package shellesc Info: Restricted shell escape enabled on input line 72.
+Package shellesc Info: Unrestricted shell escape enabled on input line 70.
 )
 (/usr/share/texmf-dist/tex/latex/ifplatform/ifplatform.sty
 Package: ifplatform 2017/10/13 v0.4a Testing for the operating system
@@ -171,11 +171,13 @@ Package pdftexcmds Info: \pdfdraftmode found.
 (/usr/share/texmf-dist/tex/generic/oberdiek/catchfile.sty
 Package: catchfile 2016/05/16 v1.7 Catch the contents of a file (HO)
 )
+runsystem(uname -s > "project.w18")...executed.
 
-Package ifplatform Warning: 
-    shell escape is disabled, so I can only detect \ifwindows.
+ (./project.w18)
+runsystem(rm -- "project.w18")...executed.
 
-) (/usr/share/texmf-dist/tex/generic/xstring/xstring.sty
+)
+(/usr/share/texmf-dist/tex/generic/xstring/xstring.sty
 (/usr/share/texmf-dist/tex/generic/xstring/xstring.tex
 \integerpart=\count114
 \decimalpart=\count115
@@ -206,19 +208,9 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@float@every@listing=\toks18
 \c@listing=\count119
 )
-runsystem(mkdir -p _minted-project)...disabled (restricted).
+runsystem(mkdir -p _minted-project)...executed.
 
 
-
-! Package minted Error: You must invoke LaTeX with the -shell-escape flag.
-
-See the minted package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.4 \usepackage
-               [utf8]{inputenc}
-? 
 (/usr/share/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2018/08/11 v1.3c Input encoding file
 \inpenc@prehook=\toks19
@@ -1095,21 +1087,11 @@ Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 407.
 Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 408.
 Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 409.
 )
-runsystem(which pygmentize && touch project.aex)...disabled (restricted).
+runsystem(which pygmentize && touch project.aex)...executed.
 
+runsystem(rm project.aex)...executed.
 
-
-! Package minted Error: You must have `pygmentize' installed to use this packag
-e.
-
-See the minted package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.38 \begin{document}
-                     
-? 
-(./project.aux)
+ (./project.aux)
 \openout1 = `project.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 38.
@@ -1129,7 +1111,8 @@ LaTeX Font Info:    ... okay on input line 38.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 38.
 LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 3
 8.
- (/usr/share/texmf-dist/tex/latex/base/ts1cmr.fd
+
+(/usr/share/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 38.
@@ -1222,7 +1205,7 @@ Overfull \hbox (17.62482pt too wide) in paragraph at lines 58--65
 [][] 
  []
 
-<img/gmit-logo.jpg, id=244, 281.853pt x 88.4103pt>
+<img/gmit-logo.jpg, id=248, 281.853pt x 88.4103pt>
 File: img/gmit-logo.jpg Graphic file (type jpg)
 <use img/gmit-logo.jpg>
 Package pdftex.def Info: img/gmit-logo.jpg  used on input line 66.
@@ -1270,7 +1253,7 @@ File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 
 ]
 Chapter 1.
-<img/mern.jpeg, id=325, 1304.875pt x 746.79pt>
+<img/mern.jpeg, id=330, 1304.875pt x 746.79pt>
 File: img/mern.jpeg Graphic file (type jpg)
 <use img/mern.jpeg>
 Package pdftex.def Info: img/mern.jpeg  used on input line 39.
@@ -1283,7 +1266,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 41--50
 [5
 
  <./img/mern.jpeg>]
-<img/mongostat.png, id=333, 1346.02875pt x 1084.05pt>
+<img/mongostat.png, id=338, 1346.02875pt x 1084.05pt>
 File: img/mongostat.png Graphic file (type png)
 <use img/mongostat.png>
 Package pdftex.def Info: img/mongostat.png  used on input line 58.
@@ -1314,9 +1297,19 @@ Chapter 2.
 
 ] [13] [14] [15]
 Chapter 3.
+<./img/agile.jpg, id=405, 963.6pt x 542.025pt>
+File: ./img/agile.jpg Graphic file (type jpg)
+<use ./img/agile.jpg>
+Package pdftex.def Info: ./img/agile.jpg  used on input line 309.
+(pdftex.def)             Requested size: 390.0pt x 219.37004pt.
+
+Overfull \hbox (18.27795pt too wide) in paragraph at lines 304--310
+[]\OT1/lmr/m/n/12 [[]] 
+ []
+
 [16
 
-] [17] [18]
+] [17 <./img/agile.jpg>] [18]
 Chapter 4.
 \openout3 = `project.pyg'.
 
@@ -1441,27 +1434,38 @@ Underfull \hbox (badness 2181) in paragraph at lines 47--49
 [25
 
 ]
-Underfull \hbox (badness 2103) in paragraph at lines 56--58
+Underfull \hbox (badness 10000) in paragraph at lines 56--59
+[]\OT1/lmr/m/n/12 SlideModel, ``Ag-ile pro-cess life-cy-cle di-a-gram for
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 56--59
+\OT1/lmr/m/n/12 pow-er-point.''  [][]$\OT1/lmtt/m/n/12 https : / / slidemodel .
+ com / templates /
+ []
+
+
+Underfull \hbox (badness 2103) in paragraph at lines 66--68
 []\OT1/lmr/m/n/12 U. Kearns, ``Kan-ban board on github.''  [][]$\OT1/lmtt/m/n/1
 2 https : / / github . com /
  []
 
 ) [26]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 383.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 383.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 386.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 386.
  (./project.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 383.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 383.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 386.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 386.
 Package rerunfilecheck Info: File `project.out' has not changed.
-(rerunfilecheck)             Checksum: 4D32815C4ACAAAD332DE536ABB4CC35F;3588.
-runsystem(rm project.pyg)...disabled (restricted).
+(rerunfilecheck)             Checksum: 27B726C8EB186BC0FC56620E5F43FB96;3650.
+runsystem(rm project.pyg)...executed.
 
  ) ) 
 Here is how much of TeX's memory you used:
- 25687 strings out of 492167
- 509401 string characters out of 6131557
- 652339 words of memory out of 5000000
- 29423 multiletter control sequences out of 15000+600000
+ 25705 strings out of 492167
+ 509638 string characters out of 6131557
+ 652428 words of memory out of 5000000
+ 29433 multiletter control sequences out of 15000+600000
  48995 words of font info for 41 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  60i,10n,79p,845b,472s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1473,10 +1477,10 @@ m/lmcsc10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/shar
 e/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf-dist/fonts/type1/
 public/lm/lmro12.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></
 usr/share/texmf-dist/fonts/type1/public/lm/lmtt12.pfb>
-Output written on project.pdf (26 pages, 519096 bytes).
+Output written on project.pdf (26 pages, 614917 bytes).
 PDF statistics:
- 535 PDF objects out of 1000 (max. 8388607)
- 475 compressed objects within 5 object streams
- 98 named destinations out of 1000 (max. 500000)
- 548 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 548 PDF objects out of 1000 (max. 8388607)
+ 487 compressed objects within 5 object streams
+ 101 named destinations out of 1000 (max. 500000)
+ 561 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -73,10 +73,16 @@ app.get("/api/statements", function(req, res) {
     res.status(200, "request completed");
   });
 });
-app.get("/api/statements/:id", function(req, res) {
-  statementModel.findById(req.params.id,function(err, data) {
-    res.json(data);
-    res.status(200, "request completed");
+app.get("/api/statements/:name", function(req, res) {
+  statementModel.findById(req.params.name, function(err, data) {
+    if (err) {
+      res.status(500, "INTERNAL SERVER ERROR " + err);
+    } else {
+      if (req.params.name == data.name) {
+        res.json(data);
+        res.status(200, "request completed");
+      }
+    }
   });
 });
 //models for mongoose
@@ -102,6 +108,7 @@ app.get("/api/users/:id/:password", function(req, res) {
   });
 });
 //template taken from earlier project - https://github.com/Ultan-Kearns/eCommerceApp/blob/master/BackEnd/Server.js
+//Improved upon in this project
 app.get("/api/emailuser/:id/", function(req, res, next) {
   bankUserModel.findById(req.params.id, function(err, data) {
     if (data == null)
@@ -143,28 +150,28 @@ app.get("/api/emailuser/:id/", function(req, res, next) {
     }
   });
 });
-app.get("/api/getuser/:id/", function(req, res){
+app.get("/api/getuser/:id/", function(req, res) {
   bankUserModel.findById(req.params.id, function(err, data) {
     if (err) {
       //send back error 500 to show the server had internel error
       res.status(500, "INTERNAL SERVER ERROR " + err);
     } else if (data != null) {
-      res.json(data)
+      res.json(data);
     }
-})
+  });
 });
 //create users and others here
 app.post("/api/users", function(req, res) {
   //check if user with same username exists use findById and change id to username
 
-    bankUserModel.create({
-      _id: req.body._id,
-      password: req.body.password,
-      name:req.body.name,
-      number:req.body.number,
-      dob:req.body.dob
-    });
-    res.status(201, "Resource created");
+  bankUserModel.create({
+    _id: req.body._id,
+    password: req.body.password,
+    name: req.body.name,
+    number: req.body.number,
+    dob: req.body.dob
+  });
+  res.status(201, "Resource created");
 });
 
 //have server listening at port  8080 and have it take keycert to secure server
