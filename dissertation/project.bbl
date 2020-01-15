@@ -15,6 +15,19 @@ F.~Hámori, ``How developers use node.js - survey results.''
 \newblock
   \url{https://blog.risingstack.com/node-js-developer-survey-results-2016/}.
 
+\bibitem{ExpressImage}
+CodeCondo, ``Mean stack vs lamp stack.''
+\newblock \url{https://codecondo.com/mean-stack-vs-lamp-stack/}.
+
+\bibitem{ReactImage}
+Dashlane, ``The 3 simple reasons why dashlane uses react.''
+\newblock
+  \url{https://blog.dashlane.com/the-3-simple-reasons-why-dashlane-uses-react/}.
+
+\bibitem{NodeImage}
+W.~various, ``Node.js.''
+\newblock \url{https://en.wikipedia.org/wiki/Node.js}.
+
 \bibitem{HistoryBanking}
 R.~Sarreal, ``History of online banking: How internet banking went
   mainstream.''

@@ -6,51 +6,51 @@
 \contentsline {subsection}{\numberline {1.1.2}Express}{6}{subsection.1.1.2}% 
 \contentsline {subsection}{\numberline {1.1.3}React}{7}{subsection.1.1.3}% 
 \contentsline {subsection}{\numberline {1.1.4}Node JS}{7}{subsection.1.1.4}% 
-\contentsline {section}{\numberline {1.2}Why a banking application?}{7}{section.1.2}% 
-\contentsline {subsection}{\numberline {1.2.1}Explanation of Why I Chose This Project}{7}{subsection.1.2.1}% 
+\contentsline {section}{\numberline {1.2}Why a banking application?}{8}{section.1.2}% 
+\contentsline {subsection}{\numberline {1.2.1}Explanation of Why I Chose This Project}{8}{subsection.1.2.1}% 
 \contentsline {subsection}{\numberline {1.2.2}My Contention With Existing Online Banking Systems \& How I Plan To Improve Upon Them}{8}{subsection.1.2.2}% 
-\contentsline {section}{\numberline {1.3}Requirements}{8}{section.1.3}% 
-\contentsline {section}{\numberline {1.4}Outline of chapters}{9}{section.1.4}% 
+\contentsline {section}{\numberline {1.3}Requirements}{9}{section.1.3}% 
+\contentsline {section}{\numberline {1.4}Outline of chapters}{10}{section.1.4}% 
 \contentsline {subsection}{\numberline {1.4.1}Context}{10}{subsection.1.4.1}% 
 \contentsline {subsection}{\numberline {1.4.2}Methodology}{10}{subsection.1.4.2}% 
-\contentsline {subsection}{\numberline {1.4.3}Technical Review}{10}{subsection.1.4.3}% 
-\contentsline {subsection}{\numberline {1.4.4}System Design}{10}{subsection.1.4.4}% 
-\contentsline {subsection}{\numberline {1.4.5}System Evaluation}{10}{subsection.1.4.5}% 
-\contentsline {subsection}{\numberline {1.4.6}Conclusion}{10}{subsection.1.4.6}% 
+\contentsline {subsection}{\numberline {1.4.3}Technical Review}{11}{subsection.1.4.3}% 
+\contentsline {subsection}{\numberline {1.4.4}System Design}{11}{subsection.1.4.4}% 
+\contentsline {subsection}{\numberline {1.4.5}System Evaluation}{11}{subsection.1.4.5}% 
+\contentsline {subsection}{\numberline {1.4.6}Conclusion}{11}{subsection.1.4.6}% 
 \contentsline {section}{\numberline {1.5}Structure of Project}{11}{section.1.5}% 
-\contentsline {chapter}{\numberline {2}Context}{12}{chapter.2}% 
-\contentsline {section}{\numberline {2.1}Project Objectives}{12}{section.2.1}% 
-\contentsline {section}{\numberline {2.2}Online Banking}{12}{section.2.2}% 
-\contentsline {section}{\numberline {2.3}History of Online Banking}{13}{section.2.3}% 
-\contentsline {subsection}{\numberline {2.3.1}Definition of Online Banking}{13}{subsection.2.3.1}% 
-\contentsline {subsection}{\numberline {2.3.2}The Beginning}{13}{subsection.2.3.2}% 
-\contentsline {section}{\numberline {2.4}Advantages of Online Banking}{14}{section.2.4}% 
-\contentsline {subsection}{\numberline {2.4.1}Convenience}{14}{subsection.2.4.1}% 
-\contentsline {subsection}{\numberline {2.4.2}Speed}{14}{subsection.2.4.2}% 
-\contentsline {subsection}{\numberline {2.4.3}Competition}{14}{subsection.2.4.3}% 
-\contentsline {subsection}{\numberline {2.4.4}Creation of Jobs}{14}{subsection.2.4.4}% 
-\contentsline {section}{\numberline {2.5}Disadvantages of Online Banking}{15}{section.2.5}% 
-\contentsline {subsection}{\numberline {2.5.1}Security}{15}{subsection.2.5.1}% 
-\contentsline {subsection}{\numberline {2.5.2}Layoff of Bank Employees}{15}{subsection.2.5.2}% 
-\contentsline {subsection}{\numberline {2.5.3}Increased Crime}{15}{subsection.2.5.3}% 
-\contentsline {section}{\numberline {2.6}The Overall Effect of Online Banking}{15}{section.2.6}% 
-\contentsline {chapter}{\numberline {3}Methodology}{16}{chapter.3}% 
-\contentsline {section}{\numberline {3.1}Overview of Methodology}{16}{section.3.1}% 
-\contentsline {section}{\numberline {3.2}Agile}{16}{section.3.2}% 
-\contentsline {subsection}{\numberline {3.2.1}What is Agile?}{16}{subsection.3.2.1}% 
-\contentsline {subsection}{\numberline {3.2.2}Why Kanban?}{17}{subsection.3.2.2}% 
-\contentsline {subsection}{\numberline {3.2.3}How I Applied Agile To This Project}{17}{subsection.3.2.3}% 
-\contentsline {section}{\numberline {3.3}Test Driven Development (TDD)}{18}{section.3.3}% 
-\contentsline {subsection}{\numberline {3.3.1}What Is Test Driven Development?}{18}{subsection.3.3.1}% 
-\contentsline {subsection}{\numberline {3.3.2}How I Applied Test Driven Development To This Project}{18}{subsection.3.3.2}% 
-\contentsline {section}{\numberline {3.4}Time Management}{18}{section.3.4}% 
-\contentsline {subsection}{\numberline {3.4.1}How I Handled Multiple Projects}{18}{subsection.3.4.1}% 
-\contentsline {subsection}{\numberline {3.4.2}Issues I Faced With Time Management}{18}{subsection.3.4.2}% 
-\contentsline {section}{\numberline {3.5}Version Control}{18}{section.3.5}% 
-\contentsline {chapter}{\numberline {4}Technology Review}{19}{chapter.4}% 
-\contentsline {section}{\numberline {4.1}XML}{19}{section.4.1}% 
-\contentsline {chapter}{\numberline {5}System Design}{20}{chapter.5}% 
-\contentsline {chapter}{\numberline {6}System Evaluation}{21}{chapter.6}% 
-\contentsline {chapter}{\numberline {7}Conclusion}{22}{chapter.7}% 
-\contentsline {chapter}{Appendices}{23}{section*.6}% 
-\contentsline {chapter}{\numberline {A}Preamble \& Intro}{24}{Appendix.1.A}% 
+\contentsline {chapter}{\numberline {2}Context}{13}{chapter.2}% 
+\contentsline {section}{\numberline {2.1}Project Objectives}{13}{section.2.1}% 
+\contentsline {section}{\numberline {2.2}Online Banking}{13}{section.2.2}% 
+\contentsline {section}{\numberline {2.3}History of Online Banking}{14}{section.2.3}% 
+\contentsline {subsection}{\numberline {2.3.1}Definition of Online Banking}{14}{subsection.2.3.1}% 
+\contentsline {subsection}{\numberline {2.3.2}The Beginning}{14}{subsection.2.3.2}% 
+\contentsline {section}{\numberline {2.4}Advantages of Online Banking}{15}{section.2.4}% 
+\contentsline {subsection}{\numberline {2.4.1}Convenience}{15}{subsection.2.4.1}% 
+\contentsline {subsection}{\numberline {2.4.2}Speed}{15}{subsection.2.4.2}% 
+\contentsline {subsection}{\numberline {2.4.3}Competition}{15}{subsection.2.4.3}% 
+\contentsline {subsection}{\numberline {2.4.4}Creation of Jobs}{15}{subsection.2.4.4}% 
+\contentsline {section}{\numberline {2.5}Disadvantages of Online Banking}{16}{section.2.5}% 
+\contentsline {subsection}{\numberline {2.5.1}Security}{16}{subsection.2.5.1}% 
+\contentsline {subsection}{\numberline {2.5.2}Layoff of Bank Employees}{16}{subsection.2.5.2}% 
+\contentsline {subsection}{\numberline {2.5.3}Increased Crime}{16}{subsection.2.5.3}% 
+\contentsline {section}{\numberline {2.6}The Overall Effect of Online Banking}{16}{section.2.6}% 
+\contentsline {chapter}{\numberline {3}Methodology}{17}{chapter.3}% 
+\contentsline {section}{\numberline {3.1}Overview of Methodology}{17}{section.3.1}% 
+\contentsline {section}{\numberline {3.2}Agile}{17}{section.3.2}% 
+\contentsline {subsection}{\numberline {3.2.1}What is Agile?}{17}{subsection.3.2.1}% 
+\contentsline {subsection}{\numberline {3.2.2}Why Kanban?}{18}{subsection.3.2.2}% 
+\contentsline {subsection}{\numberline {3.2.3}How I Applied Agile To This Project}{18}{subsection.3.2.3}% 
+\contentsline {section}{\numberline {3.3}Test Driven Development (TDD)}{19}{section.3.3}% 
+\contentsline {subsection}{\numberline {3.3.1}What Is Test Driven Development?}{19}{subsection.3.3.1}% 
+\contentsline {subsection}{\numberline {3.3.2}How I Applied Test Driven Development To This Project}{19}{subsection.3.3.2}% 
+\contentsline {section}{\numberline {3.4}Time Management}{19}{section.3.4}% 
+\contentsline {subsection}{\numberline {3.4.1}How I Handled Multiple Projects}{19}{subsection.3.4.1}% 
+\contentsline {subsection}{\numberline {3.4.2}Issues I Faced With Time Management}{19}{subsection.3.4.2}% 
+\contentsline {section}{\numberline {3.5}Version Control}{19}{section.3.5}% 
+\contentsline {chapter}{\numberline {4}Technology Review}{20}{chapter.4}% 
+\contentsline {section}{\numberline {4.1}XML}{20}{section.4.1}% 
+\contentsline {chapter}{\numberline {5}System Design}{21}{chapter.5}% 
+\contentsline {chapter}{\numberline {6}System Evaluation}{22}{chapter.6}% 
+\contentsline {chapter}{\numberline {7}Conclusion}{23}{chapter.7}% 
+\contentsline {chapter}{Appendices}{24}{section*.6}% 
+\contentsline {chapter}{\numberline {A}Preamble \& Intro}{25}{Appendix.1.A}% 
