@@ -14,7 +14,7 @@ READJUST TIMES
 + Get statements fully working and only show users
 + Get Methodology section of Dissertation finished(Done)
 + Get logout function(Done)
-+ Fix up Methodology section
++ Fix up Methodology section(done)
 + Form validation
 # Sprint 6 (31st January - 10th February)
 + Need to get more security and research methods to secure application

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Arch Linux) (preloaded format=pdflatex 2019.12.13)  15 JAN 2020 22:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Arch Linux) (preloaded format=pdflatex 2019.12.13)  16 JAN 2020 12:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1360,8 +1360,8 @@ File: ./img/agile.jpg Graphic file (type jpg)
 Package pdftex.def Info: ./img/agile.jpg  used on input line 317.
 (pdftex.def)             Requested size: 390.0pt x 219.37004pt.
 
-Overfull \hbox (18.27795pt too wide) in paragraph at lines 312--318
-[]\OT1/lmr/m/n/12 [[]] 
+Overfull \hbox (65.49565pt too wide) in paragraph at lines 312--318
+\OT1/lmr/m/n/12 de-liv-ery. [][[]] 
  []
 
 [17
@@ -1413,8 +1413,8 @@ File: img/tdd.jpg Graphic file (type jpg)
 Package pdftex.def Info: img/tdd.jpg  used on input line 333.
 (pdftex.def)             Requested size: 390.0pt x 259.2181pt.
 
-Overfull \hbox (18.27795pt too wide) in paragraph at lines 332--334
-[]\OT1/lmr/m/n/12 [[]] 
+Overfull \hbox (110.21042pt too wide) in paragraph at lines 332--334
+\OT1/lmr/m/n/12 refac-tor-ing it[[]]. [][[]] 
  []
 
 [18 <./img/agile.jpg> <./img/kanban.png>] [19 <./img/tdd.jpg>]
@@ -1648,7 +1648,7 @@ m/lmcsc10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/shar
 e/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf-dist/fonts/type1/
 public/lm/lmro12.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></
 usr/share/texmf-dist/fonts/type1/public/lm/lmtt12.pfb>
-Output written on project.pdf (28 pages, 1062253 bytes).
+Output written on project.pdf (28 pages, 1062266 bytes).
 PDF statistics:
  594 PDF objects out of 1000 (max. 8388607)
  518 compressed objects within 6 object streams
