@@ -26,13 +26,13 @@ class Statements extends React.Component {
         //create LI element then form statment then append to LI then add to list
         var node = document.createElement("LI");
         var text = document.createTextNode(
-          "Location " +
+          "Location: " +
             this.state.location +
-            " " +
+            ", Cost: " +
             this.state.cost +
-            " Name: " +
+            ", Name: " +
             this.state.name +
-            " Date: " +
+            ", Date: " +
             this.state.date
         );
         node.append(text);

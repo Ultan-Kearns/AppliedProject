@@ -55,8 +55,18 @@ var userSchema = new Schema({
 //change this later
 var statementSchema = new Schema({
   location: { type: String, default: "Unknown" },
-  cost: { type: String, default: 0 }
+  cost: { type: String, default: 0 },
+  name: { type: String },
+  date: { type: Date }
 });
+statementSchema.methods.findName = function(username) {
+  //define logic to find statement by name in here
+  return this.model("Statements").find({ name: this.name }, username);
+};
+//models for mongoose
+var bankUserModel = mongoose.model("users", userSchema);
+var Statements = mongoose.model("Statements", statementSchema);
+var statement = new Statements();
 //Here I will use get requests to retrieve resources
 app.get("/", function(req, res) {
   res.status(200).send("Server is up and running!");
@@ -68,28 +78,11 @@ app.get("/api/users", function(req, res) {
   });
 });
 app.get("/api/statements", function(req, res) {
-  statementModel.find(function(err, data) {
+  Statements.find(function(err, data) {
     res.json(data);
     res.status(200, "request completed");
   });
 });
-app.get("/api/statements/:name", function(req, res) {
-  statementModel.findById(req.params.name, function(err, data) {
-    if (err) {
-      res.status(500, "INTERNAL SERVER ERROR " + err);
-    } else {
-      if (req.params.name == data.name) {
-        res.json(data);
-        res.status(200, "request completed");
-      }
-    }
-  });
-});
-//models for mongoose
-var bankUserModel = mongoose.model("users", userSchema);
-var statementModel = mongoose.model("statements", statementSchema);
-
-//user login function - modified from previous project https://github.com/Ultan-Kearns/eCommerceApp/blob/master/BackEnd/Server.js
 app.get("/api/users/:id/:password", function(req, res) {
   bankUserModel.findById(req.params.id, function(err, data) {
     if (err) {
@@ -172,6 +165,18 @@ app.post("/api/users", function(req, res) {
     dob: req.body.dob
   });
   res.status(201, "Resource created");
+});
+statement.findName(function(name) {
+  console.log(name);
+});
+
+app.get("/api/statements/:name", function(req, res) {
+  //custom method to find name on statements
+  statement = new Statements({ name: req.params.name });
+  statement.findName(function(err, data) {
+    console.log(data);
+    res.json(data);
+  });
 });
 
 //have server listening at port  8080 and have it take keycert to secure server
