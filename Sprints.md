@@ -11,16 +11,16 @@ READJUST TIMES
 + work on statments page
 # SPRINT 5(14th January - 31st January)
 + Add more to homepage
-+ Get statements fully working and only show users
++ Get statements fully working and only show users(done)
 + Get Methodology section of Dissertation finished(Done)
 + Get logout function(Done)
 + Fix up Methodology section(done)
 + Form validation
 # Sprint 6 (31st January - 10th February)
++ Get loans working
 + Need to get more security and research methods to secure application
 + Finish homepage
 # Sprint 7 (10th February - 20th February)
-+ Get started on Loans page
 + Work on update users page
 # Sprint 8 (20th February - 31st February)
 + Get Statistics generated based on Loans / Statments

@@ -57,14 +57,14 @@ var statementSchema = new Schema({
   location: { type: String, default: "Unknown" },
   cost: { type: String, default: 0 },
   name: { type: String },
-  date: { type: Date }
+  date: { type: String }
 });
 statementSchema.methods.findName = function(username) {
   //define logic to find statement by name in here
   return this.model("Statements").find({ name: this.name }, username);
 };
 //models for mongoose
-var bankUserModel = mongoose.model("users", userSchema);
+var UserModel = mongoose.model("users", userSchema);
 var Statements = mongoose.model("Statements", statementSchema);
 var statement = new Statements();
 //Here I will use get requests to retrieve resources
@@ -72,7 +72,7 @@ app.get("/", function(req, res) {
   res.status(200).send("Server is up and running!");
 });
 app.get("/api/users", function(req, res) {
-  bankUserModel.find(function(err, data) {
+  UserModel.find(function(err, data) {
     res.json(data);
     res.status(200, "request completed");
   });
@@ -84,7 +84,7 @@ app.get("/api/statements", function(req, res) {
   });
 });
 app.get("/api/users/:id/:password", function(req, res) {
-  bankUserModel.findById(req.params.id, function(err, data) {
+  UserModel.findById(req.params.id, function(err, data) {
     if (err) {
       //send back error 500 to show the server had internel error
       res.status(500, "INTERNAL SERVER ERROR " + err);
@@ -103,7 +103,7 @@ app.get("/api/users/:id/:password", function(req, res) {
 //template taken from earlier project - https://github.com/Ultan-Kearns/eCommerceApp/blob/master/BackEnd/Server.js
 //Improved upon in this project
 app.get("/api/emailuser/:id/", function(req, res, next) {
-  bankUserModel.findById(req.params.id, function(err, data) {
+  UserModel.findById(req.params.id, function(err, data) {
     if (data == null)
       res.status(404, "User does not exist on this server", err);
     else if (data._id == req.params.id) {
@@ -144,7 +144,7 @@ app.get("/api/emailuser/:id/", function(req, res, next) {
   });
 });
 app.get("/api/getuser/:id/", function(req, res) {
-  bankUserModel.findById(req.params.id, function(err, data) {
+  UserModel.findById(req.params.id, function(err, data) {
     if (err) {
       //send back error 500 to show the server had internel error
       res.status(500, "INTERNAL SERVER ERROR " + err);
@@ -157,7 +157,7 @@ app.get("/api/getuser/:id/", function(req, res) {
 app.post("/api/users", function(req, res) {
   //check if user with same username exists use findById and change id to username
 
-  bankUserModel.create({
+  UserModel.create({
     _id: req.body._id,
     password: req.body.password,
     name: req.body.name,
