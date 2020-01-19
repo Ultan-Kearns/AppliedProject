@@ -10,7 +10,7 @@ class Home extends React.Component {
     const axios = require("axios").default;
 
     axios.get("https://www.reddit.com/r/finance.json").then(res =>{
-       console.log("RES" + res)
+       console.log("RES" + JSON.stringify(res))
       /*
       for (var i = 0; i < test.length; i++) {
         this.setState({

@@ -49,15 +49,16 @@ var userSchema = new Schema({
   _id: { type: String },
   password: { type: String, required: true },
   name: { type: String, required: true },
-  number: { type: String, required: true },
-  dob: { type: Date, required: true }
+  number: { type: Number, required: true },
+  dob: { type: Date, required: true },
+  balance: {type: Number,default:0}
 });
 //change this later
 var statementSchema = new Schema({
   location: { type: String, default: "Unknown" },
-  cost: { type: String, default: 0 },
+  cost: { type: Number, default: 0 },
   name: { type: String },
-  date: { type: String }
+  date: { type: Date }
 });
 statementSchema.methods.findName = function(username) {
   //define logic to find statement by name in here
