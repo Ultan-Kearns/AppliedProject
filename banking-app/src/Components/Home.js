@@ -8,23 +8,37 @@ import Button from "react-bootstrap/Button";
 class Home extends React.Component {
   componentDidMount() {
     const axios = require("axios").default;
-    axios.get("https://newsapi.org/v2/top-headlines?country=us&apiKey=e9cdf3a801374e4eba79b8ea0552a4bd").then(res =>{
-       console.log("RES" + JSON.stringify(res))
-         for (var i = 0; i < res.data.articles.length; i++) {
-
-        //create LI element then form statment then append to LI then add to list
-        var node = document.createElement("LI");
-        var text = document.createTextNode(
-          "\nHeadline: " +res.data.articles[i].title +
-          "\nDescription: " + res.data.articles[i].description +
-          "\nAuthor: " + res.data.articles[i].author +
-          "\n\nUrl\n" + res.data.articles[i].url
-        );
-        node.append(text);
-        document.getElementById("finance").appendChild(node);
-      }
-
-    });
+    axios
+      .get(
+        "https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=e9cdf3a801374e4eba79b8ea0552a4bd"
+      )
+      .then(res => {
+        console.log("RES" + JSON.stringify(res));
+        for (var i = 0; i < res.data.articles.length; i++) {
+          //create LI element then form statment then append to LI then add to list
+          var node = document.createElement("LI");
+          var text = document.createTextNode(
+            "\nHeadline: " +
+              res.data.articles[i].title +
+              "\nDescription: " +
+              res.data.articles[i].description +
+              "\nAuthor: " +
+              res.data.articles[i].author
+          );
+          var image = document.createElement("IMG");
+          image.src = res.data.articles[i].urlToImage;
+          image.alt = "picture of news story";
+          image.height= 10;
+          image.width = 10
+          var link = document.createElement("A");
+          link.href = res.data.articles[i].url;
+          link.text= "\n Link to article: " + res.data.articles[i].url;
+          node.append(text);
+          node.append(link);
+          node.append(image);
+          document.getElementById("financial").appendChild(node);
+        }
+      });
     //if(sessionStorage.getItem("username") !="null" && sessionStorage.getItem("username") != null){
     //ReactDOM.render(<App />, document.getElementById("root"));
     ReactDOM.render(<App />, document.getElementById("root"));
@@ -43,10 +57,9 @@ class Home extends React.Component {
           Here the user can view graphs of monthly expenditure, view how much
           over your current budget you are, view this months transfers
         </p>
-        <div id = "finance">
-        <h2>Latest financial news</h2>
-        <ul id = "financial">
-        </ul>
+        <div id="finance">
+          <h2>Latest Financial News Headlines</h2>
+          <ul id="financial" />
         </div>
         <h2>Latest information for your account</h2>
         <p>Show latest statements, open loans</p>

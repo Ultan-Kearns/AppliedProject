@@ -10,4 +10,9 @@ h2{
 p{
   margin-top: 5%;
 }
+img{
+  height: 50vh  !important;
+  width: 50vw !important;
+  margin-top: 30vh;
+}
  
