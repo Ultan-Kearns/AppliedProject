@@ -13,7 +13,7 @@ p{
 img{
   height: 50vh  !important;
   width: 50vw !important;
-  margin-top: 30vh;
+  margin: 10%;
 }
 body{
   overflow-x: hidden;
@@ -22,5 +22,5 @@ body{
   border: 4px solid black;
   margin: 10%;
   list-style: none;
-  
+
 }

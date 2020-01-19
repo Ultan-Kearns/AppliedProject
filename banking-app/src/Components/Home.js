@@ -6,11 +6,11 @@ import HomeStyle from "../Styles/HomeStyle.css";
 import Button from "react-bootstrap/Button";
 
 class Home extends React.Component {
-
-  componentDidMount(){
+  componentDidMount() {
     const axios = require("axios").default;
     /*
     Pulling data from newsapi.org
+    then render App page
     */
     axios
       .get(
@@ -23,9 +23,8 @@ class Home extends React.Component {
           //create LI element then form statment then append to LI then add to list
           var node = document.createElement("LI");
           node.id = "headline";
-                  console.log(res.data.length + " " + i)
+          console.log(res.data.length + " " + i);
           var text = document.createTextNode(
-
             "\nHeadline: " +
               res.data.articles[i].title +
               "\nDescription: " +
@@ -38,16 +37,14 @@ class Home extends React.Component {
           image.alt = "Picture not available";
           var link = document.createElement("A");
           link.href = res.data.articles[i].url;
-          link.text= "Link to article";
+          link.text = "Link to article";
           node.append(text);
           node.append(link);
           node.append(image);
           document.getElementById("financial").appendChild(node);
         }
+        ReactDOM.render(<App />, document.getElementById("root"));
       });
-    ReactDOM.render(<App />, document.getElementById("root"));
-
-
   }
 
   render() {
@@ -66,9 +63,7 @@ class Home extends React.Component {
         </p>
         <div id="finance">
           <h2>Latest Financial News Headlines: Thanks to newsapi.org!</h2>
-          <ul id="financial">
-
-          </ul>
+          <ul id="financial" />
         </div>
         <h2>Latest information for your account</h2>
         <p>Show latest statements, open loans</p>

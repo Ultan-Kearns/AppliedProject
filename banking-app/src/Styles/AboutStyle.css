@@ -1,3 +1,4 @@
+
 #right {
   float: right;
 }
@@ -12,7 +13,7 @@
   border-radius: 2px;
   height: 200%;
 }
-img {
+.About img {
   margin: 10%;
   width: calc(100% - 50px) !important;
   height: calc(100% - 50px) !important;
