@@ -3,6 +3,7 @@ import Axios from "axios";
 import { Helmet } from "react-helmet";
 
 class Statements extends React.Component {
+  //maybe create statemnt when sending money from home
   constructor(props) {
     super(props);
     this.state = {

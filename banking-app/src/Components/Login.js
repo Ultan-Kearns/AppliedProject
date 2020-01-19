@@ -56,13 +56,13 @@ class Login extends React.Component {
           this.state.password
       )
       .then(function(res) {
-        console.log(res.data.name);
+        console.log(res.data);
         //need to fix this so it shows error message
-        try {
+        if (res.data != "404") {
           //store the username this will help the bank feel more personal
           sessionStorage.setItem("username", res.data.name);
           ReactDOM.render(<Home />, document.getElementById("root"));
-        } catch {
+        } else {
           alert("username or password is wrong");
         }
       });

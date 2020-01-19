@@ -25,7 +25,7 @@ class App extends React.Component {
         {/*Show the navigation throughout app*/}
         <Router>
           <nav>
-            <ul className="nav-links">
+            <div className="nav-links">
               {/* Buttons that link to various Components */}
               <ButtonToolbar>
                 <Link to="/">
@@ -67,7 +67,7 @@ class App extends React.Component {
                   Logout
                 </Button>
               </ButtonToolbar>
-            </ul>
+            </div>
           </nav>
           <Switch>
             {/* Routes are defined here */}

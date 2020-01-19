@@ -6,18 +6,26 @@ import HomeStyle from "../Styles/HomeStyle.css";
 import Button from "react-bootstrap/Button";
 
 class Home extends React.Component {
-  componentDidMount() {
+
+  componentDidMount(){
     const axios = require("axios").default;
+    /*
+    Pulling data from newsapi.org
+    */
     axios
       .get(
         "https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=e9cdf3a801374e4eba79b8ea0552a4bd"
       )
       .then(res => {
+        //some of these are reoccuring
         console.log("RES" + JSON.stringify(res));
-        for (var i = 0; i < res.data.articles.length; i++) {
+        for (var i = 0; i < 4; i++) {
           //create LI element then form statment then append to LI then add to list
           var node = document.createElement("LI");
+          node.id = "headline";
+                  console.log(res.data.length + " " + i)
           var text = document.createTextNode(
+
             "\nHeadline: " +
               res.data.articles[i].title +
               "\nDescription: " +
@@ -27,22 +35,21 @@ class Home extends React.Component {
           );
           var image = document.createElement("IMG");
           image.src = res.data.articles[i].urlToImage;
-          image.alt = "picture of news story";
-          image.height= 10;
-          image.width = 10
+          image.alt = "Picture not available";
           var link = document.createElement("A");
           link.href = res.data.articles[i].url;
-          link.text= "\n Link to article: " + res.data.articles[i].url;
+          link.text= "Link to article";
           node.append(text);
           node.append(link);
           node.append(image);
           document.getElementById("financial").appendChild(node);
         }
       });
-    //if(sessionStorage.getItem("username") !="null" && sessionStorage.getItem("username") != null){
-    //ReactDOM.render(<App />, document.getElementById("root"));
     ReactDOM.render(<App />, document.getElementById("root"));
+
+
   }
+
   render() {
     return (
       <div className="Home">
@@ -58,8 +65,10 @@ class Home extends React.Component {
           over your current budget you are, view this months transfers
         </p>
         <div id="finance">
-          <h2>Latest Financial News Headlines</h2>
-          <ul id="financial" />
+          <h2>Latest Financial News Headlines: Thanks to newsapi.org!</h2>
+          <ul id="financial">
+
+          </ul>
         </div>
         <h2>Latest information for your account</h2>
         <p>Show latest statements, open loans</p>

@@ -34,7 +34,6 @@ a{
 }
 .nav-links {
   color: white;
-  list-style: none;
 }
 #header{
   text-align: center;
@@ -45,5 +44,7 @@ a{
   margin-left: 5vw;
   position: relative;
   margin-top: 20vh;
-
+}
+h1{
+  padding-top: 4%;
 }
