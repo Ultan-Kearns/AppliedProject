@@ -8,24 +8,22 @@ import Button from "react-bootstrap/Button";
 class Home extends React.Component {
   componentDidMount() {
     const axios = require("axios").default;
-
-    axios.get("https://www.reddit.com/r/finance.json").then(res =>{
+    axios.get("https://newsapi.org/v2/top-headlines?country=us&apiKey=e9cdf3a801374e4eba79b8ea0552a4bd").then(res =>{
        console.log("RES" + JSON.stringify(res))
-      /*
-      for (var i = 0; i < test.length; i++) {
-        this.setState({
-          title: test[i].title,
-        });
+         for (var i = 0; i < res.data.articles.length; i++) {
+
         //create LI element then form statment then append to LI then add to list
         var node = document.createElement("LI");
         var text = document.createTextNode(
-          "Location: " +
-            this.state.title
+          "\nHeadline: " +res.data.articles[i].title +
+          "\nDescription: " + res.data.articles[i].description +
+          "\nAuthor: " + res.data.articles[i].author +
+          "\n\nUrl\n" + res.data.articles[i].url
         );
         node.append(text);
-        document.getElementById("statements").appendChild(node);
+        document.getElementById("finance").appendChild(node);
       }
-      */
+
     });
     //if(sessionStorage.getItem("username") !="null" && sessionStorage.getItem("username") != null){
     //ReactDOM.render(<App />, document.getElementById("root"));

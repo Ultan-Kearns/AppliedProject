@@ -6,7 +6,6 @@ import Loans from "./Components/Loans";
 import Statements from "./Components/Statements";
 import Statistics from "./Components/Statistics";
 import UserInfo from "./Components/UserInfo";
-import Login from "./Components/Login";
 import Error from "./Components/Error";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Button from "react-bootstrap/Button";
@@ -16,8 +15,8 @@ import Axios from "axios";
 import "./Styles/App.css";
 
 class App extends React.Component {
-   logout(){
-     sessionStorage.setItem("username","")
+  logout() {
+    sessionStorage.setItem("username", "");
     window.location.reload();
   }
   render() {
@@ -59,9 +58,14 @@ class App extends React.Component {
                     User Info
                   </Button>
                 </Link>
-                  <Button variant="warning " size="sm" onClick={this.logout} id = "logout">
-                    Logout
-                  </Button>
+                <Button
+                  variant="warning "
+                  size="sm"
+                  onClick={this.logout}
+                  id="logout"
+                >
+                  Logout
+                </Button>
               </ButtonToolbar>
             </ul>
           </nav>
@@ -73,7 +77,7 @@ class App extends React.Component {
             <Route path="/Statements" component={Statements} />
             <Route path="/UserInfo" component={UserInfo} />
             <Route path="/Statistics" component={Statistics} />
-             {/*If route undefined redirect to error*/}
+            {/*If route undefined redirect to error*/}
             <Route path="/*" component={Error} />
           </Switch>
         </Router>
