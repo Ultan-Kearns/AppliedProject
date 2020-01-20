@@ -58,11 +58,12 @@ var statementSchema = new Schema({
   location: { type: String, default: "Unknown" },
   cost: { type: Number, default: 0 },
   name: { type: String },
-  date: { type: Date }
+  date: { type: Date },
+  email:{type: String}
 });
 statementSchema.methods.findName = function(username) {
   //define logic to find statement by name in here
-  return this.model("Statements").find({ name: this.name }, username);
+  return this.model("Statements").find({ email: this.email }, username);
 };
 //models for mongoose
 var UserModel = mongoose.model("users", userSchema);
@@ -171,12 +172,11 @@ statement.findName(function(name) {
   console.log(name);
 });
 
-app.get("/api/statements/:name", function(req, res) {
+app.get("/api/statements/:email", function(req, res) {
   //custom method to find name on statements
-  statement = new Statements({ name: req.params.name });
-  statement.findName(function(err, data) {
-    console.log(data);
-    res.json(data);
+  statement = new Statements({ email: req.params.email });
+   statement.findName(function(err, data) {
+    res.json(data)
   });
 });
 

@@ -17,19 +17,18 @@ class Home extends React.Component {
         "https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=e9cdf3a801374e4eba79b8ea0552a4bd"
       )
       .then(res => {
-        //some of these are reoccuring
-        console.log("RES" + JSON.stringify(res));
-        for (var i = 0; i < 4; i++) {
+         console.log("RES" + JSON.stringify(res));
+        for (var i = 0; i < res.data.articles.length; i++) {
           //create LI element then form statment then append to LI then add to list
           var node = document.createElement("LI");
           node.id = "headline";
           console.log(res.data.length + " " + i);
-          var text = document.createTextNode(
-            "\nHeadline: " +
+           var text = document.createTextNode(
+            "Headline: " +
               res.data.articles[i].title +
-              "\nDescription: " +
+              "Description: " +
               res.data.articles[i].description +
-              "\nAuthor: " +
+              "sAuthor: " +
               res.data.articles[i].author
           );
           var image = document.createElement("IMG");

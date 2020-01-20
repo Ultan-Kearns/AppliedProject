@@ -15,10 +15,11 @@ class Statements extends React.Component {
   }
   componentDidMount() {
     const axios = require("axios").default;
+    //use email instead
     axios
       .get(
         "https://localhost:8080/api/statements/" +
-          sessionStorage.getItem("username")
+          sessionStorage.getItem("email")
       )
       .then(res => {
         for (var i = 0; i < res.data.length; i++) {
@@ -26,7 +27,8 @@ class Statements extends React.Component {
             location: res.data[i].location,
             cost: res.data[i].cost,
             name: res.data[i].name,
-            date: res.data[i].date
+            date: res.data[i].date,
+            email: res.data[i].email
           });
           //create LI element then form statment then append to LI then add to list
           var node = document.createElement("LI");

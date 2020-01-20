@@ -61,6 +61,8 @@ class Login extends React.Component {
         if (res.data != "404") {
           //store the username this will help the bank feel more personal
           sessionStorage.setItem("username", res.data.name);
+          sessionStorage.setItem("email", res.data._id);
+
           ReactDOM.render(<Home />, document.getElementById("root"));
         } else {
           alert("username or password is wrong");
