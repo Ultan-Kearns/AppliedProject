@@ -15,7 +15,6 @@
 + Get Methodology section of Dissertation finished(Done)
 + Get logout function(Done)
 + Fix up Methodology section(done)
-+ Form validation(DONE)
 + Get logout function working (Should be easy)(done)
 # Sprint 6 (20th January - 31st January)
 + Get loans working(Create new loans and add to db)
@@ -26,6 +25,7 @@
 + rename statements to transaction
 # Sprint 7 (1st February - 10th February)
 + Work on update users page
++ Check registration and do form validation
 + Get delete function Working
 + get update user function working
 # Sprint 8 (10th February - 21st February)

@@ -9,6 +9,7 @@ import Home from "./Home";
 import Register from "./Register";
 import Forgot from "./Forgot";
 import Axios from "axios";
+import { SHA256 } from 'js-sha256'
 
 class Login extends React.Component {
   //username test
@@ -47,13 +48,13 @@ class Login extends React.Component {
   }
   handleSubmitForm = event => {
     const axios = require("axios").default;
-
+    const sha256 = require('js-sha256');
     axios
       .get(
         "https://localhost:8080/api/users/" +
           this.state.username +
           "/" +
-          this.state.password
+          sha256(this.state.password)
       )
       .then(function(res) {
         console.log(res.data);

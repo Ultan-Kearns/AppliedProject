@@ -1,71 +1,75 @@
-import ReactDOM from "react-dom";
-import InputGroup from "react-bootstrap/InputGroup";
-import FormControl from "react-bootstrap/FormControl";
-import Button from "react-bootstrap/Button";
-import React from "react";
-import "../Styles/Login.css";
-import Login from "./Login";
-import { Helmet } from "react-helmet";
-const axios = require("axios").default;
+import ReactDOM from "react-dom"
+import InputGroup from "react-bootstrap/InputGroup"
+import FormControl from "react-bootstrap/FormControl"
+import Button from "react-bootstrap/Button"
+import React from "react"
+import "../Styles/Login.css"
+import Login from "./Login"
+import { Helmet } from "react-helmet"
+import { SHA256 } from 'js-sha256'
+const axios = require("axios").default
 class Register extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       username: "",
       password: "",
       name: "",
       number: "",
       dob: ""
-    };
+    }
   }
   redirect() {
-    ReactDOM.render(<Login />, document.getElementById("root"));
+    ReactDOM.render(<Login />, document.getElementById("root"))
   }
   handleUsernameChange = event => {
     this.setState({
       username: event.target.value
-    });
-  };
+    })
+  }
   handlePasswordChange = event => {
     this.setState({
       password: event.target.value
-    });
-  };
+    })
+  }
   handleNameChange = event => {
     this.setState({
       name: event.target.value
-    });
-  };
+    })
+  }
   handleNumberChange = event => {
     this.setState({
       number: event.target.value
-    });
-  };
+    })
+  }
   handleDobChange = event => {
     this.setState({
       dob: event.target.value
-    });
-  };
+    })
+  }
   register = event => {
     //check if user exists
     axios
       .get("https://localhost:8080/api/getuser/" + this.state.username)
       .then(res => {
         //log res for testing
-        console.log(res.data);
+        console.log(res.data)
         if (res.data != null) {
-          alert("User already exists");
+          alert("User already exists")
         }
-      });
-
-    console.log(this.state.name, this.state.number, this.state.dob);
+      })
+    //create IBAN here and BIC
+    console.log(this.state.name, this.state.number, this.state.dob)
+    const sha256 = require('js-sha256');
+    //hash pass using sha256
+    const hashed = sha256(this.state.password)
     const newUser = {
       _id: this.state.username,
-      password: this.state.password,
+      password: hashed,
       name: this.state.name,
       number: this.state.number,
       dob: this.state.dob
-    };
+    }
     if (
       this.state.password.length >= 6 &&
       this.state.username !== "" &&
@@ -75,27 +79,28 @@ class Register extends React.Component {
     ) {
       axios.post("https://localhost:8080/api/users", newUser).then(res => {
         //log res for testing
-        console.log(res.data);
-      });
+        console.log(res.data)
+      })
+      alert("User created, now you can login :D")
     } else {
-      console.log(this.state.password.length);
+      console.log(this.state.password.length)
       alert(
         "Password must be 6 characters or greater and no fields can be left blank"
-      );
+      )
     }
     //need to add error messages
-    event.preventDefault();
-  };
+    event.preventDefault()
+  }
   componentDidMount() {
     axios.get("https://localhost:8080/api/users").then(res => {
       //log res for testing
-      console.log(res.data);
-    });
-    console.log("CHECK");
+      console.log(res.data)
+    })
+    console.log("CHECK")
     axios.get("https://localhost:8080/api/users/test/test").then(res => {
       //log res for testing
-      console.log(res.data);
-    });
+      console.log(res.data)
+    })
   }
   render() {
     return (
@@ -175,8 +180,8 @@ class Register extends React.Component {
           </Button>
         </form>
       </div>
-    );
+    )
   }
 }
 
-export default Register;
+export default Register
