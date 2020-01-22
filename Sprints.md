@@ -17,9 +17,9 @@
 + Fix up Methodology section(done)
 + Get logout function working (Should be easy)(done)
 # Sprint 6 (20th January - 31st January)
-+ Get loans working(Create new loans and add to db)
++ Get loans working(Create new loans and add to db)(DONE)
 + Finish homepage(get balance showing flesh out user schema)(Done)
-+ fix style on homepage
++ fix style on homepages
 + Get started on technology review
 + get user Hash working(Done)
 + fix statements(Done)
