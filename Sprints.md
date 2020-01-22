@@ -18,9 +18,9 @@
 + Get logout function working (Should be easy)(done)
 # Sprint 6 (20th January - 31st January)
 + Get loans working(Create new loans and add to db)
-+ Finish homepage(get balance showing flesh out user schema)
++ Finish homepage(get balance showing flesh out user schema)(Done)
 + Get started on technology review
-+ get user Hash working
++ get user Hash working(Done)
 + fix statements(Done)
 + rename statements to transaction
 # Sprint 7 (1st February - 10th February)
@@ -30,6 +30,7 @@
 + get update user function working
 # Sprint 8 (10th February - 21st February)
 + Get Statistics generated based on Loans / Statments
++ Add Iban validator and bic and add to user schema
 # Sprint 9 (21st February - 25th February)
 + Brainstorm ideas
 + research Docker

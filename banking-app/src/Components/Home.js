@@ -8,6 +8,17 @@ import Button from "react-bootstrap/Button";
 class Home extends React.Component {
   componentDidMount() {
     const axios = require("axios").default;
+
+    axios
+      .get(
+        "https://localhost:8080/api/getuser/" + sessionStorage.getItem("email")
+      )
+      .then(res => {
+        var text = document.createTextNode(
+          "User balance :  " + res.data.balance
+        );
+        document.getElementById("balance").append(text);
+      });
     /*
     Pulling data from newsapi.org
     then render App page
@@ -17,13 +28,11 @@ class Home extends React.Component {
         "https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=e9cdf3a801374e4eba79b8ea0552a4bd"
       )
       .then(res => {
-         console.log("RES" + JSON.stringify(res));
         for (var i = 0; i < res.data.articles.length; i++) {
           //create LI element then form statment then append to LI then add to list
           var node = document.createElement("LI");
           node.id = "headline";
-          console.log(res.data.length + " " + i);
-           var text = document.createTextNode(
+          var text = document.createTextNode(
             "Headline: " +
               res.data.articles[i].title +
               "Description: " +
@@ -45,7 +54,6 @@ class Home extends React.Component {
         ReactDOM.render(<App />, document.getElementById("root"));
       });
   }
-
   render() {
     return (
       <div className="Home">
@@ -56,6 +64,7 @@ class Home extends React.Component {
           Welcome to the Independent Banking,{" "}
           {sessionStorage.getItem("username")}!
         </h1>
+        <h2 id="balance" />
         <p>
           Here the user can view graphs of monthly expenditure, view how much
           over your current budget you are, view this months transfers
