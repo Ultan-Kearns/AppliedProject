@@ -4,6 +4,30 @@ import Button from "react-bootstrap/Button";
 import LoanStyle from "../Styles/LoanStyle.css";
 
 class Loans extends React.Component {
+  componentDidMount() {
+    const axios = require("axios").default;
+
+    axios
+      .get(
+        "https://localhost:8080/api/loans/" + sessionStorage.getItem("email")
+      )
+      .then(res => {
+        for (var i = 0; i < res.data.length; i++) {
+          this.setState({
+            amount: res.data[i].amount,
+            date: res.data[i].date
+          });
+          //create LI element then form statment then append to LI then add to list
+          var node = document.createElement("LI");
+          var text = document.createTextNode(
+            "amount: " + this.state.amount + ", Date: " + this.state.date
+          );
+          node.append(text);
+          document.getElementById("loans").appendChild(node);
+        }
+      });
+  }
+
   constructor(props) {
     super(props);
     this.state = {
@@ -52,7 +76,7 @@ class Loans extends React.Component {
           </Button>
         </form>
         <h2>List of loans</h2>
-        <div className="loanList" />
+        <div className="loanList" id="loans"/>
       </div>
     );
   }

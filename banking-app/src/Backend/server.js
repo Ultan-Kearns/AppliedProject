@@ -70,11 +70,16 @@ var loanSchema = new Schema({
   amount:{type:Number},
   date:{type:String}
 })
+loanSchema.methods.findName = function(username) {
+  //define logic to find statement by name in here
+  return this.model("Loans").find({ email: this.email }, username);
+};
 //models for mongoose
 var Users = mongoose.model("Users", userSchema);
 var Statements = mongoose.model("Statements", statementSchema);
 var Loans = mongoose.model("Loans",loanSchema);
 var statement = new Statements();
+var loan = new Loans();
 //Here I will use get requests to retrieve resources
 app.get("/", function(req, res) {
   res.status(200).send("Server is up and running!");
@@ -197,6 +202,13 @@ app.get("/api/statements/:email", function(req, res) {
   //custom method to find name on statements
   statement = new Statements({ email: req.params.email });
   statement.findName(function(err, data) {
+    res.json(data);
+  });
+});
+app.get("/api/loans/:email", function(req, res) {
+  //custom method to find name on statements
+  loan = new Loans({ email: req.params.email });
+  loan.findName(function(err, data) {
     res.json(data);
   });
 });
