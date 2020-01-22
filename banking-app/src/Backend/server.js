@@ -65,10 +65,15 @@ statementSchema.methods.findName = function(username) {
   //define logic to find statement by name in here
   return this.model("Statements").find({ email: this.email }, username);
 };
-
+var loanSchema = new Schema({
+  email: { type: String },
+  amount:{type:Number},
+  date:{type:String}
+})
 //models for mongoose
 var Users = mongoose.model("Users", userSchema);
 var Statements = mongoose.model("Statements", statementSchema);
+var Loans = mongoose.model("Loans",loanSchema);
 var statement = new Statements();
 //Here I will use get requests to retrieve resources
 app.get("/", function(req, res) {
@@ -86,6 +91,13 @@ app.get("/api/statements", function(req, res) {
     res.status(200, "request completed");
   });
 });
+app.get("/api/loans", function(req, res) {
+  Loans.find(function(err, data) {
+    res.json(data);
+    res.status(200, "request completed");
+  });
+});
+//template was taken from earlier project
 app.get("/api/users/:id/:password", function(req, res) {
   Users.findById(req.params.id, function(err, data) {
     if (err) {
@@ -166,6 +178,14 @@ app.post("/api/users", function(req, res) {
     name: req.body.name,
     number: req.body.number,
     dob: req.body.dob
+  });
+  res.status(201, "Resource created");
+});
+app.post("/api/loans", function(req, res) {
+  Loans.create({
+    email:req.body.email,
+    amount: req.body.amount,
+    date: req.body.date
   });
   res.status(201, "Resource created");
 });

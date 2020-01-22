@@ -82,6 +82,8 @@ class Register extends React.Component {
         console.log(res.data)
       })
       alert("User created, now you can login :D")
+      //need to redirect user back to login
+      ReactDOM.render(<Login/>)
     } else {
       console.log(this.state.password.length)
       alert(
@@ -92,15 +94,8 @@ class Register extends React.Component {
     event.preventDefault()
   }
   componentDidMount() {
-    axios.get("https://localhost:8080/api/users").then(res => {
-      //log res for testing
-      console.log(res.data)
-    })
-    console.log("CHECK")
-    axios.get("https://localhost:8080/api/users/test/test").then(res => {
-      //log res for testing
-      console.log(res.data)
-    })
+
+
   }
   render() {
     return (

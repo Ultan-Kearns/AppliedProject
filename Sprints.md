@@ -19,6 +19,7 @@
 # Sprint 6 (20th January - 31st January)
 + Get loans working(Create new loans and add to db)
 + Finish homepage(get balance showing flesh out user schema)(Done)
++ fix style on homepage
 + Get started on technology review
 + get user Hash working(Done)
 + fix statements(Done)

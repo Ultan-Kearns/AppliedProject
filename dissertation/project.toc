@@ -43,8 +43,8 @@
 \contentsline {section}{\numberline {3.3}Test Driven Development (TDD)}{19}{section.3.3}% 
 \contentsline {subsection}{\numberline {3.3.1}What Is Test Driven Development?}{19}{subsection.3.3.1}% 
 \contentsline {subsection}{\numberline {3.3.2}How I Applied Test Driven Development To This Project}{19}{subsection.3.3.2}% 
-\contentsline {section}{\numberline {3.4}Time Management}{19}{section.3.4}% 
-\contentsline {subsection}{\numberline {3.4.1}How I Handled Multiple Projects}{19}{subsection.3.4.1}% 
+\contentsline {section}{\numberline {3.4}Time Management}{20}{section.3.4}% 
+\contentsline {subsection}{\numberline {3.4.1}How I Handled Multiple Projects}{20}{subsection.3.4.1}% 
 \contentsline {subsection}{\numberline {3.4.2}Issues I Faced With Time Management}{20}{subsection.3.4.2}% 
 \contentsline {section}{\numberline {3.5}Version Control}{20}{section.3.5}% 
 \contentsline {chapter}{\numberline {4}Technology Review}{21}{chapter.4}% 

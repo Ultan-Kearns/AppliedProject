@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Arch Linux) (preloaded format=pdflatex 2019.12.13)  16 JAN 2020 12:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Arch Linux) (preloaded format=pdflatex 2019.12.13)  22 JAN 2020 18:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1357,11 +1357,11 @@ Chapter 3.
 <./img/agile.jpg, id=425, 963.6pt x 542.025pt>
 File: ./img/agile.jpg Graphic file (type jpg)
 <use ./img/agile.jpg>
-Package pdftex.def Info: ./img/agile.jpg  used on input line 317.
+Package pdftex.def Info: ./img/agile.jpg  used on input line 318.
 (pdftex.def)             Requested size: 390.0pt x 219.37004pt.
 
-Overfull \hbox (65.49565pt too wide) in paragraph at lines 312--318
-\OT1/lmr/m/n/12 de-liv-ery. [][[]] 
+Overfull \hbox (18.27795pt too wide) in paragraph at lines 318--319
+ []\OT1/lmr/m/n/12 [[]] 
  []
 
 [17
@@ -1370,86 +1370,87 @@ Overfull \hbox (65.49565pt too wide) in paragraph at lines 312--318
 <img/kanban.png, id=434, 770.88pt x 433.62pt>
 File: img/kanban.png Graphic file (type png)
 <use img/kanban.png>
-Package pdftex.def Info: img/kanban.png  used on input line 321.
+Package pdftex.def Info: img/kanban.png  used on input line 323.
 (pdftex.def)             Requested size: 117.00714pt x 65.81432pt.
 
-Overfull \hbox (78.00476pt too wide) in paragraph at lines 321--322
+Overfull \hbox (78.00476pt too wide) in paragraph at lines 323--324
 [][] 
  []
 
 
-Overfull \hbox (15.01292pt too wide) in paragraph at lines 322--322
+Overfull \hbox (15.01292pt too wide) in paragraph at lines 324--324
 []\OT1/lmr/m/n/12 Figure 3.1:
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 322--322
+Underfull \hbox (badness 10000) in paragraph at lines 324--324
 |\OT1/lmr/m/n/12 Im-age
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 322--322
+Underfull \hbox (badness 10000) in paragraph at lines 324--324
 \OT1/lmr/m/n/12 ban
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 322--322
+Underfull \hbox (badness 10000) in paragraph at lines 324--324
 \OT1/lmr/m/n/12 board
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 322--322
+Underfull \hbox (badness 10000) in paragraph at lines 324--324
 \OT1/lmr/m/n/12 from
  []
 
 
-Overfull \hbox (9.9564pt too wide) in paragraph at lines 322--322
+Overfull \hbox (9.9564pt too wide) in paragraph at lines 324--324
 \OT1/lmr/m/n/12 wikipedia| 
  []
 
-<img/tdd.jpg, id=437, 999.735pt x 664.4825pt>
+[18 <./img/agile.jpg> <./img/kanban.png>]
+<img/tdd.jpg, id=446, 999.735pt x 664.4825pt>
 File: img/tdd.jpg Graphic file (type jpg)
 <use img/tdd.jpg>
-Package pdftex.def Info: img/tdd.jpg  used on input line 333.
+Package pdftex.def Info: img/tdd.jpg  used on input line 336.
 (pdftex.def)             Requested size: 390.0pt x 259.2181pt.
 
-Overfull \hbox (110.21042pt too wide) in paragraph at lines 332--334
-\OT1/lmr/m/n/12 refac-tor-ing it[[]]. [][[]] 
+Overfull \hbox (18.27795pt too wide) in paragraph at lines 336--337
+ []\OT1/lmr/m/n/12 [[]] 
  []
 
-[18 <./img/agile.jpg> <./img/kanban.png>] [19 <./img/tdd.jpg>]
+[19 <./img/tdd.jpg>]
 <img/github.png, id=456, 12.848pt x 12.848pt>
 File: img/github.png Graphic file (type png)
 <use img/github.png>
-Package pdftex.def Info: img/github.png  used on input line 343.
+Package pdftex.def Info: img/github.png  used on input line 347.
 (pdftex.def)             Requested size: 117.00714pt x 117.04532pt.
 
-Overfull \hbox (78.00476pt too wide) in paragraph at lines 343--344
+Overfull \hbox (78.00476pt too wide) in paragraph at lines 347--348
 [][] 
  []
 
 
-Overfull \hbox (15.01292pt too wide) in paragraph at lines 344--344
+Overfull \hbox (15.01292pt too wide) in paragraph at lines 348--348
 []\OT1/lmr/m/n/12 Figure 3.2:
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 344--344
+Underfull \hbox (badness 10000) in paragraph at lines 348--348
 |\OT1/lmr/m/n/12 Github
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 344--344
+Underfull \hbox (badness 10000) in paragraph at lines 348--348
 \OT1/lmr/m/n/12 Logo
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 344--344
+Underfull \hbox (badness 10000) in paragraph at lines 348--348
 \OT1/lmr/m/n/12 from
  []
 
 
-Overfull \hbox (18.11646pt too wide) in paragraph at lines 344--344
+Overfull \hbox (18.11646pt too wide) in paragraph at lines 348--348
 \OT1/lmr/m/n/12 github.com| 
  []
 
@@ -1618,11 +1619,11 @@ Underfull \hbox (badness 2103) in paragraph at lines 84--86
  []
 
 ) [28]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 404.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 404.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 408.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 408.
  (./project.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 404.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 404.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 408.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 408.
 Package rerunfilecheck Info: File `project.out' has not changed.
 (rerunfilecheck)             Checksum: 0B7F59655DD10F3A2F1DDDA55E5C186B;3650.
 
@@ -1648,7 +1649,7 @@ m/lmcsc10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/shar
 e/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf-dist/fonts/type1/
 public/lm/lmro12.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></
 usr/share/texmf-dist/fonts/type1/public/lm/lmtt12.pfb>
-Output written on project.pdf (28 pages, 1062266 bytes).
+Output written on project.pdf (28 pages, 1061805 bytes).
 PDF statistics:
  594 PDF objects out of 1000 (max. 8388607)
  518 compressed objects within 6 object streams
