@@ -19,7 +19,7 @@
 # Sprint 6 (20th January - 31st January)
 + Get loans working(Create new loans and add to db)(DONE)
 + Finish homepage(get balance showing flesh out user schema)(Done)
-+ fix style on homepages
+
 + Get started on technology review
 + get user Hash working(Done)
 + fix statements(Done)
@@ -36,6 +36,9 @@
 + Brainstorm ideas
 + research Docker
 + refactor and test
+
+# Do whenever least concern
++ fix style on homepages
 ## Notes
 ### I will make periodic changes due to changes in workload, personal issues,etc
 ### I run regression tests as well as module tests after each sprint

@@ -5,7 +5,9 @@ import LoanStyle from "../Styles/LoanStyle.css";
 
 class Loans extends React.Component {
   componentDidMount() {
-        {this.getLoans()}
+    {
+      this.getLoans();
+    }
   }
 
   constructor(props) {
@@ -16,11 +18,9 @@ class Loans extends React.Component {
       date: ""
     };
   }
-  getLoans(){
-    alert("IN GET LOANS")
+  getLoans() {
     const axios = require("axios").default;
     document.getElementById("loans").innerHTML = "";
-
     axios
       .get(
         "https://localhost:8080/api/loans/" + sessionStorage.getItem("email")
@@ -49,17 +49,23 @@ class Loans extends React.Component {
   handleSubmitForm = event => {
     const axios = require("axios").default;
     var date = new Date();
-    var fullDate = date.getDate() + "/" + (date.getMonth() + 1) +  "/" + date.getFullYear()
+    var fullDate =
+      date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
     const newLoan = {
       email: sessionStorage.getItem("email"),
       amount: this.state.amount,
       date: fullDate
     };
-     axios.post("https://localhost:8080/api/loans", newLoan).then(res => {
-      console.log(res);
-    });
-    alert("loan approved ;D")
-    this.getLoans()
+    if (newLoan.amount != null) {
+      axios.post("https://localhost:8080/api/loans", newLoan).then(res => {
+        console.log(res);
+      });
+      alert("loan approved ;D");
+      this.getLoans();
+    }
+    else{
+      alert("Loan amount cannot be null")
+    }
     event.preventDefault();
   };
   render() {
@@ -83,8 +89,7 @@ class Loans extends React.Component {
           </Button>
         </form>
         <h2>List of loans</h2>
-        <div className="loanList" id="loans"/>
-
+        <div className="loanList" id="loans" />
       </div>
     );
   }

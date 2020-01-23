@@ -28,7 +28,7 @@ class Home extends React.Component {
         "https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=e9cdf3a801374e4eba79b8ea0552a4bd"
       )
       .then(res => {
-        for (var i = 0; i < res.data.articles.length; i++) {
+        for (var i = 0; i < 3; i++) {
           //create LI element then form statment then append to LI then add to list
           var node = document.createElement("LI");
           node.id = "headline";
@@ -36,8 +36,8 @@ class Home extends React.Component {
             "Headline: " +
               res.data.articles[i].title +
               "Description: " +
-              res.data.articles[i].description +
-              "sAuthor: " +
+              res.data.articles[i].description  +
+              "Author: " +
               res.data.articles[i].author
           );
           var image = document.createElement("IMG");
@@ -69,12 +69,12 @@ class Home extends React.Component {
           Here the user can view graphs of monthly expenditure, view how much
           over your current budget you are, view this months transfers
         </p>
+        <h2>Latest information for your account</h2>
+        <p>Show latest statements, open loans</p>
         <div id="finance">
           <h2>Latest Financial News Headlines: Thanks to newsapi.org!</h2>
           <ul id="financial" />
         </div>
-        <h2>Latest information for your account</h2>
-        <p>Show latest statements, open loans</p>
         <div id="send">
           <h2>Send money </h2>
           <p>

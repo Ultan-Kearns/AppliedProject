@@ -54,16 +54,16 @@ var userSchema = new Schema({
   balance: { type: Number, default: 0 }
 });
 //change this later
-var statementSchema = new Schema({
+var transactionSchema = new Schema({
   location: { type: String, default: "Unknown" },
   cost: { type: Number, default: 0 },
   name: { type: String },
   date: { type: Date },
   email: { type: String }
 });
-statementSchema.methods.findName = function(username) {
+transactionSchema.methods.findName = function(username) {
   //define logic to find statement by name in here
-  return this.model("Statements").find({ email: this.email }, username);
+  return this.model("Transactions").find({ email: this.email }, username);
 };
 var loanSchema = new Schema({
   email: { type: String },
@@ -76,9 +76,9 @@ loanSchema.methods.findName = function(username) {
 };
 //models for mongoose
 var Users = mongoose.model("Users", userSchema);
-var Statements = mongoose.model("Statements", statementSchema);
+var Transactions = mongoose.model("Transactions", transactionSchema);
 var Loans = mongoose.model("Loans",loanSchema);
-var statement = new Statements();
+var transaction = new Transactions();
 var loan = new Loans();
 //Here I will use get requests to retrieve resources
 app.get("/", function(req, res) {
@@ -90,8 +90,8 @@ app.get("/api/users", function(req, res) {
     res.status(200, "request completed");
   });
 });
-app.get("/api/statements", function(req, res) {
-  Statements.find(function(err, data) {
+app.get("/api/transactions", function(req, res) {
+  Transactions.find(function(err, data) {
     res.json(data);
     res.status(200, "request completed");
   });
@@ -194,19 +194,19 @@ app.post("/api/loans", function(req, res) {
   });
   res.status(201, "Resource created");
 });
-statement.findName(function(name) {
+transaction.findName(function(name) {
   console.log(name);
 });
 
-app.get("/api/statements/:email", function(req, res) {
-  //custom method to find name on statements
-  statement = new Statements({ email: req.params.email });
-  statement.findName(function(err, data) {
+app.get("/api/transactions/:email", function(req, res) {
+  //custom method to find name on transactions
+  transaction = new Transactions({ email: req.params.email });
+  transaction.findName(function(err, data) {
     res.json(data);
   });
 });
 app.get("/api/loans/:email", function(req, res) {
-  //custom method to find name on statements
+  //custom method to find name on transactions
   loan = new Loans({ email: req.params.email });
   loan.findName(function(err, data) {
     res.json(data);
