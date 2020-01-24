@@ -19,16 +19,17 @@
 # Sprint 6 (20th January - 31st January)
 + Get loans working(Create new loans and add to db)(DONE)
 + Finish homepage(get balance showing flesh out user schema)(Done)
-
 + Get started on technology review
 + get user Hash working(Done)
 + fix statements(Done)
-+ rename statements to transaction
-# Sprint 7 (1st February - 10th February)
++ rename statements to transaction(Done)
 + Work on update users page
-+ Check registration and do form validation
 + Get delete function Working
+# Sprint 7 (1st February - 10th February)
++ Check registration and do form validation
 + get update user function working
++ fix forgot password(need to get it updated to work with hash)
++ fix up loans by making sure the user has at least 25% of loan amount and has no active loans
 # Sprint 8 (10th February - 21st February)
 + Get Statistics generated based on Loans / Statments
 + Add Iban validator and bic and add to user schema

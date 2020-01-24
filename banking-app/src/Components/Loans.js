@@ -15,7 +15,9 @@ class Loans extends React.Component {
     this.state = {
       _id: "",
       amount: "",
-      date: ""
+      date: "",
+      status: "",
+      owedTo: ""
     };
   }
   getLoans() {
@@ -29,12 +31,21 @@ class Loans extends React.Component {
         for (var i = 0; i < res.data.length; i++) {
           this.setState({
             amount: res.data[i].amount,
-            date: res.data[i].date
+            date: res.data[i].date,
+            status: res.data[i].status,
+            owedTo: res.data[i].owedTo
           });
           //create LI element then form statment then append to LI then add to list
           var node = document.createElement("LI");
           var text = document.createTextNode(
-            "amount: " + this.state.amount + ", Date: " + this.state.date
+            "Amount: " +
+              this.state.amount +
+              ", Date: " +
+              this.state.date +
+              " ,Status: " +
+              this.state.status +
+              " ,Owed to: " +
+              this.state.owedTo
           );
           node.append(text);
           document.getElementById("loans").appendChild(node);
@@ -51,20 +62,21 @@ class Loans extends React.Component {
     var date = new Date();
     var fullDate =
       date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
-    const newLoan = {
-      email: sessionStorage.getItem("email"),
-      amount: this.state.amount,
-      date: fullDate
-    };
-    if (newLoan.amount != null) {
+    if (this.state.amount != "") {
+      const newLoan = {
+        email: sessionStorage.getItem("email"),
+        amount: this.state.amount,
+        date: fullDate,
+        owedTo: "Independent Banking",
+        status: "Open"
+      };
       axios.post("https://localhost:8080/api/loans", newLoan).then(res => {
         console.log(res);
       });
       alert("loan approved ;D");
       this.getLoans();
-    }
-    else{
-      alert("Loan amount cannot be null")
+    } else {
+      alert("Loan amount cannot be null");
     }
     event.preventDefault();
   };

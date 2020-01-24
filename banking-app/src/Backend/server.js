@@ -7,6 +7,7 @@ var bodyParser = require("body-parser");
 //api to communicate with DB
 var mongoose = require("mongoose");
 //mongoDB link to connect
+//3kCeKdq4iZWqlg00 this is for mongoatlas may migrate
 var mongoDB =
   "mongodb://ultan:ultanultan1@ds135107.mlab.com:35107/appliedproject";
 var Schema = mongoose.Schema;
@@ -68,7 +69,9 @@ transactionSchema.methods.findName = function(username) {
 var loanSchema = new Schema({
   email: { type: String },
   amount:{type:Number},
-  date:{type:String}
+  date:{type:String},
+  owedTo:{type:String},
+  status:{type:String}
 })
 loanSchema.methods.findName = function(username) {
   //define logic to find statement by name in here
@@ -163,7 +166,7 @@ app.get("/api/emailuser/:id/", function(req, res, next) {
     }
   });
 });
-app.get("/api/getuser/:id/", function(req, res) {
+app.get("/api/users/:id/", function(req, res) {
   Users.findById(req.params.id, function(err, data) {
     if (err) {
       //send back error 500 to show the server had internel error
@@ -173,7 +176,12 @@ app.get("/api/getuser/:id/", function(req, res) {
     }
   });
 });
-//create users and others here
+app.get("/api/deleteusers/:id/", function(req, res) {
+Users.deleteOne(req.params.id,function(err,data){
+ 
+  console.log("DELETED")
+});
+});
 app.post("/api/users", function(req, res) {
   //check if user with same username exists use findById and change id to username
 
@@ -190,7 +198,9 @@ app.post("/api/loans", function(req, res) {
   Loans.create({
     email:req.body.email,
     amount: req.body.amount,
-    date: req.body.date
+    date: req.body.date,
+    status:req.body.status,
+    owedTo:req.body.owedTo
   });
   res.status(201, "Resource created");
 });

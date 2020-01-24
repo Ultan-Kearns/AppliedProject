@@ -11,7 +11,7 @@ class Home extends React.Component {
 
     axios
       .get(
-        "https://localhost:8080/api/getuser/" + sessionStorage.getItem("email")
+        "https://localhost:8080/api/users/" + sessionStorage.getItem("email")
       )
       .then(res => {
         var text = document.createTextNode(
