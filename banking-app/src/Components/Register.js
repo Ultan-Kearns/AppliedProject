@@ -82,8 +82,7 @@ class Register extends React.Component {
         console.log(res.data)
       })
       alert("User created, now you can login :D")
-      //need to redirect user back to login
-      ReactDOM.render(<Login/>)
+ 
     } else {
       console.log(this.state.password.length)
       alert(

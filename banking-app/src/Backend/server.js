@@ -68,11 +68,11 @@ transactionSchema.methods.findName = function(username) {
 };
 var loanSchema = new Schema({
   email: { type: String },
-  amount:{type:Number},
-  date:{type:String},
-  owedTo:{type:String},
-  status:{type:String}
-})
+  amount: { type: Number },
+  date: { type: String },
+  owedTo: { type: String },
+  status: { type: String }
+});
 loanSchema.methods.findName = function(username) {
   //define logic to find statement by name in here
   return this.model("Loans").find({ email: this.email }, username);
@@ -80,7 +80,7 @@ loanSchema.methods.findName = function(username) {
 //models for mongoose
 var Users = mongoose.model("Users", userSchema);
 var Transactions = mongoose.model("Transactions", transactionSchema);
-var Loans = mongoose.model("Loans",loanSchema);
+var Loans = mongoose.model("Loans", loanSchema);
 var transaction = new Transactions();
 var loan = new Loans();
 //Here I will use get requests to retrieve resources
@@ -105,7 +105,7 @@ app.get("/api/loans", function(req, res) {
     res.status(200, "request completed");
   });
 });
-//template was taken from earlier project
+//template was taken from earlier project and refactored
 app.get("/api/users/:id/:password", function(req, res) {
   Users.findById(req.params.id, function(err, data) {
     if (err) {
@@ -116,9 +116,6 @@ app.get("/api/users/:id/:password", function(req, res) {
       if (req.params.id == data._id && data.password == req.params.password) {
         res.json(data);
         res.status(200, "User logged in!");
-      } else {
-        res.json("404");
-        res.status(404, "User not found!");
       }
     }
   });
@@ -176,11 +173,15 @@ app.get("/api/users/:id/", function(req, res) {
     }
   });
 });
-app.get("/api/deleteusers/:id/", function(req, res) {
-Users.deleteOne(req.params.id,function(err,data){
- 
-  console.log("DELETED")
-});
+app.delete("/api/users/:id/", function(req, res) {
+  Users.findByIdAndRemove(req.params.id, function(err, data) {
+    if (err) {
+      //send back error 500 to show the server had internel error
+      res.status(500, "INTERNAL SERVER ERROR " + err);
+    } else if (data != null) {
+      res.status(200,"Deleted Account")
+    }
+  });
 });
 app.post("/api/users", function(req, res) {
   //check if user with same username exists use findById and change id to username
@@ -196,11 +197,11 @@ app.post("/api/users", function(req, res) {
 });
 app.post("/api/loans", function(req, res) {
   Loans.create({
-    email:req.body.email,
+    email: req.body.email,
     amount: req.body.amount,
     date: req.body.date,
-    status:req.body.status,
-    owedTo:req.body.owedTo
+    status: req.body.status,
+    owedTo: req.body.owedTo
   });
   res.status(201, "Resource created");
 });

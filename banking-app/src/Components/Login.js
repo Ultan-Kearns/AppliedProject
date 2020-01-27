@@ -45,6 +45,15 @@ class Login extends React.Component {
   componentDidMount() {
     //if(sessionStorage.getItem("username") !="null" && sessionStorage.getItem("username") != null){
     //ReactDOM.render(<App />, document.getElementById("root"));
+    const axios = require("axios").default;
+    axios
+      .get(
+        "https://localhost:8080/api/transactions/" +
+          sessionStorage.getItem("email")
+      )
+      .then(res => {
+         console.log(res)
+      });
   }
   handleSubmitForm = event => {
     const axios = require("axios").default;
@@ -57,7 +66,8 @@ class Login extends React.Component {
           sha256(this.state.password)
       )
       .then(function(res) {
-        console.log(res.data);
+
+        console.log("TEST LOGIN " + res.data);
         //need to fix this so it shows error message
         if (res.data != "404") {
           //store the username this will help the bank feel more personal

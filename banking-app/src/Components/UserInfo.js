@@ -1,20 +1,16 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 import Button from "react-bootstrap/Button";
+import Login from "./Login"
+import ReactDOM from "react-dom";
+
 const axios = require("axios").default;
 
 class UserInfo extends React.Component {
   constructor(props) {
     super(props);
   }
-  deleteAccount(){
-    axios.get("https://localhost:8080/api/deleteusers/" + sessionStorage.getItem("email")).then(res=>{
-      console.log(res)
-    })
-    alert("Deleted account")
-  }
   componentDidMount() {
-
     axios
       .get(
         "https://localhost:8080/api/users/" + sessionStorage.getItem("email")
@@ -30,6 +26,11 @@ class UserInfo extends React.Component {
         );
         document.getElementById("basic").append(text);
       });
+  }
+  deleteUser(){
+    axios.delete("https://localhost:8080/api/users/" + sessionStorage.getItem("email"))
+    alert("User deleted")
+    ReactDOM.render(<Login />, document.getElementById("root"))
   }
   render() {
     return (
@@ -47,8 +48,8 @@ class UserInfo extends React.Component {
           and name
         </p>
         <h2>Delete account: </h2>
-        <Button  onClick={this.deleteAccount()}>Delete Account</Button>
         <p>Allow user to delete account</p>
+        <Button onClick={this.deleteUser}>Delete Account</Button>
       </div>
     );
   }
