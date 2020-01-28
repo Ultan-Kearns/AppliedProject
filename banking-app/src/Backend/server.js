@@ -118,6 +118,10 @@ app.get("/api/users/:id/:password", function(req, res) {
         res.status(200, "User logged in!");
       }
     }
+    else {
+      res.json("404");
+      res.status(404, "User not found!");
+    }
   });
 });
 //template taken from earlier project - https://github.com/Ultan-Kearns/eCommerceApp/blob/master/BackEnd/Server.js
