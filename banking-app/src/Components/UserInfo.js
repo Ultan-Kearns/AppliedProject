@@ -42,7 +42,7 @@ class UserInfo extends React.Component {
   update = event => {
     const newUser = {
       _id: this.state.username,
-      password: "test123",
+      password: this.state.password,
       name: this.state.name,
       number: this.state.number,
       dob: this.state.dob
@@ -72,7 +72,10 @@ class UserInfo extends React.Component {
             " Number: " +
             res.data.number +
             " Date of Birth: " +
-            res.data.dob
+            res.data.dob,
+            this.state.dob = res.data.dob,
+            this.state.name = res.data.name,
+            this.state.number = res.data.number
         );
         document.getElementById("basic").append(text);
       });
