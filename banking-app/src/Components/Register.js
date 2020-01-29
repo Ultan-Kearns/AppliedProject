@@ -50,7 +50,7 @@ class Register extends React.Component {
   register = event => {
     //check if user exists
     axios
-      .get("https://localhost:8080/api/getuser/" + this.state.username)
+      .get("https://localhost:8080/api/users/" + this.state.username)
       .then(res => {
         //log res for testing
         console.log(res.data)
@@ -82,7 +82,7 @@ class Register extends React.Component {
         console.log(res.data)
       })
       alert("User created, now you can login :D")
- 
+      document.getElementById("registerForm").reset()
     } else {
       console.log(this.state.password.length)
       alert(

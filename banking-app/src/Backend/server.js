@@ -199,6 +199,16 @@ app.post("/api/users", function(req, res) {
   });
   res.status(201, "Resource created");
 });
+app.post("/api/users/:id", function(req, res) {
+   Users.findByIdAndUpdate(req.params.id,{name:res.name,username:res.username,password:res.password,number:res.number},function(err,data){
+    if (err) {
+      //send back error 500 to show the server had internel error
+      res.status(500, "INTERNAL SERVER ERROR " + err);
+    } else if (data != null) {
+      res.status(200,"Updated Account")
+    }
+  })
+});
 app.post("/api/loans", function(req, res) {
   Loans.create({
     email: req.body.email,

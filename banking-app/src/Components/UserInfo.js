@@ -39,6 +39,27 @@ class UserInfo extends React.Component {
       number: event.target.value
     });
   };
+  update = event => {
+    const newUser = {
+      _id: this.state.username,
+      password: "test123",
+      name: this.state.name,
+      number: this.state.number,
+      dob: this.state.dob
+    }
+    axios.post("https://localhost:8080/api/users/" + sessionStorage.getItem("email"),newUser)
+      .then(res => {
+        //log res for testing
+        console.log(res.data)
+      }).catch(error=>{
+        console.log("ERR")
+      })
+      console.log("In update")
+      alert("Updated user")
+      event.preventDefault();
+      document.getElementById("updateForm").reset()
+
+    }
   componentDidMount() {
     axios
       .get(
@@ -80,7 +101,7 @@ class UserInfo extends React.Component {
         <h2>Basic Info: </h2>
         <p id="basic" />
         <h2>Change Info: </h2>
-        <form id="updateForm">
+        <form id="updateForm" onSubmit={this.update}>
           <InputGroup className="mb-3" id="name">
             <InputGroup.Prepend>
               <InputGroup.Text id="basic-addon1">Name:</InputGroup.Text>
@@ -112,7 +133,7 @@ class UserInfo extends React.Component {
             <FormControl
               placeholder="Password"
               aria-label="Password"
-              type="passwords"
+              type="password"
               value={this.state.password}
               onChange={this.handlePasswordChange}
             />

@@ -23,13 +23,14 @@
 + get user Hash working(Done)
 + fix statements(Done)
 + rename statements to transaction(Done)
-+ Work on update users page
-+ Get delete function Working
++ Work on update users page()
++ Get delete function Working(Done)
 # Sprint 7 (1st February - 10th February)
 + Check registration and do form validation
 + get update user function working
 + fix forgot password(need to get it updated to work with hash)
 + fix up loans by making sure the user has at least 25% of loan amount and has no active loans
++ Ensure delete function deletes all the info on user and ensure user cannot delete account if they have open loans
 # Sprint 8 (10th February - 21st February)
 + Get Statistics generated based on Loans / Statments
 + Add Iban validator and bic and add to user schema
