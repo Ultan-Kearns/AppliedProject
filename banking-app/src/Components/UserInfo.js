@@ -5,6 +5,7 @@ import Login from "./Login";
 import ReactDOM from "react-dom";
 import InputGroup from "react-bootstrap/InputGroup";
 import "../Styles/UserInfoStyle.css";
+import { SHA256 } from "js-sha256";
 
 import FormControl from "react-bootstrap/FormControl";
 const axios = require("axios").default;
@@ -16,7 +17,9 @@ class UserInfo extends React.Component {
       name: "",
       username: "",
       password: "",
-      number: ""
+      number: "",
+      prevName: "",
+      prevNumber: ""
     };
   }
   handleUsernameChange = event => {
@@ -40,26 +43,67 @@ class UserInfo extends React.Component {
     });
   };
   update = event => {
+    const sha256 = require("js-sha256");
+    //if any info is blank set to previous info of user
+    if (this.state.number == "null" || this.state.number == "") {
+      this.state.number = this.state.prevNumber;
+    }
+
+    if (this.state.name == "null" || this.state.name == "") {
+      this.state.name = this.state.prevName;
+    }
+    if (this.state.username == "null" || this.state.username == "") {
+      this.state.username = sessionStorage.getItem("email");
+    }
+    if (this.state.password == "null" || this.state.password == "") {
+      this.state.password = this.state.prevPassword;
+    }
+    alert(
+      this.state.number +
+        " " +
+        this.state.password +
+        " " +
+        this.state.username +
+        " " +
+        this.state.name
+    );
+    //hash pass using sha256
+    const hashed = sha256(this.state.password);
+
     const newUser = {
       _id: this.state.username,
-      password: this.state.password,
+      password: hashed,
       name: this.state.name,
       number: this.state.number,
       dob: this.state.dob
+    };
+    if (
+      this.state.number.length >= 10 &&
+      this.state.name.length >= 10 &&
+      this.state.password.length >= 6
+    ) {
+      axios
+        .post(
+          "https://localhost:8080/api/users/" + sessionStorage.getItem("email"),
+          newUser
+        )
+        .then(res => {
+          //log res for testing
+          console.log(res.data);
+        })
+        .catch(error => {
+          console.log("ERR");
+        });
+      console.log("In update");
+      alert("Updated user");
+      document.getElementById("updateForm").reset();
+    } else {
+      alert(
+        "Form invalid, password length must be greater than 6 and number must have 10 digits"
+      );
     }
-    axios.post("https://localhost:8080/api/users/" + sessionStorage.getItem("email"),newUser)
-      .then(res => {
-        //log res for testing
-        console.log(res.data)
-      }).catch(error=>{
-        console.log("ERR")
-      })
-      console.log("In update")
-      alert("Updated user")
-      event.preventDefault();
-      document.getElementById("updateForm").reset()
-
-    }
+    event.preventDefault();
+  };
   componentDidMount() {
     axios
       .get(
@@ -73,25 +117,26 @@ class UserInfo extends React.Component {
             res.data.number +
             " Date of Birth: " +
             res.data.dob,
-            this.state.dob = res.data.dob,
-            this.state.name = res.data.name,
-            this.state.number = res.data.number
+          //In case user leaves any information blank just submit their current info
+          (this.state.dob = res.data.dob),
+          (this.state.prevName = res.data.name),
+          (this.state.prevNumber = res.data.number),
+          (this.state.prevPassword = res.data.password)
         );
         document.getElementById("basic").append(text);
       });
   }
   deleteUser() {
-    var answer = window.confirm("Delete Account?")
-    if(answer === true){
-    axios.delete(
-      "https://localhost:8080/api/users/" + sessionStorage.getItem("email")
-    );
-    alert("User deleted");
-    ReactDOM.render(<Login />, document.getElementById("root"));
-  }
-  else{
-    alert("Action aborted, user not deleted")
-  }
+    var answer = window.confirm("Delete Account?");
+    if (answer === true) {
+      axios.delete(
+        "https://localhost:8080/api/users/" + sessionStorage.getItem("email")
+      );
+      alert("User deleted");
+      ReactDOM.render(<Login />, document.getElementById("root"));
+    } else {
+      alert("Action aborted, user not deleted");
+    }
   }
   render() {
     return (

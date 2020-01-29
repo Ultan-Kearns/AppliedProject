@@ -58,7 +58,7 @@ class Login extends React.Component {
   handleSubmitForm = event => {
     const axios = require("axios").default;
     const sha256 = require('js-sha256');
-    axios
+     axios
       .get(
         "https://localhost:8080/api/users/" +
           this.state.username +
@@ -66,19 +66,20 @@ class Login extends React.Component {
           sha256(this.state.password)
       )
       .then(function(res) {
-
         console.log("TEST LOGIN " + res.data);
         //need to fix this so it shows error message
-        if (res.data != "404") {
+         if (res.data != "404") {
           //store the username this will help the bank feel more personal
           sessionStorage.setItem("username", res.data.name);
           sessionStorage.setItem("email", res.data._id);
-
           ReactDOM.render(<Home />, document.getElementById("root"));
-        } else {
-          alert("username or password is wrong");
         }
-      });
+        else{
+          alert("Wrong username or password")
+        }
+       });
+
+      console.log("Clicked")
     event.preventDefault();
   };
   render() {
