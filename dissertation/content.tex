@@ -72,7 +72,7 @@ project.  I have also used this server before and have a bit of experience with 
 found it very helpful in the projects I used it for which were a messaging forum and an
 E-commerce application both using MEAN(Mongo,Express,Angular \& Node) stacks.
 \\
-\includegraphics[width=\textwidth,height=4cm]{img/express.png} \cite{ExpressImage}
+\includegraphics[width=\textwidth,height=4cm]{img/Express.png} \cite{ExpressImage}
 \\
 \subsection{React}
 I also chose this project because I have zero experience in ReactJS and since
@@ -350,12 +350,30 @@ I faced some issues with time management as the workload was fairly heavy, I had
 \end{wrapfigure}
 I used GitHub to manage the versions of this application and to incrementally add code to my repository.
 I also used GitHub for the Kanban board and to manage any issues that arose during the course of development.
+\\
+Github also allowed me to have multiple branches, one of which I used for all code that had been tested and was proven to work called Master and another where I implemented and tested desirable features, this branch I called Feature.  The compartmentalization of tested and untested code helped me a lot during the course of development as it allowed me to perform accurate regression tests and module tests which made
+ debugging the application a lot easier.
+\\
+  Github also served as a backup of all my code in case of hard drive errors, hardware failures or various other issues that may arise.  Github also allowed me to revert back to previous versions of the project just in case I had made a mistake in the code and needed to revert back to a working version.  Github also served to provide me with a place were I could log any issues I had with the project and also allowed me to divide my sprints into daily or weekly tasks since the sprints were usually set over the course of a few days.
 \chapter{Technology Review}
 \section{Intro}
 In this chapter I will explore the technologies I used in this project and why I used them.  I will also explain how the technologies were implemented and how they were utilized to ensure that the online banking application was fully functional.  I will also review the technologies I used in this project and show how each technology provided a desired functionality which would be paramount to achieving a fully fledged robust, secure and overall user-friendly baking system.
 \section{MERN Stack}
+The MERN stack is a technology which is used to make full-stack web applications.  Each component in a MERN stack has a specific function to allow for full-stack development.  The MERN stack is widely used in industry and is composed of the following components:
+ \begin{itemize}
+  \item MongoDB - For storing items in a database
+  \item Express - Provides a web application framework
+  \item React - A framework for making
+  \item NodeJs - For server architecture and backend
+\end{itemize}
 \subsection{Mongo}
+
 \subsection{Express}
+Express is a Node.js web application framework which provides a myriad of desirable features for setting up a web sever.  Express helped me set-up a fully functional web application in a timely manner.  I also utilized Express to provide routing to multiple paths and to retrieve, delete, create \& update various information stored on my Mongo database.  I found Express very easy to setup and to use and the developers of Express provided comprehensive and very informative documentation on Express which can be found on their website\cite{ExpressDocs}
+\\
+ Express was able to return data I needed in JSON(JavaScript Object Notation) format and using the returned information I could then output the returned results to the user for purposes such as: to provide news \& to show the user their information.  I could also pass through parameters in the path and find information on a certain user or piece of data, this was very important for features such as logging the user in to the system as I had to compare the username and password and ensure both were correct.
+ \\
+ In conclusion Express provided a thin layer over Node.js to provide the application with features such as routing and also allows the developer to have a server up and running in minutes.  Express provided a lot of functionality to the banking application and also allowed me to create, read, update \& delete data, all of these are required for a fully fledged banking application in the 21st century.
 \subsection{React}
 \subsection{Node}
 \section{RESTful API}
@@ -367,8 +385,6 @@ In this chapter I will explore the technologies I used in this project and why I
 \subsection{Javascript}
 \subsection{HTML(Hyper-Text Markup Language)}
 \subsection{CSS(Cascading Style Sheets)}
-
-
 
 \chapter{System Design}
 As many pages as needed.

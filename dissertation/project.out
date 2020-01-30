@@ -47,10 +47,22 @@
 \BOOKMARK [1][-]{section.3.5}{Version Control}{chapter.3}% 47
 \BOOKMARK [0][-]{chapter.4}{Technology Review}{}% 48
 \BOOKMARK [1][-]{section.4.1}{Intro}{chapter.4}% 49
-\BOOKMARK [1][-]{section.4.2}{Technologies}{chapter.4}% 50
-\BOOKMARK [2][-]{subsection.4.2.1}{MERN Stack}{section.4.2}% 51
-\BOOKMARK [0][-]{chapter.5}{System Design}{}% 52
-\BOOKMARK [0][-]{chapter.6}{System Evaluation}{}% 53
-\BOOKMARK [0][-]{chapter.7}{Conclusion}{}% 54
-\BOOKMARK [0][-]{section*.9}{Appendices}{}% 55
-\BOOKMARK [0][-]{Appendix.1.A}{Preamble \046 Intro}{}% 56
+\BOOKMARK [1][-]{section.4.2}{MERN Stack}{chapter.4}% 50
+\BOOKMARK [2][-]{subsection.4.2.1}{Mongo}{section.4.2}% 51
+\BOOKMARK [2][-]{subsection.4.2.2}{Express}{section.4.2}% 52
+\BOOKMARK [2][-]{subsection.4.2.3}{React}{section.4.2}% 53
+\BOOKMARK [2][-]{subsection.4.2.4}{Node}{section.4.2}% 54
+\BOOKMARK [1][-]{section.4.3}{RESTful API}{chapter.4}% 55
+\BOOKMARK [1][-]{section.4.4}{Security}{chapter.4}% 56
+\BOOKMARK [2][-]{subsection.4.4.1}{OpenSSL}{section.4.4}% 57
+\BOOKMARK [2][-]{subsection.4.4.2}{SHA256}{section.4.4}% 58
+\BOOKMARK [1][-]{section.4.5}{MLAB}{chapter.4}% 59
+\BOOKMARK [1][-]{section.4.6}{Languages}{chapter.4}% 60
+\BOOKMARK [2][-]{subsection.4.6.1}{Javascript}{section.4.6}% 61
+\BOOKMARK [2][-]{subsection.4.6.2}{HTML\(Hyper-Text Markup Language\)}{section.4.6}% 62
+\BOOKMARK [2][-]{subsection.4.6.3}{CSS\(Cascading Style Sheets\)}{section.4.6}% 63
+\BOOKMARK [0][-]{chapter.5}{System Design}{}% 64
+\BOOKMARK [0][-]{chapter.6}{System Evaluation}{}% 65
+\BOOKMARK [0][-]{chapter.7}{Conclusion}{}% 66
+\BOOKMARK [0][-]{section*.8}{Appendices}{}% 67
+\BOOKMARK [0][-]{Appendix.1.A}{Preamble \046 Intro}{}% 68

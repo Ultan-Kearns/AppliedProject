@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Arch Linux) (preloaded format=pdflatex 2020.1.28)  29 JAN 2020 19:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Arch Linux) (preloaded format=pdflatex 2020.1.28)  30 JAN 2020 13:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1235,7 +1235,7 @@ Overfull \hbox (17.62482pt too wide) in paragraph at lines 60--67
 [][] 
  []
 
-<img/gmit-logo.jpg, id=256, 281.853pt x 88.4103pt>
+<img/gmit-logo.jpg, id=304, 281.853pt x 88.4103pt>
 File: img/gmit-logo.jpg Graphic file (type jpg)
 <use img/gmit-logo.jpg>
 Package pdftex.def Info: img/gmit-logo.jpg  used on input line 68.
@@ -1275,15 +1275,16 @@ LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 4
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ) [2
 
-])
+] [3])
 \tf@toc=\write7
 \openout7 = `project.toc'.
 
- (./content.tex [3] [4
+ (./content.tex [4]
+[5
 
 ]
 Chapter 1.
-<img/mern.jpeg, id=340, 1304.875pt x 746.79pt>
+<img/mern.jpeg, id=405, 1304.875pt x 746.79pt>
 File: img/mern.jpeg Graphic file (type jpg)
 <use img/mern.jpeg>
 Package pdftex.def Info: img/mern.jpeg  used on input line 39.
@@ -1293,15 +1294,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 41--50
 
  []
 
-[5
+[6
 
  <./img/mern.jpeg>]
-<img/mongostat.png, id=349, 1346.02875pt x 1084.05pt>
+<img/mongostat.png, id=413, 1346.02875pt x 1084.05pt>
 File: img/mongostat.png Graphic file (type png)
 <use img/mongostat.png>
 Package pdftex.def Info: img/mongostat.png  used on input line 58.
 (pdftex.def)             Requested size: 390.0pt x 314.08525pt.
-<img/mongo.jpg, id=351, 501.875pt x 283.0575pt>
+<img/mongo.jpg, id=415, 501.875pt x 283.0575pt>
 File: img/mongo.jpg Graphic file (type jpg)
 <use img/mongo.jpg>
 Package pdftex.def Info: img/mongo.jpg  used on input line 64.
@@ -1311,18 +1312,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 60--66
 
  []
 
-[6 <./img/mongostat.png>]
-<img/express.png, id=360, 642.4pt x 401.5pt>
-File: img/express.png Graphic file (type png)
-<use img/express.png>
-Package pdftex.def Info: img/express.png  used on input line 75.
+[7 <./img/mongostat.png>]
+<img/Express.png, id=425, 642.4pt x 401.5pt>
+File: img/Express.png Graphic file (type png)
+<use img/Express.png>
+Package pdftex.def Info: img/Express.png  used on input line 75.
 (pdftex.def)             Requested size: 390.01082pt x 113.80992pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 67--77
 
  []
 
-<img/react.png, id=363, 677.53125pt x 376.40625pt>
+<img/react.png, id=428, 677.53125pt x 376.40625pt>
 File: img/react.png Graphic file (type png)
 <use img/react.png>
 Package pdftex.def Info: img/react.png  used on input line 87.
@@ -1332,8 +1333,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 78--89
 
  []
 
-[7 <./img/mongo.jpg> <./img/express.png>]
-<img/node.png, id=373, 803.0pt x 490.83376pt>
+[8 <./img/mongo.jpg> <./img/express.png>]
+<img/node.png, id=437, 803.0pt x 490.83376pt>
 File: img/node.png Graphic file (type png)
 <use img/node.png>
 Package pdftex.def Info: img/node.png  used on input line 98.
@@ -1348,13 +1349,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 102--113
 
  []
 
-[8 <./img/react.png> <./img/node.png>] [9] [10] [11] [12]
+[9 <./img/react.png> <./img/node.png>] [10] [11] [12] [13]
 Chapter 2.
-[13
+[14
 
-] [14] [15] [16]
+] [15] [16] [17]
 Chapter 3.
-<./img/agile.jpg, id=435, 963.6pt x 542.025pt>
+<./img/agile.jpg, id=500, 963.6pt x 542.025pt>
 File: ./img/agile.jpg Graphic file (type jpg)
 <use ./img/agile.jpg>
 Package pdftex.def Info: ./img/agile.jpg  used on input line 318.
@@ -1364,10 +1365,10 @@ Overfull \hbox (18.27795pt too wide) in paragraph at lines 318--319
  []\OT1/lmr/m/n/12 [[]] 
  []
 
-[17
+[18
 
 ]
-<img/kanban.png, id=444, 770.88pt x 433.62pt>
+<img/kanban.png, id=509, 770.88pt x 433.62pt>
 File: img/kanban.png Graphic file (type png)
 <use img/kanban.png>
 Package pdftex.def Info: img/kanban.png  used on input line 323.
@@ -1407,8 +1408,8 @@ Overfull \hbox (9.9564pt too wide) in paragraph at lines 324--324
 \OT1/lmr/m/n/12 wikipedia| 
  []
 
-[18 <./img/agile.jpg> <./img/kanban.png>]
-<img/tdd.jpg, id=457, 999.735pt x 664.4825pt>
+[19 <./img/agile.jpg> <./img/kanban.png>]
+<img/tdd.jpg, id=522, 999.735pt x 664.4825pt>
 File: img/tdd.jpg Graphic file (type jpg)
 <use img/tdd.jpg>
 Package pdftex.def Info: img/tdd.jpg  used on input line 336.
@@ -1418,8 +1419,8 @@ Overfull \hbox (18.27795pt too wide) in paragraph at lines 336--337
  []\OT1/lmr/m/n/12 [[]] 
  []
 
-[19 <./img/tdd.jpg>]
-<img/github.png, id=466, 12.848pt x 12.848pt>
+[20 <./img/tdd.jpg>]
+<img/github.png, id=530, 12.848pt x 12.848pt>
 File: img/github.png Graphic file (type png)
 <use img/github.png>
 Package pdftex.def Info: img/github.png  used on input line 347.
@@ -1454,28 +1455,28 @@ Overfull \hbox (18.11646pt too wide) in paragraph at lines 348--348
 \OT1/lmr/m/n/12 github.com| 
  []
 
-[20 <./img/github.png>]
+[21 <./img/github.png>]
 Chapter 4.
-[21
-
-]
-Chapter 5.
 [22
+
+] [23] [24]
+Chapter 5.
+[25
 
 ]
 Chapter 6.
-[23
+[26
 
 ]
 Chapter 7.
-[24
+[27
 
-] [25
+] [28
 
 
 ]
 Appendix A.
-(./project.bbl [26
+(./project.bbl [29
 
 ]
 LaTeX Font Info:    Trying to load font information for OT1+lmtt on input line 
@@ -1563,7 +1564,7 @@ Overfull \hbox (55.64209pt too wide) in paragraph at lines 53--57
 -[]cybercrime-[]losses/$[][]\OT1/lmr/m/n/12 . 
  []
 
-[27
+[30
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 59--63
@@ -1610,21 +1611,15 @@ Underfull \hbox (badness 2103) in paragraph at lines 84--86
 2 https : / / github . com /
  []
 
-) [28]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 399.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 399.
+) [31]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 427.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 427.
  (./project.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 399.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 399.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 427.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 427.
+Package rerunfilecheck Info: File `project.out' has not changed.
+(rerunfilecheck)             Checksum: 162ADBA4892CCB588B493F551411B897;4522.
 
-
-Package rerunfilecheck Warning: File `project.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `project.out':
-(rerunfilecheck)             Before: 77C89ED613A614DA6DCB2DD4548D0B9D;3775
-(rerunfilecheck)             After:  38C7C1A5C8EFC19532A00D10095AD3C6;3775.
 
 LaTeX Warning: There were multiply-defined labels.
 
@@ -1632,27 +1627,24 @@ runsystem(rm project.pyg)...disabled (restricted).
 
  ) ) 
 Here is how much of TeX's memory you used:
- 25609 strings out of 492167
- 508068 string characters out of 6131558
- 653812 words of memory out of 5000000
- 29330 multiletter control sequences out of 15000+600000
+ 25634 strings out of 492167
+ 508417 string characters out of 6131558
+ 654846 words of memory out of 5000000
+ 29341 multiletter control sequences out of 15000+600000
  48685 words of font info for 40 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  60i,10n,79p,845b,474s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{section*.8} has been referenced but does not ex
-ist, replaced by a fixed one
-
-{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-rmtt.enc}{/usr/share/texmf-dist/fo
-nts/enc/dvips/lm/lm-ts1.enc}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc
-}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-rmsc.enc}</usr/share/texmf-dist/f
-onts/type1/public/lm/lmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lm
-csc10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/share/te
-xmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf-dist/fonts/type1/publ
-ic/lm/lmro12.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmtt12.pfb>
-Output written on project.pdf (28 pages, 1038799 bytes).
+{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-rmtt.enc}{/usr/share/texmf-dis
+t/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-rm
+.enc}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-rmsc.enc}</usr/share/texmf-di
+st/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/l
+m/lmcsc10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/shar
+e/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf-dist/fonts/type1/
+public/lm/lmro12.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmtt12.pfb>
+Output written on project.pdf (31 pages, 1045652 bytes).
 PDF statistics:
- 602 PDF objects out of 1000 (max. 8388607)
- 527 compressed objects within 6 object streams
- 114 named destinations out of 1000 (max. 500000)
- 612 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 681 PDF objects out of 1000 (max. 8388607)
+ 602 compressed objects within 7 object streams
+ 128 named destinations out of 1000 (max. 500000)
+ 708 words of extra memory for PDF output out of 10000 (max. 10000000)
 
