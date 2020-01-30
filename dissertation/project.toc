@@ -1,70 +1,70 @@
-\contentsline {paragraph}{Analysis of This Project: }{5}{paragraph*.3}% 
-\contentsline {paragraph}{Authors: }{5}{paragraph*.4}% 
-\contentsline {chapter}{\numberline {1}Introduction}{6}{chapter.1}% 
-\contentsline {section}{\numberline {1.1}Why A MERN stack?}{6}{section.1.1}% 
-\contentsline {subsection}{\numberline {1.1.1}Mongo}{7}{subsection.1.1.1}% 
-\contentsline {subsection}{\numberline {1.1.2}Express}{8}{subsection.1.1.2}% 
-\contentsline {subsection}{\numberline {1.1.3}React}{8}{subsection.1.1.3}% 
-\contentsline {subsection}{\numberline {1.1.4}Node JS}{9}{subsection.1.1.4}% 
-\contentsline {section}{\numberline {1.2}Why a banking application?}{10}{section.1.2}% 
-\contentsline {subsection}{\numberline {1.2.1}Explanation of Why I Chose This Project}{10}{subsection.1.2.1}% 
-\contentsline {subsection}{\numberline {1.2.2}My Contention With Existing Online Banking Systems \& How I Plan To Improve Upon Them}{10}{subsection.1.2.2}% 
-\contentsline {section}{\numberline {1.3}Requirements}{11}{section.1.3}% 
-\contentsline {section}{\numberline {1.4}Outline of chapters}{12}{section.1.4}% 
-\contentsline {subsection}{\numberline {1.4.1}Context}{12}{subsection.1.4.1}% 
-\contentsline {subsection}{\numberline {1.4.2}Methodology}{12}{subsection.1.4.2}% 
-\contentsline {subsection}{\numberline {1.4.3}Technical Review}{12}{subsection.1.4.3}% 
-\contentsline {subsection}{\numberline {1.4.4}System Design}{12}{subsection.1.4.4}% 
-\contentsline {subsection}{\numberline {1.4.5}System Evaluation}{12}{subsection.1.4.5}% 
-\contentsline {subsection}{\numberline {1.4.6}Conclusion}{13}{subsection.1.4.6}% 
-\contentsline {section}{\numberline {1.5}Structure of Project}{13}{section.1.5}% 
-\contentsline {chapter}{\numberline {2}Context}{14}{chapter.2}% 
-\contentsline {section}{\numberline {2.1}Project Objectives}{14}{section.2.1}% 
-\contentsline {section}{\numberline {2.2}Online Banking}{14}{section.2.2}% 
-\contentsline {section}{\numberline {2.3}History of Online Banking}{15}{section.2.3}% 
-\contentsline {subsection}{\numberline {2.3.1}Definition of Online Banking}{15}{subsection.2.3.1}% 
-\contentsline {subsection}{\numberline {2.3.2}The Beginning}{15}{subsection.2.3.2}% 
-\contentsline {section}{\numberline {2.4}Advantages of Online Banking}{16}{section.2.4}% 
-\contentsline {subsection}{\numberline {2.4.1}Convenience}{16}{subsection.2.4.1}% 
-\contentsline {subsection}{\numberline {2.4.2}Speed}{16}{subsection.2.4.2}% 
-\contentsline {subsection}{\numberline {2.4.3}Competition}{16}{subsection.2.4.3}% 
-\contentsline {subsection}{\numberline {2.4.4}Creation of Jobs}{16}{subsection.2.4.4}% 
-\contentsline {section}{\numberline {2.5}Disadvantages of Online Banking}{17}{section.2.5}% 
-\contentsline {subsection}{\numberline {2.5.1}Security}{17}{subsection.2.5.1}% 
-\contentsline {subsection}{\numberline {2.5.2}Layoff of Bank Employees}{17}{subsection.2.5.2}% 
-\contentsline {subsection}{\numberline {2.5.3}Increased Crime}{17}{subsection.2.5.3}% 
-\contentsline {section}{\numberline {2.6}The Overall Effect of Online Banking}{17}{section.2.6}% 
-\contentsline {chapter}{\numberline {3}Methodology}{18}{chapter.3}% 
-\contentsline {section}{\numberline {3.1}Overview of Methodology}{18}{section.3.1}% 
-\contentsline {section}{\numberline {3.2}Agile}{18}{section.3.2}% 
-\contentsline {subsection}{\numberline {3.2.1}What is Agile?}{18}{subsection.3.2.1}% 
-\contentsline {subsection}{\numberline {3.2.2}Why Kanban?}{19}{subsection.3.2.2}% 
-\contentsline {subsection}{\numberline {3.2.3}How I Applied Agile To This Project}{19}{subsection.3.2.3}% 
-\contentsline {section}{\numberline {3.3}Test Driven Development (TDD)}{20}{section.3.3}% 
-\contentsline {subsection}{\numberline {3.3.1}What Is Test Driven Development?}{20}{subsection.3.3.1}% 
-\contentsline {subsection}{\numberline {3.3.2}How I Applied Test Driven Development To This Project}{20}{subsection.3.3.2}% 
-\contentsline {section}{\numberline {3.4}Time Management}{21}{section.3.4}% 
-\contentsline {subsection}{\numberline {3.4.1}How I Handled Multiple Projects}{21}{subsection.3.4.1}% 
-\contentsline {subsection}{\numberline {3.4.2}Issues I Faced With Time Management}{21}{subsection.3.4.2}% 
-\contentsline {section}{\numberline {3.5}Version Control}{21}{section.3.5}% 
-\contentsline {chapter}{\numberline {4}Technology Review}{22}{chapter.4}% 
-\contentsline {section}{\numberline {4.1}Intro}{22}{section.4.1}% 
-\contentsline {section}{\numberline {4.2}MERN Stack}{22}{section.4.2}% 
-\contentsline {subsection}{\numberline {4.2.1}Mongo}{23}{subsection.4.2.1}% 
-\contentsline {subsection}{\numberline {4.2.2}Express}{23}{subsection.4.2.2}% 
-\contentsline {subsection}{\numberline {4.2.3}React}{24}{subsection.4.2.3}% 
-\contentsline {subsection}{\numberline {4.2.4}Node}{24}{subsection.4.2.4}% 
-\contentsline {section}{\numberline {4.3}RESTful API}{24}{section.4.3}% 
-\contentsline {section}{\numberline {4.4}Security}{24}{section.4.4}% 
-\contentsline {subsection}{\numberline {4.4.1}OpenSSL}{24}{subsection.4.4.1}% 
-\contentsline {subsection}{\numberline {4.4.2}SHA256}{24}{subsection.4.4.2}% 
-\contentsline {section}{\numberline {4.5}MLAB}{24}{section.4.5}% 
-\contentsline {section}{\numberline {4.6}Languages}{24}{section.4.6}% 
-\contentsline {subsection}{\numberline {4.6.1}Javascript}{24}{subsection.4.6.1}% 
-\contentsline {subsection}{\numberline {4.6.2}HTML(Hyper-Text Markup Language)}{24}{subsection.4.6.2}% 
-\contentsline {subsection}{\numberline {4.6.3}CSS(Cascading Style Sheets)}{24}{subsection.4.6.3}% 
-\contentsline {chapter}{\numberline {5}System Design}{25}{chapter.5}% 
-\contentsline {chapter}{\numberline {6}System Evaluation}{26}{chapter.6}% 
-\contentsline {chapter}{\numberline {7}Conclusion}{27}{chapter.7}% 
-\contentsline {chapter}{Appendices}{28}{section*.8}% 
-\contentsline {chapter}{\numberline {A}Preamble \& Intro}{29}{Appendix.1.A}% 
+\contentsline {paragraph}{Analysis of This Project: }{6}{paragraph*.4}% 
+\contentsline {paragraph}{Authors: }{6}{paragraph*.5}% 
+\contentsline {chapter}{\numberline {1}Introduction}{7}{chapter.1}% 
+\contentsline {section}{\numberline {1.1}Why A MERN stack?}{7}{section.1.1}% 
+\contentsline {subsection}{\numberline {1.1.1}Mongo}{8}{subsection.1.1.1}% 
+\contentsline {subsection}{\numberline {1.1.2}Express}{9}{subsection.1.1.2}% 
+\contentsline {subsection}{\numberline {1.1.3}React}{9}{subsection.1.1.3}% 
+\contentsline {subsection}{\numberline {1.1.4}Node JS}{10}{subsection.1.1.4}% 
+\contentsline {section}{\numberline {1.2}Why a banking application?}{11}{section.1.2}% 
+\contentsline {subsection}{\numberline {1.2.1}Explanation of Why I Chose This Project}{11}{subsection.1.2.1}% 
+\contentsline {subsection}{\numberline {1.2.2}My Contention With Existing Online Banking Systems \& How I Plan To Improve Upon Them}{11}{subsection.1.2.2}% 
+\contentsline {section}{\numberline {1.3}Requirements}{12}{section.1.3}% 
+\contentsline {section}{\numberline {1.4}Outline of chapters}{13}{section.1.4}% 
+\contentsline {subsection}{\numberline {1.4.1}Context}{13}{subsection.1.4.1}% 
+\contentsline {subsection}{\numberline {1.4.2}Methodology}{13}{subsection.1.4.2}% 
+\contentsline {subsection}{\numberline {1.4.3}Technical Review}{13}{subsection.1.4.3}% 
+\contentsline {subsection}{\numberline {1.4.4}System Design}{13}{subsection.1.4.4}% 
+\contentsline {subsection}{\numberline {1.4.5}System Evaluation}{13}{subsection.1.4.5}% 
+\contentsline {subsection}{\numberline {1.4.6}Conclusion}{14}{subsection.1.4.6}% 
+\contentsline {section}{\numberline {1.5}Structure of Project}{14}{section.1.5}% 
+\contentsline {chapter}{\numberline {2}Context}{15}{chapter.2}% 
+\contentsline {section}{\numberline {2.1}Project Objectives}{15}{section.2.1}% 
+\contentsline {section}{\numberline {2.2}Online Banking}{15}{section.2.2}% 
+\contentsline {section}{\numberline {2.3}History of Online Banking}{16}{section.2.3}% 
+\contentsline {subsection}{\numberline {2.3.1}Definition of Online Banking}{16}{subsection.2.3.1}% 
+\contentsline {subsection}{\numberline {2.3.2}The Beginning}{16}{subsection.2.3.2}% 
+\contentsline {section}{\numberline {2.4}Advantages of Online Banking}{17}{section.2.4}% 
+\contentsline {subsection}{\numberline {2.4.1}Convenience}{17}{subsection.2.4.1}% 
+\contentsline {subsection}{\numberline {2.4.2}Speed}{17}{subsection.2.4.2}% 
+\contentsline {subsection}{\numberline {2.4.3}Competition}{17}{subsection.2.4.3}% 
+\contentsline {subsection}{\numberline {2.4.4}Creation of Jobs}{17}{subsection.2.4.4}% 
+\contentsline {section}{\numberline {2.5}Disadvantages of Online Banking}{18}{section.2.5}% 
+\contentsline {subsection}{\numberline {2.5.1}Security}{18}{subsection.2.5.1}% 
+\contentsline {subsection}{\numberline {2.5.2}Layoff of Bank Employees}{18}{subsection.2.5.2}% 
+\contentsline {subsection}{\numberline {2.5.3}Increased Crime}{18}{subsection.2.5.3}% 
+\contentsline {section}{\numberline {2.6}The Overall Effect of Online Banking}{18}{section.2.6}% 
+\contentsline {chapter}{\numberline {3}Methodology}{19}{chapter.3}% 
+\contentsline {section}{\numberline {3.1}Overview of Methodology}{19}{section.3.1}% 
+\contentsline {section}{\numberline {3.2}Agile}{19}{section.3.2}% 
+\contentsline {subsection}{\numberline {3.2.1}What is Agile?}{19}{subsection.3.2.1}% 
+\contentsline {subsection}{\numberline {3.2.2}Why Kanban?}{20}{subsection.3.2.2}% 
+\contentsline {subsection}{\numberline {3.2.3}How I Applied Agile To This Project}{20}{subsection.3.2.3}% 
+\contentsline {section}{\numberline {3.3}Test Driven Development (TDD)}{21}{section.3.3}% 
+\contentsline {subsection}{\numberline {3.3.1}What Is Test Driven Development?}{21}{subsection.3.3.1}% 
+\contentsline {subsection}{\numberline {3.3.2}How I Applied Test Driven Development To This Project}{21}{subsection.3.3.2}% 
+\contentsline {section}{\numberline {3.4}Time Management}{22}{section.3.4}% 
+\contentsline {subsection}{\numberline {3.4.1}How I Handled Multiple Projects}{22}{subsection.3.4.1}% 
+\contentsline {subsection}{\numberline {3.4.2}Issues I Faced With Time Management}{22}{subsection.3.4.2}% 
+\contentsline {section}{\numberline {3.5}Version Control}{22}{section.3.5}% 
+\contentsline {chapter}{\numberline {4}Technology Review}{23}{chapter.4}% 
+\contentsline {section}{\numberline {4.1}Intro}{23}{section.4.1}% 
+\contentsline {section}{\numberline {4.2}MERN Stack}{23}{section.4.2}% 
+\contentsline {subsection}{\numberline {4.2.1}MongoDB}{23}{subsection.4.2.1}% 
+\contentsline {subsection}{\numberline {4.2.2}Express}{24}{subsection.4.2.2}% 
+\contentsline {subsection}{\numberline {4.2.3}React}{25}{subsection.4.2.3}% 
+\contentsline {subsection}{\numberline {4.2.4}Node}{25}{subsection.4.2.4}% 
+\contentsline {section}{\numberline {4.3}RESTful API}{25}{section.4.3}% 
+\contentsline {section}{\numberline {4.4}Security}{25}{section.4.4}% 
+\contentsline {subsection}{\numberline {4.4.1}OpenSSL}{25}{subsection.4.4.1}% 
+\contentsline {subsection}{\numberline {4.4.2}SHA256}{25}{subsection.4.4.2}% 
+\contentsline {section}{\numberline {4.5}MLAB}{25}{section.4.5}% 
+\contentsline {section}{\numberline {4.6}Languages}{25}{section.4.6}% 
+\contentsline {subsection}{\numberline {4.6.1}Javascript}{25}{subsection.4.6.1}% 
+\contentsline {subsection}{\numberline {4.6.2}HTML(Hyper-Text Markup Language)}{25}{subsection.4.6.2}% 
+\contentsline {subsection}{\numberline {4.6.3}CSS(Cascading Style Sheets)}{25}{subsection.4.6.3}% 
+\contentsline {chapter}{\numberline {5}System Design}{26}{chapter.5}% 
+\contentsline {chapter}{\numberline {6}System Evaluation}{27}{chapter.6}% 
+\contentsline {chapter}{\numberline {7}Conclusion}{28}{chapter.7}% 
+\contentsline {chapter}{Appendices}{29}{section*.9}% 
+\contentsline {chapter}{\numberline {A}Preamble \& Intro}{30}{Appendix.1.A}% 

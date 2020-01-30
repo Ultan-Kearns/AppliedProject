@@ -366,8 +366,19 @@ The MERN stack is a technology which is used to make full-stack web applications
   \item React - A framework for making
   \item NodeJs - For server architecture and backend
 \end{itemize}
-\subsection{Mongo}
-
+\subsection{MongoDB}
+MongoDB is a document database that is scalable and flexible, it provides the user with a litany of various functions to perform actions on data stored in the database.  MongoDB stores data in JSON-like documents which means the fields can vary between documents and that the structure of the data can morph over time.  The use of JSON-like objects makes the data very easy to access and to manipulate for example say I had the following object
+\begin{minted}{json}
+{
+  "person": {
+    "name": "ultan"
+  }
+}
+\end{minted}
+Here if I wanted to acess the given persons name the only command I would have to execute would be \begin{minted}{js}
+  person.name();
+\end{minted}
+I will explore the simplicity of JSON more in the JSON section but it is a rather pertinent point about MongoDB and it is one of the reasons why I chose to use MongoDB in this project.
 \subsection{Express}
 Express is a Node.js web application framework which provides a myriad of desirable features for setting up a web sever.  Express helped me set-up a fully functional web application in a timely manner.  I also utilized Express to provide routing to multiple paths and to retrieve, delete, create \& update various information stored on my Mongo database.  I found Express very easy to setup and to use and the developers of Express provided comprehensive and very informative documentation on Express which can be found on their website\cite{ExpressDocs}
 \\
