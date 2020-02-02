@@ -391,7 +391,7 @@ Express is a Node.js web application framework which provides a myriad of desira
  \\
  In conclusion Express provided a thin layer over Node.js to provide the application with features such as routing and also allows the developer to have a server up and running in minutes.  Express provided a lot of functionality to the banking application and also allowed me to create, read, update \& delete data, all of these are required for a fully fledged banking application in the 21st century.
 \subsection{React}
-ReactJS is a JavaScript library for building user interfaces\cite{React} React is maintained by Facebook and numerous other companies and independent developers.  React can be used to create user friendly single-page applications which is perfect for an online banking system which is being designed with usability and accessibility in mind.  React has numerous libraries which can be used such as Axios\cite{axios}.
+ReactJS is a JavaScript library for building user interfaces\cite{React} React is maintained by Facebook and numerous other companies and independent developers.  React can be used to create user friendly single-page applications which is perfect for an online banking system which is being designed with usability and accessibility in mind.  React has numerous libraries which can be used such as Axios\cite{Axios}.
 \\
 \\
  These libraries can be used for various functions such as ,in the case of Axios, performing routing.  ReactJS also allows the developer to compartmentalize their code into different components each with it's own set of functions which makes the code far easier to debug as opposed to debugging a god class or god file.
@@ -411,6 +411,7 @@ Node allows for concurrent connections to the server and can process multiple re
 \\
 \\
  I utilized NodeJS in this project to retrieve data via HTTP requests either from MLAB or in the case of news stories, Reddit and various other news sites.
+\\
 \\
 Here is an example of how easy it is to start a basic web application with Node:
 \\
@@ -435,6 +436,14 @@ Axios is a promise based HTTP client for node.js\cite{Axios}.  I used Axios in t
 \section{RESTful API}
 \section{Security}
 \subsection{OpenSSL}
+OpenSSL is a toolkit for providing TLS(Transport Layer Security) \& SSL(Secure Socket Layer) protocols.  It is also a cryptography library which can be used to enchance the applications security.  I used OpenSSL to generate a certificate for the Node server to provide an extra layer of security for the user.
+\\
+\begin{figure}[h!]
+  \includegraphics[width=\textwidth]{img/tls.png}
+  \caption{TLS.}
+  \label{fig: How TLS Works}
+\end{figure}
+\cite{TLS}
 \subsection{SHA256}
 \section{Database}
 \subsection{MLAB}
