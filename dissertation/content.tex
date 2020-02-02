@@ -431,8 +431,15 @@ var host = server.address().address
 \\
 \\
 In the above example what will happen when the user searches the URL https://localhost:8080/ they will be greeted with the message "Server is up and running!", the 200 status indicates that the resource was retrieved successfully.
+\section{React Libraries}
 \subsection{Axios}
 Axios is a promise based HTTP client for node.js\cite{Axios}.  I used Axios in this project to send HTTP requests from the frontend of the application to the NodeJS server.  Axios allowed me to retrieve information from various paths and return that information to the user, and to update, delete and create new information.  I used Axios to achieve full CRUD(Create, read, update \& delete) functionality.
+\subsection{React Helmet}
+\subsection{Create-React-App}
+\section{Third Party APIs}
+\subsection{NodeMailer}
+\subsection{News Of The World}
+\subsection{Reddit}
 \section{RESTful API}
 \section{Security}
 \subsection{OpenSSL}
@@ -445,13 +452,54 @@ OpenSSL is a toolkit for providing TLS(Transport Layer Security) \& SSL(Secure S
 \end{figure}
 \cite{TLS}
 \subsection{SHA256}
+SHA256 stands for Secure Hashing Algorithm 256 which is used as a one way function which means that data which is hashed using this algorithm is impossible to revert into it's original form\cite{SHA256}.  I used the SHA256 algorithm to encrypt and secure user passwords stored in the database and to ensure that the passwords were not stored in plaintext for extra security.
 \section{Database}
 \subsection{MLAB}
-
 \section{Languages}
 \subsection{Javascript}
+JavaScript is a lightweight programming language which is interpreted and is compiled just in time\cite{JavaScript}.  It is a very popular language for web developers as it is Turing Complete and allows the developer to manipulate the DOM(Document Object Model) programmatically.
+\\
+\\
+ I used JavaScript for performing various functions which were expected from an online banking application such as: cycling through a users transactions, outputting userdata, comparing inputted values to values retrieved from the server for login, checking if a user already exists etc.
+ \\
+ \\
+ In short JavaScript provided me with a full Turing Complete language to code the logic of the online banking application. Here is an example of some JavaScript code:
+ \begin{minted}{JavaScript}
+   name = "Ultan"
+   //prints Hello, Ultan
+   print("Hello, " + name);
+   a = 1
+   b = 2
+   //prints 3
+   print(a + b)
+   //prints Hello, Ultan1
+   print("Hello, " + name + a)
+
+ \end{minted}
 \subsection{HTML(Hyper-Text Markup Language)}
-\subsection{CSS(Cascading Style Sheets)}
+Hyper-Text Markup Language or HTML is a markup language and is the standard for creating web pages\cite{HTML}.  I used HTML to structure my web page and insert various elements into the web pages such as: images, headers, paragraphs etc.
+\\
+\\
+Below I will include a very basic HTML page:
+\begin{minted}{HTML}
+<!DOCTYPE html>
+<html>
+<head>
+<title> You'll find me on your tab!</title>
+</head>
+<body>
+<h1>This is a header</h1>
+<p>Hello world! This is HTML</p>
+</body>
+</html>
+\end{minted}
+\\
+\\
+All valid HTML pages must have a DOCTYPE html declaration, html tag, head tag, and a body tag.  Any tag which is opened must be closed.
+\subsection{\LaTeX}
+\section{Styles}
+\subsection{Cascading Style Sheets(CSS)}
+\subsection{React Bootstrap}
 
 \chapter{System Design}
 As many pages as needed.

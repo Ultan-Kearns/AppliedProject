@@ -55,7 +55,7 @@ class Transactions extends React.Component {
       //transactions populating but can't access field
       <div>
         <Helmet>
-          <title>transactions</title>
+          <title>Transactions</title>
         </Helmet>
         <h1>Your transactions</h1>
         <p>
