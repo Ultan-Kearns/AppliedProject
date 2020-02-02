@@ -6,7 +6,7 @@ import React from "react"
 import "../Styles/Login.css"
 import Login from "./Login"
 import { Helmet } from "react-helmet"
-import { SHA256 } from 'js-sha256'
+import 'js-sha256'
 const axios = require("axios").default
 class Register extends React.Component {
   constructor(props) {
@@ -54,7 +54,7 @@ class Register extends React.Component {
       .then(res => {
         //log res for testing
         console.log(res.data)
-        if (res.data != null) {
+        if (res.data !== null) {
           alert("User already exists")
         }
       })

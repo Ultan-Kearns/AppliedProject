@@ -1,6 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet";
-import AboutStyle from "../Styles/AboutStyle.css";
+import "../Styles/AboutStyle.css";
 
 function About() {
   return (

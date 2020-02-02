@@ -1,18 +1,17 @@
-import React from "react";
-import { Helmet } from "react-helmet";
-import Button from "react-bootstrap/Button";
-import Login from "./Login";
-import ReactDOM from "react-dom";
-import InputGroup from "react-bootstrap/InputGroup";
-import "../Styles/UserInfoStyle.css";
-import { SHA256 } from "js-sha256";
-
-import FormControl from "react-bootstrap/FormControl";
-const axios = require("axios").default;
+import React from "react"
+import { Helmet } from "react-helmet"
+import Button from "react-bootstrap/Button"
+import Login from "./Login"
+import ReactDOM from "react-dom"
+import InputGroup from "react-bootstrap/InputGroup"
+import "../Styles/UserInfoStyle.css"
+import "js-sha256"
+import FormControl from "react-bootstrap/FormControl"
+const axios = require("axios").default
 
 class UserInfo extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       name: "",
       username: "",
@@ -20,43 +19,51 @@ class UserInfo extends React.Component {
       number: "",
       prevName: "",
       prevNumber: ""
-    };
+    }
   }
   handleUsernameChange = event => {
     this.setState({
       username: event.target.value
-    });
-  };
+    })
+  }
   handlePasswordChange = event => {
     this.setState({
       password: event.target.value
-    });
-  };
+    })
+  }
   handleNameChange = event => {
     this.setState({
       name: event.target.value
-    });
-  };
+    })
+  }
   handleNumberChange = event => {
     this.setState({
       number: event.target.value
-    });
-  };
+    })
+  }
   update = event => {
-    const sha256 = require("js-sha256");
+    const sha256 = require("js-sha256")
     //if any info is blank set to previous info of user
-    if (this.state.number == "null" || this.state.number == "") {
-      this.state.number = this.state.prevNumber;
+    if (this.state.number === "null" || this.state.number === "") {
+      this.setState({
+        number: this.state.prevNumber
+      })
     }
 
-    if (this.state.name == "null" || this.state.name == "") {
-      this.state.name = this.state.prevName;
+    if (this.state.name === "null" || this.state.name === "") {
+      this.setState({
+        name: this.state.prevName
+      })
     }
-    if (this.state.username == "null" || this.state.username == "") {
-      this.state.username = sessionStorage.getItem("email");
+    if (this.state.username === "null" || this.state.username === "") {
+      this.setState({
+        username: this.state.prevUsername
+      })
     }
-    if (this.state.password == "null" || this.state.password == "") {
-      this.state.password = this.state.prevPassword;
+    if (this.state.password === "null" || this.state.password === "") {
+      this.setState({
+        password: this.state.prevpassword
+      })
     }
     alert(
       this.state.number +
@@ -66,9 +73,9 @@ class UserInfo extends React.Component {
         this.state.username +
         " " +
         this.state.name
-    );
+    )
     //hash pass using sha256
-    const hashed = sha256(this.state.password);
+    const hashed = sha256(this.state.password)
 
     const newUser = {
       _id: this.state.username,
@@ -76,7 +83,7 @@ class UserInfo extends React.Component {
       name: this.state.name,
       number: this.state.number,
       dob: this.state.dob
-    };
+    }
     if (
       this.state.number.length >= 10 &&
       this.state.name.length >= 10 &&
@@ -89,21 +96,21 @@ class UserInfo extends React.Component {
         )
         .then(res => {
           //log res for testing
-          console.log(res.data);
+          console.log(res.data)
         })
         .catch(error => {
-          console.log("ERR");
-        });
-      console.log("In update");
-      alert("Updated user");
-      document.getElementById("updateForm").reset();
+          console.log("ERR")
+        })
+      console.log("In update")
+      alert("Updated user")
+      document.getElementById("updateForm").reset()
     } else {
       alert(
         "Form invalid, password length must be greater than 6 and number must have 10 digits"
-      );
+      )
     }
-    event.preventDefault();
-  };
+    event.preventDefault()
+  }
   componentDidMount() {
     axios
       .get(
@@ -118,24 +125,30 @@ class UserInfo extends React.Component {
             " Date of Birth: " +
             res.data.dob,
           //In case user leaves any information blank just submit their current info
-          (this.state.dob = res.data.dob),
-          (this.state.prevName = res.data.name),
-          (this.state.prevNumber = res.data.number),
-          (this.state.prevPassword = res.data.password)
-        );
-        document.getElementById("basic").append(text);
-      });
+
+        this.setState({
+           prevName: res.data.name
+         }),
+      this.setState({
+          prevNumber: res.data.number
+        }),
+      this.setState({
+          password: res.data.password
+        }),
+      )
+        document.getElementById("basic").append(text)
+      })
   }
   deleteUser() {
-    var answer = window.confirm("Delete Account?");
+    var answer = window.confirm("Delete Account?")
     if (answer === true) {
       axios.delete(
         "https://localhost:8080/api/users/" + sessionStorage.getItem("email")
-      );
-      alert("User deleted");
-      ReactDOM.render(<Login />, document.getElementById("root"));
+      )
+      alert("User deleted")
+      ReactDOM.render(<Login />, document.getElementById("root"))
     } else {
-      alert("Action aborted, user not deleted");
+      alert("Action aborted, user not deleted")
     }
   }
   render() {
@@ -208,8 +221,8 @@ class UserInfo extends React.Component {
           Delete Account
         </Button>
       </div>
-    );
+    )
   }
 }
 
-export default UserInfo;
+export default UserInfo

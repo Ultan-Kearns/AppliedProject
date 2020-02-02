@@ -23,7 +23,7 @@ class Forgot extends React.Component {
   };
   handleSubmitForm = event => {
     console.log(this.state.username);
-    if (this.state.username == "") {
+    if (this.state.username === "") {
       alert("Email cannot be blank");
       event.preventDefault();
       return;

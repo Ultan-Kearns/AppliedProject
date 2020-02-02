@@ -8,8 +8,8 @@ import ReactDOM from "react-dom";
 import Home from "./Home";
 import Register from "./Register";
 import Forgot from "./Forgot";
-import Axios from "axios";
-import { SHA256 } from 'js-sha256'
+import "axios";
+import 'js-sha256'
 
 class Login extends React.Component {
   //username test
@@ -43,7 +43,7 @@ class Login extends React.Component {
     });
   };
   componentDidMount() {
-    //if(sessionStorage.getItem("username") !="null" && sessionStorage.getItem("username") != null){
+    //if(sessionStorage.getItem("username") !=="null" && sessionStorage.getItem("username") !== null){
     //ReactDOM.render(<App />, document.getElementById("root"));
     const axios = require("axios").default;
     axios
@@ -68,7 +68,7 @@ class Login extends React.Component {
       .then(function(res) {
         console.log("TEST LOGIN " + res.data);
         //need to fix this so it shows error message
-         if (res.data != "404") {
+         if (res.data !== "404") {
           //store the username this will help the bank feel more personal
           sessionStorage.setItem("username", res.data.name);
           sessionStorage.setItem("email", res.data._id);

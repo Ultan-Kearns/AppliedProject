@@ -1,7 +1,7 @@
 import React from "react";
-import Axios from "axios";
+import "axios";
 import { Helmet } from "react-helmet";
-import Button from "react-bootstrap/Button"
+import "react-bootstrap/Button"
 
 
 class Transactions extends React.Component {

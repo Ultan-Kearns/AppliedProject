@@ -11,7 +11,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Button from "react-bootstrap/Button";
 import ButtonToolbar from "react-bootstrap/ButtonToolbar";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Axios from "axios";
+import  "axios";
 import "./Styles/App.css";
 
 class App extends React.Component {

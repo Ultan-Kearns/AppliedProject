@@ -2,7 +2,7 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import App from "../App";
 import ReactDOM from "react-dom";
-import HomeStyle from "../Styles/HomeStyle.css";
+import "../Styles/HomeStyle.css";
 import Button from "react-bootstrap/Button";
 
 class Home extends React.Component {
@@ -15,7 +15,7 @@ class Home extends React.Component {
       )
       .then(res => {
         var text = document.createTextNode(
-          "User balance :  " + res.data.balance
+          res.data.balance
         );
         document.getElementById("balance").append(text);
       });
@@ -64,7 +64,7 @@ class Home extends React.Component {
           Welcome to the Independent Banking,{" "}
           {sessionStorage.getItem("username")}!
         </h1>
-        <h2 id="balance" />
+        <h2 id="balance">Current User Balance: </h2>
         <p>
           Here the user can view graphs of monthly expenditure, view how much
           over your current budget you are, view this months transfers

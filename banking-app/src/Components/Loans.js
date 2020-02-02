@@ -1,13 +1,11 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 import Button from "react-bootstrap/Button";
-import LoanStyle from "../Styles/LoanStyle.css";
+import  "../Styles/LoanStyle.css";
 
 class Loans extends React.Component {
   componentDidMount() {
-    {
       this.getLoans();
-    }
   }
 
   constructor(props) {
@@ -62,7 +60,7 @@ class Loans extends React.Component {
     var date = new Date();
     var fullDate =
       date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
-    if (this.state.amount != "") {
+    if (this.state.amount !== "") {
       const newLoan = {
         email: sessionStorage.getItem("email"),
         amount: this.state.amount,
