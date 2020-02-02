@@ -1,0 +1,12 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kr}{const} \PYG{n+nx}{https} \PYG{o}{=} \PYG{n+nx}{require}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}https\PYGZdq{}}\PYG{p}{);}
+
+\PYG{n+nx}{app}\PYG{p}{.}\PYG{n+nx}{get}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}/\PYGZdq{}}\PYG{p}{,} \PYG{k+kd}{function}\PYG{p}{(}\PYG{n+nx}{req}\PYG{p}{,} \PYG{n+nx}{res}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+  \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{status}\PYG{p}{(}\PYG{l+m+mi}{200}\PYG{p}{).}\PYG{n+nx}{send}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Server is up and running!\PYGZdq{}}\PYG{p}{);}
+\PYG{p}{\PYGZcb{});}
+\PYG{k+kd}{var} \PYG{n+nx}{server} \PYG{o}{=} \PYG{n+nx}{app}\PYG{p}{.}\PYG{n+nx}{listen}\PYG{p}{(}\PYG{l+m+mi}{8080}\PYG{p}{,} \PYG{k+kd}{function}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+\PYG{k+kd}{var} \PYG{n+nx}{host} \PYG{o}{=} \PYG{n+nx}{server}\PYG{p}{.}\PYG{n+nx}{address}\PYG{p}{().}\PYG{n+nx}{address}
+  \PYG{k+kd}{var} \PYG{n+nx}{port} \PYG{o}{=} \PYG{n+nx}{server}\PYG{p}{.}\PYG{n+nx}{address}\PYG{p}{().}\PYG{n+nx}{port}
+  \PYG{n+nx}{console}\PYG{p}{.}\PYG{n+nx}{log}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Example app listening at http://\PYGZob{}\PYGZdl{}server\PYGZcb{}/\PYGZob{}\PYGZdl{}port\PYGZcb{}:\PYGZdq{}}\PYG{p}{)}
+\PYG{p}{\PYGZcb{})}
+\end{Verbatim}

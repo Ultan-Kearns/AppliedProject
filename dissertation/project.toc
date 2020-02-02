@@ -54,17 +54,18 @@
 \contentsline {subsection}{\numberline {4.2.2}Express}{24}{subsection.4.2.2}% 
 \contentsline {subsection}{\numberline {4.2.3}React}{25}{subsection.4.2.3}% 
 \contentsline {subsection}{\numberline {4.2.4}Node}{25}{subsection.4.2.4}% 
-\contentsline {section}{\numberline {4.3}RESTful API}{25}{section.4.3}% 
-\contentsline {section}{\numberline {4.4}Security}{25}{section.4.4}% 
-\contentsline {subsection}{\numberline {4.4.1}OpenSSL}{25}{subsection.4.4.1}% 
-\contentsline {subsection}{\numberline {4.4.2}SHA256}{25}{subsection.4.4.2}% 
-\contentsline {section}{\numberline {4.5}MLAB}{25}{section.4.5}% 
-\contentsline {section}{\numberline {4.6}Languages}{25}{section.4.6}% 
-\contentsline {subsection}{\numberline {4.6.1}Javascript}{25}{subsection.4.6.1}% 
-\contentsline {subsection}{\numberline {4.6.2}HTML(Hyper-Text Markup Language)}{25}{subsection.4.6.2}% 
-\contentsline {subsection}{\numberline {4.6.3}CSS(Cascading Style Sheets)}{25}{subsection.4.6.3}% 
-\contentsline {chapter}{\numberline {5}System Design}{26}{chapter.5}% 
-\contentsline {chapter}{\numberline {6}System Evaluation}{27}{chapter.6}% 
-\contentsline {chapter}{\numberline {7}Conclusion}{28}{chapter.7}% 
-\contentsline {chapter}{Appendices}{29}{section*.9}% 
-\contentsline {chapter}{\numberline {A}Preamble \& Intro}{30}{Appendix.1.A}% 
+\contentsline {subsection}{\numberline {4.2.5}Axios}{27}{subsection.4.2.5}% 
+\contentsline {section}{\numberline {4.3}RESTful API}{27}{section.4.3}% 
+\contentsline {section}{\numberline {4.4}Security}{27}{section.4.4}% 
+\contentsline {subsection}{\numberline {4.4.1}OpenSSL}{27}{subsection.4.4.1}% 
+\contentsline {subsection}{\numberline {4.4.2}SHA256}{27}{subsection.4.4.2}% 
+\contentsline {section}{\numberline {4.5}MLAB}{27}{section.4.5}% 
+\contentsline {section}{\numberline {4.6}Languages}{27}{section.4.6}% 
+\contentsline {subsection}{\numberline {4.6.1}Javascript}{27}{subsection.4.6.1}% 
+\contentsline {subsection}{\numberline {4.6.2}HTML(Hyper-Text Markup Language)}{27}{subsection.4.6.2}% 
+\contentsline {subsection}{\numberline {4.6.3}CSS(Cascading Style Sheets)}{27}{subsection.4.6.3}% 
+\contentsline {chapter}{\numberline {5}System Design}{28}{chapter.5}% 
+\contentsline {chapter}{\numberline {6}System Evaluation}{29}{chapter.6}% 
+\contentsline {chapter}{\numberline {7}Conclusion}{30}{chapter.7}% 
+\contentsline {chapter}{Appendices}{31}{section*.9}% 
+\contentsline {chapter}{\numberline {A}Preamble \& Intro}{32}{Appendix.1.A}% 

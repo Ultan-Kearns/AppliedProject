@@ -363,11 +363,11 @@ The MERN stack is a technology which is used to make full-stack web applications
  \begin{itemize}
   \item MongoDB - For storing items in a database
   \item Express - Provides a web application framework
-  \item React - A framework for making
+  \item React - A JavaScript library for building UI
   \item NodeJs - For server architecture and backend
 \end{itemize}
 \subsection{MongoDB}
-MongoDB is a document database that is scalable and flexible, it provides the user with a litany of various functions to perform actions on data stored in the database.  MongoDB stores data in JSON-like documents which means the fields can vary between documents and that the structure of the data can morph over time.  The use of JSON-like objects makes the data very easy to access and to manipulate for example say I had the following object
+MongoDB is a document database that is scalable and flexible, it provides the user with a litany of various functions to perform actions on data stored in the database.  MongoDB stores data in JSON-like documents which means the fields can vary between documents and that the structure of the data can morph over time.  The use of JSON-like objects makes the data very easy to access and to manipulate for example say I had the following object:
 \begin{minted}{json}
 {
   "person": {
@@ -379,19 +379,66 @@ Here if I wanted to acess the given persons name the only command I would have t
   person.name();
 \end{minted}
 I will explore the simplicity of JSON more in the JSON section but it is a rather pertinent point about MongoDB and it is one of the reasons why I chose to use MongoDB in this project.
+\\
+\\
+ In addition to all of the above advantages of MongoDB a major factor in choosing it for this project is that it is open-source which means it is free to use, and as typical of any open-source software it has attracted a strong community which provides support to other users of MongoDB and continues to provide feedback to improve Mongo.
 \subsection{Express}
 Express is a Node.js web application framework which provides a myriad of desirable features for setting up a web sever.  Express helped me set-up a fully functional web application in a timely manner.  I also utilized Express to provide routing to multiple paths and to retrieve, delete, create \& update various information stored on my Mongo database.  I found Express very easy to setup and to use and the developers of Express provided comprehensive and very informative documentation on Express which can be found on their website\cite{ExpressDocs}
 \\
+\\
  Express was able to return data I needed in JSON(JavaScript Object Notation) format and using the returned information I could then output the returned results to the user for purposes such as: to provide news \& to show the user their information.  I could also pass through parameters in the path and find information on a certain user or piece of data, this was very important for features such as logging the user in to the system as I had to compare the username and password and ensure both were correct.
+ \\
  \\
  In conclusion Express provided a thin layer over Node.js to provide the application with features such as routing and also allows the developer to have a server up and running in minutes.  Express provided a lot of functionality to the banking application and also allowed me to create, read, update \& delete data, all of these are required for a fully fledged banking application in the 21st century.
 \subsection{React}
+ReactJS is a JavaScript library for building user interfaces\cite{React} React is maintained by Facebook and numerous other companies and independent developers.  React can be used to create user friendly single-page applications which is perfect for an online banking system which is being designed with usability and accessibility in mind.  React has numerous libraries which can be used such as Axios\cite{axios}.
+\\
+\\
+ These libraries can be used for various functions such as ,in the case of Axios, performing routing.  ReactJS also allows the developer to compartmentalize their code into different components each with it's own set of functions which makes the code far easier to debug as opposed to debugging a god class or god file.
+\\
+\\
+   React is also based on a language I have some familiarity with as I have used JavaScript for multiple web-based projects but I have never
+   used React before, this use of JavaScript in React made it easy for me to dive-in and learn the framework.  React also has multiple
+   libraries which can be utilized to provide a modern and minimalistic user interface without sacrificing functionality.
+\\
+\\
+React has been growing in popularity along with similar technologies such as Angular and multiple companies are using these technologies for their websites / applications.  A combination of all the above factors listed and Reacts growing popularity made it seem ideal for this project.
 \subsection{Node}
+Node JS provided server-side architecture for this project.  NodeJS is an asynchronous event-driven JavaScript runtime environment which is designed to be scalable and can be utilized to build network applications\cite{Node}.
+\\
+\\
+Node allows for concurrent connections to the server and can process multiple requests at a time.  NodeJS has a strong community and is open source and provides the developer with server-side architecture, it is also very powerful and can be used to perform HTTP requests such as: GET,PUT,POST,DELETE etc.
+\\
+\\
+ I utilized NodeJS in this project to retrieve data via HTTP requests either from MLAB or in the case of news stories, Reddit and various other news sites.
+\\
+Here is an example of how easy it is to start a basic web application with Node:
+\\
+\\
+\begin{minted}{JavaScript}
+const https = require("https");
+
+app.get("/", function(req, res) {
+  res.status(200).send("Server is up and running!");
+});
+var server = app.listen(8080, function() {
+var host = server.address().address
+  var port = server.address().port
+  console.log("Example app listening at http://{$server}/{$port}:")
+})
+\end{minted}
+\\
+\\
+In the above example what will happen when the user searches the URL https://localhost:8080/ they will be greeted with the message "Server is up and running!", the 200 status indicates that the resource was retrieved successfully.
+\subsection{Axios}
+Axios is a promise based HTTP client for node.js\cite{Axios}.  I used Axios in this project to send HTTP requests from the frontend of the application to the NodeJS server.  Axios allowed me to retrieve information from various paths and return that information to the user, and to update, delete and create new information.  I used Axios to achieve full CRUD(Create, read, update \& delete) functionality.
 \section{RESTful API}
 \section{Security}
 \subsection{OpenSSL}
 \subsection{SHA256}
-\section{MLAB}
+\section{Database}
+\subsection{MLAB}
+
 \section{Languages}
 \subsection{Javascript}
 \subsection{HTML(Hyper-Text Markup Language)}

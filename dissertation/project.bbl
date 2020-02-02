@@ -96,4 +96,12 @@ M.~Warcholinski, ``Test-driven development (tdd) – quick guide.''
 I.~. S.~. expressjs.com contributors, ``Express documentation.''
 \newblock \url{https://expressjs.com/}.
 
+\bibitem{React}
+Unknown/Multiple, ``Reactjs.''
+\newblock \url{https://reactjs.org//}.
+
+\bibitem{axios}
+Numerous, ``Axios github.''
+\newblock \url{https://github.com/axios/axios}.
+
 \end{thebibliography}
