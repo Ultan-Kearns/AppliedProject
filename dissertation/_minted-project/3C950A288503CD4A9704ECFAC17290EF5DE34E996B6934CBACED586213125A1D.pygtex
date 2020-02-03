@@ -1,0 +1,11 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+  \PYG{n+nt}{h1}\PYG{p}{\PYGZob{}}
+    \PYG{err}{//turns} \PYG{err}{color} \PYG{err}{of} \PYG{err}{all} \PYG{err}{h1} \PYG{err}{elements} \PYG{err}{red}
+    \PYG{k}{color}\PYG{p}{:}\PYG{k+kc}{red}\PYG{p}{;}
+    \PYG{err}{//centers} \PYG{err}{the} \PYG{err}{text} \PYG{err}{of} \PYG{err}{h1}
+    \PYG{k}{text\PYGZhy{}align}\PYG{p}{:}\PYG{k+kc}{center}\PYG{p}{;}
+    \PYG{err}{//changes} \PYG{err}{font\PYGZhy{}size} \PYG{err}{to} \PYG{err}{21px}
+    \PYG{k}{font\PYGZhy{}size}\PYG{p}{:}\PYG{l+m+mi}{21}\PYG{k+kt}{px}\PYG{p}{;}
+    \PYG{err}{//These} \PYG{err}{are} \PYG{err}{just} \PYG{err}{a} \PYG{err}{small} \PYG{err}{sample} \PYG{err}{of} \PYG{err}{things} \PYG{err}{you} \PYG{err}{can} \PYG{err}{change} \PYG{err}{with} \PYG{err}{CSS!}
+  \PYG{p}{\PYGZcb{}}
+\end{Verbatim}

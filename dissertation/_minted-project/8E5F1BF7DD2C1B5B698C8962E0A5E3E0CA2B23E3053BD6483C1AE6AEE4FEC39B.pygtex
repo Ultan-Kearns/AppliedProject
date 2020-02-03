@@ -1,0 +1,11 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+   \PYG{n+nx}{name} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}Ultan\PYGZdq{}}
+   \PYG{c+c1}{//prints Hello, Ultan}
+   \PYG{n+nx}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Hello, \PYGZdq{}} \PYG{o}{+} \PYG{n+nx}{name}\PYG{p}{);}
+   \PYG{n+nx}{a} \PYG{o}{=} \PYG{l+m+mi}{1}
+   \PYG{n+nx}{b} \PYG{o}{=} \PYG{l+m+mi}{2}
+   \PYG{c+c1}{//prints 3}
+   \PYG{n+nx}{print}\PYG{p}{(}\PYG{n+nx}{a} \PYG{o}{+} \PYG{n+nx}{b}\PYG{p}{)}
+   \PYG{c+c1}{//prints Hello, Ultan1}
+   \PYG{n+nx}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Hello, \PYGZdq{}} \PYG{o}{+} \PYG{n+nx}{name} \PYG{o}{+} \PYG{n+nx}{a}\PYG{p}{)}
+\end{Verbatim}
