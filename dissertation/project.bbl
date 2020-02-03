@@ -108,6 +108,18 @@ Numerous, ``Axios github.''
 Unknown/multiple, ``Node js.''
 \newblock \url{https://nodejs.org/en/about/}.
 
+\bibitem{ReactHelmet}
+Numerous, ``React helmet github.''
+\newblock \url{https://github.com/nfl/react-helmet}.
+
+\bibitem{CreateReactApp}
+Numerous, ``Create-react-app github.''
+\newblock \url{https://github.com/facebook/create-react-app}.
+
+\bibitem{NewsAPI}
+https://newsapi.org/, ``Newsapi documentation.''
+\newblock \url{https://newsapi.org/}.
+
 \bibitem{TLS}
 Cloudflare.com, ``Tls image.''
 \newblock
@@ -117,5 +129,26 @@ Cloudflare.com, ``Tls image.''
 https://csrc.nist.gov/, ``Descriptions of sha-256,sha-384,and sha-512.''
 \newblock
   \url{https://csrc.nist.gov/csrc/media/publications/fips/180/2/archive/2002-08-01/documents/fips180-2.pdf}.
+
+\bibitem{MLAB}
+https://mlab.com/, ``Mlab website.''
+\newblock \url{https://mlab.com/}.
+
+\bibitem{JavaScript}
+Mozilla, ``Javascript documentation.''
+\newblock
+  \url{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference}.
+
+\bibitem{HTML}
+Mozilla, ``Html documentation.''
+\newblock \url{https://developer.mozilla.org/en-US/docs/Web/HTML}.
+
+\bibitem{Latex}
+Numerous, ``Latex documentation.''
+\newblock \url{https://www.latex-project.org/}.
+
+\bibitem{GoogleCloudPlatform}
+Google, ``Google cloud platform.''
+\newblock \url{https://cloud.google.com/}.
 
 \end{thebibliography}

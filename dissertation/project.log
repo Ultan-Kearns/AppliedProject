@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Arch Linux) (preloaded format=pdflatex 2020.1.28)  3 FEB 2020 01:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Arch Linux) (preloaded format=pdflatex 2020.1.28)  3 FEB 2020 18:59
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -561,16 +561,6 @@ Package: booktabs 2019/10/08 v1.6180339 publication quality tables
 \@lastruleclass=\count147
 \@thisrulewidth=\dimen192
 )
-
-! LaTeX Error: Option clash for package minted.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.12 \usepackage
-                {array}
-? 
 (/usr/share/texmf-dist/tex/latex/tools/array.sty
 Package: array 2019/08/31 v2.4l Tabular extension package (FMi)
 \col@sep=\dimen193
@@ -1227,7 +1217,7 @@ Overfull \hbox (17.62482pt too wide) in paragraph at lines 61--68
 [][] 
  []
 
-<img/gmit-logo.jpg, id=352, 281.853pt x 88.4103pt>
+<img/gmit-logo.jpg, id=368, 281.853pt x 88.4103pt>
 File: img/gmit-logo.jpg Graphic file (type jpg)
 <use img/gmit-logo.jpg>
 Package pdftex.def Info: img/gmit-logo.jpg  used on input line 69.
@@ -1282,7 +1272,7 @@ File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 
 ]
 Chapter 1.
-<img/mern.jpeg, id=476, 1304.875pt x 746.79pt>
+<img/mern.jpeg, id=496, 1304.875pt x 746.79pt>
 File: img/mern.jpeg Graphic file (type jpg)
 <use img/mern.jpeg>
 Package pdftex.def Info: img/mern.jpeg  used on input line 39.
@@ -1295,12 +1285,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 41--50
 [7
 
  <./img/mern.jpeg>]
-<img/mongostat.png, id=485, 1346.02875pt x 1084.05pt>
+<img/mongostat.png, id=505, 1346.02875pt x 1084.05pt>
 File: img/mongostat.png Graphic file (type png)
 <use img/mongostat.png>
 Package pdftex.def Info: img/mongostat.png  used on input line 58.
 (pdftex.def)             Requested size: 390.0pt x 314.08525pt.
-<img/mongo.jpg, id=487, 501.875pt x 283.0575pt>
+<img/mongo.jpg, id=507, 501.875pt x 283.0575pt>
 File: img/mongo.jpg Graphic file (type jpg)
 <use img/mongo.jpg>
 Package pdftex.def Info: img/mongo.jpg  used on input line 64.
@@ -1311,7 +1301,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 60--66
  []
 
 [8 <./img/mongostat.png>]
-<img/Express.png, id=496, 642.4pt x 401.5pt>
+<img/Express.png, id=517, 642.4pt x 401.5pt>
 File: img/Express.png Graphic file (type png)
 <use img/Express.png>
 Package pdftex.def Info: img/Express.png  used on input line 75.
@@ -1321,7 +1311,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 67--77
 
  []
 
-<img/react.png, id=499, 677.53125pt x 376.40625pt>
+<img/react.png, id=520, 677.53125pt x 376.40625pt>
 File: img/react.png Graphic file (type png)
 <use img/react.png>
 Package pdftex.def Info: img/react.png  used on input line 87.
@@ -1332,7 +1322,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 78--89
  []
 
 [9 <./img/mongo.jpg> <./img/express.png>]
-<img/node.png, id=508, 803.0pt x 490.83376pt>
+<img/node.png, id=529, 803.0pt x 490.83376pt>
 File: img/node.png Graphic file (type png)
 <use img/node.png>
 Package pdftex.def Info: img/node.png  used on input line 98.
@@ -1353,7 +1343,7 @@ Chapter 2.
 
 ] [16] [17] [18]
 Chapter 3.
-<./img/agile.jpg, id=571, 963.6pt x 542.025pt>
+<./img/agile.jpg, id=591, 963.6pt x 542.025pt>
 File: ./img/agile.jpg Graphic file (type jpg)
 <use ./img/agile.jpg>
 Package pdftex.def Info: ./img/agile.jpg  used on input line 318.
@@ -1366,7 +1356,7 @@ Overfull \hbox (18.27795pt too wide) in paragraph at lines 318--319
 [19
 
 ]
-<img/kanban.png, id=581, 770.88pt x 433.62pt>
+<img/kanban.png, id=601, 770.88pt x 433.62pt>
 File: img/kanban.png Graphic file (type png)
 <use img/kanban.png>
 Package pdftex.def Info: img/kanban.png  used on input line 323.
@@ -1407,7 +1397,7 @@ Overfull \hbox (9.9564pt too wide) in paragraph at lines 324--324
  []
 
 [20 <./img/agile.jpg> <./img/kanban.png>]
-<img/tdd.jpg, id=592, 999.735pt x 664.4825pt>
+<img/tdd.jpg, id=612, 999.735pt x 664.4825pt>
 File: img/tdd.jpg Graphic file (type jpg)
 <use img/tdd.jpg>
 Package pdftex.def Info: img/tdd.jpg  used on input line 336.
@@ -1418,7 +1408,7 @@ Overfull \hbox (18.27795pt too wide) in paragraph at lines 336--337
  []
 
 [21 <./img/tdd.jpg>]
-<img/github.png, id=600, 12.848pt x 12.848pt>
+<img/github.png, id=621, 12.848pt x 12.848pt>
 File: img/github.png Graphic file (type png)
 <use img/github.png>
 Package pdftex.def Info: img/github.png  used on input line 347.
@@ -1475,68 +1465,19 @@ LaTeX Font Info:    Font shape `OT1/lmtt/bx/n' in size <12> not available
 
 
 (./_minted-project/7D0511D8D350EF62FB47FACF48E65BB4544CEDAC70A018BF375B14948B5A
-9315.pygtex)
-Underfull \hbox (badness 10000) in paragraph at lines 381--385
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 386--393
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 386--393
-
- []
-
-[24]
-Underfull \hbox (badness 10000) in paragraph at lines 394--406
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 394--406
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 394--406
-
- []
-
+9315.pygtex) [24]
 \openout3 = `project.pyg'.
 
 
 (./_minted-project/407BC575443A1485BEF4E5E5CF5BD6EDCA2B23E3053BD6483C1AE6AEE4FE
 C39B.pygtex
-Underfull \hbox (badness 10000) in paragraph at lines 407--1
-
- []
-
-
-Overfull \hbox (13.95741pt too wide) in paragraph at lines 407--1
+Overfull \hbox (13.95741pt too wide) in paragraph at lines 401--1
 \OT1/lmr/m/n/12 and can be used to per-form HTTP re-quests such as: GET,PUT,POS
 T,DELETE
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 407--1
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 407--1
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 407--1
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 407--1
+Underfull \hbox (badness 10000) in paragraph at lines 401--1
 
  []
 
@@ -1548,83 +1489,55 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.432 \\
-        
-? 
-
-! LaTeX Error: There's no line here to end.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.433 I
+l.422 I
        n the above example what will happen when the user searches the URL h...
 
 ? 
-
-LaTeX Warning: Citation `ReactHelmet' on page 26 undefined on input line 438.
-
 [26]
-
-LaTeX Warning: Citation `CreateReactApp' on page 27 undefined on input line 440
-.
-
-
-LaTeX Warning: Citation `NewsAPI' on page 27 undefined on input line 445.
-
-<img/tls.png, id=635, 1927.2pt x 1084.05pt>
+<img/tls.png, id=659, 1927.2pt x 1084.05pt>
 File: img/tls.png Graphic file (type png)
 <use img/tls.png>
-Package pdftex.def Info: img/tls.png  used on input line 454.
+Package pdftex.def Info: img/tls.png  used on input line 443.
 (pdftex.def)             Requested size: 390.0pt x 219.37006pt.
 
-Overfull \hbox (14.51657pt too wide) in paragraph at lines 451--459
+Overfull \hbox (14.51657pt too wide) in paragraph at lines 440--448
 \OT1/lmr/m/n/12 OpenSSL is a toolkit for pro-vid-ing TLS(Transport Layer Se-cu-
 rity) & SSL(Secure
  []
 
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
 [27]
-
-LaTeX Warning: Citation `MLAB' on page 28 undefined on input line 463.
-
-[28 <./img/tls.png>]
-
-LaTeX Warning: Citation `JavaScript' on page 29 undefined on input line 466.
-
 \openout3 = `project.pyg'.
 
 
 (./_minted-project/8E5F1BF7DD2C1B5B698C8962E0A5E3E0CA2B23E3053BD6483C1AE6AEE4FE
 C39B.pygtex
-Underfull \hbox (badness 10000) in paragraph at lines 466--1
+Underfull \hbox (badness 10000) in paragraph at lines 455--1
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 466--1
+Underfull \hbox (badness 10000) in paragraph at lines 455--1
 
  []
 
-)
-
-LaTeX Warning: Citation `HTML' on page 29 undefined on input line 486.
-
+[28 <./img/tls.png>])
 \openout3 = `project.pyg'.
 
 
 (./_minted-project/FC8B50C50F9698E7E3815FD6623136B173FB55139B6E3834EBF61804D96D
 29B8.pygtex
-Underfull \hbox (badness 10000) in paragraph at lines 486--1
+Underfull \hbox (badness 10000) in paragraph at lines 475--1
 
  []
 
-[29]
 LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 
 5.
- (/usr/share/texmf-dist/tex/latex/lm/ts1lmtt.fd
+(/usr/share/texmf-dist/tex/latex/lm/ts1lmtt.fd
 File: ts1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-))
+) [29])
 
 ! LaTeX Error: There's no line here to end.
 
@@ -1632,36 +1545,21 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.503 \\
-        
-? 
-
-! LaTeX Error: There's no line here to end.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.504 A
+l.492 A
        ll valid HTML pages must have a DOCTYPE html declaration, html tag, h...
 
 ? 
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 505.
+(Font)              <14.4> on input line 494.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 505.
+(Font)              <10> on input line 494.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 505.
+(Font)              <7> on input line 494.
 \openout3 = `project.pyg'.
 
 
 (./_minted-project/3C950A288503CD4A9704ECFAC17290EF5DE34E996B6934CBACED58621312
-5A1D.pygtex
-Underfull \hbox (badness 10000) in paragraph at lines 508--1
-
- []
-
-[30]) [31]
+5A1D.pygtex) [30] [31]
 Chapter 5.
 [32
 
@@ -1809,40 +1707,43 @@ Underfull \hbox (badness 2103) in paragraph at lines 84--86
  []
 
 
-Underfull \hbox (badness 6173) in paragraph at lines 112--115
+Underfull \hbox (badness 4024) in paragraph at lines 112--114
+[]\OT1/lmr/m/n/12 Numerous, ``Re-act hel-met github.''  [][]$\OT1/lmtt/m/n/12 h
+ttps : / / github . com / nfl /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 116--118
+[]\OT1/lmr/m/n/12 Numerous, ``Create-react-app github.''  [][]$\OT1/lmtt/m/n/12
+ https : / / github . com /
+ []
+
+[38]
+Underfull \hbox (badness 6173) in paragraph at lines 124--127
 []\OT1/lmr/m/n/12 Cloudflare.com, ``Tls im-age.''  [][]$\OT1/lmtt/m/n/12 https 
 : / / blog . cloudflare . com /
  []
 
 
-Underfull \hbox (badness 7344) in paragraph at lines 117--120
+Underfull \hbox (badness 7344) in paragraph at lines 129--132
 []\OT1/lmr/m/n/12 https://csrc.nist.gov/, ``De-scrip-tions of sha-256,sha-384,a
 nd sha-
  []
 
 
-Underfull \hbox (badness 4595) in paragraph at lines 117--120
+Underfull \hbox (badness 4595) in paragraph at lines 129--132
 \OT1/lmr/m/n/12 512.''  [][]$\OT1/lmtt/m/n/12 https : / / csrc . nist . gov / c
 src / media / publications / fips /
  []
 
-) [38] [39]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 566.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 566.
+) [39]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 557.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 557.
  (./project.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 566.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 566.
-
-
-Package rerunfilecheck Warning: File `project.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `project.out':
-(rerunfilecheck)             Before: 913A4E7C9B80EBED6190321C3109640A;5274
-(rerunfilecheck)             After:  CF33108AF40C83D241AB488C5CC2F357;5404.
-
-LaTeX Warning: There were undefined references.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 557.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 557.
+Package rerunfilecheck Info: File `project.out' has not changed.
+(rerunfilecheck)             Checksum: 6A97741C6CAB2254DC8E3368BCBC2F83;5555.
 
 
 LaTeX Warning: There were multiply-defined labels.
@@ -1851,10 +1752,10 @@ runsystem(rm project.pyg)...executed.
 
  ) ) 
 Here is how much of TeX's memory you used:
- 26021 strings out of 492167
- 515978 string characters out of 6131558
- 657535 words of memory out of 5000000
- 29651 multiletter control sequences out of 15000+600000
+ 26043 strings out of 492167
+ 516281 string characters out of 6131558
+ 658794 words of memory out of 5000000
+ 29663 multiletter control sequences out of 15000+600000
  61534 words of font info for 55 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  60i,10n,79p,845b,596s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1868,10 +1769,10 @@ re/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf-dist/fonts/type
 usr/share/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></usr/share/texmf-dist/fo
 nts/type1/public/lm/lmtt12.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmt
 ti10.pfb>
-Output written on project.pdf (39 pages, 1239009 bytes).
+Output written on project.pdf (39 pages, 1242754 bytes).
 PDF statistics:
- 824 PDF objects out of 1000 (max. 8388607)
- 731 compressed objects within 8 object streams
- 157 named destinations out of 1000 (max. 500000)
- 809 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 873 PDF objects out of 1000 (max. 8388607)
+ 780 compressed objects within 8 object streams
+ 167 named destinations out of 1000 (max. 500000)
+ 841 words of extra memory for PDF output out of 10000 (max. 10000000)
 

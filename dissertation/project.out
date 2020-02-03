@@ -48,10 +48,10 @@
 \BOOKMARK [0][-]{chapter.4}{Technology Review}{}% 48
 \BOOKMARK [1][-]{section.4.1}{Intro}{chapter.4}% 49
 \BOOKMARK [1][-]{section.4.2}{MERN Stack}{chapter.4}% 50
-\BOOKMARK [2][-]{subsection.4.2.1}{MongoDB}{section.4.2}% 51
-\BOOKMARK [2][-]{subsection.4.2.2}{Express}{section.4.2}% 52
-\BOOKMARK [2][-]{subsection.4.2.3}{React}{section.4.2}% 53
-\BOOKMARK [2][-]{subsection.4.2.4}{Node}{section.4.2}% 54
+\BOOKMARK [2][-]{subsection.4.2.1}{About MongoDB}{section.4.2}% 51
+\BOOKMARK [2][-]{subsection.4.2.2}{About Express}{section.4.2}% 52
+\BOOKMARK [2][-]{subsection.4.2.3}{About React}{section.4.2}% 53
+\BOOKMARK [2][-]{subsection.4.2.4}{About Node}{section.4.2}% 54
 \BOOKMARK [1][-]{section.4.3}{React Libraries}{chapter.4}% 55
 \BOOKMARK [2][-]{subsection.4.3.1}{Axios}{section.4.3}% 56
 \BOOKMARK [2][-]{subsection.4.3.2}{React Helmet}{section.4.3}% 57
@@ -69,14 +69,16 @@
 \BOOKMARK [1][-]{section.4.8}{Languages}{chapter.4}% 69
 \BOOKMARK [2][-]{subsection.4.8.1}{Javascript}{section.4.8}% 70
 \BOOKMARK [2][-]{subsection.4.8.2}{HTML\(Hyper-Text Markup Language\)}{section.4.8}% 71
-\BOOKMARK [2][-]{subsection.4.8.3}{LaTeX}{section.4.8}% 72
-\BOOKMARK [1][-]{section.4.9}{Styles}{chapter.4}% 73
-\BOOKMARK [2][-]{subsection.4.9.1}{Cascading Style Sheets\(CSS\)}{section.4.9}% 74
-\BOOKMARK [2][-]{subsection.4.9.2}{React Bootstrap}{section.4.9}% 75
-\BOOKMARK [1][-]{section.4.10}{Cloud}{chapter.4}% 76
-\BOOKMARK [2][-]{subsection.4.10.1}{Google Cloud Platform}{section.4.10}% 77
-\BOOKMARK [0][-]{chapter.5}{System Design}{}% 78
-\BOOKMARK [0][-]{chapter.6}{System Evaluation}{}% 79
-\BOOKMARK [0][-]{chapter.7}{Conclusion}{}% 80
-\BOOKMARK [0][-]{section*.10}{Appendices}{}% 81
-\BOOKMARK [0][-]{Appendix.1.A}{Preamble \046 Intro}{}% 82
+\BOOKMARK [1][-]{section.4.9}{Documentation}{chapter.4}% 72
+\BOOKMARK [2][-]{subsection.4.9.1}{LaTeX}{section.4.9}% 73
+\BOOKMARK [1][-]{section.4.10}{Styles}{chapter.4}% 74
+\BOOKMARK [2][-]{subsection.4.10.1}{Cascading Style Sheets\(CSS\)}{section.4.10}% 75
+\BOOKMARK [2][-]{subsection.4.10.2}{React Bootstrap}{section.4.10}% 76
+\BOOKMARK [1][-]{section.4.11}{Cloud}{chapter.4}% 77
+\BOOKMARK [2][-]{subsection.4.11.1}{Google Cloud Platform}{section.4.11}% 78
+\BOOKMARK [2][-]{subsection.4.11.2}{Docker}{section.4.11}% 79
+\BOOKMARK [0][-]{chapter.5}{System Design}{}% 80
+\BOOKMARK [0][-]{chapter.6}{System Evaluation}{}% 81
+\BOOKMARK [0][-]{chapter.7}{Conclusion}{}% 82
+\BOOKMARK [0][-]{section*.10}{Appendices}{}% 83
+\BOOKMARK [0][-]{Appendix.1.A}{Preamble \046 Intro}{}% 84
