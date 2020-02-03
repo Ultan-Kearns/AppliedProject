@@ -58,7 +58,7 @@
 \BOOKMARK [2][-]{subsection.4.3.3}{Create-React-App}{section.4.3}% 58
 \BOOKMARK [1][-]{section.4.4}{Third Party APIs}{chapter.4}% 59
 \BOOKMARK [2][-]{subsection.4.4.1}{NodeMailer}{section.4.4}% 60
-\BOOKMARK [2][-]{subsection.4.4.2}{News Of The World}{section.4.4}% 61
+\BOOKMARK [2][-]{subsection.4.4.2}{News API}{section.4.4}% 61
 \BOOKMARK [2][-]{subsection.4.4.3}{Reddit}{section.4.4}% 62
 \BOOKMARK [1][-]{section.4.5}{RESTful API}{chapter.4}% 63
 \BOOKMARK [1][-]{section.4.6}{Security}{chapter.4}% 64
@@ -73,8 +73,10 @@
 \BOOKMARK [1][-]{section.4.9}{Styles}{chapter.4}% 73
 \BOOKMARK [2][-]{subsection.4.9.1}{Cascading Style Sheets\(CSS\)}{section.4.9}% 74
 \BOOKMARK [2][-]{subsection.4.9.2}{React Bootstrap}{section.4.9}% 75
-\BOOKMARK [0][-]{chapter.5}{System Design}{}% 76
-\BOOKMARK [0][-]{chapter.6}{System Evaluation}{}% 77
-\BOOKMARK [0][-]{chapter.7}{Conclusion}{}% 78
-\BOOKMARK [0][-]{section*.10}{Appendices}{}% 79
-\BOOKMARK [0][-]{Appendix.1.A}{Preamble \046 Intro}{}% 80
+\BOOKMARK [1][-]{section.4.10}{Cloud}{chapter.4}% 76
+\BOOKMARK [2][-]{subsection.4.10.1}{Google Cloud Platform}{section.4.10}% 77
+\BOOKMARK [0][-]{chapter.5}{System Design}{}% 78
+\BOOKMARK [0][-]{chapter.6}{System Evaluation}{}% 79
+\BOOKMARK [0][-]{chapter.7}{Conclusion}{}% 80
+\BOOKMARK [0][-]{section*.10}{Appendices}{}% 81
+\BOOKMARK [0][-]{Appendix.1.A}{Preamble \046 Intro}{}% 82

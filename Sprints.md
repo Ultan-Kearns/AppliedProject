@@ -16,7 +16,7 @@
 + Get logout function(Done)
 + Fix up Methodology section(done)
 + Get logout function working (Should be easy)(done)
-# Sprint 6 (20th January - 31st January)
+# Sprint 6 (20th January - 31st January)(Completed)
 (Had slight setback due to food poisoning)
 + Get loans working(Create new loans and add to db)(DONE)
 + Finish homepage(get balance showing flesh out user schema)(Done)
@@ -27,22 +27,25 @@
 + Work on update users page(DONE)
 + get update user function working(DONE)
 + Get delete function Working(Done)
-+ Finish Majority of Technology review
++ Finish Majority of Technology review(DONE)
 # Sprint 7 (1st February - 10th February)
 + Check registration and do form validation
 + fix forgot password(need to get it updated to work with hash, maybe add link to page where user can update their existing hashed password)
 + fix up loans by making sure the user has at least 25% of loan amount and has no active loans
 + Ensure delete function deletes all the info on user and ensure user cannot delete account if they have open loans
 + Allow change of username and update all statements and loans
++ Finish Tech Review
 # Sprint 8 (10th February - 21st February)
 + Get Statistics generated based on Loans / Statments
 + Add Iban validator and bic and add to user schema
 + Fix all issuess
++ Start System Design
++ review dissertation
 # Sprint 9 (21st February - 25th February)
 + Brainstorm ideas
 + research Docker
 + refactor and test
-
++ Host on google cloud
 # Do whenever least concern
 + fix style on homepages
 ## Notes

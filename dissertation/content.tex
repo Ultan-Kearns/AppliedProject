@@ -435,11 +435,16 @@ In the above example what will happen when the user searches the URL https://loc
 \subsection{Axios}
 Axios is a promise based HTTP client for node.js\cite{Axios}.  I used Axios in this project to send HTTP requests from the frontend of the application to the NodeJS server.  Axios allowed me to retrieve information from various paths and return that information to the user, and to update, delete and create new information.  I used Axios to achieve full CRUD(Create, read, update \& delete) functionality.
 \subsection{React Helmet}
+React-helmet is a reusable react component that can manage the document head of various components, it allows the developer to define HTML tags such as title and outputs them to the browser\cite{ReactHelmet}.
 \subsection{Create-React-App}
+Create-React-App allows the developer to quickstart a React application without having to worry about build-options or anything else, it's as simple as running "create-react-app new app" in the terminal or CLI(Command line interface)\cite{CreateReactApp}.
 \section{Third Party APIs}
 \subsection{NodeMailer}
-\subsection{News Of The World}
+NodeMailer is a module for NodeJS that allows the developer to set up an automated email system to send the user personalized emails which could be used to inform user of new features, services etc. For this project I will use it to allow the user to reset their password.
+\subsection{News API}
+News API is a REST API which searches the web for news stories and retrieves headlines from a variety of websites\cite{NewsAPI}.  News API allows the developer to search by keywords and phrases, dates published, source name and various other parameters which may be relevant to the article in questions.
 \subsection{Reddit}
+I used the Reddit API to retrieve latest financial news and displayed them to the user.  The Reddit API allows the developer to read in JSON from reddit and to parse it and output it to the user.
 \section{RESTful API}
 \section{Security}
 \subsection{OpenSSL}
@@ -455,6 +460,7 @@ OpenSSL is a toolkit for providing TLS(Transport Layer Security) \& SSL(Secure S
 SHA256 stands for Secure Hashing Algorithm 256 which is used as a one way function which means that data which is hashed using this algorithm is impossible to revert into it's original form\cite{SHA256}.  I used the SHA256 algorithm to encrypt and secure user passwords stored in the database and to ensure that the passwords were not stored in plaintext for extra security.
 \section{Database}
 \subsection{MLAB}
+MLAB is a DaaS(Database as a service) platform and provides a free hosting environment for my applications database\cite{MLAB}.  The reason I chose MLAB is that it's free and it is easy to setup multiple separate schemas which can then be accessed through connecting to the database via the NodeJS server.  All the relevant data to the banking application is stored on MLAB.  MLAB utilizes a Mongo database and allows the user to connect to the database using a username and password.
 \section{Languages}
 \subsection{Javascript}
 JavaScript is a lightweight programming language which is interpreted and is compiled just in time\cite{JavaScript}.  It is a very popular language for web developers as it is Turing Complete and allows the developer to manipulate the DOM(Document Object Model) programmatically.
@@ -499,7 +505,26 @@ All valid HTML pages must have a DOCTYPE html declaration, html tag, head tag, a
 \subsection{\LaTeX}
 \section{Styles}
 \subsection{Cascading Style Sheets(CSS)}
+CSS allowed me to style the HTML pages and to make them look how I wanted them to look.  CSS describes how the HTML is supposed to look when the browser loads a web page.
+\\
+\\
+Heres an example of CSS:
+\begin{minted}{CSS}
+  h1{
+    //turns color of all h1 elements red
+    color:red;
+    //centers the text of h1
+    text-align:center;
+    //changes font-size to 21px
+    font-size:21px;
+    //These are just a small sample of things you can change with CSS!
+  }
+\end{minted}
 \subsection{React Bootstrap}
+React Bootstrap is a front-end framework for React that provides the developer with a number of components which can be used to create a modern looking and intuitive user-interface.
+\section{Cloud}
+\subsection{Google Cloud Platform}
+\subsection{Docker}
 
 \chapter{System Design}
 As many pages as needed.
