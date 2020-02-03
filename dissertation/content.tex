@@ -434,7 +434,16 @@ NodeMailer is a module for NodeJS that allows the developer to set up an automat
 News API is a REST API which searches the web for news stories and retrieves headlines from a variety of websites\cite{NewsAPI}.  News API allows the developer to search by keywords and phrases, dates published, source name and various other parameters which may be relevant to the article in questions.
 \subsection{Reddit}
 I used the Reddit API to retrieve latest financial news and displayed them to the user.  The Reddit API allows the developer to read in JSON from reddit and to parse it and output it to the user.
-\section{RESTful API}
+\section{Architecture}
+\subsection{REST(Representational State Transfer)}
+REST is an architectural design that was first hypothesized in Roy Fielding's dissertation\cite{Fielding}.  REST has six constraints which must be met for an application to be considered "RESTful" these are:
+\begin{itemize}
+  \item Client/Server must be independent: The idea behind this principle is that by separating the UI from the backend logic we create a more portable application and also it improves scalability by simplifying the server logic.
+  \item Stateless:  Every request from the client to the server must contain all pertinent information to understand the user's request, session state is maintained on the client side.
+  \item Cacheable: Data received must be labelled cacheable or non-cacheable.  If it is labelled as cacheable the client may reuse the data.
+  \item Uniform Interface: System architecture is simplified and improved by applying the software principle of generality.
+  \item Layered System: The layered system allows for a heirarchial layer of components in which components can interact with certain components.  Components are unaware of other components besides the component with which they are interacting.
+\end{itemize}
 \section{Security}
 \subsection{OpenSSL}
 OpenSSL is a toolkit for providing TLS(Transport Layer Security) \& SSL(Secure Socket Layer) protocols.  It is also a cryptography library which can be used to enchance the applications security.  I used OpenSSL to generate a certificate for the Node server to provide an extra layer of security for the user.
@@ -492,7 +501,11 @@ Below I will include a very basic HTML page:
 All valid HTML pages must have a DOCTYPE html declaration, html tag, head tag, and a body tag.  Any tag which is opened must be closed.
 \section{Documentation}
 \subsection{\LaTeX}
-\LaTeX  is a typesetting system that provides various features for designing and writing high quality documentation\cite{Latex}.  \LaTeX has become the de-facto standard for Academic publications and is open-source. Having never used \LaTeX before I found it very easy to setup and get started, it also made referencing a lot easier and made generating tables of contents \& figures very simple.  The reason I chose \LaTeX to write this dissertation apart from the above reasons listed, was because it helps to create high quality, Academic style papers with minimal onus placed upon the user.  \LaTeX also has extremely useful packages which can be used to provide numerous functionality.
+\LaTeX  is a typesetting system that provides various features for designing and writing high quality documentation\cite{Latex}.  \LaTeX has become the de-facto standard for Academic publications and is open-source. Having never used \LaTeX before I found it very easy to setup and get started, it also made referencing a lot easier and made generating tables of contents \& figures very simple.
+\\
+The reason I chose \LaTeX to write this dissertation apart from the above reasons listed, was because it helps to create high quality, Academic style papers with minimal onus placed upon the user.
+\\
+\LaTeX also has extremely useful packages which can be used to provide numerous functionality.
 \section{Styles}
 \subsection{Cascading Style Sheets(CSS)}
 CSS allowed me to style the HTML pages and to make them look how I wanted them to look.  CSS describes how the HTML is supposed to look when the browser loads a web page.
@@ -513,9 +526,17 @@ Heres an example of CSS:
 React Bootstrap is a front-end framework for React that provides the developer with a number of components which can be used to create a modern looking and intuitive user-interface.
 \section{Cloud}
 \subsection{Google Cloud Platform}
-Google Cloud Platform is an Infrastructure as a service(IaaS) platform which I will use to host my application and server to allow users to connect to the application remotely\cite{GoogleCloudPlatform}.  All logic will be performed by the user connection to the Google Cloud Platform server and utilizing the application.  The reason I chose Google Cloud Platform is because I have used AWS(Amazon Web Services) and Azure(Microsoft's cloud platform) before and wanted to try a variety of cloud platforms to gain familiarity and experience with a variety of cloud functions and platforms.
+Google Cloud Platform is an Infrastructure as a service(IaaS) platform which I will use to host my application and server to allow users to connect to the application remotely\cite{GoogleCloudPlatform}.  All logic will be performed by the user connection to the Google Cloud Platform server and utilizing the application.
+\\
+Google Cloud allows the developer to setup a virtual machine in minutes and it is in this way I plan to host my application.  I will create a VM(virtual machine) on Google Cloud and open the ports necessary for the end user to communicate with the application.  After this is done the user will only need to type in the IP address of the machine and the port they wish to connect to(in our case port:3000) to be able to access the application.
+\\
+  The reason I chose Google Cloud Platform is because I have used AWS(Amazon Web Services) and Azure(Microsoft's cloud platform) before and wanted to try a variety of cloud platforms to gain familiarity and experience with a variety of cloud functions and platforms.
 \subsection{Docker}
-Docker aims to simplify and accelerate workflows for applications and allows the developer to build and share their applications as well as allowing them to deploy and ship their applications easily.  Docker uses containerization to manage the applications which it hosts.  The containers are portable and can run on any host.
+Docker aims to simplify and accelerate workflows for applications and allows the developer to build and share their applications as well as allowing them to deploy and ship their applications easily\cite{Docker}.  Docker uses containerization to manage the applications which it hosts.
+\\
+ The containers are portable and can run on any host.  Docker automatically releases a new build of the project everytime a new commit is pushed to the master branch, it is in this why that docker allows for continuous integration of new components for the application and a continuous delivery of new updates to the application.  Docker is extremely useful for Agile development as continuous integration and delivery are an integral part of the Agile methodology.
+\\
+  I have never used Docker before but I chose to use it for this project as it is rapidly growing in popularity and it is extremely useful in today's industry as companies focus on releasing patches and updates to the user as soon as they are ready.
 \chapter{System Design}
 As many pages as needed.
 \begin{itemize}

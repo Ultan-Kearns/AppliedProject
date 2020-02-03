@@ -60,25 +60,26 @@
 \BOOKMARK [2][-]{subsection.4.4.1}{NodeMailer}{section.4.4}% 60
 \BOOKMARK [2][-]{subsection.4.4.2}{News API}{section.4.4}% 61
 \BOOKMARK [2][-]{subsection.4.4.3}{Reddit}{section.4.4}% 62
-\BOOKMARK [1][-]{section.4.5}{RESTful API}{chapter.4}% 63
-\BOOKMARK [1][-]{section.4.6}{Security}{chapter.4}% 64
-\BOOKMARK [2][-]{subsection.4.6.1}{OpenSSL}{section.4.6}% 65
-\BOOKMARK [2][-]{subsection.4.6.2}{SHA256}{section.4.6}% 66
-\BOOKMARK [1][-]{section.4.7}{Database}{chapter.4}% 67
-\BOOKMARK [2][-]{subsection.4.7.1}{MLAB}{section.4.7}% 68
-\BOOKMARK [1][-]{section.4.8}{Languages}{chapter.4}% 69
-\BOOKMARK [2][-]{subsection.4.8.1}{Javascript}{section.4.8}% 70
-\BOOKMARK [2][-]{subsection.4.8.2}{HTML\(Hyper-Text Markup Language\)}{section.4.8}% 71
-\BOOKMARK [1][-]{section.4.9}{Documentation}{chapter.4}% 72
-\BOOKMARK [2][-]{subsection.4.9.1}{LaTeX}{section.4.9}% 73
-\BOOKMARK [1][-]{section.4.10}{Styles}{chapter.4}% 74
-\BOOKMARK [2][-]{subsection.4.10.1}{Cascading Style Sheets\(CSS\)}{section.4.10}% 75
-\BOOKMARK [2][-]{subsection.4.10.2}{React Bootstrap}{section.4.10}% 76
-\BOOKMARK [1][-]{section.4.11}{Cloud}{chapter.4}% 77
-\BOOKMARK [2][-]{subsection.4.11.1}{Google Cloud Platform}{section.4.11}% 78
-\BOOKMARK [2][-]{subsection.4.11.2}{Docker}{section.4.11}% 79
-\BOOKMARK [0][-]{chapter.5}{System Design}{}% 80
-\BOOKMARK [0][-]{chapter.6}{System Evaluation}{}% 81
-\BOOKMARK [0][-]{chapter.7}{Conclusion}{}% 82
-\BOOKMARK [0][-]{section*.10}{Appendices}{}% 83
-\BOOKMARK [0][-]{Appendix.1.A}{Preamble \046 Intro}{}% 84
+\BOOKMARK [1][-]{section.4.5}{Architecture}{chapter.4}% 63
+\BOOKMARK [2][-]{subsection.4.5.1}{REST\(Representational State Transfer\)}{section.4.5}% 64
+\BOOKMARK [1][-]{section.4.6}{Security}{chapter.4}% 65
+\BOOKMARK [2][-]{subsection.4.6.1}{OpenSSL}{section.4.6}% 66
+\BOOKMARK [2][-]{subsection.4.6.2}{SHA256}{section.4.6}% 67
+\BOOKMARK [1][-]{section.4.7}{Database}{chapter.4}% 68
+\BOOKMARK [2][-]{subsection.4.7.1}{MLAB}{section.4.7}% 69
+\BOOKMARK [1][-]{section.4.8}{Languages}{chapter.4}% 70
+\BOOKMARK [2][-]{subsection.4.8.1}{Javascript}{section.4.8}% 71
+\BOOKMARK [2][-]{subsection.4.8.2}{HTML\(Hyper-Text Markup Language\)}{section.4.8}% 72
+\BOOKMARK [1][-]{section.4.9}{Documentation}{chapter.4}% 73
+\BOOKMARK [2][-]{subsection.4.9.1}{LaTeX}{section.4.9}% 74
+\BOOKMARK [1][-]{section.4.10}{Styles}{chapter.4}% 75
+\BOOKMARK [2][-]{subsection.4.10.1}{Cascading Style Sheets\(CSS\)}{section.4.10}% 76
+\BOOKMARK [2][-]{subsection.4.10.2}{React Bootstrap}{section.4.10}% 77
+\BOOKMARK [1][-]{section.4.11}{Cloud}{chapter.4}% 78
+\BOOKMARK [2][-]{subsection.4.11.1}{Google Cloud Platform}{section.4.11}% 79
+\BOOKMARK [2][-]{subsection.4.11.2}{Docker}{section.4.11}% 80
+\BOOKMARK [0][-]{chapter.5}{System Design}{}% 81
+\BOOKMARK [0][-]{chapter.6}{System Evaluation}{}% 82
+\BOOKMARK [0][-]{chapter.7}{Conclusion}{}% 83
+\BOOKMARK [0][-]{section*.10}{Appendices}{}% 84
+\BOOKMARK [0][-]{Appendix.1.A}{Preamble \046 Intro}{}% 85

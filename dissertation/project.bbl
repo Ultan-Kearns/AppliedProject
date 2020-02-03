@@ -120,6 +120,11 @@ Numerous, ``Create-react-app github.''
 https://newsapi.org/, ``Newsapi documentation.''
 \newblock \url{https://newsapi.org/}.
 
+\bibitem{Fielding}
+R.~Fielding, ``Roy fielding dissertation - rest.''
+\newblock
+  \url{https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm/}.
+
 \bibitem{TLS}
 Cloudflare.com, ``Tls image.''
 \newblock
@@ -150,5 +155,9 @@ Numerous, ``Latex documentation.''
 \bibitem{GoogleCloudPlatform}
 Google, ``Google cloud platform.''
 \newblock \url{https://cloud.google.com/}.
+
+\bibitem{Docker}
+Docker, ``Docker website.''
+\newblock \url{https://www.docker.com/}.
 
 \end{thebibliography}
