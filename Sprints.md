@@ -34,9 +34,9 @@
 + fix up loans by making sure the user has at least 25% of loan amount and has no active loans
 + Ensure delete function deletes all the info on user and ensure user cannot delete account if they have open loans
 + Allow change of username and update all statements and loans
-+ Finish Tech Review
++ Finish Tech Review(Dibee)
 # Sprint 8 (10th February - 21st February)
-+ Get Statistics generated based on Loans / Statments
++ Get Statistics generated based on Loans / Statments and financial stats from google
 + Add Iban validator and bic and add to user schema
 + Fix all issuess
 + Start System Design
@@ -46,6 +46,7 @@
 + research Docker
 + refactor and test
 + Host on google cloud
++ Finish System design
 # Do whenever least concern
 + fix style on homepages
 ## Notes
