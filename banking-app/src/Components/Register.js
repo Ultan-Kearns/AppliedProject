@@ -70,23 +70,22 @@ class Register extends React.Component {
       number: this.state.number,
       dob: this.state.dob
     }
-    if (
-      this.state.password.length >= 6 &&
-      this.state.username !== "" &&
-      this.state.name !== "" &&
-      this.state.number !== "" &&
-      this.state.dob !== ""
-    ) {
+      if (
+        this.state.number.length >= 10 &&
+        this.state.name.length >= 10 &&
+        this.state.password.length >= 6 && this.username !== null
+        &&
+              this.state.dob !== ""
+      )  {
       axios.post("https://localhost:8080/api/users", newUser).then(res => {
         //log res for testing
         console.log(res.data)
       })
       alert("User created, now you can login :D")
       document.getElementById("registerForm").reset()
-    } else {
-      console.log(this.state.password.length)
+    }else {
       alert(
-        "Password must be 6 characters or greater and no fields can be left blank"
+        "Form invalid, password length must be greater than 6 and number must have 10 digits"
       )
     }
     //need to add error messages
