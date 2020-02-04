@@ -68,8 +68,14 @@ class Loans extends React.Component {
         owedTo: "Independent Banking",
         status: "Open"
       };
+      const newBalance = {
+        balance: parseInt(this.state.amount) + parseInt(sessionStorage.getItem("balance"))
+      }
       axios.post("https://localhost:8080/api/loans", newLoan).then(res => {
         console.log(res);
+      });
+      axios.post("https://localhost:8080/api/users/" + sessionStorage.getItem("email") + "/balance", newBalance).then(res => {
+        console.log("TEST " + res);
       });
       alert("loan approved ;D");
       this.getLoans();

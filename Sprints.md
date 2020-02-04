@@ -29,9 +29,10 @@
 + Get delete function Working(Done)
 + Finish Majority of Technology review(DONE)
 # Sprint 7 (1st February - 10th February)
-+ Check registration and do form validation
++ Check registration and do form validation(Done)
 + fix forgot password(need to get it updated to work with hash, maybe add link to page where user can update their existing hashed password)
 + fix up loans by making sure the user has at least 25% of loan amount and has no active loans
++ Add loan amount to balance
 + Ensure delete function deletes all the info on user and ensure user cannot delete account if they have open loans
 + Allow change of username and update all statements and loans
 + Finish Tech Review(Done)

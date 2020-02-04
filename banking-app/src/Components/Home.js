@@ -15,7 +15,9 @@ class Home extends React.Component {
       )
       .then(res => {
         var text = document.createTextNode(
-          res.data.balance
+          res.data.balance,
+          sessionStorage.setItem("balance",res.data.balance)
+
         );
         document.getElementById("balance").append(text);
       });

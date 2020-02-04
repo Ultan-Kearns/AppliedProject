@@ -209,6 +209,17 @@ app.post("/api/users/:id", function(req, res) {
     }
   })
 });
+app.post("/api/users/:id/balance", function(req, res) {
+   Users.findByIdAndUpdate(req.params.id,{balance: req.body.balance},function(err,data){
+    if (err) {
+      //send back error 500 to show the server had internel error
+      res.status(500, "INTERNAL SERVER ERROR " + err);
+    } else if (data != null) {
+      res.status(200,"Updated balance")
+      res.json(data);
+    }
+  })
+});
 app.post("/api/loans", function(req, res) {
   Loans.create({
     email: req.body.email,
