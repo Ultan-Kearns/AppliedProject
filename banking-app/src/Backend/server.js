@@ -230,6 +230,16 @@ app.post("/api/loans", function(req, res) {
   });
   res.status(201, "Resource created");
 });
+app.post("/api/transactions", function(req, res) {
+  Transactions.create({
+    email: req.body.email,
+    cost: req.body.cost,
+    location: req.body.location,
+    name: req.body.name,
+    date: req.body.date
+  });
+  res.status(201, "Resource created");
+});
 transaction.findName(function(name) {
   console.log(name);
 });

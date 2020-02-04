@@ -32,14 +32,16 @@
 + Check registration and do form validation(Done)
 + fix forgot password(need to get it updated to work with hash, maybe add link to page where user can update their existing hashed password)
 + fix up loans by making sure the user has at least 25% of loan amount and has no active loans
-+ Add loan amount to balance
++ Add loan amount to balance(Done)
++ Add new Transaction when loan is created
 + Ensure delete function deletes all the info on user and ensure user cannot delete account if they have open loans
 + Allow change of username and update all statements and loans
 + Finish Tech Review(Done)
 # Sprint 8 (10th February - 21st February)
 + Get Statistics generated based on Loans / Statments and financial stats from google
 + Add Iban validator and bic and add to user schema
-+ Fix all issuess
++ Fix all issues
++ Get Headlines component finished (Reddit, latest news etc...)
 + Start System Design
 + review dissertation
 # Sprint 9 (21st February - 25th February)

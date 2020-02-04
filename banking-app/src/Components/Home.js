@@ -8,7 +8,6 @@ import Button from "react-bootstrap/Button";
 class Home extends React.Component {
   componentDidMount() {
     const axios = require("axios").default;
-
     axios
       .get(
         "https://localhost:8080/api/users/" + sessionStorage.getItem("email")
