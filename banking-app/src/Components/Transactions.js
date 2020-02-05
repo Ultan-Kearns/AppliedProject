@@ -37,7 +37,7 @@ class Transactions extends React.Component {
           var text = document.createTextNode(
             "Location: " +
               this.state.location +
-              ", Cost: " +
+              ", Cost: €" +
               this.state.cost +
               ", Name: " +
               this.state.name +

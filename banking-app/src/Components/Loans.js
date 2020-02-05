@@ -3,11 +3,12 @@ import { Helmet } from "react-helmet"
 import Button from "react-bootstrap/Button"
 import  "../Styles/LoanStyle.css"
 
+var openLoan = 0;
+
 class Loans extends React.Component {
   componentDidMount() {
       this.getLoans()
   }
-
   constructor(props) {
     super(props)
     this.state = {
@@ -33,10 +34,13 @@ class Loans extends React.Component {
             status: res.data[i].status,
             owedTo: res.data[i].owedTo
           })
+          if(res.data[i].status === "Open"){
+            openLoan++;
+          }
           //create LI element then form statment then append to LI then add to list
           var node = document.createElement("LI")
           var text = document.createTextNode(
-            "Amount: " +
+            "Amount: €" +
               this.state.amount +
               ", Date: " +
               this.state.date +
@@ -45,6 +49,7 @@ class Loans extends React.Component {
               " ,Owed to: " +
               this.state.owedTo
           )
+
           node.append(text)
           document.getElementById("loans").appendChild(node)
         }
@@ -60,8 +65,8 @@ class Loans extends React.Component {
     var date = new Date();
     var fullDate =
       date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear()
-    var cost = this.state.amount
-    if (this.state.amount !== "") {
+      var answer = window.confirm("Are you sure you want to take out a loan for: " + this.state.amount + " ?")
+    if (this.state.amount !== "" && answer === true && parseInt(sessionStorage.getItem("balance")) / parseInt(this.state.amount) > this.state.amount * 0.25 && openLoan <= 5 && this.state.amount <= 500) {
       const newLoan = {
         email: sessionStorage.getItem("email"),
         amount: this.state.amount,
@@ -89,10 +94,11 @@ class Loans extends React.Component {
         console.log("TEST " + res)
       })
       alert("loan approved ;D")
-      this.getLoans()
+
     } else {
-      alert("Loan amount cannot be null")
+      alert("Loan aborted\n Reasons why this may happen:\nLoan cannot be null and user must have at least 25% of loan amount in balance\nUsers can only have 5 open loans at a time\n Loans must also be less than or equal to €500")
     }
+  this.getLoans()
     event.preventDefault()
   }
   render() {

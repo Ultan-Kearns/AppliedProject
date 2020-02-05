@@ -1,116 +1,117 @@
-import React from "react"
-import { Helmet } from "react-helmet"
-import Button from "react-bootstrap/Button"
-import Login from "./Login"
-import ReactDOM from "react-dom"
-import InputGroup from "react-bootstrap/InputGroup"
-import "../Styles/UserInfoStyle.css"
-import "js-sha256"
-import FormControl from "react-bootstrap/FormControl"
-const axios = require("axios").default
-
+import React from "react";
+import { Helmet } from "react-helmet";
+import Button from "react-bootstrap/Button";
+import Login from "./Login";
+import ReactDOM from "react-dom";
+import InputGroup from "react-bootstrap/InputGroup";
+import "../Styles/UserInfoStyle.css";
+import "js-sha256";
+import FormControl from "react-bootstrap/FormControl";
+const axios = require("axios").default;
+const sha256 = require("js-sha256");
+var password = ""
 class UserInfo extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       name: "",
-      username: "",
+      newUsername: "",
       password: "",
       number: "",
       prevName: "",
       prevNumber: ""
-    }
+    };
   }
-  handleUsernameChange = event => {
+  handleNewUsernameChange = event => {
     this.setState({
-      username: event.target.value
-    })
-  }
+      newUsername: event.target.value
+    });
+  };
   handlePasswordChange = event => {
     this.setState({
       password: event.target.value
-    })
-  }
+    });
+  };
   handleNameChange = event => {
     this.setState({
       name: event.target.value
-    })
-  }
+    });
+  };
   handleNumberChange = event => {
     this.setState({
       number: event.target.value
-    })
-  }
+    });
+  };
   update = event => {
-    const sha256 = require("js-sha256")
     //if any info is blank set to previous info of user
     if (this.state.number === "null" || this.state.number === "") {
       this.setState({
         number: this.state.prevNumber
-      })
+      });
     }
 
     if (this.state.name === "null" || this.state.name === "") {
       this.setState({
         name: this.state.prevName
-      })
+      });
     }
-    if (this.state.username === "null" || this.state.username === "") {
+    if (this.state.newUsername === "null" || this.state.newUsername === "") {
       this.setState({
-        username: this.state.prevUsername
-      })
+        newUsername: sessionStorage.getItem("email")
+      });
     }
     if (this.state.password === "null" || this.state.password === "") {
       this.setState({
         password: this.state.prevpassword
-      })
+      });
     }
     alert(
       this.state.number +
         " " +
         this.state.password +
         " " +
-        this.state.username +
+        this.state.newUsername +
         " " +
         this.state.name
-    )
+    );
     //hash pass using sha256
-    const hashed = sha256(this.state.password)
+    const hashed = sha256(this.state.password);
 
     const newUser = {
-      _id: this.state.username,
+      _id: this.state.newUsername,
       password: hashed,
       name: this.state.name,
       number: this.state.number,
       dob: this.state.dob
-    }
+    };
     if (
-      this.state.number.length >= 10 &&
-      this.state.name.length >= 10 &&
+      this.state.number.length === 10 &&
+      this.state.name.length >= 5 &&
       this.state.password.length >= 6
     ) {
+      alert(sessionStorage.getItem("email"));
       axios
-        .post(
+        .put(
           "https://localhost:8080/api/users/" + sessionStorage.getItem("email"),
           newUser
         )
         .then(res => {
           //log res for testing
-          console.log(res.data)
+          console.log(res.data);
         })
         .catch(error => {
-          console.log("ERR")
-        })
-      console.log("In update")
-      alert("Updated user")
-      document.getElementById("updateForm").reset()
+          console.log("ERR");
+        });
+      console.log("In update");
+      alert("Updated user");
+      document.getElementById("updateForm").reset();
     } else {
       alert(
-        "Form invalid, password length must be greater than 6 and number must have 10 digits"
-      )
+        "Form invalid, password length must be greater than 6 and number must have 10 digits and name must be >= 5 characters"
+      );
     }
-    event.preventDefault()
-  }
+    event.preventDefault();
+  };
   componentDidMount() {
     axios
       .get(
@@ -123,32 +124,36 @@ class UserInfo extends React.Component {
             " Number: " +
             res.data.number +
             " Date of Birth: " +
-            res.data.dob,
+            res.data.dob +
+            " Username: " +
+            res.data._id,
           //In case user leaves any information blank just submit their current info
 
-        this.setState({
-           prevName: res.data.name
-         }),
-      this.setState({
-          prevNumber: res.data.number
-        }),
-      this.setState({
-          password: res.data.password
-        }),
-      )
-        document.getElementById("basic").append(text)
-      })
+          this.setState({
+            prevName: res.data.name
+          }),
+          this.setState({
+            prevNumber: res.data.number
+          }),
+          this.setState({
+            password: res.data.password
+          })
+        );
+        password = this.state.password
+        document.getElementById("basic").append(text);
+      });
   }
   deleteUser() {
-    var answer = window.confirm("Delete Account?")
-    if (answer === true) {
+
+    var answer = window.prompt("Enter password to delete account");
+    if (sha256(answer) === password) {
       axios.delete(
         "https://localhost:8080/api/users/" + sessionStorage.getItem("email")
-      )
-      alert("User deleted")
-      ReactDOM.render(<Login />, document.getElementById("root"))
+      );
+      alert("User deleted");
+      ReactDOM.render(<Login />, document.getElementById("root"));
     } else {
-      alert("Action aborted, user not deleted")
+      alert("Action aborted, password was incorrect");
     }
   }
   render() {
@@ -183,8 +188,8 @@ class UserInfo extends React.Component {
               placeholder="Username"
               aria-label="Username"
               type="email"
-              value={this.state.username}
-              onChange={this.handleUsernameChange}
+              value={this.state.newUsername}
+              onChange={this.handleNewUsernameChange}
             />
           </InputGroup>
           <InputGroup className="mb-3" id="password">
@@ -221,8 +226,8 @@ class UserInfo extends React.Component {
           Delete Account
         </Button>
       </div>
-    )
+    );
   }
 }
 
-export default UserInfo
+export default UserInfo;

@@ -30,10 +30,10 @@
 + Finish Majority of Technology review(DONE)
 # Sprint 7 (1st February - 10th February)
 + Check registration and do form validation(Done)
-+ fix forgot password(need to get it updated to work with hash, maybe add link to page where user can update their existing hashed password)
-+ fix up loans by making sure the user has at least 25% of loan amount and has no active loans
++ fix forgot password(Create a random pass then hash and update user pass then send in email)
++ fix up loans by making sure the user has at least 25% of loan amount and user can only have 5 loans(Done)
 + Add loan amount to balance(Done)
-+ Add new Transaction when loan is created
++ Add new Transaction when loan is created(Done)
 + Ensure delete function deletes all the info on user and ensure user cannot delete account if they have open loans
 + Allow change of username and update all statements and loans
 + Finish Tech Review(Done)
@@ -46,10 +46,10 @@
 + review dissertation
 # Sprint 9 (21st February - 25th February)
 + Brainstorm ideas
-+ research Docker
-+ refactor and test
++ research Docker + get it working
++ refactor and test code
 + Host on google cloud
-+ Finish System design
++ Finish System design & review dissertation
 # Do whenever least concern
 + fix style on homepages
 ## Notes

@@ -71,8 +71,8 @@ class Register extends React.Component {
       dob: this.state.dob
     }
       if (
-        this.state.number.length >= 10 &&
-        this.state.name.length >= 10 &&
+        this.state.number.length === 10 &&
+        this.state.name.length >= 5 &&
         this.state.password.length >= 6 && this.username !== null
         &&
               this.state.dob !== ""
