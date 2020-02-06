@@ -82,14 +82,13 @@ class Register extends React.Component {
         console.log(res.data)
       })
       alert("User created, now you can login :D")
-      document.getElementById("registerForm").reset()
     }else {
       alert(
         "Form invalid, password length must be greater than 6 and number must have 10 digits"
       )
     }
-    //need to add error messages
     event.preventDefault()
+    ReactDOM.render(<Login/>, document.getElementById("root"))
   }
   componentDidMount() {
 

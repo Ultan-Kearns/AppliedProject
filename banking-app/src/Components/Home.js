@@ -13,7 +13,7 @@ class Home extends React.Component {
         "https://localhost:8080/api/users/" + sessionStorage.getItem("email")
       )
       .then(res => {
-        var text = document.createTextNode(
+        var text = document.createTextNode( "€" + 
           res.data.balance,
           sessionStorage.setItem("balance",res.data.balance)
 

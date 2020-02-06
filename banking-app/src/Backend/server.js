@@ -126,12 +126,13 @@ app.get("/api/users/:id/:password", function(req, res) {
 });
 //template taken from earlier project - https://github.com/Ultan-Kearns/eCommerceApp/blob/master/BackEnd/Server.js
 //Improved upon in this project
-app.get("/api/emailuser/:id/", function(req, res, next) {
+app.get("/api/emailuser/:id/:password", function(req, res, next) {
   Users.findById(req.params.id, function(err, data) {
     if (data == null)
       res.status(404, "User does not exist on this server", err);
     else if (data._id == req.params.id) {
       res.json(data);
+      console.log(data)
       res.status(200, "User logged in!");
       var nodemailer = require("nodemailer");
       var transporter = nodemailer.createTransport({
@@ -151,8 +152,9 @@ app.get("/api/emailuser/:id/", function(req, res, next) {
         from: "reactproject19@gmail.com",
         to: data._id,
         subject: "Forgot Independent Banking password",
-        text: "Here is your password for Independent Banking: " + data.password
+        text: "Here is your password for Independent Banking: " + req.params.password
       };
+
       //Send email or log errors if user doesn't exist
       transporter.sendMail(mailOptions, function(error, info) {
         if (error) {
@@ -206,6 +208,16 @@ app.put("/api/users/:id", function(req, res) {
       res.status(500, "INTERNAL SERVER ERROR " + err);
     } else if (data != null) {
       res.status(200,"Updated Account")
+    }
+  })
+});
+app.post("/api/users/:id/rand", function(req, res) {
+   Users.findByIdAndUpdate(req.params.id,{password:req.body.password},function(err,data){
+    if (err) {
+      //send back error 500 to show the server had internel error
+      res.status(500, "INTERNAL SERVER ERROR " + err);
+    } else if (data != null) {
+      res.status(200,"Updated Password  ")
     }
   })
 });

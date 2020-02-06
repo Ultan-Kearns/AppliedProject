@@ -8,6 +8,7 @@ import { Helmet } from "react-helmet";
 import Login from "./Login";
 
 const axios = require("axios").default;
+const sha256 = require("js-sha256");
 class Forgot extends React.Component {
   constructor(props) {
     super(props);
@@ -28,14 +29,20 @@ class Forgot extends React.Component {
       event.preventDefault();
       return;
     }
+    const plaintext = "2pgkawgko"
+    const hashed = sha256(plaintext)
+    alert("HASHED " + hashed)
+    const rand = {password: hashed}
+    axios.post("https://localhost:8080/api/users/" + sessionStorage.getItem("email") +  "/rand",rand).then(res=>{
+      console.log(res)
+    });
     axios
-      .get("https://localhost:8080/api/emailuser/" + this.state.username)
+      .get("https://localhost:8080/api/emailuser/" + this.state.username + "/" + plaintext)
       .then(res => {
         console.log(res.data);
       });
     alert("email sent to  " + this.state.username);
-    ReactDOM.render(<Login />, document.getElementById("root"));
-    event.preventDefault();
+     event.preventDefault();
   };
   componentDidMount() {
     //connect to server and get statements upon component load
