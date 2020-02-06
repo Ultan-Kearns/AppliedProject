@@ -9,7 +9,7 @@ import "js-sha256";
 import FormControl from "react-bootstrap/FormControl";
 const axios = require("axios").default;
 const sha256 = require("js-sha256");
-var password = ""
+var password = "";
 class UserInfo extends React.Component {
   constructor(props) {
     super(props);
@@ -19,7 +19,9 @@ class UserInfo extends React.Component {
       password: "",
       number: "",
       prevName: "",
-      prevNumber: ""
+      prevNumber: "",
+      prevPassword: "",
+      dob: ""
     };
   }
   handleNewUsernameChange = event => {
@@ -61,24 +63,19 @@ class UserInfo extends React.Component {
       });
     }
     if (this.state.password === "null" || this.state.password === "") {
+      alert("IN");
       this.setState({
-        password: this.state.prevpassword
+        password: this.state.prevPassword
+      });
+    } else {
+      this.setState({
+        password: sha256(this.state.password)
       });
     }
-    alert(
-      this.state.number +
-        " " +
-        this.state.password +
-        " " +
-        this.state.newUsername +
-        " " +
-        this.state.name
-    );
     //hash pass using sha256
-    const hashed = sha256(this.state.password);
     const newUser = {
-      _id: this.state.newUsername,
-      password: hashed,
+      _id: this.state.newUsername.toLowerCase(),
+      password: this.state.password,
       name: this.state.name,
       number: this.state.number,
       dob: this.state.dob
@@ -89,11 +86,17 @@ class UserInfo extends React.Component {
       this.state.password.length >= 6
     ) {
       alert(sessionStorage.getItem("email"));
+      //delete original user
       axios
-        .put(
-          "https://localhost:8080/api/users/" + sessionStorage.getItem("email"),
-          newUser
+        .delete(
+          "https://localhost:8080/api/users/" + sessionStorage.getItem("email")
         )
+        .then(res => {
+          console.log(res.data);
+        });
+      //recreate user for ID
+      axios
+        .post("https://localhost:8080/api/users/", newUser)
         .then(res => {
           //log res for testing
           console.log(res.data);
@@ -101,6 +104,7 @@ class UserInfo extends React.Component {
         .catch(error => {
           console.log("ERR");
         });
+      sessionStorage.setItem("email", this.state.newUsername);
       console.log("In update");
       alert("Updated user");
       document.getElementById("updateForm").reset();
@@ -135,15 +139,17 @@ class UserInfo extends React.Component {
             prevNumber: res.data.number
           }),
           this.setState({
-            password: res.data.password
+            prevPassword: res.data.password
+          }),
+          this.setState({
+            dob: res.data.dob
           })
         );
-        password = this.state.password
+        password = this.state.password;
         document.getElementById("basic").append(text);
       });
   }
   deleteUser() {
-
     var answer = window.prompt("Enter password to delete account");
     if (sha256(answer) === password) {
       axios.delete(

@@ -61,7 +61,7 @@ class Login extends React.Component {
      axios
       .get(
         "https://localhost:8080/api/users/" +
-          this.state.username +
+          this.state.username.toLowerCase() +
           "/" +
           sha256(this.state.password)
       )

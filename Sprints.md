@@ -30,7 +30,7 @@
 + Finish Majority of Technology review(DONE)
 # Sprint 7 (1st February - 10th February)
 + Check registration and do form validation(Done)
-+ fix forgot password(Create a random pass then hash and update user pass then send in email)
++ fix forgot password(Done) - need to create random string should be easy - use for loop and math.random
 + fix up loans by making sure the user has at least 25% of loan amount and user can only have 5 loans(Done)
 + Add loan amount to balance(Done)
 + Add new Transaction when loan is created(Done)

@@ -202,6 +202,8 @@ app.post("/api/users", function(req, res) {
   res.status(201, "Resource created");
 });
 app.put("/api/users/:id", function(req, res) {
+  /*
+  Decided to keep this as it may be useful if db is refactored
    Users.findByIdAndUpdate(req.params.id,{name:req.body.name,password:req.body.password,number:req.body.number},function(err,data){
     if (err) {
       //send back error 500 to show the server had internel error
@@ -210,6 +212,8 @@ app.put("/api/users/:id", function(req, res) {
       res.status(200,"Updated Account")
     }
   })
+  */
+ })
 });
 app.post("/api/users/:id/rand", function(req, res) {
    Users.findByIdAndUpdate(req.params.id,{password:req.body.password},function(err,data){
