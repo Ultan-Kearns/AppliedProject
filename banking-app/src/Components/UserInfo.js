@@ -76,7 +76,6 @@ class UserInfo extends React.Component {
     );
     //hash pass using sha256
     const hashed = sha256(this.state.password);
-
     const newUser = {
       _id: this.state.newUsername,
       password: hashed,
@@ -211,7 +210,7 @@ class UserInfo extends React.Component {
             <FormControl
               placeholder="Number"
               aria-label="Number"
-              type="text"
+              type="number"
               value={this.state.number}
               onChange={this.handleNumberChange}
             />

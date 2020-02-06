@@ -50,7 +50,7 @@ var userSchema = new Schema({
   _id: { type: String },
   password: { type: String, required: true },
   name: { type: String, required: true },
-  number: { type: Number, required: true },
+  number: { type: String, required: true },
   dob: { type: Date, required: true },
   balance: { type: Number, default: 0 }
 });
