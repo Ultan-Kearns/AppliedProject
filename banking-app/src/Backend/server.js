@@ -213,7 +213,6 @@ app.put("/api/users/:id", function(req, res) {
     }
   })
   */
- })
 });
 app.post("/api/users/:id/rand", function(req, res) {
    Users.findByIdAndUpdate(req.params.id,{password:req.body.password},function(err,data){

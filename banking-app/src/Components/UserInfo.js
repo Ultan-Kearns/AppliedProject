@@ -62,16 +62,20 @@ class UserInfo extends React.Component {
         newUsername: sessionStorage.getItem("email")
       });
     }
-    if (this.state.password === "null" || this.state.password === "") {
-      alert("IN");
-      this.setState({
-        password: this.state.prevPassword
-      });
-    } else {
+    if (this.state.password !== "null" && this.state.password !== "") {
+      alert("SHA " + this.state.password);
       this.setState({
         password: sha256(this.state.password)
       });
+      alert(this.state.password);
+    } else {
+      this.setState({
+        password: this.state.prevPassword
+      });
+      alert("PASS WILL = PREV PASS " + this.state.password);
+
     }
+
     //hash pass using sha256
     const newUser = {
       _id: this.state.newUsername.toLowerCase(),
@@ -82,17 +86,19 @@ class UserInfo extends React.Component {
     };
     if (
       this.state.number.length === 10 &&
-      this.state.name.length >= 5 &&
-      this.state.password.length >= 6
+      this.state.name.length >= 5 && this.state.password.length >= 5
     ) {
       alert(sessionStorage.getItem("email"));
       //delete original user
-      axios
+       axios
         .delete(
           "https://localhost:8080/api/users/" + sessionStorage.getItem("email")
         )
         .then(res => {
           console.log(res.data);
+        })
+        .catch(error => {
+          console.log("ERR");
         });
       //recreate user for ID
       axios
@@ -104,13 +110,50 @@ class UserInfo extends React.Component {
         .catch(error => {
           console.log("ERR");
         });
-      sessionStorage.setItem("email", this.state.newUsername);
+        sessionStorage.setItem("email", this.state.newUsername);
+
       console.log("In update");
       alert("Updated user");
-      document.getElementById("updateForm").reset();
+      event.preventDefault();
     } else {
       alert(
         "Form invalid, password length must be greater than 6 and number must have 10 digits and name must be >= 5 characters"
+      );
+      alert(
+        this.state.number +
+          " " +
+          this.state.password +
+          " " +
+          this.state.newUsername +
+          " " +
+          this.state.name +
+          " " +
+          this.state.dob +
+          " LENGTH " +
+          " NUM" +
+          this.state.number.length +
+          "NAME " +
+          this.state.name.length +
+          " PASS " +
+          this.state.password.length
+      );
+      alert(
+        this.state.prevNumber +
+          " " +
+          this.state.prevPassword +
+          " " +
+          this.state.username +
+          " " +
+          this.state.prevName +
+          " " +
+          this.state.dob +
+          " LENGTH " +
+          " NUM" +
+          this.state.number.length +
+          "NAME " +
+          this.state.name.length +
+          " PASS " +
+          this.state.password.length
       );
     }
     event.preventDefault();

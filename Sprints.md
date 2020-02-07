@@ -35,7 +35,7 @@
 + Add loan amount to balance(Done)
 + Add new Transaction when loan is created(Done)
 + Ensure delete function deletes all the info on user and ensure user cannot delete account if they have open loans
-+ Allow change of username and update all statements and loans
++ Allow change of username and update all statements and loans(Done just need to gte it updated across all schemas,)! ISSUES WITH PASSWORD
 + Finish Tech Review(Done)
 # Sprint 8 (10th February - 21st February)
 + Get Statistics generated based on Loans / Statments and financial stats from google

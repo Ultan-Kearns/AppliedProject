@@ -29,7 +29,12 @@ class Forgot extends React.Component {
       event.preventDefault();
       return;
     }
-    const plaintext = "2pgkawgko"
+    var plaintext = ""
+    for(var i = 0; i < 20; i++)
+    {
+      //generate 20 random numbers for password
+      plaintext += Math.floor(10 * Math.random())
+    }
     const hashed = sha256(plaintext)
     alert("HASHED " + hashed)
     const rand = {password: hashed}
