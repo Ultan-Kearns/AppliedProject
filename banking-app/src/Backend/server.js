@@ -66,6 +66,10 @@ transactionSchema.methods.findName = function(username) {
   //define logic to find statement by name in here
   return this.model("Transactions").find({ email: this.email }, username);
 };
+transactionSchema.methods.findNameAndDelete = function(username) {
+  //define logic to find statement by name in here
+  return this.model("Transactions").remove({ email: this.email }, username);
+};
 var loanSchema = new Schema({
   email: { type: String },
   amount: { type: Number },
@@ -76,6 +80,10 @@ var loanSchema = new Schema({
 loanSchema.methods.findName = function(username) {
   //define logic to find statement by name in here
   return this.model("Loans").find({ email: this.email }, username);
+};
+loanSchema.methods.findNameAndDelete = function(username) {
+  //define logic to find statement by name in here
+  return this.model("Loans").remove({ email: this.email }, username);
 };
 //models for mongoose
 var Users = mongoose.model("Users", userSchema);
@@ -265,6 +273,18 @@ app.get("/api/transactions/:email", function(req, res) {
   transaction.findName(function(err, data) {
     res.json(data);
   });
+});
+app.delete("/api/transactions/:email", function(req, res) {
+  Transactions.remove({email: req.params.email}, function(err, data) {
+    res.json(data);
+  });
+
+});
+app.delete("/api/loans/:email", function(req, res) {
+  Loans.remove({email: req.params.email},function(err, data) {
+    res.json(data);
+  });
+
 });
 app.get("/api/loans/:email", function(req, res) {
   //custom method to find name on transactions

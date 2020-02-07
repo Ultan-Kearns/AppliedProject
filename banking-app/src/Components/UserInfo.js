@@ -119,42 +119,6 @@ class UserInfo extends React.Component {
       alert(
         "Form invalid, password length must be greater than 6 and number must have 10 digits and name must be >= 5 characters"
       );
-      alert(
-        this.state.number +
-          " " +
-          this.state.password +
-          " " +
-          this.state.newUsername +
-          " " +
-          this.state.name +
-          " " +
-          this.state.dob +
-          " LENGTH " +
-          " NUM" +
-          this.state.number.length +
-          "NAME " +
-          this.state.name.length +
-          " PASS " +
-          this.state.password.length
-      );
-      alert(
-        this.state.prevNumber +
-          " " +
-          this.state.prevPassword +
-          " " +
-          this.state.username +
-          " " +
-          this.state.prevName +
-          " " +
-          this.state.dob +
-          " LENGTH " +
-          " NUM" +
-          this.state.number.length +
-          "NAME " +
-          this.state.name.length +
-          " PASS " +
-          this.state.password.length
-      );
     }
     event.preventDefault();
   };
@@ -188,20 +152,28 @@ class UserInfo extends React.Component {
             dob: res.data.dob
           })
         );
-        password = this.state.password;
+        password = res.data.password;
         document.getElementById("basic").append(text);
       });
   }
   deleteUser() {
     var answer = window.prompt("Enter password to delete account");
-    if (sha256(answer) === password) {
+    try{
+      if(sha256(answer) === password) {
+      axios.delete("https://localhost:8080/api/transactions/" + sessionStorage.getItem("email"))
+      axios.delete("https://localhost:8080/api/loans/" + sessionStorage.getItem("email"))
       axios.delete(
         "https://localhost:8080/api/users/" + sessionStorage.getItem("email")
       );
       alert("User deleted");
       ReactDOM.render(<Login />, document.getElementById("root"));
-    } else {
+    }
+    else{
       alert("Action aborted, password was incorrect");
+
+    }
+  } catch {
+      alert("Internal system error");
     }
   }
   render() {

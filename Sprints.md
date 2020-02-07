@@ -30,12 +30,12 @@
 + Finish Majority of Technology review(DONE)
 # Sprint 7 (1st February - 10th February)
 + Check registration and do form validation(Done)
-+ fix forgot password(Done) - need to create random string should be easy - use for loop and math.random
++ fix forgot password(Done)
 + fix up loans by making sure the user has at least 25% of loan amount and user can only have 5 loans(Done)
 + Add loan amount to balance(Done)
 + Add new Transaction when loan is created(Done)
 + Ensure delete function deletes all the info on user and ensure user cannot delete account if they have open loans
-+ Allow change of username and update all statements and loans(Done just need to gte it updated across all schemas,)! ISSUES WITH PASSWORD
++ Allow change of username and update all statements and loans(Done just need to gte it updated across all schemas,)! Needs testing
 + Finish Tech Review(Done)
 # Sprint 8 (10th February - 21st February)
 + Get Statistics generated based on Loans / Statments and financial stats from google
