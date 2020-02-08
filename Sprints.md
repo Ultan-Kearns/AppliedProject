@@ -34,18 +34,19 @@
 + fix up loans by making sure the user has at least 25% of loan amount and user can only have 5 loans(Done)
 + Add loan amount to balance(Done)
 + Add new Transaction when loan is created(Done)
-+ Ensure delete function deletes all the info on user and ensure user cannot delete account if they have open loans
++ Ensure delete function deletes all the info on user and ensure user cannot delete account if they have open loans(DONE)
 + Allow change of username and update all statements and loans(Done just need to gte it updated across all schemas,)! Needs testing
 + Finish Tech Review(Done)
 # Sprint 8 (10th February - 21st February)
 + Get Statistics generated based on Loans / Statments and financial stats from google
 + Add Iban validator and bic and add to user schema
-+ Fix all issues
++ Fix all issues and write tests
++ Add Selenium to tech review
 + Get Headlines component finished (Reddit, latest news etc...)
 + Start System Design
 + review dissertation
 # Sprint 9 (21st February - 25th February)
-+ Brainstorm ideas
++ Brainstorm ideas(Chart.js would be good idea for stats)
 + research Docker + get it working
 + refactor and test code
 + Host on google cloud

@@ -4,10 +4,14 @@ import Button from "react-bootstrap/Button"
 import  "../Styles/LoanStyle.css"
 
 var openLoan = 0;
+const axios = require("axios").default
 
 class Loans extends React.Component {
   componentDidMount() {
       this.getLoans()
+      axios.get("https://localhost:8080/api/users/" + sessionStorage.getItem("email")).then(res=>{
+        sessionStorage.setItem("balance",res.data.balance)
+      })
   }
   constructor(props) {
     super(props)
@@ -16,11 +20,11 @@ class Loans extends React.Component {
       amount: "",
       date: "",
       status: "",
-      owedTo: ""
+      owedTo: "",
+      balance: ""
     }
   }
   getLoans() {
-    const axios = require("axios").default
     document.getElementById("loans").innerHTML = ""
     axios
       .get(
@@ -66,7 +70,7 @@ class Loans extends React.Component {
     var fullDate =
       date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear()
       var answer = window.confirm("Are you sure you want to take out a loan for: " + this.state.amount + " ?")
-    if (this.state.amount !== "" && answer === true && parseInt(sessionStorage.getItem("balance")) / parseInt(this.state.amount) > this.state.amount * 0.25 && openLoan <= 5 && this.state.amount <= 500) {
+    if (this.state.amount !== "" && answer === true && parseInt(this.state.amount) <= parseInt(sessionStorage.getItem("balance")) * 0.25 && openLoan <= 5 && this.state.amount <= 500) {
       const newLoan = {
         email: sessionStorage.getItem("email"),
         amount: this.state.amount,
@@ -92,13 +96,19 @@ class Loans extends React.Component {
       })
       axios.post("https://localhost:8080/api/users/" + sessionStorage.getItem("email") + "/balance", newBalance).then(res => {
         console.log("TEST " + res)
+        axios.get("https://localhost:8080/api/users/" + sessionStorage.getItem("email")).then(res=>{
+          sessionStorage.setItem("balance",res.data.balance)
+                alert("loan approved\n New balance is: " + sessionStorage.getItem("balance"))
+        })
+        this.getLoans()
+
       })
-      alert("loan approved ;D")
+
 
     } else {
       alert("Loan aborted\n Reasons why this may happen:\nLoan cannot be null and user must have at least 25% of loan amount in balance\nUsers can only have 5 open loans at a time\n Loans must also be less than or equal to €500")
     }
-  this.getLoans()
+
     event.preventDefault()
   }
   render() {

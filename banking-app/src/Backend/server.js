@@ -283,8 +283,17 @@ app.delete("/api/transactions/:email", function(req, res) {
 app.delete("/api/loans/:email", function(req, res) {
   Loans.remove({email: req.params.email},function(err, data) {
     res.json(data);
+  })
+});
+  app.put("/api/transactions/:email", function(req, res) {
+    Transactions.find({email: req.params.email}, function(err, data) {
+      res.json(data);
+    });
   });
-
+  app.put("/api/loans/:email", function(req, res) {
+  Loans.find({email: req.params.email},function(err, data) {
+    res.json(data);
+  });
 });
 app.get("/api/loans/:email", function(req, res) {
   //custom method to find name on transactions
