@@ -52,7 +52,9 @@ var userSchema = new Schema({
   name: { type: String, required: true },
   number: { type: String, required: true },
   dob: { type: Date, required: true },
-  balance: { type: Number, default: 0 }
+  balance: { type: Number, default: 0,required:true },
+  iban: { type: String },
+  bic: { type: String},
 });
 //change this later
 var transactionSchema = new Schema({
@@ -199,13 +201,23 @@ app.delete("/api/users/:id/", function(req, res) {
 });
 app.post("/api/users", function(req, res) {
   //check if user with same username exists use findById and change id to username
-
+  var balance;
+  if(req.body.balance == "")
+  {
+    balance = 0
+  }
+  else{
+    balance = req.body.balance
+  }
   Users.create({
     _id: req.body._id,
     password: req.body.password,
     name: req.body.name,
     number: req.body.number,
-    dob: req.body.dob
+    dob: req.body.dob,
+    balance: balance,
+    iban: "IE",
+    bic:""
   });
   res.status(201, "Resource created");
 });

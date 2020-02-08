@@ -21,7 +21,8 @@ class UserInfo extends React.Component {
       prevName: "",
       prevNumber: "",
       prevPassword: "",
-      dob: ""
+      dob: "",
+      balance:""
     };
   }
   handleNewUsernameChange = event => {
@@ -75,15 +76,27 @@ class UserInfo extends React.Component {
       alert("PASS WILL = PREV PASS " + this.state.password);
 
     }
-
+    axios
+      .get(
+        "https://localhost:8080/api/users/" + sessionStorage.getItem("email")
+      )
+      .then(res => {
+          this.setState({
+            balance:res.data.balance
+          })
+        });
     //hash pass using sha256
     const newUser = {
       _id: this.state.newUsername.toLowerCase(),
       password: this.state.password,
       name: this.state.name,
       number: this.state.number,
-      dob: this.state.dob
+      dob: this.state.dob,
+      balance: parseInt(this.state.balance),
+      iban:"",
+      bic:""
     };
+    alert("USER "  + newUser.balance)
     if (
       this.state.number.length === 10 &&
       this.state.name.length >= 5 && this.state.password.length >= 5
@@ -100,7 +113,7 @@ class UserInfo extends React.Component {
         .catch(error => {
           console.log("ERR");
         });
-      //recreate user for ID
+      //recreate user for ID - for some reason it clones
       axios
         .post("https://localhost:8080/api/users/", newUser)
         .then(res => {
@@ -113,7 +126,7 @@ class UserInfo extends React.Component {
         sessionStorage.setItem("email", this.state.newUsername);
 
       console.log("In update");
-      alert("Updated user");
+       alert("Updated user");
       event.preventDefault();
     } else {
       alert(
@@ -136,7 +149,7 @@ class UserInfo extends React.Component {
             " Date of Birth: " +
             res.data.dob +
             " Username: " +
-            res.data._id,
+            res.data._id + " Balance: " + res.data.balance,
           //In case user leaves any information blank just submit their current info
 
           this.setState({
@@ -150,7 +163,10 @@ class UserInfo extends React.Component {
           }),
           this.setState({
             dob: res.data.dob
-          })
+          }),
+          this.setState({
+            balance:res.data.balance
+          }),
         );
         password = res.data.password;
         document.getElementById("basic").append(text);

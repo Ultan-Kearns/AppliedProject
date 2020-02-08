@@ -68,7 +68,10 @@ class Register extends React.Component {
       password: hashed,
       name: this.state.name,
       number: this.state.number,
-      dob: this.state.dob
+      dob: this.state.dob,
+      bic:"1",
+      iban:"1",
+      balance:""
     }
       if (
         this.state.number.length === 10 &&
