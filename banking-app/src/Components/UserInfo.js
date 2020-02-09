@@ -22,7 +22,7 @@ class UserInfo extends React.Component {
       prevNumber: "",
       prevPassword: "",
       dob: "",
-      balance: ""
+      balance: "",
     };
   }
   handleNewUsernameChange = event => {
@@ -47,21 +47,6 @@ class UserInfo extends React.Component {
   };
 
   update = event => {
-    var user
-    //check if user exists
-    axios
-      .get("https://localhost:8080/api/users/" + this.state.newUsername)
-      .then(res => {
-        //log res for testing
-        console.log(res.data);
-        if (res.data !== null) {
-          sessionStorage.setItem("exists",res.data._id)
-          alert("user already exists")
-         }
-         else{
-         sessionStorage.setItem("exists",null)
-}
-      });
     //if any info is blank set to previous info of user
     if (this.state.number === "null" || this.state.number === "") {
       this.setState({
@@ -110,12 +95,13 @@ class UserInfo extends React.Component {
       iban: "",
       bic: ""
     };
+    //problem with axios not being asynchronous may find a different way to handle this
 
+try{
     if (
       this.state.number.length === 10 &&
       this.state.name.length >= 5 &&
-      this.state.password.length >= 5 &&           sessionStorage.getItem("exists") === "null"
-
+      this.state.password.length >= 5 
     ) {
       alert(sessionStorage.getItem("email"));
       //delete original user
@@ -174,6 +160,10 @@ class UserInfo extends React.Component {
         "Form invalid, password length must be greater than 6 and number must have 10 digits and name must be >= 5 characters"
       );
     }
+  }
+  catch(err){
+    alert("Issue arose")
+  }
     event.preventDefault();
   };
   componentDidMount() {
