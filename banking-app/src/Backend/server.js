@@ -297,15 +297,15 @@ app.delete("/api/loans/:email", function(req, res) {
     res.json(data);
   })
 });
-  app.put("/api/transactions/:email", function(req, res) {
-    Transactions.find({email: req.params.email}, function(err, data) {
-      res.json(data);
+  app.post("/api/transactions/:email/:newemail", function(req, res) {
+    Transactions.updateMany({email:req.params.email},{$set:{email:req.params.newemail}},function(err,doc){
+      res.json(doc)
     });
-  });
-  app.put("/api/loans/:email", function(req, res) {
-  Loans.find({email: req.params.email},function(err, data) {
-    res.json(data);
-  });
+   });
+  app.post("/api/loans/:email/:newemail", function(req, res) {
+  Loans.updateMany({email:req.params.email},{$set:{email:req.params.newemail}},function(err,doc){
+      res.json(doc + " " + req.params.newemail)
+})
 });
 app.get("/api/loans/:email", function(req, res) {
   //custom method to find name on transactions

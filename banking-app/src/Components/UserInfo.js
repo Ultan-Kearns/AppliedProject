@@ -123,6 +123,17 @@ class UserInfo extends React.Component {
         .catch(error => {
           console.log("ERR");
         });
+        alert("USER " + this.state.newUsername)
+         axios.post("https://localhost:8080/api/transactions/" +sessionStorage.getItem("email") + "/" + this.state.newUsername).then(res=>{
+          console.log("TESTING UPDATE TRANSACTION" + res.data)
+        }).catch(error=>{
+          console.log("Error with transactions")
+        })
+         axios.post("https://localhost:8080/api/loans/" +sessionStorage.getItem("email") + "/" + this.state.newUsername).then(res=>{
+          console.log("TESTING UPDATE loans" + res.data)
+        }).catch(error=>{
+          console.log("Error with loans")
+        })
         sessionStorage.setItem("email", this.state.newUsername);
 
       console.log("In update");
