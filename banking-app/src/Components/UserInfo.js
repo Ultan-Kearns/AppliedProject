@@ -22,7 +22,7 @@ class UserInfo extends React.Component {
       prevNumber: "",
       prevPassword: "",
       dob: "",
-      balance:""
+      balance: ""
     };
   }
   handleNewUsernameChange = event => {
@@ -45,7 +45,23 @@ class UserInfo extends React.Component {
       number: event.target.value
     });
   };
+
   update = event => {
+    var user
+    //check if user exists
+    axios
+      .get("https://localhost:8080/api/users/" + this.state.newUsername)
+      .then(res => {
+        //log res for testing
+        console.log(res.data);
+        if (res.data !== null) {
+          sessionStorage.setItem("exists",res.data._id)
+          alert("user already exists")
+         }
+         else{
+         sessionStorage.setItem("exists",null)
+}
+      });
     //if any info is blank set to previous info of user
     if (this.state.number === "null" || this.state.number === "") {
       this.setState({
@@ -64,7 +80,6 @@ class UserInfo extends React.Component {
       });
     }
     if (this.state.password !== "null" && this.state.password !== "") {
-      alert("SHA " + this.state.password);
       this.setState({
         password: sha256(this.state.password)
       });
@@ -74,17 +89,16 @@ class UserInfo extends React.Component {
         password: this.state.prevPassword
       });
       alert("PASS WILL = PREV PASS " + this.state.password);
-
     }
     axios
       .get(
         "https://localhost:8080/api/users/" + sessionStorage.getItem("email")
       )
       .then(res => {
-          this.setState({
-            balance:res.data.balance
-          })
+        this.setState({
+          balance: res.data.balance
         });
+      });
     //hash pass using sha256
     const newUser = {
       _id: this.state.newUsername.toLowerCase(),
@@ -93,17 +107,19 @@ class UserInfo extends React.Component {
       number: this.state.number,
       dob: this.state.dob,
       balance: parseInt(this.state.balance),
-      iban:"",
-      bic:""
+      iban: "",
+      bic: ""
     };
-    alert("USER "  + newUser.balance)
+
     if (
       this.state.number.length === 10 &&
-      this.state.name.length >= 5 && this.state.password.length >= 5
+      this.state.name.length >= 5 &&
+      this.state.password.length >= 5 &&           sessionStorage.getItem("exists") === "null"
+
     ) {
       alert(sessionStorage.getItem("email"));
       //delete original user
-       axios
+      axios
         .delete(
           "https://localhost:8080/api/users/" + sessionStorage.getItem("email")
         )
@@ -123,21 +139,35 @@ class UserInfo extends React.Component {
         .catch(error => {
           console.log("ERR");
         });
-        alert("USER " + this.state.newUsername)
-         axios.post("https://localhost:8080/api/transactions/" +sessionStorage.getItem("email") + "/" + this.state.newUsername).then(res=>{
-          console.log("TESTING UPDATE TRANSACTION" + res.data)
-        }).catch(error=>{
-          console.log("Error with transactions")
+      axios
+        .post(
+          "https://localhost:8080/api/transactions/" +
+            sessionStorage.getItem("email") +
+            "/" +
+            this.state.newUsername
+        )
+        .then(res => {
+          console.log("TESTING UPDATE TRANSACTION" + res.data);
         })
-         axios.post("https://localhost:8080/api/loans/" +sessionStorage.getItem("email") + "/" + this.state.newUsername).then(res=>{
-          console.log("TESTING UPDATE loans" + res.data)
-        }).catch(error=>{
-          console.log("Error with loans")
+        .catch(error => {
+          console.log("Error with transactions");
+        });
+      axios
+        .post(
+          "https://localhost:8080/api/loans/" +
+            sessionStorage.getItem("email") +
+            "/" +
+            this.state.newUsername
+        )
+        .then(res => {
+          console.log("TESTING UPDATE loans" + res.data);
+          sessionStorage.setItem("email", this.state.newUsername);
+          this.updateData();
+          alert("Updated user");
         })
-        sessionStorage.setItem("email", this.state.newUsername);
-
-      console.log("In update");
-       alert("Updated user");
+        .catch(error => {
+          console.log("Error with loans");
+        });
       event.preventDefault();
     } else {
       alert(
@@ -147,6 +177,9 @@ class UserInfo extends React.Component {
     event.preventDefault();
   };
   componentDidMount() {
+    this.updateData();
+  }
+  updateData() {
     axios
       .get(
         "https://localhost:8080/api/users/" + sessionStorage.getItem("email")
@@ -160,7 +193,9 @@ class UserInfo extends React.Component {
             " Date of Birth: " +
             res.data.dob +
             " Username: " +
-            res.data._id + " Balance: " + res.data.balance,
+            res.data._id +
+            " Balance: " +
+            res.data.balance,
           //In case user leaves any information blank just submit their current info
 
           this.setState({
@@ -176,30 +211,33 @@ class UserInfo extends React.Component {
             dob: res.data.dob
           }),
           this.setState({
-            balance:res.data.balance
-          }),
+            balance: res.data.balance
+          })
         );
         password = res.data.password;
-        document.getElementById("basic").append(text);
+        document.getElementById("basic").innerHTML = text;
       });
   }
   deleteUser() {
     var answer = window.prompt("Enter password to delete account");
-    try{
-      if(sha256(answer) === password) {
-      axios.delete("https://localhost:8080/api/transactions/" + sessionStorage.getItem("email"))
-      axios.delete("https://localhost:8080/api/loans/" + sessionStorage.getItem("email"))
-      axios.delete(
-        "https://localhost:8080/api/users/" + sessionStorage.getItem("email")
-      );
-      alert("User deleted");
-      ReactDOM.render(<Login />, document.getElementById("root"));
-    }
-    else{
-      alert("Action aborted, password was incorrect");
-
-    }
-  } catch {
+    try {
+      if (sha256(answer) === password) {
+        axios.delete(
+          "https://localhost:8080/api/transactions/" +
+            sessionStorage.getItem("email")
+        );
+        axios.delete(
+          "https://localhost:8080/api/loans/" + sessionStorage.getItem("email")
+        );
+        axios.delete(
+          "https://localhost:8080/api/users/" + sessionStorage.getItem("email")
+        );
+        alert("User deleted");
+        ReactDOM.render(<Login />, document.getElementById("root"));
+      } else {
+        alert("Action aborted, password was incorrect");
+      }
+    } catch {
       alert("Internal system error");
     }
   }
