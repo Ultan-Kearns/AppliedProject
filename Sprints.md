@@ -38,11 +38,11 @@
 + Allow change of username and update all statements and loans(Done) Issues when username is same as another it deletes
 + Finish Tech Review(Done)
 # Sprint 8 (10th February - 21st February)
-+ Get Statistics generated based on Loans / Statments and financial stats from google
-+ Add Iban validator and bic and add to user schema
-+ Fix all issues and write tests
++ Get Statistics generated based on Loans / Statments and financial stats from google(use chartJS?)
++ Add Iban validator and bic and add to user schema(research on google)
++ Fix all issues and write tests(Fix issue with update do more tests)
 + Add Selenium to tech review
-+ Get Headlines component finished (Reddit, latest news etc...)
++ Get Headlines component finished (Reddit, latest news etc...)(DONE)
 + Start System Design
 + review dissertation
 + ensure user cannot delete account if they have open loans
