@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import Home from "./Components/Home";
 import About from "./Components/About";
 import Loans from "./Components/Loans";
+import Headlines from "./Components/Headlines";
+
 import Transactions from "./Components/Transactions";
 import Statistics from "./Components/Statistics";
 import UserInfo from "./Components/UserInfo";
@@ -36,6 +38,11 @@ class App extends React.Component {
                 <Link to="/About">
                   <Button variant="primary" size="sm">
                     About Us
+                  </Button>
+                </Link>
+                <Link to="/Headlines">
+                  <Button variant="primary " size="sm">
+                    Headlines
                   </Button>
                 </Link>
                 <Link to="/Loans">
@@ -77,6 +84,8 @@ class App extends React.Component {
             <Route path="/Transactions" component={Transactions} />
             <Route path="/UserInfo" component={UserInfo} />
             <Route path="/Statistics" component={Statistics} />
+            <Route path="/Headlines" component={Headlines} />
+
             {/*If route undefined redirect to error*/}
             <Route path="/*" component={Error} />
           </Switch>

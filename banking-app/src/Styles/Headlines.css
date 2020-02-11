@@ -1,0 +1,10 @@
+#reddit_headlines {
+  border: 4px solid black;
+  margin: 10%;
+  list-style: none !important;
+}
+#reddit_headlines img {
+  height: 150px !important;
+  width: 150px !important;
+  margin-top: 10%;
+}

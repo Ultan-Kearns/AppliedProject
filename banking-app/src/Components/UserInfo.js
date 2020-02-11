@@ -96,14 +96,17 @@ class UserInfo extends React.Component {
       bic: ""
     };
     //problem with axios not being asynchronous may find a different way to handle this
-
+    axios.get("https://localhost:8080/api/users" + newUser._id).then(res=>
+    {
+      //try and see if user exists synchronously and  set value
+    })
 try{
     if (
       this.state.number.length === 10 &&
       this.state.name.length >= 5 &&
-      this.state.password.length >= 5 
+      this.state.password.length >= 5
     ) {
-      alert(sessionStorage.getItem("email"));
+
       //delete original user
       axios
         .delete(
@@ -205,7 +208,7 @@ try{
           })
         );
         password = res.data.password;
-        document.getElementById("basic").innerHTML = text;
+        document.getElementById("basic").appendChild(text)
       });
   }
   deleteUser() {
