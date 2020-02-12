@@ -54,34 +54,36 @@
 \contentsline {subsection}{\numberline {4.2.2}About Express}{24}{subsection.4.2.2}% 
 \contentsline {subsection}{\numberline {4.2.3}About React}{25}{subsection.4.2.3}% 
 \contentsline {subsection}{\numberline {4.2.4}About Node}{25}{subsection.4.2.4}% 
-\contentsline {section}{\numberline {4.3}React Libraries}{26}{section.4.3}% 
-\contentsline {subsection}{\numberline {4.3.1}Axios}{26}{subsection.4.3.1}% 
-\contentsline {subsection}{\numberline {4.3.2}React Helmet}{26}{subsection.4.3.2}% 
-\contentsline {subsection}{\numberline {4.3.3}Create-React-App}{27}{subsection.4.3.3}% 
-\contentsline {section}{\numberline {4.4}Third Party APIs}{27}{section.4.4}% 
-\contentsline {subsection}{\numberline {4.4.1}NodeMailer}{27}{subsection.4.4.1}% 
-\contentsline {subsection}{\numberline {4.4.2}News API}{27}{subsection.4.4.2}% 
-\contentsline {subsection}{\numberline {4.4.3}Reddit}{27}{subsection.4.4.3}% 
-\contentsline {section}{\numberline {4.5}Architecture}{27}{section.4.5}% 
-\contentsline {subsection}{\numberline {4.5.1}REST(Representational State Transfer)}{27}{subsection.4.5.1}% 
-\contentsline {section}{\numberline {4.6}Security}{28}{section.4.6}% 
-\contentsline {subsection}{\numberline {4.6.1}OpenSSL}{28}{subsection.4.6.1}% 
-\contentsline {subsection}{\numberline {4.6.2}SHA256}{28}{subsection.4.6.2}% 
-\contentsline {section}{\numberline {4.7}Database}{28}{section.4.7}% 
-\contentsline {subsection}{\numberline {4.7.1}MLAB}{28}{subsection.4.7.1}% 
-\contentsline {section}{\numberline {4.8}Languages}{29}{section.4.8}% 
-\contentsline {subsection}{\numberline {4.8.1}Javascript}{29}{subsection.4.8.1}% 
-\contentsline {subsection}{\numberline {4.8.2}HTML(Hyper-Text Markup Language)}{30}{subsection.4.8.2}% 
-\contentsline {section}{\numberline {4.9}Documentation}{30}{section.4.9}% 
-\contentsline {subsection}{\numberline {4.9.1}\LaTeX }{30}{subsection.4.9.1}% 
-\contentsline {section}{\numberline {4.10}Styles}{31}{section.4.10}% 
-\contentsline {subsection}{\numberline {4.10.1}Cascading Style Sheets(CSS)}{31}{subsection.4.10.1}% 
-\contentsline {subsection}{\numberline {4.10.2}React Bootstrap}{31}{subsection.4.10.2}% 
-\contentsline {section}{\numberline {4.11}Cloud}{31}{section.4.11}% 
-\contentsline {subsection}{\numberline {4.11.1}Google Cloud Platform}{31}{subsection.4.11.1}% 
-\contentsline {subsection}{\numberline {4.11.2}Docker}{32}{subsection.4.11.2}% 
-\contentsline {chapter}{\numberline {5}System Design}{33}{chapter.5}% 
-\contentsline {chapter}{\numberline {6}System Evaluation}{34}{chapter.6}% 
-\contentsline {chapter}{\numberline {7}Conclusion}{35}{chapter.7}% 
-\contentsline {chapter}{Appendices}{36}{section*.10}% 
-\contentsline {chapter}{\numberline {A}Preamble \& Intro}{37}{Appendix.1.A}% 
+\contentsline {section}{\numberline {4.3}Testing}{26}{section.4.3}% 
+\contentsline {subsection}{\numberline {4.3.1}Selenium}{26}{subsection.4.3.1}% 
+\contentsline {section}{\numberline {4.4}React Libraries}{26}{section.4.4}% 
+\contentsline {subsection}{\numberline {4.4.1}Axios}{26}{subsection.4.4.1}% 
+\contentsline {subsection}{\numberline {4.4.2}React Helmet}{27}{subsection.4.4.2}% 
+\contentsline {subsection}{\numberline {4.4.3}Create-React-App}{27}{subsection.4.4.3}% 
+\contentsline {section}{\numberline {4.5}Third Party APIs}{27}{section.4.5}% 
+\contentsline {subsection}{\numberline {4.5.1}NodeMailer}{27}{subsection.4.5.1}% 
+\contentsline {subsection}{\numberline {4.5.2}News API}{27}{subsection.4.5.2}% 
+\contentsline {subsection}{\numberline {4.5.3}Reddit}{27}{subsection.4.5.3}% 
+\contentsline {section}{\numberline {4.6}Architecture}{28}{section.4.6}% 
+\contentsline {subsection}{\numberline {4.6.1}REST(Representational State Transfer)}{28}{subsection.4.6.1}% 
+\contentsline {section}{\numberline {4.7}Security}{28}{section.4.7}% 
+\contentsline {subsection}{\numberline {4.7.1}OpenSSL}{28}{subsection.4.7.1}% 
+\contentsline {subsection}{\numberline {4.7.2}SHA256}{28}{subsection.4.7.2}% 
+\contentsline {section}{\numberline {4.8}Database}{29}{section.4.8}% 
+\contentsline {subsection}{\numberline {4.8.1}MLAB}{29}{subsection.4.8.1}% 
+\contentsline {section}{\numberline {4.9}Languages}{30}{section.4.9}% 
+\contentsline {subsection}{\numberline {4.9.1}Javascript}{30}{subsection.4.9.1}% 
+\contentsline {subsection}{\numberline {4.9.2}HTML(Hyper-Text Markup Language)}{30}{subsection.4.9.2}% 
+\contentsline {section}{\numberline {4.10}Documentation}{31}{section.4.10}% 
+\contentsline {subsection}{\numberline {4.10.1}\LaTeX }{31}{subsection.4.10.1}% 
+\contentsline {section}{\numberline {4.11}Styles}{31}{section.4.11}% 
+\contentsline {subsection}{\numberline {4.11.1}Cascading Style Sheets(CSS)}{31}{subsection.4.11.1}% 
+\contentsline {subsection}{\numberline {4.11.2}React Bootstrap}{32}{subsection.4.11.2}% 
+\contentsline {section}{\numberline {4.12}Cloud}{32}{section.4.12}% 
+\contentsline {subsection}{\numberline {4.12.1}Google Cloud Platform}{32}{subsection.4.12.1}% 
+\contentsline {subsection}{\numberline {4.12.2}Docker}{32}{subsection.4.12.2}% 
+\contentsline {chapter}{\numberline {5}System Design}{34}{chapter.5}% 
+\contentsline {chapter}{\numberline {6}System Evaluation}{35}{chapter.6}% 
+\contentsline {chapter}{\numberline {7}Conclusion}{36}{chapter.7}% 
+\contentsline {chapter}{Appendices}{37}{section*.10}% 
+\contentsline {chapter}{\numberline {A}Preamble \& Intro}{38}{Appendix.1.A}% 

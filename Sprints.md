@@ -41,7 +41,7 @@
 + Get Statistics generated based on Loans / Statments and financial stats from google(use chartJS?)
 + Add Iban validator and bic and add to user schema(research on google)
 + Fix all issues and write tests(Fix issue with update do more tests)
-+ Add Selenium to tech review
++ Add Selenium to tech review(DONE)
 + Get Headlines component finished (Reddit, latest news etc...)(DONE)
 + Start System Design
 + review dissertation

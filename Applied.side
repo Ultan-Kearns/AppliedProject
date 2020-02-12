@@ -714,6 +714,427 @@
       ],
       "value": "test123"
     }]
+  }, {
+    "id": "2434edf7-edd1-4cb9-9b4b-c5775c797bc9",
+    "name": "Loading Pages",
+    "commands": [{
+      "id": "9a86220e-9ba3-4083-a287-77ab4f06cd52",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5e43c012-39c1-48f0-9ae1-312fec636e3b",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1083x583",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6344a391-1f43-476a-a510-9d5a49a07deb",
+      "comment": "",
+      "command": "click",
+      "target": "css=#username > .form-control",
+      "targets": [
+        ["css=#username > .form-control", "css:finder"],
+        ["xpath=//input[@value='ultankearns@gmail.com']", "xpath:attributes"],
+        ["xpath=//div[@id='username']/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3d417ce6-e877-4eca-8a4b-d9ee1084595a",
+      "comment": "",
+      "command": "click",
+      "target": "id=loginButton",
+      "targets": [
+        ["id=loginButton", "id"],
+        ["css=#loginButton", "css:finder"],
+        ["xpath=//button[@id='loginButton']", "xpath:attributes"],
+        ["xpath=//form[@id='loginForm']/button[3]", "xpath:idRelative"],
+        ["xpath=//button[3]", "xpath:position"],
+        ["xpath=//button[contains(.,'Login')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "af95c903-b833-4e7b-b928-cdf2b20648e2",
+      "comment": "",
+      "command": "click",
+      "target": "css=a:nth-child(1) > .btn",
+      "targets": [
+        ["css=a:nth-child(1) > .btn", "css:finder"],
+        ["xpath=//button[@type='button']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/nav/div/div/a/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Home')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "45934415-2e03-4fa9-af85-5a5984832226",
+      "comment": "",
+      "command": "click",
+      "target": "css=a:nth-child(2) > .btn",
+      "targets": [
+        ["css=a:nth-child(2) > .btn", "css:finder"],
+        ["xpath=(//button[@type='button'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/nav/div/div/a[2]/button", "xpath:idRelative"],
+        ["xpath=//a[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'About Us')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "933c37d7-c66e-463a-a649-a11438cdfcce",
+      "comment": "",
+      "command": "click",
+      "target": "css=a:nth-child(3) > .btn",
+      "targets": [
+        ["css=a:nth-child(3) > .btn", "css:finder"],
+        ["xpath=(//button[@type='button'])[3]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/nav/div/div/a[3]/button", "xpath:idRelative"],
+        ["xpath=//a[3]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Headlines')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "9d4216d8-f366-44d7-a443-02d0fc05707f",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=a:nth-child(4) > .btn",
+      "targets": [
+        ["css=a:nth-child(4) > .btn", "css:finder"],
+        ["xpath=(//button[@type='button'])[4]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/nav/div/div/a[4]/button", "xpath:idRelative"],
+        ["xpath=//a[4]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Loans')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "94fce1cf-a855-458b-8055-75ca669e0e6c",
+      "comment": "",
+      "command": "click",
+      "target": "css=a:nth-child(4) > .btn",
+      "targets": [
+        ["css=a:nth-child(4) > .btn", "css:finder"],
+        ["xpath=(//button[@type='button'])[4]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/nav/div/div/a[4]/button", "xpath:idRelative"],
+        ["xpath=//a[4]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Loans')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e44eccc8-2b38-48cb-9097-6585eba8bb2f",
+      "comment": "",
+      "command": "click",
+      "target": "css=a:nth-child(5) > .btn",
+      "targets": [
+        ["css=a:nth-child(5) > .btn", "css:finder"],
+        ["xpath=(//button[@type='button'])[5]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/nav/div/div/a[5]/button", "xpath:idRelative"],
+        ["xpath=//a[5]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Transactions')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "cace05a5-3fb0-4d34-8b95-02dda48dce49",
+      "comment": "",
+      "command": "click",
+      "target": "css=a:nth-child(6) > .btn",
+      "targets": [
+        ["css=a:nth-child(6) > .btn", "css:finder"],
+        ["xpath=(//button[@type='button'])[6]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/nav/div/div/a[6]/button", "xpath:idRelative"],
+        ["xpath=//a[6]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Statistics')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "dde4a572-9e85-4336-8095-a15db1c2b958",
+      "comment": "",
+      "command": "click",
+      "target": "css=a:nth-child(7) > .btn",
+      "targets": [
+        ["css=a:nth-child(7) > .btn", "css:finder"],
+        ["xpath=(//button[@type='button'])[7]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/nav/div/div/a[7]/button", "xpath:idRelative"],
+        ["xpath=//a[7]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'User Info')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ed9b8f3b-d343-464e-91df-ef8b72a95615",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=a:nth-child(7) > .btn",
+      "targets": [
+        ["css=a:nth-child(7) > .btn", "css:finder"],
+        ["xpath=(//button[@type='button'])[7]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/nav/div/div/a[7]/button", "xpath:idRelative"],
+        ["xpath=//a[7]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'User Info')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "8f888d7d-5a1a-4985-83c7-ae08e6ea7269",
+      "comment": "",
+      "command": "type",
+      "target": "css=#username > .form-control",
+      "targets": [
+        ["css=#username > .form-control", "css:finder"],
+        ["xpath=//input[@value='ultankearns@gmail.com']", "xpath:attributes"],
+        ["xpath=//div[@id='username']/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "ultankearns@gmail.com"
+    }, {
+      "id": "8b28db36-ff7d-4260-abe5-04af2d897c29",
+      "comment": "",
+      "command": "type",
+      "target": "css=#password > .form-control",
+      "targets": [
+        ["css=#password > .form-control", "css:finder"],
+        ["xpath=//input[@value='test123']", "xpath:attributes"],
+        ["xpath=//div[@id='password']/input", "xpath:idRelative"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": "test123"
+    }, {
+      "id": "82b4e17a-efd7-49b1-89f1-37d84d0fe2a5",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=a:nth-child(7) > .btn",
+      "targets": [
+        ["css=a:nth-child(7) > .btn", "css:finder"],
+        ["xpath=(//button[@type='button'])[7]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/nav/div/div/a[7]/button", "xpath:idRelative"],
+        ["xpath=//a[7]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'User Info')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "6b894c75-0732-4966-b7ac-1617c153c673",
+      "comment": "",
+      "command": "click",
+      "target": "css=a:nth-child(1) > .btn",
+      "targets": [
+        ["css=a:nth-child(1) > .btn", "css:finder"],
+        ["xpath=//button[@type='button']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/nav/div/div/a/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Home')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "6727c72a-2950-4fed-b46d-58c7f6bc565e",
+      "comment": "",
+      "command": "click",
+      "target": "id=logout",
+      "targets": [
+        ["id=logout", "id"],
+        ["css=#logout", "css:finder"],
+        ["xpath=//button[@id='logout']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/nav/div/div/button", "xpath:idRelative"],
+        ["xpath=//div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Logout')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "c4728a52-b475-466f-badb-178ce3588585",
+    "name": "TakeOutLoanFail",
+    "commands": [{
+      "id": "33ec09f5-d200-445c-91b4-a3cb6305c8c2",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7a636759-56c3-4cf9-ace2-ee7766136576",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1083x583",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3415a06e-2b0c-4e1b-91a7-ce4e4a4c39f4",
+      "comment": "",
+      "command": "click",
+      "target": "css=#username > .form-control",
+      "targets": [
+        ["css=#username > .form-control", "css:finder"],
+        ["xpath=//input[@value='ultankearns@gmail.com']", "xpath:attributes"],
+        ["xpath=//div[@id='username']/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fa2fbf44-541c-4e16-a59d-8c6ea4c462f3",
+      "comment": "",
+      "command": "click",
+      "target": "css=#username > .form-control",
+      "targets": [
+        ["css=#username > .form-control", "css:finder"],
+        ["xpath=//input[@value='ultankearns@gmail.com']", "xpath:attributes"],
+        ["xpath=//div[@id='username']/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3e976e0f-703b-4c4d-83fa-c8210704f7b0",
+      "comment": "",
+      "command": "doubleClick",
+      "target": "css=#username > .form-control",
+      "targets": [
+        ["css=#username > .form-control", "css:finder"],
+        ["xpath=//input[@value='ultankearns@gmail.com']", "xpath:attributes"],
+        ["xpath=//div[@id='username']/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1858d214-7ff7-432c-86d8-97e9cb524a14",
+      "comment": "",
+      "command": "click",
+      "target": "css=#username > .form-control",
+      "targets": [
+        ["css=#username > .form-control", "css:finder"],
+        ["xpath=//input[@value='ultankearns@gmail.com']", "xpath:attributes"],
+        ["xpath=//div[@id='username']/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "43611f75-6159-4591-9b09-a577f1396267",
+      "comment": "",
+      "command": "click",
+      "target": "id=loginButton",
+      "targets": [
+        ["id=loginButton", "id"],
+        ["css=#loginButton", "css:finder"],
+        ["xpath=//button[@id='loginButton']", "xpath:attributes"],
+        ["xpath=//form[@id='loginForm']/button[3]", "xpath:idRelative"],
+        ["xpath=//button[3]", "xpath:position"],
+        ["xpath=//button[contains(.,'Login')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "18d1f6a3-5d1a-4829-840b-a104908cb21f",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,134)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0756a5c7-5640-4a06-8b89-b8350d89621f",
+      "comment": "",
+      "command": "click",
+      "target": "css=a:nth-child(4) > .btn",
+      "targets": [
+        ["css=a:nth-child(4) > .btn", "css:finder"],
+        ["xpath=(//button[@type='button'])[4]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/nav/div/div/a[4]/button", "xpath:idRelative"],
+        ["xpath=//a[4]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Loans')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "99fdd668-ff97-41eb-9b34-d1815fba6c19",
+      "comment": "",
+      "command": "click",
+      "target": "css=input",
+      "targets": [
+        ["css=input", "css:finder"],
+        ["xpath=//input[@value='']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/form/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6184acd7-d073-4c69-9872-0266b129929d",
+      "comment": "",
+      "command": "type",
+      "target": "css=input",
+      "targets": [
+        ["css=input", "css:finder"],
+        ["xpath=//input[@value='']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/form/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "10"
+    }, {
+      "id": "3b108a11-2390-40d3-a0c0-3681f212a0a2",
+      "comment": "",
+      "command": "chooseOkOnNextConfirmation",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1fb146b5-ee75-4cf3-95b3-855a38c27cf5",
+      "comment": "",
+      "command": "click",
+      "target": "css=.loanApply",
+      "targets": [
+        ["css=.loanApply", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/form", "xpath:idRelative"],
+        ["xpath=//form", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6fbf071e-6a27-4674-8e17-d6f5d08f00fc",
+      "comment": "",
+      "command": "click",
+      "target": "css=h1",
+      "targets": [
+        ["css=h1", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/h1", "xpath:idRelative"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Apply & View Loans')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "9ad8a950-d888-4cc3-99a8-d19e50f75a5c",
+      "comment": "",
+      "command": "click",
+      "target": "id=loanButton",
+      "targets": [
+        ["id=loanButton", "id"],
+        ["css=#loanButton", "css:finder"],
+        ["xpath=//button[@id='loanButton']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/form/button", "xpath:idRelative"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Apply for Loan')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ba2ae280-8bda-4a5b-a451-19a0b448e777",
+      "comment": "",
+      "command": "assertConfirmation",
+      "target": "Are you sure you want to take out a loan for: 10 ?",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "77c84d46-585c-4d3a-9f12-e243befbf3d7",
+      "comment": "",
+      "command": "webdriverChooseOkOnVisibleConfirmation",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0c9ae58d-f8c3-4dd4-89b4-b5959afb8808",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "dd220c3e-5c20-4d91-a9a0-7a7740392436",
+      "comment": "",
+      "command": "assertAlert",
+      "target": "Loan aborted\n Reasons why this may happen:\nLoan cannot be null and user must have at least 25% of loan amount in balance\nUsers can only have 5 open loans at a time\n Loans must also be less than or equal to €500",
+      "targets": [],
+      "value": ""
+    }]
   }],
   "suites": [{
     "id": "81a06ccf-77bd-4c1d-a997-33234b263f57",
