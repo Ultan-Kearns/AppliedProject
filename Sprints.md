@@ -38,9 +38,9 @@
 + Allow change of username and update all statements and loans(Done) Issues when username is same as another it deletes
 + Finish Tech Review(Done)
 # Sprint 8 (10th February - 21st February)
-+ Get Statistics generated based on Loans / Statments and financial stats from google(use chartJS?)
++ Get Statistics generated based on Loans / Statments and financial stats from google(use chartJS?)(Done just need to expand a bit more and add catches to Axios and add some styles)
 + Add Iban validator and bic and add to user schema(research on google)
-+ Fix all issues and write tests(Fix issue with update do more tests)
++ Fix all issues and write tests(Fix issue with update do more tests,use promise?)
 + Add Selenium to tech review(DONE)
 + Get Headlines component finished (Reddit, latest news etc...)(DONE)
 + Start System Design
