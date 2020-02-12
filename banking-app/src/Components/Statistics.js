@@ -8,7 +8,7 @@ class Statistics extends React.Component {
   componentDidMount(){
     axios.get("https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=MSFT&apikey=demo").then(res=>{
       var infoText = document.createTextNode(
-        "Information: " + res.data["Meta Data"]["1. Information"] + " Symbol type: " + res.data["Meta Data"]
+        "Daily Time Series: " + res.data["Meta Data"]["1. Information"] + " Symbol type: " + res.data["Meta Data"]
         ["2. Symbol"] + " Last Updated: " + res.data["Meta Data"]["3. Last Refreshed"] + " Time Zone " + res.data["Meta Data"]["5. Time Zone"]
       )
 
@@ -27,6 +27,24 @@ class Statistics extends React.Component {
       document.getElementById("stock").appendChild(node);
       document.getElementById("information").appendChild(info);
     })
+    axios.get("https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=BTC&to_currency=EUR&apikey=G38RVCM1OWLSKALP").then(res=>{
+      var eur_to_btc = "1 Euro = " + res.data["Realtime Currency Exchange Rate"]["5. Exchange Rate"] + "BTC"
+      var btcNode = document.createElement("p")
+      btcNode.append(eur_to_btc)
+      document.getElementById("eurbtc").appendChild(btcNode)
+})
+axios.get("https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=GBP&to_currency=EUR&apikey=G38RVCM1OWLSKALP").then(res=>{
+  var eur_to_sterling = "1 Euro = " + res.data["Realtime Currency Exchange Rate"]["5. Exchange Rate"] + "GBP"
+  var sterlingNode = document.createElement("p")
+  sterlingNode.append(eur_to_sterling)
+  document.getElementById("eursterling").appendChild(sterlingNode)
+})
+axios.get("https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=USD&to_currency=EUR&apikey=G38RVCM1OWLSKALP").then(res=>{
+  var eur_to_dollar = "1 Euro = " + res.data["Realtime Currency Exchange Rate"]["5. Exchange Rate"] + "USD"
+  var dollarNode = document.createElement("p")
+  dollarNode.append(eur_to_dollar)
+  document.getElementById("eurdollar").appendChild(dollarNode)
+})
   }
   render(){
   return (
@@ -37,6 +55,14 @@ class Statistics extends React.Component {
       <h1>Welcome to the Statistics!</h1>
       <h2 id = "information"></h2>
       <div id = "stock">
+      </div>
+      <div id = "currency">
+      <h3>Daily Exchange Rates</h3>
+      <h3 id = "eurbtc"></h3>
+      <h3 id = "eursterling"></h3>
+      <h3 id = "eurdollar"></h3>
+      <h3 id = "eurjpy"></h3>
+
       </div>
     </div>
   );

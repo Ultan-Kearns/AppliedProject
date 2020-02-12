@@ -54,6 +54,8 @@
 + Finish System design & review dissertation
 # Do whenever least concern
 + fix style on homepages
+# ideas
++ Use tensorflowJS to analyze data from API and predict markets
 ## Notes
 ### I will make periodic changes due to changes in workload, personal issues,etc
 ### I run regression tests as well as module tests after each sprint
