@@ -53,9 +53,13 @@ class Loans extends React.Component {
               " ,Owed to: " +
               this.state.owedTo
           )
-
+          var btn = document.createElement("input")
+          btn.value = "Pay Back"
+          btn.type = "Button"
+          btn.onclick = this.test();
           node.append(text)
           document.getElementById("loans").appendChild(node)
+          document.getElementById("loans").appendChild(btn)
         }
       })
   }
@@ -110,6 +114,9 @@ class Loans extends React.Component {
     }
 
     event.preventDefault()
+  }
+  test(){
+    alert("Hello")
   }
   render() {
     return (

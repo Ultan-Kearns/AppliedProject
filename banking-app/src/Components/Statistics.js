@@ -23,7 +23,7 @@ var transactionState = {
   datasets: [
     {
       label: "Transaction Amount",
-      backgroundColor: "rgba(75,192,192,1)",
+      backgroundColor: "rgba(255,0,0,1)",
       borderColor: "rgba(0,0,0,1)",
       borderWidth: 2,
       data: []
@@ -40,6 +40,9 @@ var transactionState = {
       loanState.labels[i] = res.data[i].amount
     }
     return loanState
+  })
+  .catch(function(error) {
+    alert("Somethings wrong")
   });
   axios
    .get("https://localhost:8080/api/transactions/" + sessionStorage.getItem("email"))
@@ -50,10 +53,15 @@ var transactionState = {
        transactionState.labels[i] = res.data[i].location
      }
      return transactionState
+   })
+   .catch(function(error) {
+    alert("Somethings wrong")
    });
 class Statistics extends React.Component {
+
   componentDidMount() {
-    //fails when api calls maxed
+
+    //this is for getting daily conversion rates and stock info
     try {
       axios
         .get(
@@ -77,10 +85,20 @@ class Statistics extends React.Component {
               " Volume: " +
               res.data["Time Series (Daily)"][d]["5. volume"]
           );
-           node.append(text);
+          node.append(text);
           document.getElementById("stock").appendChild(node);
-        }
-      );
+        })
+        .catch(function(error) {
+          var node = document.createElement("LI");
+          node.id = "stockresults";
+          var text = document.createTextNode(
+            "Sorry something went wrong while getting the stock results data :*("
+          );
+          node.append(text);
+          document.getElementById("stock").appendChild(node);
+
+          console.log("error");
+        });
       axios
         .get(
           "https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=EUR&to_currency=BTC&apikey=G38RVCM1OWLSKALP"
@@ -93,6 +111,17 @@ class Statistics extends React.Component {
           var btcNode = document.createElement("p");
           btcNode.append(eur_to_btc);
           document.getElementById("eurbtc").appendChild(btcNode);
+        })
+        .catch(function(error) {
+          var node = document.createElement("LI");
+          node.id = "currency";
+          var text = document.createTextNode(
+            "Sorry something went wrong while getting the currency value data :*("
+          );
+          node.append(text);
+          document.getElementById("eurbtc").appendChild(node);
+
+          console.log("error");
         });
       axios
         .get(
@@ -106,6 +135,17 @@ class Statistics extends React.Component {
           var sterlingNode = document.createElement("p");
           sterlingNode.append(eur_to_sterling);
           document.getElementById("eursterling").appendChild(sterlingNode);
+        })
+        .catch(function(error) {
+          var node = document.createElement("LI");
+          node.id = "currency";
+          var text = document.createTextNode(
+            "Sorry something went wrong while getting the currency value data :*("
+          );
+          node.append(text);
+          document.getElementById("eursterling").appendChild(node);
+
+          console.log("error");
         });
       axios
         .get(
@@ -119,6 +159,17 @@ class Statistics extends React.Component {
           var dollarNode = document.createElement("p");
           dollarNode.append(eur_to_dollar);
           document.getElementById("eurdollar").appendChild(dollarNode);
+        })
+        .catch(function(error) {
+          var node = document.createElement("LI");
+          node.id = "currency";
+          var text = document.createTextNode(
+            "Sorry something went wrong while getting the currency value data :*("
+          );
+          node.append(text);
+          document.getElementById("eurdollar").appendChild(node);
+
+          console.log("error");
         });
       axios
         .get(
@@ -132,15 +183,23 @@ class Statistics extends React.Component {
           var cnyNode = document.createElement("p");
           cnyNode.append(eur_to_cny);
           document.getElementById("eurcny").appendChild(cnyNode);
-        });
+        })
+        .catch(function(error) {
+          var node = document.createElement("LI");
+          node.id = "currency";
+          var text = document.createTextNode(
+            "Sorry something went wrong while getting the currency value data :*("
+          );
+          node.append(text);
+          document.getElementById("stock").appendChild(node);
 
+          console.log("error");
+        });
     } catch (error) {
       alert("MAX API CALLS FOR FINANCIAL DATA REACHED");
     }
   }
-
   render() {
-
     return (
       <div className="Statistics">
         <Helmet>
@@ -156,8 +215,8 @@ class Statistics extends React.Component {
           <h3 id="eurcny" />
         </div>
         <div id="charts">
-        <h3>Chart Section</h3>
-        <p>Heres some charts we made based on your account activity</p>
+          <h3>Chart Section</h3>
+          <p>Heres some charts we made based on your account activity</p>
           <Bar
             data={loanState}
             options={{

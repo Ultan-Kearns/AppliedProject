@@ -1,11 +1,15 @@
 # SPRINT 1 (Completed):
 + GET BASIC STYLE OF APPLICATION AND PAGES DONE ( DONE)
++ Read React Docs
++ Read Mongoose Docs
++ Read Node docs
 # SPRINT 2 (3rd OCT - 11th OCT) (Completed):
 + GET DATA OFF OF SERVER AND HAVE IT STYLED(Done)
 + READJUST TIMES (done)
 # SPRINT 3(16TH NOV - 31st Nov):(Completed)
 + Add more to statement schema(done)
 + Test app(done)
+### Sprints were delayed in November due to exams and assignments
 # SPRINT 4(9th January - 13th January)(Completed):
 + Work on about page(done)
 + work on statments page(done)
@@ -38,20 +42,21 @@
 + Allow change of username and update all statements and loans(Done) Issues when username is same as another it deletes
 + Finish Tech Review(Done)
 # Sprint 8 (10th February - 21st February)
-+ Get Statistics generated based on Loans / Statments and financial stats from google(use chartJS?)(Done just need to expand a bit more and add catches to Axios and add some styles)
++ Get Statistics generated based on Loans / Statments and financial stats from google(Done just need to expand a bit more and add catches to Axios and add some styles and test)
 + Add Iban validator and bic and add to user schema(research on google)
-+ Fix all issues and write tests(Fix issue with update do more tests,use promise?)
++ Fix all issues and write tests(add catch to axios, do more tests,Fix issue with update use promise?)
 + Add Selenium to tech review(DONE)
 + Get Headlines component finished (Reddit, latest news etc...)(DONE)
 + Start System Design
 + review dissertation
-+ ensure user cannot delete account if they have open loans
++ ensure user cannot delete account if they have open loans(Should be easy enough just use sessionStorage)
 # Sprint 9 (21st February - 25th February)
-+ Brainstorm ideas(Chart.js would be good idea for stats)
++ Brainstorm ideas(tensorflowJS?)
 + research Docker + get it working
 + refactor and test code
 + Host on google cloud
 + Finish System design & review dissertation
++ write more sprints
 # Do whenever least concern
 + fix style on homepages
 # ideas
