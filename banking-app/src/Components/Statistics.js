@@ -7,6 +7,7 @@ const axios = require("axios").default;
 
 //change this to get labels of dates from loans /transactions
 var loanState = {
+  type:'bar',
   labels: [],
   datasets: [
     {
@@ -15,10 +16,22 @@ var loanState = {
       borderColor: "rgba(0,0,0,1)",
       borderWidth: 2,
       data: []
-    }
-  ]
+    },
+  ],
+  scales: {
+        xAxes: [{
+          display: false,
+          ticks: {
+            min: 0
+          }
+        }],
+        yAxes: [{
+          display: false
+        }],
+      }
 };
 var transactionState = {
+    type:'bar',
   labels: [],
   datasets: [
     {
@@ -26,36 +39,51 @@ var transactionState = {
       backgroundColor: "rgba(255,0,0,1)",
       borderColor: "rgba(0,0,0,1)",
       borderWidth: 2,
-      data: []
+      data: [0.0002]
     }
-  ]
+  ],
+  scales: {
+        xAxes: [{
+          display: false,
+          ticks: {
+            min: 0
+          }
+        }],
+        yAxes: [{
+          display: false
+        }],
+      }
 };
  axios
   .get("https://localhost:8080/api/loans/" + sessionStorage.getItem("email"))
   .then(res => {
-    console.log(loanState.datasets[0].label)
+    console.log(res.data)
     for(var i = 0; i < res.data.length; i++)
     {
-      loanState.datasets[i].data[i] = res.data[i].amount
+      loanState.datasets[0].data[i] = res.data[i].amount
       loanState.labels[i] = res.data[i].amount
+      console.log("DATA LOANS " +   loanState.datasets[0].data[i])
+
     }
     return loanState
   })
   .catch(function(error) {
-    alert("Somethings wrong")
-  });
+    alert("Error: " + error)  });
   axios
    .get("https://localhost:8080/api/transactions/" + sessionStorage.getItem("email"))
    .then(res => {
      for(var i = 0; i < res.data.length; i++)
      {
-       transactionState.datasets[i].data[i] = res.data[i].cost
+       transactionState.datasets[0].data[i] = res.data[i].cost
        transactionState.labels[i] = res.data[i].location
+       console.log("DATA " +   loanState.datasets[0].data[i])
+
      }
      return transactionState
    })
    .catch(function(error) {
-    alert("Somethings wrong")
+     console.log("tRANS " + transactionState.datasets[0])
+         alert("Error: " + error)
    });
 class Statistics extends React.Component {
 

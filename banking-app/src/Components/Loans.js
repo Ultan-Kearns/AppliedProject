@@ -53,14 +53,10 @@ class Loans extends React.Component {
               " ,Owed to: " +
               this.state.owedTo
           )
-          var btn = document.createElement("input")
-          btn.value = "Pay Back"
-          btn.type = "Button"
-          btn.onclick = this.test();
+
           node.append(text)
           document.getElementById("loans").appendChild(node)
-          document.getElementById("loans").appendChild(btn)
-        }
+         }
       })
   }
   handleAmountChange = event => {
@@ -71,14 +67,12 @@ class Loans extends React.Component {
   handleSubmitForm = event => {
     const axios = require("axios").default
     var date = new Date();
-    var fullDate =
-      date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear()
-      var answer = window.confirm("Are you sure you want to take out a loan for: " + this.state.amount + " ?")
+    var answer = window.confirm("Are you sure you want to take out a loan for: " + this.state.amount + " ?")
     if (this.state.amount !== "" && answer === true && parseInt(this.state.amount) <= parseInt(sessionStorage.getItem("balance")) * 0.25 && openLoan <= 5 && this.state.amount <= 500) {
       const newLoan = {
         email: sessionStorage.getItem("email"),
         amount: this.state.amount,
-        date: fullDate,
+        date: date,
         owedTo: "Independent Banking",
         status: "Open"
       }
@@ -87,7 +81,7 @@ class Loans extends React.Component {
         cost: this.state.amount,
         location: "IndependentBanking.com",
         name: sessionStorage.getItem("username"),
-        date: fullDate
+        date: date
       }
       axios.post("https://localhost:8080/api/transactions",newTransaction).then(res =>{
         console.log(res)
