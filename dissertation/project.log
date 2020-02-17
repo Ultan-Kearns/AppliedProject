@@ -1,6 +1,6 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Arch Linux) (preloaded format=pdflatex 2020.2.9)  11 FEB 2020 23:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Arch Linux) (preloaded format=pdflatex 2020.2.9)  17 FEB 2020 12:42
 entering extended mode
- restricted \write18 enabled.
+ \write18 enabled.
  %&-line parsing enabled.
 **project
 (./project.tex
@@ -151,7 +151,7 @@ LaTeX Info: Redefining \addtolength on input line 81.
 )
 (/usr/share/texmf-dist/tex/latex/tools/shellesc.sty
 Package: shellesc 2016/06/07 v0.02b unified shell escape interface for LaTeX
-Package shellesc Info: Restricted shell escape enabled on input line 72.
+Package shellesc Info: Unrestricted shell escape enabled on input line 70.
 )
 (/usr/share/texmf-dist/tex/latex/ifplatform/ifplatform.sty
 Package: ifplatform 2017/10/13 v0.4a Testing for the operating system
@@ -171,11 +171,13 @@ Package pdftexcmds Info: \pdfdraftmode found.
 (/usr/share/texmf-dist/tex/generic/oberdiek/catchfile.sty
 Package: catchfile 2016/05/16 v1.7 Catch the contents of a file (HO)
 )
+runsystem(uname -s > "project.w18")...executed.
 
-Package ifplatform Warning: 
-    shell escape is disabled, so I can only detect \ifwindows.
+ (./project.w18)
+runsystem(rm -- "project.w18")...executed.
 
-) (/usr/share/texmf-dist/tex/generic/xstring/xstring.sty
+)
+(/usr/share/texmf-dist/tex/generic/xstring/xstring.sty
 (/usr/share/texmf-dist/tex/generic/xstring/xstring.tex
 \integerpart=\count114
 \decimalpart=\count115
@@ -206,19 +208,9 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@float@every@listing=\toks18
 \c@listing=\count119
 )
-runsystem(mkdir -p _minted-project)...disabled (restricted).
+runsystem(mkdir -p _minted-project)...executed.
 
 
-
-! Package minted Error: You must invoke LaTeX with the -shell-escape flag.
-
-See the minted package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.4 \usepackage
-               [utf8]{inputenc}
-? 
 (/usr/share/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2018/08/11 v1.3c Input encoding file
 \inpenc@prehook=\toks19
@@ -1103,21 +1095,11 @@ Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 407.
 Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 408.
 Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 409.
 )
-runsystem(which pygmentize && touch project.aex)...disabled (restricted).
+runsystem(which pygmentize && touch project.aex)...executed.
 
+runsystem(rm project.aex)...executed.
 
-
-! Package minted Error: You must have `pygmentize' installed to use this packag
-e.
-
-See the minted package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.41 \begin{document}
-                     
-? 
-(./project.aux
+ (./project.aux
 
 LaTeX Warning: Label `fig:wrapfig' multiply defined.
 
@@ -1290,185 +1272,180 @@ File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 
 ]
 Chapter 1.
-<img/mern.jpeg, id=511, 1304.875pt x 746.79pt>
+<img/mern.jpeg, id=528, 1304.875pt x 746.79pt>
 File: img/mern.jpeg Graphic file (type jpg)
 <use img/mern.jpeg>
-Package pdftex.def Info: img/mern.jpeg  used on input line 39.
+Package pdftex.def Info: img/mern.jpeg  used on input line 40.
 (pdftex.def)             Requested size: 390.0pt x 223.19548pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 41--50
+Underfull \hbox (badness 10000) in paragraph at lines 45--54
 
  []
 
 [7
 
  <./img/mern.jpeg>]
-<img/mongostat.png, id=521, 1346.02875pt x 1084.05pt>
+<img/mongostat.png, id=536, 1346.02875pt x 1084.05pt>
 File: img/mongostat.png Graphic file (type png)
 <use img/mongostat.png>
-Package pdftex.def Info: img/mongostat.png  used on input line 58.
+Package pdftex.def Info: img/mongostat.png  used on input line 62.
 (pdftex.def)             Requested size: 390.0pt x 314.08525pt.
-<img/mongo.jpg, id=523, 501.875pt x 283.0575pt>
+<img/mongo.jpg, id=538, 501.875pt x 283.0575pt>
 File: img/mongo.jpg Graphic file (type jpg)
 <use img/mongo.jpg>
-Package pdftex.def Info: img/mongo.jpg  used on input line 64.
-(pdftex.def)             Requested size: 390.02121pt x 128.03983pt.
+Package pdftex.def Info: img/mongo.jpg  used on input line 71.
+(pdftex.def)             Requested size: 390.0pt x 219.97195pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 60--66
+Underfull \hbox (badness 10000) in paragraph at lines 55--76
 
  []
 
 [8 <./img/mongostat.png>]
-<img/Express.png, id=532, 642.4pt x 401.5pt>
-File: img/Express.png Graphic file (type png)
-<use img/Express.png>
-Package pdftex.def Info: img/Express.png  used on input line 75.
-(pdftex.def)             Requested size: 390.01082pt x 113.80992pt.
+<img/express.png, id=549, 642.4pt x 401.5pt>
+File: img/express.png Graphic file (type png)
+<use img/express.png>
+Package pdftex.def Info: img/express.png  used on input line 85.
+(pdftex.def)             Requested size: 390.0pt x 243.75674pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 67--77
+Underfull \hbox (badness 10000) in paragraph at lines 77--91
 
  []
 
-<img/react.png, id=535, 677.53125pt x 376.40625pt>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<img/react.png, id=552, 677.53125pt x 376.40625pt>
 File: img/react.png Graphic file (type png)
 <use img/react.png>
-Package pdftex.def Info: img/react.png  used on input line 87.
-(pdftex.def)             Requested size: 390.01164pt x 113.81297pt.
+Package pdftex.def Info: img/react.png  used on input line 102.
+(pdftex.def)             Requested size: 390.0pt x 216.67313pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 78--89
+Underfull \hbox (badness 10000) in paragraph at lines 92--107
 
  []
 
-[9 <./img/mongo.jpg> <./img/express.png>]
-<img/node.png, id=544, 803.0pt x 490.83376pt>
+[9 <./img/mongo.jpg>]
+<img/node.png, id=559, 803.0pt x 490.83376pt>
 File: img/node.png Graphic file (type png)
 <use img/node.png>
-Package pdftex.def Info: img/node.png  used on input line 98.
-(pdftex.def)             Requested size: 390.0059pt x 128.03317pt.
+Package pdftex.def Info: img/node.png  used on input line 117.
+(pdftex.def)             Requested size: 390.0pt x 238.39111pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 90--100
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 102--113
+Underfull \hbox (badness 10000) in paragraph at lines 108--122
 
  []
 
-[10 <./img/react.png> <./img/node.png>] [11] [12] [13] [14]
+[10 <./img/express.png> <./img/react.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 124--135
+
+ []
+
+[11 <./img/node.png>] [12] [13] [14] [15]
 Chapter 2.
-[15
+[16
 
-] [16] [17] [18]
+] [17] [18] [19]
 Chapter 3.
-<./img/agile.jpg, id=606, 963.6pt x 542.025pt>
-File: ./img/agile.jpg Graphic file (type jpg)
-<use ./img/agile.jpg>
-Package pdftex.def Info: ./img/agile.jpg  used on input line 318.
+<img/agile.jpg, id=628, 963.6pt x 542.025pt>
+File: img/agile.jpg Graphic file (type jpg)
+<use img/agile.jpg>
+Package pdftex.def Info: img/agile.jpg  used on input line 340.
 (pdftex.def)             Requested size: 390.0pt x 219.37004pt.
 
-Overfull \hbox (18.27795pt too wide) in paragraph at lines 318--319
- []\OT1/lmr/m/n/12 [[]] 
- []
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[19
-
-]
-<img/kanban.png, id=616, 770.88pt x 433.62pt>
+<img/kanban.png, id=631, 770.88pt x 433.62pt>
 File: img/kanban.png Graphic file (type png)
 <use img/kanban.png>
-Package pdftex.def Info: img/kanban.png  used on input line 323.
+Package pdftex.def Info: img/kanban.png  used on input line 349.
 (pdftex.def)             Requested size: 117.00714pt x 65.81432pt.
 
-Overfull \hbox (78.00476pt too wide) in paragraph at lines 323--324
+Overfull \hbox (78.00476pt too wide) in paragraph at lines 349--350
 [][] 
  []
 
 
-Overfull \hbox (15.01292pt too wide) in paragraph at lines 324--324
-[]\OT1/lmr/m/n/12 Figure 3.1:
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 324--324
-|\OT1/lmr/m/n/12 Im-age
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 324--324
-\OT1/lmr/m/n/12 ban
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 324--324
-\OT1/lmr/m/n/12 board
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 324--324
-\OT1/lmr/m/n/12 from
- []
-
-
-Overfull \hbox (9.9564pt too wide) in paragraph at lines 324--324
-\OT1/lmr/m/n/12 wikipedia| 
- []
-
-[20 <./img/agile.jpg> <./img/kanban.png>]
-<img/tdd.jpg, id=628, 999.735pt x 664.4825pt>
-File: img/tdd.jpg Graphic file (type jpg)
-<use img/tdd.jpg>
-Package pdftex.def Info: img/tdd.jpg  used on input line 336.
-(pdftex.def)             Requested size: 390.0pt x 259.2181pt.
-
-Overfull \hbox (18.27795pt too wide) in paragraph at lines 336--337
- []\OT1/lmr/m/n/12 [[]] 
- []
-
-[21 <./img/tdd.jpg>]
-<img/github.png, id=636, 12.848pt x 12.848pt>
-File: img/github.png Graphic file (type png)
-<use img/github.png>
-Package pdftex.def Info: img/github.png  used on input line 347.
-(pdftex.def)             Requested size: 117.00714pt x 117.04532pt.
-
-Overfull \hbox (78.00476pt too wide) in paragraph at lines 347--348
-[][] 
- []
-
-
-Overfull \hbox (15.01292pt too wide) in paragraph at lines 348--348
+Overfull \hbox (15.01292pt too wide) in paragraph at lines 350--350
 []\OT1/lmr/m/n/12 Figure 3.2:
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 348--348
-|\OT1/lmr/m/n/12 Github
+Underfull \hbox (badness 10000) in paragraph at lines 350--350
+|\OT1/lmr/m/n/12 Im-age
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 348--348
-\OT1/lmr/m/n/12 Logo
+Underfull \hbox (badness 10000) in paragraph at lines 350--350
+\OT1/lmr/m/n/12 ban
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 348--348
+Underfull \hbox (badness 10000) in paragraph at lines 350--350
+\OT1/lmr/m/n/12 board
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 350--350
 \OT1/lmr/m/n/12 from
  []
 
 
-Overfull \hbox (18.11646pt too wide) in paragraph at lines 348--348
+Overfull \hbox (9.9564pt too wide) in paragraph at lines 350--350
+\OT1/lmr/m/n/12 wikipedia| 
+ []
+
+[20
+
+]
+<img/tdd.jpg, id=642, 999.735pt x 664.4825pt>
+File: img/tdd.jpg Graphic file (type jpg)
+<use img/tdd.jpg>
+Package pdftex.def Info: img/tdd.jpg  used on input line 362.
+(pdftex.def)             Requested size: 390.0pt x 259.2181pt.
+ [21 <./img/agile.jpg> <./img/kanban.png>] [22 <./img/tdd.jpg>]
+<img/github.png, id=656, 12.848pt x 12.848pt>
+File: img/github.png Graphic file (type png)
+<use img/github.png>
+Package pdftex.def Info: img/github.png  used on input line 377.
+(pdftex.def)             Requested size: 117.00714pt x 117.04532pt.
+
+Overfull \hbox (78.00476pt too wide) in paragraph at lines 377--378
+[][] 
+ []
+
+
+Overfull \hbox (15.01292pt too wide) in paragraph at lines 378--378
+[]\OT1/lmr/m/n/12 Figure 3.4:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 378--378
+|\OT1/lmr/m/n/12 Github
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 378--378
+\OT1/lmr/m/n/12 Logo
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 378--378
+\OT1/lmr/m/n/12 from
+ []
+
+
+Overfull \hbox (18.11646pt too wide) in paragraph at lines 378--378
 \OT1/lmr/m/n/12 github.com| 
  []
 
-[22 <./img/github.png>]
+[23 <./img/github.png>]
 Chapter 4.
 \openout3 = `project.pyg'.
 
 (./_minted-project/default-pyg-prefix.pygstyle)
 (./_minted-project/default.pygstyle)
 (./_minted-project/9088CAA1450C79CD0F515495BEF4AA7C7B8FF08D8A5D89C6F02A7801D606
-A241.pygtex [23
+A241.pygtex [24
 
 ]
 LaTeX Font Info:    Trying to load font information for OT1+lmtt on input line 
@@ -1483,23 +1460,23 @@ LaTeX Font Info:    Font shape `OT1/lmtt/bx/n' in size <12> not available
 
 
 (./_minted-project/7D0511D8D350EF62FB47FACF48E65BB4544CEDAC70A018BF375B14948B5A
-9315.pygtex) [24]
+9315.pygtex) [25]
 \openout3 = `project.pyg'.
 
 
 (./_minted-project/407BC575443A1485BEF4E5E5CF5BD6EDCA2B23E3053BD6483C1AE6AEE4FE
 C39B.pygtex
-Overfull \hbox (13.95741pt too wide) in paragraph at lines 401--1
+Overfull \hbox (13.95741pt too wide) in paragraph at lines 431--1
 \OT1/lmr/m/n/12 and can be used to per-form HTTP re-quests such as: GET,PUT,POS
 T,DELETE
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 401--1
+Underfull \hbox (badness 10000) in paragraph at lines 431--1
 
  []
 
-[25])
+[26])
 
 ! LaTeX Error: There's no line here to end.
 
@@ -1507,18 +1484,18 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.422 I
+l.452 I
        n the above example what will happen when the user searches the URL h...
 
 ? 
-[26] [27]
-<img/tls.png, id=681, 1927.2pt x 1084.05pt>
+[27] [28]
+<img/tls.png, id=701, 1927.2pt x 1084.05pt>
 File: img/tls.png Graphic file (type png)
 <use img/tls.png>
-Package pdftex.def Info: img/tls.png  used on input line 455.
+Package pdftex.def Info: img/tls.png  used on input line 485.
 (pdftex.def)             Requested size: 390.0pt x 219.37006pt.
 
-Overfull \hbox (14.51657pt too wide) in paragraph at lines 452--460
+Overfull \hbox (14.51657pt too wide) in paragraph at lines 482--490
 \OT1/lmr/m/n/12 OpenSSL is a toolkit for pro-vid-ing TLS(Transport Layer Se-cu-
 rity) & SSL(Secure
  []
@@ -1526,28 +1503,28 @@ rity) & SSL(Secure
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[28]
+[29]
 \openout3 = `project.pyg'.
 
 
 (./_minted-project/8E5F1BF7DD2C1B5B698C8962E0A5E3E0CA2B23E3053BD6483C1AE6AEE4FE
 C39B.pygtex
-Underfull \hbox (badness 10000) in paragraph at lines 467--1
+Underfull \hbox (badness 10000) in paragraph at lines 497--1
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 467--1
+Underfull \hbox (badness 10000) in paragraph at lines 497--1
 
  []
 
-[29 <./img/tls.png>])
+[30 <./img/tls.png>])
 \openout3 = `project.pyg'.
 
 
 (./_minted-project/FC8B50C50F9698E7E3815FD6623136B173FB55139B6E3834EBF61804D96D
 29B8.pygtex
-Underfull \hbox (badness 10000) in paragraph at lines 487--1
+Underfull \hbox (badness 10000) in paragraph at lines 517--1
 
  []
 
@@ -1555,7 +1532,7 @@ LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line
 5.
 (/usr/share/texmf-dist/tex/latex/lm/ts1lmtt.fd
 File: ts1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) [30])
+) [31])
 
 ! LaTeX Error: There's no line here to end.
 
@@ -1563,44 +1540,44 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.504 A
+l.534 A
        ll valid HTML pages must have a DOCTYPE html declaration, html tag, h...
 
 ? 
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 506.
+(Font)              <14.4> on input line 536.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 506.
+(Font)              <10> on input line 536.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 506.
+(Font)              <7> on input line 536.
 \openout3 = `project.pyg'.
 
 
 (./_minted-project/3C950A288503CD4A9704ECFAC17290EF5DE34E996B6934CBACED58621312
-5A1D.pygtex [31])
-Overfull \hbox (8.08452pt too wide) in paragraph at lines 532--537
+5A1D.pygtex [32])
+Overfull \hbox (8.08452pt too wide) in paragraph at lines 562--567
 \OT1/lmr/m/n/12 The rea-son I chose Google Cloud Plat-form is be-cause I have u
 sed AWS(Amazon
  []
 
-[32] [33]
+[33] [34]
 Chapter 5.
-[34
-
-]
-Chapter 6.
 [35
 
 ]
-Chapter 7.
+Chapter 6.
 [36
 
-] [37
+]
+Chapter 7.
+[37
+
+] [38
 
 
 ]
 Appendix A.
-(./project.bbl [38
+(./project.bbl [39
 
 ]
 Underfull \hbox (badness 6125) in paragraph at lines 4--8
@@ -1683,7 +1660,7 @@ Overfull \hbox (55.64209pt too wide) in paragraph at lines 53--57
 -[]cybercrime-[]losses/$[][]\OT1/lmr/m/n/12 . 
  []
 
-[39
+[40
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 59--63
@@ -1742,7 +1719,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 116--118
  https : / / github . com /
  []
 
-[40]
+[41]
 Underfull \hbox (badness 6173) in paragraph at lines 129--132
 []\OT1/lmr/m/n/12 Cloudflare.com, ``Tls im-age.''  [][]$\OT1/lmtt/m/n/12 https 
 : / / blog . cloudflare . com /
@@ -1760,26 +1737,26 @@ Underfull \hbox (badness 4595) in paragraph at lines 134--137
 src / media / publications / fips /
  []
 
-) [41]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 581.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 581.
+) [42]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 611.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 611.
  (./project.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 581.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 581.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 611.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 611.
 Package rerunfilecheck Info: File `project.out' has not changed.
-(rerunfilecheck)             Checksum: 9AC628336B37D5A3046749F87EDE725C;5768.
+(rerunfilecheck)             Checksum: BD88D8E1310CD45AA6880F271F2FAD1C;5768.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-runsystem(rm project.pyg)...disabled (restricted).
+runsystem(rm project.pyg)...executed.
 
  ) ) 
 Here is how much of TeX's memory you used:
- 26051 strings out of 492167
- 516394 string characters out of 6131559
- 657827 words of memory out of 5000000
- 29667 multiletter control sequences out of 15000+600000
+ 26071 strings out of 492167
+ 516793 string characters out of 6131559
+ 658187 words of memory out of 5000000
+ 29676 multiletter control sequences out of 15000+600000
  61534 words of font info for 55 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  60i,10n,79p,845b,600s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1793,10 +1770,10 @@ re/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf-dist/fonts/type
 usr/share/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></usr/share/texmf-dist/fo
 nts/type1/public/lm/lmtt12.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmt
 ti10.pfb>
-Output written on project.pdf (41 pages, 1247482 bytes).
+Output written on project.pdf (42 pages, 1248899 bytes).
 PDF statistics:
- 905 PDF objects out of 1000 (max. 8388607)
- 809 compressed objects within 9 object streams
- 174 named destinations out of 1000 (max. 500000)
+ 928 PDF objects out of 1000 (max. 8388607)
+ 831 compressed objects within 9 object streams
+ 183 named destinations out of 1000 (max. 500000)
  865 words of extra memory for PDF output out of 10000 (max. 10000000)
 
