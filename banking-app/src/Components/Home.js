@@ -13,7 +13,7 @@ class Home extends React.Component {
         "https://localhost:8080/api/users/" + sessionStorage.getItem("email")
       )
       .then(res => {
-        var text = document.createTextNode( "€" + 
+        var text = document.createTextNode( "€" +
           res.data.balance,
           sessionStorage.setItem("balance",res.data.balance)
 
@@ -73,7 +73,7 @@ class Home extends React.Component {
         <h2>Latest information for your account</h2>
         <p>Show latest statements, open loans</p>
         <div id="finance">
-          <h2>Latest Financial News Headlines: Thanks to newsapi.org!</h2>
+          <h2>Latest Financial News Headlines: Thanks to newsapi.org! - For more news visit the Headlines Page :)</h2>
           <ul id="financial" />
         </div>
         <div id="send">

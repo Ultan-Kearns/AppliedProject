@@ -16,7 +16,8 @@ class Register extends React.Component {
       password: "",
       name: "",
       number: "",
-      dob: ""
+      dob: "",
+      balance:""
     }
   }
   redirect() {
@@ -71,14 +72,13 @@ class Register extends React.Component {
       dob: this.state.dob,
       bic:"1",
       iban:"1",
-      balance:""
+      balance:"20"
     }
       if (
         this.state.number.length === 10 &&
         this.state.name.length >= 5 &&
         this.state.password.length >= 6 && this.username !== null
-        &&
-              this.state.dob !== ""
+        && this.state.dob !== ""
       )  {
       axios.post("https://localhost:8080/api/users", newUser).then(res => {
         //log res for testing

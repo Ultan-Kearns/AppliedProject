@@ -36,7 +36,11 @@ React or \LaTeX\  before but I plan to learn a lot about these technologies duri
 %Make sure you use references
 \section {Why A MERN stack?}
 \begin{center}
-\includegraphics[width=\textwidth]{img/mern.jpeg}
+  \begin{figure}[h!]
+    \includegraphics[width=\textwidth]{img/mern.jpeg}
+    \caption{MERN Logo}
+    \label{fig: Image of MERN stack logo}
+  \end{figure}
 \end{center}
 There are many reasons why I have chosen to use a MERN stack for this
 application the main one is because it provides a framework for a full stack
@@ -54,14 +58,20 @@ it offers an open source alternative to MySQL and other proprietary databases
 \cite{Mongo}
 and many companies seem to be migrating to it because it is open source and in
 some cases may offer better performance than other databases.
-\begin{center}
-\includegraphics[width=\textwidth]{img/mongostat.png}
-\end{center}
+\begin{figure}[h!]
+  \includegraphics[width=\textwidth]{img/mongostat.png}
+  \caption{Mongo Usage}
+  \label{fig: Mongo usage statistics}
+\end{figure}
 \cite{Survey}
 Mongo is easy to learn as it stores it's data in JSON format and is schemaless, that is the user
 defines their own schemas. I have also used it for 2 other projects in Angular and find it an
 easy database to use in relation to projects.
-\includegraphics[width=\textwidth,height=4.5cm]{img/mongo.jpg} \cite{MongoImage}
+\begin{figure}[ht]
+  \includegraphics[width=\textwidth]{img/mongo.jpg}
+  \caption{Mongo Logo}
+  \label{fig: Image of Mongo Logo}
+\end{figure} \cite{MongoImage}
 \\
 \subsection{Express}
 I chose to use Express because it is a very useful framework when creating a server.
@@ -69,10 +79,14 @@ It is very helpful when pulling data from the server and displaying it to the cl
 it is also very scalable and offers good security when used properly.  It is also very
 easy to setup and can be connected to the MLab database in minutes upon starting the
 project.  I have also used this server before and have a bit of experience with it and
-found it very helpful in the projects I used it for which were a messaging forum and an
+found it very helpful in the projects I used it for, which were a messaging forum and an
 E-commerce application both using MEAN(Mongo,Express,Angular \& Node) stacks.
-\\
-\includegraphics[width=\textwidth,height=4cm]{img/Express.png} \cite{ExpressImage}
+\begin{figure}[h]
+  \includegraphics[width=\textwidth]{img/express.png}
+  \caption{Express JS}
+  \label{fig: Image of Express Logo}
+\end{figure}
+\cite{ExpressImage}
 \\
 \subsection{React}
 I also chose this project because I have zero experience in ReactJS and since
@@ -84,7 +98,11 @@ web applications far easier than just using HTML, CSS \& Javascript. React is
 also very fast at rendering pages so that the user will not experience a major
 delay in accessing information.
 \\
-\includegraphics[width=\textwidth,height=4cm]{img/react.png} \cite{ReactImage}
+\begin{figure}[h!]
+  \includegraphics[width=\textwidth]{img/react.png}
+  \caption{React}
+  \label{fig: Image of React Logo}
+\end{figure} \cite{ReactImage}
 \\
 \subsection{Node JS}
 The reason I chose Node JS was because it offers a great package manager which can be
@@ -95,7 +113,11 @@ is a very useful tool when developing full-stack applications and was very helpf
 in installing tools and libraries for react.  Node is also very good for getting a server
 up and running in a few minutes and handles HTTP requests very well.
 \\
-\includegraphics[width=\textwidth,height=4.5cm]{img/node.png} \cite{NodeImage}
+\begin{figure}[h!]
+  \includegraphics[width=\textwidth]{img/node.png}
+  \caption{Node}
+  \label{fig: Image of Node Logo}
+\end{figure} \cite{NodeImage}
 \\
 \section{Why a banking application?}
 \subsection{Explanation of Why I Chose This Project}
@@ -314,9 +336,13 @@ Working software over comprehensive documentation,
 Customer collaboration over contract negotiation,
 Responding to change over following a plan".  There are many variations of agile \cite{VariationsofAgile} such as Scrum, XP, Kanban and many more. All Agile methodologies follow the same principles outlined in the Agile Manifesto\cite{Agile} For the purposes of this project I'll be using Kanban.  All Agile methodologies stress
 continuous improvement and incremental delivery.
-\begin{center}
-\includegraphics[width=\textwidth]{./img/agile.jpg}\cite{AgileImage}
-\end{center}
+\begin{figure}[h!]
+  \includegraphics[width=\textwidth]{img/agile.jpg}
+  \caption{Agile}
+  \label{fig: Image of Agile Lifecycle}
+\end{figure}
+\\
+\cite{AgileImage}
 \subsection{Why Kanban?}
 Kanban \cite{Kanban} allows for a visualized workflow and was also easy to implement into the project. It allows for incremental development and a continuous improvement of features.  In contrast to waterfall, Agile methodologies also allow the developer to go back and improve upon features.  In summary Kanban offered me a visualized workflow and also allowed me to divide my sprints into daily or weekly tasks which I could complete in a relatively short time.
 \begin{wrapfigure}{r}{0.1\textwidth}
@@ -332,9 +358,13 @@ time-frame.
 \section{Test Driven Development (TDD)}
 \subsection{What Is Test Driven Development?}
 Test Driven Development or TDD is a form of testing during development which focuses on writing the tests of a function before coding it and then writing enough code to make sure that it passes the test and then going back and refactoring it\cite{TDD}.
-\begin{center}
-\includegraphics[width=\linewidth]{img/tdd.jpg}\cite{TDDImage}
-\end{center}
+\begin{figure}[h!]
+  \includegraphics[width=\textwidth]{img/tdd.jpg}
+  \caption{TDD}
+  \label{fig: Image of Test Driven Development}
+\end{figure}
+\\
+\cite{TDDImage}
 \subsection{How I Applied Test Driven Development To This Project}
 I wrote simple tests as I developed this code, for example for the statements section I wrote a test such as "Output only the statements of the user, output must be in form of location, cost, name, date" I then proceeded to write just enough code to make it pass and then went back and refactored it.
 \section{Time Management}
@@ -420,6 +450,9 @@ var host = server.address().address
 \end{minted}
 \\
 In the above example what will happen when the user searches the URL https://localhost:8080/ they will be greeted with the message "Server is up and running!", the 200 status indicates that the resource was retrieved successfully.
+\section{Testing}
+\subsection{Selenium}
+Selenium is a browser add-on which automates the browser and allows the user to create tests which will monitor the users actions performed and log them so that these tests can be run and re-run with the click of a button.  Selenium helped greatly in the development of this application and freed up time I would have used to perform extensive manual testing and allowed me to add a litany of new features to this application.
 \section{React Libraries}
 \subsection{Axios}
 Axios is a promise based HTTP client for node.js\cite{Axios}.  I used Axios in this project to send HTTP requests from the frontend of the application to the NodeJS server.  Axios allowed me to retrieve information from various paths and return that information to the user, and to update, delete and create new information.  I used Axios to achieve full CRUD(Create, read, update \& delete) functionality.
