@@ -69,10 +69,11 @@ class Statistics extends React.Component {
     };
   }
   componentDidMount() {
-    this.updateLoanData();
-    this.updateTransactionData();
     //this is for getting daily conversion rates and stock info
     try {
+      //issue not returning promise
+      this.updateTransactionData()
+      this.updateLoanData()
       axios
         .get(
           "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=MSFT&apikey=G38RVCM1OWLSKALP"
@@ -209,8 +210,8 @@ class Statistics extends React.Component {
       alert("MAX API CALLS FOR FINANCIAL DATA REACHED");
     }
   }
-  updateLoanData(){
-    return axios
+  async updateLoanData(){
+    await  axios
      .get("https://localhost:8080/api/loans/" + sessionStorage.getItem("email"))
      .then(res => {
        console.log(res.data)
@@ -229,7 +230,7 @@ class Statistics extends React.Component {
        alert("Error generating loans " + error)
   });
   }
-  updateTransactionData(){
+  async updateTransactionData(){
     return axios
       .get("https://localhost:8080/api/transactions/" + sessionStorage.getItem("email"))
       .then(res => {
