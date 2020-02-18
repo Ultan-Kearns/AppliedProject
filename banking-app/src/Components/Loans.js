@@ -53,7 +53,7 @@ class Loans extends React.Component {
               " ,Owed to: " +
               this.state.owedTo
           )
-
+          sessionStorage.setItem("openLoans",openLoan)
           node.append(text)
           document.getElementById("loans").appendChild(node)
          }
@@ -68,7 +68,7 @@ class Loans extends React.Component {
     const axios = require("axios").default
     var date = new Date();
     var answer = window.confirm("Are you sure you want to take out a loan for: " + this.state.amount + " ?")
-    if (this.state.amount !== "" && answer === true && parseInt(this.state.amount) <= parseInt(sessionStorage.getItem("balance")) * 0.25 && openLoan <= 5 && this.state.amount <= 500) {
+    if (this.state.amount !== "" && answer === true && parseInt(this.state.amount) <= parseInt(sessionStorage.getItem("balance")) * 0.25 && openLoan < 5 && this.state.amount <= 500) {
       const newLoan = {
         email: sessionStorage.getItem("email"),
         amount: this.state.amount,

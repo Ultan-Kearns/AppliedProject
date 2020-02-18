@@ -214,7 +214,7 @@ try{
   deleteUser() {
     var answer = window.prompt("Enter password to delete account");
     try {
-      if (sha256(answer) === password) {
+       if (sha256(answer) === password && parseInt(sessionStorage.getItem("openLoans")) == 0) {
         axios.delete(
           "https://localhost:8080/api/transactions/" +
             sessionStorage.getItem("email")
@@ -228,7 +228,7 @@ try{
         alert("User deleted");
         ReactDOM.render(<Login />, document.getElementById("root"));
       } else {
-        alert("Action aborted, password was incorrect");
+        alert("Action aborted, password was incorrect or you have open loans");
       }
     } catch {
       alert("Internal system error");
