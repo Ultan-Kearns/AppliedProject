@@ -44,7 +44,7 @@
 # Sprint 8 (10th February - 21st February)
 + Get Statistics generated based on Loans / Statments and financial stats from google(Done just need to expand a bit more and add catches to Axios and add some styles and test)
 + Add Iban validator and bic and add to user schema(research on google)
-+ Fix all issues and write tests(add catch to axios, do more tests,Fix issue with update use promise?)
++ Fix all issues and write tests(DONE just need to test)
 + Add Selenium to tech review(DONE)
 + Get Headlines component finished (Reddit, latest news etc...)(DONE)
 + Start System Design
@@ -60,7 +60,7 @@
 # Do whenever least concern
 + fix style on homepages
 # ideas
-+ Use tensorflowJS to analyze data from API and predict markets
++ Use tensorflowJS to analyze data from API and predict markets or to create admin chats
 ## Notes
 ### I will make periodic changes due to changes in workload, personal issues,etc
 ### I run regression tests as well as module tests after each sprint

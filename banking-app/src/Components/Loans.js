@@ -2,13 +2,13 @@ import React from "react"
 import { Helmet } from "react-helmet"
 import Button from "react-bootstrap/Button"
 import  "../Styles/LoanStyle.css"
-
-var openLoan = 0;
+import {getLoans} from "../Services/LoanHelpers.js"
 
 const axios = require("axios").default
 
 class Loans extends React.Component {
   componentDidMount() {
+      sessionStorage.setItem("openLoans",getLoans())
       this.getLoans()
       //strip out in home
       axios.get("https://localhost:8080/api/users/" + sessionStorage.getItem("email")).then(res=>{
@@ -27,8 +27,6 @@ class Loans extends React.Component {
     }
   }
    getLoans() {
-    sessionStorage.setItem("openLoans",openLoan)
-
     document.getElementById("loans").innerHTML = ""
     axios
       .get(
@@ -37,6 +35,7 @@ class Loans extends React.Component {
       .then(res => {
         for (var i = 0; i < res.data.length; i++) {
           this.setState({
+            _id: res.data[i]._id,
             amount: res.data[i].amount,
             date: res.data[i].date,
             status: res.data[i].status,
@@ -54,7 +53,27 @@ class Loans extends React.Component {
               " ,Owed to: " +
               this.state.owedTo
           )
+          var buttonNode = document.createElement("Button")
+          buttonNode.textContent = "Pay Back"
+          var loanId = this.state._id
+          const newBalance = {
+            balance:  parseInt(sessionStorage.getItem("balance") - parseInt(this.state.amount))
+          }
+          buttonNode.addEventListener('click',function(){
+
+            axios.post("https://localhost:8080/api/users/" + sessionStorage.getItem("email") +  "/balance", newBalance).then(res=>{
+              sessionStorage.setItem("balance",newBalance.balance)
+              alert("Loan repaid new balance is: " + sessionStorage.getItem("balance"))
+            })
+            axios.delete("https://localhost:8080/api/loans/" + sessionStorage.getItem("email") + "/" + loanId ).then(res=>
+            {
+              alert("Loan paid")
+            }).catch(error=>{
+              alert("error: " + error)
+            })
+          })
            node.append(text)
+           node.append(buttonNode)
           document.getElementById("loans").appendChild(node)
          }
       }).catch(error =>{
@@ -70,7 +89,7 @@ class Loans extends React.Component {
     const axios = require("axios").default
     var date = new Date();
     var answer = window.confirm("Are you sure you want to take out a loan for: " + this.state.amount + " ?")
-    if (this.state.amount !== "" && answer === true && parseInt(this.state.amount) <= parseInt(sessionStorage.getItem("balance")) * 0.25 && openLoan < 5 && this.state.amount <= 500) {
+    if (this.state.amount !== "" && answer === true && parseInt(this.state.amount) <= parseInt(sessionStorage.getItem("balance")) * 0.25 && sessionStorage.getItem("openLoans") < 5 && this.state.amount <= 500) {
       const newLoan = {
         email: sessionStorage.getItem("email"),
         amount: this.state.amount,
@@ -110,9 +129,6 @@ class Loans extends React.Component {
     }
 
     event.preventDefault()
-  }
-  test(){
-    alert("Hello")
   }
   render() {
     return (

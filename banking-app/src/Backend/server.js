@@ -199,6 +199,16 @@ app.delete("/api/users/:id/", function(req, res) {
     }
   });
 });
+app.delete("/api/loans/:email/:id", function(req, res) {
+  Loans.findByIdAndRemove(req.params.id, function(err, data) {
+    if (err) {
+      //send back error 500 to show the server had internel error
+      res.status(500, "INTERNAL SERVER ERROR " + err);
+    } else if (data != null) {
+      res.status(200,"Paid loan")
+    }
+  });
+});
 app.post("/api/users", function(req, res) {
   //check if user with same username exists use findById and change id to username
   var balance;
