@@ -4,11 +4,13 @@ import Button from "react-bootstrap/Button"
 import  "../Styles/LoanStyle.css"
 
 var openLoan = 0;
+
 const axios = require("axios").default
 
 class Loans extends React.Component {
   componentDidMount() {
       this.getLoans()
+      //strip out in home
       axios.get("https://localhost:8080/api/users/" + sessionStorage.getItem("email")).then(res=>{
         sessionStorage.setItem("balance",res.data.balance)
       })
@@ -24,7 +26,9 @@ class Loans extends React.Component {
       balance: ""
     }
   }
-  getLoans() {
+   getLoans() {
+    sessionStorage.setItem("openLoans",openLoan)
+
     document.getElementById("loans").innerHTML = ""
     axios
       .get(
@@ -38,9 +42,6 @@ class Loans extends React.Component {
             status: res.data[i].status,
             owedTo: res.data[i].owedTo
           })
-          if(res.data[i].status === "Open"){
-            openLoan++;
-          }
           //create LI element then form statment then append to LI then add to list
           var node = document.createElement("LI")
           var text = document.createTextNode(
@@ -53,10 +54,11 @@ class Loans extends React.Component {
               " ,Owed to: " +
               this.state.owedTo
           )
-          sessionStorage.setItem("openLoans",openLoan)
-          node.append(text)
+           node.append(text)
           document.getElementById("loans").appendChild(node)
          }
+      }).catch(error =>{
+        alert("Could not get loans")
       })
   }
   handleAmountChange = event => {

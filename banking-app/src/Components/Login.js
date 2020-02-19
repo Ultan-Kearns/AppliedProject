@@ -45,15 +45,7 @@ class Login extends React.Component {
   componentDidMount() {
     //if(sessionStorage.getItem("username") !=="null" && sessionStorage.getItem("username") !== null){
     //ReactDOM.render(<App />, document.getElementById("root"));
-    const axios = require("axios").default;
-    axios
-      .get(
-        "https://localhost:8080/api/transactions/" +
-          sessionStorage.getItem("email")
-      )
-      .then(res => {
-         console.log(res)
-      });
+
   }
   handleSubmitForm = event => {
     const axios = require("axios").default;
@@ -77,7 +69,9 @@ class Login extends React.Component {
         else{
           alert("Wrong username or password")
         }
-       });
+      }).catch(error =>{
+        alert("Error logging in, check internet connection?")
+      });
 
       console.log("Clicked")
     event.preventDefault();

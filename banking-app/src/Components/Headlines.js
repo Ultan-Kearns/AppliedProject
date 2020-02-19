@@ -36,7 +36,9 @@ class Headlines extends React.Component {
           node.append(image);
           document.getElementById("financial").appendChild(node);
         }
-       });
+      }).catch(error => {
+        alert("Having issues getting your news from NewsAPI")
+      });
        axios
          .get(
            "https://www.reddit.com/r/wallstreet/.json"
@@ -61,6 +63,8 @@ class Headlines extends React.Component {
              node.append(image)
              document.getElementById("reddit").appendChild(node);
            }
+          }).catch(error => {
+            alert("Having issues getting your news from reddit")
           });
   }
 

@@ -23,6 +23,7 @@ class Home extends React.Component {
     /*
     Pulling data from newsapi.org
     then render App page
+    use function helper same in headlines
     */
     axios
       .get(
@@ -53,7 +54,7 @@ class Home extends React.Component {
           document.getElementById("financial").appendChild(node);
         }
         ReactDOM.render(<App />, document.getElementById("root"));
-      });
+      }).catch(error => {});
   }
   render() {
     return (

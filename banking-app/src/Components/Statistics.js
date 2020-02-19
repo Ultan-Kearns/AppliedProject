@@ -7,7 +7,7 @@ const axios = require("axios").default;
 
 class Statistics extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       //change this to get labels of dates from loans /transactions
       loanState: {
@@ -72,8 +72,8 @@ class Statistics extends React.Component {
     //this is for getting daily conversion rates and stock info
     try {
       //issue not returning promise
-      this.updateTransactionData()
-      this.updateLoanData()
+      this.updateTransactionData();
+      this.updateLoanData();
       axios
         .get(
           "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=MSFT&apikey=G38RVCM1OWLSKALP"
@@ -99,16 +99,8 @@ class Statistics extends React.Component {
           node.append(text);
           document.getElementById("stock").appendChild(node);
         })
-        .catch(function(error) {
-          var node = document.createElement("LI");
-          node.id = "stockresults";
-          var text = document.createTextNode(
-            "Sorry something went wrong while getting the stock results data :*("
-          );
-          node.append(text);
-          document.getElementById("stock").appendChild(node);
-
-          console.log("error");
+        .catch(error => {
+    alert("problem getting currency data")
         });
       axios
         .get(
@@ -131,7 +123,6 @@ class Statistics extends React.Component {
           );
           node.append(text);
           document.getElementById("eurbtc").appendChild(node);
-
           console.log("error");
         });
       axios
@@ -195,7 +186,7 @@ class Statistics extends React.Component {
           cnyNode.append(eur_to_cny);
           document.getElementById("eurcny").appendChild(cnyNode);
         })
-        .catch(function(error) {
+        .catch(error => {
           var node = document.createElement("LI");
           node.id = "currency";
           var text = document.createTextNode(
@@ -203,50 +194,51 @@ class Statistics extends React.Component {
           );
           node.append(text);
           document.getElementById("stock").appendChild(node);
-
           console.log("error");
         });
     } catch (error) {
       alert("MAX API CALLS FOR FINANCIAL DATA REACHED");
     }
   }
-  async updateLoanData(){
-    await  axios
-     .get("https://localhost:8080/api/loans/" + sessionStorage.getItem("email"))
-     .then(res => {
-       console.log(res.data)
-      var newLoanState = this.state.loanState
-       for(var i = 0; i < res.data.length; i++)
-       {
-         newLoanState.datasets[0].data[i] = res.data[i].amount
-         newLoanState.labels[i] = res.data[i].amount
+  async updateLoanData() {
+    await axios
+      .get(
+        "https://localhost:8080/api/loans/" + sessionStorage.getItem("email")
+      )
+      .then(res => {
+        console.log(res.data);
+        var newLoanState = this.state.loanState;
+        for (var i = 0; i < res.data.length; i++) {
+          newLoanState.datasets[0].data[i] = res.data[i].amount;
+          newLoanState.labels[i] = res.data[i].amount;
         }
         this.setState({
           loanState: newLoanState
-        })
-     }
-      )
-     .catch(function(error) {
-       alert("Error generating loans " + error)
-  });
+        });
+      })
+      .catch(function(error) {
+        alert("Error generating loans " + error);
+      });
   }
-  async updateTransactionData(){
+  async updateTransactionData() {
     return axios
-      .get("https://localhost:8080/api/transactions/" + sessionStorage.getItem("email"))
+      .get(
+        "https://localhost:8080/api/transactions/" +
+          sessionStorage.getItem("email")
+      )
       .then(res => {
-        var newTransactionState = this.state.transactionState
-        for(var i = 0; i < res.data.length; i++)
-        {
-          newTransactionState.datasets[0].data[i] = res.data[i].cost
-          newTransactionState.labels[i] = res.data[i].location
+        var newTransactionState = this.state.transactionState;
+        for (var i = 0; i < res.data.length; i++) {
+          newTransactionState.datasets[0].data[i] = res.data[i].cost;
+          newTransactionState.labels[i] = res.data[i].location;
         }
         this.setState({
-        transactionState:newTransactionState
+          transactionState: newTransactionState
+        });
       })
-        })
       .catch(function(error) {
-        alert("Error generating transactions " + error)
-       });
+        alert("Error generating transactions " + error);
+      });
   }
   render() {
     return (
@@ -258,10 +250,10 @@ class Statistics extends React.Component {
         <div id="stock" />
         <div id="currency">
           <h3>Daily Exchange Rates</h3>
-          <h3 id="eurbtc" />
-          <h3 id="eursterling" />
-          <h3 id="eurdollar" />
-          <h3 id="eurcny" />
+          <h3 id="eurbtc"> </h3>
+          <h3 id="eursterling"> </h3>
+          <h3 id="eurdollar"> </h3>
+          <h3 id="eurcny"> </h3>
         </div>
         <div id="charts">
           <h3>Chart Section</h3>

@@ -7,6 +7,8 @@ import InputGroup from "react-bootstrap/InputGroup";
 import "../Styles/UserInfoStyle.css";
 import "js-sha256";
 import FormControl from "react-bootstrap/FormControl";
+import {getLoans} from "../Services/LoanHelpers.js"
+
 const axios = require("axios").default;
 const sha256 = require("js-sha256");
 var password = "";
@@ -75,6 +77,7 @@ class UserInfo extends React.Component {
       });
       alert("PASS WILL = PREV PASS " + this.state.password);
     }
+    //strip out
     axios
       .get(
         "https://localhost:8080/api/users/" + sessionStorage.getItem("email")
@@ -83,6 +86,8 @@ class UserInfo extends React.Component {
         this.setState({
           balance: res.data.balance
         });
+      }).catch(error => {
+
       });
     //hash pass using sha256
     const newUser = {
@@ -99,6 +104,8 @@ class UserInfo extends React.Component {
     axios.get("https://localhost:8080/api/users" + newUser._id).then(res=>
     {
       //try and see if user exists synchronously and  set value
+    }).catch(error=>{
+      alert("Cannot update user connection error")
     })
 try{
     if (
@@ -171,6 +178,7 @@ try{
   };
   componentDidMount() {
     this.updateData();
+    getLoans();
   }
   updateData() {
     axios
@@ -205,26 +213,34 @@ try{
           }),
           this.setState({
             balance: res.data.balance
-          })
-        );
+          }),
+        )
         password = res.data.password;
         document.getElementById("basic").appendChild(text)
+      }).catch(error =>{
+        alert("Can't communicate with server")
       });
   }
   deleteUser() {
     var answer = window.prompt("Enter password to delete account");
     try {
-       if (sha256(answer) === password && parseInt(sessionStorage.getItem("openLoans")) == 0) {
+       if (sha256(answer) === password && parseInt(sessionStorage.getItem("openLoans")) === 0) {
         axios.delete(
           "https://localhost:8080/api/transactions/" +
             sessionStorage.getItem("email")
-        );
+        ).catch(error => {
+          alert("Error connecting to server")
+        });
         axios.delete(
           "https://localhost:8080/api/loans/" + sessionStorage.getItem("email")
-        );
+        ).catch(error => {
+          alert("Error connecting to server")
+        });
         axios.delete(
           "https://localhost:8080/api/users/" + sessionStorage.getItem("email")
-        );
+        ).catch(error => {
+          alert("Error connecting to server")
+        });
         alert("User deleted");
         ReactDOM.render(<Login />, document.getElementById("root"));
       } else {

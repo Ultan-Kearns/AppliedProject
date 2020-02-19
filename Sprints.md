@@ -49,7 +49,7 @@
 + Get Headlines component finished (Reddit, latest news etc...)(DONE)
 + Start System Design
 + review dissertation
-+ ensure user cannot delete account if they have open loans(Should be easy enough just use sessionStorage)
++ ensure user cannot delete account if they have open loans(DONE)
 # Sprint 9 (21st February - 25th February)
 + Brainstorm ideas(tensorflowJS?)
 + research Docker + get it working

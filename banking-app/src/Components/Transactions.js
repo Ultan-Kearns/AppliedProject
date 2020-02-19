@@ -47,6 +47,8 @@ class Transactions extends React.Component {
           node.append(text);
           document.getElementById("transactions").appendChild(node);
         }
+      }).catch(error =>{
+        alert("Can't get transactions issue connecting to server")
       });
   }
 

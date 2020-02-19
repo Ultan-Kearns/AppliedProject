@@ -59,7 +59,7 @@ class Register extends React.Component {
           alert("User already exists")
         }
       })
-    //create IBAN here and BIC
+         //create IBAN here and BIC
     console.log(this.state.name, this.state.number, this.state.dob)
     const sha256 = require('js-sha256');
     //hash pass using sha256
@@ -83,8 +83,11 @@ class Register extends React.Component {
       axios.post("https://localhost:8080/api/users", newUser).then(res => {
         //log res for testing
         console.log(res.data)
+        alert("User created, now you can login :D")
+
+      }).catch(error => {
+        alert("Couldn't register check internet")
       })
-      alert("User created, now you can login :D")
     }else {
       alert(
         "Form invalid, password length must be greater than 6 and number must have 10 digits"
