@@ -1,6 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet";
-
+import "../Styles/StatStyle.css"
 import { Bar } from "react-chartjs-2";
 //Alpha Vantage API key - G38RVCM1OWLSKALP
 const axios = require("axios").default;

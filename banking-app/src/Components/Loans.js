@@ -129,8 +129,8 @@ class Loans extends React.Component {
     if (
       this.state.amount !== "" &&
       answer === true &&
-      parseInt(this.state.amount) <=
-        parseInt(sessionStorage.getItem("balance")) * 0.25 &&
+      parseInt(this.state.amount * 0.25) <=
+        parseInt(sessionStorage.getItem("balance")) &&
       sessionStorage.getItem("openLoans") < 5 &&
       this.state.amount <= 500
     ) {

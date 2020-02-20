@@ -50,6 +50,7 @@ class Transactions extends React.Component {
       }).catch(error =>{
         alert("Can't get transactions issue connecting to server")
       });
+
   }
 
   render() {
@@ -60,10 +61,6 @@ class Transactions extends React.Component {
           <title>Transactions</title>
         </Helmet>
         <h1>Your transactions</h1>
-        <p>
-          You can view transactions here : D- maybe have a dropdown to select year
-          or month of statement
-        </p>
         <ul id="transactions" />
       </div>
     );

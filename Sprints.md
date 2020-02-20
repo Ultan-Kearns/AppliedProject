@@ -48,6 +48,7 @@
 + Add Selenium to tech review(DONE)
 + Get Headlines component finished (Reddit, latest news etc...)(DONE)
 + Start System Design
++ pay back loan feature (DONE)
 + review dissertation
 + ensure user cannot delete account if they have open loans(DONE)
 # Sprint 9 (21st February - 25th February)
@@ -57,8 +58,9 @@
 + Host on google cloud
 + Finish System design & review dissertation
 + write more sprints
-# Do whenever least concern
-+ fix style on homepages
+# Issues
++ fix style on pages (maybe add animations?)
++ Add more to tech review (Need to include financial)
 # ideas
 + Use tensorflowJS to analyze data from API and predict markets or to create admin chats
 ## Notes
