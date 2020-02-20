@@ -1,13 +1,21 @@
 #stock{
   margin-bottom: 10vh;
+  margin-top: 10%;
 }
 #currency{
-  margin-bottom: 20vh;
+  margin-bottom: 10%;
+  margin-top: 20%;
+  font-weight: bold;
+  font-size: 20px;
 }
 #charts{
-  margin-top: 10vh;
+  margin-top: 20%;
 }
 li{
   border:2px solid black;
   margin-bottom: 10%;
+}
+#loanChart{
+  margin-bottom: 20%;
+  margin-top: 10%;
 }

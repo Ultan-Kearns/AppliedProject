@@ -20,7 +20,7 @@ class Home extends React.Component {
         );
         document.getElementById("balance").append(text);
       }).catch(error=>{
-        
+
       });
     /*
     Pulling data from newsapi.org
@@ -53,7 +53,7 @@ class Home extends React.Component {
           node.append(text);
           node.append(link);
           node.append(image);
-          document.getElementById("financial").appendChild(node);
+          document.getElementById("homeFinance").appendChild(node);
         }
         ReactDOM.render(<App />, document.getElementById("root"));
       }).catch(error => {});
@@ -69,16 +69,6 @@ class Home extends React.Component {
           {sessionStorage.getItem("username")}!
         </h1>
         <h2 id="balance">Current User Balance: </h2>
-        <p>
-          Here the user can view graphs of monthly expenditure, view how much
-          over your current budget you are, view this months transfers
-        </p>
-        <h2>Latest information for your account</h2>
-        <p>Show latest statements, open loans</p>
-        <div id="finance">
-          <h2>Latest Financial News Headlines: Thanks to newsapi.org! - For more news visit the Headlines Page :)</h2>
-          <ul id="financial" />
-        </div>
         <div id="send">
           <h2>Send money </h2>
           <p>
@@ -98,7 +88,11 @@ class Home extends React.Component {
             placeholder="Enter account number"
           />
           <br />
-          <Button>Send Money</Button>
+          <Button id="sendButton">Send Money</Button>
+        </div>
+        <div id="finance">
+          <h2>Latest Financial News Headlines for you {sessionStorage.getItem("name")}: Thanks to newsapi.org! - For more news visit the Headlines Page :)</h2>
+          <ul id="homeFinance" />
         </div>
       </div>
     );

@@ -247,6 +247,11 @@ class Statistics extends React.Component {
           <title>Statistics</title>
         </Helmet>
         <h1>Welcome to the Statistics!</h1>
+        <p>
+        On the statistics page I will get the daily conversion rates for the day
+        and also get information on the stock market, we will also generate
+        charts based on your spending.
+        </p>
         <div id="stock" />
         <div id="currency">
           <h3>Daily Exchange Rates</h3>
@@ -257,8 +262,8 @@ class Statistics extends React.Component {
         </div>
         <div id="charts">
           <h3>Chart Section</h3>
-          <p>Heres some charts we made based on your account activity</p>
-          <Bar
+          <p>Here's some charts we made based on your account activity in regards to loans and transactions</p>
+          <Bar id ="loanChart"
             data={this.state.loanState}
             options={{
               title: {
