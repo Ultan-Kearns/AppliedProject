@@ -1,0 +1,13 @@
+#stock{
+  margin-bottom: 10vh;
+}
+#currency{
+  margin-bottom: 20vh;
+}
+#charts{
+  margin-top: 10vh;
+}
+li{
+  border:2px solid black;
+  margin-bottom: 10%;
+}

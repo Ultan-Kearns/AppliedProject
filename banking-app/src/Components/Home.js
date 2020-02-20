@@ -19,6 +19,8 @@ class Home extends React.Component {
 
         );
         document.getElementById("balance").append(text);
+      }).catch(error=>{
+        
       });
     /*
     Pulling data from newsapi.org

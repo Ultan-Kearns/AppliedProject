@@ -59,6 +59,7 @@ class Loans extends React.Component {
           );
           var buttonNode = document.createElement("Button");
           buttonNode.textContent = "Pay Back";
+          buttonNode.id = "payButton"
           //for repaying loans
           var loanId = this.state._id;
           var loanCost = this.state.amount;
@@ -103,6 +104,7 @@ class Loans extends React.Component {
               alert("Not enough money in account to repay loan");
             }
           });
+          node.id = "loans"
           node.append(text);
           node.append(buttonNode);
           document.getElementById("loans").appendChild(node);
@@ -132,7 +134,7 @@ class Loans extends React.Component {
       parseInt(this.state.amount * 0.25) <=
         parseInt(sessionStorage.getItem("balance")) &&
       sessionStorage.getItem("openLoans") < 5 &&
-      this.state.amount <= 500
+      this.state.amount <= 500 && this.state.amount > 0
     ) {
       const newLoan = {
         email: sessionStorage.getItem("email"),
@@ -181,16 +183,29 @@ class Loans extends React.Component {
                 "loan approved\n New balance is: " +
                   sessionStorage.getItem("balance")
               );
+            }).catch(error =>{
+              alert("Could not approve loan")
             });
           sessionStorage.setItem("openLoans", getLoans());
-          this.getLoans();
+          const newTransaction = {
+            email: sessionStorage.getItem("email"),
+            cost: -this.state.amount,
+            location: "IndependentBanking.com",
+            name: sessionStorage.getItem("username"),
+            date: date
+          };
+          axios
+            .post("https://localhost:8080/api/transactions", newTransaction)
+            .then(res => {
+              console.log(res);
+            });
         });
     } else {
       alert(
-        "Loan aborted\n Reasons why this may happen:\nLoan cannot be null and user must have at least 25% of loan amount in balance\nUsers can only have 5 open loans at a time\n Loans must also be less than or equal to €500"
+        "Loan aborted\n Reasons why this may happen:\nLoan cannot be null and user must have at least 25% of loan amount in balance\nUsers can only have 5 open loans at a time\n Loans must also be less than or equal to €500\nLoan must be greater than 0"
       );
     }
-
+    getLoans();
     event.preventDefault();
   };
   render() {

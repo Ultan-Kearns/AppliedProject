@@ -74,11 +74,9 @@ class Headlines extends React.Component {
     <Helmet>
       <title>Latest Financial News</title>
     </Helmet>
-      <h1>Latest Financial News</h1>
-      <h2>News from NewsAPI</h2>
+      <h1>Latest news on finance from Reddit & NewsAPI</h1>
       <ul id = "financial">
       </ul>
-      <h2>News From /r/wallstreet</h2>
       <ul id = "reddit">
       </ul>
     </div>

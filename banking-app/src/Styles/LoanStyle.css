@@ -1,8 +1,19 @@
 #loanButton{
-  margin-left: 5%;
+  margin-left: 1%;
   margin-top: 2%;
 }
 .loanApply{
   margin-bottom: 10%;
   margin-top: 5%;
+
+}
+#loans{
+  color:red;
+  margin-top: 10%;
+  font-weight: bold;
+}
+#payButton{
+  align:right;
+  margin-left: 21.9%;
+  font-weight: bold;
 }

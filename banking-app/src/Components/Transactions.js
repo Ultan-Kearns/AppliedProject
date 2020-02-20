@@ -2,7 +2,7 @@ import React from "react";
 import "axios";
 import { Helmet } from "react-helmet";
 import "react-bootstrap/Button"
-
+import '../Styles/TransactionStyle.css'
 
 class Transactions extends React.Component {
   //maybe create statemnt when sending money from home
@@ -44,6 +44,7 @@ class Transactions extends React.Component {
               ", Date: " +
               this.state.date
           );
+          node.id = "transaction"
           node.append(text);
           document.getElementById("transactions").appendChild(node);
         }
