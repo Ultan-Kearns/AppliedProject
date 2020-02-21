@@ -45,8 +45,11 @@ class Login extends React.Component {
   componentDidMount() {
     //if(sessionStorage.getItem("username") !=="null" && sessionStorage.getItem("username") !== null){
     //ReactDOM.render(<App />, document.getElementById("root"));
-
-  }
+    //this stops context menu being used in app reference: https://www.w3schools.com/jsref/event_oncontextmenu.asp
+    document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+  });
+}
   handleSubmitForm = event => {
     const axios = require("axios").default;
     const sha256 = require('js-sha256');

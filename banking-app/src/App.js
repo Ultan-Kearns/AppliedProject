@@ -22,6 +22,7 @@ class App extends React.Component {
     window.location.reload();
   }
   componentDidMount(){
+    //this stops context menu being used in app
     document.addEventListener('contextmenu', function(e) {
     e.preventDefault();
   });

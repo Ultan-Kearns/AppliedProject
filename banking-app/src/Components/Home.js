@@ -1,27 +1,43 @@
-import React from "react";
+import React, { useState } from "react";
 import { Helmet } from "react-helmet";
 import App from "../App";
 import ReactDOM from "react-dom";
 import "../Styles/HomeStyle.css";
 import Button from "react-bootstrap/Button";
+const axios = require("axios").default;
 
 class Home extends React.Component {
+  constructor(props) {
+    super();
+    this.state = {
+      amount: "",
+      accountId: "",
+      payeeBalance: "",
+    };
+  }
+  handleAmountChange = event => {
+    this.setState({
+      amount: event.target.value
+    });
+  };
+  handleIdChange = event => {
+    this.setState({
+      accountId: event.target.value
+    });
+  };
   componentDidMount() {
-    const axios = require("axios").default;
     axios
       .get(
         "https://localhost:8080/api/users/" + sessionStorage.getItem("email")
       )
       .then(res => {
-        var text = document.createTextNode( "€" +
-          res.data.balance,
-          sessionStorage.setItem("balance",res.data.balance)
-
+        var text = document.createTextNode(
+          "€" + res.data.balance,
+          sessionStorage.setItem("balance", res.data.balance)
         );
         document.getElementById("balance").append(text);
-      }).catch(error=>{
-
-      });
+      })
+      .catch(error => {});
     /*
     Pulling data from newsapi.org
     then render App page
@@ -40,7 +56,7 @@ class Home extends React.Component {
             "Headline: " +
               res.data.articles[i].title +
               "Description: " +
-              res.data.articles[i].description  +
+              res.data.articles[i].description +
               "Author: " +
               res.data.articles[i].author
           );
@@ -56,8 +72,113 @@ class Home extends React.Component {
           document.getElementById("homeFinance").appendChild(node);
         }
         ReactDOM.render(<App />, document.getElementById("root"));
-      }).catch(error => {});
+      })
+      .catch(error => {});
   }
+
+  handleSubmitForm = e => {
+    if (this.state.amount === "" || this.state.accountId === "") {
+      alert("The amount / account ID cannot be null, want to donate it to us?");
+    } else {
+      var date = new Date();
+      //payer logic
+      const newTransaction = {
+        email: sessionStorage.getItem("email"),
+        cost: -this.state.amount,
+        location: "Online Banking Transfer",
+        name: sessionStorage.getItem("username"),
+        date: date
+      };
+      //create transaction
+      axios
+        .post("https://localhost:8080/api/transactions", newTransaction)
+        .then(res => {
+          console.log(res);
+        });
+        //update bal
+        const newBalance = {
+          balance:
+          parseInt(sessionStorage.getItem("balance")) - parseInt(this.state.amount)
+        };
+        axios
+          .post(
+            "https://localhost:8080/api/users/" +
+              sessionStorage.getItem("email") +
+              "/balance",
+            newBalance
+          )
+          .then(res => {
+            console.log("TEST " + res);
+            axios
+              .get(
+                "https://localhost:8080/api/users/" +
+                  sessionStorage.getItem("email")
+              )
+              .then(res => {
+                sessionStorage.setItem("balance", res.data.balance);
+
+              }).catch(error =>{
+                alert("Could not approve loan")
+              });
+            })
+
+
+
+        //payee logic
+        const payeeTransaction = {
+          email: sessionStorage.getItem("email"),
+          cost: this.state.amount,
+          location: "Online Banking Transfer",
+          name: sessionStorage.getItem("username"),
+          date: date
+        };
+        //create transaction
+        axios
+          .post("https://localhost:8080/api/transactions", payeeTransaction)
+          .then(res => {
+            console.log(res);
+          });
+          //get payee balances
+          axios
+            .get(
+              "https://localhost:8080/api/users/" + this.state.accountId
+            )
+            .then(res => {
+              this.setState({
+              payeeBalance: res.data.balance
+              })
+             })
+            .catch(error => {});
+          //update bal
+          const newPayeeBalance = {
+            balance:
+            parseInt(this.state.payeeBalance + this.state.amount)
+          };
+          axios
+            .post(
+              "https://localhost:8080/api/users/" +
+                this.state.accountId +
+                "/balance",
+              newPayeeBalance
+            )
+            .then(res => {
+              console.log("TEST " + res);
+              axios
+                .get(
+                  "https://localhost:8080/api/users/" +
+                    this.state.accountId
+                )
+                .then(res => {
+                  sessionStorage.setItem("balance", res.data.balance);
+                  alert("Money sent")
+                }).catch(error =>{
+                  alert("Could not send money")
+                });
+    })
+  }
+    e.preventDefault();
+  };
+
   render() {
     return (
       <div className="Home">
@@ -75,23 +196,33 @@ class Home extends React.Component {
             Send money to another account by simply entering the amount to send
             and the account number
           </p>
-          Amount to send:
-          <input
-            type="number"
-            id="sendAmount"
-            placeholder="Enter amount to send"
-          />
-          Account number:
-          <input
-            type="text"
-            id="sendAccount"
-            placeholder="Enter account number"
-          />
-          <br />
-          <Button id="sendButton">Send Money</Button>
+          <form className="send" onSubmit={this.handleSubmitForm}>
+            Amount to send:
+            <input
+              type="number"
+              id="sendAmount"
+              placeholder="Enter amount to send"
+              onChange={this.handleAmountChange}
+            />
+            Account number:
+            <input
+              type="text"
+              id="sendAccount"
+              placeholder="Enter account number"
+              onChange={this.handleIdChange}
+            />
+            <br />
+            <Button id="sendButton" type="submit">
+              Send Money
+            </Button>
+          </form>
         </div>
         <div id="finance">
-          <h2>Latest Financial News Headlines for you {sessionStorage.getItem("name")}: Thanks to newsapi.org! - For more news visit the Headlines Page :)</h2>
+          <h2>
+            Latest Financial News Headlines for you{" "}
+            {sessionStorage.getItem("name")}: Thanks to newsapi.org! - For more
+            news visit the Headlines Page :)
+          </h2>
           <ul id="homeFinance" />
         </div>
       </div>
