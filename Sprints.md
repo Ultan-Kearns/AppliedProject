@@ -47,11 +47,12 @@
 + Fix all issues and write tests(DONE just need to test)
 + Add Selenium to tech review(DONE)
 + Get Headlines component finished (Reddit, latest news etc...)(DONE)
-+ Start System Design
 + pay back loan feature (DONE)
-+ review dissertation
 + ensure user cannot delete account if they have open loans(DONE)
 # Sprint 9 (21st February - 25th February)
++ review dissertation
++ Start System Design
+
 + Brainstorm ideas(tensorflowJS?)
 + research Docker + get it working
 + refactor and test code

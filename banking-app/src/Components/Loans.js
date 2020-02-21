@@ -50,11 +50,11 @@ class Loans extends React.Component {
           var text = document.createTextNode(
             "Amount: €" +
               this.state.amount +
-              ", Date: " +
+              ", \tDate: " +
               this.state.date +
-              " ,Status: " +
+              " ,\tStatus: " +
               this.state.status +
-              " ,Owed to: " +
+              " ,\tOwed to: " +
               this.state.owedTo
           );
           var buttonNode = document.createElement("Button");

@@ -11,6 +11,7 @@
   color:red;
   margin-top: 10%;
   font-weight: bold;
+  list-style: none;
 }
 #payButton{
   align:right;
