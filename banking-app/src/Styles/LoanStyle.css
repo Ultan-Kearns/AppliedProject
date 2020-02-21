@@ -8,13 +8,19 @@
 
 }
 #loans{
-  color:red;
   margin-top: 10%;
   font-weight: bold;
   list-style: none;
+  border-radius: 40px;
+  color: red;
 }
 #payButton{
   align:right;
   margin-left: 21.9%;
   font-weight: bold;
+}
+#loans:hover{
+  background-color: black;
+  color: white;
+
 }

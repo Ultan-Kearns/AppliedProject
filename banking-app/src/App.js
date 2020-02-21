@@ -21,6 +21,11 @@ class App extends React.Component {
     sessionStorage.setItem("username", "");
     window.location.reload();
   }
+  componentDidMount(){
+    document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+  });
+  }
   render() {
     return (
       <div className="App">

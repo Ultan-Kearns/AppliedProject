@@ -52,7 +52,7 @@
 # Sprint 9 (21st February - 25th February)
 + review dissertation
 + Start System Design
-
++ fix update bug on userinfo page
 + Brainstorm ideas(tensorflowJS?)
 + research Docker + get it working
 + refactor and test code

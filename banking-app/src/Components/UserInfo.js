@@ -300,11 +300,11 @@ try{
           </InputGroup>
           <InputGroup className="mb-3" id="number">
             <InputGroup.Prepend>
-              <InputGroup.Text id="basic-addon1">Number:</InputGroup.Text>
+              <InputGroup.Text id="basic-addon1">Phone Number:</InputGroup.Text>
             </InputGroup.Prepend>
             <FormControl
-              placeholder="Number"
-              aria-label="Number"
+              placeholder="Phone Number"
+              aria-label="Phone Number"
               type="number"
               value={this.state.number}
               onChange={this.handleNumberChange}
