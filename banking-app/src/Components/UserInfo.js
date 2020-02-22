@@ -7,7 +7,7 @@ import InputGroup from "react-bootstrap/InputGroup";
 import "../Styles/UserInfoStyle.css";
 import "js-sha256";
 import FormControl from "react-bootstrap/FormControl";
-import {getLoans} from "../Services/LoanHelpers.js"
+import { getLoans } from "../Services/LoanHelpers.js";
 
 const axios = require("axios").default;
 const sha256 = require("js-sha256");
@@ -18,13 +18,14 @@ class UserInfo extends React.Component {
     this.state = {
       name: "",
       newUsername: "",
+      username: sessionStorage.getItem("email"),
       password: "",
       number: "",
       prevName: "",
       prevNumber: "",
       prevPassword: "",
       dob: "",
-      balance: "",
+      balance: ""
     };
   }
   handleNewUsernameChange = event => {
@@ -47,7 +48,7 @@ class UserInfo extends React.Component {
       number: event.target.value
     });
   };
-
+  //for updating user info
   update = event => {
     //if any info is blank set to previous info of user
     if (this.state.number === "null" || this.state.number === "") {
@@ -86,9 +87,8 @@ class UserInfo extends React.Component {
         this.setState({
           balance: res.data.balance
         });
-      }).catch(error => {
-
-      });
+      })
+      .catch(error => {});
     //hash pass using sha256
     const newUser = {
       _id: this.state.newUsername.toLowerCase(),
@@ -101,79 +101,104 @@ class UserInfo extends React.Component {
       bic: ""
     };
     //problem with axios not being asynchronous may find a different way to handle this
-    axios.get("https://localhost:8080/api/users" + newUser._id).then(res=>
-    {
-      //try and see if user exists synchronously and  set value
-    }).catch(error=>{
-      alert("Cannot update user connection error")
-    })
-try{
-    if (
-      this.state.number.length === 10 &&
-      this.state.name.length >= 5 &&
-      this.state.password.length >= 5
-    ) {
+    const CancelToken = axios.CancelToken;
+    let cancel;
+    try {
+      if (
+        this.state.number.length === 10 &&
+        this.state.name.length >= 5 &&
+        this.state.password.length >= 5
+      ) {
+        var isCancelled = false;
+        axios
+          .get("https://localhost:8080/api/users/" + newUser._id)
+          .then(res => {
+            alert(JSON.Stringify(res))
+            //check if response is not null then check to see if the user is using their current username
+            if (
+              res !== null &&
+              this.state.username !== this.state.newUsername
+            ) {
+              alert("Cannot use this email, already registered");
+              //taken from axios documentation
+              cancelToken: new CancelToken(function executor(c) {
+                // An executor function receives a cancel function as a parameter
+                cancel = c;
+              });
+              cancel();
+              isCancelled = true;
+            }
+            else{
+              alert("T")
+            }
+          })
+          .then(res => {
+            alert("IS " + isCancelled)
+            if(isCancelled === false){
+            //delete original user
+            axios
+              .delete(
+                "https://localhost:8080/api/users/" +
+                  sessionStorage.getItem("email")
+              )
+              .then(res => {
 
-      //delete original user
-      axios
-        .delete(
-          "https://localhost:8080/api/users/" + sessionStorage.getItem("email")
-        )
-        .then(res => {
-          console.log(res.data);
-        })
-        .catch(error => {
-          console.log("ERR");
-        });
-      //recreate user for ID - for some reason it clones
-      axios
-        .post("https://localhost:8080/api/users/", newUser)
-        .then(res => {
-          //log res for testing
-          console.log(res.data);
-        })
-        .catch(error => {
-          console.log("ERR");
-        });
-      axios
-        .post(
-          "https://localhost:8080/api/transactions/" +
-            sessionStorage.getItem("email") +
-            "/" +
-            this.state.newUsername
-        )
-        .then(res => {
-          console.log("TESTING UPDATE TRANSACTION" + res.data);
-        })
-        .catch(error => {
-          console.log("Error with transactions");
-        });
-      axios
-        .post(
-          "https://localhost:8080/api/loans/" +
-            sessionStorage.getItem("email") +
-            "/" +
-            this.state.newUsername
-        )
-        .then(res => {
-          console.log("TESTING UPDATE loans" + res.data);
-          sessionStorage.setItem("email", this.state.newUsername);
-          this.updateData();
-          alert("Updated user");
-        })
-        .catch(error => {
-          console.log("Error with loans");
-        });
-      event.preventDefault();
-    } else {
-      alert(
-        "Form invalid, password length must be greater than 6 and number must have 10 digits and name must be >= 5 characters"
-      );
+              })
+              .catch(error => {
+                console.log("ERR");
+              });
+              //recreate user for ID - for some reason it clones
+              axios
+                .post("https://localhost:8080/api/users/", newUser)
+                .then(res => {
+                  //log res for testing
+                  console.log(res.data);
+                })
+                .catch(error => {
+                  console.log("ERR");
+                });
+              axios
+                .post(
+                  "https://localhost:8080/api/transactions/" +
+                    sessionStorage.getItem("email") +
+                    "/" +
+                    this.state.newUsername
+                )
+                .then(res => {
+                  console.log("TESTING UPDATE TRANSACTION" + res.data);
+                })
+                .catch(error => {
+                  console.log("Error with transactions");
+                });
+              axios
+                .post(
+                  "https://localhost:8080/api/loans/" +
+                    sessionStorage.getItem("email") +
+                    "/" +
+                    this.state.newUsername
+                )
+                .then(res => {
+                  sessionStorage.setItem("email", this.state.newUsername);
+                  this.updateData();
+                  alert("Updated user");
+                })
+                .catch(error => {
+                  console.log("Error with loans");
+                });
+              }
+          })
+          .catch(error => {
+            alert("Cannot update user connection error " + error);
+          });
+        event.preventDefault();
+      } else {
+        alert(
+          "Form invalid, password length must be greater than 6 and number must have 10 digits and name must be >= 5 characters"
+        );
+      }
+    } catch (err) {
+      alert("Issue arose");
     }
-  }
-  catch(err){
-    alert("Issue arose")
-  }
     event.preventDefault();
   };
   componentDidMount() {
@@ -213,34 +238,46 @@ try{
           }),
           this.setState({
             balance: res.data.balance
-          }),
-        )
+          })
+        );
         password = res.data.password;
-        document.getElementById("basic").appendChild(text)
-      }).catch(error =>{
-        alert("Can't communicate with server")
+        document.getElementById("basic").appendChild(text);
+      })
+      .catch(error => {
+        alert("Can't communicate with server");
       });
   }
   deleteUser() {
     var answer = window.prompt("Enter password to delete account");
     try {
-       if (sha256(answer) === password && parseInt(sessionStorage.getItem("openLoans")) === 0) {
-        axios.delete(
-          "https://localhost:8080/api/transactions/" +
-            sessionStorage.getItem("email")
-        ).catch(error => {
-          alert("Error connecting to server")
-        });
-        axios.delete(
-          "https://localhost:8080/api/loans/" + sessionStorage.getItem("email")
-        ).catch(error => {
-          alert("Error connecting to server")
-        });
-        axios.delete(
-          "https://localhost:8080/api/users/" + sessionStorage.getItem("email")
-        ).catch(error => {
-          alert("Error connecting to server")
-        });
+      if (
+        sha256(answer) === password &&
+        parseInt(sessionStorage.getItem("openLoans")) === 0
+      ) {
+        axios
+          .delete(
+            "https://localhost:8080/api/transactions/" +
+              sessionStorage.getItem("email")
+          )
+          .catch(error => {
+            alert("Error connecting to server");
+          });
+        axios
+          .delete(
+            "https://localhost:8080/api/loans/" +
+              sessionStorage.getItem("email")
+          )
+          .catch(error => {
+            alert("Error connecting to server");
+          });
+        axios
+          .delete(
+            "https://localhost:8080/api/users/" +
+              sessionStorage.getItem("email")
+          )
+          .catch(error => {
+            alert("Error connecting to server");
+          });
         alert("User deleted");
         ReactDOM.render(<Login />, document.getElementById("root"));
       } else {
@@ -270,7 +307,6 @@ try{
               placeholder="Name"
               aria-label="Name"
               type="text"
-              value={this.state.name}
               onChange={this.handleNameChange}
             />
           </InputGroup>
@@ -282,7 +318,6 @@ try{
               placeholder="Username"
               aria-label="Username"
               type="email"
-              value={this.state.newUsername}
               onChange={this.handleNewUsernameChange}
             />
           </InputGroup>
@@ -294,7 +329,6 @@ try{
               placeholder="Password"
               aria-label="Password"
               type="password"
-              value={this.state.password}
               onChange={this.handlePasswordChange}
             />
           </InputGroup>
@@ -306,7 +340,6 @@ try{
               placeholder="Phone Number"
               aria-label="Phone Number"
               type="number"
-              value={this.state.number}
               onChange={this.handleNumberChange}
             />
           </InputGroup>

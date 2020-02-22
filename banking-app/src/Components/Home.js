@@ -77,8 +77,14 @@ class Home extends React.Component {
   }
 
   handleSubmitForm = e => {
+    if(this.state.accountId === sessionStorage.getItem("email"))
+    {
+      alert("Cannot send money to yourself ( ;-( )")
+      e.preventDefault()
+      return;
+    }
     if (this.state.amount === "" || this.state.accountId === "") {
-      alert("The amount / account ID cannot be null, want to donate it to us?");
+      alert("The amount / account ID cannot be null, want to donate it to us? >;D");
     } else {
       var date = new Date();
       //payer logic
@@ -119,7 +125,7 @@ class Home extends React.Component {
               sessionStorage.setItem("balance", res.data.balance);
             })
             .catch(error => {
-              alert("Could not approve loan");
+              alert("Could not send money");
             });
         });
 
@@ -143,7 +149,6 @@ class Home extends React.Component {
           this.setState({
             payeeBalance:   parseInt(res.data.balance) + parseInt(this.state.amount)
           })
-          alert("PAYEE " + this.state.payeeBalance)
         }).then(res =>{
           const newBalance ={
             balance: this.state.payeeBalance
@@ -156,8 +161,7 @@ class Home extends React.Component {
               newBalance
             )
             .then(res => {
-              console.log("TEST " + res);
-              alert(this.state.payeeBalance)
+              alert("Money Sent to: " + this.state.accountId + " Amount sent: " + this.state.amount + " New Balance: " + newBalance.balance)
             });
         })
         .catch(error => {});

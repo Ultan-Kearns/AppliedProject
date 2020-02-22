@@ -104,7 +104,7 @@ class Loans extends React.Component {
               alert("Not enough money in account to repay loan");
             }
           });
-          node.id = "loans"
+          node.id = "loan"
           node.append(text);
           node.append(buttonNode);
           document.getElementById("loans").appendChild(node);

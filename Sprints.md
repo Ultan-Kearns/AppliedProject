@@ -43,22 +43,33 @@
 + Finish Tech Review(Done)
 # Sprint 8 (10th February - 21st February)
 + Get Statistics generated based on Loans / Statments and financial stats from google(Done just need to expand a bit more and add catches to Axios and add some styles and test)
-+ Add Iban validator and bic and add to user schema(research on google)
-+ Fix all issues and write tests(DONE just need to test)
++ Add Iban validator and bic and add to user schema(research on google)(Done but need validate)
++ Fix all issues and write tests(DONE)
 + Add Selenium to tech review(DONE)
 + Get Headlines component finished (Reddit, latest news etc...)(DONE)
 + pay back loan feature (DONE)
 + ensure user cannot delete account if they have open loans(DONE)
-# Sprint 9 (21st February - 25th February)
+# Sprint 9 (21st February - 29th February)
 + review dissertation
 + Start System Design
 + fix update bug on userinfo page
 + Brainstorm ideas(tensorflowJS?)
 + research Docker + get it working
 + refactor and test code
++ get transfer working(Done with independent banking accounts will need to add IBAN validatior and pretend to send money + test)
 + Host on google cloud
 + Finish System design & review dissertation
 + write more sprints
+# Sprint 10 (1st March - 10th March)
++ Finish system evaluation
++ work on tensorflowJS and add to technical and system design
++ Work on conclusion
++ fix up documentation and make sure project is submittible
+# Sprint 11 (10th March - ?)
++ Put finishing touches on project
++ Ensure cloud version is working
++ Ensure all documentation is well-written
+
 # Issues
 + fix style on pages (maybe add animations?)
 + Add more to tech review (Need to include financial)
