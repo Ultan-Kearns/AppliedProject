@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Helmet } from "react-helmet";
 import App from "../App";
 import ReactDOM from "react-dom";
@@ -12,7 +12,7 @@ class Home extends React.Component {
     this.state = {
       amount: "",
       accountId: "",
-      payeeBalance: "",
+      payeeBalance:""
     };
   }
   handleAmountChange = event => {
@@ -84,8 +84,8 @@ class Home extends React.Component {
       //payer logic
       const newTransaction = {
         email: sessionStorage.getItem("email"),
-        cost: -this.state.amount,
-        location: "Online Banking Transfer",
+        cost: this.state.amount * -1,
+        location: "Online Banking Transfer to " + this.state.accountId,
         name: sessionStorage.getItem("username"),
         date: date
       };
@@ -95,90 +95,75 @@ class Home extends React.Component {
         .then(res => {
           console.log(res);
         });
-        //update bal
-        const newBalance = {
-          balance:
-          parseInt(sessionStorage.getItem("balance")) - parseInt(this.state.amount)
-        };
-        axios
-          .post(
-            "https://localhost:8080/api/users/" +
-              sessionStorage.getItem("email") +
-              "/balance",
-            newBalance
-          )
-          .then(res => {
-            console.log("TEST " + res);
-            axios
-              .get(
-                "https://localhost:8080/api/users/" +
-                  sessionStorage.getItem("email")
-              )
-              .then(res => {
-                sessionStorage.setItem("balance", res.data.balance);
-
-              }).catch(error =>{
-                alert("Could not approve loan")
-              });
-            })
-
-
-
-        //payee logic
-        const payeeTransaction = {
-          email: sessionStorage.getItem("email"),
-          cost: this.state.amount,
-          location: "Online Banking Transfer",
-          name: sessionStorage.getItem("username"),
-          date: date
-        };
-        //create transaction
-        axios
-          .post("https://localhost:8080/api/transactions", payeeTransaction)
-          .then(res => {
-            console.log(res);
-          });
-          //get payee balances
+      //update bal
+      const newBalance = {
+        balance:
+          parseInt(sessionStorage.getItem("balance")) -
+          parseInt(this.state.amount)
+      };
+      axios
+        .post(
+          "https://localhost:8080/api/users/" +
+            sessionStorage.getItem("email") +
+            "/balance",
+          newBalance
+        )
+        .then(res => {
+          console.log("TEST " + res);
           axios
             .get(
-              "https://localhost:8080/api/users/" + this.state.accountId
+              "https://localhost:8080/api/users/" +
+                sessionStorage.getItem("email")
             )
             .then(res => {
-              this.setState({
-              payeeBalance: res.data.balance
-              })
-             })
-            .catch(error => {});
-          //update bal
-          const newPayeeBalance = {
-            balance:
-            parseInt(this.state.payeeBalance + this.state.amount)
-          };
+              sessionStorage.setItem("balance", res.data.balance);
+            })
+            .catch(error => {
+              alert("Could not approve loan");
+            });
+        });
+
+      //payee logic
+      const payeeTransaction = {
+        email: this.state.accountId,
+        cost: this.state.amount,
+        location: "Online Banking Transfer from " + sessionStorage.getItem("email"),
+        name: sessionStorage.getItem("username"),
+        date: date
+      };
+      //create transaction
+      axios
+        .post("https://localhost:8080/api/transactions", payeeTransaction)
+        .then(res => {
+          console.log(res);
+        });
+       axios
+        .get("https://localhost:8080/api/users/" + this.state.accountId)
+        .then(res => {
+          this.setState({
+            payeeBalance:   parseInt(res.data.balance) + parseInt(this.state.amount)
+          })
+          alert("PAYEE " + this.state.payeeBalance)
+        }).then(res =>{
+          const newBalance ={
+            balance: this.state.payeeBalance
+          }
           axios
             .post(
               "https://localhost:8080/api/users/" +
                 this.state.accountId +
                 "/balance",
-              newPayeeBalance
+              newBalance
             )
             .then(res => {
               console.log("TEST " + res);
-              axios
-                .get(
-                  "https://localhost:8080/api/users/" +
-                    this.state.accountId
-                )
-                .then(res => {
-                  sessionStorage.setItem("balance", res.data.balance);
-                  alert("Money sent")
-                }).catch(error =>{
-                  alert("Could not send money")
-                });
-    })
-  }
+              alert(this.state.payeeBalance)
+            });
+        })
+        .catch(error => {});
+    }
     e.preventDefault();
   };
-
   render() {
     return (
       <div className="Home">
