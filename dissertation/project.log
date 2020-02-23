@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Arch Linux) (preloaded format=pdflatex 2020.2.9)  23 FEB 2020 19:41
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Arch Linux) (preloaded format=pdflatex 2020.2.9)  23 FEB 2020 20:12
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1661,27 +1661,81 @@ C39B.pygtex [50] [51] [52])
 
 
 (./_minted-project/7409D5D17DEE4795216AE9A21E014373CA2B23E3053BD6483C1AE6AEE4FE
-C39B.pygtex [53])
+C39B.pygtex
+Overfull \hbox (320.11134pt too wide) in paragraph at lines 4--4
+[]\OT1/lmtt/m/n/12 "https://newsapi.org/v2/top-headlines?country=us&category=bu
+siness&apiKey=e9cdf3a801374e4eba79b8ea0552a4bd"[]|  
+ []
+
+[53])
 \openout3 = `project.pyg'.
 
 
 (./_minted-project/67D9A10C9BA076F325371EBFF19895B2CA2B23E3053BD6483C1AE6AEE4FE
-C39B.pygtex [54] [55] [56])
+C39B.pygtex
+Overfull \hbox (264.55032pt too wide) in paragraph at lines 4--4
+[]\OT1/lmtt/m/n/12 "https://www.alphavantage.co/query?function=TIME_SERIES_DAIL
+Y&symbol=MSFT&apikey=G38RVCM1OWLSKALP"[]|  
+ []
+
+[54]
+Overfull \hbox (431.2754pt too wide) in paragraph at lines 32--32
+[]\OT1/lmtt/m/n/12 "https://www.alphavantage.co/query?function=CURRENCY_EXCHANG
+E_RATE&from_currency=EUR&to_currency=BTC&apikey=G38RVCM1OWLSKALP"[]|  
+ []
+
+
+Overfull \hbox (431.2754pt too wide) in paragraph at lines 55--55
+[]\OT1/lmtt/m/n/12 "https://www.alphavantage.co/query?function=CURRENCY_EXCHANG
+E_RATE&from_currency=EUR&to_currency=GBP&apikey=G38RVCM1OWLSKALP"[]|  
+ []
+
+[55]
+Overfull \hbox (60.77522pt too wide) in paragraph at lines 64--64
+[]\OT1/lmtt/m/n/12 document[].getElementById([]"eursterling"[]).appendChild(ste
+rlingNode);|  
+ []
+
+
+Overfull \hbox (431.2754pt too wide) in paragraph at lines 79--79
+[]\OT1/lmtt/m/n/12 "https://www.alphavantage.co/query?function=CURRENCY_EXCHANG
+E_RATE&from_currency=EUR&to_currency=USD&apikey=G38RVCM1OWLSKALP"[]|  
+ []
+
+
+Overfull \hbox (36.07521pt too wide) in paragraph at lines 88--88
+[]\OT1/lmtt/m/n/12 document[].getElementById([]"eurdollar"[]).appendChild(dolla
+rNode);|  
+ []
+
+[56]
+Overfull \hbox (431.2754pt too wide) in paragraph at lines 103--103
+[]\OT1/lmtt/m/n/12 "https://www.alphavantage.co/query?function=CURRENCY_EXCHANG
+E_RATE&from_currency=EUR&to_currency=CNY&apikey=G38RVCM1OWLSKALP"[]|  
+ []
+
+)
 \openout3 = `project.pyg'.
 
 
 (./_minted-project/2E28F1C297284A52C8BF660E0E579C66CA2B23E3053BD6483C1AE6AEE4FE
-C39B.pygtex [57])
+C39B.pygtex [57] [58])
 \openout3 = `project.pyg'.
 
 
 (./_minted-project/9AEE688C3CFDD95B15BCDA32121572EACA2B23E3053BD6483C1AE6AEE4FE
-C39B.pygtex [58])
+C39B.pygtex [59]
+Overfull \hbox (54.60022pt too wide) in paragraph at lines 33--33
+[]\OT1/lmtt/m/n/12 document[].getElementById([]"transactions"[]).appendChild(no
+de);|  
+ []
+
+)
 \openout3 = `project.pyg'.
 
 
 (./_minted-project/6B5728B23D2CFF3E97C2530836BC50A9CA2B23E3053BD6483C1AE6AEE4FE
-C39B.pygtex [59])
+C39B.pygtex [60])
 
 ! LaTeX Error: There's no line here to end.
 
@@ -1693,20 +1747,73 @@ l.1437 T
         his is basically the same function as we have seen from the helper m...
 
 ? 
-[60] [61] [62] [63 <./img/logincomponent.png (PNG copy)>]
+[61]
+\openout3 = `project.pyg'.
+
+runsystem(pygmentize -l JavaScript -f latex -P commandprefix=PYG -F tokenmerge 
+-o _minted-project/2973637C561E2EC1E807EF5FE498CCE3CA2B23E3053BD6483C1AE6AEE4FE
+C39B.pygtex project.pyg)...executed.
+
+
+(./_minted-project/2973637C561E2EC1E807EF5FE498CCE3CA2B23E3053BD6483C1AE6AEE4FE
+C39B.pygtex [62]
+Overfull \hbox (73.12523pt too wide) in paragraph at lines 13--13
+[]\OT1/lmtt/m/n/12 "mongodb://ultan:ultanultan1@ds135107.mlab.com:35107/applied
+project"[];|  
+ []
+
+[63] [64] [65]
+Overfull \hbox (102.98244pt too wide) in paragraph at lines 119--119
+\OT1/lmtt/m/it/12 https://github.com/Ultan-Kearns/eCommerceApp/blob/master/Back
+End/Server.js[]|  
+ []
+
+
+Overfull \hbox (102.98244pt too wide) in paragraph at lines 139--139
+\OT1/lmtt/m/it/12 https://github.com/Ultan-Kearns/eCommerceApp/blob/master/Back
+End/Server.js[]|  
+ []
+
+[66] [67] [68]
+Overfull \hbox (443.18178pt too wide) in paragraph at lines 242--242
+\OT1/lmtt/m/it/12 Users.findByIdAndUpdate(req.params.id,{name:req.body.name,pas
+sword:req.body.password,number:req.body.number},function(err,data){[]|  
+ []
+
+
+Overfull \hbox (185.27516pt too wide) in paragraph at lines 253--253
+\OT1/lmtt/m/n/12 Users.findByIdAndUpdate(req.params.id,{password[]:[]req.body.p
+assword},[]\OT1/lmtt/b/n/12 function[]\OT1/lmtt/m/n/12 (err,data){|  
+ []
+
+[69] [70]
+Overfull \hbox (290.25021pt too wide) in paragraph at lines 316--316
+\OT1/lmtt/m/n/12 Transactions.updateMany({email[]:[]req.params.email},{$set[]:[
+]{email[]:[]req.params.newemail}},[]\OT1/lmtt/b/n/12 function[]\OT1/lmtt/m/n/12
+ (err,doc){|  
+ []
+
+
+Overfull \hbox (234.67519pt too wide) in paragraph at lines 321--321
+\OT1/lmtt/m/n/12 Loans.updateMany({email[]:[]req.params.email},{$set[]:[]{email
+[]:[]req.params.newemail}},[]\OT1/lmtt/b/n/12 function[]\OT1/lmtt/m/n/12 (err,d
+oc){|  
+ []
+
+[71]) [72] [73] [74 <./img/logincomponent.png (PNG copy)>]
 Chapter 6.
-[64
+[75
 
 ]
 Chapter 7.
-[65
+[76
 
-] [66
+] [77
 
 
 ]
 Appendix A.
-(./project.bbl [67
+(./project.bbl [78
 
 ]
 Underfull \hbox (badness 6125) in paragraph at lines 4--8
@@ -1789,7 +1896,7 @@ Overfull \hbox (55.64209pt too wide) in paragraph at lines 53--57
 -[]cybercrime-[]losses/$[][]\OT1/lmr/m/n/12 . 
  []
 
-[68
+[79
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 59--63
@@ -1848,7 +1955,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 116--118
  https : / / github . com /
  []
 
-[69]
+[80]
 Underfull \hbox (badness 6173) in paragraph at lines 129--132
 []\OT1/lmr/m/n/12 Cloudflare.com, ``Tls im-age.''  [][]$\OT1/lmtt/m/n/12 https 
 : / / blog . cloudflare . com /
@@ -1872,23 +1979,33 @@ Underfull \hbox (badness 2181) in paragraph at lines 164--167
 tt/m/n/12 https : / / www .
  []
 
-) [70]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1502.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1502.
+) [81]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1848.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1848.
  (./project.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1502.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1502.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1848.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1848.
 
-Package rerunfilecheck Info: File `project.out' has not changed.
-(rerunfilecheck)             Checksum: 09E14BAC86015417AB5BE8BD49243887;7209.
+
+
+Package rerunfilecheck Warning: File `project.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `project.out':
+(rerunfilecheck)             Before: 88881717397CEBC543DEAA56F4FA0B79;7239
+(rerunfilecheck)             After:  105326E75425B5C10ACE166C97E67645;7311.
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 runsystem(rm project.pyg)...executed.
 
  ) ) 
 Here is how much of TeX's memory you used:
- 26274 strings out of 492167
- 525551 string characters out of 6131559
+ 26291 strings out of 492167
+ 526066 string characters out of 6131559
  659582 words of memory out of 5000000
- 29758 multiletter control sequences out of 15000+600000
+ 29760 multiletter control sequences out of 15000+600000
  66101 words of font info for 61 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  60i,9n,79p,1366b,632s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1905,10 +2022,10 @@ onts/type1/public/lm/lmr6.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr8
 dist/fonts/type1/public/lm/lmsy6.pfb></usr/share/texmf-dist/fonts/type1/public/
 lm/lmtk10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmtt12.pfb></usr/sha
 re/texmf-dist/fonts/type1/public/lm/lmtti10.pfb>
-Output written on project.pdf (70 pages, 1381425 bytes).
+Output written on project.pdf (81 pages, 1404541 bytes).
 PDF statistics:
- 1201 PDF objects out of 1440 (max. 8388607)
- 1069 compressed objects within 11 object streams
- 245 named destinations out of 1000 (max. 500000)
+ 1253 PDF objects out of 1440 (max. 8388607)
+ 1109 compressed objects within 12 object streams
+ 257 named destinations out of 1000 (max. 500000)
  1043 words of extra memory for PDF output out of 10000 (max. 10000000)
 

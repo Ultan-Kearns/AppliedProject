@@ -87,22 +87,23 @@
 \BOOKMARK [2][-]{subsection.5.2.2}{Reasons for System Design}{section.5.2}% 87
 \BOOKMARK [1][-]{section.5.3}{Front End Architecture}{chapter.5}% 88
 \BOOKMARK [2][-]{subsection.5.3.1}{List of Components}{section.5.3}% 89
-\BOOKMARK [1][-]{section.5.4}{User Interface Libraries}{chapter.5}% 90
-\BOOKMARK [1][-]{section.5.5}{Designing for UX\(User Experience\)}{chapter.5}% 91
-\BOOKMARK [1][-]{section.5.6}{Backend Architecture}{chapter.5}% 92
-\BOOKMARK [2][-]{subsection.5.6.1}{Mongoose}{section.5.6}% 93
-\BOOKMARK [2][-]{subsection.5.6.2}{ExpressJS}{section.5.6}% 94
-\BOOKMARK [2][-]{subsection.5.6.3}{NodeJS}{section.5.6}% 95
-\BOOKMARK [1][-]{section.5.7}{RESTful Architecture}{chapter.5}% 96
-\BOOKMARK [2][-]{subsection.5.7.1}{Client / Server Independence}{section.5.7}% 97
-\BOOKMARK [2][-]{subsection.5.7.2}{Cacheable}{section.5.7}% 98
-\BOOKMARK [2][-]{subsection.5.7.3}{Stateless}{section.5.7}% 99
-\BOOKMARK [1][-]{section.5.8}{Database Architecture}{chapter.5}% 100
-\BOOKMARK [2][-]{subsection.5.8.1}{MLAB}{section.5.8}% 101
-\BOOKMARK [2][-]{subsection.5.8.2}{Schema of Database}{section.5.8}% 102
-\BOOKMARK [1][-]{section.5.9}{Security}{chapter.5}% 103
-\BOOKMARK [2][-]{subsection.5.9.1}{Overview of Security}{section.5.9}% 104
-\BOOKMARK [0][-]{chapter.6}{System Evaluation}{}% 105
-\BOOKMARK [0][-]{chapter.7}{Conclusion}{}% 106
-\BOOKMARK [0][-]{section*.30}{Appendices}{}% 107
-\BOOKMARK [0][-]{Appendix.1.A}{Preamble \046 Intro}{}% 108
+\BOOKMARK [1][-]{section.5.4}{Designing for UX\(User Experience\)}{chapter.5}% 90
+\BOOKMARK [2][-]{subsection.5.4.1}{Designing For End-Users As Opposed to Engineers}{section.5.4}% 91
+\BOOKMARK [1][-]{section.5.5}{Backend Architecture}{chapter.5}% 92
+\BOOKMARK [2][-]{subsection.5.5.1}{Mongoose}{section.5.5}% 93
+\BOOKMARK [2][-]{subsection.5.5.2}{ExpressJS}{section.5.5}% 94
+\BOOKMARK [2][-]{subsection.5.5.3}{NodeJS}{section.5.5}% 95
+\BOOKMARK [2][-]{subsection.5.5.4}{Full Backend Code}{section.5.5}% 96
+\BOOKMARK [1][-]{section.5.6}{RESTful Architecture}{chapter.5}% 97
+\BOOKMARK [2][-]{subsection.5.6.1}{Client / Server Independence}{section.5.6}% 98
+\BOOKMARK [2][-]{subsection.5.6.2}{Cacheable}{section.5.6}% 99
+\BOOKMARK [2][-]{subsection.5.6.3}{Stateless}{section.5.6}% 100
+\BOOKMARK [1][-]{section.5.7}{Database Architecture}{chapter.5}% 101
+\BOOKMARK [2][-]{subsection.5.7.1}{MLAB}{section.5.7}% 102
+\BOOKMARK [2][-]{subsection.5.7.2}{Schema of Database}{section.5.7}% 103
+\BOOKMARK [1][-]{section.5.8}{Security}{chapter.5}% 104
+\BOOKMARK [2][-]{subsection.5.8.1}{Overview of Security}{section.5.8}% 105
+\BOOKMARK [0][-]{chapter.6}{System Evaluation}{}% 106
+\BOOKMARK [0][-]{chapter.7}{Conclusion}{}% 107
+\BOOKMARK [0][-]{section*.30}{Appendices}{}% 108
+\BOOKMARK [0][-]{Appendix.1.A}{Preamble \046 Intro}{}% 109
