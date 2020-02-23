@@ -115,25 +115,26 @@ app.get("/api/loans", function(req, res) {
     res.status(200, "request completed");
   });
 });
-//template was taken from earlier project and refactored
+//template was taken from earlier project and refactored https://github.com/Ultan-Kearns/eCommerceApp/blob/master/BackEnd/Server.js
 app.get("/api/users/:id/:password", function(req, res) {
   Users.findById(req.params.id, function(err, data) {
     if (err) {
       //send back error 500 to show the server had internel error
       res.status(500, "INTERNAL SERVER ERROR " + err);
+      return;
     } else if (data != null) {
       //compare user username and password to the username and password in DB
       if (req.params.id == data._id && data.password == req.params.password) {
         res.json(data);
         res.status(200, "User logged in!");
       }
-    }
-    else {
-      res.json("404");
-      res.status(404, "User not found!");
+      else {
+        res.json("null");
+        res.status(404, "User not found!");
+      }
     }
   });
-});
+})
 //template taken from earlier project - https://github.com/Ultan-Kearns/eCommerceApp/blob/master/BackEnd/Server.js
 //Improved upon in this project
 app.get("/api/emailuser/:id/:password", function(req, res, next) {
@@ -186,6 +187,9 @@ app.get("/api/users/:id/", function(req, res) {
       res.status(500, "INTERNAL SERVER ERROR " + err);
     } else if (data != null) {
       res.json(data);
+    }
+    else{
+            res.json("null")
     }
   });
 });

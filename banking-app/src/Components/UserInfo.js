@@ -50,6 +50,7 @@ class UserInfo extends React.Component {
   };
   //for updating user info
   update = event => {
+
     //if any info is blank set to previous info of user
     if (this.state.number === "null" || this.state.number === "") {
       this.setState({
@@ -113,12 +114,18 @@ class UserInfo extends React.Component {
         axios
           .get("https://localhost:8080/api/users/" + newUser._id)
           .then(res => {
-            alert(JSON.Stringify(res))
-            //check if response is not null then check to see if the user is using their current username
-            if (
-              res !== null &&
+            alert(res.data);
+            if (res.data === "null") {
+              alert(
+                "Changing ID, you will now have to login using " +
+                  newUser._id +
+                  " as email"
+              );
+            } else if (
+              res !== "null" &&
               this.state.username !== this.state.newUsername
             ) {
+              //check if response is not null then check to see if the user is using their current username
               alert("Cannot use this email, already registered");
               //taken from axios documentation
               cancelToken: new CancelToken(function executor(c) {
@@ -127,26 +134,23 @@ class UserInfo extends React.Component {
               });
               cancel();
               isCancelled = true;
-            }
-            else{
-              alert("T")
+            } else {
+              alert("T ");
             }
           })
           .then(res => {
-            alert("IS " + isCancelled)
-            if(isCancelled === false){
-            //delete original user
-            axios
-              .delete(
-                "https://localhost:8080/api/users/" +
-                  sessionStorage.getItem("email")
-              )
-              .then(res => {
-
-              })
-              .catch(error => {
-                console.log("ERR");
-              });
+            alert("IS " + isCancelled + this.state.dob);
+            if (isCancelled === false) {
+              //delete original user
+              axios
+                .delete(
+                  "https://localhost:8080/api/users/" +
+                    sessionStorage.getItem("email")
+                )
+                .then(res => {})
+                .catch(error => {
+                  console.log("ERR");
+                });
               //recreate user for ID - for some reason it clones
               axios
                 .post("https://localhost:8080/api/users/", newUser)
@@ -165,11 +169,12 @@ class UserInfo extends React.Component {
                     this.state.newUsername
                 )
                 .then(res => {
-                  console.log("TESTING UPDATE TRANSACTION" + res.data);
+                  console.log("TESTING UPDATE TRANSACTION" + JSON.stringify(res.data));
                 })
                 .catch(error => {
                   console.log("Error with transactions");
                 });
+
               axios
                 .post(
                   "https://localhost:8080/api/loans/" +
@@ -178,14 +183,17 @@ class UserInfo extends React.Component {
                     this.state.newUsername
                 )
                 .then(res => {
+
                   sessionStorage.setItem("email", this.state.newUsername);
-                  this.updateData();
-                  alert("Updated user");
+                  alert("Updated user " + this.state.newUsername + " Bal " + this.state.balance);
+                  this.state.username = this.state.newUsername
+                }).then(res=>{
+                                    this.updateData()
                 })
                 .catch(error => {
                   console.log("Error with loans");
                 });
-              }
+            }
           })
           .catch(error => {
             alert("Cannot update user connection error " + error);
@@ -208,7 +216,7 @@ class UserInfo extends React.Component {
   updateData() {
     axios
       .get(
-        "https://localhost:8080/api/users/" + sessionStorage.getItem("email")
+        "https://localhost:8080/api/users/" + this.state.username
       )
       .then(res => {
         var text = document.createTextNode(
@@ -294,10 +302,10 @@ class UserInfo extends React.Component {
           <title>User Info</title>
         </Helmet>
         <h1>Welcome to the User Info!</h1>
-        <p>This page will show user information</p>
-        <h2>Basic Info: </h2>
+         <h2>Basic Info: </h2>
         <p id="basic" />
         <h2>Change Info: </h2>
+        <p>Change your information down below, if any field is left blank we'll just fill it in with your current information</p>
         <form id="updateForm" onSubmit={this.update}>
           <InputGroup className="mb-3" id="name">
             <InputGroup.Prepend>
@@ -307,6 +315,7 @@ class UserInfo extends React.Component {
               placeholder="Name"
               aria-label="Name"
               type="text"
+              value={this.state.name}
               onChange={this.handleNameChange}
             />
           </InputGroup>
@@ -318,6 +327,7 @@ class UserInfo extends React.Component {
               placeholder="Username"
               aria-label="Username"
               type="email"
+              value={this.state.email}
               onChange={this.handleNewUsernameChange}
             />
           </InputGroup>
@@ -329,6 +339,7 @@ class UserInfo extends React.Component {
               placeholder="Password"
               aria-label="Password"
               type="password"
+              value={this.state.password}
               onChange={this.handlePasswordChange}
             />
           </InputGroup>
@@ -340,6 +351,7 @@ class UserInfo extends React.Component {
               placeholder="Phone Number"
               aria-label="Phone Number"
               type="number"
+              value={this.state.number}
               onChange={this.handleNumberChange}
             />
           </InputGroup>

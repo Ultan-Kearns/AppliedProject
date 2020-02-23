@@ -90,7 +90,7 @@ class Register extends React.Component {
       })
     }else {
       alert(
-        "Form invalid, password length must be greater than 6 and number must have 10 digits"
+        "Form invalid, password length must be greater than 6 and number must have 10 digits and name must have 5 or more characters and dob cannot be null"
       )
     }
     event.preventDefault()
@@ -107,7 +107,7 @@ class Register extends React.Component {
           <title>Register</title>
         </Helmet>
         <form id="registerForm" onSubmit={this.register}>
-          <h1>Register here by entering below</h1>
+          <h1>Register here by entering information below</h1>
           <InputGroup className="mb-3" id="username">
             <InputGroup.Prepend>
               <InputGroup.Text id="basic-addon1">Username:</InputGroup.Text>

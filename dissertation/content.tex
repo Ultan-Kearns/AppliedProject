@@ -667,6 +667,71 @@ client is unable to communicate with the server.
 \label{fig:Image of login component}
 \end{figure}
 \subsubsection{Register}
+The register component is accessible from the login component and is used when the
+user wishes to create an account.  The register component features five inputs which
+are: Username for the users email, password for the users password which is needed to login and is stored as a hash on the server,
+full name which stores the users full name on the server, phone number which will be used for
+2 factor authentication, and date of birth which when clicked will present the user with a calender
+so that they can select their date of birth.  The register component also allows the user to return
+to the login page via a button whose value is "back", alternatively the user can chose the button that
+says register which will send a POST request to the backend to create a new user account.  The username
+in this application is a primary key which assures that the key must be unique, if the user choses an
+email which already exists on the server they will be greeted with a message saying "User already exists",
+this is accomplished by the code below:
+\begin{minted}{JavaScript}
+//check if user exists
+axios
+  .get("https://localhost:8080/api/users/" + this.state.username)
+  .then(res => {
+    //log res for testing
+    console.log(res.data)
+    if (res.data !== null) {
+      alert("User already exists")
+    }
+  })
+\end{minted}
+which sends a get request to the backend and if that request brings back data we know that a
+user with that key already exists otherwise it will allow the user to register and not return such
+a message.
+\\
+The registration form also has form validation which are the following:
+\begin{minted}{JavaScript}
+this.state.number.length === 10 &&
+this.state.name.length >= 5 &&
+this.state.password.length >= 6 && this.username !== null && dob != null
+\end{minted}
+which state that the number length must be equal to ten, the name length must be greater than or equal to five, the password length must be greater than or equal to 6 and the username cannot be null if these requirements are not met the user will be met with a message saying "Form invalid, password length must be greater than 6 and number must have 10 digits and  name must have 5 or more characters and dob cannot be null".
+\\
+The backend code for the register function is listed below:
+\begin{minted}{JavaScript}
+app.post("/api/users", function(req, res) {
+  //check if user with same username exists use findById and change id to username
+  var balance;
+  if(req.body.balance == "")
+  {
+    balance = 0
+  }
+  else{
+    balance = req.body.balance
+  }
+  Users.create({
+    _id: req.body._id,
+    password: req.body.password,
+    name: req.body.name,
+    number: req.body.number,
+    dob: req.body.dob,
+    balance: balance,
+    iban: "IE",
+    bic:""
+  });
+  res.status(201, "Resource created");
+});
+\end{minted}
+\begin{figure}[h!b]
+\includegraphics[width=\textwidth]{img/registercomponent.png}
+\caption{Image of Register Component}
+\label{fig:Image of register component}
+\end{figure}
 \subsubsection{Forgot}
 \subsubsection{Loans}
 \subsubsection{Home}
