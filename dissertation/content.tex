@@ -599,7 +599,7 @@ which offers the developer a wide range of additional features.
 \section{Front End Architecture}
 \subsection{List of Components}
 \subsubsection{Login}
-The login page is the page that the user first sees when starting the application.  The page features an introduction which has white text on a black backround and prompts the user to "Login to experience next generation banking".  In addition to this there is a paragraph which states "Please enter your username and password below and we'll redirect you to your account page"  below this paragrah are two input boxes which prompt the user to enter their username and password respectively.  When the user enters the correct password they are redirected to their accounts page, however if the password or username is entered incorrectly they are alerted by means of a JavaScript alert that their password or username is wrong.  In addition to the above stated there are three buttons one which says "Register" which navigates to the register component another which says "Forgot Password" which will navigate to the Forgot component and one which says "Login".  Once the user has entered the correct username and password they can hit the login button to be redirected to the main application page.  The user cannot enter in a components name and gain access to the component unless logged in.  I accomplished the login feature by utilizing code from a previous project's function which I had coded:
+The login component is the component that the user first sees when starting the application.  The component features an introduction which has white text on a black backround and prompts the user to "Login to experience next generation banking".  In addition to this there is a paragraph which states "Please enter your username and password below and we'll redirect you to your account component"  below this paragrah are two input boxes which prompt the user to enter their username and password respectively.  When the user enters the correct password they are redirected to their accounts component, however if the password or username is entered incorrectly they are alerted by means of a JavaScript alert that their password or username is wrong.  In addition to the above stated there are three buttons one which says "Register" which navigates to the register component another which says "Forgot Password" which will navigate to the Forgot component and one which says "Login".  Once the user has entered the correct username and password they can hit the login button to be redirected to the main application pacomponentge.  The user cannot enter in a components name and gain access to the component unless logged in.  I accomplished the login feature by utilizing code from a previous project's function which I had coded:
 %got flags from https://tex.stackexchange.com/questions/129383/break-lines-in-minted-code
 \begin{minted}[linenos,tabsize=2,breaklines]{JavaScript}
 //template was taken from earlier project and refactored
@@ -675,7 +675,7 @@ are: Username for the users email, password for the users password which is need
 full name which stores the users full name on the server, phone number which will be used for
 2 factor authentication, and date of birth which when clicked will present the user with a calender
 so that they can select their date of birth.  The register component also allows the user to return
-to the login page via a button whose value is "back", alternatively the user can chose the button that
+to the login component via a button whose value is "back", alternatively the user can chose the button that
 says register which will send a POST request to the backend to create a new user account.  The username
 in this application is a primary key which assures that the key must be unique, if the user choses an
 email which already exists on the server they will be greeted with a message saying "User already exists",
@@ -813,7 +813,7 @@ app.get("/api/emailuser/:id/:password", function(req, res, next) {
 \end{minted}
 The email is encrypted and secured as per security standards
 \subsubsection{Loans}
-The loans component greets the user with a header which says "Apply & View Loans", the component is composed of
+The loans component greets the user with a header which says "Apply \& View Loans", the component is composed of
 an input box with a button stating "Apply for Loan" which when clicked will retrieve the number the user entered
 in the input box and send a request from the frontend to the backend and create a new loan if the loan is considered
 valid by the system.  The component also has another header "List of Loans" which will list all the users current loans
@@ -1167,15 +1167,287 @@ axios
 \end{minted}
 This basically retrieves the information and creates an element on the page which then displays all pertinent headlines to the user.
 \subsubsection{Statistics}
+The statistics page shows the user information pertaining to the stock market which is retrieved using the
+alphavantage API.  The alphavantage API has a five calls per minute limitation for free users so if the
+max call limit is reached the application informs the user by displaying a message.  This component also utilizes
+Chart.JS which is a JavaScript library to create different types of mathematical charts so that the user can
+see a visual aid to view their spending habits.  Every time a loan is taken out or there is any activity on the users
+account the charts will update.
+\\
+The information about the stock market is retrieved using an Axios get request and creating text elements via the DOM which we
+have seen used in previous components here is the code below:
+\begin{minted}{JavaScript}
+axios
+  .get(
+    "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=MSFT&apikey=G38RVCM1OWLSKALP"
+  )
+  .then(res => {
+    var d = res.data["Meta Data"]["3. Last Refreshed"];
+    d = d.split(" ")[0];
+    var node = document.createElement("LI");
+    node.id = "stockresults";
+
+    var text = document.createTextNode(
+      "Stats for today: Open: " +
+        res.data["Time Series (Daily)"][d]["1. open"] +
+        " High: " +
+        res.data["Time Series (Daily)"][d]["2. high"] +
+        " Low: " +
+        res.data["Time Series (Daily)"][d]["3. low"] +
+        " Close: " +
+        res.data["Time Series (Daily)"][d]["4. close"] +
+        " Volume: " +
+        res.data["Time Series (Daily)"][d]["5. volume"]
+    );
+    node.append(text);
+    document.getElementById("stock").appendChild(node);
+  })
+  .catch(error => {
+alert("problem getting currency data")
+  });
+axios
+  .get(
+    "https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=EUR&to_currency=BTC&apikey=G38RVCM1OWLSKALP"
+  )
+  .then(res => {
+    var eur_to_btc =
+      "1 Euro = " +
+      res.data["Realtime Currency Exchange Rate"]["5. Exchange Rate"] +
+      "BTC";
+    var btcNode = document.createElement("p");
+    btcNode.append(eur_to_btc);
+    document.getElementById("eurbtc").appendChild(btcNode);
+  })
+  .catch(function(error) {
+    var node = document.createElement("LI");
+    node.id = "currency";
+    var text = document.createTextNode(
+      "Sorry something went wrong while getting the currency value data :*("
+    );
+    node.append(text);
+    document.getElementById("eurbtc").appendChild(node);
+    console.log("error");
+  });
+axios
+  .get(
+    "https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=EUR&to_currency=GBP&apikey=G38RVCM1OWLSKALP"
+  )
+  .then(res => {
+    var eur_to_sterling =
+      "1 Euro = " +
+      res.data["Realtime Currency Exchange Rate"]["5. Exchange Rate"] +
+      "GBP";
+    var sterlingNode = document.createElement("p");
+    sterlingNode.append(eur_to_sterling);
+    document.getElementById("eursterling").appendChild(sterlingNode);
+  })
+  .catch(function(error) {
+    var node = document.createElement("LI");
+    node.id = "currency";
+    var text = document.createTextNode(
+      "Sorry something went wrong while getting the currency value data :*("
+    );
+    node.append(text);
+    document.getElementById("eursterling").appendChild(node);
+
+    console.log("error");
+  });
+axios
+  .get(
+    "https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=EUR&to_currency=USD&apikey=G38RVCM1OWLSKALP"
+  )
+  .then(res => {
+    var eur_to_dollar =
+      "1 Euro = " +
+      res.data["Realtime Currency Exchange Rate"]["5. Exchange Rate"] +
+      "USD";
+    var dollarNode = document.createElement("p");
+    dollarNode.append(eur_to_dollar);
+    document.getElementById("eurdollar").appendChild(dollarNode);
+  })
+  .catch(function(error) {
+    var node = document.createElement("LI");
+    node.id = "currency";
+    var text = document.createTextNode(
+      "Sorry something went wrong while getting the currency value data :*("
+    );
+    node.append(text);
+    document.getElementById("eurdollar").appendChild(node);
+
+    console.log("error");
+  });
+axios
+  .get(
+    "https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=EUR&to_currency=CNY&apikey=G38RVCM1OWLSKALP"
+  )
+  .then(res => {
+    var eur_to_cny =
+      "1 Euro = " +
+      res.data["Realtime Currency Exchange Rate"]["5. Exchange Rate"] +
+      "CNY";
+    var cnyNode = document.createElement("p");
+    cnyNode.append(eur_to_cny);
+    document.getElementById("eurcny").appendChild(cnyNode);
+  })
+  .catch(error => {
+    var node = document.createElement("LI");
+    node.id = "currency";
+    var text = document.createTextNode(
+      "Sorry something went wrong while getting the currency value data :*("
+    );
+    node.append(text);
+    document.getElementById("stock").appendChild(node);
+    console.log("error");
+  });
+} catch (error) {
+alert("MAX API CALLS FOR FINANCIAL DATA REACHED");
+}
+}
+\end{minted}
+The above code just retrieves information from the API and formats it in a way that is readable to the user
+the code also includes error handling in case of a network error or API error.
+\\
+The code for the data chart just retrieves information about the user account by using axios get requests to get the
+transactions and loans on the user account which I will show below:
+\begin{minted}{JavaScript}
+async updateLoanData() {
+  await axios
+    .get(
+      "https://localhost:8080/api/loans/" + sessionStorage.getItem("email")
+    )
+    .then(res => {
+      console.log(res.data);
+      var newLoanState = this.state.loanState;
+      for (var i = 0; i < res.data.length; i++) {
+        newLoanState.datasets[0].data[i] = res.data[i].amount;
+        newLoanState.labels[i] = res.data[i].amount;
+      }
+      this.setState({
+        loanState: newLoanState
+      });
+    })
+    .catch(function(error) {
+      alert("Error generating loans " + error);
+    });
+}
+async updateTransactionData() {
+  return axios
+    .get(
+      "https://localhost:8080/api/transactions/" +
+        sessionStorage.getItem("email")
+    )
+    .then(res => {
+      var newTransactionState = this.state.transactionState;
+      for (var i = 0; i < res.data.length; i++) {
+        newTransactionState.datasets[0].data[i] = res.data[i].cost;
+        newTransactionState.labels[i] = res.data[i].location;
+      }
+      this.setState({
+        transactionState: newTransactionState
+      });
+    })
+    .catch(function(error) {
+      alert("Error generating transactions " + error);
+    });
+}
+\end{minted}
+The above code just feeds the retrieved data into a variable called transactionState and loanState depending on which method
+is called.
 \subsubsection{Transactions}
+The transactions component lists transactions made on this users account which means it
+will list every transfer, loan or loan repayment made on the users account.  It accomplishes
+this by using an axios get request to the backend and utilizing the user email to return all
+there transactions.  Here is the code for requesting the transactions below:
+\begin{minted}{JavaScript}
+  componentDidMount() {
+    const axios = require("axios").default;
+    //use email instead
+    axios
+      .get(
+        "https://localhost:8080/api/transactions/" +
+          sessionStorage.getItem("email")
+      )
+      .then(res => {
+        for (var i = 0; i < res.data.length; i++) {
+          this.setState({
+            location: res.data[i].location,
+            cost: res.data[i].cost,
+            name: res.data[i].name,
+            date: res.data[i].date,
+            email: res.data[i].email
+          });
+          //create LI element then form statment then append to LI then add to list
+          var node = document.createElement("LI");
+          var text = document.createTextNode(
+            "Location: " +
+              this.state.location +
+              ", Cost: €" +
+              this.state.cost +
+              ", Name: " +
+              this.state.name +
+              ", Date: " +
+              this.state.date
+          );
+          node.id = "transaction"
+          node.append(text);
+          document.getElementById("transactions").appendChild(node);
+        }
+      }).catch(error =>{
+        alert("Can't get transactions issue connecting to server")
+      });
+
+  }
+\end{minted}
+Once retrieved each transaction is added to the transactions list as a child and is viewable by the user.
 \subsubsection{headlines}
+The headlines component gets the latest headlines from reddit and NewsAPI and returns them to the user
+the headlines component utilizes the same helper method as in home but this component has a lot more
+stories and also retrieves the latest headlines from Reddit /r/wallstreet which are retrieved utilizing
+the Reddit API as demonstrated in the code below:
+\begin{minted}{JavaScript}
+axios
+  .get(
+    "https://www.reddit.com/r/wallstreet/.json"
+  )
+  .then(res => {
+    for (var i = 0; i < res.data.data.children.length; i++) {
+      var node = document.createElement("LI");
+      node.id = "reddit_headlines";
+      var text = document.createTextNode(
+          "Headline: " + res.data.data.children[i].data.title + " " + res.data.data.children[i].data.selftext
+      );
+      var link = document.createElement("A");
+      link.href = res.data.data.children[i].data.url
+      link.text = "Link to article";
+      var image = document.createElement("IMG");
+      image.src = res.data.data.children[i].data.thumbnail
+      image.alt = "Picture not available";
+      image.height = res.data.data.children[i].data.thumbnail_height
+      image.width = res.data.data.children[i].data.thumbnail_width
+      node.append(text)
+      node.append(link)
+      node.append(image)
+      document.getElementById("reddit").appendChild(node);
+    }
+   }).catch(error => {
+     alert("Having issues getting your news from reddit")
+   });
+\end{minted}
+\\
+This is basically the same function as we have seen from the helper method in the home component with the
+exception that it has different field names as opposed to newsapi.org, but essentially they function the
+exact same way.
 \subsubsection{Error}
 The error page is a simple page which handles errors which may occure when the user tries to
 access a resource that may not exist and it returns a message stating to the user "Sorry this page cannot be found"
 and also has a header which says "Error 404", a 404 error is returned when the server cannot find a requested resource.
 \subsubsection{About}
-
+The about section just displays information about the site to the user and features no backend logic or axios requests
+its sole purpose is to make the bank appear as if it were a real entity instead of an imaginary business which only
+exists in the mind of a college student.  Of course all businesses start as imaginary entities and through hard work
+and effort become real viable businesses.
 \subsubsection{UserInfo}
+
 \section{User Interface Libraries}
 \section{Designing for UX(User Experience)}
 

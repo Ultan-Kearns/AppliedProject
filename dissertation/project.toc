@@ -95,27 +95,27 @@
 \contentsline {subsubsection}{Loans}{44}{subsubsection*.22}% 
 \contentsline {subsubsection}{Home}{50}{subsubsection*.23}% 
 \contentsline {subsubsection}{Statistics}{54}{subsubsection*.24}% 
-\contentsline {subsubsection}{Transactions}{54}{subsubsection*.25}% 
-\contentsline {subsubsection}{headlines}{54}{subsubsection*.26}% 
-\contentsline {subsubsection}{Error}{54}{subsubsection*.27}% 
-\contentsline {subsubsection}{About}{54}{subsubsection*.28}% 
-\contentsline {subsubsection}{UserInfo}{54}{subsubsection*.29}% 
-\contentsline {section}{\numberline {5.4}User Interface Libraries}{54}{section.5.4}% 
-\contentsline {section}{\numberline {5.5}Designing for UX(User Experience)}{54}{section.5.5}% 
-\contentsline {section}{\numberline {5.6}Backend Architecture}{54}{section.5.6}% 
-\contentsline {subsection}{\numberline {5.6.1}Mongoose}{54}{subsection.5.6.1}% 
-\contentsline {subsection}{\numberline {5.6.2}ExpressJS}{54}{subsection.5.6.2}% 
-\contentsline {subsection}{\numberline {5.6.3}NodeJS}{54}{subsection.5.6.3}% 
-\contentsline {section}{\numberline {5.7}RESTful Architecture}{54}{section.5.7}% 
-\contentsline {subsection}{\numberline {5.7.1}Client / Server Independence}{54}{subsection.5.7.1}% 
-\contentsline {subsection}{\numberline {5.7.2}Cacheable}{55}{subsection.5.7.2}% 
-\contentsline {subsection}{\numberline {5.7.3}Stateless}{55}{subsection.5.7.3}% 
-\contentsline {section}{\numberline {5.8}Database Architecture}{56}{section.5.8}% 
-\contentsline {subsection}{\numberline {5.8.1}MLAB}{56}{subsection.5.8.1}% 
-\contentsline {subsection}{\numberline {5.8.2}Schema of Database}{56}{subsection.5.8.2}% 
-\contentsline {section}{\numberline {5.9}Security}{56}{section.5.9}% 
-\contentsline {subsection}{\numberline {5.9.1}Overview of Security}{56}{subsection.5.9.1}% 
-\contentsline {chapter}{\numberline {6}System Evaluation}{58}{chapter.6}% 
-\contentsline {chapter}{\numberline {7}Conclusion}{59}{chapter.7}% 
-\contentsline {chapter}{Appendices}{60}{section*.30}% 
-\contentsline {chapter}{\numberline {A}Preamble \& Intro}{61}{Appendix.1.A}% 
+\contentsline {subsubsection}{Transactions}{58}{subsubsection*.25}% 
+\contentsline {subsubsection}{headlines}{60}{subsubsection*.26}% 
+\contentsline {subsubsection}{Error}{61}{subsubsection*.27}% 
+\contentsline {subsubsection}{About}{61}{subsubsection*.28}% 
+\contentsline {subsubsection}{UserInfo}{61}{subsubsection*.29}% 
+\contentsline {section}{\numberline {5.4}User Interface Libraries}{61}{section.5.4}% 
+\contentsline {section}{\numberline {5.5}Designing for UX(User Experience)}{61}{section.5.5}% 
+\contentsline {section}{\numberline {5.6}Backend Architecture}{61}{section.5.6}% 
+\contentsline {subsection}{\numberline {5.6.1}Mongoose}{61}{subsection.5.6.1}% 
+\contentsline {subsection}{\numberline {5.6.2}ExpressJS}{61}{subsection.5.6.2}% 
+\contentsline {subsection}{\numberline {5.6.3}NodeJS}{61}{subsection.5.6.3}% 
+\contentsline {section}{\numberline {5.7}RESTful Architecture}{61}{section.5.7}% 
+\contentsline {subsection}{\numberline {5.7.1}Client / Server Independence}{61}{subsection.5.7.1}% 
+\contentsline {subsection}{\numberline {5.7.2}Cacheable}{62}{subsection.5.7.2}% 
+\contentsline {subsection}{\numberline {5.7.3}Stateless}{62}{subsection.5.7.3}% 
+\contentsline {section}{\numberline {5.8}Database Architecture}{62}{section.5.8}% 
+\contentsline {subsection}{\numberline {5.8.1}MLAB}{62}{subsection.5.8.1}% 
+\contentsline {subsection}{\numberline {5.8.2}Schema of Database}{62}{subsection.5.8.2}% 
+\contentsline {section}{\numberline {5.9}Security}{62}{section.5.9}% 
+\contentsline {subsection}{\numberline {5.9.1}Overview of Security}{62}{subsection.5.9.1}% 
+\contentsline {chapter}{\numberline {6}System Evaluation}{64}{chapter.6}% 
+\contentsline {chapter}{\numberline {7}Conclusion}{65}{chapter.7}% 
+\contentsline {chapter}{Appendices}{66}{section*.30}% 
+\contentsline {chapter}{\numberline {A}Preamble \& Intro}{67}{Appendix.1.A}% 
