@@ -87,14 +87,16 @@
 \BOOKMARK [2][-]{subsection.5.2.2}{Reasons for System Design}{section.5.2}% 87
 \BOOKMARK [1][-]{section.5.3}{Front End Architecture}{chapter.5}% 88
 \BOOKMARK [2][-]{subsection.5.3.1}{List of Components}{section.5.3}% 89
-\BOOKMARK [1][-]{section.5.4}{Backend Architecture}{chapter.5}% 90
-\BOOKMARK [1][-]{section.5.5}{Database Architecture}{chapter.5}% 91
-\BOOKMARK [2][-]{subsection.5.5.1}{MLAB}{section.5.5}% 92
-\BOOKMARK [2][-]{subsection.5.5.2}{Mongoose}{section.5.5}% 93
-\BOOKMARK [2][-]{subsection.5.5.3}{Schema of Database}{section.5.5}% 94
-\BOOKMARK [1][-]{section.5.6}{Security}{chapter.5}% 95
-\BOOKMARK [2][-]{subsection.5.6.1}{Overview of Security}{section.5.6}% 96
-\BOOKMARK [0][-]{chapter.6}{System Evaluation}{}% 97
-\BOOKMARK [0][-]{chapter.7}{Conclusion}{}% 98
-\BOOKMARK [0][-]{section*.30}{Appendices}{}% 99
-\BOOKMARK [0][-]{Appendix.1.A}{Preamble \046 Intro}{}% 100
+\BOOKMARK [1][-]{section.5.4}{User Interface Libraries}{chapter.5}% 90
+\BOOKMARK [1][-]{section.5.5}{Designing for UX\(User Experience\)}{chapter.5}% 91
+\BOOKMARK [1][-]{section.5.6}{Backend Architecture}{chapter.5}% 92
+\BOOKMARK [1][-]{section.5.7}{Database Architecture}{chapter.5}% 93
+\BOOKMARK [2][-]{subsection.5.7.1}{MLAB}{section.5.7}% 94
+\BOOKMARK [2][-]{subsection.5.7.2}{Mongoose}{section.5.7}% 95
+\BOOKMARK [2][-]{subsection.5.7.3}{Schema of Database}{section.5.7}% 96
+\BOOKMARK [1][-]{section.5.8}{Security}{chapter.5}% 97
+\BOOKMARK [2][-]{subsection.5.8.1}{Overview of Security}{section.5.8}% 98
+\BOOKMARK [0][-]{chapter.6}{System Evaluation}{}% 99
+\BOOKMARK [0][-]{chapter.7}{Conclusion}{}% 100
+\BOOKMARK [0][-]{section*.30}{Appendices}{}% 101
+\BOOKMARK [0][-]{Appendix.1.A}{Preamble \046 Intro}{}% 102

@@ -600,8 +600,10 @@ which offers the developer a wide range of additional features.
 \subsection{List of Components}
 \subsubsection{Login}
 The login page is the page that the user first sees when starting the application.  The page features an introduction which has white text on a black backround and prompts the user to "Login to experience next generation banking".  In addition to this there is a paragraph which states "Please enter your username and password below and we'll redirect you to your account page"  below this paragrah are two input boxes which prompt the user to enter their username and password respectively.  When the user enters the correct password they are redirected to their accounts page, however if the password or username is entered incorrectly they are alerted by means of a JavaScript alert that their password or username is wrong.  In addition to the above stated there are three buttons one which says "Register" which navigates to the register component another which says "Forgot Password" which will navigate to the Forgot component and one which says "Login".  Once the user has entered the correct username and password they can hit the login button to be redirected to the main application page.  The user cannot enter in a components name and gain access to the component unless logged in.  I accomplished the login feature by utilizing code from a previous project's function which I had coded:
-\begin{minted}{JavaScript}
-//template was taken from earlier project and refactored https://github.com/Ultan-Kearns/eCommerceApp/blob/master/BackEnd/Server.js
+%got flags from https://tex.stackexchange.com/questions/129383/break-lines-in-minted-code
+\begin{minted}[linenos,tabsize=2,breaklines]{JavaScript}
+//template was taken from earlier project and refactored
+//https://github.com/Ultan-Kearns/eCommerceApp/blob/master/BackEnd/Server.js
 app.get("/api/users/:id/:password", function(req, res) {
   Users.findById(req.params.id, function(err, data) {
     if (err) {
@@ -623,7 +625,7 @@ app.get("/api/users/:id/:password", function(req, res) {
 })
 \end{minted}
 I had the idea to reuse the code and refactor it after reading Robert C Martins book "The Clean Coder"\cite{CleanCoder}.  The above code basically says if there's an error throw a 500 which is a generic server error, if there is no such error and data is retrieved then respond with the data and return a 200 else return null and send back 404 to show that the requested resource was not found.  I handle all issues which may arise in the login component's logic:
-\begin{minted}{JavaScript}
+\begin{minted}[linenos,tabsize=2,breaklines]{JavaScript}
 handleSubmitForm = event => {
   const axios = require("axios").default;
   const sha256 = require('js-sha256');
@@ -678,7 +680,7 @@ says register which will send a POST request to the backend to create a new user
 in this application is a primary key which assures that the key must be unique, if the user choses an
 email which already exists on the server they will be greeted with a message saying "User already exists",
 this is accomplished by the code below:
-\begin{minted}{JavaScript}
+\begin{minted}[linenos,tabsize=2,breaklines]{JavaScript}
 //check if user exists
 axios
   .get("https://localhost:8080/api/users/" + this.state.username)
@@ -703,7 +705,7 @@ this.state.password.length >= 6 && this.username !== null && dob != null
 which state that the number length must be equal to ten, the name length must be greater than or equal to five, the password length must be greater than or equal to 6 and the username cannot be null if these requirements are not met the user will be met with a message saying "Form invalid, password length must be greater than 6 and number must have 10 digits and  name must have 5 or more characters and dob cannot be null".
 \\
 The backend code for the register function is listed below:
-\begin{minted}{JavaScript}
+\begin{minted}[linenos,tabsize=2,breaklines]{JavaScript}
 app.post("/api/users", function(req, res) {
   //check if user with same username exists use findById and change id to username
   var balance;
@@ -727,12 +729,89 @@ app.post("/api/users", function(req, res) {
   res.status(201, "Resource created");
 });
 \end{minted}
-\begin{figure}[h!b]
+The above code is userd to create a new user object and save it to the database, if successful it returns a status 201 which means that a new user has been created.
+\begin{figure}[H]
 \includegraphics[width=\textwidth]{img/registercomponent.png}
 \caption{Image of Register Component}
 \label{fig:Image of register component}
 \end{figure}
 \subsubsection{Forgot}
+The forgot component is a simple component which contains a few headings for the user and an input which prompts the user to enter their username.  The paragraph above the input field informs the user how to use the component.  If the send email button is hit and the username field is not blank then the component sends two axios requests one which is a post that sends a random password of 20 characters to the backend which will then update the user's password, the generated password is of course encrypted using SHA256 for extra security, the get request then sends a request to the backend to email the user their new password in plaintext, here is the code below:
+\begin{minted}[linenos,tabsize=2,breaklines]{JavaScript}
+axios.post("https://localhost:8080/api/users/" + sessionStorage.getItem("email") +  "/rand",rand).then(res=>{
+  console.log(res)
+});
+axios
+  .get("https://localhost:8080/api/emailuser/" + this.state.username + "/" + plaintext)
+  .then(res => {
+    console.log(res.data);
+  });
+alert("email sent to  " + this.state.username);
+ event.preventDefault();
+};
+\end{minted}
+The random password is generated by using JavaScript's random function to generate random numbers between one and ten as shown below:
+\begin{minted}{JavaScript}
+var plaintext = ""
+for(var i = 0; i < 20; i++)
+{
+  //generate 20 random numbers for password
+  plaintext += Math.floor(10 * Math.random())
+}
+const hashed = sha256(plaintext)
+alert("HASHED " + hashed)
+const rand = {password: hashed}
+\end{minted}
+once the password is generated I then store the hashed plaintext in a constant variable called rand as I need the plaintext to send to the user, the plaintext is sent over the BackEnd using NodeMailer and a Gmail account created for this project, the code was taken from an earlier project and was coded previously by myselfm here is the code below:
+\begin{minted}[linenos,tabsize=2,breaklines]{JavaScript}
+//template taken from earlier project
+//https://github.com/Ultan-Kearns/eCommerceApp/blob/master/BackEnd/Server.js
+//Improved upon in this project
+app.get("/api/emailuser/:id/:password", function(req, res, next) {
+  Users.findById(req.params.id, function(err, data) {
+    if (data == null)
+      res.status(404, "User does not exist on this server", err);
+    else if (data._id == req.params.id) {
+      res.json(data);
+      console.log(data)
+      res.status(200, "User logged in!");
+      var nodemailer = require("nodemailer");
+      var transporter = nodemailer.createTransport({
+        host: "smtp.gmail.com", // hostname
+        service: "gmail",
+        auth: {
+          //login to email set up for this project
+          user: "reactproject19@gmail.com",
+          pass: "GMITreact19"
+        },
+        tls: {
+          ciphers: "SSLv3"
+        }
+      });
+      var mailOptions = {
+        //Setting up which account to use for seending emails
+        from: "reactproject19@gmail.com",
+        to: data._id,
+        subject: "Forgot Independent Banking password",
+        text: "Here is your password for Independent Banking: " + req.params.password
+      };
+
+      //Send email or log errors if user doesn't exist
+      transporter.sendMail(mailOptions, function(error, info) {
+        if (error) {
+          console.log(error);
+        } else {
+          console.log("Sent Email to address: " + req.params.id);
+        }
+      });
+    } else {
+      console.log("EMAIL COULD NOT BE SENT");
+      res.json("error email not sent");
+    }
+  });
+});
+\end{minted}
+The email is encrypted and secured as per security standards
 \subsubsection{Loans}
 \subsubsection{Home}
 \subsubsection{Statistics}
@@ -741,6 +820,8 @@ app.post("/api/users", function(req, res) {
 \subsubsection{Error}
 \subsubsection{About}
 \subsubsection{UserInfo}
+\section{User Interface Libraries}
+\section{Designing for UX(User Experience)}
 
 \section{Backend Architecture}
 

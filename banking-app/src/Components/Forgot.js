@@ -63,7 +63,7 @@ class Forgot extends React.Component {
         </Helmet>
         <h1>Forgot your password?</h1>
         <p>
-          Enter your username here and hit the submit button and we'll send you
+          Enter your username here and hit the send email button and we'll send you
           an email with your password
         </p>
         <form id="passwordForm" onSubmit={this.handleSubmitForm}>
