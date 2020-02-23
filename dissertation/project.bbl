@@ -160,4 +160,9 @@ Google, ``Google cloud platform.''
 Docker, ``Docker website.''
 \newblock \url{https://www.docker.com/}.
 
+\bibitem{PragmaticProgrammer}
+A.~H. .~D. Thomas, ``Pragmatic programmer.''
+\newblock
+  \url{https://www.goodreads.com/book/show/4099.The_Pragmatic_Programmer}.
+
 \end{thebibliography}

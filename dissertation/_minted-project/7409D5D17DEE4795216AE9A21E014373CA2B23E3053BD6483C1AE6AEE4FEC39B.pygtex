@@ -1,0 +1,33 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n+nx}{axios}
+  \PYG{p}{.}\PYG{n+nx}{get}\PYG{p}{(}
+    \PYG{l+s+s2}{\PYGZdq{}https://newsapi.org/v2/top\PYGZhy{}headlines?country=us\PYGZam{}category=business\PYGZam{}apiKey=e9cdf3a801374e4eba79b8ea0552a4bd\PYGZdq{}}
+  \PYG{p}{)}
+  \PYG{p}{.}\PYG{n+nx}{then}\PYG{p}{(}\PYG{n+nx}{res} \PYG{p}{=\PYGZgt{}} \PYG{p}{\PYGZob{}}
+    \PYG{k}{for} \PYG{p}{(}\PYG{k+kd}{var} \PYG{n+nx}{i} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n+nx}{i} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{3}\PYG{p}{;} \PYG{n+nx}{i}\PYG{o}{++}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+      \PYG{c+c1}{//create LI element then form statment then append to LI then add to list}
+      \PYG{k+kd}{var} \PYG{n+nx}{node} \PYG{o}{=} \PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{createElement}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}LI\PYGZdq{}}\PYG{p}{);}
+      \PYG{n+nx}{node}\PYG{p}{.}\PYG{n+nx}{id} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}headline\PYGZdq{}}\PYG{p}{;}
+      \PYG{k+kd}{var} \PYG{n+nx}{text} \PYG{o}{=} \PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{createTextNode}\PYG{p}{(}
+        \PYG{l+s+s2}{\PYGZdq{}Headline: \PYGZdq{}} \PYG{o}{+}
+          \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{data}\PYG{p}{.}\PYG{n+nx}{articles}\PYG{p}{[}\PYG{n+nx}{i}\PYG{p}{].}\PYG{n+nx}{title} \PYG{o}{+}
+          \PYG{l+s+s2}{\PYGZdq{}Description: \PYGZdq{}} \PYG{o}{+}
+          \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{data}\PYG{p}{.}\PYG{n+nx}{articles}\PYG{p}{[}\PYG{n+nx}{i}\PYG{p}{].}\PYG{n+nx}{description} \PYG{o}{+}
+          \PYG{l+s+s2}{\PYGZdq{}Author: \PYGZdq{}} \PYG{o}{+}
+          \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{data}\PYG{p}{.}\PYG{n+nx}{articles}\PYG{p}{[}\PYG{n+nx}{i}\PYG{p}{].}\PYG{n+nx}{author}
+      \PYG{p}{);}
+      \PYG{k+kd}{var} \PYG{n+nx}{image} \PYG{o}{=} \PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{createElement}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}IMG\PYGZdq{}}\PYG{p}{);}
+      \PYG{n+nx}{image}\PYG{p}{.}\PYG{n+nx}{src} \PYG{o}{=} \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{data}\PYG{p}{.}\PYG{n+nx}{articles}\PYG{p}{[}\PYG{n+nx}{i}\PYG{p}{].}\PYG{n+nx}{urlToImage}\PYG{p}{;}
+      \PYG{n+nx}{image}\PYG{p}{.}\PYG{n+nx}{alt} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}Picture not available\PYGZdq{}}\PYG{p}{;}
+      \PYG{k+kd}{var} \PYG{n+nx}{link} \PYG{o}{=} \PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{createElement}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}A\PYGZdq{}}\PYG{p}{);}
+      \PYG{n+nx}{link}\PYG{p}{.}\PYG{n+nx}{href} \PYG{o}{=} \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{data}\PYG{p}{.}\PYG{n+nx}{articles}\PYG{p}{[}\PYG{n+nx}{i}\PYG{p}{].}\PYG{n+nx}{url}\PYG{p}{;}
+      \PYG{n+nx}{link}\PYG{p}{.}\PYG{n+nx}{text} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}Link to article\PYGZdq{}}\PYG{p}{;}
+      \PYG{n+nx}{node}\PYG{p}{.}\PYG{n+nx}{append}\PYG{p}{(}\PYG{n+nx}{text}\PYG{p}{);}
+      \PYG{n+nx}{node}\PYG{p}{.}\PYG{n+nx}{append}\PYG{p}{(}\PYG{n+nx}{link}\PYG{p}{);}
+      \PYG{n+nx}{node}\PYG{p}{.}\PYG{n+nx}{append}\PYG{p}{(}\PYG{n+nx}{image}\PYG{p}{);}
+      \PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{getElementById}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}homeFinance\PYGZdq{}}\PYG{p}{).}\PYG{n+nx}{appendChild}\PYG{p}{(}\PYG{n+nx}{node}\PYG{p}{);}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{n+nx}{ReactDOM}\PYG{p}{.}\PYG{n+nx}{render}\PYG{p}{(}\PYG{o}{\PYGZlt{}}\PYG{n+nx}{App} \PYG{o}{/\PYGZgt{}}\PYG{p}{,} \PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{getElementById}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}root\PYGZdq{}}\PYG{p}{));}
+  \PYG{p}{\PYGZcb{})}
+  \PYG{p}{.}\PYG{k}{catch}\PYG{p}{(}\PYG{n+nx}{error} \PYG{p}{=\PYGZgt{}} \PYG{p}{\PYGZob{}\PYGZcb{});}
+\end{Verbatim}

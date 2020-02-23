@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Arch Linux) (preloaded format=pdflatex 2020.2.9)  23 FEB 2020 01:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Arch Linux) (preloaded format=pdflatex 2020.2.9)  23 FEB 2020 19:14
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1476,7 +1476,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 431--1
 
  []
 
-[27])
+[27]
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 10.
+)
 
 ! LaTeX Error: There's no line here to end.
 
@@ -1489,7 +1492,7 @@ l.452 I
 
 ? 
 [28] [29]
-<img/tls.png, id=815, 1927.2pt x 1084.05pt>
+<img/tls.png, id=818, 1927.2pt x 1084.05pt>
 File: img/tls.png Graphic file (type png)
 <use img/tls.png>
 Package pdftex.def Info: img/tls.png  used on input line 485.
@@ -1577,18 +1580,13 @@ Overfull \hbox (90.8824pt too wide) in paragraph at lines 3--3
 master/BackEnd/Server.js[]|  
  []
 
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 7.
 [37])
-
-LaTeX Warning: Citation `CleanCoder' on page 38 undefined on input line 627.
-
 \openout3 = `project.pyg'.
 
 
 (./_minted-project/5FEDBEBD692BFCEF1F8CDA462034F5C6CA2B23E3053BD6483C1AE6AEE4FE
 C39B.pygtex [38])
-<img/logincomponent.png, id=880, 1020.81375pt x 558.58687pt>
+<img/logincomponent.png, id=882, 1020.81375pt x 558.58687pt>
 File: img/logincomponent.png Graphic file (type png)
 <use img/logincomponent.png>
 Package pdftex.def Info: img/logincomponent.png  used on input line 667.
@@ -1602,7 +1600,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 659--671
 
 
 (./_minted-project/DB84FB4DD27D7EEFDD5DEDDF5E6F3D8ACA2B23E3053BD6483C1AE6AEE4FE
-C39B.pygtex [39 <./img/logincomponent.png (PNG copy)>])
+C39B.pygtex [39])
 \openout3 = `project.pyg'.
 
 
@@ -1613,22 +1611,21 @@ C39B.pygtex)
 
 (./_minted-project/C541B24FE77EA55444F7163CB8D4FA72CA2B23E3053BD6483C1AE6AEE4FE
 C39B.pygtex [40])
-<img/registercomponent.png, id=890, 1027.58907pt x 458.46281pt>
+<img/registercomponent.png, id=892, 1027.58907pt x 458.46281pt>
 File: img/registercomponent.png Graphic file (type png)
 <use img/registercomponent.png>
 Package pdftex.def Info: img/registercomponent.png  used on input line 734.
 (pdftex.def)             Requested size: 390.0pt x 174.00081pt.
- [41]
 \openout3 = `project.pyg'.
 
 
 (./_minted-project/F7BF896EC3E338008C133F075D1C43F3CA2B23E3053BD6483C1AE6AEE4FE
-C39B.pygtex)
+C39B.pygtex [41 <./img/registercomponent.png (PNG copy)>])
 \openout3 = `project.pyg'.
 
 
 (./_minted-project/8712C27705C98F006A9A620998970269CA2B23E3053BD6483C1AE6AEE4FE
-C39B.pygtex [42 <./img/registercomponent.png (PNG copy)>])
+C39B.pygtex)
 \openout3 = `project.pyg'.
 
 
@@ -1639,20 +1636,50 @@ Overfull \hbox (90.8824pt too wide) in paragraph at lines 3--3
 master/BackEnd/Server.js[]|  
  []
 
-[43]) [44] [45] [46]
+[42] [43])
+! Misplaced alignment tab character &.
+l.816 ...he user with a header which says "Apply &
+                                                   View Loans", the componen...
+
+? 
+\openout3 = `project.pyg'.
+
+
+(./_minted-project/6E0789E15EAD1E0E793DD12EF4B06E4ACA2B23E3053BD6483C1AE6AEE4FE
+C39B.pygtex [44] [45])
+\openout3 = `project.pyg'.
+
+
+(./_minted-project/E1E47C5D239CDF24ABDB9B2D52824684CA2B23E3053BD6483C1AE6AEE4FE
+C39B.pygtex [46] [47] [48])
+\openout3 = `project.pyg'.
+
+
+(./_minted-project/F28551B6725E6230B9ECCAC5463B3727CA2B23E3053BD6483C1AE6AEE4FE
+C39B.pygtex [49])
+\openout3 = `project.pyg'.
+
+
+(./_minted-project/0C06C1A1AF20AE482C99754B695E9961CA2B23E3053BD6483C1AE6AEE4FE
+C39B.pygtex [50] [51] [52])
+\openout3 = `project.pyg'.
+
+
+(./_minted-project/7409D5D17DEE4795216AE9A21E014373CA2B23E3053BD6483C1AE6AEE4FE
+C39B.pygtex [53]) [54] [55] [56] [57 <./img/logincomponent.png (PNG copy)>]
 Chapter 6.
-[47
+[58
 
 ]
 Chapter 7.
-[48
+[59
 
-] [49
+] [60
 
 
 ]
 Appendix A.
-(./project.bbl [50
+(./project.bbl [61
 
 ]
 Underfull \hbox (badness 6125) in paragraph at lines 4--8
@@ -1735,7 +1762,7 @@ Overfull \hbox (55.64209pt too wide) in paragraph at lines 53--57
 -[]cybercrime-[]losses/$[][]\OT1/lmr/m/n/12 . 
  []
 
-[51
+[62
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 59--63
@@ -1794,7 +1821,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 116--118
  https : / / github . com /
  []
 
-[52]
+[63]
 Underfull \hbox (badness 6173) in paragraph at lines 129--132
 []\OT1/lmr/m/n/12 Cloudflare.com, ``Tls im-age.''  [][]$\OT1/lmtt/m/n/12 https 
 : / / blog . cloudflare . com /
@@ -1812,17 +1839,21 @@ Underfull \hbox (badness 4595) in paragraph at lines 134--137
 src / media / publications / fips /
  []
 
-) [53]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 874.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 874.
+
+Underfull \hbox (badness 2181) in paragraph at lines 164--167
+[]\OT1/lmr/m/n/12 A. H. . D. Thomas, ``Prag-matic pro-gram-mer.''  [][]$\OT1/lm
+tt/m/n/12 https : / / www .
+ []
+
+) [64]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1230.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1230.
  (./project.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 874.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 874.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1230.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1230.
+
 Package rerunfilecheck Info: File `project.out' has not changed.
 (rerunfilecheck)             Checksum: 09E14BAC86015417AB5BE8BD49243887;7209.
-
-
-LaTeX Warning: There were undefined references.
 
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
@@ -1831,17 +1862,17 @@ runsystem(rm project.pyg)...executed.
 
  ) ) 
 Here is how much of TeX's memory you used:
- 26209 strings out of 492167
- 521667 string characters out of 6131559
- 658881 words of memory out of 5000000
- 29738 multiletter control sequences out of 15000+600000
+ 26248 strings out of 492167
+ 523861 string characters out of 6131559
+ 659290 words of memory out of 5000000
+ 29750 multiletter control sequences out of 15000+600000
  66101 words of font info for 61 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  60i,9n,79p,1332b,632s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/share/texmf-dist
-/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-
-mathit.enc}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texm
-f-dist/fonts/enc/dvips/lm/lm-rmtt.enc}{/usr/share/texmf-dist/fonts/enc/dvips/lm
+/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-rmtt
+.enc}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf-
+dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf-dist/fonts/enc/dvips/lm
 /lm-rmsc.enc}</usr/share/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/shar
 e/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf-dist/fonts/type
 1/public/lm/lmcsc10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmmi6.pfb>
@@ -1851,10 +1882,10 @@ onts/type1/public/lm/lmr6.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr8
 dist/fonts/type1/public/lm/lmsy6.pfb></usr/share/texmf-dist/fonts/type1/public/
 lm/lmtk10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmtt12.pfb></usr/sha
 re/texmf-dist/fonts/type1/public/lm/lmtti10.pfb>
-Output written on project.pdf (53 pages, 1352267 bytes).
+Output written on project.pdf (64 pages, 1371624 bytes).
 PDF statistics:
- 1123 PDF objects out of 1200 (max. 8388607)
- 1008 compressed objects within 11 object streams
- 227 named destinations out of 1000 (max. 500000)
+ 1175 PDF objects out of 1200 (max. 8388607)
+ 1049 compressed objects within 11 object streams
+ 239 named destinations out of 1000 (max. 500000)
  1043 words of extra memory for PDF output out of 10000 (max. 10000000)
 
