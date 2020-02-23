@@ -7,7 +7,7 @@ import InputGroup from "react-bootstrap/InputGroup";
 import "../Styles/UserInfoStyle.css";
 import "js-sha256";
 import FormControl from "react-bootstrap/FormControl";
-import { getLoans } from "../Services/LoanHelpers.js";
+import { getOpenLoans } from "../Services/LoanHelpers.js";
 
 const axios = require("axios").default;
 const sha256 = require("js-sha256");
@@ -211,7 +211,7 @@ class UserInfo extends React.Component {
   };
   componentDidMount() {
     this.updateData();
-    getLoans();
+    getOpenLoans();
   }
   updateData() {
     axios

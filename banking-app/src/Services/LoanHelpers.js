@@ -1,4 +1,4 @@
-export function getLoans() {
+export function getOpenLoans() {
   var openLoan = 0
   sessionStorage.setItem("openLoans",openLoan)
   const axios = require("axios").default;

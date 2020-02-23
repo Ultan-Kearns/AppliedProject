@@ -2,14 +2,15 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import Button from "react-bootstrap/Button";
 import "../Styles/LoanStyle.css";
-import { getLoans } from "../Services/LoanHelpers.js";
+import { getOpenLoans } from "../Services/LoanHelpers.js";
 
 const axios = require("axios").default;
-
+var date = new Date();
 class Loans extends React.Component {
   componentDidMount() {
-    sessionStorage.setItem("openLoans", getLoans());
-    this.getLoans();
+    sessionStorage.setItem("openLoans", getOpenLoans());
+    getOpenLoans();
+    this.getUserLoans();
     //strip out in home
     axios
       .get(
@@ -30,7 +31,7 @@ class Loans extends React.Component {
       balance: ""
     };
   }
-  getLoans() {
+  getUserLoans() {
     document.getElementById("loans").innerHTML = "";
     axios
       .get(
@@ -59,7 +60,7 @@ class Loans extends React.Component {
           );
           var buttonNode = document.createElement("Button");
           buttonNode.textContent = "Pay Back";
-          buttonNode.id = "payButton"
+          buttonNode.id = "payButton";
           //for repaying loans
           var loanId = this.state._id;
           var loanCost = this.state.amount;
@@ -100,15 +101,28 @@ class Loans extends React.Component {
                 .catch(error => {
                   alert("error: " + error);
                 });
+              sessionStorage.setItem("openLoans", getOpenLoans());
+              const newTransaction = {
+                email: sessionStorage.getItem("email"),
+                cost: -loanCost,
+                location: "IndependentBanking.com",
+                name: sessionStorage.getItem("username"),
+                date: date
+              };
+              axios
+                .post("https://localhost:8080/api/transactions", newTransaction)
+                .then(res => {
+                  console.log(res);
+                });
             } else {
               alert("Not enough money in account to repay loan");
             }
           });
-          node.id = "loan"
+          node.id = "loan";
           node.append(text);
           node.append(buttonNode);
           document.getElementById("loans").appendChild(node);
-          sessionStorage.setItem("openLoans", getLoans());
+          sessionStorage.setItem("openLoans", getOpenLoans());
         }
       })
       .catch(error => {
@@ -121,8 +135,6 @@ class Loans extends React.Component {
     });
   };
   handleSubmitForm = event => {
-    const axios = require("axios").default;
-    var date = new Date();
     var answer = window.confirm(
       "Are you sure you want to take out a loan for: " +
         this.state.amount +
@@ -134,7 +146,8 @@ class Loans extends React.Component {
       parseInt(this.state.amount * 0.25) <=
         parseInt(sessionStorage.getItem("balance")) &&
       sessionStorage.getItem("openLoans") < 5 &&
-      this.state.amount <= 500 && this.state.amount > 0
+      this.state.amount <= 500 &&
+      this.state.amount > 0
     ) {
       const newLoan = {
         email: sessionStorage.getItem("email"),
@@ -183,29 +196,18 @@ class Loans extends React.Component {
                 "loan approved\n New balance is: " +
                   sessionStorage.getItem("balance")
               );
-            }).catch(error =>{
-              alert("Could not approve loan")
+            })
+            .catch(error => {
+              alert("Could not approve loan");
             });
-          sessionStorage.setItem("openLoans", getLoans());
-          const newTransaction = {
-            email: sessionStorage.getItem("email"),
-            cost: -this.state.amount,
-            location: "IndependentBanking.com",
-            name: sessionStorage.getItem("username"),
-            date: date
-          };
-          axios
-            .post("https://localhost:8080/api/transactions", newTransaction)
-            .then(res => {
-              console.log(res);
-            });
+          sessionStorage.setItem("openLoans", getOpenLoans());
+          this.getUserLoans();
         });
     } else {
       alert(
         "Loan aborted\n Reasons why this may happen:\nLoan cannot be null and user must have at least 25% of loan amount in balance\nUsers can only have 5 open loans at a time\n Loans must also be less than or equal to €500\nLoan must be greater than 0"
       );
     }
-    getLoans();
     event.preventDefault();
   };
   render() {
