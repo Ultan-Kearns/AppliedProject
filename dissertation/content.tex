@@ -824,10 +824,30 @@ The email is encrypted and secured as per security standards
 \section{Designing for UX(User Experience)}
 
 \section{Backend Architecture}
-
+\subsection{Mongoose}
+\subsection{ExpressJS}
+\subsection{NodeJS}
+\section{RESTful Architecture}
+\subsection{Client / Server Independence}
+To ensure that RESTful architecture standards were met I had to keep the cleint
+and the server independent.  I did this by making use of the AXIOS HTTP client which
+I used to send requests from the client side to the server side, in this way I ensured
+that the server and the client were completely independent of each other.  Axios acted
+as a middle layer which was used whenever the client needed to communicate with the server.
+Axios returned responses, sent GET, POST, PUT, DELETE and other HTTP requests to the server
+and returned results from numerous APIS which I used in this project.
+\subsection{Cacheable}
+I made use of sessionStorage on the client machine to perform various backend logic and
+used this stored information to pass parameters to Axios so that it could retrieve user information,
+perform authentication, send information about the user to the server, update information and create new resources.
+\\
+In addition to caching user information on the client machine the entire website is also cacheable, as it is a single page
+application and once loaded the user does not have to wait for pages to load as thanks to AJAX(Asynchronous JavaScript and XML)
+the requested resources are loaded almost instantaneously.
+\subsection{Stateless}
+As mentioned in the cacheable section I made great use of sessionStorage to store information on the client machine, this information was then used in axios requests when communicating with the server, the server did not maintain a user session as the server and cleint were entirely independent of each other.  If the server went down the users applcation would still load but the user would not be able to login or perform any backend functions such as sending HTTP requests.  Statelessness is an important part of RESTful architecture and I did my utmost to achieve and implement it into this project so as to create a fully RESTful application.
 \section{Database Architecture}
 \subsection{MLAB}
-\subsection{Mongoose}
 \subsection{Schema of Database}
 \section{Security}
 \subsection{Overview of Security}
