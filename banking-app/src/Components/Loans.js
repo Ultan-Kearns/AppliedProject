@@ -71,7 +71,6 @@ class Loans extends React.Component {
             )
           };
           buttonNode.addEventListener("click", function() {
-            alert(sessionStorage.getItem("balance"));
             //check if balance >= loanpayment
             if (sessionStorage.getItem("balance") >= loanCost) {
               axios
@@ -124,10 +123,12 @@ class Loans extends React.Component {
           document.getElementById("loans").appendChild(node);
           sessionStorage.setItem("openLoans", getOpenLoans());
         }
-      })
+      },
+    )
       .catch(error => {
         alert("Could not get loans");
       });
+
   }
   handleAmountChange = event => {
     this.setState({

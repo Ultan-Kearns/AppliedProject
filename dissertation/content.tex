@@ -835,7 +835,8 @@ if (
   parseInt(this.state.amount * 0.25) <=
     parseInt(sessionStorage.getItem("balance")) &&
   sessionStorage.getItem("openLoans") < 5 &&
-  this.state.amount <= 500 && this.state.amount > 0
+  this.state.amount <= 500 &&
+  this.state.amount > 0
 ) {
   const newLoan = {
     email: sessionStorage.getItem("email"),
@@ -884,25 +885,26 @@ if (
             "loan approved\n New balance is: " +
               sessionStorage.getItem("balance")
           );
-        }).catch(error =>{
-          alert("Could not approve loan")
+        })
+        .catch(error => {
+          alert("Could not approve loan");
         });
-      sessionStorage.setItem("openLoans", getLoans());
+      sessionStorage.setItem("openLoans", getOpenLoans());
+      this.getUserLoans();
     });
 } else {
   alert(
     "Loan aborted\n Reasons why this may happen:\nLoan cannot be null and user must have at least 25% of loan amount in balance\nUsers can only have 5 open loans at a time\n Loans must also be less than or equal to €500\nLoan must be greater than 0"
   );
 }
-getLoans();
 event.preventDefault();
 };
 \end{minted}
 Here I check if the loan stipulations are met, if they are then I create a new loan and a new transaction containing all pertinent information about this loan then via Axios I store this information on the backend.  Following this I update the users balance to add the loan amount to it, if the stipulations are not met we send the user an error message.
 \\
-After this code has been executed the component executes the getLoans() function which the component also executes when loaded, here is the code down below:
+After this code has been executed the component executes the getLoans() function which the component also executes when loaded which is used to get open loans, here is the code used to get the user loans down below:
 \begin{minted}{JavaScript}
-getLoans() {
+getUserLoans() {
   document.getElementById("loans").innerHTML = "";
   axios
     .get(
@@ -931,7 +933,7 @@ getLoans() {
         );
         var buttonNode = document.createElement("Button");
         buttonNode.textContent = "Pay Back";
-        buttonNode.id = "payButton"
+        buttonNode.id = "payButton";
         //for repaying loans
         var loanId = this.state._id;
         var loanCost = this.state.amount;
@@ -942,7 +944,6 @@ getLoans() {
           )
         };
         buttonNode.addEventListener("click", function() {
-          alert(sessionStorage.getItem("balance"));
           //check if balance >= loanpayment
           if (sessionStorage.getItem("balance") >= loanCost) {
             axios
@@ -972,23 +973,65 @@ getLoans() {
               .catch(error => {
                 alert("error: " + error);
               });
+            sessionStorage.setItem("openLoans", getOpenLoans());
+            const newTransaction = {
+              email: sessionStorage.getItem("email"),
+              cost: -loanCost,
+              location: "IndependentBanking.com",
+              name: sessionStorage.getItem("username"),
+              date: date
+            };
+            axios
+              .post("https://localhost:8080/api/transactions", newTransaction)
+              .then(res => {
+                console.log(res);
+              });
           } else {
             alert("Not enough money in account to repay loan");
           }
         });
-        node.id = "loan"
+        node.id = "loan";
         node.append(text);
         node.append(buttonNode);
         document.getElementById("loans").appendChild(node);
-        sessionStorage.setItem("openLoans", getLoans());
+        sessionStorage.setItem("openLoans", getOpenLoans());
       }
-    })
+    },
+  )
     .catch(error => {
       alert("Could not get loans");
     });
+
 }
 \end{minted}
-The getLoans() function creates a text node listing all pertinent information about the loan, it completes this by sending a get request via Axios to the backend and returns all loans on the user accounts.  It also creates a button that is appended to each loan which will offer the user a way to pay back the loan, once clicked the loan is deleted and the user balance is decremented by the loan amount if and only if the user has the loan amount in their balance, if not they are informed that they cannot pay back the loan.
+The getUserLoans() function creates a text node listing all pertinent information about the loan, it completes this by sending a get request via Axios to the backend and returns all loans on the user accounts.  It also creates a button that is appended to each loan which will offer the user a way to pay back the loan, once clicked the loan is deleted and the user balance is decremented by the loan amount if and only if the user has the loan amount in their balance, if not they are informed that they cannot pay back the loan.
+\\
+The getLoans() function is used in two components Loans and UserInfo and is stored in a helper function, I used this to check if the user had open loans which is used when updating information and applying for loans here is the code below:
+\begin{minted}{JavaScript}
+export function getOpenLoans() {
+  var openLoan = 0
+  sessionStorage.setItem("openLoans",openLoan)
+  const axios = require("axios").default;
+  //helper function to count open loans
+  axios
+    .get(
+      "https://localhost:8080/api/loans/" + sessionStorage.getItem("email")
+    )
+    .then(res => {
+      for (var i = 0; i < res.data.length; i++) {
+        if(res.data[i].status === "Open"){
+          openLoan++;
+        }
+        sessionStorage.setItem("openLoans",openLoan)
+       }
+    }).catch(error => {
+      alert("error getting loans")
+    })
+    return openLoan
+}
+
+\end{minted}
+The function goes through all the users loans and checks for the status open then sets a sessionStorage item to the amount of open loans the user has on their account.  It uses the user email as a parameter when communicating with the backend to ensure that the user is only judged by their own account information as opposed to anyone elses.  It is in this way that the user accounts are kept independent.
 \subsubsection{Home}
 \subsubsection{Statistics}
 \subsubsection{Transactions}
