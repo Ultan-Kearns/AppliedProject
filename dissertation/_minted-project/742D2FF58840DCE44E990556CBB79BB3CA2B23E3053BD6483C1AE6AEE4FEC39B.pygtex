@@ -1,0 +1,22 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{//template was taken from earlier project and refactored https://github.com/Ultan\PYGZhy{}Kearns/eCommerceApp/blob/master/BackEnd/Server.js}
+\PYG{n+nx}{app}\PYG{p}{.}\PYG{n+nx}{get}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}/api/users/:id/:password\PYGZdq{}}\PYG{p}{,} \PYG{k+kd}{function}\PYG{p}{(}\PYG{n+nx}{req}\PYG{p}{,} \PYG{n+nx}{res}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+  \PYG{n+nx}{Users}\PYG{p}{.}\PYG{n+nx}{findById}\PYG{p}{(}\PYG{n+nx}{req}\PYG{p}{.}\PYG{n+nx}{params}\PYG{p}{.}\PYG{n+nx}{id}\PYG{p}{,} \PYG{k+kd}{function}\PYG{p}{(}\PYG{n+nx}{err}\PYG{p}{,} \PYG{n+nx}{data}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{err}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+      \PYG{c+c1}{//send back error 500 to show the server had internel error}
+      \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{status}\PYG{p}{(}\PYG{l+m+mi}{500}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}INTERNAL SERVER ERROR \PYGZdq{}} \PYG{o}{+} \PYG{n+nx}{err}\PYG{p}{);}
+      \PYG{k}{return}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{data} \PYG{o}{!=} \PYG{k+kc}{null}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+      \PYG{c+c1}{//compare user username and password to the username and password in DB}
+      \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{req}\PYG{p}{.}\PYG{n+nx}{params}\PYG{p}{.}\PYG{n+nx}{id} \PYG{o}{==} \PYG{n+nx}{data}\PYG{p}{.}\PYG{n+nx}{\PYGZus{}id} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n+nx}{data}\PYG{p}{.}\PYG{n+nx}{password} \PYG{o}{==} \PYG{n+nx}{req}\PYG{p}{.}\PYG{n+nx}{params}\PYG{p}{.}\PYG{n+nx}{password}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+        \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{json}\PYG{p}{(}\PYG{n+nx}{data}\PYG{p}{);}
+        \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{status}\PYG{p}{(}\PYG{l+m+mi}{200}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}User logged in!\PYGZdq{}}\PYG{p}{);}
+      \PYG{p}{\PYGZcb{}}
+      \PYG{k}{else} \PYG{p}{\PYGZob{}}
+        \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{json}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}null\PYGZdq{}}\PYG{p}{);}
+        \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{status}\PYG{p}{(}\PYG{l+m+mi}{404}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}User not found!\PYGZdq{}}\PYG{p}{);}
+      \PYG{p}{\PYGZcb{}}
+    \PYG{p}{\PYGZcb{}}
+  \PYG{p}{\PYGZcb{});}
+\PYG{p}{\PYGZcb{})}
+\end{Verbatim}

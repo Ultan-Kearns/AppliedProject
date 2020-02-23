@@ -348,7 +348,7 @@ Kanban \cite{Kanban} allows for a visualized workflow and was also easy to imple
 \begin{wrapfigure}{r}{0.1\textwidth}
 \includegraphics[width=3\linewidth]{img/kanban.png}
 \caption{Image of Kanban board from wikipedia}
-\label{fig:wrapfig}
+\label{fig:Image of Kanban board}
 \end{wrapfigure}
 \subsection{How I Applied Agile To This Project}
 During this project I used a Kanban board on Github \cite{KanbanBoard} to coordinate
@@ -572,32 +572,120 @@ Docker aims to simplify and accelerate workflows for applications and allows the
 \\
   I have never used Docker before but I chose to use it for this project as it is rapidly growing in popularity and it is extremely useful in today's industry as companies focus on releasing patches and updates to the user as soon as they are ready.
 \chapter{System Design}
+\section{Introduction}
+In this section I will discuss the architecture of the application both in terms of frontend and backend.
+I will discuss each component individually and the reasoning for its existence.  I will also discuss how
+the frontend communicates with the backend, how I designed the application with a strong focus on UX(User Experience)
+and how I improved upon existing paradigms in online banking.  The system is designed to be robust and to be as
+error prone as possible, I achieved this to the best of my abilities by using TDD(Test Driven Development) and an
+Agile methodology.
 \section{Architecture of Project}
 \subsection{Introduction to System}
+This application was made using React which is a web-application framework for building user interfaces,
+for the purposes of my application I used it to build a SPA(Single Page Application) which has multiple
+advantages over a standard webpage, I will list the advantages here:
+\begin{itemize}
+  \item Single Page Applications load faster and are more responsive
+  \item Single Page Applications cache data very effectively, thus decreasing load times
+  \item Creates a more user friendly experience
+  \item Easier to debug as their are many tools such as React Developer Tools.
+\end{itemize}
+The system is made up of 11 components some of which share the same cascading stylesheets for
+a more uniform look and to create a better user experience.
+\\
+The system's backend was written using NodeJS and utilizes the ExpressJS library
+which offers the developer a wide range of additional features.
 \subsection{Reasons for System Design}
 \section{Front End Architecture}
-\subsection{React}
-\subsection{React-Bootstrap}
-\subsection{Cascading Style Sheets (CSS)}
-\subsection{Hyper Text Markup Language (HTML)}
-\subsection{Description of Pages}
+\subsection{List of Components}
+\subsubsection{Login}
+The login page is the page that the user first sees when starting the application.  The page features an introduction which has white text on a black backround and prompts the user to "Login to experience next generation banking".  In addition to this there is a paragraph which states "Please enter your username and password below and we'll redirect you to your account page"  below this paragrah are two input boxes which prompt the user to enter their username and password respectively.  When the user enters the correct password they are redirected to their accounts page, however if the password or username is entered incorrectly they are alerted by means of a JavaScript alert that their password or username is wrong.  In addition to the above stated there are three buttons one which says "Register" which navigates to the register component another which says "Forgot Password" which will navigate to the Forgot component and one which says "Login".  Once the user has entered the correct username and password they can hit the login button to be redirected to the main application page.  The user cannot enter in a components name and gain access to the component unless logged in.  I accomplished the login feature by utilizing code from a previous project's function which I had coded:
+\begin{minted}{JavaScript}
+//template was taken from earlier project and refactored https://github.com/Ultan-Kearns/eCommerceApp/blob/master/BackEnd/Server.js
+app.get("/api/users/:id/:password", function(req, res) {
+  Users.findById(req.params.id, function(err, data) {
+    if (err) {
+      //send back error 500 to show the server had internel error
+      res.status(500, "INTERNAL SERVER ERROR " + err);
+      return;
+    } else if (data != null) {
+      //compare user username and password to the username and password in DB
+      if (req.params.id == data._id && data.password == req.params.password) {
+        res.json(data);
+        res.status(200, "User logged in!");
+      }
+      else {
+        res.json("null");
+        res.status(404, "User not found!");
+      }
+    }
+  });
+})
+\end{minted}
+I had the idea to reuse the code and refactor it after reading Robert C Martins book "The Clean Coder"\cite{CleanCoder}.  The above code basically says if there's an error throw a 500 which is a generic server error, if there is no such error and data is retrieved then respond with the data and return a 200 else return null and send back 404 to show that the requested resource was not found.  I handle all issues which may arise in the login component's logic:
+\begin{minted}{JavaScript}
+handleSubmitForm = event => {
+  const axios = require("axios").default;
+  const sha256 = require('js-sha256');
+   axios
+    .get(
+      "https://localhost:8080/api/users/" +
+        this.state.username.toLowerCase() +
+        "/" +
+        sha256(this.state.password)
+    )
+    .then(function(res) {
+      console.log("TEST LOGIN " + res.data);
+      //need to fix this so it shows error message
+       if (res.data !== "null") {
+        //store the username this will help the bank feel more personal
+        sessionStorage.setItem("username", res.data.name);
+        sessionStorage.setItem("email", res.data._id);
+        ReactDOM.render(<Home />, document.getElementById("root"));
+      }
+      else if(res.data == "null"){
+        alert("Wrong username or password")
+      }
+    }).catch(error =>{
+      alert("Error logging in, check internet connection?")
+    });
+
+    console.log("Clicked")
+  event.preventDefault();
+};
+\end{minted}
+Here I send a get request to the BackEnd URL to retrieve the user using the username and
+hashed password(password was hashed using SHA256 security standard), next I check if data is null
+if not login user and render the homepage I also set the sessionStorage items for other logic in the application.
+If the username or password is wrong I return a message to the user telling them.  I also have a message if the
+client is unable to communicate with the server.
+\\
+\\
+\begin{figure}[hb]
+\includegraphics[width=\textwidth]{img/logincomponent.png}
+\caption{Image of Login Component}
+\label{fig:Image of login component}
+\end{figure}
+\subsubsection{Register}
+\subsubsection{Forgot}
+\subsubsection{Loans}
+\subsubsection{Home}
+\subsubsection{Statistics}
+\subsubsection{Transactions}
+\subsubsection{headlines}
+\subsubsection{Error}
+\subsubsection{About}
+\subsubsection{UserInfo}
+
 \section{Backend Architecture}
-\subsection{JavaScript}
-\subsection{Express}
-\subsection{Node}
-\subsection{Axios}
+
 \section{Database Architecture}
 \subsection{MLAB}
 \subsection{Mongoose}
 \subsection{Schema of Database}
 \section{Security}
-test
-\subsection{HTTPS}
-test
-\subsection{TLS}
-test
-\subsection{OpenSSL}
-test
+\subsection{Overview of Security}
+
 \chapter{System Evaluation}
 As many pages as needed.
 \begin{itemize}

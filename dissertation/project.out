@@ -81,29 +81,20 @@
 \BOOKMARK [2][-]{subsection.4.12.1}{Google Cloud Platform}{section.4.12}% 81
 \BOOKMARK [2][-]{subsection.4.12.2}{Docker}{section.4.12}% 82
 \BOOKMARK [0][-]{chapter.5}{System Design}{}% 83
-\BOOKMARK [1][-]{section.5.1}{Architecture of Project}{chapter.5}% 84
-\BOOKMARK [2][-]{subsection.5.1.1}{Introduction to System}{section.5.1}% 85
-\BOOKMARK [2][-]{subsection.5.1.2}{Reasons for System Design}{section.5.1}% 86
-\BOOKMARK [1][-]{section.5.2}{Front End Architecture}{chapter.5}% 87
-\BOOKMARK [2][-]{subsection.5.2.1}{React}{section.5.2}% 88
-\BOOKMARK [2][-]{subsection.5.2.2}{React-Bootstrap}{section.5.2}% 89
-\BOOKMARK [2][-]{subsection.5.2.3}{Cascading Style Sheets \(CSS\)}{section.5.2}% 90
-\BOOKMARK [2][-]{subsection.5.2.4}{Hyper Text Markup Language \(HTML\)}{section.5.2}% 91
-\BOOKMARK [2][-]{subsection.5.2.5}{Description of Pages}{section.5.2}% 92
-\BOOKMARK [1][-]{section.5.3}{Backend Architecture}{chapter.5}% 93
-\BOOKMARK [2][-]{subsection.5.3.1}{JavaScript}{section.5.3}% 94
-\BOOKMARK [2][-]{subsection.5.3.2}{Express}{section.5.3}% 95
-\BOOKMARK [2][-]{subsection.5.3.3}{Node}{section.5.3}% 96
-\BOOKMARK [2][-]{subsection.5.3.4}{Axios}{section.5.3}% 97
-\BOOKMARK [1][-]{section.5.4}{Database Architecture}{chapter.5}% 98
-\BOOKMARK [2][-]{subsection.5.4.1}{MLAB}{section.5.4}% 99
-\BOOKMARK [2][-]{subsection.5.4.2}{Mongoose}{section.5.4}% 100
-\BOOKMARK [2][-]{subsection.5.4.3}{Schema of Database}{section.5.4}% 101
-\BOOKMARK [1][-]{section.5.5}{Security}{chapter.5}% 102
-\BOOKMARK [2][-]{subsection.5.5.1}{HTTPS}{section.5.5}% 103
-\BOOKMARK [2][-]{subsection.5.5.2}{TLS}{section.5.5}% 104
-\BOOKMARK [2][-]{subsection.5.5.3}{OpenSSL}{section.5.5}% 105
-\BOOKMARK [0][-]{chapter.6}{System Evaluation}{}% 106
-\BOOKMARK [0][-]{chapter.7}{Conclusion}{}% 107
-\BOOKMARK [0][-]{section*.17}{Appendices}{}% 108
-\BOOKMARK [0][-]{Appendix.1.A}{Preamble \046 Intro}{}% 109
+\BOOKMARK [1][-]{section.5.1}{Introduction}{chapter.5}% 84
+\BOOKMARK [1][-]{section.5.2}{Architecture of Project}{chapter.5}% 85
+\BOOKMARK [2][-]{subsection.5.2.1}{Introduction to System}{section.5.2}% 86
+\BOOKMARK [2][-]{subsection.5.2.2}{Reasons for System Design}{section.5.2}% 87
+\BOOKMARK [1][-]{section.5.3}{Front End Architecture}{chapter.5}% 88
+\BOOKMARK [2][-]{subsection.5.3.1}{List of Components}{section.5.3}% 89
+\BOOKMARK [1][-]{section.5.4}{Backend Architecture}{chapter.5}% 90
+\BOOKMARK [1][-]{section.5.5}{Database Architecture}{chapter.5}% 91
+\BOOKMARK [2][-]{subsection.5.5.1}{MLAB}{section.5.5}% 92
+\BOOKMARK [2][-]{subsection.5.5.2}{Mongoose}{section.5.5}% 93
+\BOOKMARK [2][-]{subsection.5.5.3}{Schema of Database}{section.5.5}% 94
+\BOOKMARK [1][-]{section.5.6}{Security}{chapter.5}% 95
+\BOOKMARK [2][-]{subsection.5.6.1}{Overview of Security}{section.5.6}% 96
+\BOOKMARK [0][-]{chapter.6}{System Evaluation}{}% 97
+\BOOKMARK [0][-]{chapter.7}{Conclusion}{}% 98
+\BOOKMARK [0][-]{section*.29}{Appendices}{}% 99
+\BOOKMARK [0][-]{Appendix.1.A}{Preamble \046 Intro}{}% 100

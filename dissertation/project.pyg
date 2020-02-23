@@ -1,9 +1,0 @@
-  h1{
-    //turns color of all h1 elements red
-    color:red;
-    //centers the text of h1
-    text-align:center;
-    //changes font-size to 21px
-    font-size:21px;
-    //These are just a small sample of things you can change with CSS!
-  }
