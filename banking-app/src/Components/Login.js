@@ -69,7 +69,7 @@ class Login extends React.Component {
           sessionStorage.setItem("email", res.data._id);
           ReactDOM.render(<Home />, document.getElementById("root"));
         }
-        else if(res.data == "null"){
+        else if(res.data === "null"){
           alert("Wrong username or password")
         }
       }).catch(error =>{

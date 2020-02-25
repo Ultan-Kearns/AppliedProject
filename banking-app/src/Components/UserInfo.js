@@ -186,8 +186,10 @@ class UserInfo extends React.Component {
 
                   sessionStorage.setItem("email", this.state.newUsername);
                   alert("Updated user " + this.state.newUsername + " Bal " + this.state.balance);
-                  this.state.username = this.state.newUsername
-                }).then(res=>{
+                  this.setState({
+                    username: this.newUsername
+                  })
+                 }).then(res=>{
                                     this.updateData()
                 })
                 .catch(error => {
