@@ -50,16 +50,17 @@
 + pay back loan feature (DONE)
 + ensure user cannot delete account if they have open loans(DONE)
 # Sprint 9 (21st February - 29th February)
+## Set backs due to job interviews
 + review dissertation
 + Start System Design
-+ fix update bug on userinfo page(Kinda fixed)
++ fix update bug on userinfo page(Done)
 + Brainstorm ideas(tensorflowJS?)
-+ research Docker + get it working
-+ refactor and test code(In progressss)
++ research Docker + get it working(Done)
++ refactor and test code(In progress)
 + get transfer working(Done with independent banking accounts will need to add IBAN validatior and pretend to send money + test)
-+ Host on google cloud
-+ Finish System design & review dissertation(Almost done)
-+ write more sprints
++ Host on google cloud(Starting soon)
++ Finish System design & review dissertation(Almost done - just need to do UX section and user-info)
++ write more sprints(May be redundant)
 # Sprint 10 (1st March - 10th March)
 + Finish system evaluation
 + work on tensorflowJS and add to technical and system design
