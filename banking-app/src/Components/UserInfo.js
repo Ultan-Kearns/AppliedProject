@@ -13,6 +13,9 @@ import Card from "react-bootstrap/Card";
 const axios = require("axios").default;
 const sha256 = require("js-sha256");
 var password = "";
+var updates = 0
+//issues when updating 3 times so limiting users updates
+sessionStorage.setItem("updates",updates);
 class UserInfo extends React.Component {
   constructor(props) {
     super(props);
@@ -25,8 +28,8 @@ class UserInfo extends React.Component {
       prevName: "",
       prevNumber: "",
       prevPassword: "",
-      dob: "",
-      balance: ""
+      dob: sessionStorage.getItem("dob"),
+      balance: sessionStorage.getItem("balance")
     };
   }
   handleNewUsernameChange = event => {
@@ -79,25 +82,28 @@ class UserInfo extends React.Component {
       });
       alert("PASS WILL = PREV PASS " + this.state.password);
     }
-    //strip out
-    axios
-      .get(
-        "https://localhost:8080/api/users/" + sessionStorage.getItem("email")
-      )
-      .then(res => {
-        this.setState({
-          balance: res.data.balance
-        });
-      })
-      .catch(error => {});
-    //hash pass using sha256
+    if (
+      this.state.dob === "null" ||
+      this.state.dob === undefined ||
+      this.state.dob === ""
+    ) {
+      this.setState({
+        dob: sessionStorage.getItem("dob")
+      });
+    }
+    //these fields are not edited in this component so will a lways remain the same.
+    sessionStorage.setItem("dob", this.state.dob);
+    this.state.dob = sessionStorage.getItem("dob");
+    sessionStorage.setItem("balance", this.state.balance);
+    this.state.balance = sessionStorage.getItem("balance");
+    alert("BAL " + this.state.balance);
     const newUser = {
       _id: this.state.newUsername.toLowerCase(),
       password: this.state.password,
       name: this.state.name,
       number: this.state.number,
       dob: this.state.dob,
-      balance: parseInt(this.state.balance),
+      balance: 20,
       iban: "",
       bic: ""
     };
@@ -197,7 +203,15 @@ class UserInfo extends React.Component {
                   });
                 })
                 .then(res => {
+                  if(parseInt(sessionStorage.getItem("updates")) == 2){
+                    alert("You cannot update so much")
+                     
+                  }
+                  else{
                   this.updateData();
+                  updates++;
+                  sessionStorage.setItem("updates",updates)
+                }
                 })
                 .catch(error => {
                   console.log("Error with loans");
@@ -237,6 +251,7 @@ class UserInfo extends React.Component {
             res.data._id +
             " Balance: " +
             res.data.balance,
+
           //In case user leaves any information blank just submit their current info
 
           this.setState({
@@ -381,7 +396,9 @@ class UserInfo extends React.Component {
           </Card.Body>
         </Card>
         <Card>
-          <Card.Header>Call Kenny Loggins You're in the DANGER ZONE!</Card.Header>
+          <Card.Header>
+            Call Kenny Loggins You're in the DANGER ZONE!
+          </Card.Header>
           <Card.Body>
             Click here to delete account
             <Button onClick={this.deleteUser} variant="danger">

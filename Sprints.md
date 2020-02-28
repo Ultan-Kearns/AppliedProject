@@ -52,13 +52,13 @@
 # Sprint 9 (21st February - 29th February)
 + review dissertation
 + Start System Design
-+ fix update bug on userinfo page
++ fix update bug on userinfo page(Kinda fixed)
 + Brainstorm ideas(tensorflowJS?)
 + research Docker + get it working
-+ refactor and test code
++ refactor and test code(In progressss)
 + get transfer working(Done with independent banking accounts will need to add IBAN validatior and pretend to send money + test)
 + Host on google cloud
-+ Finish System design & review dissertation
++ Finish System design & review dissertation(Almost done)
 + write more sprints
 # Sprint 10 (1st March - 10th March)
 + Finish system evaluation

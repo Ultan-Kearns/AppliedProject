@@ -249,10 +249,11 @@ class Statistics extends React.Component {
           <title>Statistics</title>
         </Helmet>
         <Card>
-          <Card.Header>Welcome to the Statistics Page { sessionStorage.getItem("username")}</Card.Header>
+          <Card.Header>
+            Welcome to the Statistics Page {sessionStorage.getItem("username")}
+          </Card.Header>
           <Card.Body>
             <Card.Text>
-
               On the statistics page I will get the daily conversion rates for
               the day and also get information on the stock market, we will also
               generate charts based on your spending.
@@ -262,8 +263,7 @@ class Statistics extends React.Component {
         <Card>
           <Card.Header>Closing info for stock market</Card.Header>
           <Card.Body>
-            <Card.Text id = "stock">
-            </Card.Text>
+            <Card.Text id="stock" />
           </Card.Body>
         </Card>
         <div id="currency">
