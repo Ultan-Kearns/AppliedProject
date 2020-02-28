@@ -27,7 +27,6 @@
   width: 100%;
   border-radius: 2px;
   height: 200%;
-  font-style: italic;
   font-weight: bolder;
-  color:red;
+  font-family: impact;
 }

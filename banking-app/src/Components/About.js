@@ -18,12 +18,15 @@ function About() {
       </p>
       <div className="liesWeTellCustomers" id="left">
         <Card style={{ width: '50vw' }}>
+        <Card.Header>
+          Welcome to the only bank you'll ever need!
+        </Card.Header>
         <Image
           src={require("../Assets/happycustomers.jpg")}
           alt="Pictures of happy sheep...... I mean customers!"
         roundedCircle/>
     <Card.Body>
-      <Card.Title>We Don't Just Care About Money!</Card.Title>
+      <Card.Title>We Care About YOU!</Card.Title>
       <Card.Text>
       <p>
         Yes we know you have heard this blaise comment before but we really
@@ -38,11 +41,13 @@ function About() {
       </div>
       <div className="liesWeTellCustomers" id="right">
       <Card style={{ width: '46vw' }}>
+      <Card.Header>
+        We don't just care about money, we care about OUR money!
+      </Card.Header>
       <Image
         src={require("../Assets/money.jpg")}
         alt="Pictures of happy sheep...... I mean customers!"
       roundedCircle/>
-
   <Card.Body>
     <Card.Title>We Don't Just Care About Money!</Card.Title>
     <Card.Text>
@@ -55,6 +60,9 @@ function About() {
       </div>
       <div className="liesWeTellCustomers" id="theBigOne">
       <Card>
+      <Card.Header>
+        A secret just for you, and everyone else who has an account
+      </Card.Header>
       <Card.Body>
         <Card.Title>Wanna hear a secret?!</Card.Title>
         <Card.Text>
@@ -63,9 +71,11 @@ function About() {
       </Card.Body>
     </Card>
       </div>
-
       <div className="liesWeTellCustomersBottom" id="left">
       <Card>
+      <Card.Header>
+        Our evil..... I mean our plans
+      </Card.Header>
       <Card.Body>
         <Card.Title>Our Aims</Card.Title>
         <Card.Text>

@@ -36,8 +36,13 @@ const security = {
   key: fs.readFileSync(keysDirectory + "ca.key"),
   cert: fs.readFileSync(keysDirectory + "cert.crt")
 };
-//use mongoose API to connect to backend
+//use mongoose API to connect to backend need to send err msg here
+try{
 mongoose.connect(mongoDB, { useUnifiedTopology: true, useNewUrlParser: true });
+}
+catch{
+  res.send("Err")
+}
 //body parser for middleware
 app.use(
   bodyParser.urlencoded({

@@ -1,7 +1,9 @@
 import React from "react";
 import { Helmet } from "react-helmet";
-import "../Styles/StatStyle.css"
+import "../Styles/StatStyle.css";
 import { Bar } from "react-chartjs-2";
+import Card from "react-bootstrap/Card";
+
 //Alpha Vantage API key - G38RVCM1OWLSKALP
 const axios = require("axios").default;
 
@@ -100,7 +102,7 @@ class Statistics extends React.Component {
           document.getElementById("stock").appendChild(node);
         })
         .catch(error => {
-    alert("problem getting currency data")
+          alert("problem getting currency data");
         });
       axios
         .get(
@@ -246,51 +248,75 @@ class Statistics extends React.Component {
         <Helmet>
           <title>Statistics</title>
         </Helmet>
-        <h1>Welcome to the Statistics!</h1>
-        <p>
-        On the statistics page I will get the daily conversion rates for the day
-        and also get information on the stock market, we will also generate
-        charts based on your spending.
-        </p>
-        <div id="stock" />
+        <Card>
+          <Card.Header>Welcome to the Statistics Page { sessionStorage.getItem("username")}</Card.Header>
+          <Card.Body>
+            <Card.Text>
+
+              On the statistics page I will get the daily conversion rates for
+              the day and also get information on the stock market, we will also
+              generate charts based on your spending.
+            </Card.Text>
+          </Card.Body>
+        </Card>
+        <Card>
+          <Card.Header>Closing info for stock market</Card.Header>
+          <Card.Body>
+            <Card.Text id = "stock">
+            </Card.Text>
+          </Card.Body>
+        </Card>
         <div id="currency">
-          <h3>Daily Exchange Rates</h3>
-          <h3 id="eurbtc"> </h3>
-          <h3 id="eursterling"> </h3>
-          <h3 id="eurdollar"> </h3>
-          <h3 id="eurcny"> </h3>
+          <Card>
+            <Card.Header>Daily Exchange Rates</Card.Header>
+            <Card.Body>
+              <h3 id="eurbtc"> </h3>
+              <h3 id="eursterling"> </h3>
+              <h3 id="eurdollar"> </h3>
+              <h3 id="eurcny"> </h3>
+            </Card.Body>
+          </Card>
         </div>
         <div id="charts">
-          <h3>Chart Section</h3>
-          <p>Here's some charts we made based on your account activity in regards to loans and transactions</p>
-          <Bar id ="loanChart"
-            data={this.state.loanState}
-            options={{
-              title: {
-                display: true,
-                text: "Loans on your account",
-                fontSize: 20
-              },
-              legend: {
-                display: true,
-                position: "right"
-              }
-            }}
-          />
-          <Bar
-            data={this.state.transactionState}
-            options={{
-              title: {
-                display: true,
-                text: "Transactions on your account",
-                fontSize: 20
-              },
-              legend: {
-                display: true,
-                position: "right"
-              }
-            }}
-          />
+          <p />
+          <Card>
+            <Card.Header>Chart Section</Card.Header>
+            <Card.Body>
+              <Card.Text>
+                Here's some charts we made based on your account activity in
+                regards to loans and transactions
+              </Card.Text>
+              <Bar
+                id="loanChart"
+                data={this.state.loanState}
+                options={{
+                  title: {
+                    display: true,
+                    text: "Loans on your account",
+                    fontSize: 20
+                  },
+                  legend: {
+                    display: true,
+                    position: "right"
+                  }
+                }}
+              />
+              <Bar
+                data={this.state.transactionState}
+                options={{
+                  title: {
+                    display: true,
+                    text: "Transactions on your account",
+                    fontSize: 20
+                  },
+                  legend: {
+                    display: true,
+                    position: "right"
+                  }
+                }}
+              />
+            </Card.Body>
+          </Card>
         </div>
       </div>
     );

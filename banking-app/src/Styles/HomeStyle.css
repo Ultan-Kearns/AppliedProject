@@ -24,14 +24,13 @@ body{
 }
 #balance{
   font-weight: bold;
-  color:red;
   margin-top:2%;
   margin-bottom: 10%;
+  font-weight: bolder;
+  font-style: italic;
+  font-family: impact;
 }
-#send{
-  margin-bottom: 10%;
 
-}
 #sendButton{
   margin-top:10%;
   margin-bottom: 5%;

@@ -3,6 +3,7 @@ import "axios";
 import { Helmet } from "react-helmet";
 import "react-bootstrap/Button"
 import '../Styles/TransactionStyle.css'
+import Card from "react-bootstrap/Card";
 
 class Transactions extends React.Component {
   //maybe create statemnt when sending money from home
@@ -33,7 +34,7 @@ class Transactions extends React.Component {
             email: res.data[i].email
           });
           //create LI element then form statment then append to LI then add to list
-          var node = document.createElement("LI");
+          var node = document.createElement("p");
           var text = document.createTextNode(
             "Location: " +
               this.state.location +
@@ -62,7 +63,14 @@ class Transactions extends React.Component {
           <title>Transactions</title>
         </Helmet>
         <h1>Your transactions</h1>
-        <ul id="transactions" />
+        <Card>
+          <Card.Header>
+            List of Transactions
+          </Card.Header>
+          <Card.Body>
+            <Card.Text id="transactions" />
+          </Card.Body>
+        </Card>
       </div>
     );
   }

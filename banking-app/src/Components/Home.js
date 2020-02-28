@@ -4,6 +4,8 @@ import App from "../App";
 import ReactDOM from "react-dom";
 import "../Styles/HomeStyle.css";
 import Button from "react-bootstrap/Button";
+import Card from "react-bootstrap/Card";
+
 const axios = require("axios").default;
 
 class Home extends React.Component {
@@ -12,7 +14,7 @@ class Home extends React.Component {
     this.state = {
       amount: "",
       accountId: "",
-      payeeBalance:""
+      payeeBalance: ""
     };
   }
   handleAmountChange = event => {
@@ -77,14 +79,15 @@ class Home extends React.Component {
   }
 
   handleSubmitForm = e => {
-    if(this.state.accountId === sessionStorage.getItem("email"))
-    {
-      alert("Cannot send money to yourself ( ;-( )")
-      e.preventDefault()
+    if (this.state.accountId === sessionStorage.getItem("email")) {
+      alert("Cannot send money to yourself ( ;-( )");
+      e.preventDefault();
       return;
     }
     if (this.state.amount === "" || this.state.accountId === "") {
-      alert("The amount / account ID cannot be null, want to donate it to us? >;D");
+      alert(
+        "The amount / account ID cannot be null, want to donate it to us? >;D"
+      );
     } else {
       var date = new Date();
       //payer logic
@@ -133,7 +136,8 @@ class Home extends React.Component {
       const payeeTransaction = {
         email: this.state.accountId,
         cost: this.state.amount,
-        location: "Online Banking Transfer from " + sessionStorage.getItem("email"),
+        location:
+          "Online Banking Transfer from " + sessionStorage.getItem("email"),
         name: sessionStorage.getItem("username"),
         date: date
       };
@@ -143,16 +147,18 @@ class Home extends React.Component {
         .then(res => {
           console.log(res);
         });
-       axios
+      axios
         .get("https://localhost:8080/api/users/" + this.state.accountId)
         .then(res => {
           this.setState({
-            payeeBalance:   parseInt(res.data.balance) + parseInt(this.state.amount)
-          })
-        }).then(res =>{
-          const newBalance ={
+            payeeBalance:
+              parseInt(res.data.balance) + parseInt(this.state.amount)
+          });
+        })
+        .then(res => {
+          const newBalance = {
             balance: this.state.payeeBalance
-          }
+          };
           axios
             .post(
               "https://localhost:8080/api/users/" +
@@ -161,7 +167,14 @@ class Home extends React.Component {
               newBalance
             )
             .then(res => {
-              alert("Money Sent to: " + this.state.accountId + " Amount sent: " + this.state.amount + " New Balance: " + newBalance.balance)
+              alert(
+                "Money Sent to: " +
+                  this.state.accountId +
+                  " Amount sent: " +
+                  this.state.amount +
+                  " New Balance: " +
+                  newBalance.balance
+              );
             });
         })
         .catch(error => {});
@@ -174,45 +187,60 @@ class Home extends React.Component {
         <Helmet>
           <title>Home</title>
         </Helmet>
-        <h1>
-          Welcome to the Independent Banking,{" "}
-          {sessionStorage.getItem("username")}!
-        </h1>
-        <h2 id="balance">Current User Balance: </h2>
-        <div id="send">
-          <h2>Send money </h2>
-          <p>
-            Send money to another account by simply entering the amount to send
-            and the account number
-          </p>
-          <form className="send" onSubmit={this.handleSubmitForm}>
-            Amount to send:
-            <input
-              type="number"
-              id="sendAmount"
-              placeholder="Enter amount to send"
-              onChange={this.handleAmountChange}
-            />
-            Account number:
-            <input
-              type="text"
-              id="sendAccount"
-              placeholder="Enter account number"
-              onChange={this.handleIdChange}
-            />
-            <br />
-            <Button id="sendButton" type="submit">
-              Send Money
-            </Button>
-          </form>
-        </div>
+        <h1 />
+        <Card>
+          <Card.Header>
+            Welcome to the Independent Banking,{" "}
+            {sessionStorage.getItem("username")}!
+          </Card.Header>
+          <Card.Body>
+            <Card.Text>
+              <h2 id="balance">Your balance: </h2>
+            </Card.Text>
+          </Card.Body>
+        </Card>
+        <Card>
+          <Card.Header>Send money</Card.Header>
+          <Card.Body>
+            <Card.Text>
+              <p>
+                Send money to another account by simply entering the amount to
+                send and the account number
+              </p>
+              <form className="send" onSubmit={this.handleSubmitForm}>
+                Amount to send:
+                <input
+                  type="number"
+                  id="sendAmount"
+                  placeholder="Enter amount to send"
+                  onChange={this.handleAmountChange}
+                />
+                Account number:
+                <input
+                  type="text"
+                  id="sendAccount"
+                  placeholder="Enter account number"
+                  onChange={this.handleIdChange}
+                />
+                <br />
+                <Button id="sendButton" type="submit">
+                  Send Money
+                </Button>
+              </form>
+            </Card.Text>
+          </Card.Body>
+        </Card>
         <div id="finance">
-          <h2>
-            Latest Financial News Headlines for you{" "}
-            {sessionStorage.getItem("name")}: Thanks to newsapi.org! - For more
-            news visit the Headlines Page :)
-          </h2>
-          <ul id="homeFinance" />
+          <Card>
+            <Card.Header>
+              Latest Financial News Headlines for you{" "}
+              {sessionStorage.getItem("name")}: Thanks to newsapi.org! - For
+              more news visit the Headlines Page :)
+            </Card.Header>
+            <Card.Body>
+              <Card.Text id="homeFinance" />
+            </Card.Body>
+          </Card>
         </div>
       </div>
     );

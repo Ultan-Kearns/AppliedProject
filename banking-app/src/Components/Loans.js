@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet";
 import Button from "react-bootstrap/Button";
 import "../Styles/LoanStyle.css";
 import { getOpenLoans } from "../Services/LoanHelpers.js";
+import Card from "react-bootstrap/Card";
 
 const axios = require("axios").default;
 var date = new Date();
@@ -197,8 +198,7 @@ class Loans extends React.Component {
                 "loan approved\n New balance is: " +
                   sessionStorage.getItem("balance")
               );
-            })
-            .catch(error => {
+            }).catch(error => {
               alert("Could not approve loan");
             });
           sessionStorage.setItem("openLoans", getOpenLoans());
@@ -218,21 +218,33 @@ class Loans extends React.Component {
           <title>Loans</title>
         </Helmet>
         <h1>Apply & View Loans</h1>
-        <h2>Apply for loans here:</h2>
-        <form className="loanApply" onSubmit={this.handleSubmitForm}>
-          <input
-            type="number"
-            placeholder="Amount"
-            onChange={this.handleAmountChange}
-            value={this.state.amount}
-          />
-          <br />
-          <Button size="sm" id="loanButton" type="submit">
-            Apply for Loan
-          </Button>
-        </form>
-        <h2>List of loans</h2>
-        <div className="loanList" id="loans" />
+        <Card>
+          <Card.Header>
+            Apply For Loans Here
+          </Card.Header>
+          <Card.Body>
+          <form className="loanApply" onSubmit={this.handleSubmitForm}>
+            <input
+              type="number"
+              placeholder="Amount"
+              onChange={this.handleAmountChange}
+              value={this.state.amount}
+            />
+            <br />
+            <Button size="sm" id="loanButton" type="submit">
+              Apply for Loan
+            </Button>
+          </form>
+          </Card.Body>
+        </Card>
+        <Card>
+          <Card.Header>
+            List of Loans
+          </Card.Header>
+          <Card.Body>
+            <Card.Text id="loans" />
+          </Card.Body>
+        </Card>
       </div>
     );
   }

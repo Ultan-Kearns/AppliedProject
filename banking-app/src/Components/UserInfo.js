@@ -8,6 +8,7 @@ import "../Styles/UserInfoStyle.css";
 import "js-sha256";
 import FormControl from "react-bootstrap/FormControl";
 import { getOpenLoans } from "../Services/LoanHelpers.js";
+import Card from "react-bootstrap/Card";
 
 const axios = require("axios").default;
 const sha256 = require("js-sha256");
@@ -50,7 +51,6 @@ class UserInfo extends React.Component {
   };
   //for updating user info
   update = event => {
-
     //if any info is blank set to previous info of user
     if (this.state.number === "null" || this.state.number === "") {
       this.setState({
@@ -169,7 +169,9 @@ class UserInfo extends React.Component {
                     this.state.newUsername
                 )
                 .then(res => {
-                  console.log("TESTING UPDATE TRANSACTION" + JSON.stringify(res.data));
+                  console.log(
+                    "TESTING UPDATE TRANSACTION" + JSON.stringify(res.data)
+                  );
                 })
                 .catch(error => {
                   console.log("Error with transactions");
@@ -183,14 +185,19 @@ class UserInfo extends React.Component {
                     this.state.newUsername
                 )
                 .then(res => {
-
                   sessionStorage.setItem("email", this.state.newUsername);
-                  alert("Updated user " + this.state.newUsername + " Bal " + this.state.balance);
+                  alert(
+                    "Updated user " +
+                      this.state.newUsername +
+                      " Bal " +
+                      this.state.balance
+                  );
                   this.setState({
                     username: this.newUsername
-                  })
-                 }).then(res=>{
-                                    this.updateData()
+                  });
+                })
+                .then(res => {
+                  this.updateData();
                 })
                 .catch(error => {
                   console.log("Error with loans");
@@ -217,9 +224,7 @@ class UserInfo extends React.Component {
   }
   updateData() {
     axios
-      .get(
-        "https://localhost:8080/api/users/" + this.state.username
-      )
+      .get("https://localhost:8080/api/users/" + this.state.username)
       .then(res => {
         var text = document.createTextNode(
           "Name: " +
@@ -303,69 +308,87 @@ class UserInfo extends React.Component {
         <Helmet>
           <title>User Info</title>
         </Helmet>
-        <h1>Welcome to the User Info!</h1>
-         <h2>Basic Info: </h2>
-        <p id="basic" />
-        <h2>Change Info: </h2>
-        <p>Change your information down below, if any field is left blank we'll just fill it in with your current information</p>
-        <form id="updateForm" onSubmit={this.update}>
-          <InputGroup className="mb-3" id="name">
-            <InputGroup.Prepend>
-              <InputGroup.Text id="basic-addon1">Name:</InputGroup.Text>
-            </InputGroup.Prepend>
-            <FormControl
-              placeholder="Name"
-              aria-label="Name"
-              type="text"
-              value={this.state.name}
-              onChange={this.handleNameChange}
-            />
-          </InputGroup>
-          <InputGroup className="mb-3" id="username">
-            <InputGroup.Prepend>
-              <InputGroup.Text id="basic-addon1">Username:</InputGroup.Text>
-            </InputGroup.Prepend>
-            <FormControl
-              placeholder="Username"
-              aria-label="Username"
-              type="email"
-              value={this.state.email}
-              onChange={this.handleNewUsernameChange}
-            />
-          </InputGroup>
-          <InputGroup className="mb-3" id="password">
-            <InputGroup.Prepend>
-              <InputGroup.Text id="basic-addon1">Password:</InputGroup.Text>
-            </InputGroup.Prepend>
-            <FormControl
-              placeholder="Password"
-              aria-label="Password"
-              type="password"
-              value={this.state.password}
-              onChange={this.handlePasswordChange}
-            />
-          </InputGroup>
-          <InputGroup className="mb-3" id="number">
-            <InputGroup.Prepend>
-              <InputGroup.Text id="basic-addon1">Phone Number:</InputGroup.Text>
-            </InputGroup.Prepend>
-            <FormControl
-              placeholder="Phone Number"
-              aria-label="Phone Number"
-              type="number"
-              value={this.state.number}
-              onChange={this.handleNumberChange}
-            />
-          </InputGroup>
-          <Button size="sm" id="updateButton" type="submit">
-            Update Information
-          </Button>
-        </form>
-        <h2>Delete account: </h2>
-        <p>Click here to delete account</p>
-        <Button onClick={this.deleteUser} variant="danger">
-          Delete Account
-        </Button>
+        <h1>Welcome to the User Info Page!</h1>
+        <Card>
+          <Card.Header>Your Basic Information</Card.Header>
+          <Card.Body>
+            <Card.Text id="basic" />
+          </Card.Body>
+        </Card>
+        <Card>
+          <Card.Header>Change Your Info</Card.Header>
+          <Card.Body>
+            <Card.Text id="basic" />
+            <p>
+              Change your information down below, if any field is left blank
+              we'll just fill it in with your current information
+            </p>
+            <form id="updateForm" onSubmit={this.update}>
+              <InputGroup className="mb-3" id="name">
+                <InputGroup.Prepend>
+                  <InputGroup.Text id="basic-addon1">Name:</InputGroup.Text>
+                </InputGroup.Prepend>
+                <FormControl
+                  placeholder="Name"
+                  aria-label="Name"
+                  type="text"
+                  value={this.state.name}
+                  onChange={this.handleNameChange}
+                />
+              </InputGroup>
+              <InputGroup className="mb-3" id="username">
+                <InputGroup.Prepend>
+                  <InputGroup.Text id="basic-addon1">Username:</InputGroup.Text>
+                </InputGroup.Prepend>
+                <FormControl
+                  placeholder="Username"
+                  aria-label="Username"
+                  type="email"
+                  value={this.state.email}
+                  onChange={this.handleNewUsernameChange}
+                />
+              </InputGroup>
+              <InputGroup className="mb-3" id="password">
+                <InputGroup.Prepend>
+                  <InputGroup.Text id="basic-addon1">Password:</InputGroup.Text>
+                </InputGroup.Prepend>
+                <FormControl
+                  placeholder="Password"
+                  aria-label="Password"
+                  type="password"
+                  value={this.state.password}
+                  onChange={this.handlePasswordChange}
+                />
+              </InputGroup>
+              <InputGroup className="mb-3" id="number">
+                <InputGroup.Prepend>
+                  <InputGroup.Text id="basic-addon1">
+                    Phone Number:
+                  </InputGroup.Text>
+                </InputGroup.Prepend>
+                <FormControl
+                  placeholder="Phone Number"
+                  aria-label="Phone Number"
+                  type="number"
+                  value={this.state.number}
+                  onChange={this.handleNumberChange}
+                />
+              </InputGroup>
+              <Button size="sm" id="updateButton" type="submit">
+                Update Information
+              </Button>
+            </form>
+          </Card.Body>
+        </Card>
+        <Card>
+          <Card.Header>Call Kenny Loggins You're in the DANGER ZONE!</Card.Header>
+          <Card.Body>
+            Click here to delete account
+            <Button onClick={this.deleteUser} variant="danger">
+              Delete Account
+            </Button>
+          </Card.Body>
+        </Card>
       </div>
     );
   }

@@ -1,12 +1,4 @@
-#reddit_headlines {
-  margin-right: 50vw;
-  list-style: none !important;
-  align: left;
-  width: 50vw;
-  position: relative;
-  overflow-x: auto;
-  word-wrap: break-word;
-}
+
 #reddit_headlines img {
   max-height: 150px !important;
   max-width: 150px !important;
@@ -14,13 +6,7 @@
   min-height: 50px;
   margin-top: 10%;
 }
-#financial {
-  margin-left: 50vw;
-  width: 50vw;  
-  position: absolute;
-  overflow-x: auto;
-  word-wrap: break-word;
-}
+
 #financial img {
   max-height: 150px !important;
   max-width: 150px !important;
@@ -28,3 +14,4 @@
   min-height: 50px;
   margin-top: 10%;
 }
+ 
