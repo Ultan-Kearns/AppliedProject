@@ -1447,8 +1447,313 @@ its sole purpose is to make the bank appear as if it were a real entity instead 
 exists in the mind of a college student.  Of course all businesses start as imaginary entities and through hard work
 and effort become real viable businesses.
 \subsubsection{UserInfo}
+The UserInfo component has a large level of complexity, upon loading the user is
+greeted with a section for their basic info, a section for updating their info,
+and a delete account section aptly placed in what Kenny Loggins refers to as the "Danger Zone".
+The UserInfo component works by firstly sending a get request to the backend to retrieve user info,
+next in the update section it retrieves all pertinent user info from across all schemas and
+updates the foreign keys which in most cases happens to be the username(User email).  The delete function
+finds all the information pertinet to the user across various schemas using the user's email as
+a parameter to the get requests and deletes all the user information that we have stored.
+\\
+Code for the get function:
+\begin{minted}[linenos,tabsize=2,breaklines]{JavaScript}
+updateData() {
+  axios
+    .get("https://localhost:8080/api/users/" + this.state.username)
+    .then(res => {
+      var text = document.createTextNode(
+        "Name: " +
+          res.data.name +
+          " Number: " +
+          res.data.number +
+          " Date of Birth: " +
+          res.data.dob +
+          " Username: " +
+          res.data._id +
+          " Balance: " +
+          res.data.balance,
+
+        //In case user leaves any information blank just submit their current info
+
+        this.setState({
+          prevName: res.data.name
+        }),
+        this.setState({
+          prevNumber: res.data.number
+        }),
+        this.setState({
+          prevPassword: res.data.password
+        }),
+        this.setState({
+          dob: res.data.dob
+        }),
+        this.setState({
+          balance: res.data.balance
+        })
+      );
+      password = res.data.password;
+      document.getElementById("basic").appendChild(text);
+    })
+    .catch(error => {
+      alert("Can't communicate with server");
+    });
+}
+\end{minted}
+\\
+Code for the update function:
+\begin{minted}[linenos,tabsize=2,breaklines]{JavaScript}
+//for updating user info
+update = event => {
+  //if any info is blank set to previous info of user
+  if (this.state.number === "null" || this.state.number === "") {
+    this.setState({
+      number: this.state.prevNumber
+    });
+  }
+
+  if (this.state.name === "null" || this.state.name === "") {
+    this.setState({
+      name: this.state.prevName
+    });
+  }
+  if (this.state.newUsername === "null" || this.state.newUsername === "") {
+    this.setState({
+      newUsername: sessionStorage.getItem("email")
+    });
+  }
+  if (this.state.password !== "null" && this.state.password !== "") {
+    this.setState({
+      password: sha256(this.state.password)
+    });
+    alert(this.state.password);
+  } else {
+    this.setState({
+      password: this.state.prevPassword
+    });
+    alert("PASS WILL = PREV PASS " + this.state.password);
+  }
+  if (
+    this.state.dob === "null" ||
+    this.state.dob === undefined ||
+    this.state.dob === ""
+  ) {
+    this.setState({
+      dob: sessionStorage.getItem("dob")
+    });
+  }
+  //these fields are not edited in this component so will a lways remain the same.
+  sessionStorage.setItem("dob", this.state.dob);
+  sessionStorage.setItem("balance", this.state.balance);
+  this.setState({
+        balance: sessionStorage.getItem("balance"),
+        dob: sessionStorage.getItem("dob"),
+  })
+  alert("BAL " + this.state.balance);
+  const newUser = {
+    _id: this.state.newUsername.toLowerCase(),
+    password: this.state.password,
+    name: this.state.name,
+    number: this.state.number,
+    dob: this.state.dob,
+    balance: 20,
+    iban: "",
+    bic: ""
+  };
+  //problem with axios not being asynchronous may find a different way to handle this
+  const CancelToken = axios.CancelToken;
+  let cancel;
+  try {
+    if (
+      this.state.number.length === 10 &&
+      this.state.name.length >= 5 &&
+      this.state.password.length >= 5
+    ) {
+      var isCancelled = false;
+      axios
+        .get("https://localhost:8080/api/users/" + newUser._id)
+        .then(res => {
+          alert(res.data);
+          if (res.data === "null") {
+            alert(
+              "Changing ID, you will now have to login using " +
+                newUser._id +
+                " as email"
+            );
+          } else if (
+            res !== "null" &&
+            this.state.username !== this.state.newUsername
+          ) {
+            //check if response is not null then check to see if the user is using their current username
+            alert("Cannot use this email, already registered");
+            //taken from axios documentation
+            cancelToken: new CancelToken(function executor(c) {
+              // An executor function receives a cancel function as a parameter
+              cancel = c;
+            });
+            cancel();
+            isCancelled = true;
+          }
+        })
+        .then(res => {
+          alert("IS " + isCancelled + this.state.dob);
+          if (isCancelled === false) {
+            //delete original user
+            axios
+              .delete(
+                "https://localhost:8080/api/users/" +
+                  sessionStorage.getItem("email")
+              )
+              .then(res => {})
+              .catch(error => {
+                console.log("ERR");
+              });
+            //recreate user for ID - for some reason it clones
+            axios
+              .post("https://localhost:8080/api/users/", newUser)
+              .then(res => {
+                //log res for testing
+                console.log(res.data);
+              })
+              .catch(error => {
+                console.log("ERR");
+              });
+            axios
+              .post(
+                "https://localhost:8080/api/transactions/" +
+                  sessionStorage.getItem("email") +
+                  "/" +
+                  this.state.newUsername
+              )
+              .then(res => {
+                console.log(
+                  "TESTING UPDATE TRANSACTION" + JSON.stringify(res.data)
+                );
+              })
+              .catch(error => {
+                console.log("Error with transactions");
+              });
+
+            axios
+              .post(
+                "https://localhost:8080/api/loans/" +
+                  sessionStorage.getItem("email") +
+                  "/" +
+                  this.state.newUsername
+              )
+              .then(res => {
+                sessionStorage.setItem("email", this.state.newUsername);
+                alert(
+                  "Updated user " +
+                    this.state.newUsername +
+                    " Bal " +
+                    this.state.balance
+                );
+                this.setState({
+                  username: this.newUsername
+                });
+              })
+              .then(res => {
+                if(parseInt(sessionStorage.getItem("updates")) === 2){
+                  alert("You cannot update so much")
+
+                }
+                else{
+                this.updateData();
+                updates++;
+                sessionStorage.setItem("updates",updates)
+              }
+              })
+              .catch(error => {
+                console.log("Error with loans");
+              });
+          }
+        })
+        .catch(error => {
+          alert("Cannot update user connection error " + error);
+        });
+      event.preventDefault();
+    } else {
+      alert(
+        "Form invalid, password length must be greater than 6 and number must have 10 digits and name must be >= 5 characters"
+      );
+    }
+  } catch (err) {
+    alert("Issue arose");
+  }
+  event.preventDefault();
+};
+\end{minted}
+\\
+Code for the delete function:
+\begin{minted}[linenos,tabsize=2,breaklines]{JavaScript}
+deleteUser() {
+  var answer = window.prompt("Enter password to delete account");
+  try {
+    if (
+      sha256(answer) === password &&
+      parseInt(sessionStorage.getItem("openLoans")) === 0
+    ) {
+      axios
+        .delete(
+          "https://localhost:8080/api/transactions/" +
+            sessionStorage.getItem("email")
+        )
+        .catch(error => {
+          alert("Error connecting to server");
+        });
+      axios
+        .delete(
+          "https://localhost:8080/api/loans/" +
+            sessionStorage.getItem("email")
+        )
+        .catch(error => {
+          alert("Error connecting to server");
+        });
+      axios
+        .delete(
+          "https://localhost:8080/api/users/" +
+            sessionStorage.getItem("email")
+        )
+        .catch(error => {
+          alert("Error connecting to server");
+        });
+      alert("User deleted");
+      ReactDOM.render(<Login />, document.getElementById("root"));
+    } else {
+      alert("Action aborted, password was incorrect or you have open loans");
+    }
+  } catch {
+    alert("Internal system error");
+  }
+}
+\end{minted}
 \section{Designing for UX(User Experience)}
 \subsection{Designing For End-Users As Opposed to Engineers}
+In making decisions regarding the UI I took user experience into serious consideration,
+I have noticed a growing tendency among web developers to make sites as minimalistic as
+possible so not to overwhelm the user, sites such as 9Gag, Reddit, Twitter \& Facebook
+all employ this design choice as they hide more complex action behind settings menus
+and other menus as opposed to greeting the user with them and overwhelming the user.  I have also decided to
+make the website aesthetically pleasing as most users judge a site by it's initial
+impact on them, in other words if a site has a black background and red text the user
+is not likely to trust it.
+\\
+The user experience is extremely important for a banking application in particular,
+as banking apps tend to have many complex features which can be hidden behind layers
+of abstraction to abstract away the complexity of backend logic from the frontend.
+The user need not know how the backend logic works to perform any function on the
+site and any pertinent stipulations ,which are entirely arbitrary, are described via
+alerts or on the page itself.
+\\
+The engineer tends to have a mind which values high degrees of complexity whereas
+the user values lower degrees of complexity, which is why I say I designed this
+application more for the user rather than the engineer.
+\\
+In short I have abstracted away complex features, made the website minimalistic,
+made it aesthetically pleasing, and tried to be as concise with my language as
+possible to develop a user-friendly banking system which is on of the objectives
+I have outlined in my original project objectives.
 \section{Backend Architecture}
 \subsection{Mongoose}
 Mongoose is a modelling tool for MongoDB and I utilized it on the backend to create schemas, create objects, read data, update data and delete data. Mongoose was very useful in communicating with the database and allowed me to create custom features which could be utilized to search for various objects using their parameters.  All requests made to the database were made using Mongoose to achieve a full CRUD(Create, Read, Update \& delete) application.
