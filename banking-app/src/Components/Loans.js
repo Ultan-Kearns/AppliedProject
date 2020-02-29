@@ -141,15 +141,17 @@ class Loans extends React.Component {
         this.state.amount +
         " ?"
     );
+    //validation if statemnt
     if (
       this.state.amount !== "" &&
       answer === true &&
-      parseInt(this.state.amount * 0.25) <=
-        parseInt(sessionStorage.getItem("balance")) &&
+      (Math.round(parseFloat(this.state.amount * 0.25)) <=
+        Math.floor(parseInt(sessionStorage.getItem("balance")))) &&
       sessionStorage.getItem("openLoans") < 5 &&
       this.state.amount <= 500 &&
       this.state.amount > 0
     ) {
+      alert("THIS" + Math.ceil(parseInt(this.state.amount * 0.25)))
       const newLoan = {
         email: sessionStorage.getItem("email"),
         amount: this.state.amount,
