@@ -4,7 +4,6 @@ import Home from "./Components/Home";
 import About from "./Components/About";
 import Loans from "./Components/Loans";
 import Headlines from "./Components/Headlines";
-
 import Transactions from "./Components/Transactions";
 import Statistics from "./Components/Statistics";
 import UserInfo from "./Components/UserInfo";
@@ -13,7 +12,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Button from "react-bootstrap/Button";
 import ButtonToolbar from "react-bootstrap/ButtonToolbar";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import  "axios";
+import "axios";
 import "./Styles/App.css";
 
 class App extends React.Component {
@@ -21,15 +20,16 @@ class App extends React.Component {
     sessionStorage.setItem("username", "");
     window.location.reload();
   }
-  componentDidMount(){
+  componentDidMount() {
     //this stops context menu being used in app
-    document.addEventListener('contextmenu', function(e) {
-    e.preventDefault();
-  });
+    document.addEventListener("contextmenu", function(e) {
+      e.preventDefault();
+    });
   }
   render() {
     return (
       <div className="App">
+      
         {/*Show the navigation throughout app*/}
         <Router>
           <nav>

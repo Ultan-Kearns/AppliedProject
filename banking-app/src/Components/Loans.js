@@ -107,7 +107,7 @@ class Loans extends React.Component {
                 cost: -loanCost,
                 location: "IndependentBanking.com",
                 name: sessionStorage.getItem("username"),
-                date: date
+                date: date,
               };
               axios
                 .post("https://localhost:8080/api/transactions", newTransaction)
@@ -125,8 +125,7 @@ class Loans extends React.Component {
           sessionStorage.setItem("openLoans", getOpenLoans());
         }
       },
-    )
-      .catch(error => {
+    ).catch(error => {
         alert("Could not get loans");
       });
 

@@ -2,7 +2,6 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import "../Styles/Headlines.css";
 import Card from "react-bootstrap/Card";
-import Button from "react-bootstrap/Button";
 import Accordion from "react-bootstrap/Accordion";
 class Headlines extends React.Component {
   componentDidMount() {

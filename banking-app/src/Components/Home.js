@@ -187,7 +187,7 @@ class Home extends React.Component {
         <Helmet>
           <title>Home</title>
         </Helmet>
-        <h1 />
+     
         <Card>
           <Card.Header>
             Welcome to the Independent Banking,{" "}

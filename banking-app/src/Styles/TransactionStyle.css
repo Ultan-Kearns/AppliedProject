@@ -4,9 +4,11 @@
   color:white;
 }
 #transaction{
-  color:white;
-  background-color: red;
+  color:black;
+  animation: slide 1.4s;
 }
 #transaction:hover{
-  background-color: black;
+  font-family: impact;
+  color: white;
+  background-color: #555
 }

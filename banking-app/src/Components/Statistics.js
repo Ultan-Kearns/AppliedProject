@@ -118,14 +118,8 @@ class Statistics extends React.Component {
           document.getElementById("eurbtc").appendChild(btcNode);
         })
         .catch(function(error) {
-          var node = document.createElement("LI");
-          node.id = "currency";
-          var text = document.createTextNode(
-            "Sorry something went wrong while getting the currency value data :*("
-          );
-          node.append(text);
-          document.getElementById("eurbtc").appendChild(node);
-          console.log("error");
+          //something went wrong here when showing error message but page
+          //shows lots of errors for each stat so not important
         });
       axios
         .get(

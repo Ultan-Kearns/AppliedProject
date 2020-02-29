@@ -1,105 +1,108 @@
-import ReactDOM from "react-dom"
-import InputGroup from "react-bootstrap/InputGroup"
-import FormControl from "react-bootstrap/FormControl"
-import Button from "react-bootstrap/Button"
-import React from "react"
-import "../Styles/Login.css"
-import Login from "./Login"
-import { Helmet } from "react-helmet"
-import 'js-sha256'
-const axios = require("axios").default
+import ReactDOM from "react-dom";
+import InputGroup from "react-bootstrap/InputGroup";
+import FormControl from "react-bootstrap/FormControl";
+import Button from "react-bootstrap/Button";
+import React from "react";
+import "../Styles/Login.css";
+import Login from "./Login";
+import { Helmet } from "react-helmet";
+import "js-sha256";
+const axios = require("axios").default;
 class Register extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       username: "",
       password: "",
       name: "",
       number: "",
       dob: "",
-      balance:""
-    }
+      balance: ""
+    };
   }
   redirect() {
-    ReactDOM.render(<Login />, document.getElementById("root"))
+    ReactDOM.render(<Login />, document.getElementById("root"));
   }
   handleUsernameChange = event => {
     this.setState({
       username: event.target.value
-    })
-  }
+    });
+  };
   handlePasswordChange = event => {
     this.setState({
       password: event.target.value
-    })
-  }
+    });
+  };
   handleNameChange = event => {
     this.setState({
       name: event.target.value
-    })
-  }
+    });
+  };
   handleNumberChange = event => {
     this.setState({
       number: event.target.value
-    })
-  }
+    });
+  };
   handleDobChange = event => {
     this.setState({
       dob: event.target.value
-    })
-  }
+    });
+  };
   register = event => {
-    //check if user exists
-    axios
-      .get("https://localhost:8080/api/users/" + this.state.username)
-      .then(res => {
-        //log res for testing
-        console.log(res.data)
-        if (res.data !== null) {
-          alert("User already exists")
-        }
-      })
-         //create IBAN here and BIC
-    console.log(this.state.name, this.state.number, this.state.dob)
-    const sha256 = require('js-sha256');
+    //create IBAN here and BIC
+    console.log(this.state.name, this.state.number, this.state.dob);
+    const sha256 = require("js-sha256");
     //hash pass using sha256
-    const hashed = sha256(this.state.password)
+    const hashed = sha256(this.state.password);
     const newUser = {
       _id: this.state.username,
       password: hashed,
       name: this.state.name,
       number: this.state.number,
       dob: this.state.dob,
-      bic:"1",
-      iban:"1",
-      balance:"20"
-    }
-      if (
-        this.state.number.length === 10 &&
-        this.state.name.length >= 5 &&
-        this.state.password.length >= 6 && this.username !== null
-        && this.state.dob !== ""
-      )  {
-      axios.post("https://localhost:8080/api/users", newUser).then(res => {
-        //log res for testing
-        console.log(res.data)
-        alert("User created, now you can login :D")
+      bic: "1",
+      iban: "1",
+      balance: "20"
+    };
+    if (
+      this.state.number.length === 10 &&
+      this.state.name.length >= 5 &&
+      this.state.password.length >= 6 &&
+      this.username !== null &&
+      this.state.dob !== ""
+    ) {
+      //check if user exists
+      axios
+        .get("https://localhost:8080/api/users/" + this.state.username)
+        .then(res => {
+          //log res for testing
+          console.log(res.data);
+          if (res.data !== "null") {
+            alert("User already exists, cannot register");
+          }
+        })
+        .then(res => {
+          axios
+            .post("https://localhost:8080/api/users", newUser)
+            .then(res => {
+     
+            })
+            .catch(error => {
+              alert("Couldn't register check internet");
+              return;
+            });
+        });
 
-      }).catch(error => {
-        alert("Couldn't register check internet")
-      })
-    }else {
+      alert("User created, now you can login :D");
+      ReactDOM.render(<Login />, document.getElementById("root"));
+    } else {
       alert(
         "Form invalid, password length must be greater than 6 and number must have 10 digits and name must have 5 or more characters and dob cannot be null"
-      )
+      );
     }
-    event.preventDefault()
-    ReactDOM.render(<Login/>, document.getElementById("root"))
-  }
-  componentDidMount() {
-
-
-  }
+    event.preventDefault();
+  };
+  componentDidMount() {}
   render() {
     return (
       <div id="root">
@@ -178,8 +181,8 @@ class Register extends React.Component {
           </Button>
         </form>
       </div>
-    )
+    );
   }
 }
 
-export default Register
+export default Register;

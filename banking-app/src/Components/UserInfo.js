@@ -93,9 +93,11 @@ class UserInfo extends React.Component {
     }
     //these fields are not edited in this component so will a lways remain the same.
     sessionStorage.setItem("dob", this.state.dob);
-    this.state.dob = sessionStorage.getItem("dob");
     sessionStorage.setItem("balance", this.state.balance);
-    this.state.balance = sessionStorage.getItem("balance");
+    this.setState({
+          balance: sessionStorage.getItem("balance"),
+          dob: sessionStorage.getItem("dob"),
+    })
     alert("BAL " + this.state.balance);
     const newUser = {
       _id: this.state.newUsername.toLowerCase(),
@@ -140,8 +142,6 @@ class UserInfo extends React.Component {
               });
               cancel();
               isCancelled = true;
-            } else {
-              alert("T ");
             }
           })
           .then(res => {
@@ -203,9 +203,9 @@ class UserInfo extends React.Component {
                   });
                 })
                 .then(res => {
-                  if(parseInt(sessionStorage.getItem("updates")) == 2){
+                  if(parseInt(sessionStorage.getItem("updates")) === 2){
                     alert("You cannot update so much")
-                     
+
                   }
                   else{
                   this.updateData();
