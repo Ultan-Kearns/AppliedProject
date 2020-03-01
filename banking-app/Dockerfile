@@ -4,5 +4,6 @@ WORKDIR /usr/src/app
 COPY ./package.json .
 RUN npm install
 EXPOSE 3000
-CMD ["HTTPS=true npm", "start"]
+CMD ["npm", "start"]
+CMD ["HTTPS=true"]
 COPY . .
