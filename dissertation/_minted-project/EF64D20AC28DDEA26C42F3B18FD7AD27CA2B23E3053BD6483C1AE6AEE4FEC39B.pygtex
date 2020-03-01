@@ -1,0 +1,43 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n+nx}{updateData}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+  \PYG{n+nx}{axios}
+    \PYG{p}{.}\PYG{n+nx}{get}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}https://localhost:8080/api/users/\PYGZdq{}} \PYG{o}{+} \PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{state}\PYG{p}{.}\PYG{n+nx}{username}\PYG{p}{)}
+    \PYG{p}{.}\PYG{n+nx}{then}\PYG{p}{(}\PYG{n+nx}{res} \PYG{p}{=\PYGZgt{}} \PYG{p}{\PYGZob{}}
+      \PYG{k+kd}{var} \PYG{n+nx}{text} \PYG{o}{=} \PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{createTextNode}\PYG{p}{(}
+        \PYG{l+s+s2}{\PYGZdq{}Name: \PYGZdq{}} \PYG{o}{+}
+          \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{data}\PYG{p}{.}\PYG{n+nx}{name} \PYG{o}{+}
+          \PYG{l+s+s2}{\PYGZdq{} Number: \PYGZdq{}} \PYG{o}{+}
+          \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{data}\PYG{p}{.}\PYG{n+nx}{number} \PYG{o}{+}
+          \PYG{l+s+s2}{\PYGZdq{} Date of Birth: \PYGZdq{}} \PYG{o}{+}
+          \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{data}\PYG{p}{.}\PYG{n+nx}{dob} \PYG{o}{+}
+          \PYG{l+s+s2}{\PYGZdq{} Username: \PYGZdq{}} \PYG{o}{+}
+          \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{data}\PYG{p}{.}\PYG{n+nx}{\PYGZus{}id} \PYG{o}{+}
+          \PYG{l+s+s2}{\PYGZdq{} Balance: \PYGZdq{}} \PYG{o}{+}
+          \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{data}\PYG{p}{.}\PYG{n+nx}{balance}\PYG{p}{,}
+
+        \PYG{c+c1}{//In case user leaves any information blank just submit their current info}
+
+        \PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{setState}\PYG{p}{(\PYGZob{}}
+          \PYG{n+nx}{prevName}\PYG{o}{:} \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{data}\PYG{p}{.}\PYG{n+nx}{name}
+        \PYG{p}{\PYGZcb{}),}
+        \PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{setState}\PYG{p}{(\PYGZob{}}
+          \PYG{n+nx}{prevNumber}\PYG{o}{:} \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{data}\PYG{p}{.}\PYG{n+nx}{number}
+        \PYG{p}{\PYGZcb{}),}
+        \PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{setState}\PYG{p}{(\PYGZob{}}
+          \PYG{n+nx}{prevPassword}\PYG{o}{:} \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{data}\PYG{p}{.}\PYG{n+nx}{password}
+        \PYG{p}{\PYGZcb{}),}
+        \PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{setState}\PYG{p}{(\PYGZob{}}
+          \PYG{n+nx}{dob}\PYG{o}{:} \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{data}\PYG{p}{.}\PYG{n+nx}{dob}
+        \PYG{p}{\PYGZcb{}),}
+        \PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{setState}\PYG{p}{(\PYGZob{}}
+          \PYG{n+nx}{balance}\PYG{o}{:} \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{data}\PYG{p}{.}\PYG{n+nx}{balance}
+        \PYG{p}{\PYGZcb{})}
+      \PYG{p}{);}
+      \PYG{n+nx}{password} \PYG{o}{=} \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{data}\PYG{p}{.}\PYG{n+nx}{password}\PYG{p}{;}
+      \PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{getElementById}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}basic\PYGZdq{}}\PYG{p}{).}\PYG{n+nx}{appendChild}\PYG{p}{(}\PYG{n+nx}{text}\PYG{p}{);}
+    \PYG{p}{\PYGZcb{})}
+    \PYG{p}{.}\PYG{k}{catch}\PYG{p}{(}\PYG{n+nx}{error} \PYG{p}{=\PYGZgt{}} \PYG{p}{\PYGZob{}}
+      \PYG{n+nx}{alert}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Can\PYGZsq{}t communicate with server\PYGZdq{}}\PYG{p}{);}
+    \PYG{p}{\PYGZcb{});}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

@@ -1,0 +1,42 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n+nx}{deleteUser}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+  \PYG{k+kd}{var} \PYG{n+nx}{answer} \PYG{o}{=} \PYG{n+nb}{window}\PYG{p}{.}\PYG{n+nx}{prompt}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Enter password to delete account\PYGZdq{}}\PYG{p}{);}
+  \PYG{k}{try} \PYG{p}{\PYGZob{}}
+    \PYG{k}{if} \PYG{p}{(}
+      \PYG{n+nx}{sha256}\PYG{p}{(}\PYG{n+nx}{answer}\PYG{p}{)} \PYG{o}{===} \PYG{n+nx}{password} \PYG{o}{\PYGZam{}\PYGZam{}}
+      \PYG{n+nb}{parseInt}\PYG{p}{(}\PYG{n+nx}{sessionStorage}\PYG{p}{.}\PYG{n+nx}{getItem}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}openLoans\PYGZdq{}}\PYG{p}{))} \PYG{o}{===} \PYG{l+m+mi}{0}
+    \PYG{p}{)} \PYG{p}{\PYGZob{}}
+      \PYG{n+nx}{axios}
+        \PYG{p}{.}\PYG{k}{delete}\PYG{p}{(}
+          \PYG{l+s+s2}{\PYGZdq{}https://localhost:8080/api/transactions/\PYGZdq{}} \PYG{o}{+}
+            \PYG{n+nx}{sessionStorage}\PYG{p}{.}\PYG{n+nx}{getItem}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}email\PYGZdq{}}\PYG{p}{)}
+        \PYG{p}{)}
+        \PYG{p}{.}\PYG{k}{catch}\PYG{p}{(}\PYG{n+nx}{error} \PYG{p}{=\PYGZgt{}} \PYG{p}{\PYGZob{}}
+          \PYG{n+nx}{alert}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Error connecting to server\PYGZdq{}}\PYG{p}{);}
+        \PYG{p}{\PYGZcb{});}
+      \PYG{n+nx}{axios}
+        \PYG{p}{.}\PYG{k}{delete}\PYG{p}{(}
+          \PYG{l+s+s2}{\PYGZdq{}https://localhost:8080/api/loans/\PYGZdq{}} \PYG{o}{+}
+            \PYG{n+nx}{sessionStorage}\PYG{p}{.}\PYG{n+nx}{getItem}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}email\PYGZdq{}}\PYG{p}{)}
+        \PYG{p}{)}
+        \PYG{p}{.}\PYG{k}{catch}\PYG{p}{(}\PYG{n+nx}{error} \PYG{p}{=\PYGZgt{}} \PYG{p}{\PYGZob{}}
+          \PYG{n+nx}{alert}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Error connecting to server\PYGZdq{}}\PYG{p}{);}
+        \PYG{p}{\PYGZcb{});}
+      \PYG{n+nx}{axios}
+        \PYG{p}{.}\PYG{k}{delete}\PYG{p}{(}
+          \PYG{l+s+s2}{\PYGZdq{}https://localhost:8080/api/users/\PYGZdq{}} \PYG{o}{+}
+            \PYG{n+nx}{sessionStorage}\PYG{p}{.}\PYG{n+nx}{getItem}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}email\PYGZdq{}}\PYG{p}{)}
+        \PYG{p}{)}
+        \PYG{p}{.}\PYG{k}{catch}\PYG{p}{(}\PYG{n+nx}{error} \PYG{p}{=\PYGZgt{}} \PYG{p}{\PYGZob{}}
+          \PYG{n+nx}{alert}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Error connecting to server\PYGZdq{}}\PYG{p}{);}
+        \PYG{p}{\PYGZcb{});}
+      \PYG{n+nx}{alert}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}User deleted\PYGZdq{}}\PYG{p}{);}
+      \PYG{n+nx}{ReactDOM}\PYG{p}{.}\PYG{n+nx}{render}\PYG{p}{(}\PYG{o}{\PYGZlt{}}\PYG{n+nx}{Login} \PYG{o}{/\PYGZgt{}}\PYG{p}{,} \PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{getElementById}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}root\PYGZdq{}}\PYG{p}{));}
+    \PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{p}{\PYGZob{}}
+      \PYG{n+nx}{alert}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Action aborted, password was incorrect or you have open loans\PYGZdq{}}\PYG{p}{);}
+    \PYG{p}{\PYGZcb{}}
+  \PYG{p}{\PYGZcb{}} \PYG{k}{catch} \PYG{p}{\PYGZob{}}
+    \PYG{n+nx}{alert}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Internal system error\PYGZdq{}}\PYG{p}{);}
+  \PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

@@ -1,0 +1,182 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{//for updating user info}
+\PYG{n+nx}{update} \PYG{o}{=} \PYG{n+nx}{event} \PYG{p}{=\PYGZgt{}} \PYG{p}{\PYGZob{}}
+  \PYG{c+c1}{//if any info is blank set to previous info of user}
+  \PYG{k}{if} \PYG{p}{(}\PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{state}\PYG{p}{.}\PYG{n+nx}{number} \PYG{o}{===} \PYG{l+s+s2}{\PYGZdq{}null\PYGZdq{}} \PYG{o}{||} \PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{state}\PYG{p}{.}\PYG{n+nx}{number} \PYG{o}{===} \PYG{l+s+s2}{\PYGZdq{}\PYGZdq{}}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+    \PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{setState}\PYG{p}{(\PYGZob{}}
+      \PYG{n+nx}{number}\PYG{o}{:} \PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{state}\PYG{p}{.}\PYG{n+nx}{prevNumber}
+    \PYG{p}{\PYGZcb{});}
+  \PYG{p}{\PYGZcb{}}
+
+  \PYG{k}{if} \PYG{p}{(}\PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{state}\PYG{p}{.}\PYG{n+nx}{name} \PYG{o}{===} \PYG{l+s+s2}{\PYGZdq{}null\PYGZdq{}} \PYG{o}{||} \PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{state}\PYG{p}{.}\PYG{n+nx}{name} \PYG{o}{===} \PYG{l+s+s2}{\PYGZdq{}\PYGZdq{}}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+    \PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{setState}\PYG{p}{(\PYGZob{}}
+      \PYG{n+nx}{name}\PYG{o}{:} \PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{state}\PYG{p}{.}\PYG{n+nx}{prevName}
+    \PYG{p}{\PYGZcb{});}
+  \PYG{p}{\PYGZcb{}}
+  \PYG{k}{if} \PYG{p}{(}\PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{state}\PYG{p}{.}\PYG{n+nx}{newUsername} \PYG{o}{===} \PYG{l+s+s2}{\PYGZdq{}null\PYGZdq{}} \PYG{o}{||} \PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{state}\PYG{p}{.}\PYG{n+nx}{newUsername} \PYG{o}{===} \PYG{l+s+s2}{\PYGZdq{}\PYGZdq{}}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+    \PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{setState}\PYG{p}{(\PYGZob{}}
+      \PYG{n+nx}{newUsername}\PYG{o}{:} \PYG{n+nx}{sessionStorage}\PYG{p}{.}\PYG{n+nx}{getItem}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}email\PYGZdq{}}\PYG{p}{)}
+    \PYG{p}{\PYGZcb{});}
+  \PYG{p}{\PYGZcb{}}
+  \PYG{k}{if} \PYG{p}{(}\PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{state}\PYG{p}{.}\PYG{n+nx}{password} \PYG{o}{!==} \PYG{l+s+s2}{\PYGZdq{}null\PYGZdq{}} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{state}\PYG{p}{.}\PYG{n+nx}{password} \PYG{o}{!==} \PYG{l+s+s2}{\PYGZdq{}\PYGZdq{}}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+    \PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{setState}\PYG{p}{(\PYGZob{}}
+      \PYG{n+nx}{password}\PYG{o}{:} \PYG{n+nx}{sha256}\PYG{p}{(}\PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{state}\PYG{p}{.}\PYG{n+nx}{password}\PYG{p}{)}
+    \PYG{p}{\PYGZcb{});}
+    \PYG{n+nx}{alert}\PYG{p}{(}\PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{state}\PYG{p}{.}\PYG{n+nx}{password}\PYG{p}{);}
+  \PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{p}{\PYGZob{}}
+    \PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{setState}\PYG{p}{(\PYGZob{}}
+      \PYG{n+nx}{password}\PYG{o}{:} \PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{state}\PYG{p}{.}\PYG{n+nx}{prevPassword}
+    \PYG{p}{\PYGZcb{});}
+    \PYG{n+nx}{alert}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}PASS WILL = PREV PASS \PYGZdq{}} \PYG{o}{+} \PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{state}\PYG{p}{.}\PYG{n+nx}{password}\PYG{p}{);}
+  \PYG{p}{\PYGZcb{}}
+  \PYG{k}{if} \PYG{p}{(}
+    \PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{state}\PYG{p}{.}\PYG{n+nx}{dob} \PYG{o}{===} \PYG{l+s+s2}{\PYGZdq{}null\PYGZdq{}} \PYG{o}{||}
+    \PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{state}\PYG{p}{.}\PYG{n+nx}{dob} \PYG{o}{===} \PYG{k+kc}{undefined} \PYG{o}{||}
+    \PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{state}\PYG{p}{.}\PYG{n+nx}{dob} \PYG{o}{===} \PYG{l+s+s2}{\PYGZdq{}\PYGZdq{}}
+  \PYG{p}{)} \PYG{p}{\PYGZob{}}
+    \PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{setState}\PYG{p}{(\PYGZob{}}
+      \PYG{n+nx}{dob}\PYG{o}{:} \PYG{n+nx}{sessionStorage}\PYG{p}{.}\PYG{n+nx}{getItem}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}dob\PYGZdq{}}\PYG{p}{)}
+    \PYG{p}{\PYGZcb{});}
+  \PYG{p}{\PYGZcb{}}
+  \PYG{c+c1}{//these fields are not edited in this component so will a lways remain the same.}
+  \PYG{n+nx}{sessionStorage}\PYG{p}{.}\PYG{n+nx}{setItem}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}dob\PYGZdq{}}\PYG{p}{,} \PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{state}\PYG{p}{.}\PYG{n+nx}{dob}\PYG{p}{);}
+  \PYG{n+nx}{sessionStorage}\PYG{p}{.}\PYG{n+nx}{setItem}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}balance\PYGZdq{}}\PYG{p}{,} \PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{state}\PYG{p}{.}\PYG{n+nx}{balance}\PYG{p}{);}
+  \PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{setState}\PYG{p}{(\PYGZob{}}
+        \PYG{n+nx}{balance}\PYG{o}{:} \PYG{n+nx}{sessionStorage}\PYG{p}{.}\PYG{n+nx}{getItem}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}balance\PYGZdq{}}\PYG{p}{),}
+        \PYG{n+nx}{dob}\PYG{o}{:} \PYG{n+nx}{sessionStorage}\PYG{p}{.}\PYG{n+nx}{getItem}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}dob\PYGZdq{}}\PYG{p}{),}
+  \PYG{p}{\PYGZcb{})}
+  \PYG{n+nx}{alert}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}BAL \PYGZdq{}} \PYG{o}{+} \PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{state}\PYG{p}{.}\PYG{n+nx}{balance}\PYG{p}{);}
+  \PYG{k+kr}{const} \PYG{n+nx}{newUser} \PYG{o}{=} \PYG{p}{\PYGZob{}}
+    \PYG{n+nx}{\PYGZus{}id}\PYG{o}{:} \PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{state}\PYG{p}{.}\PYG{n+nx}{newUsername}\PYG{p}{.}\PYG{n+nx}{toLowerCase}\PYG{p}{(),}
+    \PYG{n+nx}{password}\PYG{o}{:} \PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{state}\PYG{p}{.}\PYG{n+nx}{password}\PYG{p}{,}
+    \PYG{n+nx}{name}\PYG{o}{:} \PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{state}\PYG{p}{.}\PYG{n+nx}{name}\PYG{p}{,}
+    \PYG{n+nx}{number}\PYG{o}{:} \PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{state}\PYG{p}{.}\PYG{n+nx}{number}\PYG{p}{,}
+    \PYG{n+nx}{dob}\PYG{o}{:} \PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{state}\PYG{p}{.}\PYG{n+nx}{dob}\PYG{p}{,}
+    \PYG{n+nx}{balance}\PYG{o}{:} \PYG{l+m+mi}{20}\PYG{p}{,}
+    \PYG{n+nx}{iban}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}\PYGZdq{}}\PYG{p}{,}
+    \PYG{n+nx}{bic}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}\PYGZdq{}}
+  \PYG{p}{\PYGZcb{};}
+  \PYG{c+c1}{//problem with axios not being asynchronous may find a different way to handle this}
+  \PYG{k+kr}{const} \PYG{n+nx}{CancelToken} \PYG{o}{=} \PYG{n+nx}{axios}\PYG{p}{.}\PYG{n+nx}{CancelToken}\PYG{p}{;}
+  \PYG{k+kd}{let} \PYG{n+nx}{cancel}\PYG{p}{;}
+  \PYG{k}{try} \PYG{p}{\PYGZob{}}
+    \PYG{k}{if} \PYG{p}{(}
+      \PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{state}\PYG{p}{.}\PYG{n+nx}{number}\PYG{p}{.}\PYG{n+nx}{length} \PYG{o}{===} \PYG{l+m+mi}{10} \PYG{o}{\PYGZam{}\PYGZam{}}
+      \PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{state}\PYG{p}{.}\PYG{n+nx}{name}\PYG{p}{.}\PYG{n+nx}{length} \PYG{o}{\PYGZgt{}=} \PYG{l+m+mi}{5} \PYG{o}{\PYGZam{}\PYGZam{}}
+      \PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{state}\PYG{p}{.}\PYG{n+nx}{password}\PYG{p}{.}\PYG{n+nx}{length} \PYG{o}{\PYGZgt{}=} \PYG{l+m+mi}{5}
+    \PYG{p}{)} \PYG{p}{\PYGZob{}}
+      \PYG{k+kd}{var} \PYG{n+nx}{isCancelled} \PYG{o}{=} \PYG{k+kc}{false}\PYG{p}{;}
+      \PYG{n+nx}{axios}
+        \PYG{p}{.}\PYG{n+nx}{get}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}https://localhost:8080/api/users/\PYGZdq{}} \PYG{o}{+} \PYG{n+nx}{newUser}\PYG{p}{.}\PYG{n+nx}{\PYGZus{}id}\PYG{p}{)}
+        \PYG{p}{.}\PYG{n+nx}{then}\PYG{p}{(}\PYG{n+nx}{res} \PYG{p}{=\PYGZgt{}} \PYG{p}{\PYGZob{}}
+          \PYG{n+nx}{alert}\PYG{p}{(}\PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{data}\PYG{p}{);}
+          \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{data} \PYG{o}{===} \PYG{l+s+s2}{\PYGZdq{}null\PYGZdq{}}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+            \PYG{n+nx}{alert}\PYG{p}{(}
+              \PYG{l+s+s2}{\PYGZdq{}Changing ID, you will now have to login using \PYGZdq{}} \PYG{o}{+}
+                \PYG{n+nx}{newUser}\PYG{p}{.}\PYG{n+nx}{\PYGZus{}id} \PYG{o}{+}
+                \PYG{l+s+s2}{\PYGZdq{} as email\PYGZdq{}}
+            \PYG{p}{);}
+          \PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{k}{if} \PYG{p}{(}
+            \PYG{n+nx}{res} \PYG{o}{!==} \PYG{l+s+s2}{\PYGZdq{}null\PYGZdq{}} \PYG{o}{\PYGZam{}\PYGZam{}}
+            \PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{state}\PYG{p}{.}\PYG{n+nx}{username} \PYG{o}{!==} \PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{state}\PYG{p}{.}\PYG{n+nx}{newUsername}
+          \PYG{p}{)} \PYG{p}{\PYGZob{}}
+            \PYG{c+c1}{//check if response is not null then check to see if the user is using their current username}
+            \PYG{n+nx}{alert}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Cannot use this email, already registered\PYGZdq{}}\PYG{p}{);}
+            \PYG{c+c1}{//taken from axios documentation}
+            \PYG{n+nx}{cancelToken}\PYG{o}{:} \PYG{k}{new} \PYG{n+nx}{CancelToken}\PYG{p}{(}\PYG{k+kd}{function} \PYG{n+nx}{executor}\PYG{p}{(}\PYG{n+nx}{c}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+              \PYG{c+c1}{// An executor function receives a cancel function as a parameter}
+              \PYG{n+nx}{cancel} \PYG{o}{=} \PYG{n+nx}{c}\PYG{p}{;}
+            \PYG{p}{\PYGZcb{});}
+            \PYG{n+nx}{cancel}\PYG{p}{();}
+            \PYG{n+nx}{isCancelled} \PYG{o}{=} \PYG{k+kc}{true}\PYG{p}{;}
+          \PYG{p}{\PYGZcb{}}
+        \PYG{p}{\PYGZcb{})}
+        \PYG{p}{.}\PYG{n+nx}{then}\PYG{p}{(}\PYG{n+nx}{res} \PYG{p}{=\PYGZgt{}} \PYG{p}{\PYGZob{}}
+          \PYG{n+nx}{alert}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}IS \PYGZdq{}} \PYG{o}{+} \PYG{n+nx}{isCancelled} \PYG{o}{+} \PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{state}\PYG{p}{.}\PYG{n+nx}{dob}\PYG{p}{);}
+          \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{isCancelled} \PYG{o}{===} \PYG{k+kc}{false}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+            \PYG{c+c1}{//delete original user}
+            \PYG{n+nx}{axios}
+              \PYG{p}{.}\PYG{k}{delete}\PYG{p}{(}
+                \PYG{l+s+s2}{\PYGZdq{}https://localhost:8080/api/users/\PYGZdq{}} \PYG{o}{+}
+                  \PYG{n+nx}{sessionStorage}\PYG{p}{.}\PYG{n+nx}{getItem}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}email\PYGZdq{}}\PYG{p}{)}
+              \PYG{p}{)}
+              \PYG{p}{.}\PYG{n+nx}{then}\PYG{p}{(}\PYG{n+nx}{res} \PYG{p}{=\PYGZgt{}} \PYG{p}{\PYGZob{}\PYGZcb{})}
+              \PYG{p}{.}\PYG{k}{catch}\PYG{p}{(}\PYG{n+nx}{error} \PYG{p}{=\PYGZgt{}} \PYG{p}{\PYGZob{}}
+                \PYG{n+nx}{console}\PYG{p}{.}\PYG{n+nx}{log}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}ERR\PYGZdq{}}\PYG{p}{);}
+              \PYG{p}{\PYGZcb{});}
+            \PYG{c+c1}{//recreate user for ID \PYGZhy{} for some reason it clones}
+            \PYG{n+nx}{axios}
+              \PYG{p}{.}\PYG{n+nx}{post}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}https://localhost:8080/api/users/\PYGZdq{}}\PYG{p}{,} \PYG{n+nx}{newUser}\PYG{p}{)}
+              \PYG{p}{.}\PYG{n+nx}{then}\PYG{p}{(}\PYG{n+nx}{res} \PYG{p}{=\PYGZgt{}} \PYG{p}{\PYGZob{}}
+                \PYG{c+c1}{//log res for testing}
+                \PYG{n+nx}{console}\PYG{p}{.}\PYG{n+nx}{log}\PYG{p}{(}\PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{data}\PYG{p}{);}
+              \PYG{p}{\PYGZcb{})}
+              \PYG{p}{.}\PYG{k}{catch}\PYG{p}{(}\PYG{n+nx}{error} \PYG{p}{=\PYGZgt{}} \PYG{p}{\PYGZob{}}
+                \PYG{n+nx}{console}\PYG{p}{.}\PYG{n+nx}{log}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}ERR\PYGZdq{}}\PYG{p}{);}
+              \PYG{p}{\PYGZcb{});}
+            \PYG{n+nx}{axios}
+              \PYG{p}{.}\PYG{n+nx}{post}\PYG{p}{(}
+                \PYG{l+s+s2}{\PYGZdq{}https://localhost:8080/api/transactions/\PYGZdq{}} \PYG{o}{+}
+                  \PYG{n+nx}{sessionStorage}\PYG{p}{.}\PYG{n+nx}{getItem}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}email\PYGZdq{}}\PYG{p}{)} \PYG{o}{+}
+                  \PYG{l+s+s2}{\PYGZdq{}/\PYGZdq{}} \PYG{o}{+}
+                  \PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{state}\PYG{p}{.}\PYG{n+nx}{newUsername}
+              \PYG{p}{)}
+              \PYG{p}{.}\PYG{n+nx}{then}\PYG{p}{(}\PYG{n+nx}{res} \PYG{p}{=\PYGZgt{}} \PYG{p}{\PYGZob{}}
+                \PYG{n+nx}{console}\PYG{p}{.}\PYG{n+nx}{log}\PYG{p}{(}
+                  \PYG{l+s+s2}{\PYGZdq{}TESTING UPDATE TRANSACTION\PYGZdq{}} \PYG{o}{+} \PYG{n+nx}{JSON}\PYG{p}{.}\PYG{n+nx}{stringify}\PYG{p}{(}\PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{data}\PYG{p}{)}
+                \PYG{p}{);}
+              \PYG{p}{\PYGZcb{})}
+              \PYG{p}{.}\PYG{k}{catch}\PYG{p}{(}\PYG{n+nx}{error} \PYG{p}{=\PYGZgt{}} \PYG{p}{\PYGZob{}}
+                \PYG{n+nx}{console}\PYG{p}{.}\PYG{n+nx}{log}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Error with transactions\PYGZdq{}}\PYG{p}{);}
+              \PYG{p}{\PYGZcb{});}
+
+            \PYG{n+nx}{axios}
+              \PYG{p}{.}\PYG{n+nx}{post}\PYG{p}{(}
+                \PYG{l+s+s2}{\PYGZdq{}https://localhost:8080/api/loans/\PYGZdq{}} \PYG{o}{+}
+                  \PYG{n+nx}{sessionStorage}\PYG{p}{.}\PYG{n+nx}{getItem}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}email\PYGZdq{}}\PYG{p}{)} \PYG{o}{+}
+                  \PYG{l+s+s2}{\PYGZdq{}/\PYGZdq{}} \PYG{o}{+}
+                  \PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{state}\PYG{p}{.}\PYG{n+nx}{newUsername}
+              \PYG{p}{)}
+              \PYG{p}{.}\PYG{n+nx}{then}\PYG{p}{(}\PYG{n+nx}{res} \PYG{p}{=\PYGZgt{}} \PYG{p}{\PYGZob{}}
+                \PYG{n+nx}{sessionStorage}\PYG{p}{.}\PYG{n+nx}{setItem}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}email\PYGZdq{}}\PYG{p}{,} \PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{state}\PYG{p}{.}\PYG{n+nx}{newUsername}\PYG{p}{);}
+                \PYG{n+nx}{alert}\PYG{p}{(}
+                  \PYG{l+s+s2}{\PYGZdq{}Updated user \PYGZdq{}} \PYG{o}{+}
+                    \PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{state}\PYG{p}{.}\PYG{n+nx}{newUsername} \PYG{o}{+}
+                    \PYG{l+s+s2}{\PYGZdq{} Bal \PYGZdq{}} \PYG{o}{+}
+                    \PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{state}\PYG{p}{.}\PYG{n+nx}{balance}
+                \PYG{p}{);}
+                \PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{setState}\PYG{p}{(\PYGZob{}}
+                  \PYG{n+nx}{username}\PYG{o}{:} \PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{newUsername}
+                \PYG{p}{\PYGZcb{});}
+              \PYG{p}{\PYGZcb{})}
+              \PYG{p}{.}\PYG{n+nx}{then}\PYG{p}{(}\PYG{n+nx}{res} \PYG{p}{=\PYGZgt{}} \PYG{p}{\PYGZob{}}
+                \PYG{k}{if}\PYG{p}{(}\PYG{n+nb}{parseInt}\PYG{p}{(}\PYG{n+nx}{sessionStorage}\PYG{p}{.}\PYG{n+nx}{getItem}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}updates\PYGZdq{}}\PYG{p}{))} \PYG{o}{===} \PYG{l+m+mi}{2}\PYG{p}{)\PYGZob{}}
+                  \PYG{n+nx}{alert}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}You cannot update so much\PYGZdq{}}\PYG{p}{)}
+
+                \PYG{p}{\PYGZcb{}}
+                \PYG{k}{else}\PYG{p}{\PYGZob{}}
+                \PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{updateData}\PYG{p}{();}
+                \PYG{n+nx}{updates}\PYG{o}{++}\PYG{p}{;}
+                \PYG{n+nx}{sessionStorage}\PYG{p}{.}\PYG{n+nx}{setItem}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}updates\PYGZdq{}}\PYG{p}{,}\PYG{n+nx}{updates}\PYG{p}{)}
+              \PYG{p}{\PYGZcb{}}
+              \PYG{p}{\PYGZcb{})}
+              \PYG{p}{.}\PYG{k}{catch}\PYG{p}{(}\PYG{n+nx}{error} \PYG{p}{=\PYGZgt{}} \PYG{p}{\PYGZob{}}
+                \PYG{n+nx}{console}\PYG{p}{.}\PYG{n+nx}{log}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Error with loans\PYGZdq{}}\PYG{p}{);}
+              \PYG{p}{\PYGZcb{});}
+          \PYG{p}{\PYGZcb{}}
+        \PYG{p}{\PYGZcb{})}
+        \PYG{p}{.}\PYG{k}{catch}\PYG{p}{(}\PYG{n+nx}{error} \PYG{p}{=\PYGZgt{}} \PYG{p}{\PYGZob{}}
+          \PYG{n+nx}{alert}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Cannot update user connection error \PYGZdq{}} \PYG{o}{+} \PYG{n+nx}{error}\PYG{p}{);}
+        \PYG{p}{\PYGZcb{});}
+      \PYG{n+nx}{event}\PYG{p}{.}\PYG{n+nx}{preventDefault}\PYG{p}{();}
+    \PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{p}{\PYGZob{}}
+      \PYG{n+nx}{alert}\PYG{p}{(}
+        \PYG{l+s+s2}{\PYGZdq{}Form invalid, password length must be greater than 6 and number must have 10 digits and name must be \PYGZgt{}= 5 characters\PYGZdq{}}
+      \PYG{p}{);}
+    \PYG{p}{\PYGZcb{}}
+  \PYG{p}{\PYGZcb{}} \PYG{k}{catch} \PYG{p}{(}\PYG{n+nx}{err}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+    \PYG{n+nx}{alert}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Issue arose\PYGZdq{}}\PYG{p}{);}
+  \PYG{p}{\PYGZcb{}}
+  \PYG{n+nx}{event}\PYG{p}{.}\PYG{n+nx}{preventDefault}\PYG{p}{();}
+\PYG{p}{\PYGZcb{};}
+\end{Verbatim}

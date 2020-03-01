@@ -52,21 +52,22 @@
 # Sprint 9 (21st February - 29th February)
 ## Set backs due to job interviews
 + review dissertation
-+ Start System Design
++ Start System Design(Done)
 + fix update bug on userinfo page(Done)
 + Brainstorm ideas(tensorflowJS?)
 + research Docker + get it working(Done)
 + refactor and test code(In progress)
-+ get transfer working(Done with independent banking accounts will need to add IBAN validatior and pretend to send money + test)
-+ Host on google cloud(Starting soon)
-+ Finish System design & review dissertation(Almost done - just need to do UX section and user-info)
++ get transfer working(Done)
++ Host on google cloud(Done)
++ Finish System design & review dissertation(Done)
 + write more sprints(May be redundant)
 # Sprint 10 (1st March - 10th March)
 + Finish system evaluation
 + work on tensorflowJS and add to technical and system design
 + Work on conclusion
 + fix up documentation and make sure project is submittible
-# Sprint 11 (10th March - ?)
+# Sprint 11 (10th March - 15th March)
++ Test all code
 + Put finishing touches on project
 + Ensure cloud version is working
 + Ensure all documentation is well-written
