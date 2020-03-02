@@ -56,25 +56,27 @@
 + fix update bug on userinfo page(Done)
 + Brainstorm ideas(tensorflowJS?)
 + research Docker + get it working(Done)
-+ refactor and test code(In progress)
++ refactor and test code(DONE)
 + get transfer working(Done)
 + Host on google cloud(Done)
 + Finish System design & review dissertation(Done)
 + write more sprints(May be redundant)
 # Sprint 10 (1st March - 10th March)
 + Finish system evaluation
-+ work on tensorflowJS and add to technical and system design
 + Work on conclusion
 + fix up documentation and make sure project is submittible
++ Fix error messages
++ Fix Loan errors
++ Add images to sys design
 # Sprint 11 (10th March - 15th March)
-+ Test all code
-+ Put finishing touches on project
-+ Ensure cloud version is working
-+ Ensure all documentation is well-written
++ Test all code(Areas of possible failure: Loans, Updates, Registration, Forgot password, delete)
++ Put finishing touches on project(Little bit of UI work test on multiple machines)
++ Ensure cloud version is working(Working now but may have to test again)
++ Ensure all documentation is well-written(review and add more images to context and add images to system desgin for each component)
 
 # Issues
-+ fix style on pages (maybe add animations?)
-+ Add more to tech review (Need to include financial)
+ + Add more to tech review (Need to include financial API alphavantage)
+ + loan issue and error messages need to be fixed.
 # ideas
 + Use tensorflowJS to analyze data from API and predict markets or to create admin chats
 ## Notes

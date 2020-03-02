@@ -59,19 +59,30 @@ class Loans extends React.Component {
               " ,\tOwed to: " +
               this.state.owedTo
           );
-          var buttonNode = document.createElement("Button");
-          buttonNode.textContent = "Pay Back";
-          buttonNode.id = "payButton";
-          //for repaying loans
-          var loanId = this.state._id;
-          var loanCost = this.state.amount;
           //create new balance
           const newBalance = {
             balance: parseInt(
               sessionStorage.getItem("balance") - parseInt(this.state.amount)
             )
           };
+          //ensure that the user pays back earliest loan first
+          if (i === 0) {
+            //for repaying loans
+            var loanId = this.state._id;
+            var loanCost = this.state.amount;
+            node.id = "loan";
+            var buttonNode = document.createElement("Button");
+            buttonNode.textContent = "Pay Back";
+            buttonNode.id = "payButton";
+            node.id = "loan";
+            node.append(text);
+            node.append(buttonNode);
+            document.getElementById("loans").appendChild(node);
+            sessionStorage.setItem("openLoans", getOpenLoans());
+          }
           buttonNode.addEventListener("click", function() {
+            buttonNode.disabled = true;
+            buttonNode.textContent = "Paid";
             //check if balance >= loanpayment
             if (sessionStorage.getItem("balance") >= loanCost) {
               axios
@@ -107,7 +118,7 @@ class Loans extends React.Component {
                 cost: -loanCost,
                 location: "IndependentBanking.com",
                 name: sessionStorage.getItem("username"),
-                date: date,
+                date: date
               };
               axios
                 .post("https://localhost:8080/api/transactions", newTransaction)
@@ -118,17 +129,17 @@ class Loans extends React.Component {
               alert("Not enough money in account to repay loan");
             }
           });
-          node.id = "loan";
-          node.append(text);
-          node.append(buttonNode);
-          document.getElementById("loans").appendChild(node);
+          if (i > 0) {
+            node.id = "loan";
+            node.append(text);
+            document.getElementById("loans").appendChild(node);
+          }
           sessionStorage.setItem("openLoans", getOpenLoans());
         }
-      },
-    ).catch(error => {
+      })
+      .catch(error => {
         alert("Could not get loans");
       });
-
   }
   handleAmountChange = event => {
     this.setState({
@@ -145,13 +156,13 @@ class Loans extends React.Component {
     if (
       this.state.amount !== "" &&
       answer === true &&
-      (Math.round(parseFloat(this.state.amount * 0.25)) <=
-        Math.floor(parseInt(sessionStorage.getItem("balance")))) &&
+      Math.round(parseFloat(this.state.amount * 0.25)) <=
+        Math.floor(parseInt(sessionStorage.getItem("balance"))) &&
       sessionStorage.getItem("openLoans") < 5 &&
       this.state.amount <= 500 &&
       this.state.amount > 0
     ) {
-      alert("THIS" + Math.ceil(parseInt(this.state.amount * 0.25)))
+      alert("THIS" + Math.ceil(parseInt(this.state.amount * 0.25)));
       const newLoan = {
         email: sessionStorage.getItem("email"),
         amount: this.state.amount,
@@ -199,7 +210,8 @@ class Loans extends React.Component {
                 "loan approved\n New balance is: " +
                   sessionStorage.getItem("balance")
               );
-            }).catch(error => {
+            })
+            .catch(error => {
               alert("Could not approve loan");
             });
           sessionStorage.setItem("openLoans", getOpenLoans());
@@ -220,28 +232,24 @@ class Loans extends React.Component {
         </Helmet>
         <h1>Apply & View Loans</h1>
         <Card>
-          <Card.Header>
-            Apply For Loans Here
-          </Card.Header>
+          <Card.Header>Apply For Loans Here</Card.Header>
           <Card.Body>
-          <form className="loanApply" onSubmit={this.handleSubmitForm}>
-            <input
-              type="number"
-              placeholder="Amount"
-              onChange={this.handleAmountChange}
-              value={this.state.amount}
-            />
-            <br />
-            <Button size="sm" id="loanButton" type="submit">
-              Apply for Loan
-            </Button>
-          </form>
+            <form className="loanApply" onSubmit={this.handleSubmitForm}>
+              <input
+                type="number"
+                placeholder="Amount"
+                onChange={this.handleAmountChange}
+                value={this.state.amount}
+              />
+              <br />
+              <Button size="sm" id="loanButton" type="submit">
+                Apply for Loan
+              </Button>
+            </form>
           </Card.Body>
         </Card>
         <Card>
-          <Card.Header>
-            List of Loans
-          </Card.Header>
+          <Card.Header>List of Loans</Card.Header>
           <Card.Body>
             <Card.Text id="loans" />
           </Card.Body>
