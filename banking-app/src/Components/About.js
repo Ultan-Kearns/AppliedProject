@@ -28,13 +28,11 @@ function About() {
     <Card.Body>
       <Card.Title>We Care About YOU!</Card.Title>
       <Card.Text>
-      <p>
         Yes we know you have heard this blaise comment before but we really
         mean it, just because we are a massive corporation whose only
         objective is to make a profit doesn't mean we don't care! I mean look
         at how happy our customers are! You too can be happy if you just give
         us all your business and a tonne of money!
-      </p>
       </Card.Text>
     </Card.Body>
   </Card>
@@ -79,10 +77,9 @@ function About() {
       <Card.Body>
         <Card.Title>Our Aims</Card.Title>
         <Card.Text>
-        <p>
           We aim to provide you, {sessionStorage.getItem("username")}, YES YOU!
           with a site that is:
-        </p>
+        </Card.Text>
         <ul>
           <li>
             Responsive - A site that is accessible from any device and still
@@ -91,7 +88,6 @@ function About() {
           <li>Secure - A site that won't leave your data compromised</li>
           <li>Robust - A site that won't let you down</li>
         </ul>
-        </Card.Text>
       </Card.Body>
     </Card>
       </div>

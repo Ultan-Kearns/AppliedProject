@@ -59,12 +59,6 @@ class Loans extends React.Component {
               " ,\tOwed to: " +
               this.state.owedTo
           );
-          //create new balance
-          const newBalance = {
-            balance: parseInt(
-              sessionStorage.getItem("balance") - parseInt(this.state.amount)
-            )
-          };
           //ensure that the user pays back earliest loan first
           if (i === 0) {
             //for repaying loans
@@ -80,11 +74,18 @@ class Loans extends React.Component {
             document.getElementById("loans").appendChild(node);
             sessionStorage.setItem("openLoans", getOpenLoans());
           }
+          //create new balance
+          const newBalance = {
+            balance: parseInt(
+              sessionStorage.getItem("balance") - parseInt(this.state.amount)
+            )
+          };
           buttonNode.addEventListener("click", function() {
-            buttonNode.disabled = true;
-            buttonNode.textContent = "Paid";
             //check if balance >= loanpayment
             if (sessionStorage.getItem("balance") >= loanCost) {
+              buttonNode.disabled = true;
+              buttonNode.textContent = "Paid";
+              alert("LOAN COST : " + loanCost)
               axios
                 .post(
                   "https://localhost:8080/api/users/" +

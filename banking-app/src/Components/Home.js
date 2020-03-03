@@ -187,15 +187,15 @@ class Home extends React.Component {
         <Helmet>
           <title>Home</title>
         </Helmet>
-     
+
         <Card>
           <Card.Header>
             Welcome to the Independent Banking,{" "}
             {sessionStorage.getItem("username")}!
           </Card.Header>
           <Card.Body>
-            <Card.Text>
-              <h2 id="balance">Your balance: </h2>
+            <Card.Text id = "balance">
+              Your balance:
             </Card.Text>
           </Card.Body>
         </Card>
@@ -203,31 +203,29 @@ class Home extends React.Component {
           <Card.Header>Send money</Card.Header>
           <Card.Body>
             <Card.Text>
-              <p>
                 Send money to another account by simply entering the amount to
                 send and the account number
-              </p>
-              <form className="send" onSubmit={this.handleSubmitForm}>
-                Amount to send:
-                <input
-                  type="number"
-                  id="sendAmount"
-                  placeholder="Enter amount to send"
-                  onChange={this.handleAmountChange}
-                />
-                Account number:
-                <input
-                  type="text"
-                  id="sendAccount"
-                  placeholder="Enter account number"
-                  onChange={this.handleIdChange}
-                />
-                <br />
-                <Button id="sendButton" type="submit">
-                  Send Money
-                </Button>
-              </form>
             </Card.Text>
+            <form className="send" onSubmit={this.handleSubmitForm}>
+              Amount to send:
+              <input
+                type="number"
+                id="sendAmount"
+                placeholder="Enter amount to send"
+                onChange={this.handleAmountChange}
+              />
+              Account number:
+              <input
+                type="text"
+                id="sendAccount"
+                placeholder="Enter account number"
+                onChange={this.handleIdChange}
+              />
+              <br />
+              <Button id="sendButton" type="submit">
+                Send Money
+              </Button>
+            </form>
           </Card.Body>
         </Card>
         <div id="finance">
