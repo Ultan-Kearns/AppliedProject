@@ -104,6 +104,31 @@
 \BOOKMARK [1][-]{section.5.8}{Security}{chapter.5}% 104
 \BOOKMARK [2][-]{subsection.5.8.1}{Overview of Security}{section.5.8}% 105
 \BOOKMARK [0][-]{chapter.6}{System Evaluation}{}% 106
-\BOOKMARK [0][-]{chapter.7}{Conclusion}{}% 107
-\BOOKMARK [0][-]{section*.30}{Appendices}{}% 108
-\BOOKMARK [0][-]{Appendix.1.A}{Preamble \046 Intro}{}% 109
+\BOOKMARK [1][-]{section.6.1}{Robust}{chapter.6}% 107
+\BOOKMARK [2][-]{subsection.6.1.1}{Error Handling}{section.6.1}% 108
+\BOOKMARK [2][-]{subsection.6.1.2}{Testing}{section.6.1}% 109
+\BOOKMARK [2][-]{subsection.6.1.3}{Speed}{section.6.1}% 110
+\BOOKMARK [1][-]{section.6.2}{Accessibility}{chapter.6}% 111
+\BOOKMARK [2][-]{subsection.6.2.1}{Minimalistic}{section.6.2}% 112
+\BOOKMARK [1][-]{section.6.3}{Objectives}{chapter.6}% 113
+\BOOKMARK [2][-]{subsection.6.3.1}{Safe \046 Secure Banking}{section.6.3}% 114
+\BOOKMARK [2][-]{subsection.6.3.2}{Intuitive UI}{section.6.3}% 115
+\BOOKMARK [2][-]{subsection.6.3.3}{User Generated Statistics}{section.6.3}% 116
+\BOOKMARK [2][-]{subsection.6.3.4}{Multiple Users}{section.6.3}% 117
+\BOOKMARK [2][-]{subsection.6.3.5}{RestFUL API}{section.6.3}% 118
+\BOOKMARK [2][-]{subsection.6.3.6}{Scalable}{section.6.3}% 119
+\BOOKMARK [2][-]{subsection.6.3.7}{Responsive}{section.6.3}% 120
+\BOOKMARK [0][-]{chapter.7}{Conclusion}{}% 121
+\BOOKMARK [1][-]{section.7.1}{What I Learned}{chapter.7}% 122
+\BOOKMARK [2][-]{subsection.7.1.1}{React}{section.7.1}% 123
+\BOOKMARK [2][-]{subsection.7.1.2}{NodeJS}{section.7.1}% 124
+\BOOKMARK [2][-]{subsection.7.1.3}{Docker}{section.7.1}% 125
+\BOOKMARK [2][-]{subsection.7.1.4}{Scope Creep}{section.7.1}% 126
+\BOOKMARK [2][-]{subsection.7.1.5}{READ THE DOCS!}{section.7.1}% 127
+\BOOKMARK [1][-]{section.7.2}{How TDD \046 Agile Impacted Development}{chapter.7}% 128
+\BOOKMARK [2][-]{subsection.7.2.1}{Positive Impacts of TDD}{section.7.2}% 129
+\BOOKMARK [2][-]{subsection.7.2.2}{Positive Impacts of Agile \046 Kanban}{section.7.2}% 130
+\BOOKMARK [1][-]{section.7.3}{What I Would Do Differently}{chapter.7}% 131
+\BOOKMARK [2][-]{subsection.7.3.1}{Planning}{section.7.3}% 132
+\BOOKMARK [2][-]{subsection.7.3.2}{More Focus On AI}{section.7.3}% 133
+\BOOKMARK [0][-]{section*.30}{Appendices}{}% 134
