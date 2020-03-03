@@ -595,7 +595,6 @@ a more uniform look and to create a better user experience.
 \\
 The system's backend was written using NodeJS and utilizes the ExpressJS library
 which offers the developer a wide range of additional features.
-\subsection{Reasons for System Design}
 \section{Front End Architecture}
 \subsection{List of Components}
 \subsubsection{Login}
@@ -2141,33 +2140,175 @@ As many pages as needed.
 \end{itemize}
 \section{Robust}
 \subsection{Error Handling}
+I have tested each feature extensively and have performed error handling where appropriate,
+the application is not entirely bug-free which is to be expected as no complex piece of software
+is wholly bug free.  I performed error handling on all inputs and with all axios requests and have
+minimized the chances of errors occurring by utilizing TDD principles and refactoring and testing
+the code extensively.  There are some known errors which occur within the system that I was not able to
+rectify these are listed below:
+\begin{itemize}
+  \item Sometimes when applying for multiple loans the user does not see any message or verification of loan
+  \item Sometimes the loan generates a new transaction twice when the user opts to pay the loan back
+\end{itemize}
 \subsection{Testing}
+I utilized Selenium to perform automated testing on the application in this way I was able to perform
+integration and regression testing on each module and feature implemented in this application.  I have
+found many bugs in the application which I recorded during my development and can be viewed on the issues section
+of the projects GitHub repository.  Testing the application was not easy as there are many places where a full-stack
+banking application or indeed any full-stack application can fail, I mitigated the long hours of testing by utilizing
+Selenium and outputting error messages to the console.
 \subsection{Speed}
 \section{Accessibility}
 \subsection{Minimalistic}
+In this application I provided a minimalistic UI so as not to overwhelm the user
+with a lot of on screen elements which many users will find superflous especially
+if they are not used to complicated technology.  I aimed to provide an accessible
+site that anyone could use and I feel that I have completed that to a fair degree.
+% Get feedback from people here
 \section{Objectives}
 % Explain how you applied these
 \subsection{Safe \& Secure Banking}
-\subsection{Intuitive UI}
+The project is encrypted with HTTPS and the BackEnd is secured using Transport
+Layer Security(TLS) which is the latest in security standards.  The user passwords
+are all secured utilizing the SHA256 algorithm so that not even the system administrators,
+who have access to all the user's information, cannot even find out the users plaintext
+password.  In addition to this the user can also recover an account if they know their email
+by visiting the forgot page which will store a new password as a hash in the database and
+then email it to them using encryption.
+\\
+Due to the afformentioned security methods being employed I am convinced that the
+banking application is safe and secure and cannot be hacked without significant knowledge
+and effort.
 \subsection{User Generated Statistics}
+This project utilizes ChartJS which is a JavaScript library which will generate
+user statistics based upon their interaction with the application.  The application
+pulls user data from the database and displays the users loans and transactions as
+bar charts which were utilzied to provide the user with a visual aid that will show
+them how many loans they have taken out and thier transactions which can be either
+positive or negative.
 \subsection{Multiple Users}
-\subsection{RestFUL API}
+The application supports multiple users at once which are all independent of each
+other.  The statistics page may yield some problems with multiple users as the
+API limits free users to a maximum of five API calls a minute, users who are unfortunate
+to not be the first to click the button will be greeted with error messages informing them
+that they cannot retrieve the data.  Despite the statistics page being a problem all other
+components function as normal when dealing with multiple users and thanks to a restful API
+design the users are fully separated from each other which ensures that the user will not
+impact any other users experience, unless they perform DDOS or man in the middle attacks.
+\subsection{RestFUL Principles}
+RestFUL principles were fully taken into consideration when designing this application,
+the application is stateless and cacheable and the client and server are entirely independent of each other.
+\\
+ The server does not store any information
+about the user and merely connects to a database to perform CRUD functionality, the
+frontend makes HTTP calls through a HTTP client and in this way I was able to ensure
+client server Independence.
+\\
+The application is cacheable as single page applications are cached on the users
+device and this drastically reduces load times.
+\\
+The application is stateless as it does not maintain any state but instead uses
+user information as parameters which are passed into HTTP calls to retrieve, update,
+create and delete data.
 \subsection{Scalable}
+The application scales well and functions which are utilized in more than one component
+were put into helper functions which follows the DRY(Don't Repeat Yourself) principle
+which is a major tenant of software development and also makes the application more
+maintainable as functions don't have to be reprogrammed and can instead be imported from
+a file.
+\\
+The applications code was also written with reuse and scalability in mind that is why
+I have commented lines of code which may be hard for others who work on the project to
+understand.
 \subsection{Responsive}
+The application is responsive and thanks to it being a Single Page Application load times are
+practically non-existant as the application is cached on the users device meaning that the
+uesr does not have to wait for a http request to retrieve the information but instead can access
+it from their own device.
 \chapter{Conclusion}
 \section{What I Learned}
 \subsection{React}
+I learned a lot about React during this project as I have never used it before but I
+have used a similar framework which was somewhat helpful but I found React a lot different
+from Angular.
+\\
+I also learned a lot about various different React libraries such as the one I used to
+hash the user's passwords and the ones I used to style the application.
+\\
+React also taught me a lot about learning to learn as I had to learn the framework
+relatively quickly and I found that the skill of learning to learn was more important
+than anything else when I decided to use this framework.
 \subsection{NodeJS}
+NodeJS taught me a lot about backend design and how difficult it can be to think about
+an application logically and break it down into schemas and function calls and how full-
+stack applications function in the real world.  I have utilized NodeJS on a previous project
+but my knowledge of NodeJS was nowhere near what it is now thanks to undertaking this application.
+\\
+I believe that I have learned more about how a server functions and how it should be designed from this
+project and especially since banking applications have many areas where you can encourage failure in the
+system, I learned how to avoid these areas and in places where I failed to avoid these errors the ensuing
+headaches served as a reminder not to make these errors again.
 \subsection{Docker}
+I had never utilized Docker before undertaking this project and it taught me an
+awful lot about continuous integration and continuous deployment.  Docker made it
+extremely easy to automate my builds of the project and ensure that the image hosted
+on the Docker container was always the latest version of the project.  I was able to
+set up the container in such a way that every push to my main branch on Github would
+automatically trigger a new build and update the version of the project stored in the
+image Docker generates.
+\\
+I will now be employing Docker in all future projects as it is an extremely useful tool
+for making sure that a project is following Agile principles
+which I will be recommending to every developer I meet.
 \subsection{Scope Creep}
+Scope creep was very hard to manage in this project as online banking applications
+are constantly being improved upon and the number of features are growing exponentially, in fact
+one of the sites I have mentioned in this dissertation(Online Banking 365) was updated while I was
+in the process of writing this dissertation!
+\\
+There were many features which I wished to add to the application but sadly time did not permit it,
+one of these features was an online chat bot which you could ask to help you in understanding the application
+and how to better interact with it, sadly not all desired features can be implemented in an application but I included the
+features I felt were most important.
+\\
+Scope creep had a very negative impact on this project as I found the number of features growing and I still had
+to test previous features and features that were in the process of being implemented.
+\\
+From this project I learned that scope creep should be identified early and combated by assigning a weight to a feature depending on its importance and prioritising features with higher weights as opposed to those with lower weights.
 \subsection{READ THE DOCS!}
+This is a point I cannot stress enough,  I find that most developers(including myself) think that they are almighty and that they do not need to read the documentation which is a gross error.  I found that I wasted a lot of time which could have been used improving the application on silly little errors which I introduced thanks to my ignorance of concepts I could have learned about in the documentation.
+\\
+Luckily I was able to realize the mistakes I was making early on in the development cycle and I took two weeks off to research the project and which technologies I would use and how best to implement them.  I read up on each technology I was utilizing in this application and reviewed their documentation and how to best implement these technologies.
+\\
+I found that reading the documentation saved so much time during the development of this project and reading documentation is not something that should ever be understated.
 \section{How TDD \& Agile Impacted Development}
 \subsection{Positive Impacts of TDD}
+Test driven development had an extremely positive effect on the development of this application, while I was coding I began to think like a tester as opposed to a developer and thought just how much code is necessary to make this test pass then after I wrote the code I began to refactor it and found that I coded better this way.
+\\
+TDD was very useful when designing functions which had a high possibility of failure such as the loans and update funcitons which tended to fail more often than other features I implemented in this application.  TDD really simplified the problems encountered when designing functions as I was not thinking how best to design the funciton but rather how to just make it pass.  I worried about optimization after I was sure the code was working and wasn't error prone.
 \subsection{Positive Impacts of Agile \& Kanban}
+Agile and Kanban were a tremendous success in this project as most of the sprints were on time or were completed before time.  I found that by following agile principles that I was able to design this application a lot faster than I would have using another methodology such as waterfall.
+\\
+Agile allowed me to revisit modules and test them to ensure that they were error free and were fit for purpose.  Agile also helped me to think about continuous integration and delivery for the application which I achieved using Docker.
+\\
+Agile also helped me to plan for the implementation of various functionality which would be needed for a full-stack banking applicaiton and helped me to implement said functionality in a timely-manner and also to decide which functionality needed to be implemented first.
+\\
+The Kanban board on Github which I utilized for this project was a tremendous help in coordinating my sprints and I found it helped me keep on top of this project even when I had a very heavy workload.
+\\
+In conclusion agile \& Kanban had an extremely positive impact on this application and saved a lot of time during development.
 \section{What I Would Do Differently}
 \subsection{Planning}
-\subsection{More Focus On AI}
-
+Looking back in hindsight there were a lot of things that I could have done differently, personally I feel the biggest change I would have made would have been to focus more on the planning phase and drew up a design of each function before implementation.  During the development I did describe functions I wanted but these functions were typically described in a couple of sentences without much thought, if I were doing this application again I would have wrote about three paragraphs stating exactly the function was supposed to do and how it should look to the user.
+\\
+I feel I wasted a lot of time implementing features which were planned poorly and if I had just taken some time out to plan for these functions I would have had a much easier time implementing them.
+\subsection{More Focus on AI}
+Given that AI is a major field of study and a growing field I regret not having implemented it into this project.  I originally had a plan to utilize tensorflowJS in this project but due to time-constraints this feature was never implemented.
+\\
+I feel a lot of regret about not being able to integrate AI into this application as it would have been a major upgrade to the standard banking application but theres always next time.
+\section{In Closing}
+In closing this application taught me a lot about how to apply my programming skills to make a fully functional online banking application.  It taught me how to design an intuitive UI with a strong emphasis on UX, it thought me to think logically, to design clearly, to read carefully and to document religiously.  I feel that in my four years at GMIT I have learned a lot about programming, life and myself,  I have learned to think like a developer and to place a strong emphasis on quality over quantity in regards to developing good software,  I believe it was in the book the Pragmatic Programmer where they stated "write something you can be proud to put your name on" I am proud to put my name on this application and I am proud to call it my own.  I wish to thank all the lecturers at GMIT who have helped to cultivate and teach me how to improve my skills not only as a developer but as a student of many diverse areas of knowledge in the realm of computer science.
+\\
+This is the end of a long journey and one that has taught me so much about everything that I did not know.
 \begin{appendices}
 \begin{itemize}
 \item \href{https://github.com/Ultan-Kearns/AppliedProject}{Link to the project's source code on Github}

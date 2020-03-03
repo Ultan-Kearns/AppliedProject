@@ -1,6 +1,6 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Arch Linux) (preloaded format=pdflatex 2020.2.9)  3 MAR 2020 03:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Arch Linux) (preloaded format=pdflatex 2020.2.9)  3 MAR 2020 05:33
 entering extended mode
- restricted \write18 enabled.
+ \write18 enabled.
  %&-line parsing enabled.
 **project
 (./project.tex
@@ -151,7 +151,7 @@ LaTeX Info: Redefining \addtolength on input line 81.
 )
 (/usr/share/texmf-dist/tex/latex/tools/shellesc.sty
 Package: shellesc 2016/06/07 v0.02b unified shell escape interface for LaTeX
-Package shellesc Info: Restricted shell escape enabled on input line 72.
+Package shellesc Info: Unrestricted shell escape enabled on input line 70.
 )
 (/usr/share/texmf-dist/tex/latex/ifplatform/ifplatform.sty
 Package: ifplatform 2017/10/13 v0.4a Testing for the operating system
@@ -171,11 +171,13 @@ Package pdftexcmds Info: \pdfdraftmode found.
 (/usr/share/texmf-dist/tex/generic/oberdiek/catchfile.sty
 Package: catchfile 2016/05/16 v1.7 Catch the contents of a file (HO)
 )
+runsystem(uname -s > "project.w18")...executed.
 
-Package ifplatform Warning: 
-    shell escape is disabled, so I can only detect \ifwindows.
+ (./project.w18)
+runsystem(rm -- "project.w18")...executed.
 
-) (/usr/share/texmf-dist/tex/generic/xstring/xstring.sty
+)
+(/usr/share/texmf-dist/tex/generic/xstring/xstring.sty
 (/usr/share/texmf-dist/tex/generic/xstring/xstring.tex
 \integerpart=\count114
 \decimalpart=\count115
@@ -206,19 +208,9 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@float@every@listing=\toks18
 \c@listing=\count119
 )
-runsystem(mkdir -p _minted-project)...disabled (restricted).
+runsystem(mkdir -p _minted-project)...executed.
 
 
-
-! Package minted Error: You must invoke LaTeX with the -shell-escape flag.
-
-See the minted package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.4 \usepackage
-               [utf8]{inputenc}
-? 
 (/usr/share/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2018/08/11 v1.3c Input encoding file
 \inpenc@prehook=\toks19
@@ -1103,21 +1095,11 @@ Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 407.
 Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 408.
 Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 409.
 )
-runsystem(which pygmentize && touch project.aex)...disabled (restricted).
+runsystem(which pygmentize && touch project.aex)...executed.
 
+runsystem(rm project.aex)...executed.
 
-
-! Package minted Error: You must have `pygmentize' installed to use this packag
-e.
-
-See the minted package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.41 \begin{document}
-                     
-? 
-(./project.aux)
+ (./project.aux)
 \openout1 = `project.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 41.
@@ -1137,7 +1119,8 @@ LaTeX Font Info:    ... okay on input line 41.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 41.
 LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 4
 1.
- (/usr/share/texmf-dist/tex/latex/base/ts1cmr.fd
+
+(/usr/share/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 41.
@@ -1606,10 +1589,10 @@ C39B.pygtex [38])
 <img/logincomponent.png, id=1012, 1020.81375pt x 558.58687pt>
 File: img/logincomponent.png Graphic file (type png)
 <use img/logincomponent.png>
-Package pdftex.def Info: img/logincomponent.png  used on input line 667.
+Package pdftex.def Info: img/logincomponent.png  used on input line 666.
 (pdftex.def)             Requested size: 390.0pt x 213.40735pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 659--671
+Underfull \hbox (badness 10000) in paragraph at lines 658--670
 
  []
 
@@ -1617,7 +1600,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 659--671
 
 
 (./_minted-project/DB84FB4DD27D7EEFDD5DEDDF5E6F3D8ACA2B23E3053BD6483C1AE6AEE4FE
-C39B.pygtex [39])
+C39B.pygtex [39 <./img/logincomponent.png (PNG copy)>])
 \openout3 = `project.pyg'.
 
 
@@ -1631,18 +1614,19 @@ C39B.pygtex [40])
 <img/registercomponent.png, id=1022, 1027.58907pt x 458.46281pt>
 File: img/registercomponent.png Graphic file (type png)
 <use img/registercomponent.png>
-Package pdftex.def Info: img/registercomponent.png  used on input line 734.
+Package pdftex.def Info: img/registercomponent.png  used on input line 733.
 (pdftex.def)             Requested size: 390.0pt x 174.00081pt.
+ [41]
 \openout3 = `project.pyg'.
 
 
 (./_minted-project/F7BF896EC3E338008C133F075D1C43F3CA2B23E3053BD6483C1AE6AEE4FE
-C39B.pygtex [41 <./img/registercomponent.png (PNG copy)>])
+C39B.pygtex)
 \openout3 = `project.pyg'.
 
 
 (./_minted-project/8712C27705C98F006A9A620998970269CA2B23E3053BD6483C1AE6AEE4FE
-C39B.pygtex)
+C39B.pygtex [42 <./img/registercomponent.png (PNG copy)>])
 \openout3 = `project.pyg'.
 
 
@@ -1653,17 +1637,17 @@ Overfull \hbox (90.8824pt too wide) in paragraph at lines 3--3
 master/BackEnd/Server.js[]|  
  []
 
-[42] [43])
+[43]) [44]
 \openout3 = `project.pyg'.
 
 
 (./_minted-project/6E0789E15EAD1E0E793DD12EF4B06E4ACA2B23E3053BD6483C1AE6AEE4FE
-C39B.pygtex [44] [45])
+C39B.pygtex [45] [46])
 \openout3 = `project.pyg'.
 
 
 (./_minted-project/E1E47C5D239CDF24ABDB9B2D52824684CA2B23E3053BD6483C1AE6AEE4FE
-C39B.pygtex [46] [47] [48])
+C39B.pygtex [47] [48])
 \openout3 = `project.pyg'.
 
 
@@ -1678,42 +1662,42 @@ C39B.pygtex [50] [51] [52])
 
 
 (./_minted-project/7409D5D17DEE4795216AE9A21E014373CA2B23E3053BD6483C1AE6AEE4FE
-C39B.pygtex
+C39B.pygtex [53]
 Overfull \hbox (320.11134pt too wide) in paragraph at lines 4--4
 []\OT1/lmtt/m/n/12 "https://newsapi.org/v2/top-headlines?country=us&category=bu
 siness&apiKey=e9cdf3a801374e4eba79b8ea0552a4bd"[]|  
  []
 
-[53])
+)
 \openout3 = `project.pyg'.
 
 
 (./_minted-project/67D9A10C9BA076F325371EBFF19895B2CA2B23E3053BD6483C1AE6AEE4FE
-C39B.pygtex
+C39B.pygtex [54]
 Overfull \hbox (264.55032pt too wide) in paragraph at lines 4--4
 []\OT1/lmtt/m/n/12 "https://www.alphavantage.co/query?function=TIME_SERIES_DAIL
 Y&symbol=MSFT&apikey=G38RVCM1OWLSKALP"[]|  
  []
 
-[54]
+
 Overfull \hbox (431.2754pt too wide) in paragraph at lines 32--32
 []\OT1/lmtt/m/n/12 "https://www.alphavantage.co/query?function=CURRENCY_EXCHANG
 E_RATE&from_currency=EUR&to_currency=BTC&apikey=G38RVCM1OWLSKALP"[]|  
  []
 
-
+[55]
 Overfull \hbox (431.2754pt too wide) in paragraph at lines 55--55
 []\OT1/lmtt/m/n/12 "https://www.alphavantage.co/query?function=CURRENCY_EXCHANG
 E_RATE&from_currency=EUR&to_currency=GBP&apikey=G38RVCM1OWLSKALP"[]|  
  []
 
-[55]
+
 Overfull \hbox (60.77522pt too wide) in paragraph at lines 64--64
 []\OT1/lmtt/m/n/12 document[].getElementById([]"eursterling"[]).appendChild(ste
 rlingNode);|  
  []
 
-
+[56]
 Overfull \hbox (431.2754pt too wide) in paragraph at lines 79--79
 []\OT1/lmtt/m/n/12 "https://www.alphavantage.co/query?function=CURRENCY_EXCHANG
 E_RATE&from_currency=EUR&to_currency=USD&apikey=G38RVCM1OWLSKALP"[]|  
@@ -1725,18 +1709,18 @@ Overfull \hbox (36.07521pt too wide) in paragraph at lines 88--88
 rNode);|  
  []
 
-[56]
+
 Overfull \hbox (431.2754pt too wide) in paragraph at lines 103--103
 []\OT1/lmtt/m/n/12 "https://www.alphavantage.co/query?function=CURRENCY_EXCHANG
 E_RATE&from_currency=EUR&to_currency=CNY&apikey=G38RVCM1OWLSKALP"[]|  
  []
 
-)
+[57])
 \openout3 = `project.pyg'.
 
 
 (./_minted-project/2E28F1C297284A52C8BF660E0E579C66CA2B23E3053BD6483C1AE6AEE4FE
-C39B.pygtex [57] [58])
+C39B.pygtex [58])
 \openout3 = `project.pyg'.
 
 
@@ -1747,12 +1731,12 @@ Overfull \hbox (54.60022pt too wide) in paragraph at lines 33--33
 de);|  
  []
 
-)
+[60])
 \openout3 = `project.pyg'.
 
 
 (./_minted-project/6B5728B23D2CFF3E97C2530836BC50A9CA2B23E3053BD6483C1AE6AEE4FE
-C39B.pygtex [60])
+C39B.pygtex [61])
 
 ! LaTeX Error: There's no line here to end.
 
@@ -1760,7 +1744,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1437 T
+l.1436 T
         his is basically the same function as we have seen from the helper m...
 
 ? 
@@ -1768,7 +1752,7 @@ l.1437 T
 
 
 (./_minted-project/EF64D20AC28DDEA26C42F3B18FD7AD27CA2B23E3053BD6483C1AE6AEE4FE
-C39B.pygtex [61] [62])
+C39B.pygtex [62] [63])
 
 ! LaTeX Error: There's no line here to end.
 
@@ -1776,14 +1760,14 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1504 C
+l.1503 C
         ode for the update function:
 ? 
 \openout3 = `project.pyg'.
 
 
 (./_minted-project/032A32FD15D4F42C8E992D10335EBF18CA2B23E3053BD6483C1AE6AEE4FE
-C39B.pygtex [63] [64] [65] [66] [67])
+C39B.pygtex [64] [65] [66] [67])
 
 ! LaTeX Error: There's no line here to end.
 
@@ -1791,19 +1775,19 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1688 C
+l.1687 C
         ode for the delete function:
 ? 
 \openout3 = `project.pyg'.
 
 
 (./_minted-project/235BD5A5BEFF826524DCBD645400A266CA2B23E3053BD6483C1AE6AEE4FE
-C39B.pygtex [68]) [69]
+C39B.pygtex [68] [69]) [70]
 \openout3 = `project.pyg'.
 
 
 (./_minted-project/2973637C561E2EC1E807EF5FE498CCE3CA2B23E3053BD6483C1AE6AEE4FE
-C39B.pygtex [70]
+C39B.pygtex
 Overfull \hbox (73.12523pt too wide) in paragraph at lines 13--13
 []\OT1/lmtt/m/n/12 "mongodb://ultan:ultanultan1@ds135107.mlab.com:35107/applied
 project"[];|  
@@ -1815,13 +1799,13 @@ Overfull \hbox (102.98244pt too wide) in paragraph at lines 119--119
 End/Server.js[]|  
  []
 
-
+[74]
 Overfull \hbox (102.98244pt too wide) in paragraph at lines 139--139
 \OT1/lmtt/m/it/12 https://github.com/Ultan-Kearns/eCommerceApp/blob/master/Back
 End/Server.js[]|  
  []
 
-[74] [75] [76]
+[75] [76] [77]
 Overfull \hbox (443.18178pt too wide) in paragraph at lines 242--242
 \OT1/lmtt/m/it/12 Users.findByIdAndUpdate(req.params.id,{name:req.body.name,pas
 sword:req.body.password,number:req.body.number},function(err,data){[]|  
@@ -1833,7 +1817,7 @@ Overfull \hbox (185.27516pt too wide) in paragraph at lines 253--253
 assword},[]\OT1/lmtt/b/n/12 function[]\OT1/lmtt/m/n/12 (err,data){|  
  []
 
-[77] [78]
+[78] [79]
 Overfull \hbox (290.25021pt too wide) in paragraph at lines 316--316
 \OT1/lmtt/m/n/12 Transactions.updateMany({email[]:[]req.params.email},{$set[]:[
 ]{email[]:[]req.params.newemail}},[]\OT1/lmtt/b/n/12 function[]\OT1/lmtt/m/n/12
@@ -1847,23 +1831,23 @@ Overfull \hbox (234.67519pt too wide) in paragraph at lines 321--321
 oc){|  
  []
 
-[79]) [80] [81] [82 <./img/logincomponent.png (PNG copy)>]
+) [80] [81] [82]
 Chapter 6.
 [83
 
-] [84]
+] [84] [85] [86]
 Chapter 7.
-[85
+[87
 
-] [86
+] [88] [89] [90] [91] [92
 
 
 ]
 
-Package hyperref Warning: Suppressing link with empty target on input line 2175
+Package hyperref Warning: Suppressing link with empty target on input line 2316
 .
 
-(./project.bbl [87]
+(./project.bbl [93]
 Underfull \hbox (badness 6125) in paragraph at lines 4--8
 \OT1/lmr/m/n/12 ing the mean stack.''  [][]$\OT1/lmtt/m/n/12 https : / / www . 
 mongodb . com / blog / post /
@@ -1944,7 +1928,7 @@ Overfull \hbox (55.64209pt too wide) in paragraph at lines 53--57
 -[]cybercrime-[]losses/$[][]\OT1/lmr/m/n/12 . 
  []
 
-[88
+[94
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 59--63
@@ -2003,7 +1987,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 116--118
  https : / / github . com /
  []
 
-[89]
+[95]
 Underfull \hbox (badness 6173) in paragraph at lines 129--132
 []\OT1/lmr/m/n/12 Cloudflare.com, ``Tls im-age.''  [][]$\OT1/lmtt/m/n/12 https 
 : / / blog . cloudflare . com /
@@ -2027,43 +2011,53 @@ Underfull \hbox (badness 2181) in paragraph at lines 164--167
 tt/m/n/12 https : / / www .
  []
 
-) [90]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2180.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 2180.
+) [96]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2321.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 2321.
  (./project.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2180.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2180.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2321.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2321.
 
-Package rerunfilecheck Info: File `project.out' has not changed.
-(rerunfilecheck)             Checksum: 7FF8917D715A134A6E830D3098C0B95E;9017.
-runsystem(rm project.pyg)...disabled (restricted).
+
+
+Package rerunfilecheck Warning: File `project.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `project.out':
+(rerunfilecheck)             Before: 2D51D57E0B24DD60AE5943811435F6F2;9002
+(rerunfilecheck)             After:  FE3107495F8835F9D9F8790EE1650E14;8935.
+runsystem(rm project.pyg)...executed.
 
  ) ) 
 Here is how much of TeX's memory you used:
- 26362 strings out of 492167
- 528142 string characters out of 6131559
- 659846 words of memory out of 5000000
- 29791 multiletter control sequences out of 15000+600000
+ 26372 strings out of 492167
+ 528213 string characters out of 6131559
+ 659873 words of memory out of 5000000
+ 29792 multiletter control sequences out of 15000+600000
  66101 words of font info for 61 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 60i,9n,79p,1366b,632s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/share/texmf-dist
-/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-rmtt
-.enc}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf-
-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf-dist/fonts/enc/dvips/lm
-/lm-rmsc.enc}</usr/share/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/shar
-e/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf-dist/fonts/type
-1/public/lm/lmcsc10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmmi6.pfb>
-</usr/share/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf-dist/f
-onts/type1/public/lm/lmr6.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr8
-.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmro12.pfb></usr/share/texmf-
-dist/fonts/type1/public/lm/lmsy6.pfb></usr/share/texmf-dist/fonts/type1/public/
-lm/lmtk10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmtt12.pfb></usr/sha
-re/texmf-dist/fonts/type1/public/lm/lmtti10.pfb>
-Output written on project.pdf (90 pages, 1420924 bytes).
+ 60i,9n,79p,1366b,636s stack positions out of 5000i,500n,10000p,200000b,80000s
+pdfTeX warning (dest): name{subsection.6.3.7} has been referenced but does 
+not exist, replaced by a fixed one
+
+{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/share/texmf-dist/fon
+ts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-rmtt.enc
+}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf-dist
+/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-
+rmsc.enc}</usr/share/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/share/te
+xmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf-dist/fonts/type1/pu
+blic/lm/lmcsc10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></us
+r/share/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf-dist/fonts
+/type1/public/lm/lmr6.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr8.pfb
+></usr/share/texmf-dist/fonts/type1/public/lm/lmro12.pfb></usr/share/texmf-dist
+/fonts/type1/public/lm/lmsy6.pfb></usr/share/texmf-dist/fonts/type1/public/lm/l
+mtk10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmtt12.pfb></usr/share/t
+exmf-dist/fonts/type1/public/lm/lmtti10.pfb>
+Output written on project.pdf (96 pages, 1435114 bytes).
 PDF statistics:
- 1428 PDF objects out of 1440 (max. 8388607)
- 1274 compressed objects within 13 object streams
- 291 named destinations out of 1000 (max. 500000)
+ 1454 PDF objects out of 1728 (max. 8388607)
+ 1294 compressed objects within 13 object streams
+ 297 named destinations out of 1000 (max. 500000)
  1251 words of extra memory for PDF output out of 10000 (max. 10000000)
 
