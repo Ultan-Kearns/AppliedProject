@@ -1,8 +1,8 @@
 # SPRINT 1 (Completed):
 + GET BASIC STYLE OF APPLICATION AND PAGES DONE ( DONE)
-+ Read React Docs
-+ Read Mongoose Docs
-+ Read Node docs
++ Read React Docs( DONE)
++ Read Mongoose Docs( DONE)
++ Read Node docs( DONE)
 # SPRINT 2 (3rd OCT - 11th OCT) (Completed):
 + GET DATA OFF OF SERVER AND HAVE IT STYLED(Done)
 + READJUST TIMES (done)
@@ -51,23 +51,23 @@
 + ensure user cannot delete account if they have open loans(DONE)
 # Sprint 9 (21st February - 29th February)
 ## Set backs due to job interviews
-+ review dissertation
 + Start System Design(Done)
 + fix update bug on userinfo page(Done)
-+ Brainstorm ideas(tensorflowJS?)
++ Brainstorm ideas(tensorflowJS?)(Done)
 + research Docker + get it working(Done)
 + refactor and test code(DONE)
 + get transfer working(Done)
 + Host on google cloud(Done)
 + Finish System design & review dissertation(Done)
-+ write more sprints(May be redundant)
++ write more sprints(May be redundant)(Done)
 # Sprint 10 (1st March - 10th March)
-+ Finish system evaluation
-+ Work on conclusion
-+ fix up documentation and make sure project is submittible
++ Finish system evaluation(Almost done may need to add more)
++ Work on conclusion(Done)
++ fix up documentation and make sure project is complete and bug free
 + Fix error messages
-+ Fix Loan errors
++ Fix Loan errors(DONE but now creating two transactions)
 + Add images to sys design
++ review dissertation
 # Sprint 11 (10th March - 15th March)
 + Test all code(Areas of possible failure: Loans, Updates, Registration, Forgot password, delete)
 + Put finishing touches on project(Little bit of UI work test on multiple machines)

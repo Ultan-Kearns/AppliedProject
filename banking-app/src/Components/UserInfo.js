@@ -208,7 +208,7 @@ class UserInfo extends React.Component {
 
                   }
                   else{
-                  this.updateData();
+                    document.getElementById("basic").innerHTML =  "Name: " + this.state.name +   " Number: " + this.state.number + " Date of Birth: " + this.state.dob  + " Username: " +  this.state.newUsername + " Balance: €" + this.state.balance
                   updates++;
                   sessionStorage.setItem("updates",updates)
                 }
@@ -240,38 +240,24 @@ class UserInfo extends React.Component {
     axios
       .get("https://localhost:8080/api/users/" + this.state.username)
       .then(res => {
-        var text = document.createTextNode(
-          "Name: " +
-            res.data.name +
-            " Number: " +
-            res.data.number +
-            " Date of Birth: " +
-            res.data.dob +
-            " Username: " +
-            res.data._id +
-            " Balance: " +
-            res.data.balance,
-
           //In case user leaves any information blank just submit their current info
-
           this.setState({
             prevName: res.data.name
-          }),
+          })
           this.setState({
             prevNumber: res.data.number
-          }),
+          })
           this.setState({
             prevPassword: res.data.password
-          }),
+          })
           this.setState({
             dob: res.data.dob
-          }),
+          })
           this.setState({
             balance: res.data.balance
           })
-        );
         password = res.data.password;
-        document.getElementById("basic").appendChild(text);
+        document.getElementById("basic").innerHTML =  "Name: " + res.data.name +   " Number: " + res.data.number + " Date of Birth: " + res.data.dob  + " Username: " +  res.data._id + " Balance: €" + res.data.balance
       })
       .catch(error => {
         alert("Can't communicate with server");
