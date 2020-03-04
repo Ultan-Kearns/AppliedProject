@@ -75,7 +75,7 @@ class UserInfo extends React.Component {
       this.setState({
         password: sha256(this.state.password)
       });
-      alert(this.state.password);
+      alert("Updating password please remember this");
     } else {
       this.setState({
         password: this.state.prevPassword
@@ -98,7 +98,6 @@ class UserInfo extends React.Component {
           balance: sessionStorage.getItem("balance"),
           dob: sessionStorage.getItem("dob"),
     })
-    alert("BAL " + this.state.balance);
     const newUser = {
       _id: this.state.newUsername.toLowerCase(),
       password: this.state.password,
@@ -145,7 +144,6 @@ class UserInfo extends React.Component {
             }
           })
           .then(res => {
-            alert("IS " + isCancelled + this.state.dob);
             if (isCancelled === false) {
               //delete original user
               axios

@@ -92,6 +92,21 @@ class Loans extends React.Component {
                       "Loan repaid new balance is: " +
                         sessionStorage.getItem("balance")
                     );
+                    const newTransaction = {
+                      email: sessionStorage.getItem("email"),
+                      cost: -loanCost,
+                      location: "IndependentBanking.com",
+                      name: sessionStorage.getItem("username"),
+                      date: date
+                    };
+                    axios
+                      .post(
+                        "https://localhost:8080/api/transactions",
+                        newTransaction
+                      )
+                      .then(res => {
+                        console.log(res);
+                      });
                   })
                   .then(res => {
                     axios
@@ -112,22 +127,6 @@ class Loans extends React.Component {
               } else {
                 alert("Not enough money in account to repay loan");
               }
-              const newTransaction = {
-                email: sessionStorage.getItem("email"),
-                cost: -loanCost,
-                location: "IndependentBanking.com",
-                name: sessionStorage.getItem("username"),
-                date: date
-              };
-              axios
-                .post(
-                  "https://localhost:8080/api/transactions",
-                  newTransaction
-                )
-                .then(res => {
-                  alert("NEW")
-                  console.log(res);
-                });
             });
           }
           //create new balance
@@ -170,7 +169,6 @@ class Loans extends React.Component {
       this.state.amount <= 500 &&
       this.state.amount > 0
     ) {
-      alert("THIS" + Math.ceil(parseInt(this.state.amount * 0.25)));
       const newLoan = {
         email: sessionStorage.getItem("email"),
         amount: this.state.amount,
