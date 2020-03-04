@@ -73,47 +73,45 @@ class Loans extends React.Component {
             node.append(buttonNode);
             document.getElementById("loans").appendChild(node);
             sessionStorage.setItem("openLoans", getOpenLoans());
-          }
-          //create new balance
-          const newBalance = {
-            balance: parseInt(
-              sessionStorage.getItem("balance") - parseInt(this.state.amount)
-            )
-          };
-          buttonNode.addEventListener("click", function() {
-            //check if balance >= loanpayment
-            if (sessionStorage.getItem("balance") >= loanCost) {
-              buttonNode.disabled = true;
-              buttonNode.textContent = "Paid";
-              alert("LOAN COST : " + loanCost)
-              axios
-                .post(
-                  "https://localhost:8080/api/users/" +
-                    sessionStorage.getItem("email") +
-                    "/balance",
-                  newBalance
-                )
-                .then(res => {
-                  sessionStorage.setItem("balance", newBalance.balance);
-                  alert(
-                    "Loan repaid new balance is: " +
-                      sessionStorage.getItem("balance")
-                  );
-                });
-              axios
-                .delete(
-                  "https://localhost:8080/api/loans/" +
-                    sessionStorage.getItem("email") +
-                    "/" +
-                    loanId
-                )
-                .then(res => {
-                  alert("Loan paid");
-                })
-                .catch(error => {
-                  alert("error: " + error);
-                });
-              sessionStorage.setItem("openLoans", getOpenLoans());
+            buttonNode.addEventListener("click", function() {
+              //check if balance >= loanpayment
+              if (sessionStorage.getItem("balance") >= loanCost) {
+                buttonNode.disabled = true;
+                buttonNode.textContent = "Paid";
+                alert("LOAN COST : " + loanCost);
+                axios
+                  .post(
+                    "https://localhost:8080/api/users/" +
+                      sessionStorage.getItem("email") +
+                      "/balance",
+                    newBalance
+                  )
+                  .then(res => {
+                    sessionStorage.setItem("balance", newBalance.balance);
+                    alert(
+                      "Loan repaid new balance is: " +
+                        sessionStorage.getItem("balance")
+                    );
+                  })
+                  .then(res => {
+                    axios
+                      .delete(
+                        "https://localhost:8080/api/loans/" +
+                          sessionStorage.getItem("email") +
+                          "/" +
+                          loanId
+                      )
+                      .then(res => {
+                        alert("Loan paid");
+                      })
+                      .catch(error => {
+                        alert("error: " + error);
+                      });
+                  });
+                sessionStorage.setItem("openLoans", getOpenLoans());
+              } else {
+                alert("Not enough money in account to repay loan");
+              }
               const newTransaction = {
                 email: sessionStorage.getItem("email"),
                 cost: -loanCost,
@@ -122,14 +120,23 @@ class Loans extends React.Component {
                 date: date
               };
               axios
-                .post("https://localhost:8080/api/transactions", newTransaction)
+                .post(
+                  "https://localhost:8080/api/transactions",
+                  newTransaction
+                )
                 .then(res => {
+                  alert("NEW")
                   console.log(res);
                 });
-            } else {
-              alert("Not enough money in account to repay loan");
-            }
-          });
+            });
+          }
+          //create new balance
+          const newBalance = {
+            balance: parseInt(
+              sessionStorage.getItem("balance") - parseInt(this.state.amount)
+            )
+          };
+
           if (i > 0) {
             node.id = "loan";
             node.append(text);
