@@ -37,11 +37,13 @@ const security = {
   cert: fs.readFileSync(keysDirectory + "cert.crt")
 };
 //use mongoose API to connect to backend need to send err msg here
-try{
-mongoose.connect(mongoDB, { useUnifiedTopology: true, useNewUrlParser: true });
-}
-catch{
-  res.send("Err")
+try {
+  mongoose.connect(mongoDB, {
+    useUnifiedTopology: true,
+    useNewUrlParser: true
+  });
+} catch {
+  res.send("Err");
 }
 //body parser for middleware
 app.use(
@@ -57,9 +59,9 @@ var userSchema = new Schema({
   name: { type: String, required: true },
   number: { type: String, required: true },
   dob: { type: String, required: true },
-  balance: { type: Number, default: 0,required:true },
+  balance: { type: Number, default: 0, required: true },
   iban: { type: String },
-  bic: { type: String},
+  bic: { type: String }
 });
 //change this later
 var transactionSchema = new Schema({
@@ -132,14 +134,15 @@ app.get("/api/users/:id/:password", function(req, res) {
       if (req.params.id == data._id && data.password == req.params.password) {
         res.json(data);
         res.status(200, "User logged in!");
-      }
-      else {
+      } else {
         res.json("null");
         res.status(404, "User not found!");
       }
+    } else if (data == null) {
+      res.json("null");
     }
   });
-})
+});
 //template taken from earlier project - https://github.com/Ultan-Kearns/eCommerceApp/blob/master/BackEnd/Server.js
 //Improved upon in this project
 app.get("/api/emailuser/:id/:password", function(req, res, next) {
@@ -148,7 +151,7 @@ app.get("/api/emailuser/:id/:password", function(req, res, next) {
       res.status(404, "User does not exist on this server", err);
     else if (data._id == req.params.id) {
       res.json(data);
-      console.log(data)
+      console.log(data);
       res.status(200, "User logged in!");
       var nodemailer = require("nodemailer");
       var transporter = nodemailer.createTransport({
@@ -168,7 +171,9 @@ app.get("/api/emailuser/:id/:password", function(req, res, next) {
         from: "reactproject19@gmail.com",
         to: data._id,
         subject: "Forgot Independent Banking password",
-        text: "Here is your password for Independent Banking: " + req.params.password
+        text:
+          "Here is your password for Independent Banking: " +
+          req.params.password
       };
 
       //Send email or log errors if user doesn't exist
@@ -192,9 +197,8 @@ app.get("/api/users/:id/", function(req, res) {
       res.status(500, "INTERNAL SERVER ERROR " + err);
     } else if (data != null) {
       res.json(data);
-    }
-    else{
-            res.json("null")
+    } else {
+      res.json("null");
     }
   });
 });
@@ -204,7 +208,7 @@ app.delete("/api/users/:id/", function(req, res) {
       //send back error 500 to show the server had internel error
       res.status(500, "INTERNAL SERVER ERROR " + err);
     } else if (data != null) {
-      res.status(200,"Deleted Account")
+      res.status(200, "Deleted Account");
     }
   });
 });
@@ -214,19 +218,17 @@ app.delete("/api/loans/:email/:id", function(req, res) {
       //send back error 500 to show the server had internel error
       res.status(500, "INTERNAL SERVER ERROR " + err);
     } else if (data != null) {
-      res.status(200,"Paid loan")
+      res.status(200, "Paid loan");
     }
   });
 });
 app.post("/api/users", function(req, res) {
   //check if user with same username exists use findById and change id to username
   var balance;
-  if(req.body.balance == "")
-  {
-    balance = 0
-  }
-  else{
-    balance = req.body.balance
+  if (req.body.balance == "") {
+    balance = 0;
+  } else {
+    balance = req.body.balance;
   }
   Users.create({
     _id: req.body._id,
@@ -236,7 +238,7 @@ app.post("/api/users", function(req, res) {
     dob: req.body.dob,
     balance: balance,
     iban: "IE",
-    bic:""
+    bic: ""
   });
   res.status(201, "Resource created");
 });
@@ -254,25 +256,33 @@ app.put("/api/users/:id", function(req, res) {
   */
 });
 app.post("/api/users/:id/rand", function(req, res) {
-   Users.findByIdAndUpdate(req.params.id,{password:req.body.password},function(err,data){
-    if (err) {
-      //send back error 500 to show the server had internel error
-      res.status(500, "INTERNAL SERVER ERROR " + err);
-    } else if (data != null) {
-      res.status(200,"Updated Password  ")
+  Users.findByIdAndUpdate(
+    req.params.id,
+    { password: req.body.password },
+    function(err, data) {
+      if (err) {
+        //send back error 500 to show the server had internel error
+        res.status(500, "INTERNAL SERVER ERROR " + err);
+      } else if (data != null) {
+        res.status(200, "Updated Password  ");
+      }
     }
-  })
+  );
 });
 app.post("/api/users/:id/balance", function(req, res) {
-   Users.findByIdAndUpdate(req.params.id,{balance: req.body.balance},function(err,data){
-    if (err) {
-      //send back error 500 to show the server had internel error
-      res.status(500, "INTERNAL SERVER ERROR " + err);
-    } else if (data != null) {
-      res.status(200,"Updated balance")
-      res.json(data);
+  Users.findByIdAndUpdate(
+    req.params.id,
+    { balance: req.body.balance },
+    function(err, data) {
+      if (err) {
+        //send back error 500 to show the server had internel error
+        res.status(500, "INTERNAL SERVER ERROR " + err);
+      } else if (data != null) {
+        res.status(200, "Updated balance");
+        res.json(data);
+      }
     }
-  })
+  );
 });
 app.post("/api/loans", function(req, res) {
   Loans.create({
@@ -306,25 +316,32 @@ app.get("/api/transactions/:email", function(req, res) {
   });
 });
 app.delete("/api/transactions/:email", function(req, res) {
-  Transactions.remove({email: req.params.email}, function(err, data) {
+  Transactions.remove({ email: req.params.email }, function(err, data) {
     res.json(data);
   });
-
 });
 app.delete("/api/loans/:email", function(req, res) {
-  Loans.remove({email: req.params.email},function(err, data) {
+  Loans.remove({ email: req.params.email }, function(err, data) {
     res.json(data);
-  })
+  });
 });
-  app.post("/api/transactions/:email/:newemail", function(req, res) {
-    Transactions.updateMany({email:req.params.email},{$set:{email:req.params.newemail}},function(err,doc){
-      res.json(doc)
-    });
-   });
-  app.post("/api/loans/:email/:newemail", function(req, res) {
-  Loans.updateMany({email:req.params.email},{$set:{email:req.params.newemail}},function(err,doc){
-      res.json(doc + " " + req.params.newemail)
-})
+app.post("/api/transactions/:email/:newemail", function(req, res) {
+  Transactions.updateMany(
+    { email: req.params.email },
+    { $set: { email: req.params.newemail } },
+    function(err, doc) {
+      res.json(doc);
+    }
+  );
+});
+app.post("/api/loans/:email/:newemail", function(req, res) {
+  Loans.updateMany(
+    { email: req.params.email },
+    { $set: { email: req.params.newemail } },
+    function(err, doc) {
+      res.json(doc + " " + req.params.newemail);
+    }
+  );
 });
 app.get("/api/loans/:email", function(req, res) {
   //custom method to find name on transactions
@@ -333,6 +350,18 @@ app.get("/api/loans/:email", function(req, res) {
     res.json(data);
   });
 });
+//twillio code - taken template from their site
+const accountSid = "AC8cc82f77f451d6f26aeb1481e9c554cf";
+const authToken = "d593089eb8edbcf9eb2ca0242800db11";
+const client = require("twilio")(accountSid, authToken);
+
+client.messages
+  .create({
+    body: "Somebody just logged into your account was it you?",
+    from: "+15017122661",
+    to: "+353852037768"
+  })
+  .then(message => console.log(message.sid));
 //have server listening at port  8080 and have it take keycert to secure server
 //uses Secure Socket Layer
 https.createServer(security, app).listen(8080);

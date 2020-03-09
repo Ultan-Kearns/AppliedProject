@@ -118,9 +118,8 @@ class Statistics extends React.Component {
           document.getElementById("eurbtc").appendChild(btcNode);
         })
         .catch(function(error) {
-          //something went wrong here when showing error message but page
-          //shows lots of errors for each stat so not important
-        });
+          alert("Issue retrieving data most likely you have probably maxed out API calls" + error)
+         });
       axios
         .get(
           "https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=EUR&to_currency=GBP&apikey=G38RVCM1OWLSKALP"
@@ -135,15 +134,7 @@ class Statistics extends React.Component {
           document.getElementById("eursterling").appendChild(sterlingNode);
         })
         .catch(function(error) {
-          var node = document.createElement("LI");
-          node.id = "currency";
-          var text = document.createTextNode(
-            "Sorry something went wrong while getting the currency value data :*("
-          );
-          node.append(text);
-          document.getElementById("eursterling").appendChild(node);
 
-          console.log("error");
         });
       axios
         .get(
@@ -159,15 +150,7 @@ class Statistics extends React.Component {
           document.getElementById("eurdollar").appendChild(dollarNode);
         })
         .catch(function(error) {
-          var node = document.createElement("LI");
-          node.id = "currency";
-          var text = document.createTextNode(
-            "Sorry something went wrong while getting the currency value data :*("
-          );
-          node.append(text);
-          document.getElementById("eurdollar").appendChild(node);
 
-          console.log("error");
         });
       axios
         .get(
@@ -183,14 +166,7 @@ class Statistics extends React.Component {
           document.getElementById("eurcny").appendChild(cnyNode);
         })
         .catch(error => {
-          var node = document.createElement("LI");
-          node.id = "currency";
-          var text = document.createTextNode(
-            "Sorry something went wrong while getting the currency value data :*("
-          );
-          node.append(text);
-          document.getElementById("stock").appendChild(node);
-          console.log("error");
+
         });
     } catch (error) {
       alert("MAX API CALLS FOR FINANCIAL DATA REACHED");

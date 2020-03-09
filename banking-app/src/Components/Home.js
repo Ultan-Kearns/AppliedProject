@@ -88,7 +88,8 @@ class Home extends React.Component {
       alert(
         "The amount / account ID cannot be null, want to donate it to us? >;D"
       );
-    } else {
+    }
+    if(parseInt(this.state.amount ) <= parseInt(sessionStorage.getItem("balance")) && parseInt(this.state.amount) > 0){
       var date = new Date();
       //payer logic
       const newTransaction = {
@@ -167,17 +168,21 @@ class Home extends React.Component {
               newBalance
             )
             .then(res => {
+              document.getElementById("balance").innerHTML ="Your balance: €" + sessionStorage.getItem("balance");
               alert(
                 "Money Sent to: " +
                   this.state.accountId +
                   " Amount sent: " +
                   this.state.amount +
                   " New Balance: " +
-                  newBalance.balance
+                  sessionStorage.getItem("balance")
               );
             });
         })
         .catch(error => {});
+    }
+    else{
+      alert("Transaction failed")
     }
     e.preventDefault();
   };
