@@ -119,7 +119,6 @@ class Home extends React.Component {
           newBalance
         )
         .then(res => {
-          console.log("TEST " + res);
           axios
             .get(
               "https://localhost:8080/api/users/" +

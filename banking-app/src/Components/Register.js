@@ -49,6 +49,10 @@ class Register extends React.Component {
     });
   };
   register = event => {
+    var birth = new Date(this.state.dob);
+    var now = new Date();
+    // this gets date in years the result of the subtraction of variables is in ms
+    var age =  Math.abs((now - birth) / 31557600000)
     //create IBAN here and BIC
     console.log(this.state.name, this.state.number, this.state.dob);
     const sha256 = require("js-sha256");
@@ -69,7 +73,7 @@ class Register extends React.Component {
       this.state.name.length >= 5 &&
       this.state.password.length >= 6 &&
       this.username !== null &&
-      this.state.dob !== ""
+      this.state.dob !== "" && age >= 18
     ) {
       //check if user exists
       axios
@@ -85,19 +89,18 @@ class Register extends React.Component {
           axios
             .post("https://localhost:8080/api/users", newUser)
             .then(res => {
-     
+
             })
             .catch(error => {
               alert("Couldn't register check internet");
               return;
             });
         });
-
       alert("User created, now you can login :D");
       ReactDOM.render(<Login />, document.getElementById("root"));
     } else {
       alert(
-        "Form invalid, password length must be greater than 6 and number must have 10 digits and name must have 5 or more characters and dob cannot be null"
+        "Form invalid, password length must be greater than 6 and number must have 10 digits and name must have 5 or more characters and dob cannot be null and user must be 18 or older"
       );
     }
     event.preventDefault();

@@ -6,141 +6,141 @@
 \contentsline {subsection}{\numberline {1.1.2}Express}{10}{subsection.1.1.2}% 
 \contentsline {subsection}{\numberline {1.1.3}React}{11}{subsection.1.1.3}% 
 \contentsline {subsection}{\numberline {1.1.4}Node JS}{12}{subsection.1.1.4}% 
-\contentsline {section}{\numberline {1.2}Why a banking application?}{12}{section.1.2}% 
-\contentsline {subsection}{\numberline {1.2.1}Explanation of Why I Chose This Project}{12}{subsection.1.2.1}% 
-\contentsline {subsection}{\numberline {1.2.2}My Contention With Existing Online Banking Systems \& How I Plan To Improve Upon Them}{13}{subsection.1.2.2}% 
+\contentsline {section}{\numberline {1.2}Why a banking application?}{13}{section.1.2}% 
+\contentsline {subsection}{\numberline {1.2.1}Explanation of Why I Chose This Project}{13}{subsection.1.2.1}% 
+\contentsline {subsection}{\numberline {1.2.2}My Contention With Existing Online Banking Systems \& How I Plan To Improve Upon Them}{14}{subsection.1.2.2}% 
 \contentsline {section}{\numberline {1.3}Requirements}{14}{section.1.3}% 
 \contentsline {section}{\numberline {1.4}Outline of chapters}{15}{section.1.4}% 
 \contentsline {subsection}{\numberline {1.4.1}Context}{15}{subsection.1.4.1}% 
 \contentsline {subsection}{\numberline {1.4.2}Methodology}{15}{subsection.1.4.2}% 
-\contentsline {subsection}{\numberline {1.4.3}Technical Review}{15}{subsection.1.4.3}% 
+\contentsline {subsection}{\numberline {1.4.3}Technical Review}{16}{subsection.1.4.3}% 
 \contentsline {subsection}{\numberline {1.4.4}System Design}{16}{subsection.1.4.4}% 
 \contentsline {subsection}{\numberline {1.4.5}System Evaluation}{16}{subsection.1.4.5}% 
 \contentsline {subsection}{\numberline {1.4.6}Conclusion}{16}{subsection.1.4.6}% 
 \contentsline {section}{\numberline {1.5}Structure of Project}{16}{section.1.5}% 
-\contentsline {chapter}{\numberline {2}Context}{17}{chapter.2}% 
-\contentsline {section}{\numberline {2.1}Project Objectives}{17}{section.2.1}% 
-\contentsline {section}{\numberline {2.2}Online Banking}{17}{section.2.2}% 
-\contentsline {section}{\numberline {2.3}History of Online Banking}{18}{section.2.3}% 
-\contentsline {subsection}{\numberline {2.3.1}Definition of Online Banking}{18}{subsection.2.3.1}% 
-\contentsline {subsection}{\numberline {2.3.2}The Beginning}{18}{subsection.2.3.2}% 
-\contentsline {section}{\numberline {2.4}Advantages of Online Banking}{19}{section.2.4}% 
-\contentsline {subsection}{\numberline {2.4.1}Convenience}{19}{subsection.2.4.1}% 
-\contentsline {subsection}{\numberline {2.4.2}Speed}{19}{subsection.2.4.2}% 
-\contentsline {subsection}{\numberline {2.4.3}Competition}{19}{subsection.2.4.3}% 
-\contentsline {subsection}{\numberline {2.4.4}Creation of Jobs}{19}{subsection.2.4.4}% 
-\contentsline {section}{\numberline {2.5}Disadvantages of Online Banking}{20}{section.2.5}% 
-\contentsline {subsection}{\numberline {2.5.1}Security}{20}{subsection.2.5.1}% 
-\contentsline {subsection}{\numberline {2.5.2}Layoff of Bank Employees}{20}{subsection.2.5.2}% 
-\contentsline {subsection}{\numberline {2.5.3}Increased Crime}{20}{subsection.2.5.3}% 
-\contentsline {section}{\numberline {2.6}The Overall Effect of Online Banking}{20}{section.2.6}% 
-\contentsline {chapter}{\numberline {3}Methodology}{21}{chapter.3}% 
-\contentsline {section}{\numberline {3.1}Overview of Methodology}{21}{section.3.1}% 
-\contentsline {section}{\numberline {3.2}Agile}{21}{section.3.2}% 
-\contentsline {subsection}{\numberline {3.2.1}What is Agile?}{21}{subsection.3.2.1}% 
-\contentsline {subsection}{\numberline {3.2.2}Why Kanban?}{21}{subsection.3.2.2}% 
-\contentsline {subsection}{\numberline {3.2.3}How I Applied Agile To This Project}{22}{subsection.3.2.3}% 
-\contentsline {section}{\numberline {3.3}Test Driven Development (TDD)}{23}{section.3.3}% 
-\contentsline {subsection}{\numberline {3.3.1}What Is Test Driven Development?}{23}{subsection.3.3.1}% 
-\contentsline {subsection}{\numberline {3.3.2}How I Applied Test Driven Development To This Project}{23}{subsection.3.3.2}% 
-\contentsline {section}{\numberline {3.4}Time Management}{24}{section.3.4}% 
-\contentsline {subsection}{\numberline {3.4.1}How I Handled Multiple Projects}{24}{subsection.3.4.1}% 
-\contentsline {subsection}{\numberline {3.4.2}Issues I Faced With Time Management}{24}{subsection.3.4.2}% 
-\contentsline {section}{\numberline {3.5}Version Control}{24}{section.3.5}% 
-\contentsline {chapter}{\numberline {4}Technology Review}{25}{chapter.4}% 
-\contentsline {section}{\numberline {4.1}Intro}{25}{section.4.1}% 
-\contentsline {section}{\numberline {4.2}MERN Stack}{25}{section.4.2}% 
-\contentsline {subsection}{\numberline {4.2.1}About MongoDB}{25}{subsection.4.2.1}% 
-\contentsline {subsection}{\numberline {4.2.2}About Express}{26}{subsection.4.2.2}% 
-\contentsline {subsection}{\numberline {4.2.3}About React}{27}{subsection.4.2.3}% 
-\contentsline {subsection}{\numberline {4.2.4}About Node}{27}{subsection.4.2.4}% 
-\contentsline {section}{\numberline {4.3}Testing}{28}{section.4.3}% 
-\contentsline {subsection}{\numberline {4.3.1}Selenium}{28}{subsection.4.3.1}% 
-\contentsline {section}{\numberline {4.4}React Libraries}{28}{section.4.4}% 
-\contentsline {subsection}{\numberline {4.4.1}Axios}{28}{subsection.4.4.1}% 
-\contentsline {subsection}{\numberline {4.4.2}React Helmet}{29}{subsection.4.4.2}% 
-\contentsline {subsection}{\numberline {4.4.3}Create-React-App}{29}{subsection.4.4.3}% 
-\contentsline {section}{\numberline {4.5}Third Party APIs}{29}{section.4.5}% 
-\contentsline {subsection}{\numberline {4.5.1}NodeMailer}{29}{subsection.4.5.1}% 
-\contentsline {subsection}{\numberline {4.5.2}News API}{29}{subsection.4.5.2}% 
-\contentsline {subsection}{\numberline {4.5.3}Reddit}{29}{subsection.4.5.3}% 
-\contentsline {section}{\numberline {4.6}Architecture}{30}{section.4.6}% 
-\contentsline {subsection}{\numberline {4.6.1}REST(Representational State Transfer)}{30}{subsection.4.6.1}% 
-\contentsline {section}{\numberline {4.7}Security}{30}{section.4.7}% 
-\contentsline {subsection}{\numberline {4.7.1}OpenSSL}{30}{subsection.4.7.1}% 
-\contentsline {subsection}{\numberline {4.7.2}SHA256}{31}{subsection.4.7.2}% 
-\contentsline {section}{\numberline {4.8}Database}{31}{section.4.8}% 
-\contentsline {subsection}{\numberline {4.8.1}MLAB}{31}{subsection.4.8.1}% 
-\contentsline {section}{\numberline {4.9}Languages}{32}{section.4.9}% 
-\contentsline {subsection}{\numberline {4.9.1}Javascript}{32}{subsection.4.9.1}% 
-\contentsline {subsection}{\numberline {4.9.2}HTML(Hyper-Text Markup Language)}{32}{subsection.4.9.2}% 
-\contentsline {section}{\numberline {4.10}Documentation}{33}{section.4.10}% 
-\contentsline {subsection}{\numberline {4.10.1}\LaTeX }{33}{subsection.4.10.1}% 
-\contentsline {section}{\numberline {4.11}Styles}{33}{section.4.11}% 
-\contentsline {subsection}{\numberline {4.11.1}Cascading Style Sheets(CSS)}{33}{subsection.4.11.1}% 
-\contentsline {subsection}{\numberline {4.11.2}React Bootstrap}{34}{subsection.4.11.2}% 
-\contentsline {section}{\numberline {4.12}Cloud}{34}{section.4.12}% 
-\contentsline {subsection}{\numberline {4.12.1}Google Cloud Platform}{34}{subsection.4.12.1}% 
-\contentsline {subsection}{\numberline {4.12.2}Docker}{34}{subsection.4.12.2}% 
-\contentsline {chapter}{\numberline {5}System Design}{36}{chapter.5}% 
-\contentsline {section}{\numberline {5.1}Introduction}{36}{section.5.1}% 
-\contentsline {section}{\numberline {5.2}Architecture of Project}{36}{section.5.2}% 
-\contentsline {subsection}{\numberline {5.2.1}Introduction to System}{36}{subsection.5.2.1}% 
-\contentsline {section}{\numberline {5.3}Front End Architecture}{37}{section.5.3}% 
-\contentsline {subsection}{\numberline {5.3.1}List of Components}{37}{subsection.5.3.1}% 
-\contentsline {subsubsection}{Login}{37}{subsubsection*.17}% 
-\contentsline {subsubsection}{Register}{40}{subsubsection*.19}% 
-\contentsline {subsubsection}{Forgot}{42}{subsubsection*.21}% 
-\contentsline {subsubsection}{Loans}{44}{subsubsection*.22}% 
-\contentsline {subsubsection}{Home}{51}{subsubsection*.23}% 
-\contentsline {subsubsection}{Statistics}{54}{subsubsection*.24}% 
-\contentsline {subsubsection}{Transactions}{60}{subsubsection*.25}% 
-\contentsline {subsubsection}{headlines}{61}{subsubsection*.26}% 
-\contentsline {subsubsection}{Error}{62}{subsubsection*.27}% 
-\contentsline {subsubsection}{About}{62}{subsubsection*.28}% 
-\contentsline {subsubsection}{UserInfo}{62}{subsubsection*.29}% 
-\contentsline {section}{\numberline {5.4}Designing for UX(User Experience)}{70}{section.5.4}% 
-\contentsline {subsection}{\numberline {5.4.1}Designing For End-Users As Opposed to Engineers}{70}{subsection.5.4.1}% 
-\contentsline {section}{\numberline {5.5}Backend Architecture}{70}{section.5.5}% 
-\contentsline {subsection}{\numberline {5.5.1}Mongoose}{70}{subsection.5.5.1}% 
-\contentsline {subsection}{\numberline {5.5.2}ExpressJS}{71}{subsection.5.5.2}% 
-\contentsline {subsection}{\numberline {5.5.3}NodeJS}{71}{subsection.5.5.3}% 
-\contentsline {subsection}{\numberline {5.5.4}Full Backend Code}{71}{subsection.5.5.4}% 
-\contentsline {section}{\numberline {5.6}RESTful Architecture}{80}{section.5.6}% 
-\contentsline {subsection}{\numberline {5.6.1}Client / Server Independence}{80}{subsection.5.6.1}% 
-\contentsline {subsection}{\numberline {5.6.2}Cacheable}{81}{subsection.5.6.2}% 
-\contentsline {subsection}{\numberline {5.6.3}Stateless}{81}{subsection.5.6.3}% 
-\contentsline {section}{\numberline {5.7}Database Architecture}{81}{section.5.7}% 
-\contentsline {subsection}{\numberline {5.7.1}MLAB}{81}{subsection.5.7.1}% 
-\contentsline {subsection}{\numberline {5.7.2}Schema of Database}{82}{subsection.5.7.2}% 
-\contentsline {section}{\numberline {5.8}Security}{82}{section.5.8}% 
-\contentsline {subsection}{\numberline {5.8.1}Overview of Security}{82}{subsection.5.8.1}% 
-\contentsline {chapter}{\numberline {6}System Evaluation}{83}{chapter.6}% 
-\contentsline {section}{\numberline {6.1}Robust}{83}{section.6.1}% 
-\contentsline {subsection}{\numberline {6.1.1}Error Handling}{83}{subsection.6.1.1}% 
-\contentsline {subsection}{\numberline {6.1.2}Testing}{84}{subsection.6.1.2}% 
-\contentsline {subsection}{\numberline {6.1.3}Speed}{84}{subsection.6.1.3}% 
-\contentsline {section}{\numberline {6.2}Accessibility}{84}{section.6.2}% 
-\contentsline {subsection}{\numberline {6.2.1}Minimalistic}{84}{subsection.6.2.1}% 
-\contentsline {section}{\numberline {6.3}Objectives}{84}{section.6.3}% 
-\contentsline {subsection}{\numberline {6.3.1}Safe \& Secure Banking}{84}{subsection.6.3.1}% 
-\contentsline {subsection}{\numberline {6.3.2}User Generated Statistics}{85}{subsection.6.3.2}% 
-\contentsline {subsection}{\numberline {6.3.3}Multiple Users}{85}{subsection.6.3.3}% 
-\contentsline {subsection}{\numberline {6.3.4}RestFUL Principles}{85}{subsection.6.3.4}% 
-\contentsline {subsection}{\numberline {6.3.5}Scalable}{85}{subsection.6.3.5}% 
-\contentsline {subsection}{\numberline {6.3.6}Responsive}{86}{subsection.6.3.6}% 
-\contentsline {chapter}{\numberline {7}Conclusion}{87}{chapter.7}% 
-\contentsline {section}{\numberline {7.1}What I Learned}{87}{section.7.1}% 
-\contentsline {subsection}{\numberline {7.1.1}React}{87}{subsection.7.1.1}% 
-\contentsline {subsection}{\numberline {7.1.2}NodeJS}{87}{subsection.7.1.2}% 
-\contentsline {subsection}{\numberline {7.1.3}Docker}{88}{subsection.7.1.3}% 
-\contentsline {subsection}{\numberline {7.1.4}Scope Creep}{88}{subsection.7.1.4}% 
-\contentsline {subsection}{\numberline {7.1.5}READ THE DOCS!}{88}{subsection.7.1.5}% 
-\contentsline {section}{\numberline {7.2}How TDD \& Agile Impacted Development}{89}{section.7.2}% 
-\contentsline {subsection}{\numberline {7.2.1}Positive Impacts of TDD}{89}{subsection.7.2.1}% 
-\contentsline {subsection}{\numberline {7.2.2}Positive Impacts of Agile \& Kanban}{89}{subsection.7.2.2}% 
-\contentsline {section}{\numberline {7.3}What I Would Do Differently}{90}{section.7.3}% 
-\contentsline {subsection}{\numberline {7.3.1}Planning}{90}{subsection.7.3.1}% 
-\contentsline {subsection}{\numberline {7.3.2}More Focus on AI}{90}{subsection.7.3.2}% 
-\contentsline {section}{\numberline {7.4}In Closing}{90}{section.7.4}% 
-\contentsline {chapter}{Appendices}{92}{section*.30}% 
+\contentsline {chapter}{\numberline {2}Context}{18}{chapter.2}% 
+\contentsline {section}{\numberline {2.1}Project Objectives}{18}{section.2.1}% 
+\contentsline {section}{\numberline {2.2}Online Banking}{18}{section.2.2}% 
+\contentsline {section}{\numberline {2.3}History of Online Banking}{19}{section.2.3}% 
+\contentsline {subsection}{\numberline {2.3.1}Definition of Online Banking}{19}{subsection.2.3.1}% 
+\contentsline {subsection}{\numberline {2.3.2}The Beginning}{19}{subsection.2.3.2}% 
+\contentsline {section}{\numberline {2.4}Advantages of Online Banking}{20}{section.2.4}% 
+\contentsline {subsection}{\numberline {2.4.1}Convenience}{20}{subsection.2.4.1}% 
+\contentsline {subsection}{\numberline {2.4.2}Speed}{20}{subsection.2.4.2}% 
+\contentsline {subsection}{\numberline {2.4.3}Competition}{20}{subsection.2.4.3}% 
+\contentsline {subsection}{\numberline {2.4.4}Creation of Jobs}{20}{subsection.2.4.4}% 
+\contentsline {section}{\numberline {2.5}Disadvantages of Online Banking}{21}{section.2.5}% 
+\contentsline {subsection}{\numberline {2.5.1}Security}{21}{subsection.2.5.1}% 
+\contentsline {subsection}{\numberline {2.5.2}Layoff of Bank Employees}{21}{subsection.2.5.2}% 
+\contentsline {subsection}{\numberline {2.5.3}Increased Crime}{21}{subsection.2.5.3}% 
+\contentsline {section}{\numberline {2.6}The Overall Effect of Online Banking}{21}{section.2.6}% 
+\contentsline {chapter}{\numberline {3}Methodology}{22}{chapter.3}% 
+\contentsline {section}{\numberline {3.1}Overview of Methodology}{22}{section.3.1}% 
+\contentsline {section}{\numberline {3.2}Agile}{22}{section.3.2}% 
+\contentsline {subsection}{\numberline {3.2.1}What is Agile?}{22}{subsection.3.2.1}% 
+\contentsline {subsection}{\numberline {3.2.2}Why Kanban?}{22}{subsection.3.2.2}% 
+\contentsline {subsection}{\numberline {3.2.3}How I Applied Agile To This Project}{23}{subsection.3.2.3}% 
+\contentsline {section}{\numberline {3.3}Test Driven Development (TDD)}{24}{section.3.3}% 
+\contentsline {subsection}{\numberline {3.3.1}What Is Test Driven Development?}{24}{subsection.3.3.1}% 
+\contentsline {subsection}{\numberline {3.3.2}How I Applied Test Driven Development To This Project}{24}{subsection.3.3.2}% 
+\contentsline {section}{\numberline {3.4}Time Management}{25}{section.3.4}% 
+\contentsline {subsection}{\numberline {3.4.1}How I Handled Multiple Projects}{25}{subsection.3.4.1}% 
+\contentsline {subsection}{\numberline {3.4.2}Issues I Faced With Time Management}{25}{subsection.3.4.2}% 
+\contentsline {section}{\numberline {3.5}Version Control}{25}{section.3.5}% 
+\contentsline {chapter}{\numberline {4}Technology Review}{26}{chapter.4}% 
+\contentsline {section}{\numberline {4.1}Intro}{26}{section.4.1}% 
+\contentsline {section}{\numberline {4.2}MERN Stack}{26}{section.4.2}% 
+\contentsline {subsection}{\numberline {4.2.1}About MongoDB}{26}{subsection.4.2.1}% 
+\contentsline {subsection}{\numberline {4.2.2}About Express}{27}{subsection.4.2.2}% 
+\contentsline {subsection}{\numberline {4.2.3}About React}{28}{subsection.4.2.3}% 
+\contentsline {subsection}{\numberline {4.2.4}About Node}{28}{subsection.4.2.4}% 
+\contentsline {section}{\numberline {4.3}Testing}{29}{section.4.3}% 
+\contentsline {subsection}{\numberline {4.3.1}Selenium}{29}{subsection.4.3.1}% 
+\contentsline {section}{\numberline {4.4}React Libraries}{29}{section.4.4}% 
+\contentsline {subsection}{\numberline {4.4.1}Axios}{29}{subsection.4.4.1}% 
+\contentsline {subsection}{\numberline {4.4.2}React Helmet}{30}{subsection.4.4.2}% 
+\contentsline {subsection}{\numberline {4.4.3}Create-React-App}{30}{subsection.4.4.3}% 
+\contentsline {section}{\numberline {4.5}Third Party APIs}{30}{section.4.5}% 
+\contentsline {subsection}{\numberline {4.5.1}NodeMailer}{30}{subsection.4.5.1}% 
+\contentsline {subsection}{\numberline {4.5.2}News API}{30}{subsection.4.5.2}% 
+\contentsline {subsection}{\numberline {4.5.3}Reddit}{30}{subsection.4.5.3}% 
+\contentsline {section}{\numberline {4.6}Architecture}{31}{section.4.6}% 
+\contentsline {subsection}{\numberline {4.6.1}REST(Representational State Transfer)}{31}{subsection.4.6.1}% 
+\contentsline {section}{\numberline {4.7}Security}{31}{section.4.7}% 
+\contentsline {subsection}{\numberline {4.7.1}OpenSSL}{31}{subsection.4.7.1}% 
+\contentsline {subsection}{\numberline {4.7.2}SHA256}{32}{subsection.4.7.2}% 
+\contentsline {section}{\numberline {4.8}Database}{32}{section.4.8}% 
+\contentsline {subsection}{\numberline {4.8.1}MLAB}{32}{subsection.4.8.1}% 
+\contentsline {section}{\numberline {4.9}Languages}{33}{section.4.9}% 
+\contentsline {subsection}{\numberline {4.9.1}Javascript}{33}{subsection.4.9.1}% 
+\contentsline {subsection}{\numberline {4.9.2}HTML(Hyper-Text Markup Language)}{33}{subsection.4.9.2}% 
+\contentsline {section}{\numberline {4.10}Documentation}{34}{section.4.10}% 
+\contentsline {subsection}{\numberline {4.10.1}\LaTeX }{34}{subsection.4.10.1}% 
+\contentsline {section}{\numberline {4.11}Styles}{34}{section.4.11}% 
+\contentsline {subsection}{\numberline {4.11.1}Cascading Style Sheets(CSS)}{34}{subsection.4.11.1}% 
+\contentsline {subsection}{\numberline {4.11.2}React Bootstrap}{35}{subsection.4.11.2}% 
+\contentsline {section}{\numberline {4.12}Cloud}{35}{section.4.12}% 
+\contentsline {subsection}{\numberline {4.12.1}Google Cloud Platform}{35}{subsection.4.12.1}% 
+\contentsline {subsection}{\numberline {4.12.2}Docker}{35}{subsection.4.12.2}% 
+\contentsline {chapter}{\numberline {5}System Design}{37}{chapter.5}% 
+\contentsline {section}{\numberline {5.1}Introduction}{37}{section.5.1}% 
+\contentsline {section}{\numberline {5.2}Architecture of Project}{37}{section.5.2}% 
+\contentsline {subsection}{\numberline {5.2.1}Introduction to System}{37}{subsection.5.2.1}% 
+\contentsline {section}{\numberline {5.3}Front End Architecture}{38}{section.5.3}% 
+\contentsline {subsection}{\numberline {5.3.1}List of Components}{38}{subsection.5.3.1}% 
+\contentsline {subsubsection}{Login}{38}{subsubsection*.17}% 
+\contentsline {subsubsection}{Register}{41}{subsubsection*.19}% 
+\contentsline {subsubsection}{Forgot}{43}{subsubsection*.21}% 
+\contentsline {subsubsection}{Loans}{45}{subsubsection*.22}% 
+\contentsline {subsubsection}{Home}{52}{subsubsection*.23}% 
+\contentsline {subsubsection}{Statistics}{55}{subsubsection*.24}% 
+\contentsline {subsubsection}{Transactions}{61}{subsubsection*.25}% 
+\contentsline {subsubsection}{headlines}{62}{subsubsection*.26}% 
+\contentsline {subsubsection}{Error}{63}{subsubsection*.27}% 
+\contentsline {subsubsection}{About}{63}{subsubsection*.28}% 
+\contentsline {subsubsection}{UserInfo}{63}{subsubsection*.29}% 
+\contentsline {section}{\numberline {5.4}Designing for UX(User Experience)}{71}{section.5.4}% 
+\contentsline {subsection}{\numberline {5.4.1}Designing For End-Users As Opposed to Engineers}{71}{subsection.5.4.1}% 
+\contentsline {section}{\numberline {5.5}Backend Architecture}{71}{section.5.5}% 
+\contentsline {subsection}{\numberline {5.5.1}Mongoose}{71}{subsection.5.5.1}% 
+\contentsline {subsection}{\numberline {5.5.2}ExpressJS}{72}{subsection.5.5.2}% 
+\contentsline {subsection}{\numberline {5.5.3}NodeJS}{72}{subsection.5.5.3}% 
+\contentsline {subsection}{\numberline {5.5.4}Full Backend Code}{72}{subsection.5.5.4}% 
+\contentsline {section}{\numberline {5.6}RESTful Architecture}{81}{section.5.6}% 
+\contentsline {subsection}{\numberline {5.6.1}Client / Server Independence}{81}{subsection.5.6.1}% 
+\contentsline {subsection}{\numberline {5.6.2}Cacheable}{82}{subsection.5.6.2}% 
+\contentsline {subsection}{\numberline {5.6.3}Stateless}{82}{subsection.5.6.3}% 
+\contentsline {section}{\numberline {5.7}Database Architecture}{82}{section.5.7}% 
+\contentsline {subsection}{\numberline {5.7.1}MLAB}{82}{subsection.5.7.1}% 
+\contentsline {subsection}{\numberline {5.7.2}Schema of Database}{83}{subsection.5.7.2}% 
+\contentsline {section}{\numberline {5.8}Security}{83}{section.5.8}% 
+\contentsline {subsection}{\numberline {5.8.1}Overview of Security}{83}{subsection.5.8.1}% 
+\contentsline {chapter}{\numberline {6}System Evaluation}{84}{chapter.6}% 
+\contentsline {section}{\numberline {6.1}Robust}{84}{section.6.1}% 
+\contentsline {subsection}{\numberline {6.1.1}Error Handling}{84}{subsection.6.1.1}% 
+\contentsline {subsection}{\numberline {6.1.2}Testing}{85}{subsection.6.1.2}% 
+\contentsline {subsection}{\numberline {6.1.3}Speed}{85}{subsection.6.1.3}% 
+\contentsline {section}{\numberline {6.2}Accessibility}{85}{section.6.2}% 
+\contentsline {subsection}{\numberline {6.2.1}Minimalistic}{85}{subsection.6.2.1}% 
+\contentsline {section}{\numberline {6.3}Objectives}{85}{section.6.3}% 
+\contentsline {subsection}{\numberline {6.3.1}Safe \& Secure Banking}{85}{subsection.6.3.1}% 
+\contentsline {subsection}{\numberline {6.3.2}User Generated Statistics}{86}{subsection.6.3.2}% 
+\contentsline {subsection}{\numberline {6.3.3}Multiple Users}{86}{subsection.6.3.3}% 
+\contentsline {subsection}{\numberline {6.3.4}RestFUL Principles}{86}{subsection.6.3.4}% 
+\contentsline {subsection}{\numberline {6.3.5}Scalable}{86}{subsection.6.3.5}% 
+\contentsline {subsection}{\numberline {6.3.6}Responsive}{87}{subsection.6.3.6}% 
+\contentsline {chapter}{\numberline {7}Conclusion}{88}{chapter.7}% 
+\contentsline {section}{\numberline {7.1}What I Learned}{88}{section.7.1}% 
+\contentsline {subsection}{\numberline {7.1.1}React}{88}{subsection.7.1.1}% 
+\contentsline {subsection}{\numberline {7.1.2}NodeJS}{88}{subsection.7.1.2}% 
+\contentsline {subsection}{\numberline {7.1.3}Docker}{89}{subsection.7.1.3}% 
+\contentsline {subsection}{\numberline {7.1.4}Scope Creep}{89}{subsection.7.1.4}% 
+\contentsline {subsection}{\numberline {7.1.5}READ THE DOCS!}{89}{subsection.7.1.5}% 
+\contentsline {section}{\numberline {7.2}How TDD \& Agile Impacted Development}{90}{section.7.2}% 
+\contentsline {subsection}{\numberline {7.2.1}Positive Impacts of TDD}{90}{subsection.7.2.1}% 
+\contentsline {subsection}{\numberline {7.2.2}Positive Impacts of Agile \& Kanban}{90}{subsection.7.2.2}% 
+\contentsline {section}{\numberline {7.3}What I Would Do Differently}{91}{section.7.3}% 
+\contentsline {subsection}{\numberline {7.3.1}Planning}{91}{subsection.7.3.1}% 
+\contentsline {subsection}{\numberline {7.3.2}More Focus on AI}{91}{subsection.7.3.2}% 
+\contentsline {section}{\numberline {7.4}In Closing}{91}{section.7.4}% 
+\contentsline {chapter}{Appendices}{93}{section*.30}% 
