@@ -11,15 +11,13 @@
   width: calc(40%);
   border-radius: 2px;
   height: 200%;
+  position: relative;
 }
 .About img {
   margin: 10%;
-  width: 40vw !important;
+  width: 30vw !important;
   height: 10vh;
-}
-#theBigOne{
-  float: right;
-  margin-top:3%;
+  align-self: center;
 }
 .liesWeTellCustomersBottom {
   padding: 2%;
