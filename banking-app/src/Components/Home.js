@@ -53,14 +53,15 @@ class Home extends React.Component {
         for (var i = 0; i < 3; i++) {
           //create LI element then form statment then append to LI then add to list
           var node = document.createElement("LI");
-          node.id = "headline";
-          var text = document.createTextNode(
-            "Headline: " +
-              res.data.articles[i].title +
-              "Description: " +
-              res.data.articles[i].description +
-              "Author: " +
-              res.data.articles[i].author
+          node.id = "headlines";
+          var headlineText = document.createTextNode(
+            res.data.articles[i].title + "\u000a"
+          );
+          var descriptionText = document.createTextNode(
+            "Description: " + res.data.articles[i].description
+          );
+          var authorText = document.createTextNode(
+            "Author: " + res.data.articles[i].author
           );
           var image = document.createElement("IMG");
           image.src = res.data.articles[i].urlToImage;
@@ -68,8 +69,20 @@ class Home extends React.Component {
           var link = document.createElement("A");
           link.href = res.data.articles[i].url;
           link.text = "Link to article";
-          node.append(text);
+          var br = document.createElement('BR');
+          var br2 = document.createElement("BR");
+
+          node.append(headlineText);
+          node.append(br)
+          node.appendChild(br.cloneNode())
+          node.append(descriptionText);
+          node.appendChild(br.cloneNode())
+          node.appendChild(br.cloneNode())
+          node.append(authorText);
+          node.appendChild(br.cloneNode())
+          node.appendChild(br.cloneNode())
           node.append(link);
+          node.appendChild(br.cloneNode())
           node.append(image);
           document.getElementById("homeFinance").appendChild(node);
         }
@@ -89,7 +102,11 @@ class Home extends React.Component {
         "The amount / account ID cannot be null, want to donate it to us? >;D"
       );
     }
-    if(parseInt(this.state.amount ) <= parseInt(sessionStorage.getItem("balance")) && parseInt(this.state.amount) > 0){
+    if (
+      parseInt(this.state.amount) <=
+        parseInt(sessionStorage.getItem("balance")) &&
+      parseInt(this.state.amount) > 0
+    ) {
       var date = new Date();
       //payer logic
       const newTransaction = {
@@ -167,7 +184,8 @@ class Home extends React.Component {
               newBalance
             )
             .then(res => {
-              document.getElementById("balance").innerHTML ="Your balance: €" + sessionStorage.getItem("balance");
+              document.getElementById("balance").innerHTML =
+                "Your balance: €" + sessionStorage.getItem("balance");
               alert(
                 "Money Sent to: " +
                   this.state.accountId +
@@ -179,9 +197,8 @@ class Home extends React.Component {
             });
         })
         .catch(error => {});
-    }
-    else{
-      alert("Transaction failed")
+    } else {
+      alert("Transaction failed");
     }
     e.preventDefault();
   };
@@ -198,17 +215,15 @@ class Home extends React.Component {
             {sessionStorage.getItem("username")}!
           </Card.Header>
           <Card.Body>
-            <Card.Text id = "balance">
-              Your balance:
-            </Card.Text>
+            <Card.Text id="balance">Your balance:</Card.Text>
           </Card.Body>
         </Card>
         <Card>
           <Card.Header>Send money</Card.Header>
           <Card.Body>
             <Card.Text>
-                Send money to another account by simply entering the amount to
-                send and the account number
+              Send money to another account by simply entering the amount to
+              send and the account number
             </Card.Text>
             <form className="send" onSubmit={this.handleSubmitForm}>
               Amount to send:

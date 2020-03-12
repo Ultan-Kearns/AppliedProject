@@ -16,16 +16,17 @@ class Headlines extends React.Component {
       )
       .then(res => {
         for (var i = 0; i < res.data.articles.length; i++) {
-          //create LI element then form news article then append to LI then add to list
+          //create LI element then form statment then append to LI then add to list
           var node = document.createElement("LI");
-          node.id = "headline";
-          var text = document.createTextNode(
-            "Headline: " +
-              res.data.articles[i].title +
-              "Description: " +
-              res.data.articles[i].description +
-              "Author: " +
-              res.data.articles[i].author
+          node.id = "headlines";
+          var headlineText = document.createTextNode(
+            res.data.articles[i].title
+          );
+          var descriptionText = document.createTextNode(
+            "Description: " + res.data.articles[i].description
+          );
+          var authorText = document.createTextNode(
+            "Author: " + res.data.articles[i].author
           );
           var image = document.createElement("IMG");
           image.src = res.data.articles[i].urlToImage;
@@ -33,8 +34,18 @@ class Headlines extends React.Component {
           var link = document.createElement("A");
           link.href = res.data.articles[i].url;
           link.text = "Link to article";
-          node.append(text);
+          var br = document.createElement('BR');
+          node.append(headlineText);
+          node.append(br)
+          node.appendChild(br.cloneNode())
+          node.append(descriptionText);
+          node.appendChild(br.cloneNode())
+          node.appendChild(br.cloneNode())
+          node.append(authorText);
+          node.appendChild(br.cloneNode())
+          node.appendChild(br.cloneNode())
           node.append(link);
+          node.appendChild(br.cloneNode())
           node.append(image);
           document.getElementById("financial").appendChild(node);
         }
@@ -62,8 +73,12 @@ class Headlines extends React.Component {
           image.alt = "Picture not available";
           image.height = res.data.data.children[i].data.thumbnail_height;
           image.width = res.data.data.children[i].data.thumbnail_width;
+          var br = document.createElement('BR');
           node.append(text);
+          node.append(br);
+          node.append(br.cloneNode())
           node.append(link);
+          node.append(br.cloneNode())
           node.append(image);
           document.getElementById("reddit").appendChild(node);
         }
