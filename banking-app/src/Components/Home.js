@@ -69,20 +69,18 @@ class Home extends React.Component {
           var link = document.createElement("A");
           link.href = res.data.articles[i].url;
           link.text = "Link to article";
-          var br = document.createElement('BR');
-          var br2 = document.createElement("BR");
-
+          var br = document.createElement("BR");
           node.append(headlineText);
-          node.append(br)
-          node.appendChild(br.cloneNode())
+          node.append(br);
+          node.appendChild(br.cloneNode());
           node.append(descriptionText);
-          node.appendChild(br.cloneNode())
-          node.appendChild(br.cloneNode())
+          node.appendChild(br.cloneNode());
+          node.appendChild(br.cloneNode());
           node.append(authorText);
-          node.appendChild(br.cloneNode())
-          node.appendChild(br.cloneNode())
+          node.appendChild(br.cloneNode());
+          node.appendChild(br.cloneNode());
           node.append(link);
-          node.appendChild(br.cloneNode())
+          node.appendChild(br.cloneNode());
           node.append(image);
           document.getElementById("homeFinance").appendChild(node);
         }
@@ -92,6 +90,7 @@ class Home extends React.Component {
   }
 
   handleSubmitForm = e => {
+    alert("IN FUNCTION");
     if (this.state.accountId === sessionStorage.getItem("email")) {
       alert("Cannot send money to yourself ( ;-( )");
       e.preventDefault();
@@ -107,6 +106,7 @@ class Home extends React.Component {
         parseInt(sessionStorage.getItem("balance")) &&
       parseInt(this.state.amount) > 0
     ) {
+      alert("VALID BAL");
       var date = new Date();
       //payer logic
       const newTransaction = {
@@ -121,7 +121,11 @@ class Home extends React.Component {
         .post("https://localhost:8080/api/transactions", newTransaction)
         .then(res => {
           console.log(res);
+        })
+        .catch(error => {
+          alert("ERROR");
         });
+
       //update bal
       const newBalance = {
         balance:
@@ -136,6 +140,7 @@ class Home extends React.Component {
           newBalance
         )
         .then(res => {
+          alert("UPDATING BAL");
           axios
             .get(
               "https://localhost:8080/api/users/" +
@@ -147,6 +152,9 @@ class Home extends React.Component {
             .catch(error => {
               alert("Could not send money");
             });
+        })
+        .catch(error => {
+          alert("ERROR");
         });
 
       //payee logic
@@ -163,10 +171,17 @@ class Home extends React.Component {
         .post("https://localhost:8080/api/transactions", payeeTransaction)
         .then(res => {
           console.log(res);
+        })
+        .catch(error => {
+          alert("ERROR");
         });
+
       axios
         .get("https://localhost:8080/api/users/" + this.state.accountId)
         .then(res => {
+          //this works
+          alert("UPDATING PAYEE BAL");
+
           this.setState({
             payeeBalance:
               parseInt(res.data.balance) + parseInt(this.state.amount)
@@ -184,6 +199,8 @@ class Home extends React.Component {
               newBalance
             )
             .then(res => {
+              //not doing this after 3 attemps
+              alert("IN BALs");
               document.getElementById("balance").innerHTML =
                 "Your balance: €" + sessionStorage.getItem("balance");
               alert(
@@ -196,7 +213,10 @@ class Home extends React.Component {
               );
             });
         })
-        .catch(error => {});
+
+        .catch(error => {
+          alert("ERROR " + error);
+        });
     } else {
       alert("Transaction failed");
     }

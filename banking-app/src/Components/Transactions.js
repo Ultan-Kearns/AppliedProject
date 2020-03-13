@@ -1,8 +1,8 @@
 import React from "react";
 import "axios";
 import { Helmet } from "react-helmet";
-import "react-bootstrap/Button"
-import '../Styles/TransactionStyle.css'
+import "react-bootstrap/Button";
+import "../Styles/TransactionStyle.css";
 import Card from "react-bootstrap/Card";
 
 class Transactions extends React.Component {
@@ -35,24 +35,39 @@ class Transactions extends React.Component {
           });
           //create LI element then form statment then append to LI then add to list
           var node = document.createElement("p");
-          var text = document.createTextNode(
-            "Location: " +
-              this.state.location +
-              ", Cost: €" +
-              this.state.cost +
-              ", Name: " +
-              this.state.name +
-              ", Date: " +
-              this.state.date
+          var br = document.createElement("BR");
+          var locationText = document.createTextNode(
+            "Location: " + this.state.location
           );
-          node.id = "transaction"
-          node.append(text);
+          var costText = document.createTextNode("Cost: €" + this.state.cost);
+          var nameText = document.createTextNode("Name: " + this.state.name);
+          var dateText = document.createTextNode("Date: " + this.state.date);
+          if(i % 2 === 0){
+          node.id = "transactionEven";
+        }
+        else{
+          node.id = "transactionOdd"
+        }
+          node.append(locationText);
+          node.append(br);
+          node.append(br.cloneNode());
+
+          node.append(costText);
+          node.append(br.cloneNode());
+          node.append(br.cloneNode());
+
+          node.append(nameText);
+          node.append(br.cloneNode());
+          node.append(br.cloneNode());
+
+          node.append(dateText);
+
           document.getElementById("transactions").appendChild(node);
         }
-      }).catch(error =>{
-        alert("Can't get transactions issue connecting to server")
+      })
+      .catch(error => {
+        alert("Can't get transactions issue connecting to server");
       });
-
   }
 
   render() {
@@ -64,9 +79,7 @@ class Transactions extends React.Component {
         </Helmet>
         <h1>Your transactions</h1>
         <Card>
-          <Card.Header>
-            List of Transactions
-          </Card.Header>
+          <Card.Header>List of Transactions</Card.Header>
           <Card.Body>
             <Card.Text id="transactions" />
           </Card.Body>

@@ -1,5 +1,5 @@
 
-#reddit_headlines img {
+.headlines img {
   max-height: 150px !important;
   max-width: 150px !important;
   min-width: 50px;
@@ -7,10 +7,33 @@
   margin-top: 10%;
 }
 
-#financial img {
+.reddit_headlines img {
   max-height: 150px !important;
   max-width: 150px !important;
   min-width: 50px;
   min-height: 50px;
   margin-top: 10%;
+}
+.headlines{
+  border: 4px solid black;
+  border-radius: 2%;
+  margin-top: 10%;
+}
+#headlinesOdd{
+  background-color: #e6ffff
+}
+#headlinesEven{
+     background-color: #ffffcc
+}
+.reddit_headlines{
+  border: 4px solid black;
+  border-radius: 2%;
+  margin-top: 10%;
+
+}
+#reddit_headlinesOdd{
+  background-color: #e6ffff
+}
+#reddit_headlinesEven{
+     background-color: #ffffcc
 }

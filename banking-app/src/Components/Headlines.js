@@ -18,7 +18,6 @@ class Headlines extends React.Component {
         for (var i = 0; i < res.data.articles.length; i++) {
           //create LI element then form statment then append to LI then add to list
           var node = document.createElement("LI");
-          node.id = "headlines";
           var headlineText = document.createTextNode(
             res.data.articles[i].title
           );
@@ -28,6 +27,13 @@ class Headlines extends React.Component {
           var authorText = document.createTextNode(
             "Author: " + res.data.articles[i].author
           );
+          if(i % 2 === 0){
+                      node.id = "headlinesEven";
+          }
+          else{
+            node.id = "headlinesOdd"
+          }
+          node.className = "headlines"
           var image = document.createElement("IMG");
           image.src = res.data.articles[i].urlToImage;
           image.alt = "Picture not available";
@@ -58,13 +64,21 @@ class Headlines extends React.Component {
       .then(res => {
         for (var i = 0; i < res.data.data.children.length; i++) {
           var node = document.createElement("LI");
-          node.id = "reddit_headlines";
           var text = document.createTextNode(
             "Headline: " +
               res.data.data.children[i].data.title +
               " " +
               res.data.data.children[i].data.selftext
           );
+          if(i % 2 === 0){
+            node.id = "reddit_headlinesEven";
+
+          }
+          else{
+            node.id = "reddit_headlinesOdd";
+
+          }
+          node.className = "reddit_headlines";
           var link = document.createElement("A");
           link.href = res.data.data.children[i].data.url;
           link.text = "Link to article";

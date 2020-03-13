@@ -3,13 +3,22 @@
   margin-top: 10%;
   color:white;
 }
-#transaction{
+#transactionEven{
   color:black;
-  animation: slide 1.4s;
+  animation: slideLeft 2.2s;
   border: 4px solid black;
   font-family: sans-serif;
+  border-radius: 2%;
+  background-color: #ffffcc
+}
+#transactionOdd{
+  color:black;
+  animation: slideRight 2.2s;
+  border: 4px solid black;
+  font-family: sans-serif;
+  border-radius: 2%;
+  background-color: #e6ffff
 }
 #transaction:hover{
-  color: white;
-  background-color: #555
+
 }
