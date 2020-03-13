@@ -91,7 +91,6 @@ class Home extends React.Component {
   }
 
   handleSubmitForm = e => {
-    alert("IN FUNCTION");
     if (this.state.accountId === sessionStorage.getItem("email")) {
       alert("Cannot send money to yourself ( ;-( )");
       e.preventDefault();
@@ -107,7 +106,6 @@ class Home extends React.Component {
         parseInt(sessionStorage.getItem("balance")) &&
       parseInt(this.state.amount) > 0
     ) {
-      alert("VALID BAL");
       var date = new Date();
       //update bal
       const newBalance = {
@@ -115,28 +113,18 @@ class Home extends React.Component {
           parseInt(sessionStorage.getItem("balance")) -
           parseInt(this.state.amount)
       };
+      sessionStorage.setItem("balance", newBalance.balance);
+
       axios
         .post(
           "https://localhost:8080/api/users/" +
             sessionStorage.getItem("email") +
             "/balance",
           newBalance
-        )
-        .then(res => {
-          alert("UPDATING Payer BAL");
-          axios
-            .get(
-              "https://localhost:8080/api/users/" +
-                sessionStorage.getItem("email")
-            )
-            .then(res => {
-              alert("CHANGING BALANCE")
-              sessionStorage.setItem("balance", res.data.balance);
-            })
-            .catch(error => {
+        )    .catch(error => {
               alert("Could not send money");
             });
-        })
+
       //payer logic
       const newTransaction = {
         email: sessionStorage.getItem("email"),
@@ -154,8 +142,6 @@ class Home extends React.Component {
         .catch(error => {
           alert("ERROR");
         });
- 
-
       //payee logic
       const payeeTransaction = {
         email: this.state.accountId,
@@ -171,16 +157,19 @@ class Home extends React.Component {
         .then(res => {
           console.log(res);
         })
+        .catch(error => {
+          alert("ERROR");
+        });
       axios
         .get("https://localhost:8080/api/users/" + this.state.accountId)
         .then(res => {
-          //this works
-          alert("UPDATING PAYEE BAL");
-
           this.setState({
             payeeBalance:
               parseInt(res.data.balance) + parseInt(this.state.amount)
           });
+        })
+        .catch(error => {
+          alert("ERROR");
         })
         .then(res => {
           const newBalance = {
@@ -195,7 +184,6 @@ class Home extends React.Component {
             )
             .then(res => {
               //not doing this after 3 attemps
-              alert("IN BALs");
               document.getElementById("balance").innerHTML =
                 "Your balance: €" + sessionStorage.getItem("balance");
               alert(
@@ -207,6 +195,9 @@ class Home extends React.Component {
                   sessionStorage.getItem("balance")
               );
             })
+            .catch(error => {
+              alert("ERROR");
+            });
         })
         .catch(error => {
           alert("ERROR " + error);
