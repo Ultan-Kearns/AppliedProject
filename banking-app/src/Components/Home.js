@@ -70,6 +70,7 @@ class Home extends React.Component {
           link.href = res.data.articles[i].url;
           link.text = "Link to article";
           var br = document.createElement("BR");
+          node.className = "headlines";
           node.append(headlineText);
           node.append(br);
           node.appendChild(br.cloneNode());
@@ -108,6 +109,34 @@ class Home extends React.Component {
     ) {
       alert("VALID BAL");
       var date = new Date();
+      //update bal
+      const newBalance = {
+        balance:
+          parseInt(sessionStorage.getItem("balance")) -
+          parseInt(this.state.amount)
+      };
+      axios
+        .post(
+          "https://localhost:8080/api/users/" +
+            sessionStorage.getItem("email") +
+            "/balance",
+          newBalance
+        )
+        .then(res => {
+          alert("UPDATING Payer BAL");
+          axios
+            .get(
+              "https://localhost:8080/api/users/" +
+                sessionStorage.getItem("email")
+            )
+            .then(res => {
+              alert("CHANGING BALANCE")
+              sessionStorage.setItem("balance", res.data.balance);
+            })
+            .catch(error => {
+              alert("Could not send money");
+            });
+        })
       //payer logic
       const newTransaction = {
         email: sessionStorage.getItem("email"),
@@ -125,37 +154,7 @@ class Home extends React.Component {
         .catch(error => {
           alert("ERROR");
         });
-
-      //update bal
-      const newBalance = {
-        balance:
-          parseInt(sessionStorage.getItem("balance")) -
-          parseInt(this.state.amount)
-      };
-      axios
-        .post(
-          "https://localhost:8080/api/users/" +
-            sessionStorage.getItem("email") +
-            "/balance",
-          newBalance
-        )
-        .then(res => {
-          alert("UPDATING BAL");
-          axios
-            .get(
-              "https://localhost:8080/api/users/" +
-                sessionStorage.getItem("email")
-            )
-            .then(res => {
-              sessionStorage.setItem("balance", res.data.balance);
-            })
-            .catch(error => {
-              alert("Could not send money");
-            });
-        })
-        .catch(error => {
-          alert("ERROR");
-        });
+ 
 
       //payee logic
       const payeeTransaction = {
@@ -172,10 +171,6 @@ class Home extends React.Component {
         .then(res => {
           console.log(res);
         })
-        .catch(error => {
-          alert("ERROR");
-        });
-
       axios
         .get("https://localhost:8080/api/users/" + this.state.accountId)
         .then(res => {
@@ -211,9 +206,8 @@ class Home extends React.Component {
                   " New Balance: " +
                   sessionStorage.getItem("balance")
               );
-            });
+            })
         })
-
         .catch(error => {
           alert("ERROR " + error);
         });

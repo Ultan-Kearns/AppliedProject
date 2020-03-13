@@ -72,8 +72,11 @@ class Login extends React.Component {
         else if(res.data === "null"){
           alert("Wrong username or password")
         }
+        else if(res.data == null){
+          alert("Error logging in, check internet connection?")
+        }
       }).catch(error =>{
-        alert("Error logging in, check internet connection?")
+        alert("Unexpected error: " + error)
       });
 
       console.log("Clicked")

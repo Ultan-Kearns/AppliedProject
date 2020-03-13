@@ -206,13 +206,13 @@ class UserInfo extends React.Component {
                   } else {
                     document.getElementById("basic").innerHTML =
                       "Name: " +
-                      this.state.name +
+                      this.state.name + "<br/>" + "<br/>" +
                       " Number: " +
-                      this.state.number +
+                      this.state.number + "<br/>" + "<br/>" +
                       " Date of Birth: " +
-                      this.state.dob +
+                      this.state.dob + "<br/>" + "<br/>" +
                       " Username: " +
-                      this.state.newUsername +
+                      this.state.newUsername + "<br/>" + "<br/>" +
                       " Balance: €" +
                       this.state.balance;
                     updates++;
@@ -265,13 +265,13 @@ class UserInfo extends React.Component {
         password = res.data.password;
         document.getElementById("basic").innerHTML =
           "Name: " +
-          res.data.name +
+          res.data.name + "<br/>" + "<br/>"+
           " Number: " +
-          res.data.number +
+          res.data.number + "<br/>" + "<br/>" +
           " Date of Birth: " +
-          res.data.dob +
+          res.data.dob + "<br/>" + "<br/>" +
           " Username: " +
-          res.data._id +
+          res.data._id + "<br/>" + "<br/>" +
           " Balance: €" +
           res.data.balance;
       })

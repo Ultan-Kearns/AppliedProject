@@ -85,8 +85,6 @@ class Statistics extends React.Component {
           d = d.split(" ")[0];
           var node = document.createElement("LI");
           node.id = "stockresults";
-          var br = document.createElement("BR");
-
           var openText = document.createTextNode(
             "Open: " +
               res.data["Time Series (Daily)"][d]["1. open"]
