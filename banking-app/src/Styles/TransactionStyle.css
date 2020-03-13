@@ -9,7 +9,7 @@
   border: 4px solid black;
   font-family: sans-serif;
   border-radius: 2%;
-  background-color: #ffffcc
+  background-color: #ffffcc;
 }
 #transactionOdd{
   color:black;
@@ -17,7 +17,7 @@
   border: 4px solid black;
   font-family: sans-serif;
   border-radius: 2%;
-  background-color: #e6ffff
+  background-color: #e6ffff;
 }
 #transaction:hover{
 

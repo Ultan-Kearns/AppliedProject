@@ -64,11 +64,10 @@ class Loans extends React.Component {
             //for repaying loans
             var loanId = this.state._id;
             var loanCost = this.state.amount;
-            node.id = "loan";
             var buttonNode = document.createElement("Button");
             buttonNode.textContent = "Pay Back";
             buttonNode.id = "payButton";
-            node.id = "loan";
+            node.id = "loanEven";
             node.append(text);
             node.append(buttonNode);
             document.getElementById("loans").appendChild(node);
@@ -135,9 +134,15 @@ class Loans extends React.Component {
               sessionStorage.getItem("balance") - parseInt(this.state.amount)
             )
           };
-
+          if(i % 2 === 0){
+            node.id = "loanEven";
+          }
+          else{
+            node.id = "loanOdd";
+          }
+          node.className = "loan"
           if (i > 0) {
-            node.id = "loan";
+
             node.append(text);
             document.getElementById("loans").appendChild(node);
           }

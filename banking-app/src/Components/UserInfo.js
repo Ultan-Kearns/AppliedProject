@@ -13,9 +13,9 @@ import Card from "react-bootstrap/Card";
 const axios = require("axios").default;
 const sha256 = require("js-sha256");
 var password = "";
-var updates = 0
+var updates = 0;
 //issues when updating 3 times so limiting users updates
-sessionStorage.setItem("updates",updates);
+sessionStorage.setItem("updates", updates);
 class UserInfo extends React.Component {
   constructor(props) {
     super(props);
@@ -95,9 +95,9 @@ class UserInfo extends React.Component {
     sessionStorage.setItem("dob", this.state.dob);
     sessionStorage.setItem("balance", this.state.balance);
     this.setState({
-          balance: sessionStorage.getItem("balance"),
-          dob: sessionStorage.getItem("dob"),
-    })
+      balance: sessionStorage.getItem("balance"),
+      dob: sessionStorage.getItem("dob")
+    });
     const newUser = {
       _id: this.state.newUsername.toLowerCase(),
       password: this.state.password,
@@ -201,15 +201,23 @@ class UserInfo extends React.Component {
                   });
                 })
                 .then(res => {
-                  if(parseInt(sessionStorage.getItem("updates")) === 2){
-                    alert("You cannot update so much")
-
+                  if (parseInt(sessionStorage.getItem("updates")) === 2) {
+                    alert("You cannot update so much");
+                  } else {
+                    document.getElementById("basic").innerHTML =
+                      "Name: " +
+                      this.state.name +
+                      " Number: " +
+                      this.state.number +
+                      " Date of Birth: " +
+                      this.state.dob +
+                      " Username: " +
+                      this.state.newUsername +
+                      " Balance: €" +
+                      this.state.balance;
+                    updates++;
+                    sessionStorage.setItem("updates", updates);
                   }
-                  else{
-                    document.getElementById("basic").innerHTML =  "Name: " + this.state.name +   " Number: " + this.state.number + " Date of Birth: " + this.state.dob  + " Username: " +  this.state.newUsername + " Balance: €" + this.state.balance
-                  updates++;
-                  sessionStorage.setItem("updates",updates)
-                }
                 })
                 .catch(error => {
                   console.log("Error with loans");
@@ -238,24 +246,34 @@ class UserInfo extends React.Component {
     axios
       .get("https://localhost:8080/api/users/" + this.state.username)
       .then(res => {
-          //In case user leaves any information blank just submit their current info
-          this.setState({
-            prevName: res.data.name
-          })
-          this.setState({
-            prevNumber: res.data.number
-          })
-          this.setState({
-            prevPassword: res.data.password
-          })
-          this.setState({
-            dob: res.data.dob
-          })
-          this.setState({
-            balance: res.data.balance
-          })
+        //In case user leaves any information blank just submit their current info
+        this.setState({
+          prevName: res.data.name
+        });
+        this.setState({
+          prevNumber: res.data.number
+        });
+        this.setState({
+          prevPassword: res.data.password
+        });
+        this.setState({
+          dob: res.data.dob
+        });
+        this.setState({
+          balance: res.data.balance
+        });
         password = res.data.password;
-        document.getElementById("basic").innerHTML =  "Name: " + res.data.name +   " Number: " + res.data.number + " Date of Birth: " + res.data.dob  + " Username: " +  res.data._id + " Balance: €" + res.data.balance
+        document.getElementById("basic").innerHTML =
+          "Name: " +
+          res.data.name +
+          " Number: " +
+          res.data.number +
+          " Date of Birth: " +
+          res.data.dob +
+          " Username: " +
+          res.data._id +
+          " Balance: €" +
+          res.data.balance;
       })
       .catch(error => {
         alert("Can't communicate with server");
@@ -384,7 +402,9 @@ class UserInfo extends React.Component {
             Call Kenny Loggins You're in the DANGER ZONE!
           </Card.Header>
           <Card.Body>
-            Click here to delete account
+            Click here to delete account, please don't leave us >:'(
+            <br/>
+            <br/>
             <Button onClick={this.deleteUser} variant="danger">
               Delete Account
             </Button>

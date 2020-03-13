@@ -12,7 +12,14 @@
   margin-left: 20%;
   font-weight: bold;
 }
-#loan:hover{
-  background-color: black;
-  color: white;
+.loan{
+  border: 2px solid black;
+  margin-top:10%;
+  border-radius: 2%;
+}
+#loanEven{
+    background-color: #ffffcc;
+}
+#loanOdd{
+  background-color: #e6ffff;
 }

@@ -45,9 +45,7 @@ a{
   position: relative;
   margin-top: 20vh;
 }
-h1{
-  padding-top: 4%;
-}
+ 
 @keyframes fade {
  from {opacity: 0.3}
  to {opacity: 1}

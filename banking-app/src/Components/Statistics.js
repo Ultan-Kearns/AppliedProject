@@ -85,20 +85,35 @@ class Statistics extends React.Component {
           d = d.split(" ")[0];
           var node = document.createElement("LI");
           node.id = "stockresults";
+          var br = document.createElement("BR");
 
-          var text = document.createTextNode(
-            "Stats for today: Open: " +
-              res.data["Time Series (Daily)"][d]["1. open"] +
-              " High: " +
-              res.data["Time Series (Daily)"][d]["2. high"] +
-              " Low: " +
-              res.data["Time Series (Daily)"][d]["3. low"] +
-              " Close: " +
-              res.data["Time Series (Daily)"][d]["4. close"] +
-              " Volume: " +
-              res.data["Time Series (Daily)"][d]["5. volume"]
+          var openText = document.createTextNode(
+            "Open: " +
+              res.data["Time Series (Daily)"][d]["1. open"]
           );
-          node.append(text);
+          var highText = document.createTextNode(
+            " High: " + res.data["Time Series (Daily)"][d]["2. high"]
+          );
+          var lowText = document.createTextNode(
+            " Low: " + res.data["Time Series (Daily)"][d]["3. low"]
+          );
+          var closeText = document.createTextNode(
+            " Close: " + res.data["Time Series (Daily)"][d]["4. close"]
+          );
+          var volumeText = document.createTextNode(
+            " Volume: " + res.data["Time Series (Daily)"][d]["5. volume"]
+          );
+          var br = document.createElement("BR");
+          node.append(br);
+          node.append(openText);
+          node.append(br.cloneNode());
+          node.append(highText);
+          node.append(br.cloneNode());
+          node.append(lowText);
+          node.append(br.cloneNode());
+          node.append(closeText);
+          node.append(br.cloneNode());
+          node.append(volumeText);
           document.getElementById("stock").appendChild(node);
         })
         .catch(error => {
@@ -118,8 +133,11 @@ class Statistics extends React.Component {
           document.getElementById("eurbtc").appendChild(btcNode);
         })
         .catch(function(error) {
-          alert("Issue retrieving data most likely you have probably maxed out API calls" + error)
-         });
+          alert(
+            "Issue retrieving data most likely you have probably maxed out API calls" +
+              error
+          );
+        });
       axios
         .get(
           "https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=EUR&to_currency=GBP&apikey=G38RVCM1OWLSKALP"
@@ -133,9 +151,7 @@ class Statistics extends React.Component {
           sterlingNode.append(eur_to_sterling);
           document.getElementById("eursterling").appendChild(sterlingNode);
         })
-        .catch(function(error) {
-
-        });
+        .catch(function(error) {});
       axios
         .get(
           "https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=EUR&to_currency=USD&apikey=G38RVCM1OWLSKALP"
@@ -149,9 +165,7 @@ class Statistics extends React.Component {
           dollarNode.append(eur_to_dollar);
           document.getElementById("eurdollar").appendChild(dollarNode);
         })
-        .catch(function(error) {
-
-        });
+        .catch(function(error) {});
       axios
         .get(
           "https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=EUR&to_currency=CNY&apikey=G38RVCM1OWLSKALP"
@@ -165,9 +179,7 @@ class Statistics extends React.Component {
           cnyNode.append(eur_to_cny);
           document.getElementById("eurcny").appendChild(cnyNode);
         })
-        .catch(error => {
-
-        });
+        .catch(error => {});
     } catch (error) {
       alert("MAX API CALLS FOR FINANCIAL DATA REACHED");
     }
