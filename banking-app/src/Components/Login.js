@@ -9,7 +9,7 @@ import Home from "./Home";
 import Register from "./Register";
 import Forgot from "./Forgot";
 import "axios";
-import 'js-sha256'
+import "js-sha256";
 
 class Login extends React.Component {
   //username test
@@ -46,14 +46,14 @@ class Login extends React.Component {
     //if(sessionStorage.getItem("username") !=="null" && sessionStorage.getItem("username") !== null){
     //ReactDOM.render(<App />, document.getElementById("root"));
     //this stops context menu being used in app reference: https://www.w3schools.com/jsref/event_oncontextmenu.asp
-    document.addEventListener('contextmenu', function(e) {
-    e.preventDefault();
-  });
-}
+    document.addEventListener("contextmenu", function(e) {
+      e.preventDefault();
+    });
+  }
   handleSubmitForm = event => {
     const axios = require("axios").default;
-    const sha256 = require('js-sha256');
-     axios
+    const sha256 = require("js-sha256");
+    axios
       .get(
         "https://localhost:8080/api/users/" +
           this.state.username.toLowerCase() +
@@ -61,25 +61,20 @@ class Login extends React.Component {
           sha256(this.state.password)
       )
       .then(function(res) {
-        console.log("TEST LOGIN " + res.data);
-        //need to fix this so it shows error message
-         if (res.data !== "null") {
+        if (res.data !== "null") {
           //store the username this will help the bank feel more personal
           sessionStorage.setItem("username", res.data.name);
           sessionStorage.setItem("email", res.data._id);
           ReactDOM.render(<Home />, document.getElementById("root"));
+        } else if (res.data === "null") {
+          alert("Wrong username or password");
+        } else if (res.data == null) {
+          alert("Error logging in");
         }
-        else if(res.data === "null"){
-          alert("Wrong username or password")
-        }
-        else if(res.data == null){
-          alert("Error logging in, check internet connection?")
-        }
-      }).catch(error =>{
-        alert("Unexpected error: " + error)
+      })
+      .catch(error => {
+        alert("Unexpected error: " + error);
       });
-
-      console.log("Clicked")
     event.preventDefault();
   };
   render() {

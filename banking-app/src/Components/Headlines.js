@@ -22,36 +22,44 @@ class Headlines extends React.Component {
             res.data.articles[i].title
           );
           var descriptionText = document.createTextNode(
-            "Description: " + res.data.articles[i].description
+            res.data.articles[i].description
           );
           var authorText = document.createTextNode(
             "Author: " + res.data.articles[i].author
           );
-          if(i % 2 === 0){
-                      node.id = "headlinesEven";
+          //check if desc or author === null
+          if (descriptionText.textContent === "null") {
+            descriptionText = document.createTextNode(
+              "No description could be find for this story"
+            );
           }
-          else{
-            node.id = "headlinesOdd"
+          if (authorText.textContent === "Author: null") {
+            authorText = document.createTextNode("Author: Unknown");
           }
-          node.className = "headlines"
+          if (i % 2 === 0) {
+            node.id = "headlinesEven";
+          } else {
+            node.id = "headlinesOdd";
+          }
+          node.className = "headlines";
           var image = document.createElement("IMG");
           image.src = res.data.articles[i].urlToImage;
           image.alt = "Picture not available";
           var link = document.createElement("A");
           link.href = res.data.articles[i].url;
           link.text = "Link to article";
-          var br = document.createElement('BR');
+          var br = document.createElement("BR");
           node.append(headlineText);
-          node.append(br)
-          node.appendChild(br.cloneNode())
+          node.append(br);
+          node.appendChild(br.cloneNode());
           node.append(descriptionText);
-          node.appendChild(br.cloneNode())
-          node.appendChild(br.cloneNode())
+          node.appendChild(br.cloneNode());
+          node.appendChild(br.cloneNode());
           node.append(authorText);
-          node.appendChild(br.cloneNode())
-          node.appendChild(br.cloneNode())
+          node.appendChild(br.cloneNode());
+          node.appendChild(br.cloneNode());
           node.append(link);
-          node.appendChild(br.cloneNode())
+          node.appendChild(br.cloneNode());
           node.append(image);
           document.getElementById("financial").appendChild(node);
         }
@@ -65,20 +73,17 @@ class Headlines extends React.Component {
         for (var i = 0; i < res.data.data.children.length; i++) {
           var node = document.createElement("LI");
           var text = document.createTextNode(
-            "Headline: " +
-              res.data.data.children[i].data.title +
+            res.data.data.children[i].data.title +
               " " +
               res.data.data.children[i].data.selftext
           );
-          if(i % 2 === 0){
+
+          if (i % 2 === 0) {
             node.id = "reddit_headlinesEven";
-
-          }
-          else{
+          } else {
             node.id = "reddit_headlinesOdd";
-
           }
-          node.className = "reddit_headlines";
+          node.className = "headlines";
           var link = document.createElement("A");
           link.href = res.data.data.children[i].data.url;
           link.text = "Link to article";
@@ -87,12 +92,12 @@ class Headlines extends React.Component {
           image.alt = "Picture not available";
           image.height = res.data.data.children[i].data.thumbnail_height;
           image.width = res.data.data.children[i].data.thumbnail_width;
-          var br = document.createElement('BR');
+          var br = document.createElement("BR");
           node.append(text);
           node.append(br);
-          node.append(br.cloneNode())
+          node.append(br.cloneNode());
           node.append(link);
-          node.append(br.cloneNode())
+          node.append(br.cloneNode());
           node.append(image);
           document.getElementById("reddit").appendChild(node);
         }
