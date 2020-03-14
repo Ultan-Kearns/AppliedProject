@@ -1,14 +1,15 @@
 import React from "react";
 import { Helmet } from "react-helmet";
-import App from "../App";
 import ReactDOM from "react-dom";
 import "../Styles/HomeStyle.css";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
+import { getHeadlines } from "../Services/HeadlineHelpers.js";
 
 const axios = require("axios").default;
 
 class Home extends React.Component {
+
   constructor(props) {
     super();
     this.state = {
@@ -27,6 +28,7 @@ class Home extends React.Component {
       accountId: event.target.value
     });
   };
+
   componentDidMount() {
     axios
       .get(
@@ -40,54 +42,7 @@ class Home extends React.Component {
         document.getElementById("balance").append(text);
       })
       .catch(error => {});
-    /*
-    Pulling data from newsapi.org
-    then render App page
-    use function helper same in headlines
-    */
-    axios
-      .get(
-        "https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=e9cdf3a801374e4eba79b8ea0552a4bd"
-      )
-      .then(res => {
-        for (var i = 0; i < 3; i++) {
-          //create LI element then form statment then append to LI then add to list
-          var node = document.createElement("LI");
-          node.id = "headlines";
-          var headlineText = document.createTextNode(
-            res.data.articles[i].title + "\u000a"
-          );
-          var descriptionText = document.createTextNode(
-            "Description: " + res.data.articles[i].description
-          );
-          var authorText = document.createTextNode(
-            "Author: " + res.data.articles[i].author
-          );
-          var image = document.createElement("IMG");
-          image.src = res.data.articles[i].urlToImage;
-          image.alt = "Picture not available";
-          var link = document.createElement("A");
-          link.href = res.data.articles[i].url;
-          link.text = "Link to article";
-          var br = document.createElement("BR");
-          node.className = "headlines";
-          node.append(headlineText);
-          node.append(br);
-          node.appendChild(br.cloneNode());
-          node.append(descriptionText);
-          node.appendChild(br.cloneNode());
-          node.appendChild(br.cloneNode());
-          node.append(authorText);
-          node.appendChild(br.cloneNode());
-          node.appendChild(br.cloneNode());
-          node.append(link);
-          node.appendChild(br.cloneNode());
-          node.append(image);
-          document.getElementById("homeFinance").appendChild(node);
-        }
-        ReactDOM.render(<App />, document.getElementById("root"));
-      })
-      .catch(error => {});
+
   }
 
   handleSubmitForm = e => {
@@ -121,9 +76,10 @@ class Home extends React.Component {
             sessionStorage.getItem("email") +
             "/balance",
           newBalance
-        )    .catch(error => {
-              alert("Could not send money");
-            });
+        )
+        .catch(error => {
+          alert("Could not send money");
+        });
 
       //payer logic
       const newTransaction = {
@@ -213,7 +169,6 @@ class Home extends React.Component {
         <Helmet>
           <title>Home</title>
         </Helmet>
-
         <Card>
           <Card.Header>
             Welcome to the Independent Banking,{" "}
@@ -260,7 +215,8 @@ class Home extends React.Component {
               more news visit the Headlines Page :)
             </Card.Header>
             <Card.Body>
-              <Card.Text id="homeFinance" />
+              {getHeadlines(3)}
+              <ul id="financial" />
             </Card.Body>
           </Card>
         </div>

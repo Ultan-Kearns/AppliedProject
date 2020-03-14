@@ -29,7 +29,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-      
+
         {/*Show the navigation throughout app*/}
         <Router>
           <nav>
@@ -91,7 +91,6 @@ class App extends React.Component {
             <Route path="/UserInfo" component={UserInfo} />
             <Route path="/Statistics" component={Statistics} />
             <Route path="/Headlines" component={Headlines} />
-
             {/*If route undefined redirect to error*/}
             <Route path="/*" component={Error} />
           </Switch>

@@ -5,7 +5,7 @@ import Button from "react-bootstrap/Button";
 import "../Styles/Login.css";
 import { Helmet } from "react-helmet";
 import ReactDOM from "react-dom";
-import Home from "./Home";
+import App from "../App";
 import Register from "./Register";
 import Forgot from "./Forgot";
 import "axios";
@@ -65,7 +65,7 @@ class Login extends React.Component {
           //store the username this will help the bank feel more personal
           sessionStorage.setItem("username", res.data.name);
           sessionStorage.setItem("email", res.data._id);
-          ReactDOM.render(<Home />, document.getElementById("root"));
+          ReactDOM.render(<App />, document.getElementById("root"));
         } else if (res.data === "null") {
           alert("Wrong username or password");
         } else if (res.data == null) {
