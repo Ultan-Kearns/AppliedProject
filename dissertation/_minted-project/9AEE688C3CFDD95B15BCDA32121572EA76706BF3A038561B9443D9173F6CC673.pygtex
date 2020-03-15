@@ -1,0 +1,40 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+  \PYG{n+nx}{componentDidMount}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+    \PYG{k+kr}{const} \PYG{n+nx}{axios} \PYG{o}{=} \PYG{n+nx}{require}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}axios\PYGZdq{}}\PYG{p}{).}\PYG{k}{default}\PYG{p}{;}
+    \PYG{c+c1}{//use email instead}
+    \PYG{n+nx}{axios}
+      \PYG{p}{.}\PYG{n+nx}{get}\PYG{p}{(}
+        \PYG{l+s+s2}{\PYGZdq{}https://localhost:8080/api/transactions/\PYGZdq{}} \PYG{o}{+}
+          \PYG{n+nx}{sessionStorage}\PYG{p}{.}\PYG{n+nx}{getItem}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}email\PYGZdq{}}\PYG{p}{)}
+      \PYG{p}{)}
+      \PYG{p}{.}\PYG{n+nx}{then}\PYG{p}{(}\PYG{n+nx}{res} \PYG{p}{=\PYGZgt{}} \PYG{p}{\PYGZob{}}
+        \PYG{k}{for} \PYG{p}{(}\PYG{k+kd}{var} \PYG{n+nx}{i} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n+nx}{i} \PYG{o}{\PYGZlt{}} \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{data}\PYG{p}{.}\PYG{n+nx}{length}\PYG{p}{;} \PYG{n+nx}{i}\PYG{o}{++}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+          \PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{setState}\PYG{p}{(\PYGZob{}}
+            \PYG{n+nx}{location}\PYG{o}{:} \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{data}\PYG{p}{[}\PYG{n+nx}{i}\PYG{p}{].}\PYG{n+nx}{location}\PYG{p}{,}
+            \PYG{n+nx}{cost}\PYG{o}{:} \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{data}\PYG{p}{[}\PYG{n+nx}{i}\PYG{p}{].}\PYG{n+nx}{cost}\PYG{p}{,}
+            \PYG{n+nx}{name}\PYG{o}{:} \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{data}\PYG{p}{[}\PYG{n+nx}{i}\PYG{p}{].}\PYG{n+nx}{name}\PYG{p}{,}
+            \PYG{n+nx}{date}\PYG{o}{:} \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{data}\PYG{p}{[}\PYG{n+nx}{i}\PYG{p}{].}\PYG{n+nx}{date}\PYG{p}{,}
+            \PYG{n+nx}{email}\PYG{o}{:} \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{data}\PYG{p}{[}\PYG{n+nx}{i}\PYG{p}{].}\PYG{n+nx}{email}
+          \PYG{p}{\PYGZcb{});}
+          \PYG{c+c1}{//create LI element then form statment then append to LI then add to list}
+          \PYG{k+kd}{var} \PYG{n+nx}{node} \PYG{o}{=} \PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{createElement}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}LI\PYGZdq{}}\PYG{p}{);}
+          \PYG{k+kd}{var} \PYG{n+nx}{text} \PYG{o}{=} \PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{createTextNode}\PYG{p}{(}
+            \PYG{l+s+s2}{\PYGZdq{}Location: \PYGZdq{}} \PYG{o}{+}
+              \PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{state}\PYG{p}{.}\PYG{n+nx}{location} \PYG{o}{+}
+              \PYG{l+s+s2}{\PYGZdq{}, Cost: €\PYGZdq{}} \PYG{o}{+}
+              \PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{state}\PYG{p}{.}\PYG{n+nx}{cost} \PYG{o}{+}
+              \PYG{l+s+s2}{\PYGZdq{}, Name: \PYGZdq{}} \PYG{o}{+}
+              \PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{state}\PYG{p}{.}\PYG{n+nx}{name} \PYG{o}{+}
+              \PYG{l+s+s2}{\PYGZdq{}, Date: \PYGZdq{}} \PYG{o}{+}
+              \PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{state}\PYG{p}{.}\PYG{n+nx}{date}
+          \PYG{p}{);}
+          \PYG{n+nx}{node}\PYG{p}{.}\PYG{n+nx}{id} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}transaction\PYGZdq{}}
+          \PYG{n+nx}{node}\PYG{p}{.}\PYG{n+nx}{append}\PYG{p}{(}\PYG{n+nx}{text}\PYG{p}{);}
+          \PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{getElementById}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}transactions\PYGZdq{}}\PYG{p}{).}\PYG{n+nx}{appendChild}\PYG{p}{(}\PYG{n+nx}{node}\PYG{p}{);}
+        \PYG{p}{\PYGZcb{}}
+      \PYG{p}{\PYGZcb{}).}\PYG{k}{catch}\PYG{p}{(}\PYG{n+nx}{error} \PYG{p}{=\PYGZgt{}\PYGZob{}}
+        \PYG{n+nx}{alert}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Can\PYGZsq{}t get transactions issue connecting to server\PYGZdq{}}\PYG{p}{)}
+      \PYG{p}{\PYGZcb{});}
+
+  \PYG{p}{\PYGZcb{}}
+\end{Verbatim}

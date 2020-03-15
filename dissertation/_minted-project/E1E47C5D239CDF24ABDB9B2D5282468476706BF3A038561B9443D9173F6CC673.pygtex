@@ -1,0 +1,101 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n+nx}{getUserLoans}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+  \PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{getElementById}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}loans\PYGZdq{}}\PYG{p}{).}\PYG{n+nx}{innerHTML} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}\PYGZdq{}}\PYG{p}{;}
+  \PYG{n+nx}{axios}
+    \PYG{p}{.}\PYG{n+nx}{get}\PYG{p}{(}
+      \PYG{l+s+s2}{\PYGZdq{}https://localhost:8080/api/loans/\PYGZdq{}} \PYG{o}{+} \PYG{n+nx}{sessionStorage}\PYG{p}{.}\PYG{n+nx}{getItem}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}email\PYGZdq{}}\PYG{p}{)}
+    \PYG{p}{)}
+    \PYG{p}{.}\PYG{n+nx}{then}\PYG{p}{(}\PYG{n+nx}{res} \PYG{p}{=\PYGZgt{}} \PYG{p}{\PYGZob{}}
+      \PYG{k}{for} \PYG{p}{(}\PYG{k+kd}{var} \PYG{n+nx}{i} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n+nx}{i} \PYG{o}{\PYGZlt{}} \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{data}\PYG{p}{.}\PYG{n+nx}{length}\PYG{p}{;} \PYG{n+nx}{i}\PYG{o}{++}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+        \PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{setState}\PYG{p}{(\PYGZob{}}
+          \PYG{n+nx}{\PYGZus{}id}\PYG{o}{:} \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{data}\PYG{p}{[}\PYG{n+nx}{i}\PYG{p}{].}\PYG{n+nx}{\PYGZus{}id}\PYG{p}{,}
+          \PYG{n+nx}{amount}\PYG{o}{:} \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{data}\PYG{p}{[}\PYG{n+nx}{i}\PYG{p}{].}\PYG{n+nx}{amount}\PYG{p}{,}
+          \PYG{n+nx}{date}\PYG{o}{:} \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{data}\PYG{p}{[}\PYG{n+nx}{i}\PYG{p}{].}\PYG{n+nx}{date}\PYG{p}{,}
+          \PYG{n+nx}{status}\PYG{o}{:} \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{data}\PYG{p}{[}\PYG{n+nx}{i}\PYG{p}{].}\PYG{n+nx}{status}\PYG{p}{,}
+          \PYG{n+nx}{owedTo}\PYG{o}{:} \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{data}\PYG{p}{[}\PYG{n+nx}{i}\PYG{p}{].}\PYG{n+nx}{owedTo}
+        \PYG{p}{\PYGZcb{});}
+        \PYG{c+c1}{//create LI element then form statment then append to LI then add to list}
+        \PYG{k+kd}{var} \PYG{n+nx}{node} \PYG{o}{=} \PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{createElement}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}LI\PYGZdq{}}\PYG{p}{);}
+        \PYG{k+kd}{var} \PYG{n+nx}{text} \PYG{o}{=} \PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{createTextNode}\PYG{p}{(}
+          \PYG{l+s+s2}{\PYGZdq{}Amount: €\PYGZdq{}} \PYG{o}{+}
+            \PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{state}\PYG{p}{.}\PYG{n+nx}{amount} \PYG{o}{+}
+            \PYG{l+s+s2}{\PYGZdq{}, \PYGZbs{}tDate: \PYGZdq{}} \PYG{o}{+}
+            \PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{state}\PYG{p}{.}\PYG{n+nx}{date} \PYG{o}{+}
+            \PYG{l+s+s2}{\PYGZdq{} ,\PYGZbs{}tStatus: \PYGZdq{}} \PYG{o}{+}
+            \PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{state}\PYG{p}{.}\PYG{n+nx}{status} \PYG{o}{+}
+            \PYG{l+s+s2}{\PYGZdq{} ,\PYGZbs{}tOwed to: \PYGZdq{}} \PYG{o}{+}
+            \PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{state}\PYG{p}{.}\PYG{n+nx}{owedTo}
+        \PYG{p}{);}
+        \PYG{k+kd}{var} \PYG{n+nx}{buttonNode} \PYG{o}{=} \PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{createElement}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Button\PYGZdq{}}\PYG{p}{);}
+        \PYG{n+nx}{buttonNode}\PYG{p}{.}\PYG{n+nx}{textContent} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}Pay Back\PYGZdq{}}\PYG{p}{;}
+        \PYG{n+nx}{buttonNode}\PYG{p}{.}\PYG{n+nx}{id} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}payButton\PYGZdq{}}\PYG{p}{;}
+        \PYG{c+c1}{//for repaying loans}
+        \PYG{k+kd}{var} \PYG{n+nx}{loanId} \PYG{o}{=} \PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{state}\PYG{p}{.}\PYG{n+nx}{\PYGZus{}id}\PYG{p}{;}
+        \PYG{k+kd}{var} \PYG{n+nx}{loanCost} \PYG{o}{=} \PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{state}\PYG{p}{.}\PYG{n+nx}{amount}\PYG{p}{;}
+        \PYG{c+c1}{//create new balance}
+        \PYG{k+kr}{const} \PYG{n+nx}{newBalance} \PYG{o}{=} \PYG{p}{\PYGZob{}}
+          \PYG{n+nx}{balance}\PYG{o}{:} \PYG{n+nb}{parseInt}\PYG{p}{(}
+            \PYG{n+nx}{sessionStorage}\PYG{p}{.}\PYG{n+nx}{getItem}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}balance\PYGZdq{}}\PYG{p}{)} \PYG{o}{\PYGZhy{}} \PYG{n+nb}{parseInt}\PYG{p}{(}\PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{state}\PYG{p}{.}\PYG{n+nx}{amount}\PYG{p}{)}
+          \PYG{p}{)}
+        \PYG{p}{\PYGZcb{};}
+        \PYG{n+nx}{buttonNode}\PYG{p}{.}\PYG{n+nx}{addEventListener}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}click\PYGZdq{}}\PYG{p}{,} \PYG{k+kd}{function}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+          \PYG{c+c1}{//check if balance \PYGZgt{}= loanpayment}
+          \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{sessionStorage}\PYG{p}{.}\PYG{n+nx}{getItem}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}balance\PYGZdq{}}\PYG{p}{)} \PYG{o}{\PYGZgt{}=} \PYG{n+nx}{loanCost}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+            \PYG{n+nx}{axios}
+              \PYG{p}{.}\PYG{n+nx}{post}\PYG{p}{(}
+                \PYG{l+s+s2}{\PYGZdq{}https://localhost:8080/api/users/\PYGZdq{}} \PYG{o}{+}
+                  \PYG{n+nx}{sessionStorage}\PYG{p}{.}\PYG{n+nx}{getItem}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}email\PYGZdq{}}\PYG{p}{)} \PYG{o}{+}
+                  \PYG{l+s+s2}{\PYGZdq{}/balance\PYGZdq{}}\PYG{p}{,}
+                \PYG{n+nx}{newBalance}
+              \PYG{p}{)}
+              \PYG{p}{.}\PYG{n+nx}{then}\PYG{p}{(}\PYG{n+nx}{res} \PYG{p}{=\PYGZgt{}} \PYG{p}{\PYGZob{}}
+                \PYG{n+nx}{sessionStorage}\PYG{p}{.}\PYG{n+nx}{setItem}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}balance\PYGZdq{}}\PYG{p}{,} \PYG{n+nx}{newBalance}\PYG{p}{.}\PYG{n+nx}{balance}\PYG{p}{);}
+                \PYG{n+nx}{alert}\PYG{p}{(}
+                  \PYG{l+s+s2}{\PYGZdq{}Loan repaid new balance is: \PYGZdq{}} \PYG{o}{+}
+                    \PYG{n+nx}{sessionStorage}\PYG{p}{.}\PYG{n+nx}{getItem}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}balance\PYGZdq{}}\PYG{p}{)}
+                \PYG{p}{);}
+              \PYG{p}{\PYGZcb{});}
+            \PYG{n+nx}{axios}
+              \PYG{p}{.}\PYG{k}{delete}\PYG{p}{(}
+                \PYG{l+s+s2}{\PYGZdq{}https://localhost:8080/api/loans/\PYGZdq{}} \PYG{o}{+}
+                  \PYG{n+nx}{sessionStorage}\PYG{p}{.}\PYG{n+nx}{getItem}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}email\PYGZdq{}}\PYG{p}{)} \PYG{o}{+}
+                  \PYG{l+s+s2}{\PYGZdq{}/\PYGZdq{}} \PYG{o}{+}
+                  \PYG{n+nx}{loanId}
+              \PYG{p}{)}
+              \PYG{p}{.}\PYG{n+nx}{then}\PYG{p}{(}\PYG{n+nx}{res} \PYG{p}{=\PYGZgt{}} \PYG{p}{\PYGZob{}}
+                \PYG{n+nx}{alert}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Loan paid\PYGZdq{}}\PYG{p}{);}
+              \PYG{p}{\PYGZcb{})}
+              \PYG{p}{.}\PYG{k}{catch}\PYG{p}{(}\PYG{n+nx}{error} \PYG{p}{=\PYGZgt{}} \PYG{p}{\PYGZob{}}
+                \PYG{n+nx}{alert}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}error: \PYGZdq{}} \PYG{o}{+} \PYG{n+nx}{error}\PYG{p}{);}
+              \PYG{p}{\PYGZcb{});}
+            \PYG{n+nx}{sessionStorage}\PYG{p}{.}\PYG{n+nx}{setItem}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}openLoans\PYGZdq{}}\PYG{p}{,} \PYG{n+nx}{getOpenLoans}\PYG{p}{());}
+            \PYG{k+kr}{const} \PYG{n+nx}{newTransaction} \PYG{o}{=} \PYG{p}{\PYGZob{}}
+              \PYG{n+nx}{email}\PYG{o}{:} \PYG{n+nx}{sessionStorage}\PYG{p}{.}\PYG{n+nx}{getItem}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}email\PYGZdq{}}\PYG{p}{),}
+              \PYG{n+nx}{cost}\PYG{o}{:} \PYG{o}{\PYGZhy{}}\PYG{n+nx}{loanCost}\PYG{p}{,}
+              \PYG{n+nx}{location}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}IndependentBanking.com\PYGZdq{}}\PYG{p}{,}
+              \PYG{n+nx}{name}\PYG{o}{:} \PYG{n+nx}{sessionStorage}\PYG{p}{.}\PYG{n+nx}{getItem}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}username\PYGZdq{}}\PYG{p}{),}
+              \PYG{n+nx}{date}\PYG{o}{:} \PYG{n+nx}{date}
+            \PYG{p}{\PYGZcb{};}
+            \PYG{n+nx}{axios}
+              \PYG{p}{.}\PYG{n+nx}{post}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}https://localhost:8080/api/transactions\PYGZdq{}}\PYG{p}{,} \PYG{n+nx}{newTransaction}\PYG{p}{)}
+              \PYG{p}{.}\PYG{n+nx}{then}\PYG{p}{(}\PYG{n+nx}{res} \PYG{p}{=\PYGZgt{}} \PYG{p}{\PYGZob{}}
+                \PYG{n+nx}{console}\PYG{p}{.}\PYG{n+nx}{log}\PYG{p}{(}\PYG{n+nx}{res}\PYG{p}{);}
+              \PYG{p}{\PYGZcb{});}
+          \PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{p}{\PYGZob{}}
+            \PYG{n+nx}{alert}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Not enough money in account to repay loan\PYGZdq{}}\PYG{p}{);}
+          \PYG{p}{\PYGZcb{}}
+        \PYG{p}{\PYGZcb{});}
+        \PYG{n+nx}{node}\PYG{p}{.}\PYG{n+nx}{id} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}loan\PYGZdq{}}\PYG{p}{;}
+        \PYG{n+nx}{node}\PYG{p}{.}\PYG{n+nx}{append}\PYG{p}{(}\PYG{n+nx}{text}\PYG{p}{);}
+        \PYG{n+nx}{node}\PYG{p}{.}\PYG{n+nx}{append}\PYG{p}{(}\PYG{n+nx}{buttonNode}\PYG{p}{);}
+        \PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{getElementById}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}loans\PYGZdq{}}\PYG{p}{).}\PYG{n+nx}{appendChild}\PYG{p}{(}\PYG{n+nx}{node}\PYG{p}{);}
+        \PYG{n+nx}{sessionStorage}\PYG{p}{.}\PYG{n+nx}{setItem}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}openLoans\PYGZdq{}}\PYG{p}{,} \PYG{n+nx}{getOpenLoans}\PYG{p}{());}
+      \PYG{p}{\PYGZcb{}}
+    \PYG{p}{\PYGZcb{},}
+  \PYG{p}{)}
+    \PYG{p}{.}\PYG{k}{catch}\PYG{p}{(}\PYG{n+nx}{error} \PYG{p}{=\PYGZgt{}} \PYG{p}{\PYGZob{}}
+      \PYG{n+nx}{alert}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Could not get loans\PYGZdq{}}\PYG{p}{);}
+    \PYG{p}{\PYGZcb{});}
+
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

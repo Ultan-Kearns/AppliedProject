@@ -1,0 +1,42 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n+nx}{async} \PYG{n+nx}{updateLoanData}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+  \PYG{n+nx}{await} \PYG{n+nx}{axios}
+    \PYG{p}{.}\PYG{n+nx}{get}\PYG{p}{(}
+      \PYG{l+s+s2}{\PYGZdq{}https://localhost:8080/api/loans/\PYGZdq{}} \PYG{o}{+} \PYG{n+nx}{sessionStorage}\PYG{p}{.}\PYG{n+nx}{getItem}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}email\PYGZdq{}}\PYG{p}{)}
+    \PYG{p}{)}
+    \PYG{p}{.}\PYG{n+nx}{then}\PYG{p}{(}\PYG{n+nx}{res} \PYG{p}{=\PYGZgt{}} \PYG{p}{\PYGZob{}}
+      \PYG{n+nx}{console}\PYG{p}{.}\PYG{n+nx}{log}\PYG{p}{(}\PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{data}\PYG{p}{);}
+      \PYG{k+kd}{var} \PYG{n+nx}{newLoanState} \PYG{o}{=} \PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{state}\PYG{p}{.}\PYG{n+nx}{loanState}\PYG{p}{;}
+      \PYG{k}{for} \PYG{p}{(}\PYG{k+kd}{var} \PYG{n+nx}{i} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n+nx}{i} \PYG{o}{\PYGZlt{}} \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{data}\PYG{p}{.}\PYG{n+nx}{length}\PYG{p}{;} \PYG{n+nx}{i}\PYG{o}{++}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+        \PYG{n+nx}{newLoanState}\PYG{p}{.}\PYG{n+nx}{datasets}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{].}\PYG{n+nx}{data}\PYG{p}{[}\PYG{n+nx}{i}\PYG{p}{]} \PYG{o}{=} \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{data}\PYG{p}{[}\PYG{n+nx}{i}\PYG{p}{].}\PYG{n+nx}{amount}\PYG{p}{;}
+        \PYG{n+nx}{newLoanState}\PYG{p}{.}\PYG{n+nx}{labels}\PYG{p}{[}\PYG{n+nx}{i}\PYG{p}{]} \PYG{o}{=} \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{data}\PYG{p}{[}\PYG{n+nx}{i}\PYG{p}{].}\PYG{n+nx}{amount}\PYG{p}{;}
+      \PYG{p}{\PYGZcb{}}
+      \PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{setState}\PYG{p}{(\PYGZob{}}
+        \PYG{n+nx}{loanState}\PYG{o}{:} \PYG{n+nx}{newLoanState}
+      \PYG{p}{\PYGZcb{});}
+    \PYG{p}{\PYGZcb{})}
+    \PYG{p}{.}\PYG{k}{catch}\PYG{p}{(}\PYG{k+kd}{function}\PYG{p}{(}\PYG{n+nx}{error}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+      \PYG{n+nx}{alert}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Error generating loans \PYGZdq{}} \PYG{o}{+} \PYG{n+nx}{error}\PYG{p}{);}
+    \PYG{p}{\PYGZcb{});}
+\PYG{p}{\PYGZcb{}}
+\PYG{n+nx}{async} \PYG{n+nx}{updateTransactionData}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+  \PYG{k}{return} \PYG{n+nx}{axios}
+    \PYG{p}{.}\PYG{n+nx}{get}\PYG{p}{(}
+      \PYG{l+s+s2}{\PYGZdq{}https://localhost:8080/api/transactions/\PYGZdq{}} \PYG{o}{+}
+        \PYG{n+nx}{sessionStorage}\PYG{p}{.}\PYG{n+nx}{getItem}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}email\PYGZdq{}}\PYG{p}{)}
+    \PYG{p}{)}
+    \PYG{p}{.}\PYG{n+nx}{then}\PYG{p}{(}\PYG{n+nx}{res} \PYG{p}{=\PYGZgt{}} \PYG{p}{\PYGZob{}}
+      \PYG{k+kd}{var} \PYG{n+nx}{newTransactionState} \PYG{o}{=} \PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{state}\PYG{p}{.}\PYG{n+nx}{transactionState}\PYG{p}{;}
+      \PYG{k}{for} \PYG{p}{(}\PYG{k+kd}{var} \PYG{n+nx}{i} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n+nx}{i} \PYG{o}{\PYGZlt{}} \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{data}\PYG{p}{.}\PYG{n+nx}{length}\PYG{p}{;} \PYG{n+nx}{i}\PYG{o}{++}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+        \PYG{n+nx}{newTransactionState}\PYG{p}{.}\PYG{n+nx}{datasets}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{].}\PYG{n+nx}{data}\PYG{p}{[}\PYG{n+nx}{i}\PYG{p}{]} \PYG{o}{=} \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{data}\PYG{p}{[}\PYG{n+nx}{i}\PYG{p}{].}\PYG{n+nx}{cost}\PYG{p}{;}
+        \PYG{n+nx}{newTransactionState}\PYG{p}{.}\PYG{n+nx}{labels}\PYG{p}{[}\PYG{n+nx}{i}\PYG{p}{]} \PYG{o}{=} \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{data}\PYG{p}{[}\PYG{n+nx}{i}\PYG{p}{].}\PYG{n+nx}{location}\PYG{p}{;}
+      \PYG{p}{\PYGZcb{}}
+      \PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{setState}\PYG{p}{(\PYGZob{}}
+        \PYG{n+nx}{transactionState}\PYG{o}{:} \PYG{n+nx}{newTransactionState}
+      \PYG{p}{\PYGZcb{});}
+    \PYG{p}{\PYGZcb{})}
+    \PYG{p}{.}\PYG{k}{catch}\PYG{p}{(}\PYG{k+kd}{function}\PYG{p}{(}\PYG{n+nx}{error}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+      \PYG{n+nx}{alert}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Error generating transactions \PYGZdq{}} \PYG{o}{+} \PYG{n+nx}{error}\PYG{p}{);}
+    \PYG{p}{\PYGZcb{});}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

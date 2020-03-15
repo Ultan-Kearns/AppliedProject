@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet";
 import "../Styles/Headlines.css";
 import Card from "react-bootstrap/Card";
 import Accordion from "react-bootstrap/Accordion";
-import {getHeadlines} from "../Services/HeadlineHelpers.js"
+import { getHeadlines } from "../Services/HeadlineHelpers.js";
 class Headlines extends React.Component {
   componentDidMount() {
     const axios = require("axios").default;
@@ -11,7 +11,7 @@ class Headlines extends React.Component {
     Pulling data from newsapi.org
     then render App page
     */
-    getHeadlines(20)
+    getHeadlines(20);
     axios
       .get("https://www.reddit.com/r/wallstreet/.json")
       .then(res => {
@@ -31,6 +31,7 @@ class Headlines extends React.Component {
           node.className = "headlines";
           var link = document.createElement("A");
           link.href = res.data.data.children[i].data.url;
+          link.target = "_blank";
           link.text = "Link to article";
           var image = document.createElement("IMG");
           image.src = res.data.data.children[i].data.thumbnail;

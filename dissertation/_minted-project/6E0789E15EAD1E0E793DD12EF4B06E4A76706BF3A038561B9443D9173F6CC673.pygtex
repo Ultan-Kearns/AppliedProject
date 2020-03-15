@@ -1,0 +1,72 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{if} \PYG{p}{(}
+  \PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{state}\PYG{p}{.}\PYG{n+nx}{amount} \PYG{o}{!==} \PYG{l+s+s2}{\PYGZdq{}\PYGZdq{}} \PYG{o}{\PYGZam{}\PYGZam{}}
+  \PYG{n+nx}{answer} \PYG{o}{===} \PYG{k+kc}{true} \PYG{o}{\PYGZam{}\PYGZam{}}
+  \PYG{n+nb}{parseInt}\PYG{p}{(}\PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{state}\PYG{p}{.}\PYG{n+nx}{amount} \PYG{o}{*} \PYG{l+m+mf}{0.25}\PYG{p}{)} \PYG{o}{\PYGZlt{}=}
+    \PYG{n+nb}{parseInt}\PYG{p}{(}\PYG{n+nx}{sessionStorage}\PYG{p}{.}\PYG{n+nx}{getItem}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}balance\PYGZdq{}}\PYG{p}{))} \PYG{o}{\PYGZam{}\PYGZam{}}
+  \PYG{n+nx}{sessionStorage}\PYG{p}{.}\PYG{n+nx}{getItem}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}openLoans\PYGZdq{}}\PYG{p}{)} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{5} \PYG{o}{\PYGZam{}\PYGZam{}}
+  \PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{state}\PYG{p}{.}\PYG{n+nx}{amount} \PYG{o}{\PYGZlt{}=} \PYG{l+m+mi}{500} \PYG{o}{\PYGZam{}\PYGZam{}}
+  \PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{state}\PYG{p}{.}\PYG{n+nx}{amount} \PYG{o}{\PYGZgt{}} \PYG{l+m+mi}{0}
+\PYG{p}{)} \PYG{p}{\PYGZob{}}
+  \PYG{k+kr}{const} \PYG{n+nx}{newLoan} \PYG{o}{=} \PYG{p}{\PYGZob{}}
+    \PYG{n+nx}{email}\PYG{o}{:} \PYG{n+nx}{sessionStorage}\PYG{p}{.}\PYG{n+nx}{getItem}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}email\PYGZdq{}}\PYG{p}{),}
+    \PYG{n+nx}{amount}\PYG{o}{:} \PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{state}\PYG{p}{.}\PYG{n+nx}{amount}\PYG{p}{,}
+    \PYG{n+nx}{date}\PYG{o}{:} \PYG{n+nx}{date}\PYG{p}{,}
+    \PYG{n+nx}{owedTo}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}Independent Banking\PYGZdq{}}\PYG{p}{,}
+    \PYG{n+nx}{status}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}Open\PYGZdq{}}
+  \PYG{p}{\PYGZcb{};}
+  \PYG{k+kr}{const} \PYG{n+nx}{newTransaction} \PYG{o}{=} \PYG{p}{\PYGZob{}}
+    \PYG{n+nx}{email}\PYG{o}{:} \PYG{n+nx}{sessionStorage}\PYG{p}{.}\PYG{n+nx}{getItem}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}email\PYGZdq{}}\PYG{p}{),}
+    \PYG{n+nx}{cost}\PYG{o}{:} \PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{state}\PYG{p}{.}\PYG{n+nx}{amount}\PYG{p}{,}
+    \PYG{n+nx}{location}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}IndependentBanking.com\PYGZdq{}}\PYG{p}{,}
+    \PYG{n+nx}{name}\PYG{o}{:} \PYG{n+nx}{sessionStorage}\PYG{p}{.}\PYG{n+nx}{getItem}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}username\PYGZdq{}}\PYG{p}{),}
+    \PYG{n+nx}{date}\PYG{o}{:} \PYG{n+nx}{date}
+  \PYG{p}{\PYGZcb{};}
+  \PYG{n+nx}{axios}
+    \PYG{p}{.}\PYG{n+nx}{post}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}https://localhost:8080/api/transactions\PYGZdq{}}\PYG{p}{,} \PYG{n+nx}{newTransaction}\PYG{p}{)}
+    \PYG{p}{.}\PYG{n+nx}{then}\PYG{p}{(}\PYG{n+nx}{res} \PYG{p}{=\PYGZgt{}} \PYG{p}{\PYGZob{}}
+      \PYG{n+nx}{console}\PYG{p}{.}\PYG{n+nx}{log}\PYG{p}{(}\PYG{n+nx}{res}\PYG{p}{);}
+    \PYG{p}{\PYGZcb{});}
+  \PYG{k+kr}{const} \PYG{n+nx}{newBalance} \PYG{o}{=} \PYG{p}{\PYGZob{}}
+    \PYG{n+nx}{balance}\PYG{o}{:}
+      \PYG{n+nb}{parseInt}\PYG{p}{(}\PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{state}\PYG{p}{.}\PYG{n+nx}{amount}\PYG{p}{)} \PYG{o}{+}
+      \PYG{n+nb}{parseInt}\PYG{p}{(}\PYG{n+nx}{sessionStorage}\PYG{p}{.}\PYG{n+nx}{getItem}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}balance\PYGZdq{}}\PYG{p}{))}
+  \PYG{p}{\PYGZcb{};}
+  \PYG{n+nx}{axios}\PYG{p}{.}\PYG{n+nx}{post}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}https://localhost:8080/api/loans\PYGZdq{}}\PYG{p}{,} \PYG{n+nx}{newLoan}\PYG{p}{).}\PYG{n+nx}{then}\PYG{p}{(}\PYG{n+nx}{res} \PYG{p}{=\PYGZgt{}} \PYG{p}{\PYGZob{}}
+    \PYG{n+nx}{console}\PYG{p}{.}\PYG{n+nx}{log}\PYG{p}{(}\PYG{n+nx}{res}\PYG{p}{);}
+  \PYG{p}{\PYGZcb{});}
+  \PYG{n+nx}{axios}
+    \PYG{p}{.}\PYG{n+nx}{post}\PYG{p}{(}
+      \PYG{l+s+s2}{\PYGZdq{}https://localhost:8080/api/users/\PYGZdq{}} \PYG{o}{+}
+        \PYG{n+nx}{sessionStorage}\PYG{p}{.}\PYG{n+nx}{getItem}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}email\PYGZdq{}}\PYG{p}{)} \PYG{o}{+}
+        \PYG{l+s+s2}{\PYGZdq{}/balance\PYGZdq{}}\PYG{p}{,}
+      \PYG{n+nx}{newBalance}
+    \PYG{p}{)}
+    \PYG{p}{.}\PYG{n+nx}{then}\PYG{p}{(}\PYG{n+nx}{res} \PYG{p}{=\PYGZgt{}} \PYG{p}{\PYGZob{}}
+      \PYG{n+nx}{console}\PYG{p}{.}\PYG{n+nx}{log}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}TEST \PYGZdq{}} \PYG{o}{+} \PYG{n+nx}{res}\PYG{p}{);}
+      \PYG{n+nx}{axios}
+        \PYG{p}{.}\PYG{n+nx}{get}\PYG{p}{(}
+          \PYG{l+s+s2}{\PYGZdq{}https://localhost:8080/api/users/\PYGZdq{}} \PYG{o}{+}
+            \PYG{n+nx}{sessionStorage}\PYG{p}{.}\PYG{n+nx}{getItem}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}email\PYGZdq{}}\PYG{p}{)}
+        \PYG{p}{)}
+        \PYG{p}{.}\PYG{n+nx}{then}\PYG{p}{(}\PYG{n+nx}{res} \PYG{p}{=\PYGZgt{}} \PYG{p}{\PYGZob{}}
+          \PYG{n+nx}{sessionStorage}\PYG{p}{.}\PYG{n+nx}{setItem}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}balance\PYGZdq{}}\PYG{p}{,} \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{data}\PYG{p}{.}\PYG{n+nx}{balance}\PYG{p}{);}
+          \PYG{n+nx}{alert}\PYG{p}{(}
+            \PYG{l+s+s2}{\PYGZdq{}loan approved\PYGZbs{}n New balance is: \PYGZdq{}} \PYG{o}{+}
+              \PYG{n+nx}{sessionStorage}\PYG{p}{.}\PYG{n+nx}{getItem}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}balance\PYGZdq{}}\PYG{p}{)}
+          \PYG{p}{);}
+        \PYG{p}{\PYGZcb{})}
+        \PYG{p}{.}\PYG{k}{catch}\PYG{p}{(}\PYG{n+nx}{error} \PYG{p}{=\PYGZgt{}} \PYG{p}{\PYGZob{}}
+          \PYG{n+nx}{alert}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Could not approve loan\PYGZdq{}}\PYG{p}{);}
+        \PYG{p}{\PYGZcb{});}
+      \PYG{n+nx}{sessionStorage}\PYG{p}{.}\PYG{n+nx}{setItem}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}openLoans\PYGZdq{}}\PYG{p}{,} \PYG{n+nx}{getOpenLoans}\PYG{p}{());}
+      \PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{getUserLoans}\PYG{p}{();}
+    \PYG{p}{\PYGZcb{});}
+\PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{p}{\PYGZob{}}
+  \PYG{n+nx}{alert}\PYG{p}{(}
+    \PYG{l+s+s2}{\PYGZdq{}Loan aborted\PYGZbs{}n Reasons why this may happen:\PYGZbs{}nLoan cannot be null and user must have at least 25\PYGZpc{} of loan amount in balance\PYGZbs{}nUsers can only have 5 open loans at a time\PYGZbs{}n Loans must also be less than or equal to €500\PYGZbs{}nLoan must be greater than 0\PYGZdq{}}
+  \PYG{p}{);}
+\PYG{p}{\PYGZcb{}}
+\PYG{n+nx}{event}\PYG{p}{.}\PYG{n+nx}{preventDefault}\PYG{p}{();}
+\PYG{p}{\PYGZcb{};}
+\end{Verbatim}

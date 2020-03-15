@@ -1,0 +1,128 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n+nx}{axios}
+  \PYG{p}{.}\PYG{n+nx}{get}\PYG{p}{(}
+    \PYG{l+s+s2}{\PYGZdq{}https://www.alphavantage.co/query?function=TIME\PYGZus{}SERIES\PYGZus{}DAILY\PYGZam{}symbol=MSFT\PYGZam{}apikey=G38RVCM1OWLSKALP\PYGZdq{}}
+  \PYG{p}{)}
+  \PYG{p}{.}\PYG{n+nx}{then}\PYG{p}{(}\PYG{n+nx}{res} \PYG{p}{=\PYGZgt{}} \PYG{p}{\PYGZob{}}
+    \PYG{k+kd}{var} \PYG{n+nx}{d} \PYG{o}{=} \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{data}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}Meta Data\PYGZdq{}}\PYG{p}{][}\PYG{l+s+s2}{\PYGZdq{}3. Last Refreshed\PYGZdq{}}\PYG{p}{];}
+    \PYG{n+nx}{d} \PYG{o}{=} \PYG{n+nx}{d}\PYG{p}{.}\PYG{n+nx}{split}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{} \PYGZdq{}}\PYG{p}{)[}\PYG{l+m+mi}{0}\PYG{p}{];}
+    \PYG{k+kd}{var} \PYG{n+nx}{node} \PYG{o}{=} \PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{createElement}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}LI\PYGZdq{}}\PYG{p}{);}
+    \PYG{n+nx}{node}\PYG{p}{.}\PYG{n+nx}{id} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}stockresults\PYGZdq{}}\PYG{p}{;}
+
+    \PYG{k+kd}{var} \PYG{n+nx}{text} \PYG{o}{=} \PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{createTextNode}\PYG{p}{(}
+      \PYG{l+s+s2}{\PYGZdq{}Stats for today: Open: \PYGZdq{}} \PYG{o}{+}
+        \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{data}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}Time Series (Daily)\PYGZdq{}}\PYG{p}{][}\PYG{n+nx}{d}\PYG{p}{][}\PYG{l+s+s2}{\PYGZdq{}1. open\PYGZdq{}}\PYG{p}{]} \PYG{o}{+}
+        \PYG{l+s+s2}{\PYGZdq{} High: \PYGZdq{}} \PYG{o}{+}
+        \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{data}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}Time Series (Daily)\PYGZdq{}}\PYG{p}{][}\PYG{n+nx}{d}\PYG{p}{][}\PYG{l+s+s2}{\PYGZdq{}2. high\PYGZdq{}}\PYG{p}{]} \PYG{o}{+}
+        \PYG{l+s+s2}{\PYGZdq{} Low: \PYGZdq{}} \PYG{o}{+}
+        \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{data}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}Time Series (Daily)\PYGZdq{}}\PYG{p}{][}\PYG{n+nx}{d}\PYG{p}{][}\PYG{l+s+s2}{\PYGZdq{}3. low\PYGZdq{}}\PYG{p}{]} \PYG{o}{+}
+        \PYG{l+s+s2}{\PYGZdq{} Close: \PYGZdq{}} \PYG{o}{+}
+        \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{data}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}Time Series (Daily)\PYGZdq{}}\PYG{p}{][}\PYG{n+nx}{d}\PYG{p}{][}\PYG{l+s+s2}{\PYGZdq{}4. close\PYGZdq{}}\PYG{p}{]} \PYG{o}{+}
+        \PYG{l+s+s2}{\PYGZdq{} Volume: \PYGZdq{}} \PYG{o}{+}
+        \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{data}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}Time Series (Daily)\PYGZdq{}}\PYG{p}{][}\PYG{n+nx}{d}\PYG{p}{][}\PYG{l+s+s2}{\PYGZdq{}5. volume\PYGZdq{}}\PYG{p}{]}
+    \PYG{p}{);}
+    \PYG{n+nx}{node}\PYG{p}{.}\PYG{n+nx}{append}\PYG{p}{(}\PYG{n+nx}{text}\PYG{p}{);}
+    \PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{getElementById}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}stock\PYGZdq{}}\PYG{p}{).}\PYG{n+nx}{appendChild}\PYG{p}{(}\PYG{n+nx}{node}\PYG{p}{);}
+  \PYG{p}{\PYGZcb{})}
+  \PYG{p}{.}\PYG{k}{catch}\PYG{p}{(}\PYG{n+nx}{error} \PYG{p}{=\PYGZgt{}} \PYG{p}{\PYGZob{}}
+\PYG{n+nx}{alert}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}problem getting currency data\PYGZdq{}}\PYG{p}{)}
+  \PYG{p}{\PYGZcb{});}
+\PYG{n+nx}{axios}
+  \PYG{p}{.}\PYG{n+nx}{get}\PYG{p}{(}
+    \PYG{l+s+s2}{\PYGZdq{}https://www.alphavantage.co/query?function=CURRENCY\PYGZus{}EXCHANGE\PYGZus{}RATE\PYGZam{}from\PYGZus{}currency=EUR\PYGZam{}to\PYGZus{}currency=BTC\PYGZam{}apikey=G38RVCM1OWLSKALP\PYGZdq{}}
+  \PYG{p}{)}
+  \PYG{p}{.}\PYG{n+nx}{then}\PYG{p}{(}\PYG{n+nx}{res} \PYG{p}{=\PYGZgt{}} \PYG{p}{\PYGZob{}}
+    \PYG{k+kd}{var} \PYG{n+nx}{eur\PYGZus{}to\PYGZus{}btc} \PYG{o}{=}
+      \PYG{l+s+s2}{\PYGZdq{}1 Euro = \PYGZdq{}} \PYG{o}{+}
+      \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{data}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}Realtime Currency Exchange Rate\PYGZdq{}}\PYG{p}{][}\PYG{l+s+s2}{\PYGZdq{}5. Exchange Rate\PYGZdq{}}\PYG{p}{]} \PYG{o}{+}
+      \PYG{l+s+s2}{\PYGZdq{}BTC\PYGZdq{}}\PYG{p}{;}
+    \PYG{k+kd}{var} \PYG{n+nx}{btcNode} \PYG{o}{=} \PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{createElement}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}p\PYGZdq{}}\PYG{p}{);}
+    \PYG{n+nx}{btcNode}\PYG{p}{.}\PYG{n+nx}{append}\PYG{p}{(}\PYG{n+nx}{eur\PYGZus{}to\PYGZus{}btc}\PYG{p}{);}
+    \PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{getElementById}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}eurbtc\PYGZdq{}}\PYG{p}{).}\PYG{n+nx}{appendChild}\PYG{p}{(}\PYG{n+nx}{btcNode}\PYG{p}{);}
+  \PYG{p}{\PYGZcb{})}
+  \PYG{p}{.}\PYG{k}{catch}\PYG{p}{(}\PYG{k+kd}{function}\PYG{p}{(}\PYG{n+nx}{error}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+    \PYG{k+kd}{var} \PYG{n+nx}{node} \PYG{o}{=} \PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{createElement}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}LI\PYGZdq{}}\PYG{p}{);}
+    \PYG{n+nx}{node}\PYG{p}{.}\PYG{n+nx}{id} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}currency\PYGZdq{}}\PYG{p}{;}
+    \PYG{k+kd}{var} \PYG{n+nx}{text} \PYG{o}{=} \PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{createTextNode}\PYG{p}{(}
+      \PYG{l+s+s2}{\PYGZdq{}Sorry something went wrong while getting the currency value data :*(\PYGZdq{}}
+    \PYG{p}{);}
+    \PYG{n+nx}{node}\PYG{p}{.}\PYG{n+nx}{append}\PYG{p}{(}\PYG{n+nx}{text}\PYG{p}{);}
+    \PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{getElementById}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}eurbtc\PYGZdq{}}\PYG{p}{).}\PYG{n+nx}{appendChild}\PYG{p}{(}\PYG{n+nx}{node}\PYG{p}{);}
+    \PYG{n+nx}{console}\PYG{p}{.}\PYG{n+nx}{log}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}error\PYGZdq{}}\PYG{p}{);}
+  \PYG{p}{\PYGZcb{});}
+\PYG{n+nx}{axios}
+  \PYG{p}{.}\PYG{n+nx}{get}\PYG{p}{(}
+    \PYG{l+s+s2}{\PYGZdq{}https://www.alphavantage.co/query?function=CURRENCY\PYGZus{}EXCHANGE\PYGZus{}RATE\PYGZam{}from\PYGZus{}currency=EUR\PYGZam{}to\PYGZus{}currency=GBP\PYGZam{}apikey=G38RVCM1OWLSKALP\PYGZdq{}}
+  \PYG{p}{)}
+  \PYG{p}{.}\PYG{n+nx}{then}\PYG{p}{(}\PYG{n+nx}{res} \PYG{p}{=\PYGZgt{}} \PYG{p}{\PYGZob{}}
+    \PYG{k+kd}{var} \PYG{n+nx}{eur\PYGZus{}to\PYGZus{}sterling} \PYG{o}{=}
+      \PYG{l+s+s2}{\PYGZdq{}1 Euro = \PYGZdq{}} \PYG{o}{+}
+      \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{data}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}Realtime Currency Exchange Rate\PYGZdq{}}\PYG{p}{][}\PYG{l+s+s2}{\PYGZdq{}5. Exchange Rate\PYGZdq{}}\PYG{p}{]} \PYG{o}{+}
+      \PYG{l+s+s2}{\PYGZdq{}GBP\PYGZdq{}}\PYG{p}{;}
+    \PYG{k+kd}{var} \PYG{n+nx}{sterlingNode} \PYG{o}{=} \PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{createElement}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}p\PYGZdq{}}\PYG{p}{);}
+    \PYG{n+nx}{sterlingNode}\PYG{p}{.}\PYG{n+nx}{append}\PYG{p}{(}\PYG{n+nx}{eur\PYGZus{}to\PYGZus{}sterling}\PYG{p}{);}
+    \PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{getElementById}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}eursterling\PYGZdq{}}\PYG{p}{).}\PYG{n+nx}{appendChild}\PYG{p}{(}\PYG{n+nx}{sterlingNode}\PYG{p}{);}
+  \PYG{p}{\PYGZcb{})}
+  \PYG{p}{.}\PYG{k}{catch}\PYG{p}{(}\PYG{k+kd}{function}\PYG{p}{(}\PYG{n+nx}{error}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+    \PYG{k+kd}{var} \PYG{n+nx}{node} \PYG{o}{=} \PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{createElement}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}LI\PYGZdq{}}\PYG{p}{);}
+    \PYG{n+nx}{node}\PYG{p}{.}\PYG{n+nx}{id} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}currency\PYGZdq{}}\PYG{p}{;}
+    \PYG{k+kd}{var} \PYG{n+nx}{text} \PYG{o}{=} \PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{createTextNode}\PYG{p}{(}
+      \PYG{l+s+s2}{\PYGZdq{}Sorry something went wrong while getting the currency value data :*(\PYGZdq{}}
+    \PYG{p}{);}
+    \PYG{n+nx}{node}\PYG{p}{.}\PYG{n+nx}{append}\PYG{p}{(}\PYG{n+nx}{text}\PYG{p}{);}
+    \PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{getElementById}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}eursterling\PYGZdq{}}\PYG{p}{).}\PYG{n+nx}{appendChild}\PYG{p}{(}\PYG{n+nx}{node}\PYG{p}{);}
+
+    \PYG{n+nx}{console}\PYG{p}{.}\PYG{n+nx}{log}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}error\PYGZdq{}}\PYG{p}{);}
+  \PYG{p}{\PYGZcb{});}
+\PYG{n+nx}{axios}
+  \PYG{p}{.}\PYG{n+nx}{get}\PYG{p}{(}
+    \PYG{l+s+s2}{\PYGZdq{}https://www.alphavantage.co/query?function=CURRENCY\PYGZus{}EXCHANGE\PYGZus{}RATE\PYGZam{}from\PYGZus{}currency=EUR\PYGZam{}to\PYGZus{}currency=USD\PYGZam{}apikey=G38RVCM1OWLSKALP\PYGZdq{}}
+  \PYG{p}{)}
+  \PYG{p}{.}\PYG{n+nx}{then}\PYG{p}{(}\PYG{n+nx}{res} \PYG{p}{=\PYGZgt{}} \PYG{p}{\PYGZob{}}
+    \PYG{k+kd}{var} \PYG{n+nx}{eur\PYGZus{}to\PYGZus{}dollar} \PYG{o}{=}
+      \PYG{l+s+s2}{\PYGZdq{}1 Euro = \PYGZdq{}} \PYG{o}{+}
+      \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{data}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}Realtime Currency Exchange Rate\PYGZdq{}}\PYG{p}{][}\PYG{l+s+s2}{\PYGZdq{}5. Exchange Rate\PYGZdq{}}\PYG{p}{]} \PYG{o}{+}
+      \PYG{l+s+s2}{\PYGZdq{}USD\PYGZdq{}}\PYG{p}{;}
+    \PYG{k+kd}{var} \PYG{n+nx}{dollarNode} \PYG{o}{=} \PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{createElement}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}p\PYGZdq{}}\PYG{p}{);}
+    \PYG{n+nx}{dollarNode}\PYG{p}{.}\PYG{n+nx}{append}\PYG{p}{(}\PYG{n+nx}{eur\PYGZus{}to\PYGZus{}dollar}\PYG{p}{);}
+    \PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{getElementById}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}eurdollar\PYGZdq{}}\PYG{p}{).}\PYG{n+nx}{appendChild}\PYG{p}{(}\PYG{n+nx}{dollarNode}\PYG{p}{);}
+  \PYG{p}{\PYGZcb{})}
+  \PYG{p}{.}\PYG{k}{catch}\PYG{p}{(}\PYG{k+kd}{function}\PYG{p}{(}\PYG{n+nx}{error}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+    \PYG{k+kd}{var} \PYG{n+nx}{node} \PYG{o}{=} \PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{createElement}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}LI\PYGZdq{}}\PYG{p}{);}
+    \PYG{n+nx}{node}\PYG{p}{.}\PYG{n+nx}{id} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}currency\PYGZdq{}}\PYG{p}{;}
+    \PYG{k+kd}{var} \PYG{n+nx}{text} \PYG{o}{=} \PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{createTextNode}\PYG{p}{(}
+      \PYG{l+s+s2}{\PYGZdq{}Sorry something went wrong while getting the currency value data :*(\PYGZdq{}}
+    \PYG{p}{);}
+    \PYG{n+nx}{node}\PYG{p}{.}\PYG{n+nx}{append}\PYG{p}{(}\PYG{n+nx}{text}\PYG{p}{);}
+    \PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{getElementById}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}eurdollar\PYGZdq{}}\PYG{p}{).}\PYG{n+nx}{appendChild}\PYG{p}{(}\PYG{n+nx}{node}\PYG{p}{);}
+
+    \PYG{n+nx}{console}\PYG{p}{.}\PYG{n+nx}{log}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}error\PYGZdq{}}\PYG{p}{);}
+  \PYG{p}{\PYGZcb{});}
+\PYG{n+nx}{axios}
+  \PYG{p}{.}\PYG{n+nx}{get}\PYG{p}{(}
+    \PYG{l+s+s2}{\PYGZdq{}https://www.alphavantage.co/query?function=CURRENCY\PYGZus{}EXCHANGE\PYGZus{}RATE\PYGZam{}from\PYGZus{}currency=EUR\PYGZam{}to\PYGZus{}currency=CNY\PYGZam{}apikey=G38RVCM1OWLSKALP\PYGZdq{}}
+  \PYG{p}{)}
+  \PYG{p}{.}\PYG{n+nx}{then}\PYG{p}{(}\PYG{n+nx}{res} \PYG{p}{=\PYGZgt{}} \PYG{p}{\PYGZob{}}
+    \PYG{k+kd}{var} \PYG{n+nx}{eur\PYGZus{}to\PYGZus{}cny} \PYG{o}{=}
+      \PYG{l+s+s2}{\PYGZdq{}1 Euro = \PYGZdq{}} \PYG{o}{+}
+      \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{data}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}Realtime Currency Exchange Rate\PYGZdq{}}\PYG{p}{][}\PYG{l+s+s2}{\PYGZdq{}5. Exchange Rate\PYGZdq{}}\PYG{p}{]} \PYG{o}{+}
+      \PYG{l+s+s2}{\PYGZdq{}CNY\PYGZdq{}}\PYG{p}{;}
+    \PYG{k+kd}{var} \PYG{n+nx}{cnyNode} \PYG{o}{=} \PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{createElement}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}p\PYGZdq{}}\PYG{p}{);}
+    \PYG{n+nx}{cnyNode}\PYG{p}{.}\PYG{n+nx}{append}\PYG{p}{(}\PYG{n+nx}{eur\PYGZus{}to\PYGZus{}cny}\PYG{p}{);}
+    \PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{getElementById}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}eurcny\PYGZdq{}}\PYG{p}{).}\PYG{n+nx}{appendChild}\PYG{p}{(}\PYG{n+nx}{cnyNode}\PYG{p}{);}
+  \PYG{p}{\PYGZcb{})}
+  \PYG{p}{.}\PYG{k}{catch}\PYG{p}{(}\PYG{n+nx}{error} \PYG{p}{=\PYGZgt{}} \PYG{p}{\PYGZob{}}
+    \PYG{k+kd}{var} \PYG{n+nx}{node} \PYG{o}{=} \PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{createElement}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}LI\PYGZdq{}}\PYG{p}{);}
+    \PYG{n+nx}{node}\PYG{p}{.}\PYG{n+nx}{id} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}currency\PYGZdq{}}\PYG{p}{;}
+    \PYG{k+kd}{var} \PYG{n+nx}{text} \PYG{o}{=} \PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{createTextNode}\PYG{p}{(}
+      \PYG{l+s+s2}{\PYGZdq{}Sorry something went wrong while getting the currency value data :*(\PYGZdq{}}
+    \PYG{p}{);}
+    \PYG{n+nx}{node}\PYG{p}{.}\PYG{n+nx}{append}\PYG{p}{(}\PYG{n+nx}{text}\PYG{p}{);}
+    \PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{getElementById}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}stock\PYGZdq{}}\PYG{p}{).}\PYG{n+nx}{appendChild}\PYG{p}{(}\PYG{n+nx}{node}\PYG{p}{);}
+    \PYG{n+nx}{console}\PYG{p}{.}\PYG{n+nx}{log}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}error\PYGZdq{}}\PYG{p}{);}
+  \PYG{p}{\PYGZcb{});}
+\PYG{p}{\PYGZcb{}} \PYG{k}{catch} \PYG{p}{(}\PYG{n+nx}{error}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{n+nx}{alert}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}MAX API CALLS FOR FINANCIAL DATA REACHED\PYGZdq{}}\PYG{p}{);}
+\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

@@ -16,6 +16,7 @@
   border: 2px solid black;
   margin-top:10%;
   border-radius: 2%;
+  list-style: none;
 }
 #loanEven{
     background-color: #ffffcc;

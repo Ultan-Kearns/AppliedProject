@@ -61,24 +61,24 @@
 + Finish System design & review dissertation(Done)
 + write more sprints(May be redundant)(Done)
 # Sprint 10 (1st March - 10th March)
-+ Finish system evaluation(Almost done may need to add more)
 + Work on conclusion(Done)
-+ fix up documentation and make sure project is complete and bug free
-+ Fix error messages
-+ Fix Loan errors(DONE but now creating two transactions)
-+ Add images to sys design
-+ review dissertation
-# Sprint 11 (10th March - 15th March)
++ fix up documentation and make sure project is complete and bug free(Done to reasonable degree)
++ Fix error messages(DOne)
++ Fix Loan errors(DONE)
+
+# Sprint 11 (10th March - 20th March)
 + Test all code(Areas of possible failure: Loans, Updates, Registration, Forgot password, delete)
 + Put finishing touches on project(Little bit of UI work test on multiple machines)
 + Ensure cloud version is working(Working now but may have to test again)
 + Ensure all documentation is well-written(review and add more images to context and add images to system desgin for each component)
-
++ Add images to sys design
++ review dissertation
++ Finish system evaluation(Almost done may need to add more)
 # Issues
  + Add more to tech review (Need to include financial API alphavantage)
- + loan issue and error messages need to be fixed.
 # ideas
 + Use tensorflowJS to analyze data from API and predict markets or to create admin chats
++ Support page with voice recognition
 ## Notes
 ### I will make periodic changes due to changes in workload, personal issues,etc
 ### I run regression tests as well as module tests after each sprint
