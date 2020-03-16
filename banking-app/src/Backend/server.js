@@ -126,7 +126,7 @@ app.get("/api/loans", function(req, res) {
 app.get("/api/users/:id/:password", function(req, res) {
   Users.findById(req.params.id, function(err, data) {
     if (err) {
-      //send back error 500 to show the server had internel error
+      //send back error 500 to show the server had internal error
       res.status(500, "INTERNAL SERVER ERROR " + err);
       return;
     } else if (data != null) {
@@ -140,6 +140,7 @@ app.get("/api/users/:id/:password", function(req, res) {
       }
     } else if (data == null) {
       res.json("null");
+      res.status(404, "User not found");
     }
   });
 });
@@ -199,6 +200,7 @@ app.get("/api/users/:id/", function(req, res) {
       res.json(data);
     } else {
       res.json("null");
+      res.status(404, "user not found");
     }
   });
 });
@@ -208,7 +210,7 @@ app.delete("/api/users/:id/", function(req, res) {
       //send back error 500 to show the server had internel error
       res.status(500, "INTERNAL SERVER ERROR " + err);
     } else if (data != null) {
-      res.status(200, "Deleted Account");
+      res.status(202, "Deleted Account");
     }
   });
 });
@@ -218,7 +220,7 @@ app.delete("/api/loans/:email/:id", function(req, res) {
       //send back error 500 to show the server had internel error
       res.status(500, "INTERNAL SERVER ERROR " + err);
     } else if (data != null) {
-      res.status(200, "Paid loan");
+      res.status(202, "Paid loan");
     }
   });
 });
@@ -264,7 +266,7 @@ app.post("/api/users/:id/rand", function(req, res) {
         //send back error 500 to show the server had internel error
         res.status(500, "INTERNAL SERVER ERROR " + err);
       } else if (data != null) {
-        res.status(200, "Updated Password  ");
+        res.status(201, "Updated Password  ");
       }
     }
   );
@@ -278,7 +280,7 @@ app.post("/api/users/:id/balance", function(req, res) {
         //send back error 500 to show the server had internel error
         res.status(500, "INTERNAL SERVER ERROR " + err);
       } else if (data != null) {
-        res.status(200, "Updated balance");
+        res.status(201, "Updated balance");
         res.json(data);
       }
     }
@@ -314,6 +316,7 @@ app.get("/api/transactions/:email", function(req, res) {
   transaction.findName(function(err, data) {
     res.json(data);
   });
+  res.status(200, "found");
 });
 app.delete("/api/transactions/:email", function(req, res) {
   Transactions.remove({ email: req.params.email }, function(err, data) {
@@ -323,6 +326,7 @@ app.delete("/api/transactions/:email", function(req, res) {
 app.delete("/api/loans/:email", function(req, res) {
   Loans.remove({ email: req.params.email }, function(err, data) {
     res.json(data);
+    res.status(202, "deleted loan");
   });
 });
 app.post("/api/transactions/:email/:newemail", function(req, res) {
@@ -333,6 +337,7 @@ app.post("/api/transactions/:email/:newemail", function(req, res) {
       res.json(doc);
     }
   );
+  res.status(201);
 });
 app.post("/api/loans/:email/:newemail", function(req, res) {
   Loans.updateMany(
@@ -342,6 +347,7 @@ app.post("/api/loans/:email/:newemail", function(req, res) {
       res.json(doc + " " + req.params.newemail);
     }
   );
+  res.status(201);
 });
 app.get("/api/loans/:email", function(req, res) {
   //custom method to find name on transactions
@@ -349,6 +355,7 @@ app.get("/api/loans/:email", function(req, res) {
   loan.findName(function(err, data) {
     res.json(data);
   });
+  res.status(200);
 });
 //twillio code - taken template from their site
 const accountSid = "AC8cc82f77f451d6f26aeb1481e9c554cf";
