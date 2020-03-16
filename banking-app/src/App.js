@@ -13,27 +13,16 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Button from "react-bootstrap/Button";
 import ButtonToolbar from "react-bootstrap/ButtonToolbar";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import ReactDOM from "react-dom";
+import { Redirect } from "react-router-dom";
 import "axios";
 import "./Styles/App.css";
-
 const annyang = require("annyang");
+
 class App extends React.Component {
+  constructor(props){
+    super()
 
-  main() {
-    if (annyang) {
-      // Let's define a command.
-      var commands = {
-        hello: function() {
-          alert("Hello world!");
-        }
-      };
-
-      // Add our commands to annyang
-      annyang.addCommands(commands);
-
-      // Start listening.
-      annyang.start();
-    }
   }
   logout() {
     sessionStorage.setItem("username", "");
@@ -44,6 +33,30 @@ class App extends React.Component {
     document.addEventListener("contextmenu", function(e) {
       e.preventDefault();
     });
+
+    //template taken from example https://www.npmjs.com/package/annyang
+    if (annyang) {
+      // Let's define a command.
+      var commands = {
+        hello: function() {
+          alert("Hi Friend, I am dectecting your voice :D !");
+        },
+        home: function() {
+
+          alert("Going home");
+   return <Redirect to='/home' />
+        },
+        loans: function() {
+          ReactDOM.render(<Home />, document.getElementById("root"));
+        }
+      };
+
+      // Add our commands to annyang
+      annyang.addCommands(commands);
+
+      // Start listening.
+      annyang.start();
+    }
   }
   render() {
     return (

@@ -1,11 +1,9 @@
 import React from "react";
 import { Helmet } from "react-helmet";
-import ReactDOM from "react-dom";
 import "../Styles/HomeStyle.css";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import { getHeadlines } from "../Services/HeadlineHelpers.js";
-
 const axios = require("axios").default;
 
 class Home extends React.Component {
