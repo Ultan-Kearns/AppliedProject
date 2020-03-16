@@ -16,7 +16,25 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "axios";
 import "./Styles/App.css";
 
+const annyang = require("annyang");
 class App extends React.Component {
+
+  main() {
+    if (annyang) {
+      // Let's define a command.
+      var commands = {
+        hello: function() {
+          alert("Hello world!");
+        }
+      };
+
+      // Add our commands to annyang
+      annyang.addCommands(commands);
+
+      // Start listening.
+      annyang.start();
+    }
+  }
   logout() {
     sessionStorage.setItem("username", "");
     window.location.reload();
