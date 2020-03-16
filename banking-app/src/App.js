@@ -6,6 +6,7 @@ import Loans from "./Components/Loans";
 import Headlines from "./Components/Headlines";
 import Transactions from "./Components/Transactions";
 import Statistics from "./Components/Statistics";
+import Support from "./Components/Support";
 import UserInfo from "./Components/UserInfo";
 import Error from "./Components/Error";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -29,7 +30,6 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-
         {/*Show the navigation throughout app*/}
         <Router>
           <nav>
@@ -71,6 +71,11 @@ class App extends React.Component {
                     User Info
                   </Button>
                 </Link>
+                <Link to="/Support">
+                  <Button variant="primary" size="sm">
+                    Support
+                  </Button>
+                </Link>
                 <Button
                   variant="warning "
                   size="sm"
@@ -91,6 +96,7 @@ class App extends React.Component {
             <Route path="/UserInfo" component={UserInfo} />
             <Route path="/Statistics" component={Statistics} />
             <Route path="/Headlines" component={Headlines} />
+            <Route path="/Support" component={Support} />
             {/*If route undefined redirect to error*/}
             <Route path="/*" component={Error} />
           </Switch>
