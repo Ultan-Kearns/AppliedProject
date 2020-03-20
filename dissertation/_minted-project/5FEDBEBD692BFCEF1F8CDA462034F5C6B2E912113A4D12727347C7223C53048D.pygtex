@@ -1,0 +1,31 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n+nx}{handleSubmitForm} \PYG{o}{=} \PYG{n+nx}{event} \PYG{p}{=\PYGZgt{}} \PYG{p}{\PYGZob{}}
+  \PYG{k+kr}{const} \PYG{n+nx}{axios} \PYG{o}{=} \PYG{n+nx}{require}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}axios\PYGZdq{}}\PYG{p}{).}\PYG{k}{default}\PYG{p}{;}
+  \PYG{k+kr}{const} \PYG{n+nx}{sha256} \PYG{o}{=} \PYG{n+nx}{require}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}js\PYGZhy{}sha256\PYGZsq{}}\PYG{p}{);}
+   \PYG{n+nx}{axios}
+    \PYG{p}{.}\PYG{n+nx}{get}\PYG{p}{(}
+      \PYG{l+s+s2}{\PYGZdq{}https://localhost:8080/api/users/\PYGZdq{}} \PYG{o}{+}
+        \PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{state}\PYG{p}{.}\PYG{n+nx}{username}\PYG{p}{.}\PYG{n+nx}{toLowerCase}\PYG{p}{()} \PYG{o}{+}
+        \PYG{l+s+s2}{\PYGZdq{}/\PYGZdq{}} \PYG{o}{+}
+        \PYG{n+nx}{sha256}\PYG{p}{(}\PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{state}\PYG{p}{.}\PYG{n+nx}{password}\PYG{p}{)}
+    \PYG{p}{)}
+    \PYG{p}{.}\PYG{n+nx}{then}\PYG{p}{(}\PYG{k+kd}{function}\PYG{p}{(}\PYG{n+nx}{res}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+      \PYG{n+nx}{console}\PYG{p}{.}\PYG{n+nx}{log}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}TEST LOGIN \PYGZdq{}} \PYG{o}{+} \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{data}\PYG{p}{);}
+      \PYG{c+c1}{//need to fix this so it shows error message}
+       \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{data} \PYG{o}{!==} \PYG{l+s+s2}{\PYGZdq{}null\PYGZdq{}}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+        \PYG{c+c1}{//store the username this will help the bank feel more personal}
+        \PYG{n+nx}{sessionStorage}\PYG{p}{.}\PYG{n+nx}{setItem}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}username\PYGZdq{}}\PYG{p}{,} \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{data}\PYG{p}{.}\PYG{n+nx}{name}\PYG{p}{);}
+        \PYG{n+nx}{sessionStorage}\PYG{p}{.}\PYG{n+nx}{setItem}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}email\PYGZdq{}}\PYG{p}{,} \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{data}\PYG{p}{.}\PYG{n+nx}{\PYGZus{}id}\PYG{p}{);}
+        \PYG{n+nx}{ReactDOM}\PYG{p}{.}\PYG{n+nx}{render}\PYG{p}{(}\PYG{o}{\PYGZlt{}}\PYG{n+nx}{Home} \PYG{o}{/\PYGZgt{}}\PYG{p}{,} \PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{getElementById}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}root\PYGZdq{}}\PYG{p}{));}
+      \PYG{p}{\PYGZcb{}}
+      \PYG{k}{else} \PYG{k}{if}\PYG{p}{(}\PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{data} \PYG{o}{==} \PYG{l+s+s2}{\PYGZdq{}null\PYGZdq{}}\PYG{p}{)\PYGZob{}}
+        \PYG{n+nx}{alert}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Wrong username or password\PYGZdq{}}\PYG{p}{)}
+      \PYG{p}{\PYGZcb{}}
+    \PYG{p}{\PYGZcb{}).}\PYG{k}{catch}\PYG{p}{(}\PYG{n+nx}{error} \PYG{p}{=\PYGZgt{}\PYGZob{}}
+      \PYG{n+nx}{alert}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Error logging in, check internet connection?\PYGZdq{}}\PYG{p}{)}
+    \PYG{p}{\PYGZcb{});}
+
+    \PYG{n+nx}{console}\PYG{p}{.}\PYG{n+nx}{log}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Clicked\PYGZdq{}}\PYG{p}{)}
+  \PYG{n+nx}{event}\PYG{p}{.}\PYG{n+nx}{preventDefault}\PYG{p}{();}
+\PYG{p}{\PYGZcb{};}
+\end{Verbatim}

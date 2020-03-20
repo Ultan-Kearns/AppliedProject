@@ -1,0 +1,5 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{state}\PYG{p}{.}\PYG{n+nx}{number}\PYG{p}{.}\PYG{n+nx}{length} \PYG{o}{===} \PYG{l+m+mi}{10} \PYG{o}{\PYGZam{}\PYGZam{}}
+\PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{state}\PYG{p}{.}\PYG{n+nx}{name}\PYG{p}{.}\PYG{n+nx}{length} \PYG{o}{\PYGZgt{}=} \PYG{l+m+mi}{5} \PYG{o}{\PYGZam{}\PYGZam{}}
+\PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{state}\PYG{p}{.}\PYG{n+nx}{password}\PYG{p}{.}\PYG{n+nx}{length} \PYG{o}{\PYGZgt{}=} \PYG{l+m+mi}{6} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{username} \PYG{o}{!==} \PYG{k+kc}{null} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n+nx}{dob} \PYG{o}{!=} \PYG{k+kc}{null}
+\end{Verbatim}

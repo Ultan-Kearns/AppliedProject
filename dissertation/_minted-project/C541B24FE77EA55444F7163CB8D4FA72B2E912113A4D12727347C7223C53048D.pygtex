@@ -1,0 +1,24 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n+nx}{app}\PYG{p}{.}\PYG{n+nx}{post}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}/api/users\PYGZdq{}}\PYG{p}{,} \PYG{k+kd}{function}\PYG{p}{(}\PYG{n+nx}{req}\PYG{p}{,} \PYG{n+nx}{res}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+  \PYG{c+c1}{//check if user with same username exists use findById and change id to username}
+  \PYG{k+kd}{var} \PYG{n+nx}{balance}\PYG{p}{;}
+  \PYG{k}{if}\PYG{p}{(}\PYG{n+nx}{req}\PYG{p}{.}\PYG{n+nx}{body}\PYG{p}{.}\PYG{n+nx}{balance} \PYG{o}{==} \PYG{l+s+s2}{\PYGZdq{}\PYGZdq{}}\PYG{p}{)}
+  \PYG{p}{\PYGZob{}}
+    \PYG{n+nx}{balance} \PYG{o}{=} \PYG{l+m+mi}{0}
+  \PYG{p}{\PYGZcb{}}
+  \PYG{k}{else}\PYG{p}{\PYGZob{}}
+    \PYG{n+nx}{balance} \PYG{o}{=} \PYG{n+nx}{req}\PYG{p}{.}\PYG{n+nx}{body}\PYG{p}{.}\PYG{n+nx}{balance}
+  \PYG{p}{\PYGZcb{}}
+  \PYG{n+nx}{Users}\PYG{p}{.}\PYG{n+nx}{create}\PYG{p}{(\PYGZob{}}
+    \PYG{n+nx}{\PYGZus{}id}\PYG{o}{:} \PYG{n+nx}{req}\PYG{p}{.}\PYG{n+nx}{body}\PYG{p}{.}\PYG{n+nx}{\PYGZus{}id}\PYG{p}{,}
+    \PYG{n+nx}{password}\PYG{o}{:} \PYG{n+nx}{req}\PYG{p}{.}\PYG{n+nx}{body}\PYG{p}{.}\PYG{n+nx}{password}\PYG{p}{,}
+    \PYG{n+nx}{name}\PYG{o}{:} \PYG{n+nx}{req}\PYG{p}{.}\PYG{n+nx}{body}\PYG{p}{.}\PYG{n+nx}{name}\PYG{p}{,}
+    \PYG{n+nx}{number}\PYG{o}{:} \PYG{n+nx}{req}\PYG{p}{.}\PYG{n+nx}{body}\PYG{p}{.}\PYG{n+nx}{number}\PYG{p}{,}
+    \PYG{n+nx}{dob}\PYG{o}{:} \PYG{n+nx}{req}\PYG{p}{.}\PYG{n+nx}{body}\PYG{p}{.}\PYG{n+nx}{dob}\PYG{p}{,}
+    \PYG{n+nx}{balance}\PYG{o}{:} \PYG{n+nx}{balance}\PYG{p}{,}
+    \PYG{n+nx}{iban}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}IE\PYGZdq{}}\PYG{p}{,}
+    \PYG{n+nx}{bic}\PYG{o}{:}\PYG{l+s+s2}{\PYGZdq{}\PYGZdq{}}
+  \PYG{p}{\PYGZcb{});}
+  \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{status}\PYG{p}{(}\PYG{l+m+mi}{201}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}Resource created\PYGZdq{}}\PYG{p}{);}
+\PYG{p}{\PYGZcb{});}
+\end{Verbatim}

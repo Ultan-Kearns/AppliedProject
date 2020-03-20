@@ -1,0 +1,48 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{//template taken from earlier project}
+\PYG{c+c1}{//https://github.com/Ultan\PYGZhy{}Kearns/eCommerceApp/blob/master/BackEnd/Server.js}
+\PYG{c+c1}{//Improved upon in this project}
+\PYG{n+nx}{app}\PYG{p}{.}\PYG{n+nx}{get}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}/api/emailuser/:id/:password\PYGZdq{}}\PYG{p}{,} \PYG{k+kd}{function}\PYG{p}{(}\PYG{n+nx}{req}\PYG{p}{,} \PYG{n+nx}{res}\PYG{p}{,} \PYG{n+nx}{next}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+  \PYG{n+nx}{Users}\PYG{p}{.}\PYG{n+nx}{findById}\PYG{p}{(}\PYG{n+nx}{req}\PYG{p}{.}\PYG{n+nx}{params}\PYG{p}{.}\PYG{n+nx}{id}\PYG{p}{,} \PYG{k+kd}{function}\PYG{p}{(}\PYG{n+nx}{err}\PYG{p}{,} \PYG{n+nx}{data}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{data} \PYG{o}{==} \PYG{k+kc}{null}\PYG{p}{)}
+      \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{status}\PYG{p}{(}\PYG{l+m+mi}{404}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}User does not exist on this server\PYGZdq{}}\PYG{p}{,} \PYG{n+nx}{err}\PYG{p}{);}
+    \PYG{k}{else} \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{data}\PYG{p}{.}\PYG{n+nx}{\PYGZus{}id} \PYG{o}{==} \PYG{n+nx}{req}\PYG{p}{.}\PYG{n+nx}{params}\PYG{p}{.}\PYG{n+nx}{id}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+      \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{json}\PYG{p}{(}\PYG{n+nx}{data}\PYG{p}{);}
+      \PYG{n+nx}{console}\PYG{p}{.}\PYG{n+nx}{log}\PYG{p}{(}\PYG{n+nx}{data}\PYG{p}{)}
+      \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{status}\PYG{p}{(}\PYG{l+m+mi}{200}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}User logged in!\PYGZdq{}}\PYG{p}{);}
+      \PYG{k+kd}{var} \PYG{n+nx}{nodemailer} \PYG{o}{=} \PYG{n+nx}{require}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}nodemailer\PYGZdq{}}\PYG{p}{);}
+      \PYG{k+kd}{var} \PYG{n+nx}{transporter} \PYG{o}{=} \PYG{n+nx}{nodemailer}\PYG{p}{.}\PYG{n+nx}{createTransport}\PYG{p}{(\PYGZob{}}
+        \PYG{n+nx}{host}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}smtp.gmail.com\PYGZdq{}}\PYG{p}{,} \PYG{c+c1}{// hostname}
+        \PYG{n+nx}{service}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}gmail\PYGZdq{}}\PYG{p}{,}
+        \PYG{n+nx}{auth}\PYG{o}{:} \PYG{p}{\PYGZob{}}
+          \PYG{c+c1}{//login to email set up for this project}
+          \PYG{n+nx}{user}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}reactproject19@gmail.com\PYGZdq{}}\PYG{p}{,}
+          \PYG{n+nx}{pass}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}GMITreact19\PYGZdq{}}
+        \PYG{p}{\PYGZcb{},}
+        \PYG{n+nx}{tls}\PYG{o}{:} \PYG{p}{\PYGZob{}}
+          \PYG{n+nx}{ciphers}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}SSLv3\PYGZdq{}}
+        \PYG{p}{\PYGZcb{}}
+      \PYG{p}{\PYGZcb{});}
+      \PYG{k+kd}{var} \PYG{n+nx}{mailOptions} \PYG{o}{=} \PYG{p}{\PYGZob{}}
+        \PYG{c+c1}{//Setting up which account to use for seending emails}
+        \PYG{n+nx}{from}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}reactproject19@gmail.com\PYGZdq{}}\PYG{p}{,}
+        \PYG{n+nx}{to}\PYG{o}{:} \PYG{n+nx}{data}\PYG{p}{.}\PYG{n+nx}{\PYGZus{}id}\PYG{p}{,}
+        \PYG{n+nx}{subject}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}Forgot Independent Banking password\PYGZdq{}}\PYG{p}{,}
+        \PYG{n+nx}{text}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}Here is your password for Independent Banking: \PYGZdq{}} \PYG{o}{+} \PYG{n+nx}{req}\PYG{p}{.}\PYG{n+nx}{params}\PYG{p}{.}\PYG{n+nx}{password}
+      \PYG{p}{\PYGZcb{};}
+
+      \PYG{c+c1}{//Send email or log errors if user doesn\PYGZsq{}t exist}
+      \PYG{n+nx}{transporter}\PYG{p}{.}\PYG{n+nx}{sendMail}\PYG{p}{(}\PYG{n+nx}{mailOptions}\PYG{p}{,} \PYG{k+kd}{function}\PYG{p}{(}\PYG{n+nx}{error}\PYG{p}{,} \PYG{n+nx}{info}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+        \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{error}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+          \PYG{n+nx}{console}\PYG{p}{.}\PYG{n+nx}{log}\PYG{p}{(}\PYG{n+nx}{error}\PYG{p}{);}
+        \PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{p}{\PYGZob{}}
+          \PYG{n+nx}{console}\PYG{p}{.}\PYG{n+nx}{log}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Sent Email to address: \PYGZdq{}} \PYG{o}{+} \PYG{n+nx}{req}\PYG{p}{.}\PYG{n+nx}{params}\PYG{p}{.}\PYG{n+nx}{id}\PYG{p}{);}
+        \PYG{p}{\PYGZcb{}}
+      \PYG{p}{\PYGZcb{});}
+    \PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{p}{\PYGZob{}}
+      \PYG{n+nx}{console}\PYG{p}{.}\PYG{n+nx}{log}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}EMAIL COULD NOT BE SENT\PYGZdq{}}\PYG{p}{);}
+      \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{json}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}error email not sent\PYGZdq{}}\PYG{p}{);}
+    \PYG{p}{\PYGZcb{}}
+  \PYG{p}{\PYGZcb{});}
+\PYG{p}{\PYGZcb{});}
+\end{Verbatim}

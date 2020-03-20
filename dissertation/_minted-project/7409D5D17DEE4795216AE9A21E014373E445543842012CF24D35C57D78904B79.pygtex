@@ -1,0 +1,33 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{x}{axios}
+\PYG{x}{  .get(}
+\PYG{x}{    \PYGZdq{}https://newsapi.org/v2/top\PYGZhy{}headlines?country=us\PYGZam{}category=business\PYGZam{}apiKey=e9cdf3a801374e4eba79b8ea0552a4bd\PYGZdq{}}
+\PYG{x}{  )}
+\PYG{x}{  .then(res =\PYGZgt{} \PYGZob{}}
+\PYG{x}{    for (var i = 0; i \PYGZlt{} 3; i++) \PYGZob{}}
+\PYG{x}{      //create LI element then form statment then append to LI then add to list}
+\PYG{x}{      var node = document.createElement(\PYGZdq{}LI\PYGZdq{});}
+\PYG{x}{      node.id = \PYGZdq{}headline\PYGZdq{};}
+\PYG{x}{      var text = document.createTextNode(}
+\PYG{x}{        \PYGZdq{}Headline: \PYGZdq{} +}
+\PYG{x}{          res.data.articles[i].title +}
+\PYG{x}{          \PYGZdq{}Description: \PYGZdq{} +}
+\PYG{x}{          res.data.articles[i].description +}
+\PYG{x}{          \PYGZdq{}Author: \PYGZdq{} +}
+\PYG{x}{          res.data.articles[i].author}
+\PYG{x}{      );}
+\PYG{x}{      var image = document.createElement(\PYGZdq{}IMG\PYGZdq{});}
+\PYG{x}{      image.src = res.data.articles[i].urlToImage;}
+\PYG{x}{      image.alt = \PYGZdq{}Picture not available\PYGZdq{};}
+\PYG{x}{      var link = document.createElement(\PYGZdq{}A\PYGZdq{});}
+\PYG{x}{      link.href = res.data.articles[i].url;}
+\PYG{x}{      link.text = \PYGZdq{}Link to article\PYGZdq{};}
+\PYG{x}{      node.append(text);}
+\PYG{x}{      node.append(link);}
+\PYG{x}{      node.append(image);}
+\PYG{x}{      document.getElementById(\PYGZdq{}homeFinance\PYGZdq{}).appendChild(node);}
+\PYG{x}{    \PYGZcb{}}
+\PYG{x}{    ReactDOM.render(\PYGZlt{}App /\PYGZgt{}, document.getElementById(\PYGZdq{}root\PYGZdq{}));}
+\PYG{x}{  \PYGZcb{})}
+\PYG{x}{  .catch(error =\PYGZgt{} \PYGZob{}\PYGZcb{});}
+\end{Verbatim}
