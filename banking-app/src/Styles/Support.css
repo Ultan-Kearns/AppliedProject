@@ -1,0 +1,9 @@
+textarea{
+  height: 40vh;
+  width: 100vw;
+  margin-top: 20%;
+  resize: none;
+}
+#submit{
+  margin-top:5%;
+}
