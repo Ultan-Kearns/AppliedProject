@@ -72,9 +72,11 @@
 + Ensure cloud version is working(Working now but may have to test again)(done)
 # Sprint 12 (20th March - 31st March)
 + Ensure all documentation is well-written(review and add more images to context and add images to system desgin for each component)
-+ Add images to sys design
++ Add images to sys design(Done just need to finish of support component)
++ finish support component
 + review dissertation
 + Finish system evaluation(Almost done may need to add more)
++ add more to styles? - may need to get nav bar to contract
 + complete speech recognition
 # Issues
  + Add more to tech review (Need to include financial API alphavantage)
