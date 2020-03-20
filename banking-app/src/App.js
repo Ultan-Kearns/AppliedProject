@@ -22,8 +22,8 @@ const annyang = require("annyang");
 class App extends React.Component {
   constructor(props){
     super()
-
   }
+
   logout() {
     sessionStorage.setItem("username", "");
     window.location.reload();
@@ -36,31 +36,33 @@ class App extends React.Component {
 
     //template taken from example https://www.npmjs.com/package/annyang
     if (annyang) {
-      // Let's define a command.
+
+      // Commands
       var commands = {
         hello: function() {
-          alert("Hi Friend, I am dectecting your voice :D !");
+          alert("Hi Friend, I am dectecting your voice :D!");
         },
-        home: function() {
-
-          alert("Going home");
-   return <Redirect to='/home' />
+        home: function(){
+          alert("IN HOMe")
+          ReactDOM.render(<Home/>, document.getElementById("root"))
         },
         loans: function() {
-          ReactDOM.render(<Home />, document.getElementById("root"));
-        }
-      };
+        },
+        exit: function(){
+          this.logout()
+        },
 
-      // Add our commands to annyang
+      };
+      // Add commands to annyang
       annyang.addCommands(commands);
 
-      // Start listening.
+      // Starts listening.
       annyang.start();
     }
   }
   render() {
     return (
-      <div className="App">
+      <div className="App" id ="App">
         {/*Show the navigation throughout app*/}
         <Router>
           <nav>

@@ -1165,6 +1165,12 @@ axios
   .catch(error => {});
 \end{minted}
 This basically retrieves the information and creates an element on the page which then displays all pertinent headlines to the user.
+\\
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{img/loanscomponent.png}
+\caption{Image of Loans Component}
+\label{fig:Image of loans component}
+\end{figure}
 \subsubsection{Statistics}
 The statistics page shows the user information pertaining to the stock market which is retrieved using the
 alphavantage API.  The alphavantage API has a five calls per minute limitation for free users so if the
@@ -1352,6 +1358,11 @@ async updateTransactionData() {
 \end{minted}
 The above code just feeds the retrieved data into a variable called transactionState and loanState depending on which method
 is called.
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{img/statisticscomponent.png}
+\caption{Image of Statistics Component}
+\label{fig:Image of statistics component}
+\end{figure}
 \subsubsection{Transactions}
 The transactions component lists transactions made on this users account which means it
 will list every transfer, loan or loan repayment made on the users account.  It accomplishes
@@ -1398,6 +1409,11 @@ there transactions.  Here is the code for requesting the transactions below:
   }
 \end{minted}
 Once retrieved each transaction is added to the transactions list as a child and is viewable by the user.
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{img/transactionscomponent.png}
+\caption{Image of Transactions Component}
+\label{fig:Image of transactions component}
+\end{figure}
 \subsubsection{headlines}
 The headlines component gets the latest headlines from reddit and NewsAPI and returns them to the user
 the headlines component utilizes the same helper method as in home but this component has a lot more
@@ -1436,15 +1452,30 @@ axios
 This is basically the same function as we have seen from the helper method in the home component with the
 exception that it has different field names as opposed to newsapi.org, but essentially they function the
 exact same way.
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{img/headlinescomponent.png}
+\caption{Image of Headlines Component}
+\label{fig:Image of headlines component}
+\end{figure}
 \subsubsection{Error}
 The error page is a simple page which handles errors which may occure when the user tries to
 access a resource that may not exist and it returns a message stating to the user "Sorry this page cannot be found"
 and also has a header which says "Error 404", a 404 error is returned when the server cannot find a requested resource.
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{img/errorcomponent.png}
+\caption{Image of Error Component}
+\label{fig:Image of Error component}
+\end{figure}
 \subsubsection{About}
 The about section just displays information about the site to the user and features no backend logic or axios requests
 its sole purpose is to make the bank appear as if it were a real entity instead of an imaginary business which only
 exists in the mind of a college student.  Of course all businesses start as imaginary entities and through hard work
 and effort become real viable businesses.
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{img/aboutcomponent.png}
+\caption{Image of About Component}
+\label{fig:Image of about component}
+\end{figure}
 \subsubsection{UserInfo}
 The UserInfo component has a large level of complexity, upon loading the user is
 greeted with a section for their basic info, a section for updating their info,
@@ -1727,6 +1758,11 @@ deleteUser() {
   }
 }
 \end{minted}
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{img/userinfocomponent.png}
+\caption{Image of User Info Component}
+\label{fig:Image of user info component}
+\end{figure}
 \section{Designing for UX(User Experience)}
 \subsection{Designing For End-Users As Opposed to Engineers}
 In making decisions regarding the UI I took user experience into serious consideration,

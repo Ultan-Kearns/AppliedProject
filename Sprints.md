@@ -65,15 +65,17 @@
 + fix up documentation and make sure project is complete and bug free(Done to reasonable degree)
 + Fix error messages(DOne)
 + Fix Loan errors(DONE)
-
 # Sprint 11 (10th March - 20th March)
-+ Test all code(Areas of possible failure: Loans, Updates, Registration, Forgot password, delete)
-+ Put finishing touches on project(Little bit of UI work test on multiple machines)
-+ Ensure cloud version is working(Working now but may have to test again)
+## set back due to CA, projects and other things
++ Test all code(Areas of possible failure: Loans, Updates, Registration, Forgot password, delete)(done)
++ Put finishing touches on project(Little bit of UI work test on multiple machines)(Done)
++ Ensure cloud version is working(Working now but may have to test again)(done)
+# Sprint 12 (20th March - 31st March)
 + Ensure all documentation is well-written(review and add more images to context and add images to system desgin for each component)
 + Add images to sys design
 + review dissertation
 + Finish system evaluation(Almost done may need to add more)
++ complete speech recognition
 # Issues
  + Add more to tech review (Need to include financial API alphavantage)
 # ideas
