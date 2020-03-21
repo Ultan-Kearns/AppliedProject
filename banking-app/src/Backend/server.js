@@ -94,10 +94,17 @@ loanSchema.methods.findNameAndDelete = function(username) {
   //define logic to find statement by name in here
   return this.model("Loans").remove({ email: this.email }, username);
 };
+var supportSchema = new Schema({
+  email: { type: String },
+  bug: { type: String },
+  date: { type: Date },
+  status:{type: String}
+});
 //models for mongoose
 var Users = mongoose.model("Users", userSchema);
 var Transactions = mongoose.model("Transactions", transactionSchema);
 var Loans = mongoose.model("Loans", loanSchema);
+var Support = mongoose.model("Support",supportSchema)
 var transaction = new Transactions();
 var loan = new Loans();
 //Here I will use get requests to retrieve resources
@@ -356,6 +363,21 @@ app.get("/api/loans/:email", function(req, res) {
     res.json(data);
   });
   res.status(200);
+});
+app.get("/api/support/", function(req, res) {
+  Support.find(function(err, data) {
+    res.json(data);
+  });
+  res.status(200);
+});
+app.post("/api/support", function(req, res) {
+  Support.create({
+    email: req.body.email,
+    bug: req.body.bug,
+    date: req.body.date,
+    status: req.body.status,
+  });
+  res.status(201, "Resource created");
 });
 //twillio code - taken template from their site
 const accountSid = "AC8cc82f77f451d6f26aeb1481e9c554cf";

@@ -9,6 +9,8 @@ import Card from "react-bootstrap/Card";
 import "axios";
 import "js-sha256";
 import "../Styles/Support.css";
+const axios = require("axios").default;
+
 class Support extends React.Component {
   //username test
   //password test
@@ -23,7 +25,19 @@ class Support extends React.Component {
       supportMessage: event.target.value
     });
   };
-
+  handleSubmitForm = event =>{
+    var d = new Date();
+    const Support = {
+      email: sessionStorage.getItem("email"),
+      bug: this.state.supportMessage,
+      date: d,
+      status: "Open"
+    }
+    axios.post("https://localhost:8080/api/support",Support)
+    alert("Bug submitted our team will be right on it!")
+    document.getElementById("support").value= ""
+    event.preventDefault()
+  }
   render() {
     return (
       <div>
@@ -42,13 +56,14 @@ class Support extends React.Component {
         <Card>
           <Card.Header>Support Form</Card.Header>
           <Card.Body>
-            <form id="supportForm" onSubmit={this.support}>
+            <form id="supportForm" onSubmit={this.handleSubmitForm}>
               <textarea
                 placeholder="Enter your bug here"
                 maxlength="300"
                 minlength="50"
                 id="support"
                 onChange={this.handleSupportChange}
+                value={this.state.supportMessage}
               />
 
               <br />
