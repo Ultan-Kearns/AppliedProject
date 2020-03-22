@@ -4,11 +4,15 @@ import "../Styles/HomeStyle.css";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import { getHeadlines } from "../Services/HeadlineHelpers.js";
+ 
+import ReactDOM from "react-dom";
+
 const axios = require("axios").default;
 
 class Home extends React.Component {
 
   constructor(props) {
+
     super();
     this.state = {
       amount: "",
@@ -163,10 +167,11 @@ class Home extends React.Component {
   };
   render() {
     return (
-      <div className="Home">
+      <div className="Home" id = "home">
         <Helmet>
           <title>Home</title>
         </Helmet>
+
         <Card>
           <Card.Header>
             Welcome to the Independent Banking,{" "}

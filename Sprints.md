@@ -73,11 +73,12 @@
 # Sprint 12 (20th March - 31st March)
 + Ensure all documentation is well-written(review and add more images to context and add images to system desgin for each component)
 + Add images to sys design(Done just need to finish of support component)
-+ finish support component
++ Add annyang and advantageAPI to dissertation tech review
++ finish support component(Done just need to work on email summarization)
 + review dissertation
 + Finish system evaluation(Almost done may need to add more)
 + add more to styles? - may need to get nav bar to contract
-+ complete speech recognition
++ complete speech recognition(Done)
 # Issues
  + Add more to tech review (Need to include financial API alphavantage)
 # ideas
