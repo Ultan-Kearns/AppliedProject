@@ -13,7 +13,9 @@ import Support from "./Components/Support";
 import UserInfo from "./Components/UserInfo";
 import Error from "./Components/Error";
 import Nav from "./Components/Nav";
+
 const annyang = require("annyang");
+
 
 class App extends React.Component {
   constructor(props) {
@@ -30,12 +32,14 @@ class App extends React.Component {
     if (annyang) {
       // Commands
       var commands = {
+
+
         hello: function() {
           alert("Hi Friend, I am dectecting your voice :D!");
         },
         home: function() {
           alert("IN HOMe");
-          ReactDOM.render(<Home />,document.getElementById("root"));
+          ReactDOM.render(<Home />,document.getElementById("root"))
         },
         about: function() {
           ReactDOM.render(<About />,document.getElementById("root"));
@@ -67,7 +71,22 @@ class App extends React.Component {
         logout: function() {
           sessionStorage.setItem("username", "");
           window.location.reload();
+        },
+        help: function(){
+          alert("You are now in voice mode, you can navigate pages using your voice\n"+
+          "valid pages are:\n" +
+          "home\n" +
+          "about\n" +
+          "headlines\n" +
+          "loans\n" +
+          "transactions\n" +
+          "statistics\n" +
+          "userinfo\n" +
+          "and support\n" +
+          "If you wish to logout just say logout\n" +
+          "If you wish to exit voice mode please logout and login again");
         }
+
       };
       // Add commands to annyang
       annyang.addCommands(commands);
@@ -79,7 +98,7 @@ class App extends React.Component {
   render(){
     return(
       <div>
-        
+
       </div>
     )
   }
