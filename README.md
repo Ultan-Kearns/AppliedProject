@@ -1,6 +1,6 @@
 # Fourth Year Applied Project and Dissertation - Ultan Kearns G00343745
 ## Introduction to project
-This project was made by me for my fourth year module Applied Project and Dissertation,I have decided on making a baking app using React, Node.js, Express and MongoDB. My goal is to make a secure, fully functioning banking application which will provide the user with a rich UI, multiple banking features such as viewing statements and taking out loans and allow them to view transactions using charts made in chart.js.  It is my hope that these tools will prove useful to the user and provide a satisfying experience. 
+This project was made by me(Ultan Kearns) for my fourth year module Applied Project and Dissertation,I have decided on making a baking app using React, Node.js, Express and MongoDB. My goal is to make a secure, fully functioning banking application which will provide the user with a rich UI, multiple banking features such as viewing statements and taking out loans and allow them to view transactions using charts made in chart.js.  It is my hope that these tools will prove useful to the user and provide a satisfying experience. 
 ## Why I chose this Project?
 A banking application is broad in scope and allows the developer to gain experience
 with UI design, security, functionality and various other concerns related to designing full
@@ -19,4 +19,11 @@ Open two terminals or the command prompt windows, depending on OS, then navigate
 - include link here 
 ## You can also download the docker image and run it
 - include link to docker file for app and erver
+## Innovations to traditional banking applications
++ I have included voice navigation in this application which allows the user to enter what I termed voice mode.  In voice mode the navigation bar will disappear and the user can navigate through the application using only their voice, if the user has any queries they can say "help" and a full list of voice commands will be displayed via a javascript alert.
++ I have included charts using chart.js to show users expenditures, transfers and loans.
++ I have integrated a headlines component which will show the user the most up to date financial news.
++ I have utilized AdvantageAPI to pull information from the stock market in real-time(API limitations exist as I am free user)
+## Dependencies
+For a full list of dependencies see here: https://github.com/Ultan-Kearns/AppliedProject/network/dependencies
 ### IMPORTANT NOTE RUN ALL COMMANDS WITHOUT QUOTATIONS
