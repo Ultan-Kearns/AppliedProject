@@ -47,7 +47,7 @@
 \contentsline {subsection}{\numberline {3.4.1}How I Handled Multiple Projects}{25}{subsection.3.4.1}% 
 \contentsline {subsection}{\numberline {3.4.2}Issues I Faced With Time Management}{25}{subsection.3.4.2}% 
 \contentsline {section}{\numberline {3.5}Version Control}{25}{section.3.5}% 
-\contentsline {chapter}{\numberline {4}Technology Review}{26}{chapter.4}% 
+\contentsline {chapter}{\numberline {4}Technical Review}{26}{chapter.4}% 
 \contentsline {section}{\numberline {4.1}Intro}{26}{section.4.1}% 
 \contentsline {section}{\numberline {4.2}MERN Stack}{26}{section.4.2}% 
 \contentsline {subsection}{\numberline {4.2.1}About MongoDB}{26}{subsection.4.2.1}% 
@@ -56,32 +56,34 @@
 \contentsline {subsection}{\numberline {4.2.4}About Node}{28}{subsection.4.2.4}% 
 \contentsline {section}{\numberline {4.3}Testing}{29}{section.4.3}% 
 \contentsline {subsection}{\numberline {4.3.1}Selenium}{29}{subsection.4.3.1}% 
-\contentsline {section}{\numberline {4.4}React Libraries}{29}{section.4.4}% 
+\contentsline {section}{\numberline {4.4}React Libraries / JavaScript Libraries}{29}{section.4.4}% 
 \contentsline {subsection}{\numberline {4.4.1}Axios}{29}{subsection.4.4.1}% 
 \contentsline {subsection}{\numberline {4.4.2}React Helmet}{30}{subsection.4.4.2}% 
 \contentsline {subsection}{\numberline {4.4.3}Create-React-App}{30}{subsection.4.4.3}% 
+\contentsline {subsection}{\numberline {4.4.4}Annyang}{30}{subsection.4.4.4}% 
 \contentsline {section}{\numberline {4.5}Third Party APIs}{30}{section.4.5}% 
 \contentsline {subsection}{\numberline {4.5.1}NodeMailer}{30}{subsection.4.5.1}% 
 \contentsline {subsection}{\numberline {4.5.2}News API}{30}{subsection.4.5.2}% 
-\contentsline {subsection}{\numberline {4.5.3}Reddit}{30}{subsection.4.5.3}% 
+\contentsline {subsection}{\numberline {4.5.3}Reddit}{31}{subsection.4.5.3}% 
+\contentsline {subsection}{\numberline {4.5.4}AlphaVantage}{31}{subsection.4.5.4}% 
 \contentsline {section}{\numberline {4.6}Architecture}{31}{section.4.6}% 
 \contentsline {subsection}{\numberline {4.6.1}REST(Representational State Transfer)}{31}{subsection.4.6.1}% 
-\contentsline {section}{\numberline {4.7}Security}{31}{section.4.7}% 
-\contentsline {subsection}{\numberline {4.7.1}OpenSSL}{31}{subsection.4.7.1}% 
+\contentsline {section}{\numberline {4.7}Security}{32}{section.4.7}% 
+\contentsline {subsection}{\numberline {4.7.1}OpenSSL}{32}{subsection.4.7.1}% 
 \contentsline {subsection}{\numberline {4.7.2}SHA256}{32}{subsection.4.7.2}% 
-\contentsline {section}{\numberline {4.8}Database}{32}{section.4.8}% 
-\contentsline {subsection}{\numberline {4.8.1}MLAB}{32}{subsection.4.8.1}% 
+\contentsline {section}{\numberline {4.8}Database}{33}{section.4.8}% 
+\contentsline {subsection}{\numberline {4.8.1}MLAB}{33}{subsection.4.8.1}% 
 \contentsline {section}{\numberline {4.9}Languages}{33}{section.4.9}% 
 \contentsline {subsection}{\numberline {4.9.1}Javascript}{33}{subsection.4.9.1}% 
-\contentsline {subsection}{\numberline {4.9.2}HTML(Hyper-Text Markup Language)}{33}{subsection.4.9.2}% 
+\contentsline {subsection}{\numberline {4.9.2}HTML(Hyper-Text Markup Language)}{34}{subsection.4.9.2}% 
 \contentsline {section}{\numberline {4.10}Documentation}{34}{section.4.10}% 
 \contentsline {subsection}{\numberline {4.10.1}\LaTeX }{34}{subsection.4.10.1}% 
-\contentsline {section}{\numberline {4.11}Styles}{34}{section.4.11}% 
-\contentsline {subsection}{\numberline {4.11.1}Cascading Style Sheets(CSS)}{34}{subsection.4.11.1}% 
+\contentsline {section}{\numberline {4.11}Styles}{35}{section.4.11}% 
+\contentsline {subsection}{\numberline {4.11.1}Cascading Style Sheets(CSS)}{35}{subsection.4.11.1}% 
 \contentsline {subsection}{\numberline {4.11.2}React Bootstrap}{35}{subsection.4.11.2}% 
 \contentsline {section}{\numberline {4.12}Cloud}{35}{section.4.12}% 
 \contentsline {subsection}{\numberline {4.12.1}Google Cloud Platform}{35}{subsection.4.12.1}% 
-\contentsline {subsection}{\numberline {4.12.2}Docker}{35}{subsection.4.12.2}% 
+\contentsline {subsection}{\numberline {4.12.2}Docker}{36}{subsection.4.12.2}% 
 \contentsline {chapter}{\numberline {5}System Design}{37}{chapter.5}% 
 \contentsline {section}{\numberline {5.1}Introduction}{37}{section.5.1}% 
 \contentsline {section}{\numberline {5.2}Architecture of Project}{37}{section.5.2}% 

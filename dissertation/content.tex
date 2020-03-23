@@ -385,7 +385,7 @@ Github also allowed me to have multiple branches, one of which I used for all co
  debugging the application a lot easier.
 \\
   Github also served as a backup of all my code in case of hard drive errors, hardware failures or various other issues that may arise.  Github also allowed me to revert back to previous versions of the project just in case I had made a mistake in the code and needed to revert back to a working version.  Github also served to provide me with a place were I could log any issues I had with the project and also allowed me to divide my sprints into daily or weekly tasks since the sprints were usually set over the course of a few days.
-\chapter{Technology Review}
+\chapter{Technical Review}
 \section{Intro}
 In this chapter I will explore the technologies I used in this project and why I used them.  I will also explain how the technologies were implemented and how they were utilized to ensure that the online banking application was fully functional.  I will also review the technologies I used in this project and show how each technology provided a desired functionality which would be paramount to achieving a fully fledged robust, secure and overall user-friendly baking system.
 \section{MERN Stack}
@@ -453,13 +453,15 @@ In the above example what will happen when the user searches the URL https://loc
 \section{Testing}
 \subsection{Selenium}
 Selenium is a browser add-on which automates the browser and allows the user to create tests which will monitor the users actions performed and log them so that these tests can be run and re-run with the click of a button.  Selenium helped greatly in the development of this application and freed up time I would have used to perform extensive manual testing and allowed me to add a litany of new features to this application.
-\section{React Libraries}
+\section{React Libraries / JavaScript Libraries}
 \subsection{Axios}
 Axios is a promise based HTTP client for node.js\cite{Axios}.  I used Axios in this project to send HTTP requests from the frontend of the application to the NodeJS server.  Axios allowed me to retrieve information from various paths and return that information to the user, and to update, delete and create new information.  I used Axios to achieve full CRUD(Create, read, update \& delete) functionality.
 \subsection{React Helmet}
 React-helmet is a reusable react component that can manage the document head of various components, it allows the developer to define HTML tags such as title and outputs them to the browser\cite{ReactHelmet}.
 \subsection{Create-React-App}
 Create-React-App allows the developer to quickstart a React application without having to worry about build-options or anything else, it's as simple as running "create-react-app new app" in the terminal or CLI(Command line interface)\cite{CreateReactApp}.
+\subsection{Annyang}
+Annyang is a speech recognition library which I utilized in this project to provide voice navigation through components.  This library was extremely easy to set-up and was very interesting to review Annyangs code.  Sadly due to library limitations Annyang only works on Google Chrome and is unavailable on Firefox and other browsers.  I used Annyang to describe various vocal commands and have the app continuously listening.
 \section{Third Party APIs}
 \subsection{NodeMailer}
 NodeMailer is a module for NodeJS that allows the developer to set up an automated email system to send the user personalized emails which could be used to inform user of new features, services etc. For this project I will use it to allow the user to reset their password.
@@ -467,6 +469,9 @@ NodeMailer is a module for NodeJS that allows the developer to set up an automat
 News API is a REST API which searches the web for news stories and retrieves headlines from a variety of websites\cite{NewsAPI}.  News API allows the developer to search by keywords and phrases, dates published, source name and various other parameters which may be relevant to the article in questions.
 \subsection{Reddit}
 I used the Reddit API to retrieve latest financial news and displayed them to the user.  The Reddit API allows the developer to read in JSON from reddit and to parse it and output it to the user.
+\subsection{AlphaVantage}
+AlphaVantage is an API to get financial information such as stock, exchange rates and cryptocurrency prices in realtime as well as providing historic information.  I utilized AlphaVantage in this applicaiton to provide the user with the latest exchange rates for currencies and to provide the user with information about the stock market.
+
 \section{Architecture}
 \subsection{REST(Representational State Transfer)}
 REST is an architectural design that was first hypothesized in Roy Fielding's dissertation\cite{Fielding}.  REST has six constraints which must be met for an application to be considered "RESTful" these are:
