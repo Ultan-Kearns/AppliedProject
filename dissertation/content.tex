@@ -1199,16 +1199,41 @@ The home page is the first page that the user sees when they login to the applic
 \\
 The send money feature works as follows, the user inputs the values expected, if the user exists then update the current users value to equal their balance - cost sent then update the other users balance to equal their balance + cost sent and create transactions for both the user sending the money and the user receiving the money.  Here is the code below:
 \begin{minted}[linenos,tabsize=2,breaklines]{JavaScript}
-if(this.state.accountId === sessionStorage.getItem("email"))
-{
-  alert("Cannot send money to yourself ( ;-( )")
-  e.preventDefault()
+if (this.state.accountId === sessionStorage.getItem("email")) {
+  alert("Cannot send money to yourself ( ;-( )");
+  e.preventDefault();
   return;
 }
 if (this.state.amount === "" || this.state.accountId === "") {
-  alert("The amount / account ID cannot be null, want to donate it to us? >;D");
-} else {
+  alert(
+    "The amount / account ID cannot be null, want to donate it to us? >;D"
+  );
+}
+if (
+  parseInt(this.state.amount) <=
+    parseInt(sessionStorage.getItem("balance")) &&
+  parseInt(this.state.amount) > 0
+) {
   var date = new Date();
+  //update bal
+  const newBalance = {
+    balance:
+      parseInt(sessionStorage.getItem("balance")) -
+      parseInt(this.state.amount)
+  };
+  sessionStorage.setItem("balance", newBalance.balance);
+
+  axios
+    .post(
+      "https://localhost:8080/api/users/" +
+        sessionStorage.getItem("email") +
+        "/balance",
+      newBalance
+    )
+    .catch(error => {
+      alert("Could not send money");
+    });
+
   //payer logic
   const newTransaction = {
     email: sessionStorage.getItem("email"),
@@ -1222,40 +1247,16 @@ if (this.state.amount === "" || this.state.accountId === "") {
     .post("https://localhost:8080/api/transactions", newTransaction)
     .then(res => {
       console.log(res);
+    })
+    .catch(error => {
+      alert("ERROR");
     });
-  //update bal
-  const newBalance = {
-    balance:
-      parseInt(sessionStorage.getItem("balance")) -
-      parseInt(this.state.amount)
-  };
-  axios
-    .post(
-      "https://localhost:8080/api/users/" +
-        sessionStorage.getItem("email") +
-        "/balance",
-      newBalance
-    )
-    .then(res => {
-      console.log("TEST " + res);
-      axios
-        .get(
-          "https://localhost:8080/api/users/" +
-            sessionStorage.getItem("email")
-        )
-        .then(res => {
-          sessionStorage.setItem("balance", res.data.balance);
-        })
-        .catch(error => {
-          alert("Could not send money");
-        });
-    });
-
   //payee logic
   const payeeTransaction = {
     email: this.state.accountId,
     cost: this.state.amount,
-    location: "Online Banking Transfer from " + sessionStorage.getItem("email"),
+    location:
+      "Online Banking Transfer from " + sessionStorage.getItem("email"),
     name: sessionStorage.getItem("username"),
     date: date
   };
@@ -1264,17 +1265,25 @@ if (this.state.amount === "" || this.state.accountId === "") {
     .post("https://localhost:8080/api/transactions", payeeTransaction)
     .then(res => {
       console.log(res);
+    })
+    .catch(error => {
+      alert("ERROR");
     });
-   axios
+  axios
     .get("https://localhost:8080/api/users/" + this.state.accountId)
     .then(res => {
       this.setState({
-        payeeBalance:   parseInt(res.data.balance) + parseInt(this.state.amount)
-      })
-    }).then(res =>{
-      const newBalance ={
+        payeeBalance:
+          parseInt(res.data.balance) + parseInt(this.state.amount)
+      });
+    })
+    .catch(error => {
+      alert("ERROR");
+    })
+    .then(res => {
+      const newBalance = {
         balance: this.state.payeeBalance
-      }
+      };
       axios
         .post(
           "https://localhost:8080/api/users/" +
@@ -1283,10 +1292,27 @@ if (this.state.amount === "" || this.state.accountId === "") {
           newBalance
         )
         .then(res => {
-          alert("Money Sent to: " + this.state.accountId + " Amount sent: " + this.state.amount + " New Balance: " + newBalance.balance)
+          //not doing this after 3 attemps
+          document.getElementById("balance").innerHTML =
+            "Your balance: €" + sessionStorage.getItem("balance");
+          alert(
+            "Money Sent to: " +
+              this.state.accountId +
+              " Amount sent: " +
+              this.state.amount +
+              " New Balance: " +
+              sessionStorage.getItem("balance")
+          );
+        })
+        .catch(error => {
+          alert("ERROR");
         });
     })
-    .catch(error => {});
+    .catch(error => {
+      alert("ERROR " + error);
+    });
+} else {
+  alert("Transaction failed");
 }
 e.preventDefault();
 };
