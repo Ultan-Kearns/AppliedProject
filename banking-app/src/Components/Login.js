@@ -52,21 +52,31 @@ class Login extends React.Component {
       e.preventDefault();
     });
   }
+  generateRandom(){
+
+    var random = "";
+    for(var i = 0; i < 10; i++){
+      random += Math.floor(10 * Math.random());
+    }
+    return random
+  }
   handleSubmitForm = event => {
     const axios = require("axios").default;
     const sha256 = require("js-sha256");
+    const random = this.generateRandom()
     axios
       .get(
         "https://localhost:8080/api/users/" +
           this.state.username.toLowerCase() +
           "/" +
-          sha256(this.state.password)
+          sha256(this.state.password) + "/" + random
       )
       .then(function(res) {
         if (res.data !== "null") {
           //do axios.get in here
           sessionStorage.setItem("username", res.data.name);
           sessionStorage.setItem("email", res.data._id);
+          sessionStorage.setItem("number",res.data.number)
           ReactDOM.render(<Nav />, document.getElementById("root"));
         } else if (res.data === "null") {
           alert("Wrong username or password");
@@ -77,7 +87,8 @@ class Login extends React.Component {
       .catch(error => {
         alert("Unexpected error: " + error);
       });
-    event.preventDefault();
+
+     event.preventDefault();
   };
   render() {
     return (

@@ -61,7 +61,7 @@ var userSchema = new Schema({
   dob: { type: String, required: true },
   balance: { type: Number, default: 0, required: true },
   iban: { type: String },
-  bic: { type: String },
+  bic: { type: String }
 });
 //change this later
 var transactionSchema = new Schema({
@@ -98,13 +98,13 @@ var supportSchema = new Schema({
   email: { type: String },
   bug: { type: String },
   date: { type: Date },
-  status:{type: String}
+  status: { type: String }
 });
 //models for mongoose
 var Users = mongoose.model("Users", userSchema);
 var Transactions = mongoose.model("Transactions", transactionSchema);
 var Loans = mongoose.model("Loans", loanSchema);
-var Support = mongoose.model("Support",supportSchema)
+var Support = mongoose.model("Support", supportSchema);
 var transaction = new Transactions();
 var loan = new Loans();
 //Here I will use get requests to retrieve resources
@@ -130,33 +130,29 @@ app.get("/api/loans", function(req, res) {
   });
 });
 //template was taken from earlier project and refactored https://github.com/Ultan-Kearns/eCommerceApp/blob/master/BackEnd/Server.js
-app.get("/api/users/:id/:password", function(req, res) {
+app.get("/api/users/:id/:password/:random", function(req, res) {
   Users.findById(req.params.id, function(err, data) {
     if (err) {
       //send back error 500 to show the server had internal error
       res.status(500, "INTERNAL SERVER ERROR " + err);
       return;
     } else if (data != null) {
-
       //compare user username and password to the username and password in DB
       if (req.params.id == data._id && data.password == req.params.password) {
         //twillio code - taken template from their site
         const accountSid = "AC8cc82f77f451d6f26aeb1481e9c554cf";
         const authToken = "d593089eb8edbcf9eb2ca0242800db11";
         const client = require("twilio")(accountSid, authToken);
-        //generate random 2fa code for user
-        var random = "";
-        for(var i = 0; i < 10; i++){
-          random += Math.floor(10 * Math.random());
-        }
-        //store the username this will help the bank feel more personal
         client.messages
           .create({
-            body: "Your code is: " + random,
+            body: "Your code is: " + req.params.random,
             from: "+12055089804",
             to: data.number
           })
-          .then(message => console.log(message.sid));
+          .then(message => console.log(message.sid))
+          .catch(error => {
+            console.log(error);
+          });
         res.json(data);
         res.status(200, "User logged in!");
       } else {
@@ -393,7 +389,7 @@ app.post("/api/support", function(req, res) {
     email: req.body.email,
     bug: req.body.bug,
     date: req.body.date,
-    status: req.body.status,
+    status: req.body.status
   });
   res.status(201, "Resource created");
 });
