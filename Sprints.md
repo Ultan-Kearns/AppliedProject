@@ -73,17 +73,15 @@
 # Sprint 12 (20th March - 31st March)
 + Ensure all documentation is well-written(review and add more images to context and add images to system desgin for each component)
 + Add images to sys design(Done just need to finish of support component)
-+ Add annyang and advantageAPI to dissertation tech review
++ Add annyang and advantageAPI to dissertation tech review(DONE)
 + finish support component(Done just need to work on email summarization)
 + review dissertation
 + Finish system evaluation(Almost done may need to add more)
-+ add more to styles? - may need to get nav bar to contract
++ add more to styles? - may need to get nav bar to contract when window is less than certain resolution
 + complete speech recognition(Done)
-# Issues
- + Add more to tech review (Need to include financial API alphavantage)
 # ideas
 + Use tensorflowJS to analyze data from API and predict markets or to create admin chats
-+ Support page with voice recognition
++ Support page with voice recognition(DONE but used for navigation)
 ## Notes
 ### I will make periodic changes due to changes in workload, personal issues,etc
 ### I run regression tests as well as module tests after each sprint

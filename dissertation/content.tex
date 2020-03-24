@@ -35,6 +35,7 @@ React or \LaTeX\  before but I plan to learn a lot about these technologies duri
 \chapter{Introduction}
 %Make sure you use references
 \section {Why A MERN stack?}
+In this section I will be discussing why I chose a MERN stack, what it is, and how I will utilize it.
 \begin{center}
   \begin{figure}[h!]
     \includegraphics[width=\textwidth]{img/mern.jpeg}
@@ -120,6 +121,7 @@ up and running in a few minutes and handles HTTP requests very well.
 \end{figure} \cite{NodeImage}
 \\
 \section{Why a banking application?}
+In this section I will discuss why I chose to do a banking application of all things for my final year project.
 \subsection{Explanation of Why I Chose This Project}
 A banking application is broad in scope and offers many questions to the developer
 such as how can I optimize load times and how can I ensure user data is secure.
@@ -223,6 +225,7 @@ main project and the dissertation contains all materials relating to the dissert
 I also have a sprints.md file which contains information about all my sprints as I decided to use the agile methodology during this project, I also have a usefulresources.md file which contains a list of useful resources which helped me throughout the course of this project.  The final file is the README.md this will contain a brief intro to the project as well as information on running the application.
 \chapter{Context}
 \section{Project Objectives}
+In this section I will outline the key objectives for this application.
 \begin{itemize}
   \item To provide safe \& secure online banking
   \item To provide an intuitive UI that can be easily navigated by the user
@@ -244,6 +247,8 @@ Every modern bank now has some form of website which allows their customers to d
 all their daily tasks related to banking online.  In this chapter I will discuss the
 advantages, disadvantages and overall affect of online banking.
 \section{History of Online Banking}
+This section will discuss the history of online banking where it came from and how
+it has evolved throughout the ages.
 \subsection{Definition of Online Banking}
 The definition of online banking includes any form of electronic payment systems
 that allows the customer or business entity to conduct financial transactions
@@ -268,6 +273,7 @@ which had to be addressed such as ease of access, security and the education of 
 and various other crimes which can occur by storing information online.  Some banks offered advice to the elderly
 and people who may not know so much about computers advice in an attempt to cut down on online banking crimes I have refereneced an example of one such site targeting the elderly to dispense such advice \cite{BOIElderly}
 \section{Advantages of Online Banking}
+Here I will discuss the numerous advantages that online banking offers.
 \subsection{Convenience}
 There are many advantages to online banking which I will discuss in this section
 the most prominent of these advantages is convenience.  Bank customers no longer
@@ -298,6 +304,7 @@ of the bank and allows many customers to migrate to other banks, that is why man
 spend a lot of money to secure data on their servers which creates jobs and stimulates
 the economy.
 \section{Disadvantages of Online Banking}
+Here I will discuss the numerous disadvantages of online banking.
 \subsection{Security}
 Storing details in a digital environment is a lot less secure than storing them
 in a non digital format.  This happens because the data is stored on a server
@@ -329,7 +336,7 @@ In this project I utilized the Agile methodology, I used Sprints to coordinate m
 module testing and regression testing.  I also used Test Driven Development which involves writing tests and writing just
 enough code to make them pass and then going back and refactoring the code.
 \section{Agile}
-%% need to add referencess
+This section will discuss the Agile methodology which was utilized in the development of this applcation and how it will be utilized in the development of this application.
 \subsection{What is Agile?}
 Agile is a software development methodology which according to the agile manifesto website \cite{Agile} favours: "Individuals and interactions over processes and tools,
 Working software over comprehensive documentation,
@@ -356,6 +363,7 @@ my sprints(Backlog) and added the issues that needed to be finished to the Kanba
 the Kanban board with my sprints to segregate work I needed to accomplish in a fixed
 time-frame.
 \section{Test Driven Development (TDD)}
+This section will discuss Test Driven Development and what it is and how it will be applied to the development process.
 \subsection{What Is Test Driven Development?}
 Test Driven Development or TDD is a form of testing during development which focuses on writing the tests of a function before coding it and then writing enough code to make sure that it passes the test and then going back and refactoring it\cite{TDD}.
 \begin{figure}[h!]
@@ -368,11 +376,13 @@ Test Driven Development or TDD is a form of testing during development which foc
 \subsection{How I Applied Test Driven Development To This Project}
 I wrote simple tests as I developed this code, for example for the statements section I wrote a test such as "Output only the statements of the user, output must be in form of location, cost, name, date" I then proceeded to write just enough code to make it pass and then went back and refactored it.
 \section{Time Management}
+This section discusses how I managed my time while juggling multiple projects.
 \subsection{How I Handled Multiple Projects}
 I was able to handle multiple projects at a time by defining sprints in my final year project and assigning myself daily tasks using the Kanban Board, sometimes I had issues in completing these daily tasks but I always tried to complete them in a timely and effective manner.  Sometimes I experienced scope-creep with a task where I had to add more features to the task to make the project viable.
 \subsection{Issues I Faced With Time Management}
 I faced some issues with time management as the workload was fairly heavy, I had to cut some projects short and leave out some features of various projects to ensure that all projects were completed to an acceptable level.
 \section{Version Control}
+This section will discuss version control and how I managed to develop this project by utilizing Github and Git.
 \begin{wrapfigure}{r}{0.1\textwidth}
 \includegraphics[width=3\linewidth]{img/github}
 \caption{Github Logo from github.com}
@@ -451,9 +461,11 @@ var host = server.address().address
 \\
 In the above example what will happen when the user searches the URL https://localhost:8080/ they will be greeted with the message "Server is up and running!", the 200 status indicates that the resource was retrieved successfully.
 \section{Testing}
+This section will discuss how the application was tested.
 \subsection{Selenium}
 Selenium is a browser add-on which automates the browser and allows the user to create tests which will monitor the users actions performed and log them so that these tests can be run and re-run with the click of a button.  Selenium helped greatly in the development of this application and freed up time I would have used to perform extensive manual testing and allowed me to add a litany of new features to this application.
 \section{React Libraries / JavaScript Libraries}
+This application uses many libraries to provide extra features for the user and to enchance the applications functionality, I will discuss the libraries used in this section and explain what they do and why they were used.
 \subsection{Axios}
 Axios is a promise based HTTP client for node.js\cite{Axios}.  I used Axios in this project to send HTTP requests from the frontend of the application to the NodeJS server.  Axios allowed me to retrieve information from various paths and return that information to the user, and to update, delete and create new information.  I used Axios to achieve full CRUD(Create, read, update \& delete) functionality.
 \subsection{React Helmet}
@@ -463,6 +475,7 @@ Create-React-App allows the developer to quickstart a React application without 
 \subsection{Annyang}
 Annyang is a speech recognition library which I utilized in this project to provide voice navigation through components.  This library was extremely easy to set-up and was very interesting to review Annyangs code.  Sadly due to library limitations Annyang only works on Google Chrome and is unavailable on Firefox and other browsers.  I used Annyang to describe various vocal commands and have the app continuously listening.
 \section{Third Party APIs}
+This application uses a handful of APIs to accomplish tasks from pulling news articles from various sources to providing the user with stock market information.  I will discuss the APIs used in the application below.
 \subsection{NodeMailer}
 NodeMailer is a module for NodeJS that allows the developer to set up an automated email system to send the user personalized emails which could be used to inform user of new features, services etc. For this project I will use it to allow the user to reset their password.
 \subsection{News API}
@@ -473,6 +486,7 @@ I used the Reddit API to retrieve latest financial news and displayed them to th
 AlphaVantage is an API to get financial information such as stock, exchange rates and cryptocurrency prices in realtime as well as providing historic information.  I utilized AlphaVantage in this applicaiton to provide the user with the latest exchange rates for currencies and to provide the user with information about the stock market.
 
 \section{Architecture}
+This section describes the architecture of the application and what design patterns were used in development and why.
 \subsection{REST(Representational State Transfer)}
 REST is an architectural design that was first hypothesized in Roy Fielding's dissertation\cite{Fielding}.  REST has six constraints which must be met for an application to be considered "RESTful" these are:
 \begin{itemize}
@@ -483,6 +497,7 @@ REST is an architectural design that was first hypothesized in Roy Fielding's di
   \item Layered System: The layered system allows for a heirarchial layer of components in which components can interact with certain components.  Components are unaware of other components besides the component with which they are interacting.
 \end{itemize}
 \section{Security}
+This section describes the various ways the application conforms to security standards and how they were applied and why.
 \subsection{OpenSSL}
 OpenSSL is a toolkit for providing TLS(Transport Layer Security) \& SSL(Secure Socket Layer) protocols.  It is also a cryptography library which can be used to enchance the applications security.  I used OpenSSL to generate a certificate for the Node server to provide an extra layer of security for the user.
 \\
@@ -495,6 +510,7 @@ OpenSSL is a toolkit for providing TLS(Transport Layer Security) \& SSL(Secure S
 \subsection{SHA256}
 SHA256 stands for Secure Hashing Algorithm 256 which is used as a one way function which means that data which is hashed using this algorithm is impossible to revert into it's original form\cite{SHA256}.  I used the SHA256 algorithm to encrypt and secure user passwords stored in the database and to ensure that the passwords were not stored in plaintext for extra security.
 \section{Database}
+I will discuss the database utilized to maintain user information and any pertinent information deemd relevant to the system.
 \subsection{MLAB}
 MLAB is a DaaS(Database as a service) platform and provides a free hosting environment for my applications database\cite{MLAB}.  The reason I chose MLAB is that it's free and it is easy to setup multiple separate schemas which can then be accessed through connecting to the database via the NodeJS server.  All the relevant data to the banking application is stored on MLAB.  MLAB utilizes a Mongo database and allows the user to connect to the database using a username and password.
 \section{Languages}
@@ -816,6 +832,145 @@ app.get("/api/emailuser/:id/:password", function(req, res, next) {
 });
 \end{minted}
 The email is encrypted and secured as per security standards
+\subsection{Nav}
+The Nav component is a component that is specifically designed to handle the routing
+for the application, the Nav component conists of a number of buttons which will link
+to various components.  The Nav component utilizes a react router and imports a component
+called routes from the Services folder.  In routes all routes are defined in a switch which
+wall map the various paths in this application to their components.
+\\
+Code for routes:
+\begin{minted}{JavaScript}
+
+import React from "react";
+
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Home from "../Components/Home";
+import About from "../Components/About";
+import Loans from "../Components/Loans";
+import Headlines from "../Components/Headlines";
+import Transactions from "../Components/Transactions";
+import Statistics from "../Components/Statistics";
+import Support from "../Components/Support";
+import UserInfo from "../Components/UserInfo";
+import Error from "../Components/Error";
+
+export default class routes extends React.Component{
+  render(){
+    return(
+      <Switch>
+        {/* Routes are defined here */}
+        <Route path="/" exact component={Home} />
+        <Route path="/About" component={About} />
+        <Route path="/Loans" component={Loans} />
+        <Route path="/Transactions" component={Transactions} />
+        <Route path="/UserInfo" component={UserInfo} />
+        <Route path="/Statistics" component={Statistics} />
+        <Route path="/Headlines" component={Headlines} />
+        <Route path="/Support" component={Support} />
+        {/*If route undefined redirect to error*/}
+        <Route path="/*" component={Error} />
+      </Switch>
+    )
+  }
+}
+
+\end{minted}
+\\
+Code for Nav:
+\begin{minted}{JavaScript}
+import React from "react";
+import { Link } from "react-router-dom";
+import Routes from "../Services/Routes.js";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import ReactDOM from "react-dom";
+import { Redirect } from "react-router-dom";
+import App from "../App.js";
+import "axios";
+import "../Styles/Nav.css";
+import Button from "react-bootstrap/Button";
+import ButtonToolbar from "react-bootstrap/ButtonToolbar";
+class Nav extends React.Component {
+  logout() {
+    sessionStorage.setItem("username", "");
+    window.location.reload();
+  }
+  componentDidMount() {}
+
+  render() {
+    return (
+      <div className="Nav">
+        <App />
+        {/*Show the navigation throughout app*/}
+
+        <Router>
+          <div className="nav-links">
+            <nav>
+              {/* Buttons that link to various Components */}
+              <ButtonToolbar>
+                <Link to="/">
+                  <Button variant="primary " size="sm">
+                    Home
+                  </Button>
+                </Link>
+                <Link to="/About">
+                  <Button variant="primary" size="sm">
+                    About Us
+                  </Button>
+                </Link>
+                <Link to="/Headlines">
+                  <Button variant="primary " size="sm">
+                    Headlines
+                  </Button>
+                </Link>
+                <Link to="/Loans">
+                  <Button variant="primary" size="sm">
+                    Loans
+                  </Button>
+                </Link>
+                <Link to="/Transactions">
+                  <Button variant="primary" size="sm">
+                    Transactions
+                  </Button>
+                </Link>
+                <Link to="/Statistics">
+                  <Button variant="primary" size="sm">
+                    Statistics
+                  </Button>
+                </Link>
+                <Link to="/UserInfo">
+                  <Button variant="primary" size="sm">
+                    User Info
+                  </Button>
+                </Link>
+                <Link to="/Support">
+                  <Button variant="primary" size="sm">
+                    Support
+                  </Button>
+                </Link>
+                <Button
+                  variant="warning "
+                  size="sm"
+                  onClick={this.logout}
+                  id="logout"
+                >
+                  Logout
+                </Button>
+              </ButtonToolbar>
+            </nav>
+          </div>
+
+          <Routes />
+        </Router>
+      </div>
+    );
+  }
+}
+export default Nav;
+\end{minted}
+The reason for separating routes from the Nav component is that it made the code easier
+to debug and decreased the complexity of the component thus making for more maintainable
+and well-written code.
 \subsubsection{Loans}
 The loans component greets the user with a header which says "Apply \& View Loans", the component is composed of
 an input box with a button stating "Apply for Loan" which when clicked will retrieve the number the user entered
@@ -1769,6 +1924,7 @@ deleteUser() {
 \label{fig:Image of user info component}
 \end{figure}
 \section{Designing for UX(User Experience)}
+UX is very important for an application as nobody wants to use an application that looks unsafe or looks clunky, so in this section I will be discussing how I tried to avoid coding a bad frontend design and the methodology I took when designing the frontend.
 \subsection{Designing For End-Users As Opposed to Engineers}
 In making decisions regarding the UI I took user experience into serious consideration,
 I have noticed a growing tendency among web developers to make sites as minimalistic as
@@ -1795,6 +1951,7 @@ made it aesthetically pleasing, and tried to be as concise with my language as
 possible to develop a user-friendly banking system which is on of the objectives
 I have outlined in my original project objectives.
 \section{Backend Architecture}
+Backend architecture is concerned with the logical aspect of the application such as the routes, communication with the database, and describing the internal logic of the application.  In this section I will discuss how I designed the backend architecture it's components and how they all fit together to provide a litany of functions to perform a number of banking tasks.
 \subsection{Mongoose}
 Mongoose is a modelling tool for MongoDB and I utilized it on the backend to create schemas, create objects, read data, update data and delete data. Mongoose was very useful in communicating with the database and allowed me to create custom features which could be utilized to search for various objects using their parameters.  All requests made to the database were made using Mongoose to achieve a full CRUD(Create, Read, Update \& delete) application.
 \subsection{ExpressJS}
@@ -2139,6 +2296,7 @@ https.createServer(security, app).listen(8080);
 
 \end{minted}
 \section{RESTful Architecture}
+RESTful architecture has many benefits and is widely used in modern applications, in this section I will describe RESTful architecture and it's benefits.
 \subsection{Client / Server Independence}
 To ensure that RESTful architecture standards were met I had to keep the cleint
 and the server independent.  I did this by making use of the AXIOS HTTP client which
@@ -2158,6 +2316,7 @@ the requested resources are loaded almost instantaneously.
 \subsection{Stateless}
 As mentioned in the cacheable section I made great use of sessionStorage to store information on the client machine, this information was then used in axios requests when communicating with the server, the server did not maintain a user session as the server and cleint were entirely independent of each other.  If the server went down the users applcation would still load but the user would not be able to login or perform any backend functions such as sending HTTP requests.  Statelessness is an important part of RESTful architecture and I did my utmost to achieve and implement it into this project so as to create a fully RESTful application.
 \section{Database Architecture}
+Database architecture can make or break a project, that is why I utilized MLAB and broke the database up into schemas so it is easily manageable.  I will discuss the database architecture in further detail below.
 \subsection{MLAB}
 MLAB is a DAAS or Database As A Service application which I used to store all the information about users or any other information
 generated by the application.  The Database was accessed using Mongoose on the backend.  The database is encrypted and secure and is used by
@@ -2166,6 +2325,7 @@ and to imitate a real-life application as very few companies own their own serve
 \subsection{Schema of Database}
 %Include image of DB schema here
 \section{Security}
+Security is a major concern with an online banking system, I will describe how I secured the application to the best of my abilities below.
 \subsection{Overview of Security}
 The application is secured using HTTPS(HyperText Transfer Protocal Secure) which encrypts connections to the application and the server
 is secured using SHA256(Secure Hashing Algorithm) and the users passwords are encrypted with SHA256 as well.  The applcation complies with the most up to date cyber-security principles and offers the user protection from hackers and implements security features expected of a modern online banking application.
@@ -2180,6 +2340,7 @@ As many pages as needed.
 \item Highlight any limitations or opportuni-ties in your approach or technologies used.
 \end{itemize}
 \section{Robust}
+It was very important from the outset that this application be robust as it is a basic requirement expected from any legitimate online banking application in the 21st century, I will list how I accomplished robustness below.
 \subsection{Error Handling}
 I have tested each feature extensively and have performed error handling where appropriate,
 the application is not entirely bug-free which is to be expected as no complex piece of software
@@ -2200,6 +2361,7 @@ banking application or indeed any full-stack application can fail, I mitigated t
 Selenium and outputting error messages to the console.
 \subsection{Speed}
 \section{Accessibility}
+In this project usability and accessibility were my main concerns, I wanted an application that the user could take to their grandmother and have her figure it out with little to no effort.  I will reflect on how I emphasized accessibility in this project below.
 \subsection{Minimalistic}
 In this application I provided a minimalistic UI so as not to overwhelm the user
 with a lot of on screen elements which many users will find superflous especially
@@ -2268,6 +2430,7 @@ uesr does not have to wait for a http request to retrieve the information but in
 it from their own device.
 \chapter{Conclusion}
 \section{What I Learned}
+I learned a great many things from developing this project, I learned an awful lot about developing an application using professional and industry standards to create a full-stack application.  I will list the things I have learned from this project below.
 \subsection{React}
 I learned a lot about React during this project as I have never used it before but I
 have used a similar framework which was somewhat helpful but I found React a lot different
@@ -2316,13 +2479,22 @@ Scope creep had a very negative impact on this project as I found the number of 
 to test previous features and features that were in the process of being implemented.
 \\
 From this project I learned that scope creep should be identified early and combated by assigning a weight to a feature depending on its importance and prioritising features with higher weights as opposed to those with lower weights.
-\subsection{READ THE DOCS!}
+\subsection{The Stackoverflow Principle: READ THE DOCS!}
 This is a point I cannot stress enough,  I find that most developers(including myself) think that they are almighty and that they do not need to read the documentation which is a gross error.  I found that I wasted a lot of time which could have been used improving the application on silly little errors which I introduced thanks to my ignorance of concepts I could have learned about in the documentation.
 \\
 Luckily I was able to realize the mistakes I was making early on in the development cycle and I took two weeks off to research the project and which technologies I would use and how best to implement them.  I read up on each technology I was utilizing in this application and reviewed their documentation and how to best implement these technologies.
 \\
 I found that reading the documentation saved so much time during the development of this project and reading documentation is not something that should ever be understated.
+\section{Innovation}
+Throughout this project I have tried to make the application as innovative as possible by treating the application as if it were a real online banking system, I have added a number of desired features which I will explain below.
+\subsection{Headlines}
+When using online banking I have noticed that many banks do not offer the latest financial news or that they only offer news from their own bank, this is in my view a mistake.  While there may be security reasons why most banks due this such as an aversion to CORS(cross origin resources sharing) which is understandable as it may lead to cross site scripting,  I have tried my utmost best to ensure this application provides a secure way of utilizing CORS by implementing HTTPS \& SSL/TLS into the system.  The headlines I used come from a myriad of news sources and by utilizing not only NewsAPI but also Reddit's financial subreddit I believe that I have provided a great service to the user by showing them various sources of new information which will enchance the end-users banking experience.
+\subsection{Voice Recognition}
+Voice recognition was a late addition to the code and thankfully Annyang(the library I utilized for this applicaiton to provide voice recognition)\cite{Annyang} was very easy to setup and even easier to user.  Voice Recognition is not available in many online banking systems and the reason may well be grounded in reasonable security concerns.  I have limited the functionality of voice recognition in this application to only navigation only as bad actors may try to take out loans on the users behalf or to transfer funds to their own accounts.
+\\
+Voice recognition in the application is fairly intuitive just say the component you would like and it will navigate to it whilst hiding the nav bar which is deemed redundant in what I termed "Voice Mode".  If the user is stuck or does not understand Voice Mode they can utilize the help command which will show them all the available commands in Voice Mode.
 \section{How TDD \& Agile Impacted Development}
+Both TDD and agile were crucial to the development and success of this project, there is a reason why both methodologies are utilized in industry and it is not hard to see why after having practiced them.
 \subsection{Positive Impacts of TDD}
 Test driven development had an extremely positive effect on the development of this application, while I was coding I began to think like a tester as opposed to a developer and thought just how much code is necessary to make this test pass then after I wrote the code I began to refactor it and found that I coded better this way.
 \\
@@ -2338,6 +2510,7 @@ The Kanban board on Github which I utilized for this project was a tremendous he
 \\
 In conclusion agile \& Kanban had an extremely positive impact on this application and saved a lot of time during development.
 \section{What I Would Do Differently}
+Although the development of this application went relatively smoothly thanks in part to the utilization of Agile \& TDD and the guidance of the project supervisor Dr. Dominic Carr there are some things that I would have done differently if given the opportunity to start again.
 \subsection{Planning}
 Looking back in hindsight there were a lot of things that I could have done differently, personally I feel the biggest change I would have made would have been to focus more on the planning phase and drew up a design of each function before implementation.  During the development I did describe functions I wanted but these functions were typically described in a couple of sentences without much thought, if I were doing this application again I would have wrote about three paragraphs stating exactly the function was supposed to do and how it should look to the user.
 \\
