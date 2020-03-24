@@ -510,10 +510,11 @@ OpenSSL is a toolkit for providing TLS(Transport Layer Security) \& SSL(Secure S
 \subsection{SHA256}
 SHA256 stands for Secure Hashing Algorithm 256 which is used as a one way function which means that data which is hashed using this algorithm is impossible to revert into it's original form\cite{SHA256}.  I used the SHA256 algorithm to encrypt and secure user passwords stored in the database and to ensure that the passwords were not stored in plaintext for extra security.
 \section{Database}
-I will discuss the database utilized to maintain user information and any pertinent information deemd relevant to the system.
+I will discuss the database utilized to maintain user information and any pertinent information deemed relevant to the system.
 \subsection{MLAB}
 MLAB is a DaaS(Database as a service) platform and provides a free hosting environment for my applications database\cite{MLAB}.  The reason I chose MLAB is that it's free and it is easy to setup multiple separate schemas which can then be accessed through connecting to the database via the NodeJS server.  All the relevant data to the banking application is stored on MLAB.  MLAB utilizes a Mongo database and allows the user to connect to the database using a username and password.
 \section{Languages}
+In this section I will list and describe the languages utilized in this application and explain why they were used.
 \subsection{Javascript}
 JavaScript is a lightweight programming language which is interpreted and is compiled just in time\cite{JavaScript}.  It is a very popular language for web developers as it is Turing Complete and allows the developer to manipulate the DOM(Document Object Model) programmatically.
 \\
@@ -554,7 +555,7 @@ Below I will include a very basic HTML page:
 \\
 All valid HTML pages must have a DOCTYPE html declaration, html tag, head tag, and a body tag.  Any tag which is opened must be closed.
 \section{Documentation}
-%hspace necessary when using \LaTeX
+In this section I will discuss how I wrote the documentation detailing the development,design of this application, and all other relevant artefacts to the applcation.
 \subsection{\LaTeX}
 \LaTeX \hspace{0.1cm} is a typesetting system that provides various features for designing and writing high quality documentation\cite{Latex}.  \LaTeX\hspace{0.1cm} has become the de-facto standard for Academic publications and is open-source. Having never use \LaTeX\hspace{0.1cm} before I found it very easy to setup and get started, it also made referencing a lot easier and made generating tables of contents \& figures very simple.
 \\
@@ -562,6 +563,7 @@ The reason I chose \LaTeX \hspace{0.1cm} to write this dissertation apart from t
 \\
 \LaTeX \hspace{0.1cm} also has extremely useful packages which can be used to provide numerous functionality.
 \section{Styles}
+This section describes how the applications UI(User Interface) was styled to provide a pleasant and intuitive experience for the user.
 \subsection{Cascading Style Sheets(CSS)}
 CSS allowed me to style the HTML pages and to make them look how I wanted them to look.  CSS describes how the HTML is supposed to look when the browser loads a web page.
 \\
@@ -580,6 +582,7 @@ Heres an example of CSS:
 \subsection{React Bootstrap}
 React Bootstrap is a front-end framework for React that provides the developer with a number of components which can be used to create a modern looking and intuitive user-interface.
 \section{Cloud}
+This section details the cloud architecture utilized to host this application.
 \subsection{Google Cloud Platform}
 Google Cloud Platform is an Infrastructure as a service(IaaS) platform which I will use to host my application and server to allow users to connect to the application remotely\cite{GoogleCloudPlatform}.  All logic will be performed by the user connection to the Google Cloud Platform server and utilizing the application.
 \\
@@ -593,14 +596,13 @@ Docker aims to simplify and accelerate workflows for applications and allows the
 \\
   I have never used Docker before but I chose to use it for this project as it is rapidly growing in popularity and it is extremely useful in today's industry as companies focus on releasing patches and updates to the user as soon as they are ready.
 \chapter{System Design}
-\section{Introduction}
+\section{Chapter Introduction}
 In this section I will discuss the architecture of the application both in terms of frontend and backend.
 I will discuss each component individually and the reasoning for its existence.  I will also discuss how
 the frontend communicates with the backend, how I designed the application with a strong focus on UX(User Experience)
 and how I improved upon existing paradigms in online banking.  The system is designed to be robust and to be as
 error prone as possible, I achieved this to the best of my abilities by using TDD(Test Driven Development) and an
 Agile methodology.
-\section{Architecture of Project}
 \subsection{Introduction to System}
 This application was made using React which is a web-application framework for building user interfaces,
 for the purposes of my application I used it to build a SPA(Single Page Application) which has multiple
@@ -617,6 +619,7 @@ a more uniform look and to create a better user experience.
 The system's backend was written using NodeJS and utilizes the ExpressJS library
 which offers the developer a wide range of additional features.
 \section{Front End Architecture}
+Here I will describe the architecture of the project in great technical detail, listing components and explaining their functionality and the why the components were developed.
 \subsection{List of Components}
 \subsubsection{Login}
 The login component is the component that the user first sees when starting the application.  The component features an introduction which has white text on a black backround and prompts the user to "Login to experience next generation banking".  In addition to this there is a paragraph which states "Please enter your username and password below and we'll redirect you to your account component"  below this paragrah are two input boxes which prompt the user to enter their username and password respectively.  When the user enters the correct password they are redirected to their accounts component, however if the password or username is entered incorrectly they are alerted by means of a JavaScript alert that their password or username is wrong.  In addition to the above stated there are three buttons one which says "Register" which navigates to the register component another which says "Forgot Password" which will navigate to the Forgot component and one which says "Login".  Once the user has entered the correct username and password they can hit the login button to be redirected to the main application pacomponentge.  The user cannot enter in a components name and gain access to the component unless logged in.  I accomplished the login feature by utilizing code from a previous project's function which I had coded:
