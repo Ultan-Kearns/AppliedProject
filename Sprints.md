@@ -79,7 +79,7 @@
 + Finish system evaluation(Almost done may need to add more)
 + add more to styles? - may need to get nav bar to contract when window is less than certain resolution
 + complete speech recognition(Done)
-+ Add Twillio 2FA and add to tech review (almost finished implementing it)
++ Add Twillio 2FA and add to tech review (Done)
 + Get interest added to loans by using dates then add to component info
 # ideas
 + Use tensorflowJS to analyze data from API and predict markets or to create admin chats

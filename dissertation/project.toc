@@ -98,7 +98,7 @@
 \contentsline {subsubsection}{Home}{58}{subsubsection*.23}% 
 \contentsline {subsubsection}{Statistics}{63}{subsubsection*.25}% 
 \contentsline {subsubsection}{Transactions}{69}{subsubsection*.27}% 
-\contentsline {subsubsection}{headlines}{71}{subsubsection*.29}% 
+\contentsline {subsubsection}{Headlines}{71}{subsubsection*.29}% 
 \contentsline {subsubsection}{Error}{72}{subsubsection*.31}% 
 \contentsline {subsubsection}{About}{73}{subsubsection*.33}% 
 \contentsline {subsubsection}{UserInfo}{74}{subsubsection*.35}% 

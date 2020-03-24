@@ -646,7 +646,7 @@ axios
       sessionStorage.setItem("email", res.data._id);
       sessionStorage.setItem("number", res.data.number);
       var answer = "";
-      // saves money for twillio when I keep asking user for answer rather than send tonnes of sms
+      // saves money for twilio when I keep asking user for answer rather than send tonnes of sms
       while (answer != null) {
         answer = window.prompt("Enter 2fa code sent to your phone");
         if (answer === random) {
@@ -874,7 +874,8 @@ called routes from the Services folder.  In routes all routes are defined in a s
 wall map the various paths in this application to their components.
 \\
 Code for routes:
-\begin{minted}{JavaScript}
+\begin{minted}[linenos,tabsize=2,breaklines]{JavaScript}
+
 
 import React from "react";
 
@@ -912,7 +913,8 @@ export default class routes extends React.Component{
 \end{minted}
 \\
 Code for Nav:
-\begin{minted}{JavaScript}
+\begin{minted}[linenos,tabsize=2,breaklines]{JavaScript}
+
 import React from "react";
 import { Link } from "react-router-dom";
 import Routes from "../Services/Routes.js";
@@ -1634,7 +1636,7 @@ Once retrieved each transaction is added to the transactions list as a child and
 \caption{Image of Transactions Component}
 \label{fig:Image of transactions component}
 \end{figure}
-\subsubsection{headlines}
+\subsubsection{Headlines}
 The headlines component gets the latest headlines from reddit and NewsAPI and returns them to the user
 the headlines component utilizes the same helper method as in home but this component has a lot more
 stories and also retrieves the latest headlines from Reddit /r/wallstreet which are retrieved utilizing
@@ -2440,6 +2442,9 @@ then email it to them using encryption.
 Due to the afformentioned security methods being employed I am convinced that the
 banking application is safe and secure and cannot be hacked without significant knowledge
 and effort.
+\\
+I also added 2 factor authentication using Twilio which sends a ten digit number to the user's phone
+which is required to login thus greatly increasing the security of the users account.
 \subsection{User Generated Statistics}
 This project utilizes ChartJS which is a JavaScript library which will generate
 user statistics based upon their interaction with the application.  The application
