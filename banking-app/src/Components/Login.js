@@ -64,7 +64,7 @@ class Login extends React.Component {
       )
       .then(function(res) {
         if (res.data !== "null") {
-          //store the username this will help the bank feel more personal
+          //do axios.get in here
           sessionStorage.setItem("username", res.data.name);
           sessionStorage.setItem("email", res.data._id);
           ReactDOM.render(<Nav />, document.getElementById("root"));

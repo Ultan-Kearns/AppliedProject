@@ -54,15 +54,18 @@ class Register extends React.Component {
     // this gets date in years the result of the subtraction of variables is in ms
     var age =  Math.abs((now - birth) / 31557600000)
     //create IBAN here and BIC
-    console.log(this.state.name, this.state.number, this.state.dob);
+    console.log(this.state.name, this.state.number.substring(1,10), this.state.dob);
     const sha256 = require("js-sha256");
     //hash pass using sha256
     const hashed = sha256(this.state.password);
-    const newUser = {
+    alert(this.state.number.substring(1,10))
+    var number = this.state.number.substring(1,10)
+
+  const newUser = {
       _id: this.state.username,
       password: hashed,
       name: this.state.name,
-      number: this.state.number,
+      number: "+353" + number,
       dob: this.state.dob,
       bic: "1",
       iban: "1",

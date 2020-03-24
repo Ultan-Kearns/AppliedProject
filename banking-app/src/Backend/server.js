@@ -61,7 +61,7 @@ var userSchema = new Schema({
   dob: { type: String, required: true },
   balance: { type: Number, default: 0, required: true },
   iban: { type: String },
-  bic: { type: String }
+  bic: { type: String },
 });
 //change this later
 var transactionSchema = new Schema({
@@ -137,8 +137,26 @@ app.get("/api/users/:id/:password", function(req, res) {
       res.status(500, "INTERNAL SERVER ERROR " + err);
       return;
     } else if (data != null) {
+
       //compare user username and password to the username and password in DB
       if (req.params.id == data._id && data.password == req.params.password) {
+        //twillio code - taken template from their site
+        const accountSid = "AC8cc82f77f451d6f26aeb1481e9c554cf";
+        const authToken = "d593089eb8edbcf9eb2ca0242800db11";
+        const client = require("twilio")(accountSid, authToken);
+        //generate random 2fa code for user
+        var random = "";
+        for(var i = 0; i < 10; i++){
+          random += Math.floor(10 * Math.random());
+        }
+        //store the username this will help the bank feel more personal
+        client.messages
+          .create({
+            body: "Your code is: " + random,
+            from: "+12055089804",
+            to: data.number
+          })
+          .then(message => console.log(message.sid));
         res.json(data);
         res.status(200, "User logged in!");
       } else {
@@ -379,18 +397,6 @@ app.post("/api/support", function(req, res) {
   });
   res.status(201, "Resource created");
 });
-//twillio code - taken template from their site
-const accountSid = "AC8cc82f77f451d6f26aeb1481e9c554cf";
-const authToken = "d593089eb8edbcf9eb2ca0242800db11";
-const client = require("twilio")(accountSid, authToken);
-
-client.messages
-  .create({
-    body: "Somebody just logged into your account was it you?",
-    from: "+15017122661",
-    to: "+353852037768"
-  })
-  .then(message => console.log(message.sid));
 //have server listening at port  8080 and have it take keycert to secure server
 //uses Secure Socket Layer
 https.createServer(security, app).listen(8080);

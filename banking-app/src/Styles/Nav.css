@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css?family=Gayathri&display=swap');
+
+body {
+  text-align: center;
+  width: 100%;
+  min-height: 100%;
+  font-family: 'Gayathri';
+  font-size: calc(10px + 2vmin);
+}
+
+::-moz-selection { /* Code for Firefox */
+  color: white;
+  background: green;
+}
+
+::selection {
+  color: white;
+  background: green;
+}
+nav {
+  background-color: black;
+  color: white;
+  display: flex;
+  min-width: 100vw;
+  min-height: 30vh;
+  overflow-x: hidden;
+  justify-content: space-around;
+}
+a{
+  margin-left: 5vw;
+  position: relative;
+  margin-top: 20vh;
+}
+.nav-links {
+  color: white;
+}
+#header{
+  text-align: center;
+  background-color: black;
+  color:red;
+}
+#logout{
+  margin-left: 5vw;
+  position: relative;
+  margin-top: 20vh;
+}
+
+@keyframes fade {
+ from {opacity: 0.3}
+ to {opacity: 1}
+}
+@keyframes slideRight {
+ from {margin-left: 100%}
+ to {margin-left: 0%}
+}
+@keyframes slideLeft {
+ from {margin-right: 100%}
+ to {margin-right: 0%}
+}
+div{
+  animation:fade 1s
+}

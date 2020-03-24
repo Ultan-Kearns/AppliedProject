@@ -1,0 +1,34 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kr}{import} \PYG{n+nx}{React} \PYG{n+nx}{from} \PYG{l+s+s2}{\PYGZdq{}react\PYGZdq{}}\PYG{p}{;}
+
+\PYG{k+kr}{import} \PYG{p}{\PYGZob{}} \PYG{n+nx}{BrowserRouter} \PYG{n+nx}{as} \PYG{n+nx}{Router}\PYG{p}{,} \PYG{n+nx}{Switch}\PYG{p}{,} \PYG{n+nx}{Route} \PYG{p}{\PYGZcb{}} \PYG{n+nx}{from} \PYG{l+s+s2}{\PYGZdq{}react\PYGZhy{}router\PYGZhy{}dom\PYGZdq{}}\PYG{p}{;}
+\PYG{k+kr}{import} \PYG{n+nx}{Home} \PYG{n+nx}{from} \PYG{l+s+s2}{\PYGZdq{}../Components/Home\PYGZdq{}}\PYG{p}{;}
+\PYG{k+kr}{import} \PYG{n+nx}{About} \PYG{n+nx}{from} \PYG{l+s+s2}{\PYGZdq{}../Components/About\PYGZdq{}}\PYG{p}{;}
+\PYG{k+kr}{import} \PYG{n+nx}{Loans} \PYG{n+nx}{from} \PYG{l+s+s2}{\PYGZdq{}../Components/Loans\PYGZdq{}}\PYG{p}{;}
+\PYG{k+kr}{import} \PYG{n+nx}{Headlines} \PYG{n+nx}{from} \PYG{l+s+s2}{\PYGZdq{}../Components/Headlines\PYGZdq{}}\PYG{p}{;}
+\PYG{k+kr}{import} \PYG{n+nx}{Transactions} \PYG{n+nx}{from} \PYG{l+s+s2}{\PYGZdq{}../Components/Transactions\PYGZdq{}}\PYG{p}{;}
+\PYG{k+kr}{import} \PYG{n+nx}{Statistics} \PYG{n+nx}{from} \PYG{l+s+s2}{\PYGZdq{}../Components/Statistics\PYGZdq{}}\PYG{p}{;}
+\PYG{k+kr}{import} \PYG{n+nx}{Support} \PYG{n+nx}{from} \PYG{l+s+s2}{\PYGZdq{}../Components/Support\PYGZdq{}}\PYG{p}{;}
+\PYG{k+kr}{import} \PYG{n+nx}{UserInfo} \PYG{n+nx}{from} \PYG{l+s+s2}{\PYGZdq{}../Components/UserInfo\PYGZdq{}}\PYG{p}{;}
+\PYG{k+kr}{import} \PYG{n+nb}{Error} \PYG{n+nx}{from} \PYG{l+s+s2}{\PYGZdq{}../Components/Error\PYGZdq{}}\PYG{p}{;}
+
+\PYG{k+kr}{export} \PYG{k}{default} \PYG{k+kr}{class} \PYG{n+nx}{routes} \PYG{k+kr}{extends} \PYG{n+nx}{React}\PYG{p}{.}\PYG{n+nx}{Component}\PYG{p}{\PYGZob{}}
+  \PYG{n+nx}{render}\PYG{p}{()\PYGZob{}}
+    \PYG{k}{return}\PYG{p}{(}
+      \PYG{o}{\PYGZlt{}}\PYG{n+nx}{Switch}\PYG{o}{\PYGZgt{}}
+        \PYG{p}{\PYGZob{}}\PYG{c+cm}{/* Routes are defined here */}\PYG{p}{\PYGZcb{}}
+        \PYG{o}{\PYGZlt{}}\PYG{n+nx}{Route} \PYG{n+nx}{path}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}/\PYGZdq{}} \PYG{n+nx}{exact} \PYG{n+nx}{component}\PYG{o}{=}\PYG{p}{\PYGZob{}}\PYG{n+nx}{Home}\PYG{p}{\PYGZcb{}} \PYG{o}{/\PYGZgt{}}
+        \PYG{o}{\PYGZlt{}}\PYG{n+nx}{Route} \PYG{n+nx}{path}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}/About\PYGZdq{}} \PYG{n+nx}{component}\PYG{o}{=}\PYG{p}{\PYGZob{}}\PYG{n+nx}{About}\PYG{p}{\PYGZcb{}} \PYG{o}{/\PYGZgt{}}
+        \PYG{o}{\PYGZlt{}}\PYG{n+nx}{Route} \PYG{n+nx}{path}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}/Loans\PYGZdq{}} \PYG{n+nx}{component}\PYG{o}{=}\PYG{p}{\PYGZob{}}\PYG{n+nx}{Loans}\PYG{p}{\PYGZcb{}} \PYG{o}{/\PYGZgt{}}
+        \PYG{o}{\PYGZlt{}}\PYG{n+nx}{Route} \PYG{n+nx}{path}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}/Transactions\PYGZdq{}} \PYG{n+nx}{component}\PYG{o}{=}\PYG{p}{\PYGZob{}}\PYG{n+nx}{Transactions}\PYG{p}{\PYGZcb{}} \PYG{o}{/\PYGZgt{}}
+        \PYG{o}{\PYGZlt{}}\PYG{n+nx}{Route} \PYG{n+nx}{path}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}/UserInfo\PYGZdq{}} \PYG{n+nx}{component}\PYG{o}{=}\PYG{p}{\PYGZob{}}\PYG{n+nx}{UserInfo}\PYG{p}{\PYGZcb{}} \PYG{o}{/\PYGZgt{}}
+        \PYG{o}{\PYGZlt{}}\PYG{n+nx}{Route} \PYG{n+nx}{path}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}/Statistics\PYGZdq{}} \PYG{n+nx}{component}\PYG{o}{=}\PYG{p}{\PYGZob{}}\PYG{n+nx}{Statistics}\PYG{p}{\PYGZcb{}} \PYG{o}{/\PYGZgt{}}
+        \PYG{o}{\PYGZlt{}}\PYG{n+nx}{Route} \PYG{n+nx}{path}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}/Headlines\PYGZdq{}} \PYG{n+nx}{component}\PYG{o}{=}\PYG{p}{\PYGZob{}}\PYG{n+nx}{Headlines}\PYG{p}{\PYGZcb{}} \PYG{o}{/\PYGZgt{}}
+        \PYG{o}{\PYGZlt{}}\PYG{n+nx}{Route} \PYG{n+nx}{path}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}/Support\PYGZdq{}} \PYG{n+nx}{component}\PYG{o}{=}\PYG{p}{\PYGZob{}}\PYG{n+nx}{Support}\PYG{p}{\PYGZcb{}} \PYG{o}{/\PYGZgt{}}
+        \PYG{p}{\PYGZob{}}\PYG{c+cm}{/*If route undefined redirect to error*/}\PYG{p}{\PYGZcb{}}
+        \PYG{o}{\PYGZlt{}}\PYG{n+nx}{Route} \PYG{n+nx}{path}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}/*\PYGZdq{}} \PYG{n+nx}{component}\PYG{o}{=}\PYG{p}{\PYGZob{}}\PYG{n+nb}{Error}\PYG{p}{\PYGZcb{}} \PYG{o}{/\PYGZgt{}}
+      \PYG{o}{\PYGZlt{}}\PYG{err}{/Switch\PYGZgt{}}
+    \PYG{p}{)}
+  \PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

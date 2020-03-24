@@ -1,0 +1,90 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kr}{import} \PYG{n+nx}{React} \PYG{n+nx}{from} \PYG{l+s+s2}{\PYGZdq{}react\PYGZdq{}}\PYG{p}{;}
+\PYG{k+kr}{import} \PYG{p}{\PYGZob{}} \PYG{n+nx}{Link} \PYG{p}{\PYGZcb{}} \PYG{n+nx}{from} \PYG{l+s+s2}{\PYGZdq{}react\PYGZhy{}router\PYGZhy{}dom\PYGZdq{}}\PYG{p}{;}
+\PYG{k+kr}{import} \PYG{n+nx}{Routes} \PYG{n+nx}{from} \PYG{l+s+s2}{\PYGZdq{}../Services/Routes.js\PYGZdq{}}\PYG{p}{;}
+\PYG{k+kr}{import} \PYG{p}{\PYGZob{}} \PYG{n+nx}{BrowserRouter} \PYG{n+nx}{as} \PYG{n+nx}{Router}\PYG{p}{,} \PYG{n+nx}{Switch}\PYG{p}{,} \PYG{n+nx}{Route} \PYG{p}{\PYGZcb{}} \PYG{n+nx}{from} \PYG{l+s+s2}{\PYGZdq{}react\PYGZhy{}router\PYGZhy{}dom\PYGZdq{}}\PYG{p}{;}
+\PYG{k+kr}{import} \PYG{n+nx}{ReactDOM} \PYG{n+nx}{from} \PYG{l+s+s2}{\PYGZdq{}react\PYGZhy{}dom\PYGZdq{}}\PYG{p}{;}
+\PYG{k+kr}{import} \PYG{p}{\PYGZob{}} \PYG{n+nx}{Redirect} \PYG{p}{\PYGZcb{}} \PYG{n+nx}{from} \PYG{l+s+s2}{\PYGZdq{}react\PYGZhy{}router\PYGZhy{}dom\PYGZdq{}}\PYG{p}{;}
+\PYG{k+kr}{import} \PYG{n+nx}{App} \PYG{n+nx}{from} \PYG{l+s+s2}{\PYGZdq{}../App.js\PYGZdq{}}\PYG{p}{;}
+\PYG{k+kr}{import} \PYG{l+s+s2}{\PYGZdq{}axios\PYGZdq{}}\PYG{p}{;}
+\PYG{k+kr}{import} \PYG{l+s+s2}{\PYGZdq{}../Styles/Nav.css\PYGZdq{}}\PYG{p}{;}
+\PYG{k+kr}{import} \PYG{n+nx}{Button} \PYG{n+nx}{from} \PYG{l+s+s2}{\PYGZdq{}react\PYGZhy{}bootstrap/Button\PYGZdq{}}\PYG{p}{;}
+\PYG{k+kr}{import} \PYG{n+nx}{ButtonToolbar} \PYG{n+nx}{from} \PYG{l+s+s2}{\PYGZdq{}react\PYGZhy{}bootstrap/ButtonToolbar\PYGZdq{}}\PYG{p}{;}
+\PYG{k+kr}{class} \PYG{n+nx}{Nav} \PYG{k+kr}{extends} \PYG{n+nx}{React}\PYG{p}{.}\PYG{n+nx}{Component} \PYG{p}{\PYGZob{}}
+  \PYG{n+nx}{logout}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+    \PYG{n+nx}{sessionStorage}\PYG{p}{.}\PYG{n+nx}{setItem}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}username\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}\PYGZdq{}}\PYG{p}{);}
+    \PYG{n+nb}{window}\PYG{p}{.}\PYG{n+nx}{location}\PYG{p}{.}\PYG{n+nx}{reload}\PYG{p}{();}
+  \PYG{p}{\PYGZcb{}}
+  \PYG{n+nx}{componentDidMount}\PYG{p}{()} \PYG{p}{\PYGZob{}\PYGZcb{}}
+
+  \PYG{n+nx}{render}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+    \PYG{k}{return} \PYG{p}{(}
+      \PYG{o}{\PYGZlt{}}\PYG{n+nx}{div} \PYG{n+nx}{className}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}Nav\PYGZdq{}}\PYG{o}{\PYGZgt{}}
+        \PYG{o}{\PYGZlt{}}\PYG{n+nx}{App} \PYG{o}{/\PYGZgt{}}
+        \PYG{p}{\PYGZob{}}\PYG{c+cm}{/*Show the navigation throughout app*/}\PYG{p}{\PYGZcb{}}
+
+        \PYG{o}{\PYGZlt{}}\PYG{n+nx}{Router}\PYG{o}{\PYGZgt{}}
+          \PYG{o}{\PYGZlt{}}\PYG{n+nx}{div} \PYG{n+nx}{className}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}nav\PYGZhy{}links\PYGZdq{}}\PYG{o}{\PYGZgt{}}
+            \PYG{o}{\PYGZlt{}}\PYG{n+nx}{nav}\PYG{o}{\PYGZgt{}}
+              \PYG{p}{\PYGZob{}}\PYG{c+cm}{/* Buttons that link to various Components */}\PYG{p}{\PYGZcb{}}
+              \PYG{o}{\PYGZlt{}}\PYG{n+nx}{ButtonToolbar}\PYG{o}{\PYGZgt{}}
+                \PYG{o}{\PYGZlt{}}\PYG{n+nx}{Link} \PYG{n+nx}{to}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}/\PYGZdq{}}\PYG{o}{\PYGZgt{}}
+                  \PYG{o}{\PYGZlt{}}\PYG{n+nx}{Button} \PYG{n+nx}{variant}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}primary \PYGZdq{}} \PYG{n+nx}{size}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}sm\PYGZdq{}}\PYG{o}{\PYGZgt{}}
+                    \PYG{n+nx}{Home}
+                  \PYG{o}{\PYGZlt{}}\PYG{err}{/Button\PYGZgt{}}
+                \PYG{o}{\PYGZlt{}}\PYG{err}{/Link\PYGZgt{}}
+                \PYG{o}{\PYGZlt{}}\PYG{n+nx}{Link} \PYG{n+nx}{to}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}/About\PYGZdq{}}\PYG{o}{\PYGZgt{}}
+                  \PYG{o}{\PYGZlt{}}\PYG{n+nx}{Button} \PYG{n+nx}{variant}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}primary\PYGZdq{}} \PYG{n+nx}{size}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}sm\PYGZdq{}}\PYG{o}{\PYGZgt{}}
+                    \PYG{n+nx}{About} \PYG{n+nx}{Us}
+                  \PYG{o}{\PYGZlt{}}\PYG{err}{/Button\PYGZgt{}}
+                \PYG{o}{\PYGZlt{}}\PYG{err}{/Link\PYGZgt{}}
+                \PYG{o}{\PYGZlt{}}\PYG{n+nx}{Link} \PYG{n+nx}{to}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}/Headlines\PYGZdq{}}\PYG{o}{\PYGZgt{}}
+                  \PYG{o}{\PYGZlt{}}\PYG{n+nx}{Button} \PYG{n+nx}{variant}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}primary \PYGZdq{}} \PYG{n+nx}{size}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}sm\PYGZdq{}}\PYG{o}{\PYGZgt{}}
+                    \PYG{n+nx}{Headlines}
+                  \PYG{o}{\PYGZlt{}}\PYG{err}{/Button\PYGZgt{}}
+                \PYG{o}{\PYGZlt{}}\PYG{err}{/Link\PYGZgt{}}
+                \PYG{o}{\PYGZlt{}}\PYG{n+nx}{Link} \PYG{n+nx}{to}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}/Loans\PYGZdq{}}\PYG{o}{\PYGZgt{}}
+                  \PYG{o}{\PYGZlt{}}\PYG{n+nx}{Button} \PYG{n+nx}{variant}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}primary\PYGZdq{}} \PYG{n+nx}{size}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}sm\PYGZdq{}}\PYG{o}{\PYGZgt{}}
+                    \PYG{n+nx}{Loans}
+                  \PYG{o}{\PYGZlt{}}\PYG{err}{/Button\PYGZgt{}}
+                \PYG{o}{\PYGZlt{}}\PYG{err}{/Link\PYGZgt{}}
+                \PYG{o}{\PYGZlt{}}\PYG{n+nx}{Link} \PYG{n+nx}{to}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}/Transactions\PYGZdq{}}\PYG{o}{\PYGZgt{}}
+                  \PYG{o}{\PYGZlt{}}\PYG{n+nx}{Button} \PYG{n+nx}{variant}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}primary\PYGZdq{}} \PYG{n+nx}{size}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}sm\PYGZdq{}}\PYG{o}{\PYGZgt{}}
+                    \PYG{n+nx}{Transactions}
+                  \PYG{o}{\PYGZlt{}}\PYG{err}{/Button\PYGZgt{}}
+                \PYG{o}{\PYGZlt{}}\PYG{err}{/Link\PYGZgt{}}
+                \PYG{o}{\PYGZlt{}}\PYG{n+nx}{Link} \PYG{n+nx}{to}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}/Statistics\PYGZdq{}}\PYG{o}{\PYGZgt{}}
+                  \PYG{o}{\PYGZlt{}}\PYG{n+nx}{Button} \PYG{n+nx}{variant}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}primary\PYGZdq{}} \PYG{n+nx}{size}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}sm\PYGZdq{}}\PYG{o}{\PYGZgt{}}
+                    \PYG{n+nx}{Statistics}
+                  \PYG{o}{\PYGZlt{}}\PYG{err}{/Button\PYGZgt{}}
+                \PYG{o}{\PYGZlt{}}\PYG{err}{/Link\PYGZgt{}}
+                \PYG{o}{\PYGZlt{}}\PYG{n+nx}{Link} \PYG{n+nx}{to}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}/UserInfo\PYGZdq{}}\PYG{o}{\PYGZgt{}}
+                  \PYG{o}{\PYGZlt{}}\PYG{n+nx}{Button} \PYG{n+nx}{variant}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}primary\PYGZdq{}} \PYG{n+nx}{size}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}sm\PYGZdq{}}\PYG{o}{\PYGZgt{}}
+                    \PYG{n+nx}{User} \PYG{n+nx}{Info}
+                  \PYG{o}{\PYGZlt{}}\PYG{err}{/Button\PYGZgt{}}
+                \PYG{o}{\PYGZlt{}}\PYG{err}{/Link\PYGZgt{}}
+                \PYG{o}{\PYGZlt{}}\PYG{n+nx}{Link} \PYG{n+nx}{to}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}/Support\PYGZdq{}}\PYG{o}{\PYGZgt{}}
+                  \PYG{o}{\PYGZlt{}}\PYG{n+nx}{Button} \PYG{n+nx}{variant}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}primary\PYGZdq{}} \PYG{n+nx}{size}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}sm\PYGZdq{}}\PYG{o}{\PYGZgt{}}
+                    \PYG{n+nx}{Support}
+                  \PYG{o}{\PYGZlt{}}\PYG{err}{/Button\PYGZgt{}}
+                \PYG{o}{\PYGZlt{}}\PYG{err}{/Link\PYGZgt{}}
+                \PYG{o}{\PYGZlt{}}\PYG{n+nx}{Button}
+                  \PYG{n+nx}{variant}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}warning \PYGZdq{}}
+                  \PYG{n+nx}{size}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}sm\PYGZdq{}}
+                  \PYG{n+nx}{onClick}\PYG{o}{=}\PYG{p}{\PYGZob{}}\PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{logout}\PYG{p}{\PYGZcb{}}
+                  \PYG{n+nx}{id}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}logout\PYGZdq{}}
+                \PYG{o}{\PYGZgt{}}
+                  \PYG{n+nx}{Logout}
+                \PYG{o}{\PYGZlt{}}\PYG{err}{/Button\PYGZgt{}}
+              \PYG{o}{\PYGZlt{}}\PYG{err}{/ButtonToolbar\PYGZgt{}}
+            \PYG{o}{\PYGZlt{}}\PYG{err}{/nav\PYGZgt{}}
+          \PYG{o}{\PYGZlt{}}\PYG{err}{/div\PYGZgt{}}
+
+          \PYG{o}{\PYGZlt{}}\PYG{n+nx}{Routes} \PYG{o}{/\PYGZgt{}}
+        \PYG{o}{\PYGZlt{}}\PYG{err}{/Router\PYGZgt{}}
+      \PYG{o}{\PYGZlt{}}\PYG{err}{/div\PYGZgt{}}
+    \PYG{p}{);}
+  \PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\PYG{k+kr}{export} \PYG{k}{default} \PYG{n+nx}{Nav}\PYG{p}{;}
+\end{Verbatim}
