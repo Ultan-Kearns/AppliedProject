@@ -77,7 +77,13 @@ class Login extends React.Component {
           sessionStorage.setItem("username", res.data.name);
           sessionStorage.setItem("email", res.data._id);
           sessionStorage.setItem("number",res.data.number)
+          var answer = window.prompt("Enter 2fa code sent to your phone");
+          if(answer === random){
           ReactDOM.render(<Nav />, document.getElementById("root"));
+        }
+        else{
+          alert("Wrong code entered, try logging in again")
+        }
         } else if (res.data === "null") {
           alert("Wrong username or password");
         } else if (res.data == null) {
