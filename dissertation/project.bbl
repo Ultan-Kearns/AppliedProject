@@ -135,6 +135,10 @@ https://csrc.nist.gov/, ``Descriptions of sha-256,sha-384,and sha-512.''
 \newblock
   \url{https://csrc.nist.gov/csrc/media/publications/fips/180/2/archive/2002-08-01/documents/fips180-2.pdf}.
 
+\bibitem{Twilio}
+Twilio, ``Twilio site.''
+\newblock \url{https://www.twilio.com/}.
+
 \bibitem{MLAB}
 https://mlab.com/, ``Mlab website.''
 \newblock \url{https://mlab.com/}.
@@ -164,5 +168,9 @@ Docker, ``Docker website.''
 A.~H. .~D. Thomas, ``Pragmatic programmer.''
 \newblock
   \url{https://www.goodreads.com/book/show/4099.The_Pragmatic_Programmer}.
+
+\bibitem{Annyang}
+TalAter, ``Annyang github repository.''
+\newblock \url{https://github.com/TalAter/annyang/}.
 
 \end{thebibliography}
