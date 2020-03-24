@@ -91,34 +91,34 @@
 \contentsline {section}{\numberline {5.2}Front End Architecture}{41}{section.5.2}% 
 \contentsline {subsection}{\numberline {5.2.1}List of Components}{41}{subsection.5.2.1}% 
 \contentsline {subsubsection}{Login}{41}{subsubsection*.17}% 
-\contentsline {subsubsection}{Register}{43}{subsubsection*.19}% 
-\contentsline {subsubsection}{Forgot}{45}{subsubsection*.21}% 
-\contentsline {subsection}{\numberline {5.2.2}Nav}{48}{subsection.5.2.2}% 
-\contentsline {subsubsection}{Loans}{51}{subsubsection*.22}% 
-\contentsline {subsubsection}{Home}{57}{subsubsection*.23}% 
-\contentsline {subsubsection}{Statistics}{62}{subsubsection*.25}% 
-\contentsline {subsubsection}{Transactions}{68}{subsubsection*.27}% 
-\contentsline {subsubsection}{headlines}{70}{subsubsection*.29}% 
-\contentsline {subsubsection}{Error}{71}{subsubsection*.31}% 
-\contentsline {subsubsection}{About}{72}{subsubsection*.33}% 
-\contentsline {subsubsection}{UserInfo}{73}{subsubsection*.35}% 
-\contentsline {subsection}{\numberline {5.2.3}Support}{81}{subsection.5.2.3}% 
-\contentsline {section}{\numberline {5.3}Designing for UX(User Experience)}{81}{section.5.3}% 
-\contentsline {subsection}{\numberline {5.3.1}Designing For End-Users As Opposed to Engineers}{81}{subsection.5.3.1}% 
-\contentsline {section}{\numberline {5.4}Backend Architecture}{82}{section.5.4}% 
-\contentsline {subsection}{\numberline {5.4.1}Mongoose}{82}{subsection.5.4.1}% 
-\contentsline {subsection}{\numberline {5.4.2}ExpressJS}{83}{subsection.5.4.2}% 
-\contentsline {subsection}{\numberline {5.4.3}NodeJS}{83}{subsection.5.4.3}% 
-\contentsline {subsection}{\numberline {5.4.4}Full Backend Code}{83}{subsection.5.4.4}% 
-\contentsline {section}{\numberline {5.5}RESTful Architecture}{92}{section.5.5}% 
-\contentsline {subsection}{\numberline {5.5.1}Client / Server Independence}{92}{subsection.5.5.1}% 
-\contentsline {subsection}{\numberline {5.5.2}Cacheable}{93}{subsection.5.5.2}% 
-\contentsline {subsection}{\numberline {5.5.3}Stateless}{93}{subsection.5.5.3}% 
-\contentsline {section}{\numberline {5.6}Database Architecture}{93}{section.5.6}% 
-\contentsline {subsection}{\numberline {5.6.1}MLAB}{93}{subsection.5.6.1}% 
-\contentsline {subsection}{\numberline {5.6.2}Schema of Database}{94}{subsection.5.6.2}% 
-\contentsline {section}{\numberline {5.7}Security}{94}{section.5.7}% 
-\contentsline {subsection}{\numberline {5.7.1}Overview of Security}{94}{subsection.5.7.1}% 
+\contentsline {subsubsection}{Register}{44}{subsubsection*.19}% 
+\contentsline {subsubsection}{Forgot}{46}{subsubsection*.21}% 
+\contentsline {subsection}{\numberline {5.2.2}Nav}{49}{subsection.5.2.2}% 
+\contentsline {subsubsection}{Loans}{52}{subsubsection*.22}% 
+\contentsline {subsubsection}{Home}{58}{subsubsection*.23}% 
+\contentsline {subsubsection}{Statistics}{63}{subsubsection*.25}% 
+\contentsline {subsubsection}{Transactions}{69}{subsubsection*.27}% 
+\contentsline {subsubsection}{headlines}{71}{subsubsection*.29}% 
+\contentsline {subsubsection}{Error}{72}{subsubsection*.31}% 
+\contentsline {subsubsection}{About}{73}{subsubsection*.33}% 
+\contentsline {subsubsection}{UserInfo}{74}{subsubsection*.35}% 
+\contentsline {subsection}{\numberline {5.2.3}Support}{82}{subsection.5.2.3}% 
+\contentsline {section}{\numberline {5.3}Designing for UX(User Experience)}{82}{section.5.3}% 
+\contentsline {subsection}{\numberline {5.3.1}Designing For End-Users As Opposed to Engineers}{82}{subsection.5.3.1}% 
+\contentsline {section}{\numberline {5.4}Backend Architecture}{83}{section.5.4}% 
+\contentsline {subsection}{\numberline {5.4.1}Mongoose}{83}{subsection.5.4.1}% 
+\contentsline {subsection}{\numberline {5.4.2}ExpressJS}{84}{subsection.5.4.2}% 
+\contentsline {subsection}{\numberline {5.4.3}NodeJS}{84}{subsection.5.4.3}% 
+\contentsline {subsection}{\numberline {5.4.4}Full Backend Code}{84}{subsection.5.4.4}% 
+\contentsline {section}{\numberline {5.5}RESTful Architecture}{93}{section.5.5}% 
+\contentsline {subsection}{\numberline {5.5.1}Client / Server Independence}{93}{subsection.5.5.1}% 
+\contentsline {subsection}{\numberline {5.5.2}Cacheable}{94}{subsection.5.5.2}% 
+\contentsline {subsection}{\numberline {5.5.3}Stateless}{94}{subsection.5.5.3}% 
+\contentsline {section}{\numberline {5.6}Database Architecture}{94}{section.5.6}% 
+\contentsline {subsection}{\numberline {5.6.1}MLAB}{94}{subsection.5.6.1}% 
+\contentsline {subsection}{\numberline {5.6.2}Schema of Database}{95}{subsection.5.6.2}% 
+\contentsline {section}{\numberline {5.7}Security}{95}{section.5.7}% 
+\contentsline {subsection}{\numberline {5.7.1}Overview of Security}{95}{subsection.5.7.1}% 
 \contentsline {chapter}{\numberline {6}System Evaluation}{96}{chapter.6}% 
 \contentsline {section}{\numberline {6.1}Robust}{96}{section.6.1}% 
 \contentsline {subsection}{\numberline {6.1.1}Error Handling}{96}{subsection.6.1.1}% 

@@ -510,7 +510,7 @@ OpenSSL is a toolkit for providing TLS(Transport Layer Security) \& SSL(Secure S
 \subsection{SHA256}
 SHA256 stands for Secure Hashing Algorithm 256 which is used as a one way function which means that data which is hashed using this algorithm is impossible to revert into it's original form\cite{SHA256}.  I used the SHA256 algorithm to encrypt and secure user passwords stored in the database and to ensure that the passwords were not stored in plaintext for extra security.
 \subsection{Twilio}
-Twilio is a cloud communication platform which developers can utilize to send text messages, phone calls and perform various functions through their service\cite{Twilio}. I utilized Twilio for this projects 2 factor authentication to send a random 10 digit password to the users phone to authenticate their login which provides extra security for the user.  
+Twilio is a cloud communication platform which developers can utilize to send text messages, phone calls and perform various functions through their service\cite{Twilio}. I utilized Twilio for this projects 2 factor authentication to send a random 10 digit password to the users phone to authenticate their login which provides extra security for the user.
 \section{Database}
 I will discuss the database utilized to maintain user information and any pertinent information deemed relevant to the system.
 \subsection{MLAB}
@@ -627,27 +627,56 @@ Here I will describe the architecture of the project in great technical detail, 
 The login component is the component that the user first sees when starting the application.  The component features an introduction which has white text on a black backround and prompts the user to "Login to experience next generation banking".  In addition to this there is a paragraph which states "Please enter your username and password below and we'll redirect you to your account component"  below this paragrah are two input boxes which prompt the user to enter their username and password respectively.  When the user enters the correct password they are redirected to their accounts component, however if the password or username is entered incorrectly they are alerted by means of a JavaScript alert that their password or username is wrong.  In addition to the above stated there are three buttons one which says "Register" which navigates to the register component another which says "Forgot Password" which will navigate to the Forgot component and one which says "Login".  Once the user has entered the correct username and password they can hit the login button to be redirected to the main application pacomponentge.  The user cannot enter in a components name and gain access to the component unless logged in.  I accomplished the login feature by utilizing code from a previous project's function which I had coded:
 %got flags from https://tex.stackexchange.com/questions/129383/break-lines-in-minted-code
 \begin{minted}[linenos,tabsize=2,breaklines]{JavaScript}
-//template was taken from earlier project and refactored
-//https://github.com/Ultan-Kearns/eCommerceApp/blob/master/BackEnd/Server.js
-app.get("/api/users/:id/:password", function(req, res) {
-  Users.findById(req.params.id, function(err, data) {
-    if (err) {
-      //send back error 500 to show the server had internel error
-      res.status(500, "INTERNAL SERVER ERROR " + err);
-      return;
-    } else if (data != null) {
-      //compare user username and password to the username and password in DB
-      if (req.params.id == data._id && data.password == req.params.password) {
-        res.json(data);
-        res.status(200, "User logged in!");
+const axios = require("axios").default;
+const sha256 = require("js-sha256");
+const random = this.generateRandom();
+axios
+  .get(
+    "https://localhost:8080/api/users/" +
+      this.state.username.toLowerCase() +
+      "/" +
+      sha256(this.state.password) +
+      "/" +
+      random
+  )
+  .then(function(res) {
+    if (res.data !== "null") {
+      //do axios.get in here
+      sessionStorage.setItem("username", res.data.name);
+      sessionStorage.setItem("email", res.data._id);
+      sessionStorage.setItem("number", res.data.number);
+      var answer = "";
+      // saves money for twillio when I keep asking user for answer rather than send tonnes of sms
+      while (answer != null) {
+        answer = window.prompt("Enter 2fa code sent to your phone");
+        if (answer === random) {
+          ReactDOM.render(<Nav />, document.getElementById("root"));
+        } else {
+          alert("Wrong code entered, try logging in again");
+        }
       }
-      else {
-        res.json("null");
-        res.status(404, "User not found!");
-      }
+    } else if (res.data === "null") {
+      alert("Wrong username or password");
+    } else if (res.data == null) {
+      alert("Error logging in");
     }
+  })
+  .catch(error => {
+    alert("Unexpected error: " + error);
   });
-})
+
+event.preventDefault();
+};
+\end{minted}
+This function utilizes the generateRandom function which generates a 10 digit random number here is the function below:
+\begin{minted}[linenos,tabsize=2,breaklines]{JavaScript}
+generateRandom() {
+  var random = "";
+  for (var i = 0; i < 10; i++) {
+    random += Math.floor(10 * Math.random());
+  }
+  return random;
+}
 \end{minted}
 I had the idea to reuse the code and refactor it after reading Andy Hunt and Dave Thomas' book "The Pragmatic Programmer"\cite{PragmaticProgrammer}.  The above code basically says if there's an error throw a 500 which is a generic server error, if there is no such error and data is retrieved then respond with the data and return a 200 else return null and send back 404 to show that the requested resource was not found.  I handle all issues which may arise in the login component's logic:
 \begin{minted}[linenos,tabsize=2,breaklines]{JavaScript}
