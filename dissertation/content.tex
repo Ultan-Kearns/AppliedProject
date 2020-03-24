@@ -2335,13 +2335,6 @@ is secured using SHA256(Secure Hashing Algorithm) and the users passwords are en
 \\
 The certificates I used on the server were generated using OpenSSL, both the application and the server use self-signed certificates which will generate security warnings in Chrome and Firefox as the browser doesn't know if the certificates were verified by a reputable source, in a real world deployment I would have used GoDaddy or another service to verify the certificates.
 \chapter{System Evaluation}
-As many pages as needed.
-\begin{itemize}
-\item Prove that your software is robust. How? Testing etc.
-\item Use performance benchmarks (space and time) if algorithmic.
-\item Measure the outcomes / outputs of your system / software against the objectives from the Introduction.
-\item Highlight any limitations or opportuni-ties in your approach or technologies used.
-\end{itemize}
 \section{Robust}
 It was very important from the outset that this application be robust as it is a basic requirement expected from any legitimate online banking application in the 21st century, I will list how I accomplished robustness below.
 \subsection{Error Handling}
@@ -2363,6 +2356,7 @@ of the projects GitHub repository.  Testing the application was not easy as ther
 banking application or indeed any full-stack application can fail, I mitigated the long hours of testing by utilizing
 Selenium and outputting error messages to the console.
 \subsection{Speed}
+The applications components load very fast and the data is retireved with little waiting time, there may be a slight slow down when accessing components such as Headlines or Statistics as these components make calls to third party APIs to retireve data from various websites.
 \section{Accessibility}
 In this project usability and accessibility were my main concerns, I wanted an application that the user could take to their grandmother and have her figure it out with little to no effort.  I will reflect on how I emphasized accessibility in this project below.
 \subsection{Minimalistic}
@@ -2431,6 +2425,7 @@ The application is responsive and thanks to it being a Single Page Application l
 practically non-existant as the application is cached on the users device meaning that the
 uesr does not have to wait for a http request to retrieve the information but instead can access
 it from their own device.
+
 \chapter{Conclusion}
 \section{What I Learned}
 I learned a great many things from developing this project, I learned an awful lot about developing an application using professional and industry standards to create a full-stack application.  I will list the things I have learned from this project below.
