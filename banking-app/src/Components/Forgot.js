@@ -36,7 +36,7 @@ class Forgot extends React.Component {
       plaintext += Math.floor(10 * Math.random())
     }
     const hashed = sha256(plaintext)
-    alert("HASHED " + hashed)
+ 
     const rand = {password: hashed}
     axios.post("https://localhost:8080/api/users/" + sessionStorage.getItem("email") +  "/rand",rand).then(res=>{
       console.log(res)

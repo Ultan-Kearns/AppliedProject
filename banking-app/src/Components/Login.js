@@ -86,11 +86,12 @@ class Login extends React.Component {
             answer = window.prompt("Enter 2fa code sent to your phone")
             if (answer === random) {
               ReactDOM.render(<Nav />, document.getElementById("root"))
+              break;
             } else {
               alert("Wrong code entered, try again")
               wrongCount++
             }
-            if(wrongCount == 3){
+            if(wrongCount === 3){
               alert("Please try logging in again, wrong code entered 3 times")
               break
             }
