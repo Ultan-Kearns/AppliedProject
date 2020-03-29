@@ -55,6 +55,7 @@ class UserInfo extends React.Component {
   //for updating user info
   update = event => {
     //if any info is blank set to previous info of user
+
     if (this.state.number === "null" || this.state.number === "") {
       this.setState({
         number: this.state.prevNumber
@@ -98,6 +99,8 @@ class UserInfo extends React.Component {
       balance: sessionStorage.getItem("balance"),
       dob: sessionStorage.getItem("dob")
     });
+    var number = this.state.number.substring(1,10)
+
     const newUser = {
       _id: this.state.newUsername.toLowerCase(),
       password: this.state.password,
@@ -113,7 +116,7 @@ class UserInfo extends React.Component {
     let cancel;
     try {
       if (
-        this.state.number.length === 10 &&
+        this.state.number.length === 13 &&
         this.state.name.length >= 5 &&
         this.state.password.length >= 5
       ) {
@@ -243,6 +246,7 @@ class UserInfo extends React.Component {
     getOpenLoans();
   }
   updateData() {
+
     axios
       .get("https://localhost:8080/api/users/" + this.state.username)
       .then(res => {
