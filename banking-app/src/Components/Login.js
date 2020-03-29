@@ -1,68 +1,68 @@
-import React from "react";
-import InputGroup from "react-bootstrap/InputGroup";
-import FormControl from "react-bootstrap/FormControl";
-import Button from "react-bootstrap/Button";
-import "../Styles/Login.css";
-import { Helmet } from "react-helmet";
-import ReactDOM from "react-dom";
-import Home from "./Home.js";
-import Nav from "./Nav.js";
+import React from "react"
+import InputGroup from "react-bootstrap/InputGroup"
+import FormControl from "react-bootstrap/FormControl"
+import Button from "react-bootstrap/Button"
+import "../Styles/Login.css"
+import { Helmet } from "react-helmet"
+import ReactDOM from "react-dom"
+import Home from "./Home.js"
+import Nav from "./Nav.js"
 
-import Register from "./Register";
-import Forgot from "./Forgot";
-import "axios";
-import "js-sha256";
+import Register from "./Register"
+import Forgot from "./Forgot"
+import "axios"
+import "js-sha256"
 
 class Login extends React.Component {
   //username test
   //password test
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       username: "",
       password: "",
       checkUsername: "",
       checkPassword: ""
-    };
+    }
   }
   handleUsernameChange = event => {
     this.setState({
       username: event.target.value
-    });
-  };
+    })
+  }
   RegisterForm = event => {
-    ReactDOM.render(<Register />, document.getElementById("root"));
-    event.preventDefault();
-  };
+    ReactDOM.render(<Register />, document.getElementById("root"))
+    event.preventDefault()
+  }
   PassForm = event => {
-    ReactDOM.render(<Forgot />, document.getElementById("root"));
+    ReactDOM.render(<Forgot />, document.getElementById("root"))
     //stops refresh of page
-    event.preventDefault();
-  };
+    event.preventDefault()
+  }
   handlePasswordChange = event => {
     this.setState({
       password: event.target.value
-    });
-  };
+    })
+  }
   componentDidMount() {
     //if(sessionStorage.getItem("username") !=="null" && sessionStorage.getItem("username") !== null){
-    //ReactDOM.render(<App />, document.getElementById("root"));
+    //ReactDOM.render(<App />, document.getElementById("root"))
     //this stops context menu being used in app reference: https://www.w3schools.com/jsref/event_oncontextmenu.asp
     document.addEventListener("contextmenu", function(e) {
-      e.preventDefault();
-    });
+      e.preventDefault()
+    })
   }
   generateRandom() {
-    var random = "";
+    var random = ""
     for (var i = 0; i < 10; i++) {
-      random += Math.floor(10 * Math.random());
+      random += Math.floor(10 * Math.random())
     }
-    return random;
+    return random
   }
   handleSubmitForm = event => {
-    const axios = require("axios").default;
-    const sha256 = require("js-sha256");
-    const random = this.generateRandom();
+    const axios = require("axios").default
+    const sha256 = require("js-sha256")
+    const random = this.generateRandom()
     axios
       .get(
         "https://localhost:8080/api/users/" +
@@ -75,31 +75,38 @@ class Login extends React.Component {
       .then(function(res) {
         if (res.data !== "null") {
           //do axios.get in here
-          sessionStorage.setItem("username", res.data.name);
-          sessionStorage.setItem("email", res.data._id);
-          sessionStorage.setItem("number", res.data.number);
-          var answer = "";
+          sessionStorage.setItem("username", res.data.name)
+          sessionStorage.setItem("email", res.data._id)
+          sessionStorage.setItem("number", res.data.number)
+          var answer = ""
+          //for extra security
+          var wrongCount = 0
           // saves money for twillio when I keep asking user for answer rather than send tonnes of sms
           while (answer != null) {
-            answer = window.prompt("Enter 2fa code sent to your phone");
+            answer = window.prompt("Enter 2fa code sent to your phone")
             if (answer === random) {
-              ReactDOM.render(<Nav />, document.getElementById("root"));
+              ReactDOM.render(<Nav />, document.getElementById("root"))
             } else {
-              alert("Wrong code entered, try logging in again");
+              alert("Wrong code entered, try again")
+              wrongCount++
+            }
+            if(wrongCount == 3){
+              alert("Please try logging in again, wrong code entered 3 times")
+              break
             }
           }
         } else if (res.data === "null") {
-          alert("Wrong username or password");
+          alert("Wrong username or password")
         } else if (res.data == null) {
-          alert("Error logging in");
+          alert("Error logging in")
         }
       })
       .catch(error => {
-        alert("Unexpected error: " + error);
-      });
+        alert("Unexpected error: " + error)
+      })
 
-    event.preventDefault();
-  };
+    event.preventDefault()
+  }
   render() {
     return (
       <div>
@@ -147,7 +154,7 @@ class Login extends React.Component {
           </Button>
         </form>
       </div>
-    );
+    )
   }
 }
-export default Login;
+export default Login
