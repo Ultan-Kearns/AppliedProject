@@ -65,7 +65,7 @@ class Login extends React.Component {
     const random = this.generateRandom()
     axios
       .get(
-        "https://localhost:8080/api/users/" +
+        "https://34.68.75.97:8080//api/users/" +
           this.state.username.toLowerCase() +
           "/" +
           sha256(this.state.password) +

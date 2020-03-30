@@ -37,8 +37,7 @@ class App extends React.Component {
         hello: function() {
           alert("Hi Friend, I am dectecting your voice :D!");
         },
-        home: function() {
-          alert("IN HOMe");
+        home: function() { 
           ReactDOM.render(<Home />,document.getElementById("root"))
         },
         about: function() {

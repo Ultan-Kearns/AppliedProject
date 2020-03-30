@@ -70,12 +70,14 @@
 + Test all code(Areas of possible failure: Loans, Updates, Registration, Forgot password, delete)(done)
 + Put finishing touches on project(Little bit of UI work test on multiple machines)(Done)
 + Ensure cloud version is working(Working now but may have to test again)(done)
-# Sprint 12 (20th March - 31st March)
+# Sprint 12 (20th March - 5th April)
+## Set back due to study + work
 + Ensure all documentation is well-written(review and add more images to context and add images to system desgin for each component)
 + Add images to sys design(Done just need to finish of support component)
 + Add annyang and advantageAPI to dissertation tech review(DONE)
 + finish support component(Done just need to work on email summarization)
 + review dissertation
++ add count for 2fa so that if user gets it wrong 3 times then say they have to login again for extra security(DONE)
 + Finish system evaluation(Almost done may need to add more)
 + add more to styles? - may need to get nav bar to contract when window is less than certain resolution
 + complete speech recognition(Done)

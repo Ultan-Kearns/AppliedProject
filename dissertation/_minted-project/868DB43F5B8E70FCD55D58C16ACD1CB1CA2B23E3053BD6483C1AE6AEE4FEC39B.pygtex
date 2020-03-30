@@ -1,0 +1,42 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kr}{const} \PYG{n+nx}{axios} \PYG{o}{=} \PYG{n+nx}{require}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}axios\PYGZdq{}}\PYG{p}{).}\PYG{k}{default}\PYG{p}{;}
+\PYG{k+kr}{const} \PYG{n+nx}{sha256} \PYG{o}{=} \PYG{n+nx}{require}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}js\PYGZhy{}sha256\PYGZdq{}}\PYG{p}{);}
+\PYG{k+kr}{const} \PYG{n+nx}{random} \PYG{o}{=} \PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{generateRandom}\PYG{p}{();}
+\PYG{n+nx}{axios}
+  \PYG{p}{.}\PYG{n+nx}{get}\PYG{p}{(}
+    \PYG{l+s+s2}{\PYGZdq{}https://localhost:8080/api/users/\PYGZdq{}} \PYG{o}{+}
+      \PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{state}\PYG{p}{.}\PYG{n+nx}{username}\PYG{p}{.}\PYG{n+nx}{toLowerCase}\PYG{p}{()} \PYG{o}{+}
+      \PYG{l+s+s2}{\PYGZdq{}/\PYGZdq{}} \PYG{o}{+}
+      \PYG{n+nx}{sha256}\PYG{p}{(}\PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{state}\PYG{p}{.}\PYG{n+nx}{password}\PYG{p}{)} \PYG{o}{+}
+      \PYG{l+s+s2}{\PYGZdq{}/\PYGZdq{}} \PYG{o}{+}
+      \PYG{n+nx}{random}
+  \PYG{p}{)}
+  \PYG{p}{.}\PYG{n+nx}{then}\PYG{p}{(}\PYG{k+kd}{function}\PYG{p}{(}\PYG{n+nx}{res}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{data} \PYG{o}{!==} \PYG{l+s+s2}{\PYGZdq{}null\PYGZdq{}}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+      \PYG{c+c1}{//do axios.get in here}
+      \PYG{n+nx}{sessionStorage}\PYG{p}{.}\PYG{n+nx}{setItem}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}username\PYGZdq{}}\PYG{p}{,} \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{data}\PYG{p}{.}\PYG{n+nx}{name}\PYG{p}{);}
+      \PYG{n+nx}{sessionStorage}\PYG{p}{.}\PYG{n+nx}{setItem}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}email\PYGZdq{}}\PYG{p}{,} \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{data}\PYG{p}{.}\PYG{n+nx}{\PYGZus{}id}\PYG{p}{);}
+      \PYG{n+nx}{sessionStorage}\PYG{p}{.}\PYG{n+nx}{setItem}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}number\PYGZdq{}}\PYG{p}{,} \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{data}\PYG{p}{.}\PYG{n+nx}{number}\PYG{p}{);}
+      \PYG{k+kd}{var} \PYG{n+nx}{answer} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}\PYGZdq{}}\PYG{p}{;}
+      \PYG{c+c1}{// saves money for twilio when I keep asking user for answer rather than send tonnes of sms}
+      \PYG{k}{while} \PYG{p}{(}\PYG{n+nx}{answer} \PYG{o}{!=} \PYG{k+kc}{null}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+        \PYG{n+nx}{answer} \PYG{o}{=} \PYG{n+nb}{window}\PYG{p}{.}\PYG{n+nx}{prompt}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Enter 2fa code sent to your phone\PYGZdq{}}\PYG{p}{);}
+        \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{answer} \PYG{o}{===} \PYG{n+nx}{random}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+          \PYG{n+nx}{ReactDOM}\PYG{p}{.}\PYG{n+nx}{render}\PYG{p}{(}\PYG{o}{\PYGZlt{}}\PYG{n+nx}{Nav} \PYG{o}{/\PYGZgt{}}\PYG{p}{,} \PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{getElementById}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}root\PYGZdq{}}\PYG{p}{));}
+        \PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{p}{\PYGZob{}}
+          \PYG{n+nx}{alert}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Wrong code entered, try logging in again\PYGZdq{}}\PYG{p}{);}
+        \PYG{p}{\PYGZcb{}}
+      \PYG{p}{\PYGZcb{}}
+    \PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{data} \PYG{o}{===} \PYG{l+s+s2}{\PYGZdq{}null\PYGZdq{}}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+      \PYG{n+nx}{alert}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Wrong username or password\PYGZdq{}}\PYG{p}{);}
+    \PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{data} \PYG{o}{==} \PYG{k+kc}{null}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+      \PYG{n+nx}{alert}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Error logging in\PYGZdq{}}\PYG{p}{);}
+    \PYG{p}{\PYGZcb{}}
+  \PYG{p}{\PYGZcb{})}
+  \PYG{p}{.}\PYG{k}{catch}\PYG{p}{(}\PYG{n+nx}{error} \PYG{p}{=\PYGZgt{}} \PYG{p}{\PYGZob{}}
+    \PYG{n+nx}{alert}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Unexpected error: \PYGZdq{}} \PYG{o}{+} \PYG{n+nx}{error}\PYG{p}{);}
+  \PYG{p}{\PYGZcb{});}
+
+\PYG{n+nx}{event}\PYG{p}{.}\PYG{n+nx}{preventDefault}\PYG{p}{();}
+\PYG{p}{\PYGZcb{};}
+\end{Verbatim}

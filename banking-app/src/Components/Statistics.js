@@ -185,7 +185,7 @@ class Statistics extends React.Component {
   async updateLoanData() {
     await axios
       .get(
-        "https://localhost:8080/api/loans/" + sessionStorage.getItem("email")
+        "https://34.68.75.97:8080//api/loans/" + sessionStorage.getItem("email")
       )
       .then(res => {
         console.log(res.data);
@@ -205,7 +205,7 @@ class Statistics extends React.Component {
   async updateTransactionData() {
     return axios
       .get(
-        "https://localhost:8080/api/transactions/" +
+        "https://34.68.75.97:8080//api/transactions/" +
           sessionStorage.getItem("email")
       )
       .then(res => {

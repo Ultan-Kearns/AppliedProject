@@ -1,0 +1,9 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n+nx}{generateRandom}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+  \PYG{k+kd}{var} \PYG{n+nx}{random} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}\PYGZdq{}}\PYG{p}{;}
+  \PYG{k}{for} \PYG{p}{(}\PYG{k+kd}{var} \PYG{n+nx}{i} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n+nx}{i} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{10}\PYG{p}{;} \PYG{n+nx}{i}\PYG{o}{++}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+    \PYG{n+nx}{random} \PYG{o}{+=} \PYG{n+nb}{Math}\PYG{p}{.}\PYG{n+nx}{floor}\PYG{p}{(}\PYG{l+m+mi}{10} \PYG{o}{*} \PYG{n+nb}{Math}\PYG{p}{.}\PYG{n+nx}{random}\PYG{p}{());}
+  \PYG{p}{\PYGZcb{}}
+  \PYG{k}{return} \PYG{n+nx}{random}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

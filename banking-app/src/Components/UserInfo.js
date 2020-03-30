@@ -122,7 +122,7 @@ class UserInfo extends React.Component {
       ) {
         var isCancelled = false;
         axios
-          .get("https://localhost:8080/api/users/" + newUser._id)
+          .get("https://34.68.75.97:8080//api/users/" + newUser._id)
           .then(res => {
             alert(res.data);
             if (res.data === "null") {
@@ -151,7 +151,7 @@ class UserInfo extends React.Component {
               //delete original user
               axios
                 .delete(
-                  "https://localhost:8080/api/users/" +
+                  "https://34.68.75.97:8080//api/users/" +
                     sessionStorage.getItem("email")
                 )
                 .then(res => {})
@@ -160,7 +160,7 @@ class UserInfo extends React.Component {
                 });
               //recreate user for ID - for some reason it clones
               axios
-                .post("https://localhost:8080/api/users/", newUser)
+                .post("https://34.68.75.97:8080//api/users/", newUser)
                 .then(res => {
                   //log res for testing
                   console.log(res.data);
@@ -170,7 +170,7 @@ class UserInfo extends React.Component {
                 });
               axios
                 .post(
-                  "https://localhost:8080/api/transactions/" +
+                  "https://34.68.75.97:8080//api/transactions/" +
                     sessionStorage.getItem("email") +
                     "/" +
                     this.state.newUsername
@@ -186,7 +186,7 @@ class UserInfo extends React.Component {
 
               axios
                 .post(
-                  "https://localhost:8080/api/loans/" +
+                  "https://34.68.75.97:8080//api/loans/" +
                     sessionStorage.getItem("email") +
                     "/" +
                     this.state.newUsername
@@ -248,7 +248,7 @@ class UserInfo extends React.Component {
   updateData() {
 
     axios
-      .get("https://localhost:8080/api/users/" + this.state.username)
+      .get("https://34.68.75.97:8080//api/users/" + this.state.username)
       .then(res => {
         //In case user leaves any information blank just submit their current info
         this.setState({
@@ -292,7 +292,7 @@ class UserInfo extends React.Component {
       ) {
         axios
           .delete(
-            "https://localhost:8080/api/transactions/" +
+            "https://34.68.75.97:8080//api/transactions/" +
               sessionStorage.getItem("email")
           )
           .catch(error => {
@@ -300,7 +300,7 @@ class UserInfo extends React.Component {
           });
         axios
           .delete(
-            "https://localhost:8080/api/loans/" +
+            "https://34.68.75.97:8080//api/loans/" +
               sessionStorage.getItem("email")
           )
           .catch(error => {
@@ -308,7 +308,7 @@ class UserInfo extends React.Component {
           });
         axios
           .delete(
-            "https://localhost:8080/api/users/" +
+            "https://34.68.75.97:8080//api/users/" +
               sessionStorage.getItem("email")
           )
           .catch(error => {
