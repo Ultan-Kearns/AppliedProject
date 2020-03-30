@@ -33,7 +33,7 @@ class Support extends React.Component {
       date: d,
       status: "Open"
     }
-    axios.post("https://34.68.75.97:8080//api/support",Support)
+    axios.post("https://localhost:8080/apisupport",Support)
     alert("Bug submitted our team will be right on it!")
     document.getElementById("support").value= ""
     event.preventDefault()

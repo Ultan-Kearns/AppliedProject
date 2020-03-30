@@ -14,8 +14,8 @@ import "axios"
 import "js-sha256"
 
 class Login extends React.Component {
-  //username test
-  //password test
+  /username test
+  /password test
   constructor(props) {
     super(props)
     this.state = {
@@ -36,7 +36,7 @@ class Login extends React.Component {
   }
   PassForm = event => {
     ReactDOM.render(<Forgot />, document.getElementById("root"))
-    //stops refresh of page
+    /stops refresh of page
     event.preventDefault()
   }
   handlePasswordChange = event => {
@@ -45,9 +45,9 @@ class Login extends React.Component {
     })
   }
   componentDidMount() {
-    //if(sessionStorage.getItem("username") !=="null" && sessionStorage.getItem("username") !== null){
-    //ReactDOM.render(<App />, document.getElementById("root"))
-    //this stops context menu being used in app reference: https://www.w3schools.com/jsref/event_oncontextmenu.asp
+    /if(sessionStorage.getItem("username") !=="null" && sessionStorage.getItem("username") !== null){
+    /ReactDOM.render(<App />, document.getElementById("root"))
+    /this stops context menu being used in app reference: https:/www.w3schools.com/jsref/event_oncontextmenu.asp
     document.addEventListener("contextmenu", function(e) {
       e.preventDefault()
     })
@@ -65,7 +65,7 @@ class Login extends React.Component {
     const random = this.generateRandom()
     axios
       .get(
-        "https://34.68.75.97:8080//api/users/" +
+        "https://localhost:8080/api/users/" +
           this.state.username.toLowerCase() +
           "/" +
           sha256(this.state.password) +
@@ -74,14 +74,14 @@ class Login extends React.Component {
       )
       .then(function(res) {
         if (res.data !== "null") {
-          //do axios.get in here
+          /do axios.get in here
           sessionStorage.setItem("username", res.data.name)
           sessionStorage.setItem("email", res.data._id)
           sessionStorage.setItem("number", res.data.number)
           var answer = ""
-          //for extra security
+          /for extra security
           var wrongCount = 0
-          // saves money for twillio when I keep asking user for answer rather than send tonnes of sms
+          / saves money for twillio when I keep asking user for answer rather than send tonnes of sms
           while (answer != null) {
             answer = window.prompt("Enter 2fa code sent to your phone")
             if (answer === random) {
