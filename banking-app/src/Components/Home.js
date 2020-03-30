@@ -58,111 +58,116 @@ class Home extends React.Component {
         "The amount / account ID cannot be null, want to donate it to us? >;D"
       );
     }
-    if (
-      parseInt(this.state.amount) <=
-        parseInt(sessionStorage.getItem("balance")) &&
-      parseInt(this.state.amount) > 0
-    ) {
-      var date = new Date();
-      //update bal
-      const newBalance = {
-        balance:
-          parseInt(sessionStorage.getItem("balance")) -
-          parseInt(this.state.amount)
-      };
-      sessionStorage.setItem("balance", newBalance.balance);
 
-      axios
-        .post(
-          "https://localhost:8080/api/users/" +
-            sessionStorage.getItem("email") +
-            "/balance",
-          newBalance
-        )
-        .catch(error => {
-          alert("Could not send money");
-        });
+    axios.get("https://localhost:8080/api/users/"+this.state.accountId).then(res =>{
+    alert(this.state.accountId + " " + res.data)
+            if(
+            parseInt(this.state.amount) <=
+              parseInt(sessionStorage.getItem("balance")) &&
+            parseInt(this.state.amount) > 0 && res.data != "null"
+          ) {
+            var date = new Date();
+            //update bal
+            const newBalance = {
+              balance:
+                parseInt(sessionStorage.getItem("balance")) -
+                parseInt(this.state.amount)
+            };
+            sessionStorage.setItem("balance", newBalance.balance);
 
-      //payer logic
-      const newTransaction = {
-        email: sessionStorage.getItem("email"),
-        cost: this.state.amount * -1,
-        location: "Online Banking Transfer to " + this.state.accountId,
-        name: sessionStorage.getItem("username"),
-        date: date
-      };
-      //create transaction
-      axios
-        .post("https://localhost:8080/api/transactions", newTransaction)
-        .then(res => {
-          console.log(res);
-        })
-        .catch(error => {
-          alert("ERROR");
-        });
-      //payee logic
-      const payeeTransaction = {
-        email: this.state.accountId,
-        cost: this.state.amount,
-        location:
-          "Online Banking Transfer from " + sessionStorage.getItem("email"),
-        name: sessionStorage.getItem("username"),
-        date: date
-      };
-      //create transaction
-      axios
-        .post("https://localhost:8080/api/transactions", payeeTransaction)
-        .then(res => {
-          console.log(res);
-        })
-        .catch(error => {
-          alert("ERROR");
-        });
-      axios
-        .get("https://localhost:8080/api/users/" + this.state.accountId)
-        .then(res => {
-          this.setState({
-            payeeBalance:
-              parseInt(res.data.balance) + parseInt(this.state.amount)
-          });
-        })
-        .catch(error => {
-          alert("ERROR");
-        })
-        .then(res => {
-          const newBalance = {
-            balance: this.state.payeeBalance
-          };
-          axios
-            .post(
-              "https://localhost:8080/api/users/" +
-                this.state.accountId +
-                "/balance",
-              newBalance
-            )
-            .then(res => {
-              //not doing this after 3 attemps
-              document.getElementById("balance").innerHTML =
-                "Your balance: €" + sessionStorage.getItem("balance");
-              alert(
-                "Money Sent to: " +
-                  this.state.accountId +
-                  " Amount sent: " +
-                  this.state.amount +
-                  " New Balance: " +
-                  sessionStorage.getItem("balance")
-              );
-            })
-            .catch(error => {
-              alert("ERROR");
-            });
-        })
-        .catch(error => {
-          alert("ERROR " + error);
-        });
-    } else {
-      alert("Transaction failed");
-    }
+            axios
+              .post(
+                "https://localhost:8080/api/users/" +
+                  sessionStorage.getItem("email") +
+                  "/balance",
+                newBalance
+              )
+              .catch(error => {
+                alert("Could not send money");
+              });
+
+            //payer logic
+            const newTransaction = {
+              email: sessionStorage.getItem("email"),
+              cost: this.state.amount * -1,
+              location: "Online Banking Transfer to " + this.state.accountId,
+              name: sessionStorage.getItem("username"),
+              date: date
+            };
+            //create transaction
+            axios
+              .post("https://localhost:8080/api/transactions", newTransaction)
+              .then(res => {
+                console.log(res);
+              })
+              .catch(error => {
+                alert("ERROR");
+              });
+            //payee logic
+            const payeeTransaction = {
+              email: this.state.accountId,
+              cost: this.state.amount,
+              location:
+                "Online Banking Transfer from " + sessionStorage.getItem("email"),
+              name: sessionStorage.getItem("username"),
+              date: date
+            };
+            //create transaction
+            axios
+              .post("https://localhost:8080/api/transactions", payeeTransaction)
+              .then(res => {
+                console.log(res);
+              })
+              .catch(error => {
+                alert("ERROR");
+              });
+            axios
+              .get("https://localhost:8080/api/users/" + this.state.accountId)
+              .then(res => {
+                this.setState({
+                  payeeBalance:
+                    parseInt(res.data.balance) + parseInt(this.state.amount)
+                });
+              })
+              .catch(error => {
+                alert("ERROR");
+              })
+              .then(res => {
+                const newBalance = {
+                  balance: this.state.payeeBalance
+                };
+                axios
+                  .post(
+                    "https://localhost:8080/api/users/" +
+                      this.state.accountId +
+                      "/balance",
+                    newBalance
+                  )
+                  .then(res => {
+                    //not doing this after 3 attemps
+                    document.getElementById("balance").innerHTML =
+                      "Your balance: €" + sessionStorage.getItem("balance");
+                    alert(
+                      "Money Sent to: " +
+                        this.state.accountId +
+                        " Amount sent: " +
+                        this.state.amount +
+                        " New Balance: " +
+                        sessionStorage.getItem("balance")
+                    );
+                  })
+                  .catch(error => {
+                    alert("ERROR");
+                  });
+              })
+              .catch(error => {
+                alert("ERROR " + error);
+              });
+          }
+          else{
+            alert("Transaction failed")
+          }
+    })
     e.preventDefault();
   };
   render() {
