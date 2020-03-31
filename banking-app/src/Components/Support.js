@@ -59,8 +59,8 @@ class Support extends React.Component {
             <form id="supportForm" onSubmit={this.handleSubmitForm}>
               <textarea
                 placeholder="Enter your bug here"
-                maxlength="300"
-                minlength="50"
+                maxLength="300"
+                minLength="50"
                 id="support"
                 onChange={this.handleSupportChange}
                 value={this.state.supportMessage}

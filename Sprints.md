@@ -75,7 +75,7 @@
 + Ensure all documentation is well-written(review and add more images to context and add images to system desgin for each component)
 + Add images to sys design(Done just need to finish of support component)
 + Add annyang and advantageAPI to dissertation tech review(DONE)
-+ finish support component(Done just need to work on email summarization)
++ finish support component(Done just need to work on email summarization - maybe make list of words that shouldn't be in message, download list of filler-words?)
 + review dissertation
 + add count for 2fa so that if user gets it wrong 3 times then say they have to login again for extra security(DONE)
 + Finish system evaluation(Almost done may need to add more)

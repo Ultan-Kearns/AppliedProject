@@ -12,6 +12,7 @@ class Loans extends React.Component {
     sessionStorage.setItem("openLoans", getOpenLoans());
     getOpenLoans();
     this.getUserLoans();
+    //call update loans here 
     //strip out in home
     axios
       .get(

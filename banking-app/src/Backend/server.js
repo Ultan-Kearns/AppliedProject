@@ -317,6 +317,21 @@ app.post("/api/loans", function(req, res) {
   });
   res.status(201, "Resource created");
 });
+app.post("/api/loans/:id/amount", function(req, res) {
+  Loans.findByIdAndUpdate(
+    req.params.id,
+    { amount: req.body.amount },
+    function(err, data) {
+      if (err) {
+        //send back error 500 to show the server had internel error
+        res.status(500, "INTERNAL SERVER ERROR " + err);
+      } else if (data != null) {
+        res.status(201, "Updated loan");
+        res.json(data);
+      }
+    }
+  );
+});
 app.post("/api/transactions", function(req, res) {
   Transactions.create({
     email: req.body.email,
