@@ -9,6 +9,7 @@ export function getOpenLoans() {
     .get("https://localhost:8080/api/loans/" + sessionStorage.getItem("email"))
     .then(res => {
       for (var i = 0; i < res.data.length; i++) {
+        alert("res data length " + res.data.length)
         if (res.data[i].status === "Open") {
           openLoan++;
         }
@@ -16,31 +17,35 @@ export function getOpenLoans() {
         //under development
 
         var loanDate = new Date(res.data[i].date);
-                alert("DATE: " + (today - loanDate) + " TEST " + res.data[i].date);
-        var weeks = Math.abs((today - loanDate) / 604800000);
+        alert("DATE: " + (today - loanDate) + " TEST " + res.data[i].date);
+        var weeks = Math.round((today - loanDate) / 604800000);
 
+          const newAmount = {
+            amount: parseInt(
+              Math.round(res.data[i].amount + (res.data[i].amount * (0.1 * Math.round(weeks))))
+            )
+          };
         //this tests if one week has passed, this is causing issues
 
         if (weeks >= 1) {
 
-          const newLoanCost =
-            res.data[i].amount + (res.data[i].amount * (0.1 * weeks));
-            //404 issue
           axios
             .post(
-              "https://localhost:8080/api/loans/" + res.data[i]._id + "/",
-              newLoanCost
+              "https://localhost:8080/api/loans/" +
+                sessionStorage.getItem("email") +
+                "/" +
+                res.data[i]._id +
+                "/amount",
+              newAmount
             )
             .then(res => {
-              res.status(200,"got interest updated")
-              alert("NEW LOAN COST = " + newLoanCost)
+         
             })
             .catch(err => {
               alert("issue adding interest: " + err);
             });
-        }
-        else{
-          console.log("No interest ;D")
+        } else {
+          console.log("No interest ;D");
         }
       }
     })

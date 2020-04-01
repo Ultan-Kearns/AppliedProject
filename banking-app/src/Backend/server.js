@@ -245,6 +245,20 @@ app.delete("/api/loans/:email/:id", function(req, res) {
     }
   });
 });
+app.post("/api/loans/:email/:id/amount", function(req, res) {
+  Loans.findByIdAndUpdate(req.params.id, { amount: req.body.amount }, function(
+    err,
+    data
+  ) {
+    if (err) {
+      //send back error 500 to show the server had internel error
+      res.status(500, "INTERNAL SERVER ERROR " + err);
+    } else if (data != null) {
+      res.status(201, "Updated loan");
+      res.json(data);
+    }
+  });
+});
 app.post("/api/users", function(req, res) {
   //check if user with same username exists use findById and change id to username
   var balance;
@@ -317,21 +331,6 @@ app.post("/api/loans", function(req, res) {
   });
   res.status(201, "Resource created");
 });
-app.post("/api/loans/:id/amount", function(req, res) {
-  Loans.findByIdAndUpdate(
-    req.params.id,
-    { amount: req.body.amount },
-    function(err, data) {
-      if (err) {
-        //send back error 500 to show the server had internel error
-        res.status(500, "INTERNAL SERVER ERROR " + err);
-      } else if (data != null) {
-        res.status(201, "Updated loan");
-        res.json(data);
-      }
-    }
-  );
-});
 app.post("/api/transactions", function(req, res) {
   Transactions.create({
     email: req.body.email,
@@ -375,6 +374,7 @@ app.post("/api/transactions/:email/:newemail", function(req, res) {
   );
   res.status(201);
 });
+
 app.post("/api/loans/:email/:newemail", function(req, res) {
   Loans.updateMany(
     { email: req.params.email },
@@ -392,6 +392,20 @@ app.get("/api/loans/:email", function(req, res) {
     res.json(data);
   });
   res.status(200);
+});
+app.get("/api/loans/:id/", function(req, res) {
+  Loans.findById(req.params.id, function(err, data) {
+    if (err) {
+      //send back error 500 to show the server had internel error
+      res.status(500, "INTERNAL SERVER ERROR " + err);
+    } else if (data != null) {
+      res.json("hi");
+      res.status(200, "loan found");
+    } else {
+      res.json("null");
+      res.status(404, "loan not found");
+    }
+  });
 });
 app.get("/api/support/", function(req, res) {
   Support.find(function(err, data) {

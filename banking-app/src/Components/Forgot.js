@@ -36,13 +36,13 @@ class Forgot extends React.Component {
       plaintext += Math.floor(10 * Math.random())
     }
     const hashed = sha256(plaintext)
- 
+
     const rand = {password: hashed}
-    axios.post("https://localhost:8080/apiusers/" + sessionStorage.getItem("email") +  "/rand",rand).then(res=>{
+    axios.post("https://localhost:8080/api/users/" + sessionStorage.getItem("email") +  "/rand",rand).then(res=>{
       console.log(res)
     });
     axios
-      .get("https://localhost:8080/apiemailuser/" + this.state.username + "/" + plaintext)
+      .get("https://localhost:8080/api/emailuser/" + this.state.username + "/" + plaintext)
       .then(res => {
         console.log(res.data);
       });
