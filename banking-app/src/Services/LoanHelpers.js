@@ -9,26 +9,34 @@ export function getOpenLoans() {
     .get("https://localhost:8080/api/loans/" + sessionStorage.getItem("email"))
     .then(res => {
       for (var i = 0; i < res.data.length; i++) {
-        alert("res data length " + res.data.length)
         if (res.data[i].status === "Open") {
           openLoan++;
         }
         sessionStorage.setItem("openLoans", openLoan);
-        //under development
-
         var loanDate = new Date(res.data[i].date);
-        alert("DATE: " + (today - loanDate) + " TEST " + res.data[i].date);
-        var weeks = Math.round((today - loanDate) / 604800000);
 
-          const newAmount = {
-            amount: parseInt(
-              Math.round(res.data[i].amount + (res.data[i].amount * (0.1 * Math.round(weeks))))
+        var weeks = Math.floor((today - loanDate) / 604800000);
+        const newAmount = {
+          amount: parseInt(
+            Math.round(
+              res.data[i].amount +
+                res.data[i].amount * (0.1 * Math.round(weeks))
             )
+          )
+        };
+
+        var loanUpdate = new Date(res.data[i].lastUpdate);
+        //check if weeks > 1 maybe redundant may change
+        //checks if more than 1 week has passed since last interest was added
+        if (
+          weeks >= 1 &&
+          Math.abs(Math.floor(today - loanUpdate) / 604800000) >= 1
+        ) {
+ 
+
+          const lastUpdate = {
+            lastUpdate: today
           };
-        //this tests if one week has passed, this is causing issues
-
-        if (weeks >= 1) {
-
           axios
             .post(
               "https://localhost:8080/api/loans/" +
@@ -38,11 +46,23 @@ export function getOpenLoans() {
                 "/amount",
               newAmount
             )
-            .then(res => {
-         
-            })
+            .then(res => {})
             .catch(err => {
               alert("issue adding interest: " + err);
+            });
+          axios
+            .post(
+              "https://localhost:8080/api/loans/" +
+                sessionStorage.getItem("email") +
+                "/" +
+                res.data[i]._id +
+                "/date",
+              lastUpdate
+            )
+            .then(res => {
+             })
+            .catch(err => {
+              alert("issue with dates: " + err);
             });
         } else {
           console.log("No interest ;D");

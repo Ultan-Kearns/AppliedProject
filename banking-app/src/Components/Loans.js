@@ -11,8 +11,8 @@ class Loans extends React.Component {
   componentDidMount() {
     sessionStorage.setItem("openLoans", getOpenLoans());
     getOpenLoans();
-    this.getUserLoans();
-    //call update loans here 
+
+    //call update loans here
     //strip out in home
     axios
       .get(
@@ -21,6 +21,7 @@ class Loans extends React.Component {
       .then(res => {
         sessionStorage.setItem("balance", res.data.balance);
       });
+          this.getUserLoans();
   }
   constructor(props) {
     super(props);
@@ -97,7 +98,7 @@ class Loans extends React.Component {
                       cost: -loanCost,
                       location: "IndependentBanking.com",
                       name: sessionStorage.getItem("username"),
-                      date: date
+                      date: date,
                     };
                     axios
                       .post(
@@ -180,7 +181,8 @@ class Loans extends React.Component {
         amount: this.state.amount,
         date: date,
         owedTo: "Independent Banking",
-        status: "Open"
+        status: "Open",
+        lastUpdate: date
       };
       const newTransaction = {
         email: sessionStorage.getItem("email"),

@@ -84,7 +84,9 @@ var loanSchema = new Schema({
   amount: { type: Number },
   date: { type: String },
   owedTo: { type: String },
-  status: { type: String }
+  status: { type: String },
+  lastUpdate: {type: String}
+
 });
 loanSchema.methods.findName = function(username) {
   //define logic to find statement by name in here
@@ -254,7 +256,21 @@ app.post("/api/loans/:email/:id/amount", function(req, res) {
       //send back error 500 to show the server had internel error
       res.status(500, "INTERNAL SERVER ERROR " + err);
     } else if (data != null) {
-      res.status(201, "Updated loan");
+      res.status(201, "Updated loan amount");
+      res.json(data);
+    }
+  });
+});
+app.post("/api/loans/:email/:id/date", function(req, res) {
+  Loans.findByIdAndUpdate(req.params.id, { lastUpdate: req.body.lastUpdate }, function(
+    err,
+    data
+  ) {
+    if (err) {
+      //send back error 500 to show the server had internel error
+      res.status(500, "INTERNAL SERVER ERROR " + err);
+    } else if (data != null) {
+      res.status(201, "Updated loan date");
       res.json(data);
     }
   });
@@ -327,7 +343,8 @@ app.post("/api/loans", function(req, res) {
     amount: req.body.amount,
     date: req.body.date,
     status: req.body.status,
-    owedTo: req.body.owedTo
+    owedTo: req.body.owedTo,
+    lastUpdate: req.body.lastUpdate
   });
   res.status(201, "Resource created");
 });

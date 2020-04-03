@@ -70,7 +70,7 @@
 + Test all code(Areas of possible failure: Loans, Updates, Registration, Forgot password, delete)(done)
 + Put finishing touches on project(Little bit of UI work test on multiple machines)(Done)
 + Ensure cloud version is working(Working now but may have to test again)(done)
-# Sprint 12 (20th March - 5th April)
+# Sprint 12 (20th March - 9th April)
 ## Set back due to study + work
 + Ensure all documentation is well-written(review and add more images to context and add images to system desgin for each component)
 + Add images to sys design(Done just need to finish of support component)
@@ -79,10 +79,12 @@
 + review dissertation
 + add count for 2fa so that if user gets it wrong 3 times then say they have to login again for extra security(DONE)
 + Finish system evaluation(Almost done may need to add more)
-+ add more to styles? - may need to get nav bar to contract when window is less than certain resolution
++ test the application and make sure you have paths right for server
++ add more to styles? - may need to get nav bar to contract when window is less than certain resolution also make sure that the app looks good on all resolutionss
 + complete speech recognition(Done)
 + Add Twillio 2FA and add to tech review (Done)
-+ Get interest added to loans by using dates then add to component info
++ Get interest added to loans by using dates then add to component info(Finished need to test with multiple loans)
++ Update code in dissertation LoanHelpers and loanSchema and backend
 # ideas
 + Use tensorflowJS to analyze data from API and predict markets or to create admin chats
 + Support page with voice recognition(DONE but used for navigation)
