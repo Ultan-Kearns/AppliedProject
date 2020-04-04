@@ -78,16 +78,18 @@
 + finish support component(Done just need to work on email summarization - maybe make list of words that shouldn't be in message, download list of filler-words?)
 + review dissertation
 + add count for 2fa so that if user gets it wrong 3 times then say they have to login again for extra security(DONE)
-+ Finish system evaluation(Almost done may need to add more)
-+ test the application and make sure you have paths right for server
-+ add more to styles? - may need to get nav bar to contract when window is less than certain resolution also make sure that the app looks good on all resolutionss
+
++ add more to styles? - Test on multiple resolutions add more animations
 + complete speech recognition(Done)
 + Add Twillio 2FA and add to tech review (Done)
 + Get interest added to loans by using dates then add to component info(Finished need to test with multiple loans)
-+ Update code in dissertation LoanHelpers and loanSchema and backend
-# ideas
-+ Use tensorflowJS to analyze data from API and predict markets or to create admin chats
++ Update code in dissertation LoanHelpers and loanSchema and backend also update nav component information in system design
+# ideas + things to do
+
 + Support page with voice recognition(DONE but used for navigation)
+
++ Finish system evaluation(Almost done may need to add more)
++ test the application and make sure you have paths right for server - do this last
 ## Notes
 ### I will make periodic changes due to changes in workload, personal issues,etc
 ### I run regression tests as well as module tests after each sprint
