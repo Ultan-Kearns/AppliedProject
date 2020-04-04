@@ -17,23 +17,16 @@ body {
   color: white;
   background: green;
 }
-nav {
-  background-color: black;
-  color: white;
-  display: flex;
-  min-width: 100vw;
-  min-height: 10vh;
-  padding-bottom: 2%;
-  overflow-x: hidden;
-  justify-content: space-around;
-}
+
 a{
   margin-left: 5vw;
   position: relative;
   margin-top: 20vh;
-}
-.nav-links {
   color: white;
+}
+a:hover{
+ 
+    color:white;
 }
 #header{
   text-align: center;

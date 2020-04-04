@@ -6,7 +6,7 @@ import "../Styles/Login.css"
 import { Helmet } from "react-helmet"
 import ReactDOM from "react-dom"
 import Home from "./Home.js"
-import Nav from "./Nav.js"
+import Test from "./Nav.js"
 
 import Register from "./Register"
 import Forgot from "./Forgot"
@@ -83,7 +83,7 @@ class Login extends React.Component {
           while (answer != null) {
             answer = window.prompt("Enter 2fa code sent to your phone")
             if (answer === random) {
-              ReactDOM.render(<Nav />, document.getElementById("root"))
+              ReactDOM.render(<Test />, document.getElementById("root"))
               break;
             } else {
               alert("Wrong code entered, try again")
