@@ -9,7 +9,7 @@
 - ProjectDiagram.pdf: A basic layout of the applications structure.
 - README.md: This is the file you are currently reading.
 - Sprints.md: Contains the collection of sprints that were used for the development of this application for a more visual representation please view the project section of the repository to view the Kanban Board or the issues section to review the bugs that were fixed or the enchancements made during development.
-- usefulresources.md - This file contains a collection of resources that I found useful during development of this project.
+- usefulresources.md: This file contains a collection of resources that I found useful during development of this project.
 ## Introduction to project - An online banking application with innovative features
 This project was made by me(Ultan Kearns) for my fourth year module Applied Project and Dissertation,I have decided on making a baking app using React, Node.js, Express and MongoDB. My goal is to make a secure, fully functioning banking application which will provide the user with a rich UI, multiple banking features such as viewing statements and taking out loans and allow them to view transactions using charts made in chart.js.  It is my hope that these tools will prove useful to the user and provide a satisfying experience. 
 ## Why I chose this Project? - An analysis of my decision to develop an online banking system
