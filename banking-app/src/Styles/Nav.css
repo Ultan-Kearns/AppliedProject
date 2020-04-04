@@ -22,7 +22,8 @@ nav {
   color: white;
   display: flex;
   min-width: 100vw;
-  min-height: 30vh;
+  min-height: 10vh;
+  padding-bottom: 2%;
   overflow-x: hidden;
   justify-content: space-around;
 }
