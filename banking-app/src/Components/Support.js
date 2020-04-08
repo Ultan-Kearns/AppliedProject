@@ -1,6 +1,5 @@
 import React from "react";
-import InputGroup from "react-bootstrap/InputGroup";
-import FormControl from "react-bootstrap/FormControl";
+ 
 import Button from "react-bootstrap/Button";
 import "../Styles/Login.css";
 import { Helmet } from "react-helmet";
@@ -45,7 +44,7 @@ class Support extends React.Component {
           <title>Support</title>
         </Helmet>
         <h1>
-          Welcome to the support page!
+          Support
         </h1>
         <p>
           Here at independent banking you are our top priority excluding money

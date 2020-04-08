@@ -225,6 +225,7 @@ class Statistics extends React.Component {
   render() {
     return (
       <div className="Statistics">
+      <h1>Daily Statistics</h1>
         <Helmet>
           <title>Statistics</title>
         </Helmet>

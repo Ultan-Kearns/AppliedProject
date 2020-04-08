@@ -4,9 +4,7 @@ import "../Styles/HomeStyle.css";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import { getHeadlines } from "../Services/HeadlineHelpers.js";
-import NavigationBar from "./Nav"
-import ReactDOM from "react-dom";
-
+ 
 const axios = require("axios").default;
 
 class Home extends React.Component {
@@ -64,7 +62,7 @@ class Home extends React.Component {
             if(
             parseInt(this.state.amount) <=
               parseInt(sessionStorage.getItem("balance")) &&
-            parseInt(this.state.amount) > 0 && res.data != "null"
+            parseInt(this.state.amount) > 0 && res.data !== "null"
           ) {
             var date = new Date();
             //update bal
@@ -176,11 +174,11 @@ class Home extends React.Component {
         <Helmet>
           <title>Home</title>
         </Helmet>
-
+        <h1>Welcome to the Independent Banking,{" "}
+        {sessionStorage.getItem("username")}!</h1>
         <Card>
           <Card.Header>
-            Welcome to the Independent Banking,{" "}
-            {sessionStorage.getItem("username")}!
+            Balance:
           </Card.Header>
           <Card.Body>
             <Card.Text id="balance">Your balance:</Card.Text>
