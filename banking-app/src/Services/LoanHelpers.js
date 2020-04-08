@@ -13,26 +13,25 @@ export function getOpenLoans() {
           openLoan++;
         }
         sessionStorage.setItem("openLoans", openLoan);
-        var loanDate = new Date(res.data[i].date);
 
-        var weeks = Math.floor((today - loanDate) / 604800000);
+        var loanUpdate = new Date(res.data[i].lastUpdate);
+        var weeks = Math.floor((today - loanUpdate) / 604800000);
         const newAmount = {
           amount: parseInt(
             Math.round(
               res.data[i].amount +
-                res.data[i].amount * (0.1 * Math.round(weeks))
+                (res.data[i].amount * (0.1 * Math.round(weeks)))
             )
           )
         };
 
-        var loanUpdate = new Date(res.data[i].lastUpdate);
         //check if weeks > 1 maybe redundant may change
         //checks if more than 1 week has passed since last interest was added
         if (
           weeks >= 1 &&
           Math.abs(Math.floor(today - loanUpdate) / 604800000) >= 1
         ) {
- 
+
 
           const lastUpdate = {
             lastUpdate: today
@@ -46,7 +45,8 @@ export function getOpenLoans() {
                 "/amount",
               newAmount
             )
-            .then(res => {})
+            .then(res => {
+            })
             .catch(err => {
               alert("issue adding interest: " + err);
             });
@@ -60,6 +60,7 @@ export function getOpenLoans() {
               lastUpdate
             )
             .then(res => {
+             
              })
             .catch(err => {
               alert("issue with dates: " + err);

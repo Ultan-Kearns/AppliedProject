@@ -4,7 +4,7 @@ import "../Styles/HomeStyle.css";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import { getHeadlines } from "../Services/HeadlineHelpers.js";
-import Nav from "./Nav"
+import NavigationBar from "./Nav"
 import ReactDOM from "react-dom";
 
 const axios = require("axios").default;

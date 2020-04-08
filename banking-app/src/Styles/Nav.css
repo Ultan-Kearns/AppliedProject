@@ -23,10 +23,14 @@ a{
   position: relative;
   margin-top: 20vh;
   color: white;
+  animation: slideLeft 2.2s;
 }
 a:hover{
- 
+
     color:white;
+    text-shadow: 2px 2px 4px white;
+    cursor: pointer;
+
 }
 #header{
   text-align: center;

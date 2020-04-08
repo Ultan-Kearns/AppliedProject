@@ -12,7 +12,7 @@ import Button from "react-bootstrap/Button";
 import ButtonToolbar from "react-bootstrap/ButtonToolbar";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from 'react-bootstrap/Nav'
-class Test extends React.Component {
+class NavigationBar extends React.Component {
   logout() {
     sessionStorage.setItem("username", "");
     window.location.reload();
@@ -60,4 +60,4 @@ class Test extends React.Component {
     );
   }
 }
-export default Test;
+export default NavigationBar;

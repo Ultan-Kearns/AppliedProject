@@ -10,10 +10,7 @@ var date = new Date();
 class Loans extends React.Component {
   componentDidMount() {
     sessionStorage.setItem("openLoans", getOpenLoans());
-    getOpenLoans();
 
-    //call update loans here
-    //strip out in home
     axios
       .get(
         "https://localhost:8080/api/users/" + sessionStorage.getItem("email")
@@ -21,7 +18,7 @@ class Loans extends React.Component {
       .then(res => {
         sessionStorage.setItem("balance", res.data.balance);
       });
-          this.getUserLoans();
+      this.getUserLoans();
   }
   constructor(props) {
     super(props);
