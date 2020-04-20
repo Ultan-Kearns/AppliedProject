@@ -4,7 +4,7 @@ import "../Styles/HomeStyle.css";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import { getHeadlines } from "../Services/HeadlineHelpers.js";
- 
+
 const axios = require("axios").default;
 
 class Home extends React.Component {
@@ -58,12 +58,14 @@ class Home extends React.Component {
     }
 
     axios.get("https://localhost:8080/api/users/"+this.state.accountId).then(res =>{
-    alert(this.state.accountId + " " + res.data)
-            if(
+    var answer = window.confirm("Are you sure you would like to send: " + this.state.amount + " to: " + res.data._id);
+          if(
             parseInt(this.state.amount) <=
               parseInt(sessionStorage.getItem("balance")) &&
             parseInt(this.state.amount) > 0 && res.data !== "null"
+            && answer === true
           ) {
+            alert("Will send money from: " + this.state.accountId + " to: " + res.data._id)
             var date = new Date();
             //update bal
             const newBalance = {

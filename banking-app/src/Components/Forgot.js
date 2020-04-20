@@ -23,12 +23,23 @@ class Forgot extends React.Component {
     });
   };
   handleSubmitForm = event => {
+
     console.log(this.state.username);
     if (this.state.username === "") {
       alert("Email cannot be blank");
       event.preventDefault();
       return;
     }
+    else{
+      var actualNumber
+      axios
+        .get(
+          "https://localhost:8080/api/users/" + this.state.username
+        )
+        .then(res => {
+          actualNumber = res.data.number
+        })
+        .catch(error => {});
     var plaintext = ""
     for(var i = 0; i < 20; i++)
     {
@@ -36,8 +47,13 @@ class Forgot extends React.Component {
       plaintext += Math.floor(10 * Math.random())
     }
     const hashed = sha256(plaintext)
-
     const rand = {password: hashed}
+    var inputNumber
+        inputNumber = window.prompt("Please enter your phone number and we will send you your password via text and email")
+    alert("phonenumber " + inputNumber + " Actual number " + actualNumber)
+    if(this.state.actualNumber === inputNumber){
+      axios.get("https://localhost:8080/api/users/" + this.state.username + "/" + rand + "/" + actualNumber + "/forgot/").then(res=>{
+      });
     axios.post("https://localhost:8080/api/users/" + sessionStorage.getItem("email") +  "/rand",rand).then(res=>{
       console.log(res)
     });
@@ -49,6 +65,8 @@ class Forgot extends React.Component {
     alert("email sent to  " + this.state.username);
      event.preventDefault();
   };
+}
+}
   componentDidMount() {
     //connect to server and get statements upon component load
   }
@@ -64,7 +82,7 @@ class Forgot extends React.Component {
         <h1>Forgot your password?</h1>
         <p>
           Enter your username here and hit the send email button and we'll send you
-          an email with your password
+          an email with your new password
         </p>
         <form id="passwordForm" onSubmit={this.handleSubmitForm}>
           <InputGroup className="mb-3" id="username">

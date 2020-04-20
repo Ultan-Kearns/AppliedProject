@@ -5,9 +5,7 @@ import Button from "react-bootstrap/Button"
 import "../Styles/Login.css"
 import { Helmet } from "react-helmet"
 import ReactDOM from "react-dom"
-
 import NavigationBar from "./Nav.js"
-
 import Register from "./Register"
 import Forgot from "./Forgot"
 import "axios"
@@ -79,7 +77,7 @@ class Login extends React.Component {
           var answer = ""
           //for extra security
           var wrongCount = 0
-          // saves money for twillio when I keep asking user for answer rather than send tonnes of sms
+          // give user 3 attempts, saves money for twillio when I keep asking user for answer rather than send tonnes of sms
           while (answer != null) {
             answer = window.prompt("Enter 2fa code sent to your phone")
             if (answer === random) {

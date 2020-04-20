@@ -80,7 +80,7 @@
 + complete speech recognition(Done)
 + Add Twillio 2FA and add to tech review (Done)
 #Sprint 13(14th April - 28th April)
-+ Get interest added to loans by using dates then add to component info(Finished need to test with multiple loans)
++ Get interest added to loans by using dates then add to component info(Done everything works, just need to get execute function upon login)
 + Update code in dissertation LoanHelpers and loanSchema and backend also update nav component information in system design(Done)
 + review dissertation
 + Work on email summarization get basic setup
