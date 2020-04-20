@@ -72,18 +72,22 @@
 + Ensure cloud version is working(Working now but may have to test again)(done)
 # Sprint 12 (20th March - 9th April)
 ## Set back due to study + work
-+ Ensure all documentation is well-written(review and add more images to context and add images to system desgin for each component)
-+ Add images to sys design(Done just need to finish of support component)
++ Ensure all documentation is well-written(Done)
 + Add annyang and advantageAPI to dissertation tech review(DONE)
 + finish support component(Done just need to work on email summarization - maybe make list of words that shouldn't be in message, download list of filler-words?)
-+ review dissertation
 + add count for 2fa so that if user gets it wrong 3 times then say they have to login again for extra security(DONE)
-
-+ add more to styles? - Test on multiple resolutions add more animations
++ add more to styles? (Done)
 + complete speech recognition(Done)
 + Add Twillio 2FA and add to tech review (Done)
+#Sprint 13(14th April - 28th April)
 + Get interest added to loans by using dates then add to component info(Finished need to test with multiple loans)
-+ Update code in dissertation LoanHelpers and loanSchema and backend also update nav component information in system design
++ Update code in dissertation LoanHelpers and loanSchema and backend also update nav component information in system design(Done)
++ review dissertation
++ Work on email summarization get basic setup
++ Get blockchain API integrated
++ Write more in dissertation
++ test
+
 # ideas + things to do
 
 + Support page with voice recognition(DONE but used for navigation)

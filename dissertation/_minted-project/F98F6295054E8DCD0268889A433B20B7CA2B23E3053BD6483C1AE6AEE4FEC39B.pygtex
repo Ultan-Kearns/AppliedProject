@@ -1,0 +1,446 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kd}{var} \PYG{n+nx}{express} \PYG{o}{=} \PYG{n+nx}{require}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}express\PYGZdq{}}\PYG{p}{);}
+\PYG{k+kd}{var} \PYG{n+nx}{app} \PYG{o}{=} \PYG{n+nx}{express}\PYG{p}{();}
+\PYG{c+c1}{//this ensures i don\PYGZsq{}t have to write full address and can use relative paths for URL}
+\PYG{k+kd}{var} \PYG{n+nx}{path} \PYG{o}{=} \PYG{n+nx}{require}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}path\PYGZdq{}}\PYG{p}{);}
+\PYG{c+c1}{//parses response}
+\PYG{k+kd}{var} \PYG{n+nx}{bodyParser} \PYG{o}{=} \PYG{n+nx}{require}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}body\PYGZhy{}parser\PYGZdq{}}\PYG{p}{);}
+\PYG{c+c1}{//api to communicate with DB}
+\PYG{k+kd}{var} \PYG{n+nx}{mongoose} \PYG{o}{=} \PYG{n+nx}{require}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}mongoose\PYGZdq{}}\PYG{p}{);}
+\PYG{c+c1}{//mongoDB link to connect}
+\PYG{c+c1}{//3kCeKdq4iZWqlg00 this is for mongoatlas may migrate}
+\PYG{k+kd}{var} \PYG{n+nx}{mongoDB} \PYG{o}{=}
+  \PYG{l+s+s2}{\PYGZdq{}mongodb://ultan:ultanultan1@ds135107.mlab.com:35107/appliedproject\PYGZdq{}}\PYG{p}{;}
+\PYG{k+kd}{var} \PYG{n+nx}{Schema} \PYG{o}{=} \PYG{n+nx}{mongoose}\PYG{p}{.}\PYG{n+nx}{Schema}\PYG{p}{;}
+\PYG{k+kd}{var} \PYG{n+nx}{router} \PYG{o}{=} \PYG{n+nx}{express}\PYG{p}{.}\PYG{n+nx}{Router}\PYG{p}{();}
+\PYG{n+nx}{app}\PYG{p}{.}\PYG{n+nx}{use}\PYG{p}{(}\PYG{n+nx}{bodyParser}\PYG{p}{.}\PYG{n+nx}{json}\PYG{p}{());}
+\PYG{c+c1}{//need this for some browsers to allow cross origin request to allow app to communicate with server}
+\PYG{n+nx}{app}\PYG{p}{.}\PYG{n+nx}{use}\PYG{p}{(}\PYG{k+kd}{function}\PYG{p}{(}\PYG{n+nx}{req}\PYG{p}{,} \PYG{n+nx}{res}\PYG{p}{,} \PYG{n+nx}{next}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+  \PYG{c+c1}{//to allow cross origin requests}
+  \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{header}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Access\PYGZhy{}Control\PYGZhy{}Allow\PYGZhy{}Origin\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}*\PYGZdq{}}\PYG{p}{);}
+  \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{header}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Access\PYGZhy{}Control\PYGZhy{}Allow\PYGZhy{}Methods\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}GET, POST, PUT, DELETE, OPTIONS\PYGZdq{}}\PYG{p}{);}
+  \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{header}\PYG{p}{(}
+    \PYG{l+s+s2}{\PYGZdq{}Access\PYGZhy{}Control\PYGZhy{}Allow\PYGZhy{}Headers\PYGZdq{}}\PYG{p}{,}
+    \PYG{l+s+s2}{\PYGZdq{}Origin, X\PYGZhy{}Requested\PYGZhy{}With, Content\PYGZhy{}Type, Accept\PYGZdq{}}
+  \PYG{p}{);}
+  \PYG{n+nx}{next}\PYG{p}{();}
+\PYG{p}{\PYGZcb{});}
+\PYG{k+kr}{const} \PYG{n+nx}{fs} \PYG{o}{=} \PYG{n+nx}{require}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}fs\PYGZdq{}}\PYG{p}{);}
+\PYG{c+c1}{//add https support}
+\PYG{k+kr}{const} \PYG{n+nx}{https} \PYG{o}{=} \PYG{n+nx}{require}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}https\PYGZdq{}}\PYG{p}{);}
+\PYG{k+kr}{const} \PYG{n+nx}{keysDirectory} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}./\PYGZdq{}}\PYG{p}{;}
+\PYG{k+kr}{const} \PYG{n+nx}{cors} \PYG{o}{=} \PYG{n+nx}{require}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}cors\PYGZdq{}}\PYG{p}{);}
+\PYG{n+nx}{app}\PYG{p}{.}\PYG{n+nx}{use}\PYG{p}{(}\PYG{n+nx}{cors}\PYG{p}{(\PYGZob{}} \PYG{n+nx}{credentials}\PYG{o}{:} \PYG{k+kc}{true}\PYG{p}{,} \PYG{n+nx}{origin}\PYG{o}{:} \PYG{k+kc}{true} \PYG{p}{\PYGZcb{}));}
+\PYG{k+kr}{const} \PYG{n+nx}{security} \PYG{o}{=} \PYG{p}{\PYGZob{}}
+  \PYG{c+c1}{//read files for ssl connection \PYGZhy{} keys are generated with openssl}
+  \PYG{c+c1}{//password for decryption \PYGZhy{} 123456789 Not very secure I know but can\PYGZsq{}t remember harder passwords}
+  \PYG{n+nx}{key}\PYG{o}{:} \PYG{n+nx}{fs}\PYG{p}{.}\PYG{n+nx}{readFileSync}\PYG{p}{(}\PYG{n+nx}{keysDirectory} \PYG{o}{+} \PYG{l+s+s2}{\PYGZdq{}ca.key\PYGZdq{}}\PYG{p}{),}
+  \PYG{n+nx}{cert}\PYG{o}{:} \PYG{n+nx}{fs}\PYG{p}{.}\PYG{n+nx}{readFileSync}\PYG{p}{(}\PYG{n+nx}{keysDirectory} \PYG{o}{+} \PYG{l+s+s2}{\PYGZdq{}cert.crt\PYGZdq{}}\PYG{p}{)}
+\PYG{p}{\PYGZcb{};}
+\PYG{c+c1}{//use mongoose API to connect to backend need to send err msg here}
+\PYG{k}{try} \PYG{p}{\PYGZob{}}
+  \PYG{n+nx}{mongoose}\PYG{p}{.}\PYG{n+nx}{connect}\PYG{p}{(}\PYG{n+nx}{mongoDB}\PYG{p}{,} \PYG{p}{\PYGZob{}}
+    \PYG{n+nx}{useUnifiedTopology}\PYG{o}{:} \PYG{k+kc}{true}\PYG{p}{,}
+    \PYG{n+nx}{useNewUrlParser}\PYG{o}{:} \PYG{k+kc}{true}
+  \PYG{p}{\PYGZcb{});}
+\PYG{p}{\PYGZcb{}} \PYG{k}{catch} \PYG{p}{\PYGZob{}}
+  \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{send}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Err\PYGZdq{}}\PYG{p}{);}
+\PYG{p}{\PYGZcb{}}
+\PYG{c+c1}{//body parser for middleware}
+\PYG{n+nx}{app}\PYG{p}{.}\PYG{n+nx}{use}\PYG{p}{(}
+  \PYG{n+nx}{bodyParser}\PYG{p}{.}\PYG{n+nx}{urlencoded}\PYG{p}{(\PYGZob{}}
+    \PYG{n+nx}{extended}\PYG{o}{:} \PYG{k+kc}{false}
+  \PYG{p}{\PYGZcb{})}
+\PYG{p}{);}
+\PYG{n+nx}{app}\PYG{p}{.}\PYG{n+nx}{use}\PYG{p}{(}\PYG{n+nx}{bodyParser}\PYG{p}{.}\PYG{n+nx}{json}\PYG{p}{());}
+\PYG{c+c1}{//change later}
+\PYG{k+kd}{var} \PYG{n+nx}{userSchema} \PYG{o}{=} \PYG{k}{new} \PYG{n+nx}{Schema}\PYG{p}{(\PYGZob{}}
+  \PYG{n+nx}{\PYGZus{}id}\PYG{o}{:} \PYG{p}{\PYGZob{}} \PYG{n+nx}{type}\PYG{o}{:} \PYG{n+nb}{String} \PYG{p}{\PYGZcb{},}
+  \PYG{n+nx}{password}\PYG{o}{:} \PYG{p}{\PYGZob{}} \PYG{n+nx}{type}\PYG{o}{:} \PYG{n+nb}{String}\PYG{p}{,} \PYG{n+nx}{required}\PYG{o}{:} \PYG{k+kc}{true} \PYG{p}{\PYGZcb{},}
+  \PYG{n+nx}{name}\PYG{o}{:} \PYG{p}{\PYGZob{}} \PYG{n+nx}{type}\PYG{o}{:} \PYG{n+nb}{String}\PYG{p}{,} \PYG{n+nx}{required}\PYG{o}{:} \PYG{k+kc}{true} \PYG{p}{\PYGZcb{},}
+  \PYG{n+nx}{number}\PYG{o}{:} \PYG{p}{\PYGZob{}} \PYG{n+nx}{type}\PYG{o}{:} \PYG{n+nb}{String}\PYG{p}{,} \PYG{n+nx}{required}\PYG{o}{:} \PYG{k+kc}{true} \PYG{p}{\PYGZcb{},}
+  \PYG{n+nx}{dob}\PYG{o}{:} \PYG{p}{\PYGZob{}} \PYG{n+nx}{type}\PYG{o}{:} \PYG{n+nb}{String}\PYG{p}{,} \PYG{n+nx}{required}\PYG{o}{:} \PYG{k+kc}{true} \PYG{p}{\PYGZcb{},}
+  \PYG{n+nx}{balance}\PYG{o}{:} \PYG{p}{\PYGZob{}} \PYG{n+nx}{type}\PYG{o}{:} \PYG{n+nb}{Number}\PYG{p}{,} \PYG{k}{default}\PYG{o}{:} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{n+nx}{required}\PYG{o}{:} \PYG{k+kc}{true} \PYG{p}{\PYGZcb{},}
+  \PYG{n+nx}{iban}\PYG{o}{:} \PYG{p}{\PYGZob{}} \PYG{n+nx}{type}\PYG{o}{:} \PYG{n+nb}{String} \PYG{p}{\PYGZcb{},}
+  \PYG{n+nx}{bic}\PYG{o}{:} \PYG{p}{\PYGZob{}} \PYG{n+nx}{type}\PYG{o}{:} \PYG{n+nb}{String} \PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{});}
+\PYG{c+c1}{//change this later}
+\PYG{k+kd}{var} \PYG{n+nx}{transactionSchema} \PYG{o}{=} \PYG{k}{new} \PYG{n+nx}{Schema}\PYG{p}{(\PYGZob{}}
+  \PYG{n+nx}{location}\PYG{o}{:} \PYG{p}{\PYGZob{}} \PYG{n+nx}{type}\PYG{o}{:} \PYG{n+nb}{String}\PYG{p}{,} \PYG{k}{default}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}Unknown\PYGZdq{}} \PYG{p}{\PYGZcb{},}
+  \PYG{n+nx}{cost}\PYG{o}{:} \PYG{p}{\PYGZob{}} \PYG{n+nx}{type}\PYG{o}{:} \PYG{n+nb}{Number}\PYG{p}{,} \PYG{k}{default}\PYG{o}{:} \PYG{l+m+mi}{0} \PYG{p}{\PYGZcb{},}
+  \PYG{n+nx}{name}\PYG{o}{:} \PYG{p}{\PYGZob{}} \PYG{n+nx}{type}\PYG{o}{:} \PYG{n+nb}{String} \PYG{p}{\PYGZcb{},}
+  \PYG{n+nx}{date}\PYG{o}{:} \PYG{p}{\PYGZob{}} \PYG{n+nx}{type}\PYG{o}{:} \PYG{n+nb}{Date} \PYG{p}{\PYGZcb{},}
+  \PYG{n+nx}{email}\PYG{o}{:} \PYG{p}{\PYGZob{}} \PYG{n+nx}{type}\PYG{o}{:} \PYG{n+nb}{String} \PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{});}
+\PYG{n+nx}{transactionSchema}\PYG{p}{.}\PYG{n+nx}{methods}\PYG{p}{.}\PYG{n+nx}{findName} \PYG{o}{=} \PYG{k+kd}{function}\PYG{p}{(}\PYG{n+nx}{username}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+  \PYG{c+c1}{//define logic to find statement by name in here}
+  \PYG{k}{return} \PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{model}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Transactions\PYGZdq{}}\PYG{p}{).}\PYG{n+nx}{find}\PYG{p}{(\PYGZob{}} \PYG{n+nx}{email}\PYG{o}{:} \PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{email} \PYG{p}{\PYGZcb{},} \PYG{n+nx}{username}\PYG{p}{);}
+\PYG{p}{\PYGZcb{};}
+\PYG{n+nx}{transactionSchema}\PYG{p}{.}\PYG{n+nx}{methods}\PYG{p}{.}\PYG{n+nx}{findNameAndDelete} \PYG{o}{=} \PYG{k+kd}{function}\PYG{p}{(}\PYG{n+nx}{username}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+  \PYG{c+c1}{//define logic to find statement by name in here}
+  \PYG{k}{return} \PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{model}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Transactions\PYGZdq{}}\PYG{p}{).}\PYG{n+nx}{remove}\PYG{p}{(\PYGZob{}} \PYG{n+nx}{email}\PYG{o}{:} \PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{email} \PYG{p}{\PYGZcb{},} \PYG{n+nx}{username}\PYG{p}{);}
+\PYG{p}{\PYGZcb{};}
+\PYG{k+kd}{var} \PYG{n+nx}{loanSchema} \PYG{o}{=} \PYG{k}{new} \PYG{n+nx}{Schema}\PYG{p}{(\PYGZob{}}
+  \PYG{n+nx}{email}\PYG{o}{:} \PYG{p}{\PYGZob{}} \PYG{n+nx}{type}\PYG{o}{:} \PYG{n+nb}{String} \PYG{p}{\PYGZcb{},}
+  \PYG{n+nx}{amount}\PYG{o}{:} \PYG{p}{\PYGZob{}} \PYG{n+nx}{type}\PYG{o}{:} \PYG{n+nb}{Number} \PYG{p}{\PYGZcb{},}
+  \PYG{n+nx}{date}\PYG{o}{:} \PYG{p}{\PYGZob{}} \PYG{n+nx}{type}\PYG{o}{:} \PYG{n+nb}{String} \PYG{p}{\PYGZcb{},}
+  \PYG{n+nx}{owedTo}\PYG{o}{:} \PYG{p}{\PYGZob{}} \PYG{n+nx}{type}\PYG{o}{:} \PYG{n+nb}{String} \PYG{p}{\PYGZcb{},}
+  \PYG{n+nx}{status}\PYG{o}{:} \PYG{p}{\PYGZob{}} \PYG{n+nx}{type}\PYG{o}{:} \PYG{n+nb}{String} \PYG{p}{\PYGZcb{},}
+  \PYG{n+nx}{lastUpdate}\PYG{o}{:} \PYG{p}{\PYGZob{}}\PYG{n+nx}{type}\PYG{o}{:} \PYG{n+nb}{String}\PYG{p}{\PYGZcb{}}
+
+\PYG{p}{\PYGZcb{});}
+\PYG{n+nx}{loanSchema}\PYG{p}{.}\PYG{n+nx}{methods}\PYG{p}{.}\PYG{n+nx}{findName} \PYG{o}{=} \PYG{k+kd}{function}\PYG{p}{(}\PYG{n+nx}{username}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+  \PYG{c+c1}{//define logic to find statement by name in here}
+  \PYG{k}{return} \PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{model}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Loans\PYGZdq{}}\PYG{p}{).}\PYG{n+nx}{find}\PYG{p}{(\PYGZob{}} \PYG{n+nx}{email}\PYG{o}{:} \PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{email} \PYG{p}{\PYGZcb{},} \PYG{n+nx}{username}\PYG{p}{);}
+\PYG{p}{\PYGZcb{};}
+\PYG{n+nx}{loanSchema}\PYG{p}{.}\PYG{n+nx}{methods}\PYG{p}{.}\PYG{n+nx}{findNameAndDelete} \PYG{o}{=} \PYG{k+kd}{function}\PYG{p}{(}\PYG{n+nx}{username}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+  \PYG{c+c1}{//define logic to find statement by name in here}
+  \PYG{k}{return} \PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{model}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Loans\PYGZdq{}}\PYG{p}{).}\PYG{n+nx}{remove}\PYG{p}{(\PYGZob{}} \PYG{n+nx}{email}\PYG{o}{:} \PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{email} \PYG{p}{\PYGZcb{},} \PYG{n+nx}{username}\PYG{p}{);}
+\PYG{p}{\PYGZcb{};}
+\PYG{k+kd}{var} \PYG{n+nx}{supportSchema} \PYG{o}{=} \PYG{k}{new} \PYG{n+nx}{Schema}\PYG{p}{(\PYGZob{}}
+  \PYG{n+nx}{email}\PYG{o}{:} \PYG{p}{\PYGZob{}} \PYG{n+nx}{type}\PYG{o}{:} \PYG{n+nb}{String} \PYG{p}{\PYGZcb{},}
+  \PYG{n+nx}{bug}\PYG{o}{:} \PYG{p}{\PYGZob{}} \PYG{n+nx}{type}\PYG{o}{:} \PYG{n+nb}{String} \PYG{p}{\PYGZcb{},}
+  \PYG{n+nx}{date}\PYG{o}{:} \PYG{p}{\PYGZob{}} \PYG{n+nx}{type}\PYG{o}{:} \PYG{n+nb}{Date} \PYG{p}{\PYGZcb{},}
+  \PYG{n+nx}{status}\PYG{o}{:} \PYG{p}{\PYGZob{}} \PYG{n+nx}{type}\PYG{o}{:} \PYG{n+nb}{String} \PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{});}
+\PYG{c+c1}{//models for mongoose}
+\PYG{k+kd}{var} \PYG{n+nx}{Users} \PYG{o}{=} \PYG{n+nx}{mongoose}\PYG{p}{.}\PYG{n+nx}{model}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Users\PYGZdq{}}\PYG{p}{,} \PYG{n+nx}{userSchema}\PYG{p}{);}
+\PYG{k+kd}{var} \PYG{n+nx}{Transactions} \PYG{o}{=} \PYG{n+nx}{mongoose}\PYG{p}{.}\PYG{n+nx}{model}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Transactions\PYGZdq{}}\PYG{p}{,} \PYG{n+nx}{transactionSchema}\PYG{p}{);}
+\PYG{k+kd}{var} \PYG{n+nx}{Loans} \PYG{o}{=} \PYG{n+nx}{mongoose}\PYG{p}{.}\PYG{n+nx}{model}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Loans\PYGZdq{}}\PYG{p}{,} \PYG{n+nx}{loanSchema}\PYG{p}{);}
+\PYG{k+kd}{var} \PYG{n+nx}{Support} \PYG{o}{=} \PYG{n+nx}{mongoose}\PYG{p}{.}\PYG{n+nx}{model}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Support\PYGZdq{}}\PYG{p}{,} \PYG{n+nx}{supportSchema}\PYG{p}{);}
+\PYG{k+kd}{var} \PYG{n+nx}{transaction} \PYG{o}{=} \PYG{k}{new} \PYG{n+nx}{Transactions}\PYG{p}{();}
+\PYG{k+kd}{var} \PYG{n+nx}{loan} \PYG{o}{=} \PYG{k}{new} \PYG{n+nx}{Loans}\PYG{p}{();}
+\PYG{c+c1}{//Here I will use get requests to retrieve resources}
+\PYG{n+nx}{app}\PYG{p}{.}\PYG{n+nx}{get}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}/\PYGZdq{}}\PYG{p}{,} \PYG{k+kd}{function}\PYG{p}{(}\PYG{n+nx}{req}\PYG{p}{,} \PYG{n+nx}{res}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+  \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{status}\PYG{p}{(}\PYG{l+m+mi}{200}\PYG{p}{).}\PYG{n+nx}{send}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Server is up and running!\PYGZdq{}}\PYG{p}{);}
+\PYG{p}{\PYGZcb{});}
+\PYG{n+nx}{app}\PYG{p}{.}\PYG{n+nx}{get}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}/api/users\PYGZdq{}}\PYG{p}{,} \PYG{k+kd}{function}\PYG{p}{(}\PYG{n+nx}{req}\PYG{p}{,} \PYG{n+nx}{res}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+  \PYG{n+nx}{Users}\PYG{p}{.}\PYG{n+nx}{find}\PYG{p}{(}\PYG{k+kd}{function}\PYG{p}{(}\PYG{n+nx}{err}\PYG{p}{,} \PYG{n+nx}{data}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+    \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{json}\PYG{p}{(}\PYG{n+nx}{data}\PYG{p}{);}
+    \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{status}\PYG{p}{(}\PYG{l+m+mi}{200}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}request completed\PYGZdq{}}\PYG{p}{);}
+  \PYG{p}{\PYGZcb{});}
+\PYG{p}{\PYGZcb{});}
+\PYG{n+nx}{app}\PYG{p}{.}\PYG{n+nx}{get}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}/api/transactions\PYGZdq{}}\PYG{p}{,} \PYG{k+kd}{function}\PYG{p}{(}\PYG{n+nx}{req}\PYG{p}{,} \PYG{n+nx}{res}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+  \PYG{n+nx}{Transactions}\PYG{p}{.}\PYG{n+nx}{find}\PYG{p}{(}\PYG{k+kd}{function}\PYG{p}{(}\PYG{n+nx}{err}\PYG{p}{,} \PYG{n+nx}{data}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+    \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{json}\PYG{p}{(}\PYG{n+nx}{data}\PYG{p}{);}
+    \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{status}\PYG{p}{(}\PYG{l+m+mi}{200}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}request completed\PYGZdq{}}\PYG{p}{);}
+  \PYG{p}{\PYGZcb{});}
+\PYG{p}{\PYGZcb{});}
+\PYG{n+nx}{app}\PYG{p}{.}\PYG{n+nx}{get}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}/api/loans\PYGZdq{}}\PYG{p}{,} \PYG{k+kd}{function}\PYG{p}{(}\PYG{n+nx}{req}\PYG{p}{,} \PYG{n+nx}{res}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+  \PYG{n+nx}{Loans}\PYG{p}{.}\PYG{n+nx}{find}\PYG{p}{(}\PYG{k+kd}{function}\PYG{p}{(}\PYG{n+nx}{err}\PYG{p}{,} \PYG{n+nx}{data}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+    \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{json}\PYG{p}{(}\PYG{n+nx}{data}\PYG{p}{);}
+    \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{status}\PYG{p}{(}\PYG{l+m+mi}{200}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}request completed\PYGZdq{}}\PYG{p}{);}
+  \PYG{p}{\PYGZcb{});}
+\PYG{p}{\PYGZcb{});}
+\PYG{c+c1}{//template was taken from earlier project and refactored https://github.com/Ultan\PYGZhy{}Kearns/eCommerceApp/blob/master/BackEnd/Server.js}
+\PYG{n+nx}{app}\PYG{p}{.}\PYG{n+nx}{get}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}/api/users/:id/:password/:random\PYGZdq{}}\PYG{p}{,} \PYG{k+kd}{function}\PYG{p}{(}\PYG{n+nx}{req}\PYG{p}{,} \PYG{n+nx}{res}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+  \PYG{n+nx}{Users}\PYG{p}{.}\PYG{n+nx}{findById}\PYG{p}{(}\PYG{n+nx}{req}\PYG{p}{.}\PYG{n+nx}{params}\PYG{p}{.}\PYG{n+nx}{id}\PYG{p}{,} \PYG{k+kd}{function}\PYG{p}{(}\PYG{n+nx}{err}\PYG{p}{,} \PYG{n+nx}{data}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{err}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+      \PYG{c+c1}{//send back error 500 to show the server had internal error}
+      \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{status}\PYG{p}{(}\PYG{l+m+mi}{500}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}INTERNAL SERVER ERROR \PYGZdq{}} \PYG{o}{+} \PYG{n+nx}{err}\PYG{p}{);}
+      \PYG{k}{return}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{data} \PYG{o}{!=} \PYG{k+kc}{null}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+      \PYG{c+c1}{//compare user username and password to the username and password in DB}
+      \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{req}\PYG{p}{.}\PYG{n+nx}{params}\PYG{p}{.}\PYG{n+nx}{id} \PYG{o}{==} \PYG{n+nx}{data}\PYG{p}{.}\PYG{n+nx}{\PYGZus{}id} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n+nx}{data}\PYG{p}{.}\PYG{n+nx}{password} \PYG{o}{==} \PYG{n+nx}{req}\PYG{p}{.}\PYG{n+nx}{params}\PYG{p}{.}\PYG{n+nx}{password}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+        \PYG{c+c1}{//twillio code \PYGZhy{} taken template from their site}
+        \PYG{k+kr}{const} \PYG{n+nx}{accountSid} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}AC8cc82f77f451d6f26aeb1481e9c554cf\PYGZdq{}}\PYG{p}{;}
+        \PYG{k+kr}{const} \PYG{n+nx}{authToken} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}d593089eb8edbcf9eb2ca0242800db11\PYGZdq{}}\PYG{p}{;}
+        \PYG{k+kr}{const} \PYG{n+nx}{client} \PYG{o}{=} \PYG{n+nx}{require}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}twilio\PYGZdq{}}\PYG{p}{)(}\PYG{n+nx}{accountSid}\PYG{p}{,} \PYG{n+nx}{authToken}\PYG{p}{);}
+        \PYG{n+nx}{client}\PYG{p}{.}\PYG{n+nx}{messages}
+          \PYG{p}{.}\PYG{n+nx}{create}\PYG{p}{(\PYGZob{}}
+            \PYG{n+nx}{body}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}Your code is: \PYGZdq{}} \PYG{o}{+} \PYG{n+nx}{req}\PYG{p}{.}\PYG{n+nx}{params}\PYG{p}{.}\PYG{n+nx}{random}\PYG{p}{,}
+            \PYG{n+nx}{from}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}+12055089804\PYGZdq{}}\PYG{p}{,}
+            \PYG{n+nx}{to}\PYG{o}{:} \PYG{n+nx}{data}\PYG{p}{.}\PYG{n+nx}{number}
+          \PYG{p}{\PYGZcb{})}
+          \PYG{p}{.}\PYG{n+nx}{then}\PYG{p}{(}\PYG{n+nx}{message} \PYG{p}{=\PYGZgt{}} \PYG{n+nx}{console}\PYG{p}{.}\PYG{n+nx}{log}\PYG{p}{(}\PYG{n+nx}{message}\PYG{p}{.}\PYG{n+nx}{sid}\PYG{p}{))}
+          \PYG{p}{.}\PYG{k}{catch}\PYG{p}{(}\PYG{n+nx}{error} \PYG{p}{=\PYGZgt{}} \PYG{p}{\PYGZob{}}
+            \PYG{n+nx}{console}\PYG{p}{.}\PYG{n+nx}{log}\PYG{p}{(}\PYG{n+nx}{error}\PYG{p}{);}
+          \PYG{p}{\PYGZcb{});}
+        \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{json}\PYG{p}{(}\PYG{n+nx}{data}\PYG{p}{);}
+        \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{status}\PYG{p}{(}\PYG{l+m+mi}{200}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}User logged in!\PYGZdq{}}\PYG{p}{);}
+      \PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{p}{\PYGZob{}}
+        \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{json}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}null\PYGZdq{}}\PYG{p}{);}
+        \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{status}\PYG{p}{(}\PYG{l+m+mi}{404}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}User not found!\PYGZdq{}}\PYG{p}{);}
+      \PYG{p}{\PYGZcb{}}
+    \PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{data} \PYG{o}{==} \PYG{k+kc}{null}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+      \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{json}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}null\PYGZdq{}}\PYG{p}{);}
+      \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{status}\PYG{p}{(}\PYG{l+m+mi}{404}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}User not found\PYGZdq{}}\PYG{p}{);}
+    \PYG{p}{\PYGZcb{}}
+  \PYG{p}{\PYGZcb{});}
+\PYG{p}{\PYGZcb{});}
+\PYG{c+c1}{//template taken from earlier project \PYGZhy{} https://github.com/Ultan\PYGZhy{}Kearns/eCommerceApp/blob/master/BackEnd/Server.js}
+\PYG{c+c1}{//Improved upon in this project}
+\PYG{n+nx}{app}\PYG{p}{.}\PYG{n+nx}{get}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}/api/emailuser/:id/:password\PYGZdq{}}\PYG{p}{,} \PYG{k+kd}{function}\PYG{p}{(}\PYG{n+nx}{req}\PYG{p}{,} \PYG{n+nx}{res}\PYG{p}{,} \PYG{n+nx}{next}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+  \PYG{n+nx}{Users}\PYG{p}{.}\PYG{n+nx}{findById}\PYG{p}{(}\PYG{n+nx}{req}\PYG{p}{.}\PYG{n+nx}{params}\PYG{p}{.}\PYG{n+nx}{id}\PYG{p}{,} \PYG{k+kd}{function}\PYG{p}{(}\PYG{n+nx}{err}\PYG{p}{,} \PYG{n+nx}{data}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{data} \PYG{o}{==} \PYG{k+kc}{null}\PYG{p}{)}
+      \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{status}\PYG{p}{(}\PYG{l+m+mi}{404}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}User does not exist on this server\PYGZdq{}}\PYG{p}{,} \PYG{n+nx}{err}\PYG{p}{);}
+    \PYG{k}{else} \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{data}\PYG{p}{.}\PYG{n+nx}{\PYGZus{}id} \PYG{o}{==} \PYG{n+nx}{req}\PYG{p}{.}\PYG{n+nx}{params}\PYG{p}{.}\PYG{n+nx}{id}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+      \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{json}\PYG{p}{(}\PYG{n+nx}{data}\PYG{p}{);}
+      \PYG{n+nx}{console}\PYG{p}{.}\PYG{n+nx}{log}\PYG{p}{(}\PYG{n+nx}{data}\PYG{p}{);}
+      \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{status}\PYG{p}{(}\PYG{l+m+mi}{200}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}User logged in!\PYGZdq{}}\PYG{p}{);}
+      \PYG{k+kd}{var} \PYG{n+nx}{nodemailer} \PYG{o}{=} \PYG{n+nx}{require}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}nodemailer\PYGZdq{}}\PYG{p}{);}
+      \PYG{k+kd}{var} \PYG{n+nx}{transporter} \PYG{o}{=} \PYG{n+nx}{nodemailer}\PYG{p}{.}\PYG{n+nx}{createTransport}\PYG{p}{(\PYGZob{}}
+        \PYG{n+nx}{host}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}smtp.gmail.com\PYGZdq{}}\PYG{p}{,} \PYG{c+c1}{// hostname}
+        \PYG{n+nx}{service}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}gmail\PYGZdq{}}\PYG{p}{,}
+        \PYG{n+nx}{auth}\PYG{o}{:} \PYG{p}{\PYGZob{}}
+          \PYG{c+c1}{//login to email set up for this project}
+          \PYG{n+nx}{user}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}reactproject19@gmail.com\PYGZdq{}}\PYG{p}{,}
+          \PYG{n+nx}{pass}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}GMITreact19\PYGZdq{}}
+        \PYG{p}{\PYGZcb{},}
+        \PYG{n+nx}{tls}\PYG{o}{:} \PYG{p}{\PYGZob{}}
+          \PYG{n+nx}{ciphers}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}SSLv3\PYGZdq{}}
+        \PYG{p}{\PYGZcb{}}
+      \PYG{p}{\PYGZcb{});}
+      \PYG{k+kd}{var} \PYG{n+nx}{mailOptions} \PYG{o}{=} \PYG{p}{\PYGZob{}}
+        \PYG{c+c1}{//Setting up which account to use for seending emails}
+        \PYG{n+nx}{from}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}reactproject19@gmail.com\PYGZdq{}}\PYG{p}{,}
+        \PYG{n+nx}{to}\PYG{o}{:} \PYG{n+nx}{data}\PYG{p}{.}\PYG{n+nx}{\PYGZus{}id}\PYG{p}{,}
+        \PYG{n+nx}{subject}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}Forgot Independent Banking password\PYGZdq{}}\PYG{p}{,}
+        \PYG{n+nx}{text}\PYG{o}{:}
+          \PYG{l+s+s2}{\PYGZdq{}Here is your password for Independent Banking: \PYGZdq{}} \PYG{o}{+}
+          \PYG{n+nx}{req}\PYG{p}{.}\PYG{n+nx}{params}\PYG{p}{.}\PYG{n+nx}{password}
+      \PYG{p}{\PYGZcb{};}
+
+      \PYG{c+c1}{//Send email or log errors if user doesn\PYGZsq{}t exist}
+      \PYG{n+nx}{transporter}\PYG{p}{.}\PYG{n+nx}{sendMail}\PYG{p}{(}\PYG{n+nx}{mailOptions}\PYG{p}{,} \PYG{k+kd}{function}\PYG{p}{(}\PYG{n+nx}{error}\PYG{p}{,} \PYG{n+nx}{info}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+        \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{error}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+          \PYG{n+nx}{console}\PYG{p}{.}\PYG{n+nx}{log}\PYG{p}{(}\PYG{n+nx}{error}\PYG{p}{);}
+        \PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{p}{\PYGZob{}}
+          \PYG{n+nx}{console}\PYG{p}{.}\PYG{n+nx}{log}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Sent Email to address: \PYGZdq{}} \PYG{o}{+} \PYG{n+nx}{req}\PYG{p}{.}\PYG{n+nx}{params}\PYG{p}{.}\PYG{n+nx}{id}\PYG{p}{);}
+        \PYG{p}{\PYGZcb{}}
+      \PYG{p}{\PYGZcb{});}
+    \PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{p}{\PYGZob{}}
+      \PYG{n+nx}{console}\PYG{p}{.}\PYG{n+nx}{log}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}EMAIL COULD NOT BE SENT\PYGZdq{}}\PYG{p}{);}
+      \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{json}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}error email not sent\PYGZdq{}}\PYG{p}{);}
+    \PYG{p}{\PYGZcb{}}
+  \PYG{p}{\PYGZcb{});}
+\PYG{p}{\PYGZcb{});}
+\PYG{n+nx}{app}\PYG{p}{.}\PYG{n+nx}{get}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}/api/users/:id/\PYGZdq{}}\PYG{p}{,} \PYG{k+kd}{function}\PYG{p}{(}\PYG{n+nx}{req}\PYG{p}{,} \PYG{n+nx}{res}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+  \PYG{n+nx}{Users}\PYG{p}{.}\PYG{n+nx}{findById}\PYG{p}{(}\PYG{n+nx}{req}\PYG{p}{.}\PYG{n+nx}{params}\PYG{p}{.}\PYG{n+nx}{id}\PYG{p}{,} \PYG{k+kd}{function}\PYG{p}{(}\PYG{n+nx}{err}\PYG{p}{,} \PYG{n+nx}{data}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{err}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+      \PYG{c+c1}{//send back error 500 to show the server had internel error}
+      \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{status}\PYG{p}{(}\PYG{l+m+mi}{500}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}INTERNAL SERVER ERROR \PYGZdq{}} \PYG{o}{+} \PYG{n+nx}{err}\PYG{p}{);}
+    \PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{data} \PYG{o}{!=} \PYG{k+kc}{null}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+      \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{json}\PYG{p}{(}\PYG{n+nx}{data}\PYG{p}{);}
+    \PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{p}{\PYGZob{}}
+      \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{json}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}null\PYGZdq{}}\PYG{p}{);}
+      \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{status}\PYG{p}{(}\PYG{l+m+mi}{404}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}user not found\PYGZdq{}}\PYG{p}{);}
+    \PYG{p}{\PYGZcb{}}
+  \PYG{p}{\PYGZcb{});}
+\PYG{p}{\PYGZcb{});}
+\PYG{n+nx}{app}\PYG{p}{.}\PYG{k}{delete}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}/api/users/:id/\PYGZdq{}}\PYG{p}{,} \PYG{k+kd}{function}\PYG{p}{(}\PYG{n+nx}{req}\PYG{p}{,} \PYG{n+nx}{res}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+  \PYG{n+nx}{Users}\PYG{p}{.}\PYG{n+nx}{findByIdAndRemove}\PYG{p}{(}\PYG{n+nx}{req}\PYG{p}{.}\PYG{n+nx}{params}\PYG{p}{.}\PYG{n+nx}{id}\PYG{p}{,} \PYG{k+kd}{function}\PYG{p}{(}\PYG{n+nx}{err}\PYG{p}{,} \PYG{n+nx}{data}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{err}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+      \PYG{c+c1}{//send back error 500 to show the server had internel error}
+      \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{status}\PYG{p}{(}\PYG{l+m+mi}{500}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}INTERNAL SERVER ERROR \PYGZdq{}} \PYG{o}{+} \PYG{n+nx}{err}\PYG{p}{);}
+    \PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{data} \PYG{o}{!=} \PYG{k+kc}{null}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+      \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{status}\PYG{p}{(}\PYG{l+m+mi}{202}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}Deleted Account\PYGZdq{}}\PYG{p}{);}
+    \PYG{p}{\PYGZcb{}}
+  \PYG{p}{\PYGZcb{});}
+\PYG{p}{\PYGZcb{});}
+\PYG{n+nx}{app}\PYG{p}{.}\PYG{k}{delete}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}/api/loans/:email/:id\PYGZdq{}}\PYG{p}{,} \PYG{k+kd}{function}\PYG{p}{(}\PYG{n+nx}{req}\PYG{p}{,} \PYG{n+nx}{res}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+  \PYG{n+nx}{Loans}\PYG{p}{.}\PYG{n+nx}{findByIdAndRemove}\PYG{p}{(}\PYG{n+nx}{req}\PYG{p}{.}\PYG{n+nx}{params}\PYG{p}{.}\PYG{n+nx}{id}\PYG{p}{,} \PYG{k+kd}{function}\PYG{p}{(}\PYG{n+nx}{err}\PYG{p}{,} \PYG{n+nx}{data}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{err}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+      \PYG{c+c1}{//send back error 500 to show the server had internel error}
+      \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{status}\PYG{p}{(}\PYG{l+m+mi}{500}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}INTERNAL SERVER ERROR \PYGZdq{}} \PYG{o}{+} \PYG{n+nx}{err}\PYG{p}{);}
+    \PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{data} \PYG{o}{!=} \PYG{k+kc}{null}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+      \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{status}\PYG{p}{(}\PYG{l+m+mi}{202}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}Paid loan\PYGZdq{}}\PYG{p}{);}
+    \PYG{p}{\PYGZcb{}}
+  \PYG{p}{\PYGZcb{});}
+\PYG{p}{\PYGZcb{});}
+\PYG{n+nx}{app}\PYG{p}{.}\PYG{n+nx}{post}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}/api/loans/:email/:id/amount\PYGZdq{}}\PYG{p}{,} \PYG{k+kd}{function}\PYG{p}{(}\PYG{n+nx}{req}\PYG{p}{,} \PYG{n+nx}{res}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+  \PYG{n+nx}{Loans}\PYG{p}{.}\PYG{n+nx}{findByIdAndUpdate}\PYG{p}{(}\PYG{n+nx}{req}\PYG{p}{.}\PYG{n+nx}{params}\PYG{p}{.}\PYG{n+nx}{id}\PYG{p}{,} \PYG{p}{\PYGZob{}} \PYG{n+nx}{amount}\PYG{o}{:} \PYG{n+nx}{req}\PYG{p}{.}\PYG{n+nx}{body}\PYG{p}{.}\PYG{n+nx}{amount} \PYG{p}{\PYGZcb{},} \PYG{k+kd}{function}\PYG{p}{(}
+    \PYG{n+nx}{err}\PYG{p}{,}
+    \PYG{n+nx}{data}
+  \PYG{p}{)} \PYG{p}{\PYGZob{}}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{err}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+      \PYG{c+c1}{//send back error 500 to show the server had internel error}
+      \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{status}\PYG{p}{(}\PYG{l+m+mi}{500}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}INTERNAL SERVER ERROR \PYGZdq{}} \PYG{o}{+} \PYG{n+nx}{err}\PYG{p}{);}
+    \PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{data} \PYG{o}{!=} \PYG{k+kc}{null}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+      \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{status}\PYG{p}{(}\PYG{l+m+mi}{201}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}Updated loan amount\PYGZdq{}}\PYG{p}{);}
+      \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{json}\PYG{p}{(}\PYG{n+nx}{data}\PYG{p}{);}
+    \PYG{p}{\PYGZcb{}}
+  \PYG{p}{\PYGZcb{});}
+\PYG{p}{\PYGZcb{});}
+\PYG{n+nx}{app}\PYG{p}{.}\PYG{n+nx}{post}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}/api/loans/:email/:id/date\PYGZdq{}}\PYG{p}{,} \PYG{k+kd}{function}\PYG{p}{(}\PYG{n+nx}{req}\PYG{p}{,} \PYG{n+nx}{res}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+  \PYG{n+nx}{Loans}\PYG{p}{.}\PYG{n+nx}{findByIdAndUpdate}\PYG{p}{(}\PYG{n+nx}{req}\PYG{p}{.}\PYG{n+nx}{params}\PYG{p}{.}\PYG{n+nx}{id}\PYG{p}{,} \PYG{p}{\PYGZob{}} \PYG{n+nx}{lastUpdate}\PYG{o}{:} \PYG{n+nx}{req}\PYG{p}{.}\PYG{n+nx}{body}\PYG{p}{.}\PYG{n+nx}{lastUpdate} \PYG{p}{\PYGZcb{},} \PYG{k+kd}{function}\PYG{p}{(}
+    \PYG{n+nx}{err}\PYG{p}{,}
+    \PYG{n+nx}{data}
+  \PYG{p}{)} \PYG{p}{\PYGZob{}}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{err}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+      \PYG{c+c1}{//send back error 500 to show the server had internel error}
+      \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{status}\PYG{p}{(}\PYG{l+m+mi}{500}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}INTERNAL SERVER ERROR \PYGZdq{}} \PYG{o}{+} \PYG{n+nx}{err}\PYG{p}{);}
+    \PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{data} \PYG{o}{!=} \PYG{k+kc}{null}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+      \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{status}\PYG{p}{(}\PYG{l+m+mi}{201}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}Updated loan date\PYGZdq{}}\PYG{p}{);}
+      \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{json}\PYG{p}{(}\PYG{n+nx}{data}\PYG{p}{);}
+    \PYG{p}{\PYGZcb{}}
+  \PYG{p}{\PYGZcb{});}
+\PYG{p}{\PYGZcb{});}
+\PYG{n+nx}{app}\PYG{p}{.}\PYG{n+nx}{post}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}/api/users\PYGZdq{}}\PYG{p}{,} \PYG{k+kd}{function}\PYG{p}{(}\PYG{n+nx}{req}\PYG{p}{,} \PYG{n+nx}{res}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+  \PYG{c+c1}{//check if user with same username exists use findById and change id to username}
+  \PYG{k+kd}{var} \PYG{n+nx}{balance}\PYG{p}{;}
+  \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{req}\PYG{p}{.}\PYG{n+nx}{body}\PYG{p}{.}\PYG{n+nx}{balance} \PYG{o}{==} \PYG{l+s+s2}{\PYGZdq{}\PYGZdq{}}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+    \PYG{n+nx}{balance} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+  \PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{p}{\PYGZob{}}
+    \PYG{n+nx}{balance} \PYG{o}{=} \PYG{n+nx}{req}\PYG{p}{.}\PYG{n+nx}{body}\PYG{p}{.}\PYG{n+nx}{balance}\PYG{p}{;}
+  \PYG{p}{\PYGZcb{}}
+  \PYG{n+nx}{Users}\PYG{p}{.}\PYG{n+nx}{create}\PYG{p}{(\PYGZob{}}
+    \PYG{n+nx}{\PYGZus{}id}\PYG{o}{:} \PYG{n+nx}{req}\PYG{p}{.}\PYG{n+nx}{body}\PYG{p}{.}\PYG{n+nx}{\PYGZus{}id}\PYG{p}{,}
+    \PYG{n+nx}{password}\PYG{o}{:} \PYG{n+nx}{req}\PYG{p}{.}\PYG{n+nx}{body}\PYG{p}{.}\PYG{n+nx}{password}\PYG{p}{,}
+    \PYG{n+nx}{name}\PYG{o}{:} \PYG{n+nx}{req}\PYG{p}{.}\PYG{n+nx}{body}\PYG{p}{.}\PYG{n+nx}{name}\PYG{p}{,}
+    \PYG{n+nx}{number}\PYG{o}{:} \PYG{n+nx}{req}\PYG{p}{.}\PYG{n+nx}{body}\PYG{p}{.}\PYG{n+nx}{number}\PYG{p}{,}
+    \PYG{n+nx}{dob}\PYG{o}{:} \PYG{n+nx}{req}\PYG{p}{.}\PYG{n+nx}{body}\PYG{p}{.}\PYG{n+nx}{dob}\PYG{p}{,}
+    \PYG{n+nx}{balance}\PYG{o}{:} \PYG{n+nx}{balance}\PYG{p}{,}
+    \PYG{n+nx}{iban}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}IE\PYGZdq{}}\PYG{p}{,}
+    \PYG{n+nx}{bic}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}\PYGZdq{}}
+  \PYG{p}{\PYGZcb{});}
+  \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{status}\PYG{p}{(}\PYG{l+m+mi}{201}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}Resource created\PYGZdq{}}\PYG{p}{);}
+\PYG{p}{\PYGZcb{});}
+\PYG{n+nx}{app}\PYG{p}{.}\PYG{n+nx}{put}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}/api/users/:id\PYGZdq{}}\PYG{p}{,} \PYG{k+kd}{function}\PYG{p}{(}\PYG{n+nx}{req}\PYG{p}{,} \PYG{n+nx}{res}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+  \PYG{c+cm}{/*}
+\PYG{c+cm}{  Decided to keep this as it may be useful if db is refactored}
+\PYG{c+cm}{   Users.findByIdAndUpdate(req.params.id,\PYGZob{}name:req.body.name,password:req.body.password,number:req.body.number\PYGZcb{},function(err,data)\PYGZob{}}
+\PYG{c+cm}{    if (err) \PYGZob{}}
+\PYG{c+cm}{      //send back error 500 to show the server had internel error}
+\PYG{c+cm}{      res.status(500, \PYGZdq{}INTERNAL SERVER ERROR \PYGZdq{} + err);}
+\PYG{c+cm}{    \PYGZcb{} else if (data != null) \PYGZob{}}
+\PYG{c+cm}{      res.status(200,\PYGZdq{}Updated Account\PYGZdq{})}
+\PYG{c+cm}{    \PYGZcb{}}
+\PYG{c+cm}{  \PYGZcb{})}
+\PYG{c+cm}{  */}
+\PYG{p}{\PYGZcb{});}
+\PYG{n+nx}{app}\PYG{p}{.}\PYG{n+nx}{post}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}/api/users/:id/rand\PYGZdq{}}\PYG{p}{,} \PYG{k+kd}{function}\PYG{p}{(}\PYG{n+nx}{req}\PYG{p}{,} \PYG{n+nx}{res}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+  \PYG{n+nx}{Users}\PYG{p}{.}\PYG{n+nx}{findByIdAndUpdate}\PYG{p}{(}
+    \PYG{n+nx}{req}\PYG{p}{.}\PYG{n+nx}{params}\PYG{p}{.}\PYG{n+nx}{id}\PYG{p}{,}
+    \PYG{p}{\PYGZob{}} \PYG{n+nx}{password}\PYG{o}{:} \PYG{n+nx}{req}\PYG{p}{.}\PYG{n+nx}{body}\PYG{p}{.}\PYG{n+nx}{password} \PYG{p}{\PYGZcb{},}
+    \PYG{k+kd}{function}\PYG{p}{(}\PYG{n+nx}{err}\PYG{p}{,} \PYG{n+nx}{data}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+      \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{err}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+        \PYG{c+c1}{//send back error 500 to show the server had internel error}
+        \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{status}\PYG{p}{(}\PYG{l+m+mi}{500}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}INTERNAL SERVER ERROR \PYGZdq{}} \PYG{o}{+} \PYG{n+nx}{err}\PYG{p}{);}
+      \PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{data} \PYG{o}{!=} \PYG{k+kc}{null}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+        \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{status}\PYG{p}{(}\PYG{l+m+mi}{201}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}Updated Password  \PYGZdq{}}\PYG{p}{);}
+      \PYG{p}{\PYGZcb{}}
+    \PYG{p}{\PYGZcb{}}
+  \PYG{p}{);}
+\PYG{p}{\PYGZcb{});}
+\PYG{n+nx}{app}\PYG{p}{.}\PYG{n+nx}{post}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}/api/users/:id/balance\PYGZdq{}}\PYG{p}{,} \PYG{k+kd}{function}\PYG{p}{(}\PYG{n+nx}{req}\PYG{p}{,} \PYG{n+nx}{res}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+  \PYG{n+nx}{Users}\PYG{p}{.}\PYG{n+nx}{findByIdAndUpdate}\PYG{p}{(}
+    \PYG{n+nx}{req}\PYG{p}{.}\PYG{n+nx}{params}\PYG{p}{.}\PYG{n+nx}{id}\PYG{p}{,}
+    \PYG{p}{\PYGZob{}} \PYG{n+nx}{balance}\PYG{o}{:} \PYG{n+nx}{req}\PYG{p}{.}\PYG{n+nx}{body}\PYG{p}{.}\PYG{n+nx}{balance} \PYG{p}{\PYGZcb{},}
+    \PYG{k+kd}{function}\PYG{p}{(}\PYG{n+nx}{err}\PYG{p}{,} \PYG{n+nx}{data}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+      \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{err}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+        \PYG{c+c1}{//send back error 500 to show the server had internel error}
+        \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{status}\PYG{p}{(}\PYG{l+m+mi}{500}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}INTERNAL SERVER ERROR \PYGZdq{}} \PYG{o}{+} \PYG{n+nx}{err}\PYG{p}{);}
+      \PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{data} \PYG{o}{!=} \PYG{k+kc}{null}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+        \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{status}\PYG{p}{(}\PYG{l+m+mi}{201}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}Updated balance\PYGZdq{}}\PYG{p}{);}
+        \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{json}\PYG{p}{(}\PYG{n+nx}{data}\PYG{p}{);}
+      \PYG{p}{\PYGZcb{}}
+    \PYG{p}{\PYGZcb{}}
+  \PYG{p}{);}
+\PYG{p}{\PYGZcb{});}
+\PYG{n+nx}{app}\PYG{p}{.}\PYG{n+nx}{post}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}/api/loans\PYGZdq{}}\PYG{p}{,} \PYG{k+kd}{function}\PYG{p}{(}\PYG{n+nx}{req}\PYG{p}{,} \PYG{n+nx}{res}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+  \PYG{n+nx}{Loans}\PYG{p}{.}\PYG{n+nx}{create}\PYG{p}{(\PYGZob{}}
+    \PYG{n+nx}{email}\PYG{o}{:} \PYG{n+nx}{req}\PYG{p}{.}\PYG{n+nx}{body}\PYG{p}{.}\PYG{n+nx}{email}\PYG{p}{,}
+    \PYG{n+nx}{amount}\PYG{o}{:} \PYG{n+nx}{req}\PYG{p}{.}\PYG{n+nx}{body}\PYG{p}{.}\PYG{n+nx}{amount}\PYG{p}{,}
+    \PYG{n+nx}{date}\PYG{o}{:} \PYG{n+nx}{req}\PYG{p}{.}\PYG{n+nx}{body}\PYG{p}{.}\PYG{n+nx}{date}\PYG{p}{,}
+    \PYG{n+nx}{status}\PYG{o}{:} \PYG{n+nx}{req}\PYG{p}{.}\PYG{n+nx}{body}\PYG{p}{.}\PYG{n+nx}{status}\PYG{p}{,}
+    \PYG{n+nx}{owedTo}\PYG{o}{:} \PYG{n+nx}{req}\PYG{p}{.}\PYG{n+nx}{body}\PYG{p}{.}\PYG{n+nx}{owedTo}\PYG{p}{,}
+    \PYG{n+nx}{lastUpdate}\PYG{o}{:} \PYG{n+nx}{req}\PYG{p}{.}\PYG{n+nx}{body}\PYG{p}{.}\PYG{n+nx}{lastUpdate}
+  \PYG{p}{\PYGZcb{});}
+  \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{status}\PYG{p}{(}\PYG{l+m+mi}{201}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}Resource created\PYGZdq{}}\PYG{p}{);}
+\PYG{p}{\PYGZcb{});}
+\PYG{n+nx}{app}\PYG{p}{.}\PYG{n+nx}{post}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}/api/transactions\PYGZdq{}}\PYG{p}{,} \PYG{k+kd}{function}\PYG{p}{(}\PYG{n+nx}{req}\PYG{p}{,} \PYG{n+nx}{res}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+  \PYG{n+nx}{Transactions}\PYG{p}{.}\PYG{n+nx}{create}\PYG{p}{(\PYGZob{}}
+    \PYG{n+nx}{email}\PYG{o}{:} \PYG{n+nx}{req}\PYG{p}{.}\PYG{n+nx}{body}\PYG{p}{.}\PYG{n+nx}{email}\PYG{p}{,}
+    \PYG{n+nx}{cost}\PYG{o}{:} \PYG{n+nx}{req}\PYG{p}{.}\PYG{n+nx}{body}\PYG{p}{.}\PYG{n+nx}{cost}\PYG{p}{,}
+    \PYG{n+nx}{location}\PYG{o}{:} \PYG{n+nx}{req}\PYG{p}{.}\PYG{n+nx}{body}\PYG{p}{.}\PYG{n+nx}{location}\PYG{p}{,}
+    \PYG{n+nx}{name}\PYG{o}{:} \PYG{n+nx}{req}\PYG{p}{.}\PYG{n+nx}{body}\PYG{p}{.}\PYG{n+nx}{name}\PYG{p}{,}
+    \PYG{n+nx}{date}\PYG{o}{:} \PYG{n+nx}{req}\PYG{p}{.}\PYG{n+nx}{body}\PYG{p}{.}\PYG{n+nx}{date}
+  \PYG{p}{\PYGZcb{});}
+  \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{status}\PYG{p}{(}\PYG{l+m+mi}{201}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}Resource created\PYGZdq{}}\PYG{p}{);}
+\PYG{p}{\PYGZcb{});}
+\PYG{n+nx}{transaction}\PYG{p}{.}\PYG{n+nx}{findName}\PYG{p}{(}\PYG{k+kd}{function}\PYG{p}{(}\PYG{n+nx}{name}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+  \PYG{n+nx}{console}\PYG{p}{.}\PYG{n+nx}{log}\PYG{p}{(}\PYG{n+nx}{name}\PYG{p}{);}
+\PYG{p}{\PYGZcb{});}
+
+\PYG{n+nx}{app}\PYG{p}{.}\PYG{n+nx}{get}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}/api/transactions/:email\PYGZdq{}}\PYG{p}{,} \PYG{k+kd}{function}\PYG{p}{(}\PYG{n+nx}{req}\PYG{p}{,} \PYG{n+nx}{res}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+  \PYG{c+c1}{//custom method to find name on transactions}
+  \PYG{n+nx}{transaction} \PYG{o}{=} \PYG{k}{new} \PYG{n+nx}{Transactions}\PYG{p}{(\PYGZob{}} \PYG{n+nx}{email}\PYG{o}{:} \PYG{n+nx}{req}\PYG{p}{.}\PYG{n+nx}{params}\PYG{p}{.}\PYG{n+nx}{email} \PYG{p}{\PYGZcb{});}
+  \PYG{n+nx}{transaction}\PYG{p}{.}\PYG{n+nx}{findName}\PYG{p}{(}\PYG{k+kd}{function}\PYG{p}{(}\PYG{n+nx}{err}\PYG{p}{,} \PYG{n+nx}{data}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+    \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{json}\PYG{p}{(}\PYG{n+nx}{data}\PYG{p}{);}
+  \PYG{p}{\PYGZcb{});}
+  \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{status}\PYG{p}{(}\PYG{l+m+mi}{200}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}found\PYGZdq{}}\PYG{p}{);}
+\PYG{p}{\PYGZcb{});}
+\PYG{n+nx}{app}\PYG{p}{.}\PYG{k}{delete}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}/api/transactions/:email\PYGZdq{}}\PYG{p}{,} \PYG{k+kd}{function}\PYG{p}{(}\PYG{n+nx}{req}\PYG{p}{,} \PYG{n+nx}{res}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+  \PYG{n+nx}{Transactions}\PYG{p}{.}\PYG{n+nx}{remove}\PYG{p}{(\PYGZob{}} \PYG{n+nx}{email}\PYG{o}{:} \PYG{n+nx}{req}\PYG{p}{.}\PYG{n+nx}{params}\PYG{p}{.}\PYG{n+nx}{email} \PYG{p}{\PYGZcb{},} \PYG{k+kd}{function}\PYG{p}{(}\PYG{n+nx}{err}\PYG{p}{,} \PYG{n+nx}{data}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+    \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{json}\PYG{p}{(}\PYG{n+nx}{data}\PYG{p}{);}
+  \PYG{p}{\PYGZcb{});}
+\PYG{p}{\PYGZcb{});}
+\PYG{n+nx}{app}\PYG{p}{.}\PYG{k}{delete}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}/api/loans/:email\PYGZdq{}}\PYG{p}{,} \PYG{k+kd}{function}\PYG{p}{(}\PYG{n+nx}{req}\PYG{p}{,} \PYG{n+nx}{res}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+  \PYG{n+nx}{Loans}\PYG{p}{.}\PYG{n+nx}{remove}\PYG{p}{(\PYGZob{}} \PYG{n+nx}{email}\PYG{o}{:} \PYG{n+nx}{req}\PYG{p}{.}\PYG{n+nx}{params}\PYG{p}{.}\PYG{n+nx}{email} \PYG{p}{\PYGZcb{},} \PYG{k+kd}{function}\PYG{p}{(}\PYG{n+nx}{err}\PYG{p}{,} \PYG{n+nx}{data}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+    \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{json}\PYG{p}{(}\PYG{n+nx}{data}\PYG{p}{);}
+    \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{status}\PYG{p}{(}\PYG{l+m+mi}{202}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}deleted loan\PYGZdq{}}\PYG{p}{);}
+  \PYG{p}{\PYGZcb{});}
+\PYG{p}{\PYGZcb{});}
+\PYG{n+nx}{app}\PYG{p}{.}\PYG{n+nx}{post}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}/api/transactions/:email/:newemail\PYGZdq{}}\PYG{p}{,} \PYG{k+kd}{function}\PYG{p}{(}\PYG{n+nx}{req}\PYG{p}{,} \PYG{n+nx}{res}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+  \PYG{n+nx}{Transactions}\PYG{p}{.}\PYG{n+nx}{updateMany}\PYG{p}{(}
+    \PYG{p}{\PYGZob{}} \PYG{n+nx}{email}\PYG{o}{:} \PYG{n+nx}{req}\PYG{p}{.}\PYG{n+nx}{params}\PYG{p}{.}\PYG{n+nx}{email} \PYG{p}{\PYGZcb{},}
+    \PYG{p}{\PYGZob{}} \PYG{n+nx}{\PYGZdl{}set}\PYG{o}{:} \PYG{p}{\PYGZob{}} \PYG{n+nx}{email}\PYG{o}{:} \PYG{n+nx}{req}\PYG{p}{.}\PYG{n+nx}{params}\PYG{p}{.}\PYG{n+nx}{newemail} \PYG{p}{\PYGZcb{}} \PYG{p}{\PYGZcb{},}
+    \PYG{k+kd}{function}\PYG{p}{(}\PYG{n+nx}{err}\PYG{p}{,} \PYG{n+nx}{doc}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+      \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{json}\PYG{p}{(}\PYG{n+nx}{doc}\PYG{p}{);}
+    \PYG{p}{\PYGZcb{}}
+  \PYG{p}{);}
+  \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{status}\PYG{p}{(}\PYG{l+m+mi}{201}\PYG{p}{);}
+\PYG{p}{\PYGZcb{});}
+
+\PYG{n+nx}{app}\PYG{p}{.}\PYG{n+nx}{post}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}/api/loans/:email/:newemail\PYGZdq{}}\PYG{p}{,} \PYG{k+kd}{function}\PYG{p}{(}\PYG{n+nx}{req}\PYG{p}{,} \PYG{n+nx}{res}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+  \PYG{n+nx}{Loans}\PYG{p}{.}\PYG{n+nx}{updateMany}\PYG{p}{(}
+    \PYG{p}{\PYGZob{}} \PYG{n+nx}{email}\PYG{o}{:} \PYG{n+nx}{req}\PYG{p}{.}\PYG{n+nx}{params}\PYG{p}{.}\PYG{n+nx}{email} \PYG{p}{\PYGZcb{},}
+    \PYG{p}{\PYGZob{}} \PYG{n+nx}{\PYGZdl{}set}\PYG{o}{:} \PYG{p}{\PYGZob{}} \PYG{n+nx}{email}\PYG{o}{:} \PYG{n+nx}{req}\PYG{p}{.}\PYG{n+nx}{params}\PYG{p}{.}\PYG{n+nx}{newemail} \PYG{p}{\PYGZcb{}} \PYG{p}{\PYGZcb{},}
+    \PYG{k+kd}{function}\PYG{p}{(}\PYG{n+nx}{err}\PYG{p}{,} \PYG{n+nx}{doc}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+      \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{json}\PYG{p}{(}\PYG{n+nx}{doc} \PYG{o}{+} \PYG{l+s+s2}{\PYGZdq{} \PYGZdq{}} \PYG{o}{+} \PYG{n+nx}{req}\PYG{p}{.}\PYG{n+nx}{params}\PYG{p}{.}\PYG{n+nx}{newemail}\PYG{p}{);}
+    \PYG{p}{\PYGZcb{}}
+  \PYG{p}{);}
+  \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{status}\PYG{p}{(}\PYG{l+m+mi}{201}\PYG{p}{);}
+\PYG{p}{\PYGZcb{});}
+\PYG{n+nx}{app}\PYG{p}{.}\PYG{n+nx}{get}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}/api/loans/:email\PYGZdq{}}\PYG{p}{,} \PYG{k+kd}{function}\PYG{p}{(}\PYG{n+nx}{req}\PYG{p}{,} \PYG{n+nx}{res}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+  \PYG{c+c1}{//custom method to find name on transactions}
+  \PYG{n+nx}{loan} \PYG{o}{=} \PYG{k}{new} \PYG{n+nx}{Loans}\PYG{p}{(\PYGZob{}} \PYG{n+nx}{email}\PYG{o}{:} \PYG{n+nx}{req}\PYG{p}{.}\PYG{n+nx}{params}\PYG{p}{.}\PYG{n+nx}{email} \PYG{p}{\PYGZcb{});}
+  \PYG{n+nx}{loan}\PYG{p}{.}\PYG{n+nx}{findName}\PYG{p}{(}\PYG{k+kd}{function}\PYG{p}{(}\PYG{n+nx}{err}\PYG{p}{,} \PYG{n+nx}{data}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+    \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{json}\PYG{p}{(}\PYG{n+nx}{data}\PYG{p}{);}
+  \PYG{p}{\PYGZcb{});}
+  \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{status}\PYG{p}{(}\PYG{l+m+mi}{200}\PYG{p}{);}
+\PYG{p}{\PYGZcb{});}
+\PYG{n+nx}{app}\PYG{p}{.}\PYG{n+nx}{get}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}/api/loans/:id/\PYGZdq{}}\PYG{p}{,} \PYG{k+kd}{function}\PYG{p}{(}\PYG{n+nx}{req}\PYG{p}{,} \PYG{n+nx}{res}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+  \PYG{n+nx}{Loans}\PYG{p}{.}\PYG{n+nx}{findById}\PYG{p}{(}\PYG{n+nx}{req}\PYG{p}{.}\PYG{n+nx}{params}\PYG{p}{.}\PYG{n+nx}{id}\PYG{p}{,} \PYG{k+kd}{function}\PYG{p}{(}\PYG{n+nx}{err}\PYG{p}{,} \PYG{n+nx}{data}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{err}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+      \PYG{c+c1}{//send back error 500 to show the server had internel error}
+      \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{status}\PYG{p}{(}\PYG{l+m+mi}{500}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}INTERNAL SERVER ERROR \PYGZdq{}} \PYG{o}{+} \PYG{n+nx}{err}\PYG{p}{);}
+    \PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{data} \PYG{o}{!=} \PYG{k+kc}{null}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+      \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{json}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}hi\PYGZdq{}}\PYG{p}{);}
+      \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{status}\PYG{p}{(}\PYG{l+m+mi}{200}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}loan found\PYGZdq{}}\PYG{p}{);}
+    \PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{p}{\PYGZob{}}
+      \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{json}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}null\PYGZdq{}}\PYG{p}{);}
+      \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{status}\PYG{p}{(}\PYG{l+m+mi}{404}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}loan not found\PYGZdq{}}\PYG{p}{);}
+    \PYG{p}{\PYGZcb{}}
+  \PYG{p}{\PYGZcb{});}
+\PYG{p}{\PYGZcb{});}
+\PYG{n+nx}{app}\PYG{p}{.}\PYG{n+nx}{get}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}/api/support/\PYGZdq{}}\PYG{p}{,} \PYG{k+kd}{function}\PYG{p}{(}\PYG{n+nx}{req}\PYG{p}{,} \PYG{n+nx}{res}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+  \PYG{n+nx}{Support}\PYG{p}{.}\PYG{n+nx}{find}\PYG{p}{(}\PYG{k+kd}{function}\PYG{p}{(}\PYG{n+nx}{err}\PYG{p}{,} \PYG{n+nx}{data}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+    \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{json}\PYG{p}{(}\PYG{n+nx}{data}\PYG{p}{);}
+  \PYG{p}{\PYGZcb{});}
+  \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{status}\PYG{p}{(}\PYG{l+m+mi}{200}\PYG{p}{);}
+\PYG{p}{\PYGZcb{});}
+\PYG{n+nx}{app}\PYG{p}{.}\PYG{n+nx}{post}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}/api/support\PYGZdq{}}\PYG{p}{,} \PYG{k+kd}{function}\PYG{p}{(}\PYG{n+nx}{req}\PYG{p}{,} \PYG{n+nx}{res}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+  \PYG{n+nx}{Support}\PYG{p}{.}\PYG{n+nx}{create}\PYG{p}{(\PYGZob{}}
+    \PYG{n+nx}{email}\PYG{o}{:} \PYG{n+nx}{req}\PYG{p}{.}\PYG{n+nx}{body}\PYG{p}{.}\PYG{n+nx}{email}\PYG{p}{,}
+    \PYG{n+nx}{bug}\PYG{o}{:} \PYG{n+nx}{req}\PYG{p}{.}\PYG{n+nx}{body}\PYG{p}{.}\PYG{n+nx}{bug}\PYG{p}{,}
+    \PYG{n+nx}{date}\PYG{o}{:} \PYG{n+nx}{req}\PYG{p}{.}\PYG{n+nx}{body}\PYG{p}{.}\PYG{n+nx}{date}\PYG{p}{,}
+    \PYG{n+nx}{status}\PYG{o}{:} \PYG{n+nx}{req}\PYG{p}{.}\PYG{n+nx}{body}\PYG{p}{.}\PYG{n+nx}{status}
+  \PYG{p}{\PYGZcb{});}
+  \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{status}\PYG{p}{(}\PYG{l+m+mi}{201}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}Resource created\PYGZdq{}}\PYG{p}{);}
+\PYG{p}{\PYGZcb{});}
+\PYG{c+c1}{//have server listening at port  8080 and have it take keycert to secure server}
+\PYG{c+c1}{//uses Secure Socket Layer}
+\PYG{n+nx}{https}\PYG{p}{.}\PYG{n+nx}{createServer}\PYG{p}{(}\PYG{n+nx}{security}\PYG{p}{,} \PYG{n+nx}{app}\PYG{p}{).}\PYG{n+nx}{listen}\PYG{p}{(}\PYG{l+m+mi}{8080}\PYG{p}{);}
+\end{Verbatim}

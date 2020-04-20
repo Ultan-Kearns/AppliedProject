@@ -4,7 +4,7 @@ export function getOpenLoans() {
   var today = new Date();
   const axios = require("axios").default;
   //do update loan cost in here
-  //helper function to count open loans
+  //helper function to count open loans and to add interest
   axios
     .get("https://localhost:8080/api/loans/" + sessionStorage.getItem("email"))
     .then(res => {
@@ -15,7 +15,8 @@ export function getOpenLoans() {
         sessionStorage.setItem("openLoans", openLoan);
 
         var loanUpdate = new Date(res.data[i].lastUpdate);
-        var weeks = Math.floor((today - loanUpdate) / 604800000);
+        //see how many weeks have past
+        var weeks = Math.abs(Math.floor((today - loanUpdate) / 604800000));
         const newAmount = {
           amount: parseInt(
             Math.round(
@@ -24,12 +25,9 @@ export function getOpenLoans() {
             )
           )
         };
-
-        //check if weeks > 1 maybe redundant may change
         //checks if more than 1 week has passed since last interest was added
         if (
-          weeks >= 1 &&
-          Math.abs(Math.floor(today - loanUpdate) / 604800000) >= 1
+          weeks >= 1
         ) {
 
 
@@ -60,7 +58,7 @@ export function getOpenLoans() {
               lastUpdate
             )
             .then(res => {
-             
+
              })
             .catch(err => {
               alert("issue with dates: " + err);
