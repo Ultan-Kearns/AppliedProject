@@ -88,6 +88,13 @@
 + Write more in dissertation(focus on system evaluation)
 + test (Most of key areas tested all work)
 + Fix up forgot page(DONE now have code confirmation if user wants to change password )
++ Get server up and running
+
+# Final Sprint
++ test server and cloud implementation
++ Dockerize server files?
++ Work on documentation
++ Do video on final implementation
 
 # ideas + things to do
 
