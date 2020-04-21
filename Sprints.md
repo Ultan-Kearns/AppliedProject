@@ -80,13 +80,14 @@
 + complete speech recognition(Done)
 + Add Twillio 2FA and add to tech review (Done)
 #Sprint 13(14th April - 28th April)
-+ Get interest added to loans by using dates then add to component info(Done everything works, just need to get execute function upon login)
++ Get interest added to loans by using dates then add to component info(Done everything works, just need to get execute function upon login DONE)
 + Update code in dissertation LoanHelpers and loanSchema and backend also update nav component information in system design(Done)
 + review dissertation
-+ Work on email summarization get basic setup
++ Work on email summarization get basic setup(May leave out as other projects more pressing)
 + Get blockchain API integrated
-+ Write more in dissertation
-+ test
++ Write more in dissertation(focus on system evaluation)
++ test (Most of key areas tested all work)
++ Fix up forgot page(DONE now have code confirmation if user wants to change password )
 
 # ideas + things to do
 
