@@ -59,7 +59,7 @@ class App extends React.Component {
         statistics: function() {
           ReactDOM.render(<Statistics />,document.getElementById("root"));
         },
-        userinfo: function() {
+        information: function() {
           ReactDOM.render(<UserInfo />,document.getElementById("root"));
 
         },
@@ -80,7 +80,7 @@ class App extends React.Component {
           "loans\n" +
           "transactions\n" +
           "statistics\n" +
-          "userinfo\n" +
+          "information\n" +
           "and support\n" +
           "If you wish to logout just say logout\n" +
           "If you wish to exit voice mode please logout and login again");

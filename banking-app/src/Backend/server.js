@@ -439,14 +439,15 @@ app.post("/api/support", function(req, res) {
   });
   res.status(201, "Resource created");
 });
-app.get("/api/users/:id/:random/:number/forgot/"), function(res,req){
+
+app.get("/api/users/:number/:random", function(req, res) {
   //twillio code - taken template from their site
   const accountSid = "AC8cc82f77f451d6f26aeb1481e9c554cf";
   const authToken = "d593089eb8edbcf9eb2ca0242800db11";
   const client = require("twilio")(accountSid, authToken);
   client.messages
     .create({
-      body: "Your new password is: " + req.params.random,
+      body: "Your password is: " + req.params.random,
       from: "+12055089804",
       to: req.params.number
     })
@@ -454,9 +455,11 @@ app.get("/api/users/:id/:random/:number/forgot/"), function(res,req){
     .catch(error => {
       console.log(error);
     });
-  res.json(data);
+    console.log("Sent passwords to number: " + req.params.number);
+
+  res.json(req.params.number);
   res.status(200, "text sent!");
-};
+});
 //have server listening at port  8080 and have it take keycert to secure server
 //uses Secure Socket Layer
 https.createServer(security, app).listen(8080);

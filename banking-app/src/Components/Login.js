@@ -10,6 +10,7 @@ import Register from "./Register"
 import Forgot from "./Forgot"
 import "axios"
 import "js-sha256"
+import { getOpenLoans } from "../Services/LoanHelpers.js";
 
 class Login extends React.Component {
   constructor(props) {
@@ -82,6 +83,7 @@ class Login extends React.Component {
             answer = window.prompt("Enter 2fa code sent to your phone")
             if (answer === random) {
               ReactDOM.render(<NavigationBar />, document.getElementById("root"))
+              getOpenLoans()
               break;
             } else {
               alert("Wrong code entered, try again")

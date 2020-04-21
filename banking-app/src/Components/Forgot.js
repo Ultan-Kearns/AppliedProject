@@ -22,8 +22,8 @@ class Forgot extends React.Component {
       username: event.target.value
     });
   };
-  handleSubmitForm = event => {
 
+  handleSubmitForm = event => {
     console.log(this.state.username);
     if (this.state.username === "") {
       alert("Email cannot be blank");
@@ -31,40 +31,49 @@ class Forgot extends React.Component {
       return;
     }
     else{
-      var actualNumber
-      axios
-        .get(
-          "https://localhost:8080/api/users/" + this.state.username
-        )
-        .then(res => {
-          actualNumber = res.data.number
-        })
-        .catch(error => {});
     var plaintext = ""
     for(var i = 0; i < 20; i++)
     {
       //generate 20 random numbers for password
       plaintext += Math.floor(10 * Math.random())
     }
+    var changeCode = ""
+    for(var i = 0; i < 4; i++)
+    {
+      //generate 4 random numbers for change code
+      changeCode += Math.floor(10 * Math.random())
+    }
+
     const hashed = sha256(plaintext)
     const rand = {password: hashed}
     var inputNumber
         inputNumber = window.prompt("Please enter your phone number and we will send you your password via text and email")
-    alert("phonenumber " + inputNumber + " Actual number " + actualNumber)
-    if(this.state.actualNumber === inputNumber){
-      axios.get("https://localhost:8080/api/users/" + this.state.username + "/" + rand + "/" + actualNumber + "/forgot/").then(res=>{
-      });
-    axios.post("https://localhost:8080/api/users/" + sessionStorage.getItem("email") +  "/rand",rand).then(res=>{
-      console.log(res)
-    });
-    axios
-      .get("https://localhost:8080/api/emailuser/" + this.state.username + "/" + plaintext)
-      .then(res => {
-        console.log(res.data);
-      });
-    alert("email sent to  " + this.state.username);
-     event.preventDefault();
-  };
+        axios.get("https://localhost:8080/api/users/" + inputNumber + "/" + changeCode).then(res=>{
+          alert("SENT CODE")
+          var answer = window.prompt("Enter 4 digit code that was sent to your phone to confirm password change:")
+          if(answer != changeCode){
+            alert("Wrong code entered password will not be changed")
+            throw new Error("invalid code entered")
+          }
+          else{
+            alert("We will text you and email you your new password")
+          }
+        }).then(res=>{    axios.get("https://localhost:8080/api/users/" + inputNumber + "/" + plaintext).then(res=>{
+            })
+        }).then(res=>{
+          axios.get("https://localhost:8080/api/emailuser/" + this.state.username + "/" + plaintext)
+            .then(res => {
+              console.log(res.data);
+            });
+        }).then(res=>{
+          axios.post("https://localhost:8080/api/users/" +this.state.username +  "/rand",rand).then(res=>{
+            console.log(res)
+          })
+
+        }).catch(error=>{
+          alert("Something went wrong: " + error)
+        })
+        event.preventDefault();
 }
 }
   componentDidMount() {
