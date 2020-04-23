@@ -95,6 +95,7 @@
 + Dockerize server files?
 + Work on documentation
 + Do video on final implementation
++ Get HTTPS flag working on GCP
 
 # ideas + things to do
 

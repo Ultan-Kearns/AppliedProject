@@ -623,7 +623,8 @@ which offers the developer a wide range of additional features.
 \section{Front End Architecture}
 Here I will describe the architecture of the project in great technical detail, listing components and explaining their functionality and the why the components were developed.
 \subsection{List of Components}
-\subsubsection{Login}
+Each of the following subsections will describe the anatomy of each component and will discuss their purpose and the code used to implement each component.
+\subsection{Login}
 The login component is the component that the user first sees when starting the application.  The component features an introduction which has white text on a black backround and prompts the user to "Login to experience next generation banking".  In addition to this there is a paragraph which states "Please enter your username and password below and we'll redirect you to your account component"  below this paragrah are two input boxes which prompt the user to enter their username and password respectively.  When the user enters the correct password they are redirected to their accounts component, however if the password or username is entered incorrectly they are alerted by means of a JavaScript alert that their password or username is wrong.  In addition to the above stated there are three buttons one which says "Register" which navigates to the register component another which says "Forgot Password" which will navigate to the Forgot component and one which says "Login".  Once the user has entered the correct username and password they can hit the login button to be redirected to the main application pacomponentge.  The user cannot enter in a components name and gain access to the component unless logged in.  I accomplished the login feature by utilizing code from a previous project's function which I had coded:
 %got flags from https://tex.stackexchange.com/questions/129383/break-lines-in-minted-code
 \begin{minted}[linenos,tabsize=2,breaklines]{JavaScript}
@@ -983,7 +984,7 @@ export default NavigationBar;
 The reason for separating routes from the NavigationBar component is that it made the code easier
 to debug and decreased the complexity of the component thus making for more maintainable
 and well-written code.
-\subsubsection{Loans}
+\subsection{Loans}
 The loans component greets the user with a header which says "Apply \& View Loans", the component is composed of
 an input box with a button stating "Apply for Loan" which when clicked will retrieve the number the user entered
 in the input box and send a request from the frontend to the backend and create a new loan if the loan is considered
@@ -1256,7 +1257,7 @@ export function getOpenLoans() {
 }
 \end{minted}
 The function goes through all the users loans and checks for the status open then sets a sessionStorage item to the amount of open loans the user has on their account.  It uses the user email as a parameter when communicating with the backend to ensure that the user is only judged by their own account information as opposed to anyone elses.  It is in this way that the user accounts are kept independent.  It also checks the difference between the dates from the current date and when the loan was last updated, it then determines if more than a week has passed since the last date and increases the loans value by 0.1\%.
-\subsubsection{Home}
+\subsection{Home}
 The home page is the first page that the user sees when they login to the application, it consists of a section to send money and another section listing the lastest headlines from NewsAPI.org.  The send money section is used to send money to other independent banking accounts using their username so for example to send money to the user ultankearns@gmail.com I would enter that email into the input box account ID and the amount to send into the box prompting the user to send that amount.  The home page also lists the users current balance which is retrieved using an Axios get request to the backend.
 \\
 The send money feature works as follows, the user inputs the values expected, if the user exists then update the current users value to equal their balance - cost sent then update the other users balance to equal their balance + cost sent and create transactions for both the user sending the money and the user receiving the money.  Here is the code below:
@@ -1422,7 +1423,7 @@ This basically retrieves the information and creates an element on the page whic
 \caption{Image of Loans Component}
 \label{fig:Image of loans component}
 \end{figure}
-\subsubsection{Statistics}
+\subsection{Statistics}
 The statistics page shows the user information pertaining to the stock market which is retrieved using the
 alphavantage API.  The alphavantage API has a five calls per minute limitation for free users so if the
 max call limit is reached the application informs the user by displaying a message.  This component also utilizes
@@ -1614,7 +1615,7 @@ is called.
 \caption{Image of Statistics Component}
 \label{fig:Image of statistics component}
 \end{figure}
-\subsubsection{Transactions}
+\subsection{Transactions}
 The transactions component lists transactions made on this users account which means it
 will list every transfer, loan or loan repayment made on the users account.  It accomplishes
 this by using an axios get request to the backend and utilizing the user email to return all
@@ -1665,7 +1666,7 @@ Once retrieved each transaction is added to the transactions list as a child and
 \caption{Image of Transactions Component}
 \label{fig:Image of transactions component}
 \end{figure}
-\subsubsection{Headlines}
+\subsection{Headlines}
 The headlines component gets the latest headlines from reddit and NewsAPI and returns them to the user
 the headlines component utilizes the same helper method as in home but this component has a lot more
 stories and also retrieves the latest headlines from Reddit /r/wallstreet which are retrieved utilizing
@@ -1708,7 +1709,7 @@ exact same way.
 \caption{Image of Headlines Component}
 \label{fig:Image of headlines component}
 \end{figure}
-\subsubsection{Error}
+\subsection{Error}
 The error page is a simple page which handles errors which may occure when the user tries to
 access a resource that may not exist and it returns a message stating to the user "Sorry this page cannot be found"
 and also has a header which says "Error 404", a 404 error is returned when the server cannot find a requested resource.
@@ -1717,7 +1718,7 @@ and also has a header which says "Error 404", a 404 error is returned when the s
 \caption{Image of Error Component}
 \label{fig:Image of Error component}
 \end{figure}
-\subsubsection{About}
+\subsection{About}
 The about section just displays information about the site to the user and features no backend logic or axios requests
 its sole purpose is to make the bank appear as if it were a real entity instead of an imaginary business which only
 exists in the mind of a college student.  Of course all businesses start as imaginary entities and through hard work
@@ -1727,7 +1728,7 @@ and effort become real viable businesses.
 \caption{Image of About Component}
 \label{fig:Image of about component}
 \end{figure}
-\subsubsection{UserInfo}
+\subsection{UserInfo}
 The UserInfo component has a large level of complexity, upon loading the user is
 greeted with a section for their basic info, a section for updating their info,
 and a delete account section aptly placed in what Kenny Loggins refers to as the "Danger Zone".
