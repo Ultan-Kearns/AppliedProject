@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Arch Linux) (preloaded format=pdflatex 2020.2.9)  20 APR 2020 12:17
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Arch Linux) (preloaded format=pdflatex 2020.2.9)  23 APR 2020 23:07
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1599,13 +1599,13 @@ C39B.pygtex [42])
 
 (./_minted-project/5FEDBEBD692BFCEF1F8CDA462034F5C6CA2B23E3053BD6483C1AE6AEE4FE
 C39B.pygtex [43])
-<img/logincomponent.png, id=1080, 1020.81375pt x 558.58687pt>
+<img/logincomponent.png, id=1079, 1020.81375pt x 558.58687pt>
 File: img/logincomponent.png Graphic file (type png)
 <use img/logincomponent.png>
-Package pdftex.def Info: img/logincomponent.png  used on input line 721.
+Package pdftex.def Info: img/logincomponent.png  used on input line 722.
 (pdftex.def)             Requested size: 390.0pt x 213.40735pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 713--725
+Underfull \hbox (badness 10000) in paragraph at lines 714--726
 
  []
 
@@ -1627,7 +1627,7 @@ C39B.pygtex [45])
 <img/registercomponent.png, id=1090, 1371.1225pt x 611.28375pt>
 File: img/registercomponent.png Graphic file (type png)
 <use img/registercomponent.png>
-Package pdftex.def Info: img/registercomponent.png  used on input line 788.
+Package pdftex.def Info: img/registercomponent.png  used on input line 789.
 (pdftex.def)             Requested size: 390.0pt x 173.87256pt.
 \openout3 = `project.pyg'.
 
@@ -1643,13 +1643,13 @@ C39B.pygtex)
 
 
 (./_minted-project/0A7DBCB66E80395C9A00AECF606DCD16CA2B23E3053BD6483C1AE6AEE4FE
-C39B.pygtex
+C39B.pygtex [47]
 Overfull \hbox (90.8824pt too wide) in paragraph at lines 3--3
 | | | |[]\OT1/lmtt/m/it/12 //https://github.com/Ultan-Kearns/eCommerceApp/blob/
 master/BackEnd/Server.js[]|  
  []
 
-[47] [48])
+[48])
 \openout3 = `project.pyg'.
 
 
@@ -1662,7 +1662,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.917 C
+l.918 C
        ode for NavigationBar:
 ? 
 \openout3 = `project.pyg'.
@@ -1683,11 +1683,11 @@ C39B.pygtex [54] [55] [56])
 \openout3 = `project.pyg'.
 
 runsystem(pygmentize -l JavaScript -f latex -P commandprefix=PYG -F tokenmerge 
--o _minted-project/092EEE0B8B79F031DACEF132FDE2EC9ECA2B23E3053BD6483C1AE6AEE4FE
+-o _minted-project/EAF5C9CA1908A9D8121FDB582E19FC81CA2B23E3053BD6483C1AE6AEE4FE
 C39B.pygtex project.pyg)...executed.
 
 
-(./_minted-project/092EEE0B8B79F031DACEF132FDE2EC9ECA2B23E3053BD6483C1AE6AEE4FE
+(./_minted-project/EAF5C9CA1908A9D8121FDB582E19FC81CA2B23E3053BD6483C1AE6AEE4FE
 C39B.pygtex [57] [58])
 \openout3 = `project.pyg'.
 
@@ -1705,13 +1705,13 @@ siness&apiKey=e9cdf3a801374e4eba79b8ea0552a4bd"[]|
  []
 
 [63])
-<img/loanscomponent.png, id=1171, 1371.1225pt x 1098.1025pt>
+<img/loanscomponent.png, id=1172, 1371.1225pt x 1098.1025pt>
 File: img/loanscomponent.png Graphic file (type png)
 <use img/loanscomponent.png>
-Package pdftex.def Info: img/loanscomponent.png  used on input line 1423.
+Package pdftex.def Info: img/loanscomponent.png  used on input line 1422.
 (pdftex.def)             Requested size: 390.0pt x 312.3425pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1420--1426
+Underfull \hbox (badness 10000) in paragraph at lines 1419--1425
 
  []
 
@@ -1768,10 +1768,10 @@ E_RATE&from_currency=EUR&to_currency=CNY&apikey=G38RVCM1OWLSKALP"[]|
 
 (./_minted-project/2E28F1C297284A52C8BF660E0E579C66CA2B23E3053BD6483C1AE6AEE4FE
 C39B.pygtex [69])
-<img/statisticscomponent.png, id=1200, 1371.1225pt x 2468.22125pt>
+<img/statisticscomponent.png, id=1202, 1371.1225pt x 2468.22125pt>
 File: img/statisticscomponent.png Graphic file (type png)
 <use img/statisticscomponent.png>
-Package pdftex.def Info: img/statisticscomponent.png  used on input line 1615.
+Package pdftex.def Info: img/statisticscomponent.png  used on input line 1614.
 (pdftex.def)             Requested size: 390.0pt x 702.05688pt.
  [70]
 Overfull \vbox (134.55687pt too high) has occurred while \output is active []
@@ -1789,10 +1789,10 @@ de);|
  []
 
 [72])
-<img/transactionscomponent.png, id=1215, 1371.1225pt x 8082.195pt>
+<img/transactionscomponent.png, id=1218, 1371.1225pt x 8082.195pt>
 File: img/transactionscomponent.png Graphic file (type png)
 <use img/transactionscomponent.png>
-Package pdftex.def Info: img/transactionscomponent.png  used on input line 1666
+Package pdftex.def Info: img/transactionscomponent.png  used on input line 1665
 .
 (pdftex.def)             Requested size: 390.0pt x 2298.88658pt.
  [73]
@@ -1812,29 +1812,29 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1705 T
+l.1704 T
         his is basically the same function as we have seen from the helper m...
 
 ? 
-<img/headlinescomponent.png, id=1226, 1371.1225pt x 16288.855pt>
+<img/headlinescomponent.png, id=1230, 1371.1225pt x 16288.855pt>
 File: img/headlinescomponent.png Graphic file (type png)
 <use img/headlinescomponent.png>
-Package pdftex.def Info: img/headlinescomponent.png  used on input line 1709.
+Package pdftex.def Info: img/headlinescomponent.png  used on input line 1708.
 (pdftex.def)             Requested size: 390.0pt x 4633.17581pt.
 [75]
 Overfull \vbox (4065.6758pt too high) has occurred while \output is active []
 
 
 [76 <./img/headlinescomponent.png>]
-<img/errorcomponent.png, id=1237, 1028.34187pt x 578.16pt>
+<img/errorcomponent.png, id=1241, 1028.34187pt x 578.16pt>
 File: img/errorcomponent.png Graphic file (type png)
 <use img/errorcomponent.png>
-Package pdftex.def Info: img/errorcomponent.png  used on input line 1718.
+Package pdftex.def Info: img/errorcomponent.png  used on input line 1717.
 (pdftex.def)             Requested size: 390.0pt x 219.2708pt.
-<img/aboutcomponent.png, id=1238, 1371.1225pt x 1476.51625pt>
+<img/aboutcomponent.png, id=1242, 1371.1225pt x 1476.51625pt>
 File: img/aboutcomponent.png Graphic file (type png)
 <use img/aboutcomponent.png>
-Package pdftex.def Info: img/aboutcomponent.png  used on input line 1728.
+Package pdftex.def Info: img/aboutcomponent.png  used on input line 1727.
 (pdftex.def)             Requested size: 390.0pt x 419.9779pt.
  [77 <./img/errorcomponent.png (PNG copy)>]
 \openout3 = `project.pyg'.
@@ -1849,7 +1849,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1787 C
+l.1786 C
         ode for the update function:
 ? 
 \openout3 = `project.pyg'.
@@ -1864,7 +1864,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1971 C
+l.1970 C
         ode for the delete function:
 ? 
 \openout3 = `project.pyg'.
@@ -1872,16 +1872,20 @@ l.1971 C
 
 (./_minted-project/235BD5A5BEFF826524DCBD645400A266CA2B23E3053BD6483C1AE6AEE4FE
 C39B.pygtex [85])
-<img/userinfocomponent.png, id=1281, 1371.1225pt x 1685.29625pt>
+<img/userinfocomponent.png, id=1286, 1371.1225pt x 1685.29625pt>
 File: img/userinfocomponent.png Graphic file (type png)
 <use img/userinfocomponent.png>
-Package pdftex.def Info: img/userinfocomponent.png  used on input line 2015.
+Package pdftex.def Info: img/userinfocomponent.png  used on input line 2014.
 (pdftex.def)             Requested size: 390.0pt x 479.36296pt.
  [86] [87 <./img/userinfocomponent.png>] [88]
 \openout3 = `project.pyg'.
 
+runsystem(pygmentize -l JavaScript -f latex -P commandprefix=PYG -F tokenmerge 
+-o _minted-project/7DA0FBEE8F72AD695794C11B1E0A97D7CA2B23E3053BD6483C1AE6AEE4FE
+C39B.pygtex project.pyg)...executed.
 
-(./_minted-project/F98F6295054E8DCD0268889A433B20B7CA2B23E3053BD6483C1AE6AEE4FE
+
+(./_minted-project/7DA0FBEE8F72AD695794C11B1E0A97D7CA2B23E3053BD6483C1AE6AEE4FE
 C39B.pygtex [89]
 Overfull \hbox (73.12523pt too wide) in paragraph at lines 13--13
 []\OT1/lmtt/m/n/12 "mongodb://ultan:ultanultan1@ds135107.mlab.com:35107/applied
@@ -1889,19 +1893,19 @@ project"[];|
  []
 
 [90] [91] [92]
-Overfull \hbox (102.98244pt too wide) in paragraph at lines 135--135
+Overfull \hbox (102.98244pt too wide) in paragraph at lines 134--134
 \OT1/lmtt/m/it/12 https://github.com/Ultan-Kearns/eCommerceApp/blob/master/Back
 End/Server.js[]|  
  []
 
 [93]
-Overfull \hbox (102.98244pt too wide) in paragraph at lines 171--171
+Overfull \hbox (102.98244pt too wide) in paragraph at lines 170--170
 \OT1/lmtt/m/it/12 https://github.com/Ultan-Kearns/eCommerceApp/blob/master/Back
 End/Server.js[]|  
  []
 
 [94] [95] [96] [97]
-Overfull \hbox (443.18178pt too wide) in paragraph at lines 302--302
+Overfull \hbox (443.18178pt too wide) in paragraph at lines 301--301
 \OT1/lmtt/m/it/12 Users.findByIdAndUpdate(req.params.id,{name:req.body.name,pas
 sword:req.body.password,number:req.body.number},function(err,data){[]|  
  []
@@ -1915,12 +1919,12 @@ Chapter 7.
 [108
 
 ]
-Overfull \hbox (4.41241pt too wide) in paragraph at lines 2687--2687
+Overfull \hbox (4.41241pt too wide) in paragraph at lines 2685--2685
 |[]\OT1/lmr/bx/n/14.4 The Stack-over-flow Prin-ci-ple: READ THE DOCS!| 
  []
 
 [109] [110] [111]
-Overfull \hbox (0.22755pt too wide) in paragraph at lines 2718--2719
+Overfull \hbox (0.22755pt too wide) in paragraph at lines 2716--2717
 \OT1/lmr/m/n/12 Although the de-vel-op-ment of this ap-pli-ca-tion went rel-a-t
 ively smoothly thanks
  []
@@ -1930,7 +1934,7 @@ ively smoothly thanks
 
 ]
 
-Package hyperref Warning: Suppressing link with empty target on input line 2735
+Package hyperref Warning: Suppressing link with empty target on input line 2733
 .
 
 (./project.bbl [115]
@@ -2098,19 +2102,28 @@ tt/m/n/12 https : / / www .
  []
 
 )
-runsystem(rm _minted-project/F28551B6725E6230B9ECCAC5463B3727CA2B23E3053BD6483C
+runsystem(rm _minted-project/092EEE0B8B79F031DACEF132FDE2EC9ECA2B23E3053BD6483C
+1AE6AEE4FEC39B.pygtex)...executed.
+
+runsystem(rm _minted-project/F98F6295054E8DCD0268889A433B20B7CA2B23E3053BD6483C
 1AE6AEE4FEC39B.pygtex)...executed.
 
  [118]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2740.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 2740.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2738.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 2738.
  (./project.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2740.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2740.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2738.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2738.
 
-Package rerunfilecheck Info: File `project.out' has not changed.
-(rerunfilecheck)             Checksum: B51D8173FC767D08DA2BC084208B738E;9427.
 
+
+Package rerunfilecheck Warning: File `project.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `project.out':
+(rerunfilecheck)             Before: B51D8173FC767D08DA2BC084208B738E;9427
+(rerunfilecheck)             After:  4D35AEF30EFFE1A5D06F49517E7D0FC4;9988.
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
@@ -2118,30 +2131,54 @@ runsystem(rm project.pyg)...executed.
 
  ) ) 
 Here is how much of TeX's memory you used:
- 26490 strings out of 492167
- 531710 string characters out of 6131559
+ 26500 strings out of 492167
+ 531985 string characters out of 6131559
  661585 words of memory out of 5000000
- 29856 multiletter control sequences out of 15000+600000
+ 29857 multiletter control sequences out of 15000+600000
  66101 words of font info for 61 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 60i,9n,79p,1366b,634s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/share/texmf-dist
-/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-rmtt
-.enc}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf-
-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf-dist/fonts/enc/dvips/lm
-/lm-rmsc.enc}</usr/share/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/shar
-e/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf-dist/fonts/type
-1/public/lm/lmcsc10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmmi6.pfb>
-</usr/share/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf-dist/f
-onts/type1/public/lm/lmr6.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr8
-.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmro12.pfb></usr/share/texmf-
-dist/fonts/type1/public/lm/lmsy6.pfb></usr/share/texmf-dist/fonts/type1/public/
-lm/lmtk10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmtt12.pfb></usr/sha
-re/texmf-dist/fonts/type1/public/lm/lmtti10.pfb>
-Output written on project.pdf (118 pages, 4425753 bytes).
+ 60i,9n,79p,1366b,630s stack positions out of 5000i,500n,10000p,200000b,80000s
+pdfTeX warning (dest): name{figure.caption.36} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.34} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.32} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.30} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.28} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.20} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.18} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{section*.37} has been referenced but does not exist
+, replaced by a fixed one
+
+{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/share/texmf-dist/fon
+ts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-rmtt.enc
+}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf-dist
+/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-
+rmsc.enc}</usr/share/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/share/te
+xmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf-dist/fonts/type1/pu
+blic/lm/lmcsc10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></us
+r/share/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf-dist/fonts
+/type1/public/lm/lmr6.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr8.pfb
+></usr/share/texmf-dist/fonts/type1/public/lm/lmro12.pfb></usr/share/texmf-dist
+/fonts/type1/public/lm/lmsy6.pfb></usr/share/texmf-dist/fonts/type1/public/lm/l
+mtk10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmtt12.pfb></usr/share/t
+exmf-dist/fonts/type1/public/lm/lmtti10.pfb>
+Output written on project.pdf (118 pages, 4426630 bytes).
 PDF statistics:
- 1621 PDF objects out of 1728 (max. 8388607)
- 1423 compressed objects within 15 object streams
- 334 named destinations out of 1000 (max. 500000)
+ 1630 PDF objects out of 1728 (max. 8388607)
+ 1432 compressed objects within 15 object streams
+ 342 named destinations out of 1000 (max. 500000)
  1334 words of extra memory for PDF output out of 10000 (max. 10000000)
 

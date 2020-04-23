@@ -88,53 +88,62 @@
 \BOOKMARK [2][-]{subsection.5.1.1}{Introduction to System}{section.5.1}% 88
 \BOOKMARK [1][-]{section.5.2}{Front End Architecture}{chapter.5}% 89
 \BOOKMARK [2][-]{subsection.5.2.1}{List of Components}{section.5.2}% 90
-\BOOKMARK [2][-]{subsection.5.2.2}{Nav}{section.5.2}% 91
-\BOOKMARK [2][-]{subsection.5.2.3}{Support}{section.5.2}% 92
-\BOOKMARK [1][-]{section.5.3}{Designing for UX\(User Experience\)}{chapter.5}% 93
-\BOOKMARK [2][-]{subsection.5.3.1}{Designing For End-Users As Opposed to Engineers}{section.5.3}% 94
-\BOOKMARK [1][-]{section.5.4}{Backend Architecture}{chapter.5}% 95
-\BOOKMARK [2][-]{subsection.5.4.1}{Mongoose}{section.5.4}% 96
-\BOOKMARK [2][-]{subsection.5.4.2}{ExpressJS}{section.5.4}% 97
-\BOOKMARK [2][-]{subsection.5.4.3}{NodeJS}{section.5.4}% 98
-\BOOKMARK [2][-]{subsection.5.4.4}{Full Backend Code}{section.5.4}% 99
-\BOOKMARK [1][-]{section.5.5}{RESTful Architecture}{chapter.5}% 100
-\BOOKMARK [2][-]{subsection.5.5.1}{Client / Server Independence}{section.5.5}% 101
-\BOOKMARK [2][-]{subsection.5.5.2}{Cacheable}{section.5.5}% 102
-\BOOKMARK [2][-]{subsection.5.5.3}{Stateless}{section.5.5}% 103
-\BOOKMARK [1][-]{section.5.6}{Database Architecture}{chapter.5}% 104
-\BOOKMARK [2][-]{subsection.5.6.1}{MLAB}{section.5.6}% 105
-\BOOKMARK [2][-]{subsection.5.6.2}{Schema of Database}{section.5.6}% 106
-\BOOKMARK [1][-]{section.5.7}{Security}{chapter.5}% 107
-\BOOKMARK [2][-]{subsection.5.7.1}{Overview of Security}{section.5.7}% 108
-\BOOKMARK [0][-]{chapter.6}{System Evaluation}{}% 109
-\BOOKMARK [1][-]{section.6.1}{Robust}{chapter.6}% 110
-\BOOKMARK [2][-]{subsection.6.1.1}{Error Handling}{section.6.1}% 111
-\BOOKMARK [2][-]{subsection.6.1.2}{Testing}{section.6.1}% 112
-\BOOKMARK [2][-]{subsection.6.1.3}{Speed}{section.6.1}% 113
-\BOOKMARK [1][-]{section.6.2}{Accessibility}{chapter.6}% 114
-\BOOKMARK [2][-]{subsection.6.2.1}{Minimalistic}{section.6.2}% 115
-\BOOKMARK [1][-]{section.6.3}{Objectives}{chapter.6}% 116
-\BOOKMARK [2][-]{subsection.6.3.1}{Safe \046 Secure Banking}{section.6.3}% 117
-\BOOKMARK [2][-]{subsection.6.3.2}{User Generated Statistics}{section.6.3}% 118
-\BOOKMARK [2][-]{subsection.6.3.3}{Multiple Users}{section.6.3}% 119
-\BOOKMARK [2][-]{subsection.6.3.4}{RestFUL Principles}{section.6.3}% 120
-\BOOKMARK [2][-]{subsection.6.3.5}{Scalable}{section.6.3}% 121
-\BOOKMARK [2][-]{subsection.6.3.6}{Responsive}{section.6.3}% 122
-\BOOKMARK [0][-]{chapter.7}{Conclusion}{}% 123
-\BOOKMARK [1][-]{section.7.1}{What I Learned}{chapter.7}% 124
-\BOOKMARK [2][-]{subsection.7.1.1}{React}{section.7.1}% 125
-\BOOKMARK [2][-]{subsection.7.1.2}{NodeJS}{section.7.1}% 126
-\BOOKMARK [2][-]{subsection.7.1.3}{Docker}{section.7.1}% 127
-\BOOKMARK [2][-]{subsection.7.1.4}{Scope Creep}{section.7.1}% 128
-\BOOKMARK [2][-]{subsection.7.1.5}{The Stackoverflow Principle: READ THE DOCS!}{section.7.1}% 129
-\BOOKMARK [1][-]{section.7.2}{Innovation}{chapter.7}% 130
-\BOOKMARK [2][-]{subsection.7.2.1}{Headlines}{section.7.2}% 131
-\BOOKMARK [2][-]{subsection.7.2.2}{Voice Recognition}{section.7.2}% 132
-\BOOKMARK [1][-]{section.7.3}{How TDD \046 Agile Impacted Development}{chapter.7}% 133
-\BOOKMARK [2][-]{subsection.7.3.1}{Positive Impacts of TDD}{section.7.3}% 134
-\BOOKMARK [2][-]{subsection.7.3.2}{Positive Impacts of Agile \046 Kanban}{section.7.3}% 135
-\BOOKMARK [1][-]{section.7.4}{What I Would Do Differently}{chapter.7}% 136
-\BOOKMARK [2][-]{subsection.7.4.1}{Planning}{section.7.4}% 137
-\BOOKMARK [2][-]{subsection.7.4.2}{More Focus on AI}{section.7.4}% 138
-\BOOKMARK [1][-]{section.7.5}{In Closing}{chapter.7}% 139
-\BOOKMARK [0][-]{section*.37}{Appendices}{}% 140
+\BOOKMARK [2][-]{subsection.5.2.2}{Login}{section.5.2}% 91
+\BOOKMARK [2][-]{subsection.5.2.3}{Nav}{section.5.2}% 92
+\BOOKMARK [2][-]{subsection.5.2.4}{Loans}{section.5.2}% 93
+\BOOKMARK [2][-]{subsection.5.2.5}{Home}{section.5.2}% 94
+\BOOKMARK [2][-]{subsection.5.2.6}{Statistics}{section.5.2}% 95
+\BOOKMARK [2][-]{subsection.5.2.7}{Transactions}{section.5.2}% 96
+\BOOKMARK [2][-]{subsection.5.2.8}{Headlines}{section.5.2}% 97
+\BOOKMARK [2][-]{subsection.5.2.9}{Error}{section.5.2}% 98
+\BOOKMARK [2][-]{subsection.5.2.10}{About}{section.5.2}% 99
+\BOOKMARK [2][-]{subsection.5.2.11}{UserInfo}{section.5.2}% 100
+\BOOKMARK [2][-]{subsection.5.2.12}{Support}{section.5.2}% 101
+\BOOKMARK [1][-]{section.5.3}{Designing for UX\(User Experience\)}{chapter.5}% 102
+\BOOKMARK [2][-]{subsection.5.3.1}{Designing For End-Users As Opposed to Engineers}{section.5.3}% 103
+\BOOKMARK [1][-]{section.5.4}{Backend Architecture}{chapter.5}% 104
+\BOOKMARK [2][-]{subsection.5.4.1}{Mongoose}{section.5.4}% 105
+\BOOKMARK [2][-]{subsection.5.4.2}{ExpressJS}{section.5.4}% 106
+\BOOKMARK [2][-]{subsection.5.4.3}{NodeJS}{section.5.4}% 107
+\BOOKMARK [2][-]{subsection.5.4.4}{Full Backend Code}{section.5.4}% 108
+\BOOKMARK [1][-]{section.5.5}{RESTful Architecture}{chapter.5}% 109
+\BOOKMARK [2][-]{subsection.5.5.1}{Client / Server Independence}{section.5.5}% 110
+\BOOKMARK [2][-]{subsection.5.5.2}{Cacheable}{section.5.5}% 111
+\BOOKMARK [2][-]{subsection.5.5.3}{Stateless}{section.5.5}% 112
+\BOOKMARK [1][-]{section.5.6}{Database Architecture}{chapter.5}% 113
+\BOOKMARK [2][-]{subsection.5.6.1}{MLAB}{section.5.6}% 114
+\BOOKMARK [2][-]{subsection.5.6.2}{Schema of Database}{section.5.6}% 115
+\BOOKMARK [1][-]{section.5.7}{Security}{chapter.5}% 116
+\BOOKMARK [2][-]{subsection.5.7.1}{Overview of Security}{section.5.7}% 117
+\BOOKMARK [0][-]{chapter.6}{System Evaluation}{}% 118
+\BOOKMARK [1][-]{section.6.1}{Robust}{chapter.6}% 119
+\BOOKMARK [2][-]{subsection.6.1.1}{Error Handling}{section.6.1}% 120
+\BOOKMARK [2][-]{subsection.6.1.2}{Testing}{section.6.1}% 121
+\BOOKMARK [2][-]{subsection.6.1.3}{Speed}{section.6.1}% 122
+\BOOKMARK [1][-]{section.6.2}{Accessibility}{chapter.6}% 123
+\BOOKMARK [2][-]{subsection.6.2.1}{Minimalistic}{section.6.2}% 124
+\BOOKMARK [1][-]{section.6.3}{Objectives}{chapter.6}% 125
+\BOOKMARK [2][-]{subsection.6.3.1}{Safe \046 Secure Banking}{section.6.3}% 126
+\BOOKMARK [2][-]{subsection.6.3.2}{User Generated Statistics}{section.6.3}% 127
+\BOOKMARK [2][-]{subsection.6.3.3}{Multiple Users}{section.6.3}% 128
+\BOOKMARK [2][-]{subsection.6.3.4}{RestFUL Principles}{section.6.3}% 129
+\BOOKMARK [2][-]{subsection.6.3.5}{Scalable}{section.6.3}% 130
+\BOOKMARK [2][-]{subsection.6.3.6}{Responsive}{section.6.3}% 131
+\BOOKMARK [0][-]{chapter.7}{Conclusion}{}% 132
+\BOOKMARK [1][-]{section.7.1}{What I Learned}{chapter.7}% 133
+\BOOKMARK [2][-]{subsection.7.1.1}{React}{section.7.1}% 134
+\BOOKMARK [2][-]{subsection.7.1.2}{NodeJS}{section.7.1}% 135
+\BOOKMARK [2][-]{subsection.7.1.3}{Docker}{section.7.1}% 136
+\BOOKMARK [2][-]{subsection.7.1.4}{Scope Creep}{section.7.1}% 137
+\BOOKMARK [2][-]{subsection.7.1.5}{The Stackoverflow Principle: READ THE DOCS!}{section.7.1}% 138
+\BOOKMARK [1][-]{section.7.2}{Innovation}{chapter.7}% 139
+\BOOKMARK [2][-]{subsection.7.2.1}{Headlines}{section.7.2}% 140
+\BOOKMARK [2][-]{subsection.7.2.2}{Voice Recognition}{section.7.2}% 141
+\BOOKMARK [1][-]{section.7.3}{How TDD \046 Agile Impacted Development}{chapter.7}% 142
+\BOOKMARK [2][-]{subsection.7.3.1}{Positive Impacts of TDD}{section.7.3}% 143
+\BOOKMARK [2][-]{subsection.7.3.2}{Positive Impacts of Agile \046 Kanban}{section.7.3}% 144
+\BOOKMARK [1][-]{section.7.4}{What I Would Do Differently}{chapter.7}% 145
+\BOOKMARK [2][-]{subsection.7.4.1}{Planning}{section.7.4}% 146
+\BOOKMARK [2][-]{subsection.7.4.2}{More Focus on AI}{section.7.4}% 147
+\BOOKMARK [1][-]{section.7.5}{In Closing}{chapter.7}% 148
+\BOOKMARK [0][-]{section*.28}{Appendices}{}% 149

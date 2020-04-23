@@ -87,7 +87,6 @@
   \PYG{n+nx}{owedTo}\PYG{o}{:} \PYG{p}{\PYGZob{}} \PYG{n+nx}{type}\PYG{o}{:} \PYG{n+nb}{String} \PYG{p}{\PYGZcb{},}
   \PYG{n+nx}{status}\PYG{o}{:} \PYG{p}{\PYGZob{}} \PYG{n+nx}{type}\PYG{o}{:} \PYG{n+nb}{String} \PYG{p}{\PYGZcb{},}
   \PYG{n+nx}{lastUpdate}\PYG{o}{:} \PYG{p}{\PYGZob{}}\PYG{n+nx}{type}\PYG{o}{:} \PYG{n+nb}{String}\PYG{p}{\PYGZcb{}}
-
 \PYG{p}{\PYGZcb{});}
 \PYG{n+nx}{loanSchema}\PYG{p}{.}\PYG{n+nx}{methods}\PYG{p}{.}\PYG{n+nx}{findName} \PYG{o}{=} \PYG{k+kd}{function}\PYG{p}{(}\PYG{n+nx}{username}\PYG{p}{)} \PYG{p}{\PYGZob{}}
   \PYG{c+c1}{//define logic to find statement by name in here}

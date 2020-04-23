@@ -5,7 +5,7 @@
   \PYG{k+kd}{var} \PYG{n+nx}{today} \PYG{o}{=} \PYG{k}{new} \PYG{n+nb}{Date}\PYG{p}{();}
   \PYG{k+kr}{const} \PYG{n+nx}{axios} \PYG{o}{=} \PYG{n+nx}{require}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}axios\PYGZdq{}}\PYG{p}{).}\PYG{k}{default}\PYG{p}{;}
   \PYG{c+c1}{//do update loan cost in here}
-  \PYG{c+c1}{//helper function to count open loans}
+  \PYG{c+c1}{//helper function to count open loans and to add interest}
   \PYG{n+nx}{axios}
     \PYG{p}{.}\PYG{n+nx}{get}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}https://localhost:8080/api/loans/\PYGZdq{}} \PYG{o}{+} \PYG{n+nx}{sessionStorage}\PYG{p}{.}\PYG{n+nx}{getItem}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}email\PYGZdq{}}\PYG{p}{))}
     \PYG{p}{.}\PYG{n+nx}{then}\PYG{p}{(}\PYG{n+nx}{res} \PYG{p}{=\PYGZgt{}} \PYG{p}{\PYGZob{}}
@@ -16,7 +16,8 @@
         \PYG{n+nx}{sessionStorage}\PYG{p}{.}\PYG{n+nx}{setItem}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}openLoans\PYGZdq{}}\PYG{p}{,} \PYG{n+nx}{openLoan}\PYG{p}{);}
 
         \PYG{k+kd}{var} \PYG{n+nx}{loanUpdate} \PYG{o}{=} \PYG{k}{new} \PYG{n+nb}{Date}\PYG{p}{(}\PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{data}\PYG{p}{[}\PYG{n+nx}{i}\PYG{p}{].}\PYG{n+nx}{lastUpdate}\PYG{p}{);}
-        \PYG{k+kd}{var} \PYG{n+nx}{weeks} \PYG{o}{=} \PYG{n+nb}{Math}\PYG{p}{.}\PYG{n+nx}{floor}\PYG{p}{((}\PYG{n+nx}{today} \PYG{o}{\PYGZhy{}} \PYG{n+nx}{loanUpdate}\PYG{p}{)} \PYG{o}{/} \PYG{l+m+mi}{604800000}\PYG{p}{);}
+        \PYG{c+c1}{//see how many weeks have past}
+        \PYG{k+kd}{var} \PYG{n+nx}{weeks} \PYG{o}{=} \PYG{n+nb}{Math}\PYG{p}{.}\PYG{n+nx}{abs}\PYG{p}{(}\PYG{n+nb}{Math}\PYG{p}{.}\PYG{n+nx}{floor}\PYG{p}{((}\PYG{n+nx}{today} \PYG{o}{\PYGZhy{}} \PYG{n+nx}{loanUpdate}\PYG{p}{)} \PYG{o}{/} \PYG{l+m+mi}{604800000}\PYG{p}{));}
         \PYG{k+kr}{const} \PYG{n+nx}{newAmount} \PYG{o}{=} \PYG{p}{\PYGZob{}}
           \PYG{n+nx}{amount}\PYG{o}{:} \PYG{n+nb}{parseInt}\PYG{p}{(}
             \PYG{n+nb}{Math}\PYG{p}{.}\PYG{n+nx}{round}\PYG{p}{(}
@@ -25,12 +26,9 @@
             \PYG{p}{)}
           \PYG{p}{)}
         \PYG{p}{\PYGZcb{};}
-
-        \PYG{c+c1}{//check if weeks \PYGZgt{} 1 maybe redundant may change}
         \PYG{c+c1}{//checks if more than 1 week has passed since last interest was added}
         \PYG{k}{if} \PYG{p}{(}
-          \PYG{n+nx}{weeks} \PYG{o}{\PYGZgt{}=} \PYG{l+m+mi}{1} \PYG{o}{\PYGZam{}\PYGZam{}}
-          \PYG{n+nb}{Math}\PYG{p}{.}\PYG{n+nx}{abs}\PYG{p}{(}\PYG{n+nb}{Math}\PYG{p}{.}\PYG{n+nx}{floor}\PYG{p}{(}\PYG{n+nx}{today} \PYG{o}{\PYGZhy{}} \PYG{n+nx}{loanUpdate}\PYG{p}{)} \PYG{o}{/} \PYG{l+m+mi}{604800000}\PYG{p}{)} \PYG{o}{\PYGZgt{}=} \PYG{l+m+mi}{1}
+          \PYG{n+nx}{weeks} \PYG{o}{\PYGZgt{}=} \PYG{l+m+mi}{1}
         \PYG{p}{)} \PYG{p}{\PYGZob{}}
 
 
