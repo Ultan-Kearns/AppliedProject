@@ -65,7 +65,7 @@ class Home extends React.Component {
             parseInt(this.state.amount) > 0 && res.data !== "null"
             && answer === true
           ) {
-            alert("Will send money from: " + this.state.accountId + " to: " + res.data._id)
+            alert("Will send money from: " + sessionStorage.getItem("email") + " to: " + res.data._id)
             var date = new Date();
             //update bal
             const newBalance = {
