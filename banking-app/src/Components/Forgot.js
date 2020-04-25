@@ -48,7 +48,7 @@ class Forgot extends React.Component {
     const rand = {password: hashed}
     var inputNumber
         inputNumber = window.prompt("Please enter your phone number and we will send you your password via text and email")
-        axios.get("https://localhost:8080/api/users/" + inputNumber + "/" + changeCode).then(res=>{
+        axios.get("https://34.68.75.97:8080/api/users/" + inputNumber + "/" + changeCode).then(res=>{
           alert("SENT CODE")
           var answer = window.prompt("Enter 4 digit code that was sent to your phone to confirm password change:")
           if(answer != changeCode){
@@ -58,15 +58,15 @@ class Forgot extends React.Component {
           else{
             alert("We will text you and email you your new password")
           }
-        }).then(res=>{    axios.get("https://localhost:8080/api/users/" + inputNumber + "/" + plaintext).then(res=>{
+        }).then(res=>{    axios.get("https://34.68.75.97:8080/api/users/" + inputNumber + "/" + plaintext).then(res=>{
             })
         }).then(res=>{
-          axios.get("https://localhost:8080/api/emailuser/" + this.state.username + "/" + plaintext)
+          axios.get("https://34.68.75.97:8080/api/emailuser/" + this.state.username + "/" + plaintext)
             .then(res => {
               console.log(res.data);
             });
         }).then(res=>{
-          axios.post("https://localhost:8080/api/users/" +this.state.username +  "/rand",rand).then(res=>{
+          axios.post("https://34.68.75.97:8080/api/users/" +this.state.username +  "/rand",rand).then(res=>{
             console.log(res)
           })
 

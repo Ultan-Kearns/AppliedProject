@@ -13,7 +13,7 @@ class Loans extends React.Component {
 
     axios
       .get(
-        "https://localhost:8080/api/users/" + sessionStorage.getItem("email")
+        "https://34.68.75.97:8080/api/users/" + sessionStorage.getItem("email")
       )
       .then(res => {
         sessionStorage.setItem("balance", res.data.balance);
@@ -35,7 +35,7 @@ class Loans extends React.Component {
     document.getElementById("loans").innerHTML = "";
     axios
       .get(
-        "https://localhost:8080/api/loans/" + sessionStorage.getItem("email")
+        "https://34.68.75.97:8080/api/loans/" + sessionStorage.getItem("email")
       )
       .then(res => {
         for (var i = 0; i < res.data.length; i++) {
@@ -79,7 +79,7 @@ class Loans extends React.Component {
                 alert("LOAN COST : " + loanCost);
                 axios
                   .post(
-                    "https://localhost:8080/api/users/" +
+                    "https://34.68.75.97:8080/api/users/" +
                       sessionStorage.getItem("email") +
                       "/balance",
                     newBalance
@@ -99,7 +99,7 @@ class Loans extends React.Component {
                     };
                     axios
                       .post(
-                        "https://localhost:8080/api/transactions",
+                        "https://34.68.75.97:8080/api/transactions",
                         newTransaction
                       )
                       .then(res => {
@@ -109,7 +109,7 @@ class Loans extends React.Component {
                   .then(res => {
                     axios
                       .delete(
-                        "https://localhost:8080/api/loans/" +
+                        "https://34.68.75.97:8080/api/loans/" +
                           sessionStorage.getItem("email") +
                           "/" +
                           loanId
@@ -189,7 +189,7 @@ class Loans extends React.Component {
         date: date
       };
       axios
-        .post("https://localhost:8080/api/transactions", newTransaction)
+        .post("https://34.68.75.97:8080/api/transactions", newTransaction)
         .then(res => {
           console.log(res);
         });
@@ -198,12 +198,12 @@ class Loans extends React.Component {
           parseInt(this.state.amount) +
           parseInt(sessionStorage.getItem("balance"))
       };
-      axios.post("https://localhost:8080/api/loans", newLoan).then(res => {
+      axios.post("https://34.68.75.97:8080/api/loans", newLoan).then(res => {
         console.log(res);
       });
       axios
         .post(
-          "https://localhost:8080/api/users/" +
+          "https://34.68.75.97:8080/api/users/" +
             sessionStorage.getItem("email") +
             "/balance",
           newBalance
@@ -212,7 +212,7 @@ class Loans extends React.Component {
           console.log("TEST " + res);
           axios
             .get(
-              "https://localhost:8080/api/users/" +
+              "https://34.68.75.97:8080/api/users/" +
                 sessionStorage.getItem("email")
             )
             .then(res => {

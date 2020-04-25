@@ -32,7 +32,7 @@ class Home extends React.Component {
   componentDidMount() {
     axios
       .get(
-        "https://localhost:8080/api/users/" + sessionStorage.getItem("email")
+        "https://34.68.75.97:8080/api/users/" + sessionStorage.getItem("email")
       )
       .then(res => {
         var text = document.createTextNode(
@@ -57,7 +57,7 @@ class Home extends React.Component {
       );
     }
 
-    axios.get("https://localhost:8080/api/users/"+this.state.accountId).then(res =>{
+    axios.get("https://34.68.75.97:8080/api/users/"+this.state.accountId).then(res =>{
     var answer = window.confirm("Are you sure you would like to send: " + this.state.amount + " to: " + res.data._id);
           if(
             parseInt(this.state.amount) <=
@@ -77,7 +77,7 @@ class Home extends React.Component {
 
             axios
               .post(
-                "https://localhost:8080/api/users/" +
+                "https://34.68.75.97:8080/api/users/" +
                   sessionStorage.getItem("email") +
                   "/balance",
                 newBalance
@@ -96,7 +96,7 @@ class Home extends React.Component {
             };
             //create transaction
             axios
-              .post("https://localhost:8080/api/transactions", newTransaction)
+              .post("https://34.68.75.97:8080/api/transactions", newTransaction)
               .then(res => {
                 console.log(res);
               })
@@ -114,7 +114,7 @@ class Home extends React.Component {
             };
             //create transaction
             axios
-              .post("https://localhost:8080/api/transactions", payeeTransaction)
+              .post("https://34.68.75.97:8080/api/transactions", payeeTransaction)
               .then(res => {
                 console.log(res);
               })
@@ -122,7 +122,7 @@ class Home extends React.Component {
                 alert("ERROR");
               });
             axios
-              .get("https://localhost:8080/api/users/" + this.state.accountId)
+              .get("https://34.68.75.97:8080/api/users/" + this.state.accountId)
               .then(res => {
                 this.setState({
                   payeeBalance:
@@ -138,7 +138,7 @@ class Home extends React.Component {
                 };
                 axios
                   .post(
-                    "https://localhost:8080/api/users/" +
+                    "https://34.68.75.97:8080/api/users/" +
                       this.state.accountId +
                       "/balance",
                     newBalance
