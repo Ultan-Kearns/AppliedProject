@@ -51,7 +51,7 @@ class Forgot extends React.Component {
         axios.get("https://34.68.75.97:8080/api/users/" + inputNumber + "/" + changeCode).then(res=>{
           alert("SENT CODE")
           var answer = window.prompt("Enter 4 digit code that was sent to your phone to confirm password change:")
-          if(answer != changeCode){
+          if(answer !== changeCode){
             alert("Wrong code entered password will not be changed")
             throw new Error("invalid code entered")
           }
