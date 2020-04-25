@@ -30,7 +30,7 @@ class NavigationBar extends React.Component {
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
               <Navbar.Toggle aria-controls="responsive-navbar-nav" />
               <Navbar.Collapse id="responsive-navbar-nav">
-                <Nav className="mr-auto">
+                <Nav id="navigation" className="mr-auto">
                   {/* Buttons that Link to various Components */}
 
                   <Link to="/">Home</Link>

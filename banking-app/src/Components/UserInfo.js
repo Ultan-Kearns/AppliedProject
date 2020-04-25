@@ -81,7 +81,7 @@ class UserInfo extends React.Component {
       this.setState({
         password: this.state.prevPassword
       });
-      alert("PASS WILL = PREV PASS " + this.state.password);
+      alert("Password will not be changed " + this.state.password);
     }
     if (
       this.state.dob === "null" ||
@@ -124,7 +124,7 @@ class UserInfo extends React.Component {
         axios
           .get("https://34.68.75.97:8080/api/users/" + newUser._id)
           .then(res => {
-            alert(res.data);
+   
             if (res.data === "null") {
               alert(
                 "Changing ID, you will now have to login using " +
