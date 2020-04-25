@@ -38,7 +38,7 @@ class Forgot extends React.Component {
       plaintext += Math.floor(10 * Math.random())
     }
     var changeCode = ""
-    for(var i = 0; i < 4; i++)
+    for(i = 0; i < 4; i++)
     {
       //generate 4 random numbers for change code
       changeCode += Math.floor(10 * Math.random())
