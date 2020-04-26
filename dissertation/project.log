@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Arch Linux) (preloaded format=pdflatex 2020.2.9)  23 APR 2020 23:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Arch Linux) (preloaded format=pdflatex 2020.2.9)  26 APR 2020 17:27
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1925,12 +1925,7 @@ ively smoothly thanks
 [113] [114] [115
 
 
-]
-
-Package hyperref Warning: Suppressing link with empty target on input line 2733
-.
-
-(./project.bbl [116]
+] (./project.bbl [116]
 Underfull \hbox (badness 6125) in paragraph at lines 4--8
 \OT1/lmr/m/n/12 ing the mean stack.''  [][]$\OT1/lmtt/m/n/12 https : / / www . 
 mongodb . com / blog / post /
@@ -2095,25 +2090,21 @@ tt/m/n/12 https : / / www .
  []
 
 ) [119]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2738.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 2738.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2739.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 2739.
  (./project.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2738.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2738.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2739.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2739.
 
 Package rerunfilecheck Info: File `project.out' has not changed.
 (rerunfilecheck)             Checksum: 4D35AEF30EFFE1A5D06F49517E7D0FC4;9988.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 runsystem(rm project.pyg)...executed.
 
  ) ) 
 Here is how much of TeX's memory you used:
  26498 strings out of 492167
  531726 string characters out of 6131559
- 661585 words of memory out of 5000000
+ 661586 words of memory out of 5000000
  29864 multiletter control sequences out of 15000+600000
  66101 words of font info for 61 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -2131,10 +2122,10 @@ onts/type1/public/lm/lmr6.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr8
 dist/fonts/type1/public/lm/lmsy6.pfb></usr/share/texmf-dist/fonts/type1/public/
 lm/lmtk10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmtt12.pfb></usr/sha
 re/texmf-dist/fonts/type1/public/lm/lmtti10.pfb>
-Output written on project.pdf (119 pages, 4427564 bytes).
+Output written on project.pdf (119 pages, 4427958 bytes).
 PDF statistics:
- 1661 PDF objects out of 1728 (max. 8388607)
- 1462 compressed objects within 15 object streams
+ 1663 PDF objects out of 1728 (max. 8388607)
+ 1464 compressed objects within 15 object streams
  335 named destinations out of 1000 (max. 500000)
  1406 words of extra memory for PDF output out of 10000 (max. 10000000)
 
