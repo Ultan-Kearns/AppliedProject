@@ -6,7 +6,7 @@
 ## Details of Branches:
 + master: This branch serves as the homebase for the project all tested and working code will be merged into master from the Feature branch, any merge with master will automatically trigger a docker build.
 + Feature: This branch was used to test new features
-+ server: This branch was used to get the project setup for Google Cloud Platform, the main difference between code on the server branch and that of master and feature is that the server branch does not host the application locally and instead uses the address of the VM **NOTE: MOST UP TO DATE AND ERROR FREE CODE IS ON THE SERVER BRANCH, I CHOSE NOT TO MERGE WITH MASTER DUE TO HOSTING THE APP LOCALLY**
++ server: This branch was used to get the project setup for Google Cloud Platform, the main difference between code on the server branch and that of feature is that the server branch does not host the application locally and instead uses the address of the VM **NOTE: MOST UP TO DATE AND ERROR FREE CODE IS ON THE SERVER BRANCH, I CHOSE NOT TO MERGE WITH MASTER DUE TO HOSTING THE APP LOCALLY**
 ## Structure of Github Repository:
 - banking-app: This folder contains all the code for the application, here you can see all the files which make up the application.
 - dissertation: This is the main documentation for the application, it contains all the latex files as well as the dissertation PDF, this PDF may also be added to the main repo structure on final commit
