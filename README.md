@@ -46,4 +46,35 @@ Link to Applied Project: https://hub.docker.com/repository/docker/ultan/applied-
 + I have utilized AdvantageAPI to pull information from the stock market in real-time(API limitations exist as I am free user)
 ## Dependencies
 For a full list of dependencies see here: https://github.com/Ultan-Kearns/AppliedProject/network/dependencies
+
+## Conclusion of Project
++ Created full CRUD(Create,Read,Update & Delete) functionality
++ Gesture based navigation on Chrome
++ Allows the user to register, take out loans, get latest stock info, transfer money, delete account, update account & the application is secure utilizing 2FA(although limited to Irish numbers), HTTPS, TLS for both the app and server.
++ Hosted on Google Cloud Platform(Decided on GCP due to previous work with Azure and AWS, think it is good to diversify cloud platform knowledge)
++ Dockerized image of the main application is available
++ The app was developed using Agile methodlogies such as Kanban and features were implemented using sprints which you can find in the sprints MD file.
++ The development of this applicaiton is documented extensively in both the dissertation and on the Github issues page and kanban board.
++ Implemented continuous integration and deployment by utilizing docker to rebuild the application everytime the master branch is updated.
++ To see full conclusion please refer to the system evaluation and conclusion sections of the dissertation.
+
+## What I learned
++ I learned how to use react during the course of this project as I had no experience utilizing this framework before.
++ I learned a lot about implementing security measures such as 2FA using Twillio and utilizing the SHA256 algorithm to encrypt sensitive user infromation.
++ I learned how to implement voice recognition via browser for navigation.
++ I learned how to design a minimalistic, accessible and intuitive UI.
++ I learned more about agile methodologies and their usefulness in developing a full stack application.
++ I learned more about Node, Express, Mongo & React Libraries and the framework.
++ I learned the importance of meetings in developing an application.
++ I learned a lot about what it means to be a software engineer and how the title encompasses more than just cracking out code, it encompasses extensive documentation, designing, developing for scalability and coming up with solutions to a diverse set of problems.
+
+## Final words
+Thank you so much for taking a look at my Final Year Project, it has been a long four years at GMIT and I have learned so much in a diverse range of topics which encompass what is termed as Computer Science.  I used to see software engineering as just the ability to crack out code but I now know that it is so much more than that, to truly be a software engineer you must be first and foremost a problem solver, to be able to tackle a diverse set of problems and to design elegant applications and solutions and to come up with clever ways to overcome technical, financial and communicative barriers to deliver a final product to the end user.  Software engineering has truly become a passion of mine as opposed to just being a hobbyist / student,  I truly feel that these four years have been life changing and have helped me to change and grow for the better. 
+
+I would like to extend a personal thanks to my supervisor Dr. Dominic Carr for advising me during the development of this project and for offering suggestions which I would not have thought of otherwise for instance the integration of Twillio was brought about at Dr. Carr's suggestion.
+
+I would also like to extend my thanks and gratitude to all of the lecturers at GMIT who have helped me in various ways throughout these long and arduous four years.  It is thanks to the brilliant and talented staff at GMIT that I was able to create an application such as this.
+
+Finally I wish to extend my thanks to the external examiners who will be grading this project, thank you for looking through my code and I hope that you find the documentation and the code itself up to the rigorous academic standards.
+
 ### IMPORTANT NOTE RUN ALL COMMANDS WITHOUT QUOTATIONS
