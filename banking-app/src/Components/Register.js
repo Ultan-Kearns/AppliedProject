@@ -80,7 +80,7 @@ class Register extends React.Component {
     ) {
       //check if user exists
       axios
-        .get("https://localhost:8080/api/users/" + this.state.username)
+        .get("https://34.68.75.97:8080/api/users/" + this.state.username)
         .then(res => {
           //log res for testing
           console.log(res.data);
@@ -90,7 +90,7 @@ class Register extends React.Component {
         })
         .then(res => {
           axios
-            .post("https://localhost:8080/api/users", newUser)
+            .post("https://34.68.75.97:8080/api/users", newUser)
             .then(res => {
 
             })

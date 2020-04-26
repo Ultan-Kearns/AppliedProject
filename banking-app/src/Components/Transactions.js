@@ -21,7 +21,7 @@ class Transactions extends React.Component {
     //use email instead
     axios
       .get(
-        "https://localhost:8080/api/transactions/" +
+        "https://34.68.75.97:8080/api/transactions/" +
           sessionStorage.getItem("email")
       )
       .then(res => {

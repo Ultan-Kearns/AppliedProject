@@ -6,7 +6,7 @@ export function getOpenLoans() {
   //do update loan cost in here
   //helper function to count open loans and to add interest
   axios
-    .get("https://localhost:8080/api/loans/" + sessionStorage.getItem("email"))
+    .get("https://34.68.75.97:8080/api/loans/" + sessionStorage.getItem("email"))
     .then(res => {
       for (var i = 0; i < res.data.length; i++) {
         if (res.data[i].status === "Open") {
@@ -36,7 +36,7 @@ export function getOpenLoans() {
           };
           axios
             .post(
-              "https://localhost:8080/api/loans/" +
+              "https://34.68.75.97:8080/api/loans/" +
                 sessionStorage.getItem("email") +
                 "/" +
                 res.data[i]._id +
@@ -50,7 +50,7 @@ export function getOpenLoans() {
             });
           axios
             .post(
-              "https://localhost:8080/api/loans/" +
+              "https://34.68.75.97:8080/api/loans/" +
                 sessionStorage.getItem("email") +
                 "/" +
                 res.data[i]._id +
