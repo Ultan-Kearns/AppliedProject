@@ -77,4 +77,7 @@ I would also like to extend my thanks and gratitude to all of the lecturers at G
 
 Finally I wish to extend my thanks to the external examiners who will be grading this project, thank you for looking through my code and I hope that you find the documentation and the code itself up to the rigorous academic standards.
 
+## Known Issues
++ The update function may not function correctly and you may have to re login to update your information
++ If the network drops during a crucial point eg:taking out a loan, it may cause an error     
 ### IMPORTANT NOTE RUN ALL COMMANDS WITHOUT QUOTATIONS
