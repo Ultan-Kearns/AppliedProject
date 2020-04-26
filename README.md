@@ -77,4 +77,12 @@ I would also like to extend my thanks and gratitude to all of the lecturers at G
 
 Finally I wish to extend my thanks to the external examiners who will be grading this project, thank you for looking through my code and I hope that you find the documentation and the code itself up to the rigorous academic standards.
 
+## Known Issues
++ The update function may not function correctly and you may have to re login to update your information
++ If the network drops during a crucial point (eg: taking out a loan), it may cause an error     
++ Maybe an issue with NodeMailer as gmail may prevent authentication due to security issues(this is an issue with GMAIL and not the app)
++ Voice Recognition does not work on Firefox or other browsers, this is due to a limitation with the Annyang library
+
+### Important notice: All code detailed in this repo is my own except where referenced otherwise.  I reused some code developed previously for the nodemailer function and login function in the server file which is referenced in the comments.
+
 ### IMPORTANT NOTE RUN ALL COMMANDS WITHOUT QUOTATIONS
