@@ -25,7 +25,7 @@ class Register extends React.Component {
   }
   handleUsernameChange = event => {
     this.setState({
-      username: event.target.value.toLowerCase()
+      username: event.target.value
     });
   };
   handlePasswordChange = event => {
@@ -35,7 +35,7 @@ class Register extends React.Component {
   };
   handleNameChange = event => {
     this.setState({
-      name: event.target.value.toLowerCase()
+      name: event.target.value
     });
   };
   handleNumberChange = event => {
@@ -62,9 +62,9 @@ class Register extends React.Component {
     var number = this.state.number.substring(1,10)
 
   const newUser = {
-      _id: this.state.username,
+      _id: this.state.username.toLowerCase(),
       password: hashed,
-      name: this.state.name,
+      name: this.state.name.toLowerCase(),
       number: "+353" + number,
       dob: this.state.dob,
       bic: "1",
