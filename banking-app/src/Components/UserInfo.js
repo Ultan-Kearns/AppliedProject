@@ -104,7 +104,7 @@ class UserInfo extends React.Component {
     const newUser = {
       _id: this.state.newUsername.toLowerCase(),
       password: this.state.password,
-      name: this.state.name,
+      name: this.state.name.toLowerCase(),
       number: this.state.number,
       dob: this.state.dob,
       balance: 20,
@@ -124,7 +124,7 @@ class UserInfo extends React.Component {
         axios
           .get("https://34.68.75.97:8080/api/users/" + newUser._id)
           .then(res => {
-   
+
             if (res.data === "null") {
               alert(
                 "Changing ID, you will now have to login using " +
