@@ -2553,8 +2553,12 @@ the code extensively.  There are some known errors which occur within the system
 rectify these are listed below:
 \begin{itemize}
   \item Sometimes when applying for multiple loans the user does not see any message or verification of loan
-  \item Sometimes the loan generates a new transaction twice when the user opts to pay the loan back
+  \item Sometimes the update function may not execute correctly to rectify this logout and login again.
 \end{itemize}
+\\
+Although some issues do exist the application functions fairly well, I will not assume my code is 100\%
+error free as no complex application is 100\% error free.  I will say I have tested the application extensively
+and can assure the user that the bugs that do exist are easily rectified.
 \subsection{Testing}
 I utilized Selenium to perform automated testing on the application in this way I was able to perform
 integration and regression testing on each module and feature implemented in this application.  I have
@@ -2562,8 +2566,10 @@ found many bugs in the application which I recorded during my development and ca
 of the projects GitHub repository.  Testing the application was not easy as there are many places where a full-stack
 banking application or indeed any full-stack application can fail, I mitigated the long hours of testing by utilizing
 Selenium and outputting error messages to the console.
+\\
+Selenium had a great impact on this project and made performing integration and regression tests a lot faster and easier as I did not have to input information over and over again.
 \subsection{Speed}
-The applications components load very fast and the data is retireved with little waiting time, there may be a slight slow down when accessing components such as Headlines or Statistics as these components make calls to third party APIs to retireve data from various websites.
+The applications components load very fast and the data is retireved with little waiting time, there may be a slight slow down when accessing components such as Headlines or Statistics as these components make calls to third party APIs to retireve data from various websites.  The application is cacheable and thanks to the RESTful design it does not depend on constant calls to the server and in this way the loading of components becomes a lot faster and barely noticeable to the user.
 \section{Accessibility}
 In this project usability and accessibility were my main concerns, I wanted an application that the user could take to their grandmother and have her figure it out with little to no effort.  I will reflect on how I emphasized accessibility in this project below.
 \subsection{Minimalistic}
@@ -2572,8 +2578,16 @@ with a lot of on screen elements which many users will find superflous especiall
 if they are not used to complicated technology.  I aimed to provide an accessible
 site that anyone could use and I feel that I have completed that to a fair degree.
 % Get feedback from people here
+I will include some statements from friends who I've showed the app to below:
+\begin{itemize}
+\item Jason - I like the sleek and minimalistic design and it does not take long to load.
+\item James - It has a very modern aesthetic and it has very fast load times and is easy to get my head around how to use it.
+\item Liam - It's very intuitive and the UI is very minimalistic which I like as it does not require a lot of thought to figure out.
+\end{itemize}
+\subsection{Intuitive}
+I wanted to make the application intuitive to use so I avoided using complicated or technical jargon and instead explained to the user the functions of the pages and how to utilize the functionality of the page.  I also avoided using complicated names for each component and made it so the components name describes what you'd expect to see on the component.
 \section{Objectives}
-% Explain how you applied these
+In this section I will go over the objectives I laid out in chapter 2 and talk about how I completed each individual objective.
 \subsection{Safe \& Secure Banking}
 The project is encrypted with HTTPS and the BackEnd is secured using Transport
 Layer Security(TLS) which is the latest in security standards.  The user passwords
