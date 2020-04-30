@@ -89,12 +89,12 @@
 # Final Sprint
 + test server and cloud implementation(DONE)
 + Dockerize server files?(REDUNDANT)
-+ Work on documentation
++ Work on documentation(Fixed images done)
 + Do video on final implementation(DONE)
 + Get HTTPS flag working on GCP(DONE)
 + review dissertation
 + Write more in dissertation(focus on system evaluation)
-
++ Update code for register and update in dissertation
 
 # ideas + things to do
 
@@ -107,3 +107,4 @@
 ### I run regression tests as well as module tests after each sprint
 ### Using TDD(Test Driven Development)
 ### Depending on my workload some functionality documented in previous sprint files may change
+### Final Note: The vast majority of features I wanted were implemented thanks to the utilization of Agile and TDD

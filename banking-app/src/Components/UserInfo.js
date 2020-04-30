@@ -204,9 +204,6 @@ class UserInfo extends React.Component {
                   });
                 })
                 .then(res => {
-                  if (parseInt(sessionStorage.getItem("updates")) === 2) {
-                    alert("You cannot update so much");
-                  } else {
                     document.getElementById("basic").innerHTML =
                       "Name: " +
                       this.state.name + "<br/>" + "<br/>" +
@@ -218,9 +215,10 @@ class UserInfo extends React.Component {
                       this.state.newUsername + "<br/>" + "<br/>" +
                       " Balance: €" +
                       this.state.balance;
+                      //left this in in case of limiting updates
                     updates++;
                     sessionStorage.setItem("updates", updates);
-                  }
+
                 })
                 .catch(error => {
                   console.log("Error with loans");

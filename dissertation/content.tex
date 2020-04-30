@@ -1611,7 +1611,7 @@ async updateTransactionData() {
 The above code just feeds the retrieved data into a variable called transactionState and loanState depending on which method
 is called.
 \begin{figure}[H]
-\includegraphics[width=\textwidth]{img/statisticscomponent.png}
+\includegraphics[width=\textwidth,height=15cm]{img/statisticscomponent.png}
 \caption{Image of Statistics Component}
 \label{fig:Image of statistics component}
 \end{figure}
@@ -1662,7 +1662,7 @@ there transactions.  Here is the code for requesting the transactions below:
 \end{minted}
 Once retrieved each transaction is added to the transactions list as a child and is viewable by the user.
 \begin{figure}[H]
-\includegraphics[width=\textwidth]{img/transactionscomponent.png}
+\includegraphics[width=\textwidth,height=5cm]{img/transactionscomponent.png}
 \caption{Image of Transactions Component}
 \label{fig:Image of transactions component}
 \end{figure}
@@ -2682,7 +2682,16 @@ Scope creep had a very negative impact on this project as I found the number of 
 to test previous features and features that were in the process of being implemented.
 \\
 From this project I learned that scope creep should be identified early and combated by assigning a weight to a feature depending on its importance and prioritising features with higher weights as opposed to those with lower weights.
+\\
+Below I will include a list of the best ways I found to combat scope creep:
+\begin{itemize}
+  \item Careful Planning - This tip cannot be stressed enough I found that the components I planned out carefully were less likely to fall prey to scope-creep.
+  \item Utilizing test driven development - This helps as it allows for implementing the feature first then going back and refactoring it which saves a lot of time in implementing a myriad of features.
+  \item Focus on the most important features first - This was a great help in combating scope-creep in the development process.  I laid out features in order of importance in my mind and focused entirely on testing them and making sure they were implemented well.  After I focused on less important features and worked on implementing and testing them.
+\end{itemize}
 \subsection{The Stackoverflow Principle: READ THE DOCS!}
+You may be wondering about the reasoning behind the naming of this section and I will be happy to explain it before we delve into the main point of this very pertinent subsection of my dissertation.  Some developers have a tendency to remonstrate new developers with the platitude we are all familiar with "READ THE DOCS!".  This is however good advice if the documentation is well-written although experienced developers will know that often some documentation can be poorly written, however I was blessed with well-written documentation which was a pleasure to read and the above platitude can sometimes turn out to be good advice.  So in short do not give way to the pretense of knowledge but rather embrace your ignorance and assume you know nothing and in that way you can improve and learn.  This chapter is dedicated to teaching developers to READ THE DOCS!
+\\
 This is a point I cannot stress enough,  I find that most developers(including myself) think that they are almighty and that they do not need to read the documentation which is a gross error.  I found that I wasted a lot of time which could have been used improving the application on silly little errors which I introduced thanks to my ignorance of concepts I could have learned about in the documentation.
 \\
 Luckily I was able to realize the mistakes I was making early on in the development cycle and I took two weeks off to research the project and which technologies I would use and how best to implement them.  I read up on each technology I was utilizing in this application and reviewed their documentation and how to best implement these technologies.
@@ -2690,12 +2699,14 @@ Luckily I was able to realize the mistakes I was making early on in the developm
 I found that reading the documentation saved so much time during the development of this project and reading documentation is not something that should ever be understated.
 \section{Innovation}
 Throughout this project I have tried to make the application as innovative as possible by treating the application as if it were a real online banking system, I have added a number of desired features which I will explain below.
+\\
+I aimed to improve upon the online banking systems of today by adding these features / functions, many of which I have not personally seen implemented in banking systems currently.
 \subsection{Headlines}
-When using online banking I have noticed that many banks do not offer the latest financial news or that they only offer news from their own bank, this is in my view a mistake.  While there may be security reasons why most banks due this such as an aversion to CORS(cross origin resources sharing) which is understandable as it may lead to cross site scripting,  I have tried my utmost best to ensure this application provides a secure way of utilizing CORS by implementing HTTPS \& SSL/TLS into the system.  The headlines I used come from a myriad of news sources and by utilizing not only NewsAPI but also Reddit's financial subreddit I believe that I have provided a great service to the user by showing them various sources of new information which will enchance the end-users banking experience.
+When using online banking I have noticed that many banks do not offer the latest financial news or that they only offer news from their own bank, this is in my view a mistake.  While there may be security reasons why most banks due this such as an aversion to CORS(cross origin resources sharing) which is understandable as it may lead to cross site scripting,  I have tried my utmost best to ensure this application provides a secure way of utilizing CORS by implementing HTTPS \& SSL/TLS into the system.  The headlines I used come from a myriad of news sources and by utilizing not only NewsAPI but also Reddit's financial subreddit I believe that I have provided a great service to the user by showing them various sources of new information which will enchance the end-users banking experience.  I have tried my utmost to ensure that these news sources were unbiased and fairly distributed across the political spectrum, although I will say a lot of news outlets have a strong bias either to the left or right of the political spectrum, this is not a limitation of the application rather the APIs it depends on to retrieve the news.
 \subsection{Voice Recognition}
 Voice recognition was a late addition to the code and thankfully Annyang(the library I utilized for this applicaiton to provide voice recognition)\cite{Annyang} was very easy to setup and even easier to user.  Voice Recognition is not available in many online banking systems and the reason may well be grounded in reasonable security concerns.  I have limited the functionality of voice recognition in this application to only navigation only as bad actors may try to take out loans on the users behalf or to transfer funds to their own accounts.
 \\
-Voice recognition in the application is fairly intuitive just say the component you would like and it will navigate to it whilst hiding the navigation bar which is deemed redundant in what I termed "Voice Mode".  If the user is stuck or does not understand Voice Mode they can utilize the help command which will show them all the available commands in Voice Mode.
+Voice recognition in the application is fairly intuitive just say the component you would like and it will navigate to it whilst hiding the navigation bar which is deemed redundant in what I termed "Voice Mode".  If the user is stuck or does not understand Voice Mode they can utilize the help command which will show them all the available commands in Voice Mode. Voice mode can be turned off by logging out of the application and logging into the application again.
 \section{How TDD \& Agile Impacted Development}
 Both TDD and agile were crucial to the development and success of this project, there is a reason why both methodologies are utilized in industry and it is not hard to see why after having practiced them.
 \subsection{Positive Impacts of TDD}
@@ -2715,23 +2726,41 @@ In conclusion agile \& Kanban had an extremely positive impact on this applicati
 \section{What I Would Do Differently}
 Although the development of this application went relatively smoothly thanks in part to the utilization of Agile \& TDD and the guidance of the project supervisor Dr. Dominic Carr there are some things that I would have done differently if given the opportunity to start again.
 \subsection{Planning}
-Looking back in hindsight there were a lot of things that I could have done differently, personally I feel the biggest change I would have made would have been to focus more on the planning phase and drew up a design of each function before implementation.  During the development I did describe functions I wanted but these functions were typically described in a couple of sentences without much thought, if I were doing this application again I would have wrote about three paragraphs stating exactly the function was supposed to do and how it should look to the user.
+Looking back in hindsight there were a lot of things that I could have done differently, personally I feel the biggest change I would have made would have been to focus more on the planning phase and drew up a more detailed design of each function before implementation.  During the development I did describe functions I wanted but these functions were typically described in a couple of sentences without much thought, if I were doing this application again I would have wrote about three paragraphs stating exactly the function was supposed to do and how it should look to the user.
 \\
-I feel I wasted a lot of time implementing features which were planned poorly and if I had just taken some time out to plan for these functions I would have had a much easier time implementing them.
+I feel I wasted a lot of time implementing features which were planned poorly and if I had just taken some time out to plan for these functions I would have had a much easier time implementing them.  That being said the planning phase did go fairly well compared to previous projects I worked on thanks to my adherence to Agile principles and TDD(Test Driven Development).
 \subsection{More Focus on AI}
 Given that AI is a major field of study and a growing field I regret not having implemented it into this project.  I originally had a plan to utilize tensorflowJS in this project but due to time-constraints this feature was never implemented.
 \\
-I feel a lot of regret about not being able to integrate AI into this application as it would have been a major upgrade to the standard banking application but theres always next time.
+I feel a lot of regret about not being able to integrate AI into this application as it would have been a major upgrade to the standard banking application but there's always next time.
 \section{In Closing}
 In closing this application taught me a lot about how to apply my programming skills to make a fully functional online banking application.  It taught me how to design an intuitive UI with a strong emphasis on UX, it thought me to think logically, to design clearly, to read carefully and to document religiously.  I feel that in my four years at GMIT I have learned a lot about programming, life and myself,  I have learned to think like a developer and to place a strong emphasis on quality over quantity in regards to developing good software,  I believe it was in the book the Pragmatic Programmer where they stated "write something you can be proud to put your name on" I am proud to put my name on this application and I am proud to call it my own.  I wish to thank all the lecturers at GMIT who have helped to cultivate and teach me how to improve my skills not only as a developer but as a student of many diverse areas of knowledge in the realm of computer science.
 \\
 This is the end of a long journey and one that has taught me so much about everything that I did not know.
+\section{Final Words}
+Thank you so much for taking a look at my Final Year Project, it has been a long four years at GMIT and I have learned so much in a diverse range of topics which encompass what is termed as Computer Science. I used to see software engineering as just the ability to crack out code but I now know that it is so much more than that, to truly be a software engineer you must be first and foremost a problem solver, to be able to tackle a diverse set of problems and to design elegant applications and solutions and to come up with clever ways to overcome technical, financial and communicative barriers to deliver a final product to the end user. Software engineering has truly become a passion of mine as opposed to just being a hobbyist / student, I truly feel that these four years have been life changing and have helped me to change and grow for the better.
+
+I would like to extend a personal thanks to my supervisor Dr. Dominic Carr for advising me during the development of this project and for offering suggestions which I would not have thought of otherwise for instance the integration of Twillio was brought about at Dr. Carr's suggestion.
+
+I would also like to extend my thanks and gratitude to all of the lecturers at GMIT who have helped me in various ways throughout these long and arduous four years. It is thanks to the brilliant and talented staff at GMIT that I was able to create an application such as this.
+
+Finally I wish to extend my thanks to the external examiners who will be grading this project, thank you for looking through my code and I hope that you find the documentation and the code itself up to the rigorous academic standards.
+
+In this last line I wish to leave you with a quote, from what I view as the greatest Scientist of all time, Sir Isaac Newton: "If I have seen further it is by standing on the shoulders of Giants"\cite{Newton}.  I think this quote is a fitting end to this dissertation as it shows how much I have learned from some of the greatest lecturers in the field of Computer Science.
+\\
+Thank you for reading this dissertation.
+\\
+It is my sincerest hope that I gave you a detailed and extensive overview of the development process of my application - Ultan Kearns signing off.
+\\
+Please find links to all pertinent documentation below in the appendices section.
 \begin{appendices}
 \begin{itemize}
 \item \href{https://github.com/Ultan-Kearns/AppliedProject}{Link to the project's source code on Github}
 \item \href{https://hub.docker.com/repository/docker/ultan/applied-project}{Docker Image of project}
 \item \href{https://34.68.75.97:3000/}{Link to application hosted on Google Cloud Platform}
 \item \href{https://34.68.75.97:8080/}{Link to server hosted on Google Cloud Platform}
+\item \href{https://github.com/Ultan-Kearns/AppliedProject/issues}{Github Issues Page} - documents development of application
+\item \href{https://github.com/Ultan-Kearns/AppliedProject/projects/3}{Github Kanban Board} - shows the utilization of Kanban in development
 \end{itemize}
 \end{appendices}
 \bibliographystyle{ieeetr}
