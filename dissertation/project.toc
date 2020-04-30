@@ -96,7 +96,7 @@
 \contentsline {subsection}{\numberline {5.2.3}Nav}{50}{subsection.5.2.3}% 
 \contentsline {subsection}{\numberline {5.2.4}Loans}{53}{subsection.5.2.4}% 
 \contentsline {subsection}{\numberline {5.2.5}Home}{61}{subsection.5.2.5}% 
-\contentsline {subsection}{\numberline {5.2.6}Statistics}{66}{subsection.5.2.6}% 
+\contentsline {subsection}{\numberline {5.2.6}Statistics}{67}{subsection.5.2.6}% 
 \contentsline {subsection}{\numberline {5.2.7}Transactions}{72}{subsection.5.2.7}% 
 \contentsline {subsection}{\numberline {5.2.8}Headlines}{74}{subsection.5.2.8}% 
 \contentsline {subsection}{\numberline {5.2.9}Error}{75}{subsection.5.2.9}% 
@@ -151,4 +151,4 @@
 \contentsline {subsection}{\numberline {7.4.2}More Focus on AI}{112}{subsection.7.4.2}% 
 \contentsline {section}{\numberline {7.5}In Closing}{113}{section.7.5}% 
 \contentsline {section}{\numberline {7.6}Final Words}{113}{section.7.6}% 
-\contentsline {chapter}{Appendices}{115}{section*.28}% 
+\contentsline {chapter}{Appendices}{115}{section*.29}% 

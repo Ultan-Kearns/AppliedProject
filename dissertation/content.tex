@@ -1257,6 +1257,11 @@ export function getOpenLoans() {
 }
 \end{minted}
 The function goes through all the users loans and checks for the status open then sets a sessionStorage item to the amount of open loans the user has on their account.  It uses the user email as a parameter when communicating with the backend to ensure that the user is only judged by their own account information as opposed to anyone elses.  It is in this way that the user accounts are kept independent.  It also checks the difference between the dates from the current date and when the loan was last updated, it then determines if more than a week has passed since the last date and increases the loans value by 0.1\%.
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{img/loanscomponent.png}
+\caption{Image of Loans Component}
+\label{fig:Image of loans component}
+\end{figure}
 \subsection{Home}
 The home page is the first page that the user sees when they login to the application, it consists of a section to send money and another section listing the lastest headlines from NewsAPI.org.  The send money section is used to send money to other independent banking accounts using their username so for example to send money to the user ultankearns@gmail.com I would enter that email into the input box account ID and the amount to send into the box prompting the user to send that amount.  The home page also lists the users current balance which is retrieved using an Axios get request to the backend.
 \\
@@ -1419,9 +1424,9 @@ axios
 This basically retrieves the information and creates an element on the page which then displays all pertinent headlines to the user.
 \\
 \begin{figure}[H]
-\includegraphics[width=\textwidth]{img/loanscomponent.png}
-\caption{Image of Loans Component}
-\label{fig:Image of loans component}
+\includegraphics[width=\textwidth,height=15cm]{img/homecomponent.png}
+\caption{Image of Home Component}
+\label{fig:Image of home component}
 \end{figure}
 \subsection{Statistics}
 The statistics page shows the user information pertaining to the stock market which is retrieved using the
