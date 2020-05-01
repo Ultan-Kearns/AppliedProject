@@ -46,7 +46,7 @@ In this section I will be discussing why I chose a MERN stack, what it is, and h
 There are many reasons why I have chosen to use a MERN stack for this
 application the main one is because it provides a framework for a full stack
 application.
-MERN stands for \textbf{Mongo - For the database back-end(Hosted on Mlab, all user info is stored here),
+MERN stands for \textbf{Mongo - For the database Back-End(Hosted on Mlab, all user info is stored here),
 Express - A web application framework
 host a server in a relatively short time compared to other methods
 , ReactJS for asynchronous JS \& Node - For the server and also includes a package manager to install a variety of packages to provide certain functionalities.}
@@ -235,7 +235,7 @@ In this section I will outline the key objectives for this application.
   ,stateless environment, caching)
   \item To provide a scalable application
   \item To provide user with security using encryption for the Mongo database
-  \item To limit loadtimes of traditional online banking eg. 365 Online Banking and others
+  \item To limit load times of traditional online banking eg. 365 Online Banking and others
 \end{itemize}
 \section{Online Banking}
 Online banking is very relevant in today's modern world, the ease of access which
@@ -404,7 +404,7 @@ The MERN stack is a technology which is used to make full-stack web applications
   \item MongoDB - For storing items in a database
   \item Express - Provides a web application framework
   \item React - A JavaScript library for building UI
-  \item NodeJs - For server architecture and back-end
+  \item NodeJs - For server architecture and Back-End
 \end{itemize}
 \subsection{About MongoDB}
 MongoDB is a document database that is scalable and flexible, it provides the user with a litany of various functions to perform actions on data stored in the database.  MongoDB stores data in JSON-like documents which means the fields can vary between documents and that the structure of the data can morph over time.  The use of JSON-like objects makes the data very easy to access and to manipulate for example say I had the following object:
@@ -467,7 +467,7 @@ Selenium is a browser add-on which automates the browser and allows the user to 
 \section{React Libraries / JavaScript Libraries}
 This application uses many libraries to provide extra features for the user and to enhance the applications functionality, I will discuss the libraries used in this section and explain what they do and why they were used.
 \subsection{Axios}
-Axios is a promise based HTTP client for node.js\cite{Axios}.  I used Axios in this project to send HTTP requests from the front-end of the application to the NodeJS server.  Axios allowed me to retrieve information from various paths and return that information to the user, and to update, delete and create new information.  I used Axios to achieve full CRUD(Create, read, update \& delete) functionality.
+Axios is a promise based HTTP client for node.js\cite{Axios}.  I used Axios in this project to send HTTP requests from the Front-End of the application to the NodeJS server.  Axios allowed me to retrieve information from various paths and return that information to the user, and to update, delete and create new information.  I used Axios to achieve full CRUD(Create, read, update \& delete) functionality.
 \subsection{React Helmet}
 React-helmet is a reusable react component that can manage the document head of various components, it allows the developer to define HTML tags such as title and outputs them to the browser\cite{ReactHelmet}.
 \subsection{Create-React-App}
@@ -483,14 +483,14 @@ News API is a REST API which searches the web for news stories and retrieves hea
 \subsection{Reddit}
 I used the Reddit API to retrieve latest financial news and displayed them to the user.  The Reddit API allows the developer to read in JSON from Reddit and to parse it and output it to the user.
 \subsection{AlphaVantage}
-AlphaVantage is an API to get financial information such as stock, exchange rates and cryptocurrency prices in realtime as well as providing historic information.  I utilized AlphaVantage in this application to provide the user with the latest exchange rates for currencies and to provide the user with information about the stock market.
+AlphaVantage is an API to get financial information such as stock, exchange rates and cryptocurrency prices in real-time as well as providing historic information.  I utilized AlphaVantage in this application to provide the user with the latest exchange rates for currencies and to provide the user with information about the stock market.
 
 \section{Architecture}
 This section describes the architecture of the application and what design patterns were used in development and why.
 \subsection{REST(Representational State Transfer)}
 REST is an architectural design that was first hypothesized in Roy Fielding's dissertation\cite{Fielding}.  REST has six constraints which must be met for an application to be considered "RESTful" these are:
 \begin{itemize}
-  \item Client/Server must be independent: The idea behind this principle is that by separating the UI from the back-end logic we create a more portable application and also it improves scalability by simplifying the server logic.
+  \item Client/Server must be independent: The idea behind this principle is that by separating the UI from the Back-End logic we create a more portable application and also it improves scalability by simplifying the server logic.
   \item Stateless:  Every request from the client to the server must contain all pertinent information to understand the user's request, session state is maintained on the client side.
   \item Cacheable: Data received must be labelled cacheable or non-cacheable.  If it is labelled as cacheable the client may reuse the data.
   \item Uniform Interface: System architecture is simplified and improved by applying the software principle of generality.
@@ -523,7 +523,7 @@ In this section I will list and describe the languages utilized in this applicat
 JavaScript is a lightweight programming language which is interpreted and is compiled just in time\cite{JavaScript}.  It is a very popular language for web developers as it is Turing Complete and allows the developer to manipulate the DOM(Document Object Model) programmatically.
 \\
 \\
- I used JavaScript for performing various functions which were expected from an online banking application such as: cycling through a users transactions, outputting userdata, comparing inputted values to values retrieved from the server for login, checking if a user already exists etc.
+ I used JavaScript for performing various functions which were expected from an online banking application such as: cycling through a users transactions, outputting user data, comparing inputted values to values retrieved from the server for login, checking if a user already exists etc.
  \\
  \\
  In short JavaScript provided me with a full Turing Complete language to code the logic of the online banking application. Here is an example of some JavaScript code:
@@ -561,7 +561,7 @@ All valid HTML pages must have a DOCTYPE html declaration, html tag, head tag, a
 \section{Documentation}
 In this section I will discuss how I wrote the documentation detailing the development,design of this application, and all other relevant artefacts to the application.
 \subsection{\LaTeX}
-\LaTeX \hspace{0.1cm} is a typesetting system that provides various features for designing and writing high quality documentation\cite{Latex}.  \LaTeX\hspace{0.1cm} has become the de-facto standard for Academic publications and is open-source. Having never use \LaTeX\hspace{0.1cm} before I found it very easy to setup and get started, it also made referencing a lot easier and made generating tables of contents \& figures very simple.
+\LaTeX \hspace{0.1cm} is a typesetting system that provides various features for designing and writing high quality documentation\cite{Latex}.  \LaTeX\hspace{0.1cm} has become the de facto standard for Academic publications and is open-source. Having never use \LaTeX\hspace{0.1cm} before I found it very easy to setup and get started, it also made referencing a lot easier and made generating tables of contents \& figures very simple.
 \\
 The reason I chose \LaTeX \hspace{0.1cm} to write this dissertation apart from the above reasons listed, was because it helps to create high quality, Academic style papers with minimal onus placed upon the user.
 \\
@@ -584,7 +584,7 @@ Heres an example of CSS:
   }
 \end{minted}
 \subsection{React Bootstrap}
-React Bootstrap is a front-end framework for React that provides the developer with a number of components which can be used to create a modern looking and intuitive user-interface.
+React Bootstrap is a Front-End framework for React that provides the developer with a number of components which can be used to create a modern looking and intuitive user-interface.
 \section{Cloud}
 This section details the cloud architecture utilized to host this application.
 \subsection{Google Cloud Platform}
@@ -596,14 +596,14 @@ Google Cloud allows the developer to setup a virtual machine in minutes and it i
 \subsection{Docker}
 Docker aims to simplify and accelerate workflows for applications and allows the developer to build and share their applications as well as allowing them to deploy and ship their applications easily\cite{Docker}.  Docker uses containerization to manage the applications which it hosts.
 \\
- The containers are portable and can run on any host.  Docker automatically releases a new build of the project everytime a new commit is pushed to the master branch, it is in this why that docker allows for continuous integration of new components for the application and a continuous delivery of new updates to the application.  Docker is extremely useful for Agile development as continuous integration and delivery are an integral part of the Agile methodology.
+ The containers are portable and can run on any host.  Docker automatically releases a new build of the project every time a new commit is pushed to the master branch, it is in this why that docker allows for continuous integration of new components for the application and a continuous delivery of new updates to the application.  Docker is extremely useful for Agile development as continuous integration and delivery are an integral part of the Agile methodology.
 \\
   I have never used Docker before but I chose to use it for this project as it is rapidly growing in popularity and it is extremely useful in today's industry as companies focus on releasing patches and updates to the user as soon as they are ready.
 \chapter{System Design}
 \section{Chapter Introduction}
-In this section I will discuss the architecture of the application both in terms of front-end and back-end.
+In this section I will discuss the architecture of the application both in terms of Front-End and Back-End.
 I will discuss each component individually and the reasoning for its existence.  I will also discuss how
-the front-end communicates with the back-end, how I designed the application with a strong focus on UX(User Experience)
+the Front-End communicates with the Back-End, how I designed the application with a strong focus on UX(User Experience)
 and how I improved upon existing paradigms in online banking.  The system is designed to be robust and to be as
 error prone as possible, I achieved this to the best of my abilities by using TDD(Test Driven Development) and an
 Agile methodology.
@@ -620,7 +620,7 @@ advantages over a standard webpage, I will list the advantages here:
 The system is made up of 11 components some of which share the same cascading stylesheets for
 a more uniform look and to create a better user experience.
 \\
-The system's back-end was written using NodeJS and utilizes the ExpressJS library
+The system's Back-End was written using NodeJS and utilizes the ExpressJS library
 which offers the developer a wide range of additional features.
 \section{Front End Architecture}
 Here I will describe the architecture of the project in great technical detail, listing components and explaining their functionality and the why the components were developed.
@@ -713,7 +713,7 @@ handleSubmitForm = event => {
   event.preventDefault();
 };
 \end{minted}
-Here I send a get request to the back-end URL to retrieve the user using the username and
+Here I send a get request to the Back-End URL to retrieve the user using the username and
 hashed password(password was hashed using SHA256 security standard), next I check if data is null
 if not login user and render the homepage I also set the sessionStorage items for other logic in the application.
 If the username or password is wrong I return a message to the user telling them.  I also have a message if the
@@ -733,7 +733,7 @@ full name which stores the users full name on the server, phone number which wil
 2 factor authentication, and date of birth which when clicked will present the user with a calendar
 so that they can select their date of birth.  The register component also allows the user to return
 to the login component via a button whose value is "back", alternatively the user can chose the button that
-says register which will send a POST request to the back-end to create a new user account.  The username
+says register which will send a POST request to the Back-End to create a new user account.  The username
 in this application is a primary key which assures that the key must be unique, if the user chooses an
 email which already exists on the server they will be greeted with a message saying "User already exists",
 this is accomplished by the code below:
@@ -749,7 +749,7 @@ axios
     }
   })
 \end{minted}
-which sends a get request to the back-end and if that request brings back data we know that a
+which sends a get request to the Back-End and if that request brings back data we know that a
 user with that key already exists otherwise it will allow the user to register and not return such
 a message.
 \\
@@ -761,7 +761,7 @@ this.state.password.length >= 6 && this.username !== null && dob != null
 \end{minted}
 which state that the number length must be equal to ten, the name length must be greater than or equal to five, the password length must be greater than or equal to 6 and the username cannot be null if these requirements are not met the user will be met with a message saying "Form invalid, password length must be greater than 6 and number must have 10 digits and  name must have 5 or more characters and dob cannot be null".
 \\
-The back-end code for the register function is listed below:
+The Back-End code for the register function is listed below:
 \begin{minted}[linenos,tabsize=2,breaklines]{JavaScript}
 app.post("/api/users", function(req, res) {
   //check if user with same username exists use findById and change id to username
@@ -793,7 +793,7 @@ The above code is used to create a new user object and save it to the database, 
 \label{fig:Image of register component}
 \end{figure}
 \subsubsection{Forgot}
-The forgot component is a simple component which contains a few headings for the user and an input which prompts the user to enter their username.  The paragraph above the input field informs the user how to use the component.  If the send email button is hit and the username field is not blank then the component sends two axios requests one which is a post that sends a random password of 20 characters to the back-end which will then update the user's password, the generated password is of course encrypted using SHA256 for extra security, the get request then sends a request to the back-end to email the user their new password in plaintext, here is the code below:
+The forgot component is a simple component which contains a few headings for the user and an input which prompts the user to enter their username.  The paragraph above the input field informs the user how to use the component.  If the send email button is hit and the username field is not blank then the component sends two axios requests one which is a post that sends a random password of 20 characters to the Back-End which will then update the user's password, the generated password is of course encrypted using SHA256 for extra security, the get request then sends a request to the Back-End to email the user their new password in plaintext, here is the code below:
 \begin{minted}[linenos,tabsize=2,breaklines]{JavaScript}
 axios.post("https://localhost:8080/api/users/" + sessionStorage.getItem("email") +  "/rand",rand).then(res=>{
   console.log(res)
@@ -819,10 +819,10 @@ const hashed = sha256(plaintext)
 alert("HASHED " + hashed)
 const rand = {password: hashed}
 \end{minted}
-once the password is generated I then store the hashed plaintext in a constant variable called rand as I need the plaintext to send to the user, the plaintext is sent over the back-end using NodeMailer and a Gmail account created for this project, the code was taken from an earlier project and was coded previously by myself here is the code below:
+once the password is generated I then store the hashed plaintext in a constant variable called rand as I need the plaintext to send to the user, the plaintext is sent over the Back-End using NodeMailer and a Gmail account created for this project, the code was taken from an earlier project and was coded previously by myself here is the code below:
 \begin{minted}[linenos,tabsize=2,breaklines]{JavaScript}
 //template taken from earlier project
-//https://github.com/Ultan-Kearns/eCommerceApp/blob/master/back-end/Server.js
+//https://github.com/Ultan-Kearns/eCommerceApp/blob/master/Back-End/Server.js
 //Improved upon in this project
 app.get("/api/emailuser/:id/:password", function(req, res, next) {
   Users.findById(req.params.id, function(err, data) {
@@ -989,7 +989,7 @@ and well-written code.
 \subsection{Loans}
 The loans component greets the user with a header which says "Apply \& View Loans", the component is composed of
 an input box with a button stating "Apply for Loan" which when clicked will retrieve the number the user entered
-in the input box and send a request from the front-end to the back-end and create a new loan if the loan is considered
+in the input box and send a request from the Front-End to the Back-End and create a new loan if the loan is considered
 valid by the system.  The component also has another header "List of Loans" which will list all the users current loans
 with a button that says "Pay Back" which when hit will pay back the users balance to the bank and create a statement detailing
 the paying back of the loan.
@@ -1001,7 +1001,7 @@ The loan if it is to be accepted must conform to the following stipulations:
   \item The loan value must not exceed €500.
   \item The loan amount cannot equal €0 as it would be pointless.
 \end{itemize}
-If the loan stipulations are met then the front-end executes the following code:
+If the loan stipulations are met then the Front-End executes the following code:
 \begin{minted}[linenos,tabsize=2,breaklines]{JavaScript}
 if (
   this.state.amount !== "" &&
@@ -1074,7 +1074,7 @@ if (
 event.preventDefault();
 };
 \end{minted}
-Here I check if the loan stipulations are met, if they are then I create a new loan and a new transaction containing all pertinent information about this loan then via Axios I store this information on the back-end.  Following this I update the users balance to add the loan amount to it, if the stipulations are not met we send the user an error message.
+Here I check if the loan stipulations are met, if they are then I create a new loan and a new transaction containing all pertinent information about this loan then via Axios I store this information on the Back-End.  Following this I update the users balance to add the loan amount to it, if the stipulations are not met we send the user an error message.
 \\
 After this code has been executed the component executes the getLoans() function which the component also executes when loaded which is used to get open loans, here is the code used to get the user loans down below:
 \begin{minted}[linenos,tabsize=2,breaklines]{JavaScript}
@@ -1178,7 +1178,7 @@ getUserLoans() {
 
 }
 \end{minted}
-The getUserLoans() function creates a text node listing all pertinent information about the loan, it completes this by sending a get request via Axios to the back-end and returns all loans on the user accounts.  It also creates a button that is appended to each loan which will offer the user a way to pay back the loan, once clicked the loan is deleted and the user balance is decremented by the loan amount if and only if the user has the loan amount in their balance, if not they are informed that they cannot pay back the loan.
+The getUserLoans() function creates a text node listing all pertinent information about the loan, it completes this by sending a get request via Axios to the Back-End and returns all loans on the user accounts.  It also creates a button that is appended to each loan which will offer the user a way to pay back the loan, once clicked the loan is deleted and the user balance is decremented by the loan amount if and only if the user has the loan amount in their balance, if not they are informed that they cannot pay back the loan.
 \\
 The getOpenLoans() function is used in two components Loans and UserInfo and is stored in a helper function, I used this to check if the user had open loans which is used when updating information and applying for loans I also check to see when the loan was last updated and if a week has passed, if a week has passed 0.1\% of the loan cost will be added to the total loan value. Here is the code below:
 \begin{minted}[linenos,tabsize=2,breaklines]{JavaScript}
@@ -1258,14 +1258,14 @@ export function getOpenLoans() {
   return openLoan;
 }
 \end{minted}
-The function goes through all the users loans and checks for the status open then sets a sessionStorage item to the amount of open loans the user has on their account.  It uses the user email as a parameter when communicating with the back-end to ensure that the user is only judged by their own account information as opposed to anyone elses.  It is in this way that the user accounts are kept independent.  It also checks the difference between the dates from the current date and when the loan was last updated, it then determines if more than a week has passed since the last date and increases the loans value by 0.1\%.
+The function goes through all the users loans and checks for the status open then sets a sessionStorage item to the amount of open loans the user has on their account.  It uses the user email as a parameter when communicating with the Back-End to ensure that the user is only judged by their own account information as opposed to any other user's information.  It is in this way that the user accounts are kept independent.  It also checks the difference between the dates from the current date and when the loan was last updated, it then determines if more than a week has passed since the last date and increases the loans value by 0.1\%.
 \begin{figure}[H]
 \includegraphics[width=\textwidth]{img/loanscomponent.png}
 \caption{Image of Loans Component}
 \label{fig:Image of loans component}
 \end{figure}
 \subsection{Home}
-The home page is the first page that the user sees when they login to the application, it consists of a section to send money and another section listing the latest headlines from NewsAPI.org.  The send money section is used to send money to other independent banking accounts using their username so for example to send money to the user ultankearns@gmail.com I would enter that email into the input box account ID and the amount to send into the box prompting the user to send that amount.  The home page also lists the users current balance which is retrieved using an Axios get request to the back-end.
+The home page is the first page that the user sees when they login to the application, it consists of a section to send money and another section listing the latest headlines from NewsAPI.org.  The send money section is used to send money to other independent banking accounts using their username so for example to send money to the user ultankearns@gmail.com I would enter that email into the input box account ID and the amount to send into the box prompting the user to send that amount.  The home page also lists the users current balance which is retrieved using an Axios get request to the Back-End.
 \\
 The send money feature works as follows, the user inputs the values expected, if the user exists then update the current users value to equal their balance - cost sent then update the other users balance to equal their balance + cost sent and create transactions for both the user sending the money and the user receiving the money.  Here is the code below:
 \begin{minted}[linenos,tabsize=2,breaklines]{JavaScript}
@@ -1476,7 +1476,7 @@ axios
   .then(res => {
     var eur_to_btc =
       "1 Euro = " +
-      res.data["Realtime Currency Exchange Rate"]["5. Exchange Rate"] +
+      res.data["real-time Currency Exchange Rate"]["5. Exchange Rate"] +
       "BTC";
     var btcNode = document.createElement("p");
     btcNode.append(eur_to_btc);
@@ -1499,7 +1499,7 @@ axios
   .then(res => {
     var eur_to_sterling =
       "1 Euro = " +
-      res.data["Realtime Currency Exchange Rate"]["5. Exchange Rate"] +
+      res.data["real-time Currency Exchange Rate"]["5. Exchange Rate"] +
       "GBP";
     var sterlingNode = document.createElement("p");
     sterlingNode.append(eur_to_sterling);
@@ -1523,7 +1523,7 @@ axios
   .then(res => {
     var eur_to_dollar =
       "1 Euro = " +
-      res.data["Realtime Currency Exchange Rate"]["5. Exchange Rate"] +
+      res.data["real-time Currency Exchange Rate"]["5. Exchange Rate"] +
       "USD";
     var dollarNode = document.createElement("p");
     dollarNode.append(eur_to_dollar);
@@ -1547,7 +1547,7 @@ axios
   .then(res => {
     var eur_to_cny =
       "1 Euro = " +
-      res.data["Realtime Currency Exchange Rate"]["5. Exchange Rate"] +
+      res.data["real-time Currency Exchange Rate"]["5. Exchange Rate"] +
       "CNY";
     var cnyNode = document.createElement("p");
     cnyNode.append(eur_to_cny);
@@ -1625,7 +1625,7 @@ is called.
 \subsection{Transactions}
 The transactions component lists transactions made on this users account which means it
 will list every transfer, loan or loan repayment made on the users account.  It accomplishes
-this by using an axios get request to the back-end and utilizing the user email to return all
+this by using an axios get request to the Back-End and utilizing the user email to return all
 there transactions.  Here is the code for requesting the transactions below:
 \begin{minted}[linenos,tabsize=2,breaklines]{JavaScript}
   componentDidMount() {
@@ -1726,7 +1726,7 @@ and also has a header which says "Error 404", a 404 error is returned when the s
 \label{fig:Image of Error component}
 \end{figure}
 \subsection{About}
-The about section just displays information about the site to the user and features no back-end logic or axios requests
+The about section just displays information about the site to the user and features no Back-End logic or axios requests
 its sole purpose is to make the bank appear as if it were a real entity instead of an imaginary business which only
 exists in the mind of a college student.  Of course all businesses start as imaginary entities and through hard work
 and effort become real viable businesses.
@@ -1739,7 +1739,7 @@ and effort become real viable businesses.
 The UserInfo component has a large level of complexity, upon loading the user is
 greeted with a section for their basic info, a section for updating their info,
 and a delete account section aptly placed in what Kenny Loggins refers to as the "Danger Zone".
-The UserInfo component works by firstly sending a get request to the back-end to retrieve user info,
+The UserInfo component works by firstly sending a get request to the Back-End to retrieve user info,
 next in the update section it retrieves all pertinent user info from across all schemas and
 updates the foreign keys which in most cases happens to be the username(User email).  The delete function
 finds all the information pertinent to the user across various schemas using the user's email as
@@ -2023,11 +2023,11 @@ deleteUser() {
 \label{fig:Image of user info component}
 \end{figure}
 \subsection{Support}
-The support component consists of a paragraph describing the component, a textarea where the user can enter bugs, and a button.  The goal of the support component is that the user can send a bug report to the development team which will then be put through a text summarizer and the summarized text will be added as a document in the databases supports table.
+The support component consists of a paragraph describing the component, a textarea where the user can enter bugs, and a button.  The goal of the support component is that the user can send a bug report to the development team and then hopefully be fixed.
 %Add code here and screenshot of component
 
 \section{Designing for UX(User Experience)}
-UX is very important for an application as nobody wants to use an application that looks unsafe or looks clunky, so in this section I will be discussing how I tried to avoid coding a bad front-end design and the methodology I took when designing the front-end.
+UX is very important for an application as nobody wants to use an application that looks unsafe or looks clunky, so in this section I will be discussing how I tried to avoid coding a bad Front-End design and the methodology I took when designing the Front-End.
 \subsection{Designing For End-Users As Opposed to Engineers}
 In making decisions regarding the UI I took user experience into serious consideration,
 I have noticed a growing tendency among web developers to make sites as minimalistic as
@@ -2040,8 +2040,8 @@ is not likely to trust it.
 \\
 The user experience is extremely important for a banking application in particular,
 as banking apps tend to have many complex features which can be hidden behind layers
-of abstraction to abstract away the complexity of back-end logic from the front-end.
-The user need not know how the back-end logic works to perform any function on the
+of abstraction to abstract away the complexity of Back-End logic from the Front-End.
+The user need not know how the Back-End logic works to perform any function on the
 site and any pertinent stipulations ,which are entirely arbitrary, are described via
 alerts or on the page itself.
 \\
@@ -2053,15 +2053,15 @@ In short I have abstracted away complex features, made the website minimalistic,
 made it aesthetically pleasing, and tried to be as concise with my language as
 possible to develop a user-friendly banking system which is on of the objectives
 I have outlined in my original project objectives.
-\section{back-end Architecture}
-back-end architecture is concerned with the logical aspect of the application such as the routes, communication with the database, and describing the internal logic of the application.  In this section I will discuss how I designed the back-end architecture it's components and how they all fit together to provide a litany of functions to perform a number of banking tasks.
+\section{Back-End Architecture}
+Back-End architecture is concerned with the logical aspect of the application such as the routes, communication with the database, and describing the internal logic of the application.  In this section I will discuss how I designed the Back-End architecture it's components and how they all fit together to provide a litany of functions to perform a number of banking tasks.
 \subsection{Mongoose}
-Mongoose is a modelling tool for MongoDB and I utilized it on the back-end to create schemas, create objects, read data, update data and delete data. Mongoose was very useful in communicating with the database and allowed me to create custom features which could be utilized to search for various objects using their parameters.  All requests made to the database were made using Mongoose to achieve a full CRUD(Create, Read, Update \& delete) application.
+Mongoose is a modelling tool for MongoDB and I utilized it on the Back-End to create schemas, create objects, read data, update data and delete data. Mongoose was very useful in communicating with the database and allowed me to create custom features which could be utilized to search for various objects using their parameters.  All requests made to the database were made using Mongoose to achieve a full CRUD(Create, Read, Update \& delete) application.
 \subsection{ExpressJS}
-ExpressJS provided a thin layer which sat on top of NodeJS and provided me with desirable features such as saving me the effort of specifying the full URL of the server on the back-end and instead using the relative path to the resources I needed.  It also provided a body parser so I could return JSON(JavaScript Object Notation) objects which made manipulating data coming from the server incredibly easy, and in this way I was able to provide the user with the pertinent information they needed and format said information easily and effectively.
+ExpressJS provided a thin layer which sat on top of NodeJS and provided me with desirable features such as saving me the effort of specifying the full URL of the server on the Back-End and instead using the relative path to the resources I needed.  It also provided a body parser so I could return JSON(JavaScript Object Notation) objects which made manipulating data coming from the server incredibly easy, and in this way I was able to provide the user with the pertinent information they needed and format said information easily and effectively.
 \subsection{NodeJS}
-NodeJS provided a framework to build the server-side architecture and made creating and designing the back-end for this application both easy and enjoyable.  NodeJS has various benefits which it provided to the application such as being open source, cross-platform and it utilizes JavaScript which is one of the most popular languages for web-based development, which means various programmers can work and improve upon my original design.
-\subsection{Full back-end Code}
+NodeJS provided a framework to build the server-side architecture and made creating and designing the Back-End for this application both easy and enjoyable.  NodeJS has various benefits which it provided to the application such as being open source, cross-platform and it utilizes JavaScript which is one of the most popular languages for web-based development, which means various programmers can work and improve upon my original design.
+\subsection{Full Back-End Code}
 \begin{minted}[linenos,tabsize=2,breaklines]{JavaScript}
 var express = require("express");
 var app = express();
@@ -2101,7 +2101,7 @@ const security = {
   key: fs.readFileSync(keysDirectory + "ca.key"),
   cert: fs.readFileSync(keysDirectory + "cert.crt")
 };
-//use Mongoose API to connect to back-end need to send err msg here
+//use Mongoose API to connect to Back-End need to send err msg here
 try {
   Mongoose.connect(MongoDB, {
     useUnifiedTopology: true,
@@ -2195,7 +2195,7 @@ app.get("/api/loans", function(req, res) {
     res.status(200, "request completed");
   });
 });
-//template was taken from earlier project and refactored https://github.com/Ultan-Kearns/eCommerceApp/blob/master/back-end/Server.js
+//template was taken from earlier project and refactored https://github.com/Ultan-Kearns/eCommerceApp/blob/master/Back-End/Server.js
 app.get("/api/users/:id/:password/:random", function(req, res) {
   Users.findById(req.params.id, function(err, data) {
     if (err) {
@@ -2231,7 +2231,7 @@ app.get("/api/users/:id/:password/:random", function(req, res) {
     }
   });
 });
-//template taken from earlier project - https://github.com/Ultan-Kearns/eCommerceApp/blob/master/back-end/Server.js
+//template taken from earlier project - https://github.com/Ultan-Kearns/eCommerceApp/blob/master/Back-End/Server.js
 //Improved upon in this project
 app.get("/api/emailuser/:id/:password", function(req, res, next) {
   Users.findById(req.params.id, function(err, data) {
@@ -2510,7 +2510,7 @@ https.createServer(security, app).listen(8080);
 \section{RESTful Architecture}
 RESTful architecture has many benefits and is widely used in modern applications, in this section I will describe RESTful architecture and it's benefits.
 \subsection{Client / Server Independence}
-To ensure that RESTful architecture standards were met I had to keep the cleint
+To ensure that RESTful architecture standards were met I had to keep the client
 and the server independent.  I did this by making use of the AXIOS HTTP client which
 I used to send requests from the client side to the server side, in this way I ensured
 that the server and the client were completely independent of each other.  Axios acted
@@ -2518,7 +2518,7 @@ as a middle layer which was used whenever the client needed to communicate with 
 Axios returned responses, sent GET, POST, PUT, DELETE and other HTTP requests to the server
 and returned results from numerous APIS which I used in this project.
 \subsection{Cacheable}
-I made use of sessionStorage on the client machine to perform various back-end logic and
+I made use of sessionStorage on the client machine to perform various Back-End logic and
 used this stored information to pass parameters to Axios so that it could retrieve user information,
 perform authentication, send information about the user to the server, update information and create new resources.
 \\
@@ -2526,12 +2526,12 @@ In addition to caching user information on the client machine the entire website
 application and once loaded the user does not have to wait for pages to load as thanks to AJAX(Asynchronous JavaScript and XML)
 the requested resources are loaded almost instantaneously.
 \subsection{Stateless}
-As mentioned in the cacheable section I made great use of sessionStorage to store information on the client machine, this information was then used in axios requests when communicating with the server, the server did not maintain a user session as the server and cleint were entirely independent of each other.  If the server went down the users application would still load but the user would not be able to login or perform any back-end functions such as sending HTTP requests.  Statelessness is an important part of RESTful architecture and I did my utmost to achieve and implement it into this project so as to create a fully RESTful application.
+As mentioned in the cacheable section I made great use of sessionStorage to store information on the client machine, this information was then used in axios requests when communicating with the server, the server did not maintain a user session as the server and client were entirely independent of each other.  If the server went down the users application would still load but the user would not be able to login or perform any Back-End functions such as sending HTTP requests.  Statelessness is an important part of RESTful architecture and I did my utmost to achieve and implement it into this project so as to create a fully RESTful application.
 \section{Database Architecture}
 Database architecture can make or break a project, that is why I utilized MLAB and broke the database up into schemas so it is easily manageable.  I will discuss the database architecture in further detail below.
 \subsection{MLAB}
 MLAB is a DAAS or Database As A Service application which I used to store all the information about users or any other information
-generated by the application.  The Database was accessed using Mongoose on the back-end.  The database is encrypted and secure and is used by
+generated by the application.  The Database was accessed using Mongoose on the Back-End.  The database is encrypted and secure and is used by
 various companies such as Toyota, Facebook \& Lyft just to name a few.  I chose MLAB for this project in order to make the database more secure
 and to imitate a real-life application as very few companies own their own servers to host their data, many companies off for IAAS \& DAAS as they are far more scalable and inexpensive both in terms of time \& cost.
 \subsection{Schema of Database}
@@ -2543,7 +2543,7 @@ and to imitate a real-life application as very few companies own their own serve
 \section{Security}
 Security is a major concern with an online banking system, I will describe how I secured the application to the best of my abilities below.
 \subsection{Overview of Security}
-The application is secured using HTTPS(HyperText Transfer Protocal Secure) which encrypts connections to the application and the server
+The application is secured using HTTPS(HyperText Transfer Protocol Secure) which encrypts connections to the application and the server
 is secured using SHA256(Secure Hashing Algorithm) and the users passwords are encrypted with SHA256 as well.  The application complies with the most up to date cyber-security principles and offers the user protection from hackers and implements security features expected of a modern online banking application.
 \\
 The certificates I used on the server were generated using OpenSSL, both the application and the server use self-signed certificates which will generate security warnings in Chrome and Firefox as the browser doesn't know if the certificates were verified by a reputable source, in a real world deployment I would have used GoDaddy or another service to verify the certificates.
@@ -2595,7 +2595,7 @@ I wanted to make the application intuitive to use so I avoided using complicated
 \section{Objectives}
 In this section I will go over the objectives I laid out in chapter 2 and talk about how I completed each individual objective.
 \subsection{Safe \& Secure Banking}
-The project is encrypted with HTTPS and the back-end is secured using Transport
+The project is encrypted with HTTPS and the Back-End is secured using Transport
 Layer Security(TLS) which is the latest in security standards.  The user passwords
 are all secured utilizing the SHA256 algorithm so that not even the system administrators,
 who have access to all the user's information, cannot even find out the users plaintext
@@ -2603,7 +2603,7 @@ password.  In addition to this the user can also recover an account if they know
 by visiting the forgot page which will store a new password as a hash in the database and
 then email it to them using encryption.
 \\
-Due to the afformentioned security methods being employed I am convinced that the
+Due to the aforementioned security methods being employed I am convinced that the
 banking application is safe and secure and cannot be hacked without significant knowledge
 and effort.
 \\
@@ -2613,8 +2613,8 @@ which is required to login thus greatly increasing the security of the users acc
 This project utilizes ChartJS which is a JavaScript library which will generate
 user statistics based upon their interaction with the application.  The application
 pulls user data from the database and displays the users loans and transactions as
-bar charts which were utilzied to provide the user with a visual aid that will show
-them how many loans they have taken out and thier transactions which can be either
+bar charts which were utilized to provide the user with a visual aid that will show
+them how many loans they have taken out and their transactions which can be either
 positive or negative.
 \subsection{Multiple Users}
 The application supports multiple users at once which are all independent of each
@@ -2631,7 +2631,7 @@ the application is stateless and cacheable and the client and server are entirel
 \\
  The server does not store any information
 about the user and merely connects to a database to perform CRUD functionality, the
-front-end makes HTTP calls through a HTTP client and in this way I was able to ensure
+Front-End makes HTTP calls through a HTTP client and in this way I was able to ensure
 client server Independence.
 \\
 The application is cacheable as single page applications are cached on the users
@@ -2652,7 +2652,7 @@ I have commented lines of code which may be hard for others who work on the proj
 understand.
 \subsection{Responsive}
 The application is responsive and thanks to it being a Single Page Application load times are
-practically non-existant as the application is cached on the users device meaning that the
+practically non-existent as the application is cached on the users device meaning that the
 user does not have to wait for a http request to retrieve the information but instead can access
 it from their own device.
 \subsection{Schematic of Project}
@@ -2676,7 +2676,7 @@ React also taught me a lot about learning to learn as I had to learn the framewo
 relatively quickly and I found that the skill of learning to learn was more important
 than anything else when I decided to use this framework.
 \subsection{NodeJS}
-NodeJS taught me a lot about back-end design and how difficult it can be to think about
+NodeJS taught me a lot about Back-End design and how difficult it can be to think about
 an application logically and break it down into schemas and function calls and how full-
 stack applications function in the real world.  I have utilized NodeJS on a previous project
 but my knowledge of NodeJS was nowhere near what it is now thanks to undertaking this application.
@@ -2760,7 +2760,7 @@ Looking back in hindsight there were a lot of things that I could have done diff
 \\
 I feel I wasted a lot of time implementing features which were planned poorly and if I had just taken some time out to plan for these functions I would have had a much easier time implementing them.  That being said the planning phase did go fairly well compared to previous projects I worked on thanks to my adherence to Agile principles and TDD(Test Driven Development).
 \subsection{More Focus on AI}
-Given that AI is a major field of study and a growing field I regret not having implemented it into this project.  I originally had a plan to utilize tensorflowJS in this project but due to time-constraints this feature was never implemented.
+Given that AI is a major field of study and a growing field I regret not having implemented it into this project.  I originally had a plan to utilize Tensorflow JS in this project but due to time-constraints this feature was never implemented.
 \\
 I feel a lot of regret about not being able to integrate AI into this application as it would have been a major upgrade to the standard banking application but there's always next time.
 \section{In Closing}
@@ -2770,7 +2770,7 @@ This is the end of a long journey and one that has taught me so much about every
 \section{Final Words}
 Thank you so much for taking a look at my Final Year Project, it has been a long four years at GMIT and I have learned so much in a diverse range of topics which encompass what is termed as Computer Science. I used to see software engineering as just the ability to crack out code but I now know that it is so much more than that, to truly be a software engineer you must be first and foremost a problem solver, to be able to tackle a diverse set of problems and to design elegant applications and solutions and to come up with clever ways to overcome technical, financial and communicative barriers to deliver a final product to the end user. Software engineering has truly become a passion of mine as opposed to just being a hobbyist / student, I truly feel that these four years have been life changing and have helped me to change and grow for the better.
 
-I would like to extend a personal thanks to my supervisor Dr. Dominic Carr for advising me during the development of this project and for offering suggestions which I would not have thought of otherwise for instance the integration of twilio was brought about at Dr. Carr's suggestion.
+I would like to extend a personal thanks to my supervisor Dr. Dominic Carr for advising me during the development of this project and for offering suggestions which I would not have thought of otherwise for instance the integration of Twilio was brought about at Dr. Carr's suggestion.
 
 I would also like to extend my thanks and gratitude to all of the lecturers at GMIT who have helped me in various ways throughout these long and arduous four years. It is thanks to the brilliant and talented staff at GMIT that I was able to create an application such as this.
 
