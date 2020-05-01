@@ -92,8 +92,8 @@
 + Work on documentation(Fixed images done)
 + Do video on final implementation(DONE)
 + Get HTTPS flag working on GCP(DONE)
-+ review dissertation
-+ Write more in dissertation(focus on system evaluation)
++ review dissertation(DONE)
++ Write more in dissertation(DONE)
 + Update code for register and update in dissertation
 + Add some images of database schema to sys eval and also project diagram
 # ideas + things to do
