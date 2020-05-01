@@ -17,12 +17,12 @@
 + Old Overview Video of Application: https://youtu.be/AiM4veddx70?t=249 - please skip to the specified time for voice commands as I did not want to remake a video when there was already a showcase of the voice commands
 
 ## Details of Branches:
-+ master: This branch serves as the homebase for the project all tested and working code will be merged into master from the Feature branch, any merge with master will automatically trigger a docker build.
-+ Feature: This branch was used to test new features
-+ server: This branch was used to get the project setup for Google Cloud Platform, the main difference between code on the server branch and that of feature is that the server branch does not host the application locally and instead uses the address of the VM **NOTE: MOST UP TO DATE AND ERROR FREE CODE IS ON THE SERVER BRANCH, I CHOSE NOT TO MERGE WITH MASTER DUE TO HOSTING THE APP LOCALLY**
++ master: This branch serves as the homebase for the project all tested and working code will be merged into master from the Feature branch, any merge with master will automatically trigger a docker build. **THIS BRANCH HAS THE MOST UP TO DATE README & CODE**
++ Feature: This branch was used to test new features, this branch was deemed redundant once all desired features were implmented
++ server: This branch was used to get the project setup for Google Cloud Platform, the main difference between code on the server branch and that of feature is that the server branch does not host the application locally and instead uses the address of the VM 
 ## Structure of Github Repository:
 - banking-app: This folder contains all the code for the application, here you can see all the files which make up the application.
-- dissertation: This is the main documentation for the application, it contains all the latex files as well as the dissertation PDF, this PDF may also be added to the main repo structure on final commit
+- dissertation - ultan kearns.pdf: This is the main documentation for the application, it contains all the latex files as well as the dissertation PDF, this PDF may also be added to the main repo structure on final commit
 - Applied.side: This file contains the Selenium test cases I used to test the application.
 - Database.sql: This file contains information about database tables which will be used to create a diagram of the final database structure.
 - ListOfThirdPartyApis.md: A markdown file of APIS used in this application
