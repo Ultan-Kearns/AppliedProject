@@ -7,7 +7,7 @@ This project was designed by me for the module Applied Project \& Dissertation w
 to complete an online banking system using a MERN(Mongo, Express, React \& Node) stack.
 The project should allow user to login, view statements, takeout loans, perform transactions and
 will show the user there monthly and yearly expenditures using graphs. The project will also be
-secure and utilize user accounts using a mongo Database to ensure that the users account is secure.
+secure and utilize user accounts using a Mongo Database to ensure that the users account is secure.
 \\*
 \\*
 The main purpose of this project is to utilize the MERN stack to provide a full and rich user
@@ -60,7 +60,7 @@ it offers an open source alternative to MySQL and other proprietary databases
 and many companies seem to be migrating to it because it is open source and in
 some cases may offer better performance than other databases.
 \begin{figure}[h!]
-  \includegraphics[width=\textwidth]{img/mongostat.png}
+  \includegraphics[width=\textwidth]{img/Mongostat.png}
   \caption{Mongo Usage}
   \label{fig: Mongo usage statistics}
 \end{figure}
@@ -69,7 +69,7 @@ Mongo is easy to learn as it stores it's data in JSON format and is schemaless, 
 defines their own schemas. I have also used it for 2 other projects in Angular and find it an
 easy database to use in relation to projects.
 \begin{figure}[ht]
-  \includegraphics[width=\textwidth]{img/mongo.jpg}
+  \includegraphics[width=\textwidth]{img/Mongo.jpg}
   \caption{Mongo Logo}
   \label{fig: Image of Mongo Logo}
 \end{figure} \cite{MongoImage}
@@ -163,24 +163,24 @@ Below I will include the requirements for this application and expand upon them.
 execute simultaneous banking and user sessions must be independent of each
 other.
 \item \textbf{Secure:} Database information must be encrypted
-\item \textbf{Accurate:} All statments and user information must be accurate.
+\item \textbf{Accurate:} All statements and user information must be accurate.
 \item \textbf{Login/Logout} The user must be able to login and logout
 \item \textbf{information}: The user must be able to view all information related
-to them (eg: statments, withdrawl dates etc.)
+to them (eg: statements, withdrawal dates etc.)
 \item \textbf{Graphs/Charts}: The banking app must display expenditures and
-credit in graphs and charts generated from python scriptss
+credit in graphs and charts generated from python scripts
 \item \textbf{Emails} The application must be able to email the user a forgot
-password if they forgot their password and alos be able to email the user if
+password if they forgot their password and also be able to email the user if
 budget controls are turned on.
 \item \textbf{Register} The user must be able to register new accounts using
 an email and password also ensure that it cannot be an email that already exists.
 \item \textbf{Delete account} The user must be able to terminate their account
 and all information that exists about the user must be purged from the server.
 \item \textbf{Change information} The user must be able to update all their personal
-information in relation to their account except obviously banking statments and
+information in relation to their account except obviously banking statements and
 balances.
 \item \textbf{User sessions} The application must use cookies to maintain a
-user session and ensure that the cookies do not last more than a specified timeframe
+user session and ensure that the cookies do not last more than a specified time-frame
 max of a day.
 \end{itemize}
 \section{Outline of chapters}
@@ -234,7 +234,7 @@ In this section I will outline the key objectives for this application.
   \item To provide a RESTful API to the banking service(client/server totally independent
   ,stateless environment, caching)
   \item To provide a scalable application
-  \item To provide user with security using encryption for the mongo database
+  \item To provide user with security using encryption for the Mongo database
   \item To limit loadtimes of traditional online banking eg. 365 Online Banking and others
 \end{itemize}
 \section{Online Banking}
@@ -256,7 +256,7 @@ via a financial institutions website or application.
 \subsection{The Beginning}
 The metamorphosis of the old brick and mortar banks to the click and mortar banks of
 today all started as early as the 1980s \cite{HistoryBanking}. The earliest version
-of the online prescence of banking took place in none other than New York City, New York,
+of the online presence of banking took place in none other than New York City, New York,
 USA.  Citibank, Chase Manhattan, Chemical Bank and manufacturers Hanover became the
 first banks to introduce on online banking system in 1981.\cite{HistoryBanking}
 Then in 1983 the Bank of Scotland became the first bank in the UK to offer an
@@ -268,10 +268,10 @@ banking services to all of its customers \cite{HistoryBanking}.In the year 2006 
 some variation of online banking \cite{HistoryBanking}.
 It was a slow process to move from the tried and true brick and mortar banking that the majority of the public
 were,if not entirely satisfied with, were familiar with and accustomed to through decades of
-useage. The move from brick and mortar to click and mortar was not all advantages, there were many issues
+usage. The move from brick and mortar to click and mortar was not all advantages, there were many issues
 which had to be addressed such as ease of access, security and the education of the public about phishing scams
 and various other crimes which can occur by storing information online.  Some banks offered advice to the elderly
-and people who may not know so much about computers advice in an attempt to cut down on online banking crimes I have refereneced an example of one such site targeting the elderly to dispense such advice \cite{BOIElderly}
+and people who may not know so much about computers advice in an attempt to cut down on online banking crimes I have referenced an example of one such site targeting the elderly to dispense such advice \cite{BOIElderly}
 \section{Advantages of Online Banking}
 Here I will discuss the numerous advantages that online banking offers.
 \subsection{Convenience}
@@ -295,11 +295,11 @@ tasks relating to banking.
 The rise of online banking means that banks are constantly trying to out do each
 other in terms of their banking applications.  The customer now has much more choice
 in choosing banks since the advent of online banking. The advent of online banking has
-led to some banks maintaining only an online prescence.\cite{OnlineBanking}
+led to some banks maintaining only an online presence.\cite{OnlineBanking}
 \subsection{Creation of Jobs}
 The switch from physical banking to digital banking has created numerous jobs
 in the software industry especially in terms of cyber-security as banks increasingly
-worry about security braches and hacks.  Any hacks that occur are viewed as the fault
+worry about security breaches and hacks.  Any hacks that occur are viewed as the fault
 of the bank and allows many customers to migrate to other banks, that is why many banks
 spend a lot of money to secure data on their servers which creates jobs and stimulates
 the economy.
@@ -312,7 +312,7 @@ and if phishing scams getting a user's password are successful they could find t
 their bank account has been drained of money.  There are many other forms of attacks
 which could occur such as keylogging, network monitoring and on public networks
 your data is far less secure.  Although banks have taken many counter measures
-to prevent such attacks from occuring sometimes they slip through the cracks of
+to prevent such attacks from occurring sometimes they slip through the cracks of
 cyber-security analysts\cite{BankHacks}.  Most people find that a little less security is a fair
 trade-off for the convenience online banking provides.
 \subsection{Layoff of Bank Employees}
@@ -438,7 +438,7 @@ ReactJS is a JavaScript library for building user interfaces\cite{React} React i
 \\
 React has been growing in popularity along with similar technologies such as Angular and multiple companies are using these technologies for their websites / applications.  A combination of all the above factors listed and Reacts growing popularity made it seem ideal for this project.
 \subsection{About Node}
-Node JS provided server-side architecture for this project.  NodeJS is an asynchronous event-driven JavaScript runtime environment which is designed to be scalable and can be utilized to build network applications\cite{Node}.
+Node JS provided server-side architecture for this project.  NodeJS is an asynchronous event-driven JavaScript run-time environment which is designed to be scalable and can be utilized to build network applications\cite{Node}.
 \\
 Node allows for concurrent connections to the server and can process multiple requests at a time.  NodeJS has a strong community and is open source and provides the developer with server-side architecture, it is also very powerful and can be used to perform HTTP requests such as: GET,PUT,POST,DELETE etc.
 \\
@@ -471,7 +471,7 @@ Axios is a promise based HTTP client for node.js\cite{Axios}.  I used Axios in t
 \subsection{React Helmet}
 React-helmet is a reusable react component that can manage the document head of various components, it allows the developer to define HTML tags such as title and outputs them to the browser\cite{ReactHelmet}.
 \subsection{Create-React-App}
-Create-React-App allows the developer to quickstart a React application without having to worry about build-options or anything else, it's as simple as running "create-react-app new app" in the terminal or CLI(Command line interface)\cite{CreateReactApp}.
+Create-React-App allows the developer to quick-start a React application without having to worry about build-options or anything else, it's as simple as running "create-react-app new app" in the terminal or CLI(Command line interface)\cite{CreateReactApp}.
 \subsection{Annyang}
 Annyang is a speech recognition library which I utilized in this project to provide voice navigation through components.  This library was extremely easy to set-up and was very interesting to review Annyangs code.  Sadly due to library limitations Annyang only works on Google Chrome and is unavailable on Firefox and other browsers.  I used Annyang to describe various vocal commands and have the app continuously listening.
 \section{Third Party APIs}
@@ -2070,12 +2070,12 @@ var path = require("path");
 //parses response
 var bodyParser = require("body-parser");
 //api to communicate with DB
-var mongoose = require("mongoose");
-//mongoDB link to connect
-//3kCeKdq4iZWqlg00 this is for mongoatlas may migrate
-var mongoDB =
-  "mongodb://ultan:ultanultan1@ds135107.mlab.com:35107/appliedproject";
-var Schema = mongoose.Schema;
+var Mongoose = require("Mongoose");
+//MongoDB link to connect
+//3kCeKdq4iZWqlg00 this is for Mongoatlas may migrate
+var MongoDB =
+  "Mongodb://ultan:ultanultan1@ds135107.mlab.com:35107/appliedproject";
+var Schema = Mongoose.Schema;
 var router = express.Router();
 app.use(bodyParser.json());
 //need this for some browsers to allow cross origin request to allow app to communicate with server
@@ -2101,9 +2101,9 @@ const security = {
   key: fs.readFileSync(keysDirectory + "ca.key"),
   cert: fs.readFileSync(keysDirectory + "cert.crt")
 };
-//use mongoose API to connect to back-end need to send err msg here
+//use Mongoose API to connect to back-end need to send err msg here
 try {
-  mongoose.connect(mongoDB, {
+  Mongoose.connect(MongoDB, {
     useUnifiedTopology: true,
     useNewUrlParser: true
   });
@@ -2166,11 +2166,11 @@ var supportSchema = new Schema({
   date: { type: Date },
   status: { type: String }
 });
-//models for mongoose
-var Users = mongoose.model("Users", userSchema);
-var Transactions = mongoose.model("Transactions", transactionSchema);
-var Loans = mongoose.model("Loans", loanSchema);
-var Support = mongoose.model("Support", supportSchema);
+//models for Mongoose
+var Users = Mongoose.model("Users", userSchema);
+var Transactions = Mongoose.model("Transactions", transactionSchema);
+var Loans = Mongoose.model("Loans", loanSchema);
+var Support = Mongoose.model("Support", supportSchema);
 var transaction = new Transactions();
 var loan = new Loans();
 //Here I will use get requests to retrieve resources
