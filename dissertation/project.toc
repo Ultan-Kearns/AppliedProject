@@ -102,55 +102,55 @@
 \contentsline {subsection}{\numberline {5.2.9}Error}{76}{subsection.5.2.9}% 
 \contentsline {subsection}{\numberline {5.2.10}About}{77}{subsection.5.2.10}% 
 \contentsline {subsection}{\numberline {5.2.11}UserInfo}{78}{subsection.5.2.11}% 
-\contentsline {subsection}{\numberline {5.2.12}Support}{87}{subsection.5.2.12}% 
-\contentsline {section}{\numberline {5.3}Designing for UX(User Experience)}{88}{section.5.3}% 
-\contentsline {subsection}{\numberline {5.3.1}Designing For End-Users As Opposed to Engineers}{88}{subsection.5.3.1}% 
-\contentsline {section}{\numberline {5.4}Back-End Architecture}{89}{section.5.4}% 
-\contentsline {subsection}{\numberline {5.4.1}Mongoose}{89}{subsection.5.4.1}% 
-\contentsline {subsection}{\numberline {5.4.2}ExpressJS}{89}{subsection.5.4.2}% 
-\contentsline {subsection}{\numberline {5.4.3}NodeJS}{90}{subsection.5.4.3}% 
-\contentsline {subsection}{\numberline {5.4.4}Full Back-End Code}{90}{subsection.5.4.4}% 
-\contentsline {section}{\numberline {5.5}RESTful Architecture}{102}{section.5.5}% 
-\contentsline {subsection}{\numberline {5.5.1}Client / Server Independence}{102}{subsection.5.5.1}% 
-\contentsline {subsection}{\numberline {5.5.2}Cacheable}{102}{subsection.5.5.2}% 
-\contentsline {subsection}{\numberline {5.5.3}Stateless}{103}{subsection.5.5.3}% 
-\contentsline {section}{\numberline {5.6}Database Architecture}{103}{section.5.6}% 
-\contentsline {subsection}{\numberline {5.6.1}MLAB}{103}{subsection.5.6.1}% 
-\contentsline {subsection}{\numberline {5.6.2}Schema of Database}{103}{subsection.5.6.2}% 
-\contentsline {section}{\numberline {5.7}Security}{103}{section.5.7}% 
-\contentsline {subsection}{\numberline {5.7.1}Overview of Security}{104}{subsection.5.7.1}% 
-\contentsline {chapter}{\numberline {6}System Evaluation}{106}{chapter.6}% 
-\contentsline {section}{\numberline {6.1}Robust}{106}{section.6.1}% 
-\contentsline {subsection}{\numberline {6.1.1}Error Handling}{106}{subsection.6.1.1}% 
-\contentsline {subsection}{\numberline {6.1.2}Testing}{107}{subsection.6.1.2}% 
-\contentsline {subsection}{\numberline {6.1.3}Speed}{107}{subsection.6.1.3}% 
-\contentsline {section}{\numberline {6.2}Accessibility}{107}{section.6.2}% 
-\contentsline {subsection}{\numberline {6.2.1}Minimalistic}{107}{subsection.6.2.1}% 
-\contentsline {subsection}{\numberline {6.2.2}Intuitive}{108}{subsection.6.2.2}% 
-\contentsline {section}{\numberline {6.3}Objectives}{108}{section.6.3}% 
-\contentsline {subsection}{\numberline {6.3.1}Safe \& Secure Banking}{108}{subsection.6.3.1}% 
-\contentsline {subsection}{\numberline {6.3.2}User Generated Statistics}{109}{subsection.6.3.2}% 
-\contentsline {subsection}{\numberline {6.3.3}Multiple Users}{109}{subsection.6.3.3}% 
-\contentsline {subsection}{\numberline {6.3.4}RestFUL Principles}{109}{subsection.6.3.4}% 
-\contentsline {subsection}{\numberline {6.3.5}Scalable}{109}{subsection.6.3.5}% 
-\contentsline {subsection}{\numberline {6.3.6}Responsive}{110}{subsection.6.3.6}% 
-\contentsline {subsection}{\numberline {6.3.7}Schematic of Project}{110}{subsection.6.3.7}% 
-\contentsline {chapter}{\numberline {7}Conclusion}{111}{chapter.7}% 
-\contentsline {section}{\numberline {7.1}What I Learned}{111}{section.7.1}% 
-\contentsline {subsection}{\numberline {7.1.1}React}{111}{subsection.7.1.1}% 
-\contentsline {subsection}{\numberline {7.1.2}NodeJS}{111}{subsection.7.1.2}% 
-\contentsline {subsection}{\numberline {7.1.3}Docker}{112}{subsection.7.1.3}% 
-\contentsline {subsection}{\numberline {7.1.4}Scope Creep}{112}{subsection.7.1.4}% 
-\contentsline {subsection}{\numberline {7.1.5}The Stackoverflow Principle: READ THE DOCS!}{113}{subsection.7.1.5}% 
-\contentsline {section}{\numberline {7.2}Innovation}{114}{section.7.2}% 
-\contentsline {subsection}{\numberline {7.2.1}Headlines}{114}{subsection.7.2.1}% 
-\contentsline {subsection}{\numberline {7.2.2}Voice Recognition}{114}{subsection.7.2.2}% 
-\contentsline {section}{\numberline {7.3}How TDD \& Agile Impacted Development}{115}{section.7.3}% 
-\contentsline {subsection}{\numberline {7.3.1}Positive Impacts of TDD}{115}{subsection.7.3.1}% 
-\contentsline {subsection}{\numberline {7.3.2}Positive Impacts of Agile \& Kanban}{115}{subsection.7.3.2}% 
-\contentsline {section}{\numberline {7.4}What I Would Do Differently}{116}{section.7.4}% 
-\contentsline {subsection}{\numberline {7.4.1}Planning}{116}{subsection.7.4.1}% 
-\contentsline {subsection}{\numberline {7.4.2}More Focus on AI}{116}{subsection.7.4.2}% 
-\contentsline {section}{\numberline {7.5}In Closing}{117}{section.7.5}% 
-\contentsline {section}{\numberline {7.6}Final Words}{117}{section.7.6}% 
-\contentsline {chapter}{Appendices}{119}{section*.33}% 
+\contentsline {subsection}{\numberline {5.2.12}Support}{86}{subsection.5.2.12}% 
+\contentsline {section}{\numberline {5.3}Designing for UX(User Experience)}{87}{section.5.3}% 
+\contentsline {subsection}{\numberline {5.3.1}Designing For End-Users As Opposed to Engineers}{87}{subsection.5.3.1}% 
+\contentsline {section}{\numberline {5.4}Back-End Architecture}{88}{section.5.4}% 
+\contentsline {subsection}{\numberline {5.4.1}Mongoose}{88}{subsection.5.4.1}% 
+\contentsline {subsection}{\numberline {5.4.2}ExpressJS}{88}{subsection.5.4.2}% 
+\contentsline {subsection}{\numberline {5.4.3}NodeJS}{89}{subsection.5.4.3}% 
+\contentsline {subsection}{\numberline {5.4.4}Full Back-End Code}{89}{subsection.5.4.4}% 
+\contentsline {section}{\numberline {5.5}RESTful Architecture}{101}{section.5.5}% 
+\contentsline {subsection}{\numberline {5.5.1}Client / Server Independence}{101}{subsection.5.5.1}% 
+\contentsline {subsection}{\numberline {5.5.2}Cacheable}{101}{subsection.5.5.2}% 
+\contentsline {subsection}{\numberline {5.5.3}Stateless}{102}{subsection.5.5.3}% 
+\contentsline {section}{\numberline {5.6}Database Architecture}{102}{section.5.6}% 
+\contentsline {subsection}{\numberline {5.6.1}MLAB}{102}{subsection.5.6.1}% 
+\contentsline {subsection}{\numberline {5.6.2}Schema of Database}{102}{subsection.5.6.2}% 
+\contentsline {section}{\numberline {5.7}Security}{102}{section.5.7}% 
+\contentsline {subsection}{\numberline {5.7.1}Overview of Security}{103}{subsection.5.7.1}% 
+\contentsline {chapter}{\numberline {6}System Evaluation}{105}{chapter.6}% 
+\contentsline {section}{\numberline {6.1}Robust}{105}{section.6.1}% 
+\contentsline {subsection}{\numberline {6.1.1}Error Handling}{105}{subsection.6.1.1}% 
+\contentsline {subsection}{\numberline {6.1.2}Testing}{106}{subsection.6.1.2}% 
+\contentsline {subsection}{\numberline {6.1.3}Speed}{106}{subsection.6.1.3}% 
+\contentsline {section}{\numberline {6.2}Accessibility}{106}{section.6.2}% 
+\contentsline {subsection}{\numberline {6.2.1}Minimalistic}{106}{subsection.6.2.1}% 
+\contentsline {subsection}{\numberline {6.2.2}Intuitive}{107}{subsection.6.2.2}% 
+\contentsline {section}{\numberline {6.3}Objectives}{107}{section.6.3}% 
+\contentsline {subsection}{\numberline {6.3.1}Safe \& Secure Banking}{107}{subsection.6.3.1}% 
+\contentsline {subsection}{\numberline {6.3.2}User Generated Statistics}{108}{subsection.6.3.2}% 
+\contentsline {subsection}{\numberline {6.3.3}Multiple Users}{108}{subsection.6.3.3}% 
+\contentsline {subsection}{\numberline {6.3.4}RestFUL Principles}{108}{subsection.6.3.4}% 
+\contentsline {subsection}{\numberline {6.3.5}Scalable}{108}{subsection.6.3.5}% 
+\contentsline {subsection}{\numberline {6.3.6}Responsive}{109}{subsection.6.3.6}% 
+\contentsline {subsection}{\numberline {6.3.7}Schematic of Project}{109}{subsection.6.3.7}% 
+\contentsline {chapter}{\numberline {7}Conclusion}{110}{chapter.7}% 
+\contentsline {section}{\numberline {7.1}What I Learned}{110}{section.7.1}% 
+\contentsline {subsection}{\numberline {7.1.1}React}{110}{subsection.7.1.1}% 
+\contentsline {subsection}{\numberline {7.1.2}NodeJS}{110}{subsection.7.1.2}% 
+\contentsline {subsection}{\numberline {7.1.3}Docker}{111}{subsection.7.1.3}% 
+\contentsline {subsection}{\numberline {7.1.4}Scope Creep}{111}{subsection.7.1.4}% 
+\contentsline {subsection}{\numberline {7.1.5}The Stackoverflow Principle: READ THE DOCS!}{112}{subsection.7.1.5}% 
+\contentsline {section}{\numberline {7.2}Innovation}{113}{section.7.2}% 
+\contentsline {subsection}{\numberline {7.2.1}Headlines}{113}{subsection.7.2.1}% 
+\contentsline {subsection}{\numberline {7.2.2}Voice Recognition}{113}{subsection.7.2.2}% 
+\contentsline {section}{\numberline {7.3}How TDD \& Agile Impacted Development}{114}{section.7.3}% 
+\contentsline {subsection}{\numberline {7.3.1}Positive Impacts of TDD}{114}{subsection.7.3.1}% 
+\contentsline {subsection}{\numberline {7.3.2}Positive Impacts of Agile \& Kanban}{114}{subsection.7.3.2}% 
+\contentsline {section}{\numberline {7.4}What I Would Do Differently}{115}{section.7.4}% 
+\contentsline {subsection}{\numberline {7.4.1}Planning}{115}{subsection.7.4.1}% 
+\contentsline {subsection}{\numberline {7.4.2}More Focus on AI}{115}{subsection.7.4.2}% 
+\contentsline {section}{\numberline {7.5}In Closing}{116}{section.7.5}% 
+\contentsline {section}{\numberline {7.6}Final Words}{116}{section.7.6}% 
+\contentsline {chapter}{Appendices}{118}{section*.33}% 

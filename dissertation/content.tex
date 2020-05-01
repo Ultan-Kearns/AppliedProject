@@ -1800,6 +1800,7 @@ Code for the update function:
 //for updating user info
 update = event => {
   //if any info is blank set to previous info of user
+
   if (this.state.number === "null" || this.state.number === "") {
     this.setState({
       number: this.state.prevNumber
@@ -1820,12 +1821,12 @@ update = event => {
     this.setState({
       password: sha256(this.state.password)
     });
-    alert(this.state.password);
+    alert("Updating password please remember this");
   } else {
     this.setState({
       password: this.state.prevPassword
     });
-    alert("PASS WILL = PREV PASS " + this.state.password);
+    alert("Password will not be changed " + this.state.password);
   }
   if (
     this.state.dob === "null" ||
@@ -1840,14 +1841,15 @@ update = event => {
   sessionStorage.setItem("dob", this.state.dob);
   sessionStorage.setItem("balance", this.state.balance);
   this.setState({
-        balance: sessionStorage.getItem("balance"),
-        dob: sessionStorage.getItem("dob"),
-  })
-  alert("BAL " + this.state.balance);
+    balance: sessionStorage.getItem("balance"),
+    dob: sessionStorage.getItem("dob")
+  });
+  var number = this.state.number.substring(1,10)
+
   const newUser = {
     _id: this.state.newUsername.toLowerCase(),
     password: this.state.password,
-    name: this.state.name,
+    name: this.state.name.toLowerCase(),
     number: this.state.number,
     dob: this.state.dob,
     balance: 20,
@@ -1859,15 +1861,15 @@ update = event => {
   let cancel;
   try {
     if (
-      this.state.number.length === 10 &&
+      this.state.number.length === 13 &&
       this.state.name.length >= 5 &&
       this.state.password.length >= 5
     ) {
       var isCancelled = false;
       axios
-        .get("https://localhost:8080/api/users/" + newUser._id)
+        .get("https://34.68.75.97:8080/api/users/" + newUser._id)
         .then(res => {
-          alert(res.data);
+
           if (res.data === "null") {
             alert(
               "Changing ID, you will now have to login using " +
@@ -1890,12 +1892,11 @@ update = event => {
           }
         })
         .then(res => {
-          alert("IS " + isCancelled + this.state.dob);
           if (isCancelled === false) {
             //delete original user
             axios
               .delete(
-                "https://localhost:8080/api/users/" +
+                "https://34.68.75.97:8080/api/users/" +
                   sessionStorage.getItem("email")
               )
               .then(res => {})
@@ -1904,7 +1905,7 @@ update = event => {
               });
             //recreate user for ID - for some reason it clones
             axios
-              .post("https://localhost:8080/api/users/", newUser)
+              .post("https://34.68.75.97:8080/api/users/", newUser)
               .then(res => {
                 //log res for testing
                 console.log(res.data);
@@ -1914,7 +1915,7 @@ update = event => {
               });
             axios
               .post(
-                "https://localhost:8080/api/transactions/" +
+                "https://34.68.75.97:8080/api/transactions/" +
                   sessionStorage.getItem("email") +
                   "/" +
                   this.state.newUsername
@@ -1930,7 +1931,7 @@ update = event => {
 
             axios
               .post(
-                "https://localhost:8080/api/loans/" +
+                "https://34.68.75.97:8080/api/loans/" +
                   sessionStorage.getItem("email") +
                   "/" +
                   this.state.newUsername
@@ -1948,15 +1949,21 @@ update = event => {
                 });
               })
               .then(res => {
-                if(parseInt(sessionStorage.getItem("updates")) === 2){
-                  alert("You cannot update so much")
+                  document.getElementById("basic").innerHTML =
+                    "Name: " +
+                    this.state.name + "<br/>" + "<br/>" +
+                    " Number: " +
+                    this.state.number + "<br/>" + "<br/>" +
+                    " Date of Birth: " +
+                    this.state.dob + "<br/>" + "<br/>" +
+                    " Username: " +
+                    this.state.newUsername + "<br/>" + "<br/>" +
+                    " Balance: €" +
+                    this.state.balance;
+                    //left this in in case of limiting updates
+                  updates++;
+                  sessionStorage.setItem("updates", updates);
 
-                }
-                else{
-                this.updateData();
-                updates++;
-                sessionStorage.setItem("updates",updates)
-              }
               })
               .catch(error => {
                 console.log("Error with loans");
@@ -1974,52 +1981,6 @@ update = event => {
     }
   } catch (err) {
     alert("Issue arose");
-  }
-  event.preventDefault();
-};
-\end{minted}
-\\
-Code for the delete function:
-\begin{minted}[linenos,tabsize=2,breaklines]{JavaScript}
-deleteUser() {
-  var answer = window.prompt("Enter password to delete account");
-  try {
-    if (
-      sha256(answer) === password &&
-      parseInt(sessionStorage.getItem("openLoans")) === 0
-    ) {
-      axios
-        .delete(
-          "https://localhost:8080/api/transactions/" +
-            sessionStorage.getItem("email")
-        )
-        .catch(error => {
-          alert("Error connecting to server");
-        });
-      axios
-        .delete(
-          "https://localhost:8080/api/loans/" +
-            sessionStorage.getItem("email")
-        )
-        .catch(error => {
-          alert("Error connecting to server");
-        });
-      axios
-        .delete(
-          "https://localhost:8080/api/users/" +
-            sessionStorage.getItem("email")
-        )
-        .catch(error => {
-          alert("Error connecting to server");
-        });
-      alert("User deleted");
-      ReactDOM.render(<Login />, document.getElementById("root"));
-    } else {
-      alert("Action aborted, password was incorrect or you have open loans");
-    }
-  } catch {
-    alert("Internal system error");
-  }
 }
 \end{minted}
 \begin{figure}[H]
