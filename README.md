@@ -22,7 +22,8 @@
 + server: This branch was used to get the project setup for Google Cloud Platform, the main difference between code on the server branch and that of feature is that the server branch does not host the application locally and instead uses the address of the VM 
 ## Structure of Github Repository:
 - banking-app: This folder contains all the code for the application, here you can see all the files which make up the application.
-- dissertation - ultan kearns.pdf: This is the main documentation for the application, it contains all the latex files as well as the dissertation PDF, this PDF may also be added to the main repo structure on final commit
+- dissertation - ultan kearns.pdf: This is the main documentation for the application
+- dissertation: directory contains all the latex files for the dissertation - ultan kearns.pdf
 - Applied.side: This file contains the Selenium test cases I used to test the application.
 - Database.sql: This file contains information about database tables which will be used to create a diagram of the final database structure.
 - ListOfThirdPartyApis.md: A markdown file of APIS used in this application
