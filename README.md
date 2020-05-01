@@ -1,7 +1,10 @@
 # Fourth Year Applied Project and Dissertation - Ultan Kearns G00343745
 ## This project was made as a final year project as part of a level 8(Bsc Hons) course in Software Development at GMIT(Galway Mayo Institute of Technology
 
-+ Overview Video of Application: https://www.youtube.com/watch?v=AiM4veddx70
+## IMPORTANT NOTICE: I have two overviews one which is more extensive and an older one which is not, the only reason I have kept the older one was because it showcased voice commands at the specified time t=249 please be careful as the voice commands are quite loud but they do show the Annyang library working.
+
++ New more extensive overview: https://www.youtube.com/watch?v=jLp_paiELCg - You can also download this video from the main repo, I chose to put these videos on Youtube as it would be a pain for externals to have to download dozens of 70MB videos, hope other students had the same concern.
++ Old Overview Video of Application: https://youtu.be/AiM4veddx70?t=249 - please skip to the specified time for voice commands as I did not want to remake a video when there was already a showcase of the voice commands
 
 ## Details of Branches:
 + master: This branch serves as the homebase for the project all tested and working code will be merged into master from the Feature branch, any merge with master will automatically trigger a docker build.
