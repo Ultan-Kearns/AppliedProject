@@ -95,7 +95,7 @@
 + review dissertation
 + Write more in dissertation(focus on system evaluation)
 + Update code for register and update in dissertation
-
++ Add some images of database schema to sys eval and also project diagram
 # ideas + things to do
 
 + Support page with voice recognition(DONE but used for navigation)

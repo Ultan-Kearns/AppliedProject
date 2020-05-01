@@ -141,7 +141,7 @@
     \PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{data} \PYG{o}{!=} \PYG{k+kc}{null}\PYG{p}{)} \PYG{p}{\PYGZob{}}
       \PYG{c+c1}{//compare user username and password to the username and password in DB}
       \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{req}\PYG{p}{.}\PYG{n+nx}{params}\PYG{p}{.}\PYG{n+nx}{id} \PYG{o}{==} \PYG{n+nx}{data}\PYG{p}{.}\PYG{n+nx}{\PYGZus{}id} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n+nx}{data}\PYG{p}{.}\PYG{n+nx}{password} \PYG{o}{==} \PYG{n+nx}{req}\PYG{p}{.}\PYG{n+nx}{params}\PYG{p}{.}\PYG{n+nx}{password}\PYG{p}{)} \PYG{p}{\PYGZob{}}
-        \PYG{c+c1}{//twillio code \PYGZhy{} taken template from their site}
+        \PYG{c+c1}{//twilio code \PYGZhy{} taken template from their site}
         \PYG{k+kr}{const} \PYG{n+nx}{accountSid} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}AC8cc82f77f451d6f26aeb1481e9c554cf\PYGZdq{}}\PYG{p}{;}
         \PYG{k+kr}{const} \PYG{n+nx}{authToken} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}d593089eb8edbcf9eb2ca0242800db11\PYGZdq{}}\PYG{p}{;}
         \PYG{k+kr}{const} \PYG{n+nx}{client} \PYG{o}{=} \PYG{n+nx}{require}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}twilio\PYGZdq{}}\PYG{p}{)(}\PYG{n+nx}{accountSid}\PYG{p}{,} \PYG{n+nx}{authToken}\PYG{p}{);}
