@@ -101,11 +101,11 @@
 \BOOKMARK [2][-]{subsection.5.2.12}{Support}{section.5.2}% 101
 \BOOKMARK [1][-]{section.5.3}{Designing for UX\(User Experience\)}{chapter.5}% 102
 \BOOKMARK [2][-]{subsection.5.3.1}{Designing For End-Users As Opposed to Engineers}{section.5.3}% 103
-\BOOKMARK [1][-]{section.5.4}{Backend Architecture}{chapter.5}% 104
+\BOOKMARK [1][-]{section.5.4}{Back-End Architecture}{chapter.5}% 104
 \BOOKMARK [2][-]{subsection.5.4.1}{Mongoose}{section.5.4}% 105
 \BOOKMARK [2][-]{subsection.5.4.2}{ExpressJS}{section.5.4}% 106
 \BOOKMARK [2][-]{subsection.5.4.3}{NodeJS}{section.5.4}% 107
-\BOOKMARK [2][-]{subsection.5.4.4}{Full Backend Code}{section.5.4}% 108
+\BOOKMARK [2][-]{subsection.5.4.4}{Full Back-End Code}{section.5.4}% 108
 \BOOKMARK [1][-]{section.5.5}{RESTful Architecture}{chapter.5}% 109
 \BOOKMARK [2][-]{subsection.5.5.1}{Client / Server Independence}{section.5.5}% 110
 \BOOKMARK [2][-]{subsection.5.5.2}{Cacheable}{section.5.5}% 111
@@ -149,4 +149,4 @@
 \BOOKMARK [2][-]{subsection.7.4.2}{More Focus on AI}{section.7.4}% 149
 \BOOKMARK [1][-]{section.7.5}{In Closing}{chapter.7}% 150
 \BOOKMARK [1][-]{section.7.6}{Final Words}{chapter.7}% 151
-\BOOKMARK [0][-]{section*.31}{Appendices}{}% 152
+\BOOKMARK [0][-]{section*.32}{Appendices}{}% 152

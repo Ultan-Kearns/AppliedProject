@@ -6,12 +6,12 @@
 \PYG{c+c1}{//parses response}
 \PYG{k+kd}{var} \PYG{n+nx}{bodyParser} \PYG{o}{=} \PYG{n+nx}{require}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}body\PYGZhy{}parser\PYGZdq{}}\PYG{p}{);}
 \PYG{c+c1}{//api to communicate with DB}
-\PYG{k+kd}{var} \PYG{n+nx}{mongoose} \PYG{o}{=} \PYG{n+nx}{require}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}mongoose\PYGZdq{}}\PYG{p}{);}
-\PYG{c+c1}{//mongoDB link to connect}
-\PYG{c+c1}{//3kCeKdq4iZWqlg00 this is for mongoatlas may migrate}
-\PYG{k+kd}{var} \PYG{n+nx}{mongoDB} \PYG{o}{=}
-  \PYG{l+s+s2}{\PYGZdq{}mongodb://ultan:ultanultan1@ds135107.mlab.com:35107/appliedproject\PYGZdq{}}\PYG{p}{;}
-\PYG{k+kd}{var} \PYG{n+nx}{Schema} \PYG{o}{=} \PYG{n+nx}{mongoose}\PYG{p}{.}\PYG{n+nx}{Schema}\PYG{p}{;}
+\PYG{k+kd}{var} \PYG{n+nx}{Mongoose} \PYG{o}{=} \PYG{n+nx}{require}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Mongoose\PYGZdq{}}\PYG{p}{);}
+\PYG{c+c1}{//MongoDB link to connect}
+\PYG{c+c1}{//3kCeKdq4iZWqlg00 this is for Mongoatlas may migrate}
+\PYG{k+kd}{var} \PYG{n+nx}{MongoDB} \PYG{o}{=}
+  \PYG{l+s+s2}{\PYGZdq{}Mongodb://ultan:ultanultan1@ds135107.mlab.com:35107/appliedproject\PYGZdq{}}\PYG{p}{;}
+\PYG{k+kd}{var} \PYG{n+nx}{Schema} \PYG{o}{=} \PYG{n+nx}{Mongoose}\PYG{p}{.}\PYG{n+nx}{Schema}\PYG{p}{;}
 \PYG{k+kd}{var} \PYG{n+nx}{router} \PYG{o}{=} \PYG{n+nx}{express}\PYG{p}{.}\PYG{n+nx}{Router}\PYG{p}{();}
 \PYG{n+nx}{app}\PYG{p}{.}\PYG{n+nx}{use}\PYG{p}{(}\PYG{n+nx}{bodyParser}\PYG{p}{.}\PYG{n+nx}{json}\PYG{p}{());}
 \PYG{c+c1}{//need this for some browsers to allow cross origin request to allow app to communicate with server}
@@ -37,9 +37,9 @@
   \PYG{n+nx}{key}\PYG{o}{:} \PYG{n+nx}{fs}\PYG{p}{.}\PYG{n+nx}{readFileSync}\PYG{p}{(}\PYG{n+nx}{keysDirectory} \PYG{o}{+} \PYG{l+s+s2}{\PYGZdq{}ca.key\PYGZdq{}}\PYG{p}{),}
   \PYG{n+nx}{cert}\PYG{o}{:} \PYG{n+nx}{fs}\PYG{p}{.}\PYG{n+nx}{readFileSync}\PYG{p}{(}\PYG{n+nx}{keysDirectory} \PYG{o}{+} \PYG{l+s+s2}{\PYGZdq{}cert.crt\PYGZdq{}}\PYG{p}{)}
 \PYG{p}{\PYGZcb{};}
-\PYG{c+c1}{//use mongoose API to connect to backend need to send err msg here}
+\PYG{c+c1}{//use Mongoose API to connect to Back\PYGZhy{}End need to send err msg here}
 \PYG{k}{try} \PYG{p}{\PYGZob{}}
-  \PYG{n+nx}{mongoose}\PYG{p}{.}\PYG{n+nx}{connect}\PYG{p}{(}\PYG{n+nx}{mongoDB}\PYG{p}{,} \PYG{p}{\PYGZob{}}
+  \PYG{n+nx}{Mongoose}\PYG{p}{.}\PYG{n+nx}{connect}\PYG{p}{(}\PYG{n+nx}{MongoDB}\PYG{p}{,} \PYG{p}{\PYGZob{}}
     \PYG{n+nx}{useUnifiedTopology}\PYG{o}{:} \PYG{k+kc}{true}\PYG{p}{,}
     \PYG{n+nx}{useNewUrlParser}\PYG{o}{:} \PYG{k+kc}{true}
   \PYG{p}{\PYGZcb{});}
@@ -102,11 +102,11 @@
   \PYG{n+nx}{date}\PYG{o}{:} \PYG{p}{\PYGZob{}} \PYG{n+nx}{type}\PYG{o}{:} \PYG{n+nb}{Date} \PYG{p}{\PYGZcb{},}
   \PYG{n+nx}{status}\PYG{o}{:} \PYG{p}{\PYGZob{}} \PYG{n+nx}{type}\PYG{o}{:} \PYG{n+nb}{String} \PYG{p}{\PYGZcb{}}
 \PYG{p}{\PYGZcb{});}
-\PYG{c+c1}{//models for mongoose}
-\PYG{k+kd}{var} \PYG{n+nx}{Users} \PYG{o}{=} \PYG{n+nx}{mongoose}\PYG{p}{.}\PYG{n+nx}{model}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Users\PYGZdq{}}\PYG{p}{,} \PYG{n+nx}{userSchema}\PYG{p}{);}
-\PYG{k+kd}{var} \PYG{n+nx}{Transactions} \PYG{o}{=} \PYG{n+nx}{mongoose}\PYG{p}{.}\PYG{n+nx}{model}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Transactions\PYGZdq{}}\PYG{p}{,} \PYG{n+nx}{transactionSchema}\PYG{p}{);}
-\PYG{k+kd}{var} \PYG{n+nx}{Loans} \PYG{o}{=} \PYG{n+nx}{mongoose}\PYG{p}{.}\PYG{n+nx}{model}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Loans\PYGZdq{}}\PYG{p}{,} \PYG{n+nx}{loanSchema}\PYG{p}{);}
-\PYG{k+kd}{var} \PYG{n+nx}{Support} \PYG{o}{=} \PYG{n+nx}{mongoose}\PYG{p}{.}\PYG{n+nx}{model}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Support\PYGZdq{}}\PYG{p}{,} \PYG{n+nx}{supportSchema}\PYG{p}{);}
+\PYG{c+c1}{//models for Mongoose}
+\PYG{k+kd}{var} \PYG{n+nx}{Users} \PYG{o}{=} \PYG{n+nx}{Mongoose}\PYG{p}{.}\PYG{n+nx}{model}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Users\PYGZdq{}}\PYG{p}{,} \PYG{n+nx}{userSchema}\PYG{p}{);}
+\PYG{k+kd}{var} \PYG{n+nx}{Transactions} \PYG{o}{=} \PYG{n+nx}{Mongoose}\PYG{p}{.}\PYG{n+nx}{model}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Transactions\PYGZdq{}}\PYG{p}{,} \PYG{n+nx}{transactionSchema}\PYG{p}{);}
+\PYG{k+kd}{var} \PYG{n+nx}{Loans} \PYG{o}{=} \PYG{n+nx}{Mongoose}\PYG{p}{.}\PYG{n+nx}{model}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Loans\PYGZdq{}}\PYG{p}{,} \PYG{n+nx}{loanSchema}\PYG{p}{);}
+\PYG{k+kd}{var} \PYG{n+nx}{Support} \PYG{o}{=} \PYG{n+nx}{Mongoose}\PYG{p}{.}\PYG{n+nx}{model}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Support\PYGZdq{}}\PYG{p}{,} \PYG{n+nx}{supportSchema}\PYG{p}{);}
 \PYG{k+kd}{var} \PYG{n+nx}{transaction} \PYG{o}{=} \PYG{k}{new} \PYG{n+nx}{Transactions}\PYG{p}{();}
 \PYG{k+kd}{var} \PYG{n+nx}{loan} \PYG{o}{=} \PYG{k}{new} \PYG{n+nx}{Loans}\PYG{p}{();}
 \PYG{c+c1}{//Here I will use get requests to retrieve resources}
@@ -131,7 +131,7 @@
     \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{status}\PYG{p}{(}\PYG{l+m+mi}{200}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}request completed\PYGZdq{}}\PYG{p}{);}
   \PYG{p}{\PYGZcb{});}
 \PYG{p}{\PYGZcb{});}
-\PYG{c+c1}{//template was taken from earlier project and refactored https://github.com/Ultan\PYGZhy{}Kearns/eCommerceApp/blob/master/BackEnd/Server.js}
+\PYG{c+c1}{//template was taken from earlier project and refactored https://github.com/Ultan\PYGZhy{}Kearns/eCommerceApp/blob/master/Back\PYGZhy{}End/Server.js}
 \PYG{n+nx}{app}\PYG{p}{.}\PYG{n+nx}{get}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}/api/users/:id/:password/:random\PYGZdq{}}\PYG{p}{,} \PYG{k+kd}{function}\PYG{p}{(}\PYG{n+nx}{req}\PYG{p}{,} \PYG{n+nx}{res}\PYG{p}{)} \PYG{p}{\PYGZob{}}
   \PYG{n+nx}{Users}\PYG{p}{.}\PYG{n+nx}{findById}\PYG{p}{(}\PYG{n+nx}{req}\PYG{p}{.}\PYG{n+nx}{params}\PYG{p}{.}\PYG{n+nx}{id}\PYG{p}{,} \PYG{k+kd}{function}\PYG{p}{(}\PYG{n+nx}{err}\PYG{p}{,} \PYG{n+nx}{data}\PYG{p}{)} \PYG{p}{\PYGZob{}}
     \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{err}\PYG{p}{)} \PYG{p}{\PYGZob{}}
@@ -167,7 +167,7 @@
     \PYG{p}{\PYGZcb{}}
   \PYG{p}{\PYGZcb{});}
 \PYG{p}{\PYGZcb{});}
-\PYG{c+c1}{//template taken from earlier project \PYGZhy{} https://github.com/Ultan\PYGZhy{}Kearns/eCommerceApp/blob/master/BackEnd/Server.js}
+\PYG{c+c1}{//template taken from earlier project \PYGZhy{} https://github.com/Ultan\PYGZhy{}Kearns/eCommerceApp/blob/master/Back\PYGZhy{}End/Server.js}
 \PYG{c+c1}{//Improved upon in this project}
 \PYG{n+nx}{app}\PYG{p}{.}\PYG{n+nx}{get}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}/api/emailuser/:id/:password\PYGZdq{}}\PYG{p}{,} \PYG{k+kd}{function}\PYG{p}{(}\PYG{n+nx}{req}\PYG{p}{,} \PYG{n+nx}{res}\PYG{p}{,} \PYG{n+nx}{next}\PYG{p}{)} \PYG{p}{\PYGZob{}}
   \PYG{n+nx}{Users}\PYG{p}{.}\PYG{n+nx}{findById}\PYG{p}{(}\PYG{n+nx}{req}\PYG{p}{.}\PYG{n+nx}{params}\PYG{p}{.}\PYG{n+nx}{id}\PYG{p}{,} \PYG{k+kd}{function}\PYG{p}{(}\PYG{n+nx}{err}\PYG{p}{,} \PYG{n+nx}{data}\PYG{p}{)} \PYG{p}{\PYGZob{}}

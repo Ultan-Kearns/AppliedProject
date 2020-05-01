@@ -34,7 +34,7 @@
   \PYG{p}{.}\PYG{n+nx}{then}\PYG{p}{(}\PYG{n+nx}{res} \PYG{p}{=\PYGZgt{}} \PYG{p}{\PYGZob{}}
     \PYG{k+kd}{var} \PYG{n+nx}{eur\PYGZus{}to\PYGZus{}btc} \PYG{o}{=}
       \PYG{l+s+s2}{\PYGZdq{}1 Euro = \PYGZdq{}} \PYG{o}{+}
-      \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{data}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}Realtime Currency Exchange Rate\PYGZdq{}}\PYG{p}{][}\PYG{l+s+s2}{\PYGZdq{}5. Exchange Rate\PYGZdq{}}\PYG{p}{]} \PYG{o}{+}
+      \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{data}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}real\PYGZhy{}time Currency Exchange Rate\PYGZdq{}}\PYG{p}{][}\PYG{l+s+s2}{\PYGZdq{}5. Exchange Rate\PYGZdq{}}\PYG{p}{]} \PYG{o}{+}
       \PYG{l+s+s2}{\PYGZdq{}BTC\PYGZdq{}}\PYG{p}{;}
     \PYG{k+kd}{var} \PYG{n+nx}{btcNode} \PYG{o}{=} \PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{createElement}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}p\PYGZdq{}}\PYG{p}{);}
     \PYG{n+nx}{btcNode}\PYG{p}{.}\PYG{n+nx}{append}\PYG{p}{(}\PYG{n+nx}{eur\PYGZus{}to\PYGZus{}btc}\PYG{p}{);}
@@ -57,7 +57,7 @@
   \PYG{p}{.}\PYG{n+nx}{then}\PYG{p}{(}\PYG{n+nx}{res} \PYG{p}{=\PYGZgt{}} \PYG{p}{\PYGZob{}}
     \PYG{k+kd}{var} \PYG{n+nx}{eur\PYGZus{}to\PYGZus{}sterling} \PYG{o}{=}
       \PYG{l+s+s2}{\PYGZdq{}1 Euro = \PYGZdq{}} \PYG{o}{+}
-      \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{data}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}Realtime Currency Exchange Rate\PYGZdq{}}\PYG{p}{][}\PYG{l+s+s2}{\PYGZdq{}5. Exchange Rate\PYGZdq{}}\PYG{p}{]} \PYG{o}{+}
+      \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{data}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}real\PYGZhy{}time Currency Exchange Rate\PYGZdq{}}\PYG{p}{][}\PYG{l+s+s2}{\PYGZdq{}5. Exchange Rate\PYGZdq{}}\PYG{p}{]} \PYG{o}{+}
       \PYG{l+s+s2}{\PYGZdq{}GBP\PYGZdq{}}\PYG{p}{;}
     \PYG{k+kd}{var} \PYG{n+nx}{sterlingNode} \PYG{o}{=} \PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{createElement}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}p\PYGZdq{}}\PYG{p}{);}
     \PYG{n+nx}{sterlingNode}\PYG{p}{.}\PYG{n+nx}{append}\PYG{p}{(}\PYG{n+nx}{eur\PYGZus{}to\PYGZus{}sterling}\PYG{p}{);}
@@ -81,7 +81,7 @@
   \PYG{p}{.}\PYG{n+nx}{then}\PYG{p}{(}\PYG{n+nx}{res} \PYG{p}{=\PYGZgt{}} \PYG{p}{\PYGZob{}}
     \PYG{k+kd}{var} \PYG{n+nx}{eur\PYGZus{}to\PYGZus{}dollar} \PYG{o}{=}
       \PYG{l+s+s2}{\PYGZdq{}1 Euro = \PYGZdq{}} \PYG{o}{+}
-      \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{data}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}Realtime Currency Exchange Rate\PYGZdq{}}\PYG{p}{][}\PYG{l+s+s2}{\PYGZdq{}5. Exchange Rate\PYGZdq{}}\PYG{p}{]} \PYG{o}{+}
+      \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{data}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}real\PYGZhy{}time Currency Exchange Rate\PYGZdq{}}\PYG{p}{][}\PYG{l+s+s2}{\PYGZdq{}5. Exchange Rate\PYGZdq{}}\PYG{p}{]} \PYG{o}{+}
       \PYG{l+s+s2}{\PYGZdq{}USD\PYGZdq{}}\PYG{p}{;}
     \PYG{k+kd}{var} \PYG{n+nx}{dollarNode} \PYG{o}{=} \PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{createElement}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}p\PYGZdq{}}\PYG{p}{);}
     \PYG{n+nx}{dollarNode}\PYG{p}{.}\PYG{n+nx}{append}\PYG{p}{(}\PYG{n+nx}{eur\PYGZus{}to\PYGZus{}dollar}\PYG{p}{);}
@@ -105,7 +105,7 @@
   \PYG{p}{.}\PYG{n+nx}{then}\PYG{p}{(}\PYG{n+nx}{res} \PYG{p}{=\PYGZgt{}} \PYG{p}{\PYGZob{}}
     \PYG{k+kd}{var} \PYG{n+nx}{eur\PYGZus{}to\PYGZus{}cny} \PYG{o}{=}
       \PYG{l+s+s2}{\PYGZdq{}1 Euro = \PYGZdq{}} \PYG{o}{+}
-      \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{data}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}Realtime Currency Exchange Rate\PYGZdq{}}\PYG{p}{][}\PYG{l+s+s2}{\PYGZdq{}5. Exchange Rate\PYGZdq{}}\PYG{p}{]} \PYG{o}{+}
+      \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{data}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}real\PYGZhy{}time Currency Exchange Rate\PYGZdq{}}\PYG{p}{][}\PYG{l+s+s2}{\PYGZdq{}5. Exchange Rate\PYGZdq{}}\PYG{p}{]} \PYG{o}{+}
       \PYG{l+s+s2}{\PYGZdq{}CNY\PYGZdq{}}\PYG{p}{;}
     \PYG{k+kd}{var} \PYG{n+nx}{cnyNode} \PYG{o}{=} \PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{createElement}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}p\PYGZdq{}}\PYG{p}{);}
     \PYG{n+nx}{cnyNode}\PYG{p}{.}\PYG{n+nx}{append}\PYG{p}{(}\PYG{n+nx}{eur\PYGZus{}to\PYGZus{}cny}\PYG{p}{);}

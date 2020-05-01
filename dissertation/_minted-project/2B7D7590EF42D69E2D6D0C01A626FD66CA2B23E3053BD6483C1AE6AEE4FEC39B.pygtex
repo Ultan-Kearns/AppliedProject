@@ -1,7 +1,7 @@
 \begin{Verbatim}[commandchars=\\\{\}]
 \PYG{n+nx}{axios}
   \PYG{p}{.}\PYG{n+nx}{get}\PYG{p}{(}
-    \PYG{l+s+s2}{\PYGZdq{}https://www.reddit.com/r/wallstreet/.json\PYGZdq{}}
+    \PYG{l+s+s2}{\PYGZdq{}https://www.Reddit.com/r/wallstreet/.json\PYGZdq{}}
   \PYG{p}{)}
   \PYG{p}{.}\PYG{n+nx}{then}\PYG{p}{(}\PYG{n+nx}{res} \PYG{p}{=\PYGZgt{}} \PYG{p}{\PYGZob{}}
     \PYG{k}{for} \PYG{p}{(}\PYG{k+kd}{var} \PYG{n+nx}{i} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n+nx}{i} \PYG{o}{\PYGZlt{}} \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{data}\PYG{p}{.}\PYG{n+nx}{data}\PYG{p}{.}\PYG{n+nx}{children}\PYG{p}{.}\PYG{n+nx}{length}\PYG{p}{;} \PYG{n+nx}{i}\PYG{o}{++}\PYG{p}{)} \PYG{p}{\PYGZob{}}
@@ -21,9 +21,9 @@
       \PYG{n+nx}{node}\PYG{p}{.}\PYG{n+nx}{append}\PYG{p}{(}\PYG{n+nx}{text}\PYG{p}{)}
       \PYG{n+nx}{node}\PYG{p}{.}\PYG{n+nx}{append}\PYG{p}{(}\PYG{n+nx}{link}\PYG{p}{)}
       \PYG{n+nx}{node}\PYG{p}{.}\PYG{n+nx}{append}\PYG{p}{(}\PYG{n+nx}{image}\PYG{p}{)}
-      \PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{getElementById}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}reddit\PYGZdq{}}\PYG{p}{).}\PYG{n+nx}{appendChild}\PYG{p}{(}\PYG{n+nx}{node}\PYG{p}{);}
+      \PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{getElementById}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Reddit\PYGZdq{}}\PYG{p}{).}\PYG{n+nx}{appendChild}\PYG{p}{(}\PYG{n+nx}{node}\PYG{p}{);}
     \PYG{p}{\PYGZcb{}}
    \PYG{p}{\PYGZcb{}).}\PYG{k}{catch}\PYG{p}{(}\PYG{n+nx}{error} \PYG{p}{=\PYGZgt{}} \PYG{p}{\PYGZob{}}
-     \PYG{n+nx}{alert}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Having issues getting your news from reddit\PYGZdq{}}\PYG{p}{)}
+     \PYG{n+nx}{alert}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Having issues getting your news from Reddit\PYGZdq{}}\PYG{p}{)}
    \PYG{p}{\PYGZcb{});}
 \end{Verbatim}

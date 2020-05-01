@@ -1,6 +1,6 @@
 \begin{Verbatim}[commandchars=\\\{\}]
 \PYG{c+c1}{//template taken from earlier project}
-\PYG{c+c1}{//https://github.com/Ultan\PYGZhy{}Kearns/eCommerceApp/blob/master/BackEnd/Server.js}
+\PYG{c+c1}{//https://github.com/Ultan\PYGZhy{}Kearns/eCommerceApp/blob/master/Back\PYGZhy{}End/Server.js}
 \PYG{c+c1}{//Improved upon in this project}
 \PYG{n+nx}{app}\PYG{p}{.}\PYG{n+nx}{get}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}/api/emailuser/:id/:password\PYGZdq{}}\PYG{p}{,} \PYG{k+kd}{function}\PYG{p}{(}\PYG{n+nx}{req}\PYG{p}{,} \PYG{n+nx}{res}\PYG{p}{,} \PYG{n+nx}{next}\PYG{p}{)} \PYG{p}{\PYGZob{}}
   \PYG{n+nx}{Users}\PYG{p}{.}\PYG{n+nx}{findById}\PYG{p}{(}\PYG{n+nx}{req}\PYG{p}{.}\PYG{n+nx}{params}\PYG{p}{.}\PYG{n+nx}{id}\PYG{p}{,} \PYG{k+kd}{function}\PYG{p}{(}\PYG{n+nx}{err}\PYG{p}{,} \PYG{n+nx}{data}\PYG{p}{)} \PYG{p}{\PYGZob{}}
