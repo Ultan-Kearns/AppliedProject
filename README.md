@@ -1,6 +1,16 @@
 # Fourth Year Applied Project and Dissertation - Ultan Kearns G00343745
 ## This project was made as a final year project as part of a level 8(Bsc Hons) course in Software Development at GMIT(Galway Mayo Institute of Technology
 
+## Important notes for Twilio while running app
++ When signing up with app please do not append area code so for example: 08555555555 and not +3538555555555
++ When updating user phone number on user info page append the +353 to number
++ When using the forgot page append +353
++ Please use a real number for signing up as 2fa codes will be sent to your phone
++ For obvious security reasons the authcode for Twilio in this repo is a dud, to use the app use GCP version( https://34.68.75.97:3000/) and do not host locally 
++ Please allow security exceptions for app to run as I used self-signed certificates.
+
+## Overviews
+
 ## IMPORTANT NOTICE: I have two overviews one which is more extensive and an older one which is not, the only reason I have kept the older one was because it showcased voice commands at the specified time t=249 please be careful as the voice commands are quite loud but they do show the Annyang library working.
 
 + New more extensive overview: https://www.youtube.com/watch?v=jLp_paiELCg - You can also download this video from the main repo, I chose to put these videos on Youtube as it would be a pain for externals to have to download dozens of 70MB videos, hope other students had the same concern.
@@ -86,7 +96,7 @@ Finally I wish to extend my thanks to the external examiners who will be grading
 + Maybe an issue with NodeMailer as gmail may prevent authentication due to security issues(this is an issue with GMAIL and not the app)
 + Voice Recognition does not work on Firefox or other browsers, this is due to a limitation with the Annyang library
 + Spamming buttons may cause app to crash and you may have to logout and login again.
-+ Twilio may not work as the auth codes are shifted on public repo.
++ Twilio code on GCP is different so please use GCP to use the actual app
 ### Important notice: All code detailed in this repo is my own except where referenced otherwise.  I reused some code developed previously for the nodemailer function and login function in the server file which is referenced in the comments.
 
 ### IMPORTANT NOTE RUN ALL COMMANDS WITHOUT QUOTATIONS
