@@ -3,7 +3,9 @@
 ### Department of Computer Science & Physics GMIT
 ##### GMIT Software Development
 
-# IMPORTANT NOTE: All credit to Dr Ian Mcloughlin for providing the LaTeX template for this dissertation.
+# IMPORTANT NOTES: 
++ All credit to Dr Ian Mcloughlin for providing the LaTeX template for this dissertation.
++ The images in this dissertation were not made by myself except the images of the application, the DB schema which was created using https://dbdiagram.io/home and the project schematic image.  All credit goes to the original image creators, sadly the images where hard to reference due to the authours name generally being obscure, you can find the original authours using reverse image search here: .https://tineye.com/
 
 ## Introduction
 
